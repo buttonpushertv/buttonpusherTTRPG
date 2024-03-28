@@ -1,0 +1,38 @@
+{
+  "devMode": false,
+  "ignoreCodeBlockRestrictions": false,
+  "preferredDateFormat": "YYYY-MM-DD",
+  "useUsDateInputOrder": false,
+  "firstWeekday": {
+    "index": 1,
+    "name": "Monday",
+    "shortName": "Mo"
+  },
+  "syncInterval": 200,
+  "minSyncInterval": 50,
+  "maxSyncInterval": 1000,
+  "enableJs": false,
+  "viewFieldDisplayNullAsEmpty": false,
+  "enableSyntaxHighlighting": true,
+  "enableEditorRightClickMenu": true,
+  "inputFieldTemplates": [],
+  "buttonTemplates": [
+    {
+      "label": "Add New Campaign",
+      "hidden": false,
+      "class": "",
+      "tooltip": "Add a new campaign & folder structure",
+      "id": "new-campaign",
+      "style": "primary",
+      "actions": [
+        {
+          "type": "command",
+          "command": "quickadd:choice:2fbf6b35-69f7-4821-a1fa-2ff526c54da1"
+        }
+      ]
+    }
+  ],
+  "excludedFolders": [
+    "templates"
+  ]
+}

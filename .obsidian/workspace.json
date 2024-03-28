@@ -1,0 +1,211 @@
+{
+  "main": {
+    "id": "1f6a1d7e313eeb8f",
+    "type": "split",
+    "children": [
+      {
+        "id": "5f634c4f364d8de1",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e20154646edd44a0",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "01-Campaigns/Test Campaign 05/00-Campaign Home/Test Campaign 05 Home.md",
+                "mode": "preview",
+                "source": true
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "d2ce78769530f92b",
+    "type": "split",
+    "children": [
+      {
+        "id": "49fb6ef3533bb481",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "6fa5b99a9c780db4",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "1b8cd04df454fec3",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "84d03f8c3eb63255",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 428.5
+  },
+  "right": {
+    "id": "93482ffa1a519a97",
+    "type": "split",
+    "children": [
+      {
+        "id": "fbe3e638bae3e1ea",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "276aed52ebcc9767",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "90-Tools & Helpers/Buttons.md",
+                "mode": "preview",
+                "source": true
+              }
+            }
+          },
+          {
+            "id": "c1171c2d318b0368",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "01-Campaigns/Test Campaign 05/00-Campaign Home/Test Campaign 05 Home.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "ca699238ddcc64c0",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "01-Campaigns/Test Campaign 05/00-Campaign Home/Test Campaign 05 Home.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "4e9216679722d063",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "1b0558b5f265f70b",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "01-Campaigns/Test Campaign 05/00-Campaign Home/Test Campaign 05 Home.md"
+              }
+            }
+          },
+          {
+            "id": "969e6b31d86c73e8",
+            "type": "leaf",
+            "state": {
+              "type": "DICE_ROLLER_VIEW",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "homepage:Open homepage": false,
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "obsidian-excalidraw-plugin:Create new drawing": false,
+      "obsidian-import-json:JSON/CSV Importer": false,
+      "obsidian-leaflet-plugin:Open Leaflet Map": false,
+      "templater-obsidian:Templater": false
+    }
+  },
+  "active": "e20154646edd44a0",
+  "lastOpenFiles": [
+    "01-Campaigns/Campaign Index.md",
+    "99-Templates/newCampaignTemplate.md",
+    "01-Campaigns/Test Campaign 05/00-Campaign Home/Test Campaign 05 Home.md",
+    "90-Tools & Helpers/Buttons.md",
+    "01-Campaigns/Test Campaign 05/99-Misc Notes",
+    "01-Campaigns/Test Campaign 05/23-Deities",
+    "01-Campaigns/Test Campaign 05/22-Groups",
+    "01-Campaigns/Test Campaign 05/21-NPCs",
+    "01-Campaigns/Test Campaign 05/20-PCs",
+    "01-Campaigns/Test Campaign 05/13-Items & Artifacts",
+    "01-Campaigns/Test Campaign 05/12-Organizations",
+    "01-Campaigns/Test Campaign 05/11-Points of Interest",
+    "01-Campaigns/Test Campaign 05/10-Atlas",
+    "01-Campaigns/Test Campaign 05/06-Religions",
+    "Home.md",
+    "01-Campaigns/Test Campaign 04/00-Campaign Home/Test Campaign 04 Home.md",
+    "01-Campaigns/Test Campaign 03/00-Campaign Home/Test Campaign 03 Home.md",
+    "01-Campaigns/Test campaign 02/00-Campaign Home/Test campaign 02 Home.md",
+    "99-Templates/Handlebars-JSON/Handlebar - FMG - Cultures JSON Template.md",
+    "99-Templates/Template Archives/Log Style Templates/Scene log template.md",
+    "99-Templates/Template Archives/Log Style Templates/PC log.md",
+    "99-Templates/Template Archives/Log Style Templates/NPC log.md",
+    "99-Templates/Template Archives/Log Style Templates/Monster log.md",
+    "99-Templates/Template Archives/Log Style Templates/Location log.md",
+    "99-Templates/Template Archives/Log Style Templates/Item log.md",
+    "99-Templates/Template Archives/Log Style Templates/Faction log.md",
+    "99-Templates/Template Archives/Log Style Templates/Adventure log template.md",
+    "99-Templates/Template Archives/Log Style Templates/Ability log.md",
+    "99-Templates/TTRPG Templates/Text_Generator/Textgen Monster Template.md",
+    "99-Templates/TTRPG Templates/Text_Generator/TextGen Location.md",
+    "99-Templates/TTRPG Templates/Text_Generator/NPC template for Datasphere.md",
+    "99-Templates/TTRPG Templates/Text_Generator/GM GPT NPC template.md",
+    "99-Templates/TTRPG Templates/Text_Generator/DM brainstorming.md",
+    "99-Templates/TTRPG Templates/Story Arcs/Template - Story Arc.md",
+    "99-Templates/TTRPG Templates/Session Notes/Template - Session Notes.md"
+  ]
+}
