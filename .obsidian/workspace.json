@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "5f634c4f364d8de1",
+        "id": "e7afbf722a25a472",
         "type": "tabs",
         "children": [
           {
-            "id": "e20154646edd44a0",
+            "id": "0e5567f6f150a7b2",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "01-Campaigns/Test Campaign 05/00-Campaign Home/Test Campaign 05 Home.md",
+                "file": "Home.md",
                 "mode": "preview",
                 "source": true
               }
@@ -80,24 +80,12 @@
         "type": "tabs",
         "children": [
           {
-            "id": "276aed52ebcc9767",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "90-Tools & Helpers/Buttons.md",
-                "mode": "preview",
-                "source": true
-              }
-            }
-          },
-          {
             "id": "c1171c2d318b0368",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "01-Campaigns/Test Campaign 05/00-Campaign Home/Test Campaign 05 Home.md",
+                "file": "Home.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -114,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "01-Campaigns/Test Campaign 05/00-Campaign Home/Test Campaign 05 Home.md",
+                "file": "Home.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -137,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "01-Campaigns/Test Campaign 05/00-Campaign Home/Test Campaign 05 Home.md"
+                "file": "Home.md"
               }
             }
           },
@@ -170,8 +158,9 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "e20154646edd44a0",
+  "active": "0e5567f6f150a7b2",
   "lastOpenFiles": [
+    "97-External Files/buttonpusherTTRPG(Mac).code-workspace",
     "01-Campaigns/Campaign Index.md",
     "99-Templates/newCampaignTemplate.md",
     "01-Campaigns/Test Campaign 05/00-Campaign Home/Test Campaign 05 Home.md",
