@@ -38,6 +38,8 @@ for (const folderName of folderNames) {
 
 # The World of {{VALUE:newCampaignName}}
 
+[[{{VALUE:newCampaignAtlas}}]]
+
 ## Player Characters
 
 -

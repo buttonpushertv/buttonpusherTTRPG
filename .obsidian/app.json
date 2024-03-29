@@ -4,5 +4,6 @@
   "showLineNumber": true,
   "alwaysUpdateLinks": true,
   "newFileLocation": "current",
-  "showUnsupportedFiles": true
+  "showUnsupportedFiles": true,
+  "defaultViewMode": "preview"
 }

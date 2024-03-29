@@ -6,6 +6,41 @@
       "type": "Macro",
       "command": true,
       "macroId": "348507e8-4494-49a0-b826-533a8bb5b9fa"
+    },
+    {
+      "id": "baaa64d1-384b-438d-b10e-5b3aea99dbb8",
+      "name": "Add a Callout",
+      "type": "Capture",
+      "command": true,
+      "appendLink": false,
+      "captureTo": "",
+      "captureToActiveFile": true,
+      "createFileIfItDoesntExist": {
+        "enabled": false,
+        "createWithTemplate": false,
+        "template": ""
+      },
+      "format": {
+        "enabled": true,
+        "format": "```js quickadd\n//const selection = window.getSelection();\n//const selection = this.quickAddApi.utility.getSelectedText();  \n// QuickAdd 0.4.6\nconst aTexts =   [ \"✏️ note\", \"📋 tl;dr\", \"ℹ️ info\", \"🔥 tip\", \"✅ success\", \"❓ question\", \"⚠️ warning\", \"❌ fail\", \"🪲 bug\", \"📄 example\", \"✍️ quote\", \"⚡ danger\" ];\n\nconst callouts = [ \"NOTE\", \"TLDR\", \"INFO\", \"TIP\", \"SUCESS\", \"QUESTION\", \"WARNING\", \"FAIL\", \"ERROR\", \"EXAMPLE\", \"QUOTE\", \"DANGER\" ];\n\nlet choice = await this.quickAddApi.suggester(aTexts, callouts);\n//console.log(\"choice\", choice);\n\n// String.fromCharCode()\nconst nl = String.fromCharCode(10);\n\nresult = \"> [!\" + choice + \"]\" + nl + \"> \" //+ selection + nl;\n\nreturn result;```\n"
+      },
+      "insertAfter": {
+        "enabled": false,
+        "after": "",
+        "insertAtEnd": false,
+        "considerSubsections": false,
+        "createIfNotFound": false,
+        "createIfNotFoundLocation": "top"
+      },
+      "prepend": false,
+      "task": false,
+      "openFileInNewTab": {
+        "enabled": false,
+        "direction": "vertical",
+        "focus": true
+      },
+      "openFile": false,
+      "openFileInMode": "default"
     }
   ],
   "macros": [
@@ -32,12 +67,47 @@
             "templatePath": "99-Templates/newCampaignTemplate.md",
             "fileNameFormat": {
               "enabled": true,
-              "format": "00-Campaign Home/{{VALUE:newCampaignName}} Home"
+              "format": "{{VALUE:newCampaignName}} Home"
             },
             "folder": {
               "enabled": true,
               "folders": [
                 "{{VALUE:newCampaignPath}}"
+              ],
+              "chooseWhenCreatingNote": false,
+              "createInSameFolderAsActiveFile": false,
+              "chooseFromSubfolders": false
+            },
+            "appendLink": false,
+            "openFileInNewTab": {
+              "enabled": false,
+              "direction": "vertical",
+              "focus": true
+            },
+            "openFile": false,
+            "openFileInMode": "default",
+            "fileExistsMode": "Increment the file name",
+            "setFileExistsBehavior": false
+          }
+        },
+        {
+          "name": "Create New Campaign Atlas Note",
+          "type": "NestedChoice",
+          "id": "c8418442-77d7-48b1-bcbb-3f791fe8ef66",
+          "choice": {
+            "id": "9b615344-0dce-415c-9029-90ab3773d6fe",
+            "name": "Create New Campaign Atlas Note",
+            "type": "Template",
+            "command": false,
+            "templatePath": "99-Templates/newCampaignAtlas.md",
+            "fileNameFormat": {
+              "enabled": true,
+              "format": "{{VALUE:newCampaignAtlas}}"
+            },
+            "folder": {
+              "enabled": true,
+              "folders": [
+                "{{VALUE:newCampaignPath}}/10-Atlas"
               ],
               "chooseWhenCreatingNote": false,
               "createInSameFolderAsActiveFile": false,

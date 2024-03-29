@@ -1,0 +1,195 @@
+{
+  "workspaces": {
+    "Default": {
+      "main": {
+        "id": "1f6a1d7e313eeb8f",
+        "type": "split",
+        "children": [
+          {
+            "id": "f1ae1a42a511d0fd",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "e143a3412632bd8d",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "99-Templates/Handlebars-JSON/Atlas-FMG-JSON Handlebar Template.md",
+                    "mode": "source",
+                    "source": true
+                  }
+                }
+              },
+              {
+                "id": "6f1c15551dda1a3b",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "Home.md",
+                    "mode": "preview",
+                    "source": true
+                  }
+                }
+              }
+            ],
+            "currentTab": 1
+          }
+        ],
+        "direction": "vertical"
+      },
+      "left": {
+        "id": "d2ce78769530f92b",
+        "type": "split",
+        "children": [
+          {
+            "id": "49fb6ef3533bb481",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "6fa5b99a9c780db4",
+                "type": "leaf",
+                "state": {
+                  "type": "file-explorer",
+                  "state": {
+                    "sortOrder": "alphabetical"
+                  }
+                }
+              },
+              {
+                "id": "1b8cd04df454fec3",
+                "type": "leaf",
+                "state": {
+                  "type": "search",
+                  "state": {
+                    "query": "",
+                    "matchingCase": false,
+                    "explainSearch": false,
+                    "collapseAll": false,
+                    "extraContext": false,
+                    "sortOrder": "alphabetical"
+                  }
+                }
+              },
+              {
+                "id": "84d03f8c3eb63255",
+                "type": "leaf",
+                "state": {
+                  "type": "bookmarks",
+                  "state": {}
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "horizontal",
+        "width": 428.5
+      },
+      "right": {
+        "id": "93482ffa1a519a97",
+        "type": "split",
+        "children": [
+          {
+            "id": "fbe3e638bae3e1ea",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "8c1d2257340444cb",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "90-Tools & Helpers/Buttons.md",
+                    "mode": "preview",
+                    "source": true
+                  }
+                }
+              },
+              {
+                "id": "c1171c2d318b0368",
+                "type": "leaf",
+                "state": {
+                  "type": "backlink",
+                  "state": {
+                    "file": "Home.md",
+                    "collapseAll": false,
+                    "extraContext": false,
+                    "sortOrder": "alphabetical",
+                    "showSearch": false,
+                    "searchQuery": "",
+                    "backlinkCollapsed": false,
+                    "unlinkedCollapsed": true
+                  }
+                }
+              },
+              {
+                "id": "ca699238ddcc64c0",
+                "type": "leaf",
+                "state": {
+                  "type": "outgoing-link",
+                  "state": {
+                    "file": "Home.md",
+                    "linksCollapsed": false,
+                    "unlinkedCollapsed": true
+                  }
+                }
+              },
+              {
+                "id": "4e9216679722d063",
+                "type": "leaf",
+                "state": {
+                  "type": "tag",
+                  "state": {
+                    "sortOrder": "frequency",
+                    "useHierarchy": true
+                  }
+                }
+              },
+              {
+                "id": "1b0558b5f265f70b",
+                "type": "leaf",
+                "state": {
+                  "type": "outline",
+                  "state": {
+                    "file": "Home.md"
+                  }
+                }
+              },
+              {
+                "id": "969e6b31d86c73e8",
+                "type": "leaf",
+                "state": {
+                  "type": "DICE_ROLLER_VIEW",
+                  "state": {}
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "horizontal",
+        "width": 303.5
+      },
+      "left-ribbon": {
+        "hiddenItems": {
+          "homepage:Open homepage": false,
+          "switcher:Open quick switcher": false,
+          "graph:Open graph view": false,
+          "canvas:Create new canvas": false,
+          "daily-notes:Open today's daily note": false,
+          "templates:Insert template": false,
+          "command-palette:Open command palette": false,
+          "obsidian-excalidraw-plugin:Create new drawing": false,
+          "obsidian-import-json:JSON/CSV Importer": false,
+          "obsidian-leaflet-plugin:Open Leaflet Map": false,
+          "templater-obsidian:Templater": false,
+          "workspaces:Manage workspace layouts": false,
+          "table-editor-obsidian:Advanced Tables Toolbar": false
+        }
+      },
+      "active": "6f1c15551dda1a3b",
+      "mtime": "2024-03-29T16:44:30-04:00"
+    }
+  },
+  "active": "Default"
+}
