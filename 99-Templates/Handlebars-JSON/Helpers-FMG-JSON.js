@@ -17,6 +17,7 @@
 014 calcPopulation(popValue)
 015 totalPopulation(rural,urban)
 016 burgProvinceLookup(cellId,allCells,allProvinces)
+017 getReligionName (religionID,allReligions)
 
 IMPORTANT: All of these helpers rely on the campaigns being stored in the vault in a sub-folder within a sub-solder off of the root of the vault. For example, by default, other scripts in this vault will store any newly created campaigns under: "01-Campaigns" + campiagn name off of the root of the buttonpusherTTRPG vault. All of the helpers below require that method of storing the campaigns. See the common line, in most of the helpers that reads: const (somevariable) = `${folders[1]}` - that is what is extracting the location of the specific campaign that is the target for that process.
 
@@ -302,4 +303,18 @@ handlebars.registerHelper('burgProvinceLookup', function(cellId,allCells,allProv
   const foundProvinceName = allProvinces.find(prov => prov.i === foundCellProvinceId).fullName;
   //console.log("foundProvinceName: ", foundProvinceName);
   return foundProvinceName;
+});
+
+// 017
+// Custom helper to return religion name from passed religionID
+handlebars.registerHelper('getReligionName', function(religionID,allReligions) {
+  //console.log("religionId:", religionId);
+  //console.log("allreligions: ", allreligions);
+  if (religionId === undefined) {
+    return ''; // skip if the element is undefined
+    
+  };
+  const religionName = allreligions.find(religion => religion.i === religionId);
+  //console.log("religionName found:", religionName);
+  return religionName ? reilgionName.name : 'Unknown';
 });

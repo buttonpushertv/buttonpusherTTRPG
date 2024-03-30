@@ -1,9 +1,10 @@
 ---
 alias:
 campaign: {{getCampaignName @importSettings}}
+created: {{getDateTimestamp @importSettings}}
 Tags:
 - Atlas
-TemplateLink: "[[Handlebar - FMG - Atlas JSON Template]]"
+TemplateLink: "[[Atlas-FMG-JSON Handlebar Template]]"
 TemplateVersion: 1
 WBProcess: FALSE
 world: {{@importdataRoot.info.mapName}}

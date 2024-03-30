@@ -2,6 +2,7 @@
 campaign: "{{getCampaignName @importSettings}}"
 capital: "[[{{getBurgName burg @importDataRoot.pack.burgs}}]]"
 color: {{color}}
+created: {{getDateTimestamp @importSettings}}
 formName: {{formName}}
 fullName: {{fullName}}
 id: {{i}}
@@ -13,9 +14,8 @@ state: "[[{{getStateName state @importDataRoot.pack.states}}]]"
 tags:
 - Province
 - {{getStateName state @importDataRoot.pack.states}}-Province
-templateLink: "[[Handlebar - FMG- Provinces JSON Template]]"
+templateLink: "[[Provinces-FMG-JSON Handlebars Template]]"
 templateVersion: 1
-created: {{getDateTimestamp @importSettings}}
 WBProcess: FALSE
 world: {{@importDataRoot.info.mapName}}
 ---
@@ -25,6 +25,7 @@ world: {{@importDataRoot.info.mapName}}
 [[{{getCampaignHomeNote @importSettings}}]] | [[{{getCampaignAtlasNote @importSettings}}]] | `=link(this.state)`
 
 %% Edit the map data by updating the 'lat' & 'long' values to center the default map view one the location. %% 
+
 > [!metadata|map]- Map
 > ```leaflet
 > id: State-{{State}}
@@ -44,6 +45,7 @@ world: {{@importDataRoot.info.mapName}}
 > ```
 
 %% All the info in this 'infobox' will appear in the panel to the right. Most of these values are pulled from the metadata in the properties above. %%
+
 > [!infobox]
 > ![[{{@importDataRoot.info.mapName}} Emblem {{fullName}}.svg]]
 > ###### Info
@@ -101,13 +103,6 @@ Siginifcant Incidents in `=this.name`'s history:
 
 > [!question]- Hidden Details
 >
-
----
-
-%% The metadata sections below allow you to add some detailed info about NPCs, Groups, and Points of Interest.
-
-NOTE: In practice, you probably won't be adding items to these categories from this State page. You'll likely want to add them to the appropriate Province (less often) or Burg (more often) to give each of them a specific location or base of operation. %%
-
 
 ---
 
