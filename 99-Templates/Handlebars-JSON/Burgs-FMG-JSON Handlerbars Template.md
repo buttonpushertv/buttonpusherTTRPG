@@ -23,7 +23,7 @@ tags:
 template: "[[Handlebar - FMG - Burg CSV Template]]"
 templateVersion: 11
 type: {{type}}
-created: <% tp.file.creation_date("YYYY-MM-DD HH:mm") %>
+created: {{DATE:yyyy-mm-dd}}
 WBProcess: FALSE
 world: {{@importdataRoot.info.mapName}}
 ---
@@ -121,47 +121,6 @@ Below are any notable zones or regions within `=this.burgName`
 
 Change the '-' after the closing square bracket of each callout line (starts with open bracket followed by an exclamation point) to a '+' to have it be expanded by default. 
 %%
-
-> [!metadata|characters]- Characters
-> `button-add-new-npc-modal` <- Add an NPC to `=this.burgName`
-
-> Below is a listing of all NPCs within `=this.burgName`:
-> ```dataview
-> table Pronouns, Party1Standing AS "Party Standing", join(Occupation, ", ") AS "Occupation(s)", join(link(AssociatedGroup), ", ") AS "Group(s)"
-> WHERE Location = this.file.name AND contains(NoteType, "NPC") AND !contains(Condition, "Dead")
-> SORT file.name ASC
-
-> [!metadata|groups]- Groups
-> `button-add-new-group` <- Add a Group to `=this.burgName`
-> ```dataview 
-> table join(NoteType, ", ") AS "Note Type"
-> WHERE econtains(Location, this.file.name) AND contains(NoteType, "Group")
-> SORT Type ASC
-> ```
-
-> [!metadata|pois]- Points of Interest
-> `button-add-new-poi` <- Add a POI to `=this.burgName`
-> ```dataview
-> table join(NoteType, ", ") AS "Note Type", join(link(AffiliatedGroup), ", ") AS "Group(s)"
-> WHERE Location = this.file.name AND contains(NoteType, "POI")
-> SORT file.name ASC
-> ```
-
-> [!metadata|shops]- Businesses
-> `button-add-new-business` <- Add a business to `=this.burgName`
-> ```dataview
-> table join(NoteType, ", ") AS "Note Type", join(link(AffiliatedGroup), ", ") AS "Group(s)"
-> WHERE Location = this.file.name AND contains(NoteType, "Business")
-> SORT file.name ASC
-> ```
-
-> [!metadata|pois]- Items & Objects
-> `button-add-new-item` <- Add a new item or object to `=this.burgName`
->```dataview
-> table join(NoteType, ", ") AS "Note Type", join(link(AffiliatedGroup), ", ") AS "Group(s)"
-> WHERE Location = this.file.name AND contains(NoteType, "Item")
-> SORT file.name ASC
-> ```
 
 ---
 

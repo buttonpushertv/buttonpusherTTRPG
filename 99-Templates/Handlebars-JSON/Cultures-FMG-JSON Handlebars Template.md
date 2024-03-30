@@ -2,7 +2,8 @@
 alias: {{name}}
 campaign: "{{getCampaignName @importSettings}}"
 id: {{i}}
-cultureName: {{name}}
+cultureName: "{{name}}"
+name: "{{name}}"
 code: {{code}}
 color: {{color}}
 center: {{center}}
@@ -13,8 +14,7 @@ pronounced:{{name}}
 shortDescription:
 shield: {{shield}}
 tags:
-- ttrpg
-- ttrpg-culture
+- Culture
 template: "[[Handlebar-FMG-Cultures-JSON]]"
 templateVersion: 1
 type: {{type}}
@@ -25,7 +25,7 @@ world: {{@importdataRoot.info.mapName}}
 
 %% Change the World Building Process (WBProcess) property to true once you have placed/updated any info onto the page. Basically this allows sorting based on what has & hasn't had world building stuff done for it. %%
 
-`{{getCampaignButtonCode @importSettings}}` | `{{getCampaignAtlasButtonCode @importSettings}}` 
+[[{{getCampaignHomeNote @importSettings}}]] | [[{{getCampaignAtlasNote @importSettings}}]]
 
 %% All the info in this 'infobox' will appear in the panel to the right. Most of these values are pulled from the metadata in the properties above. %%
 > [!infobox]
@@ -37,6 +37,8 @@ world: {{@importdataRoot.info.mapName}}
 >
 
 # **`=this.cultureName`**
+
+Name: `=this.name`
  
 > [!recite|no-t text-center]+ Introduction
 > *`=this.shortDescription`*
@@ -89,13 +91,7 @@ Below are any notable zones or regions within `=this.burgName`
 Change the '-' after the closing square bracket of each callout line (starts with open bracket followed by an exclamation point) to a '+' to have it be expanded by default. 
 %%
 
-> [metadata]+ Burgs
-> This list is the Burgs that are covered by `=this.cultureName`
-> ```dataview
-> TABLE
-> WHERE contains(culture,this.file.frontmatter.id) OR contains(culture,this.file.frontmatter.name)
-> ```
 
 ---
 
-`{{getCampaignButtonCode @importSettings}}` | `{{getCampaignAtlasButtonCode @importSettings}}` 
+[[{{getCampaignHomeNote @importSettings}}]] | [[{{getCampaignAtlasNote @importSettings}}]]
