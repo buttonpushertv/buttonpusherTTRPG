@@ -4,15 +4,19 @@
     "type": "split",
     "children": [
       {
-        "id": "3f5130884804daa6",
+        "id": "240f9805e55a4fe9",
         "type": "tabs",
         "children": [
           {
-            "id": "4f430e3d6ddf9d32",
+            "id": "3e139bbe027f3081",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "99-Templates/Handlebars-JSON/Provinces-FMG-JSON Handlebars Template.md",
+                "mode": "source",
+                "source": true
+              }
             }
           }
         ]
@@ -81,6 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "99-Templates/Handlebars-JSON/Provinces-FMG-JSON Handlebars Template.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,6 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "99-Templates/Handlebars-JSON/Provinces-FMG-JSON Handlebars Template.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -118,7 +124,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "99-Templates/Handlebars-JSON/Provinces-FMG-JSON Handlebars Template.md"
+              }
             }
           },
           {
@@ -126,14 +134,6 @@
             "type": "leaf",
             "state": {
               "type": "DICE_ROLLER_VIEW",
-              "state": {}
-            }
-          },
-          {
-            "id": "3638fcfeaa4bbc98",
-            "type": "leaf",
-            "state": {
-              "type": "advanced-tables-toolbar",
               "state": {}
             }
           }
@@ -145,7 +145,6 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "obsidian-import-json:JSON/CSV Importer": false,
       "homepage:Open homepage": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
@@ -154,49 +153,50 @@
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
       "obsidian-excalidraw-plugin:Create new drawing": false,
+      "obsidian-import-json:JSON/CSV Importer": false,
       "obsidian-leaflet-plugin:Open Leaflet Map": false,
       "templater-obsidian:Templater": false,
       "workspaces:Manage workspace layouts": false,
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "4f430e3d6ddf9d32",
+  "active": "3e139bbe027f3081",
   "lastOpenFiles": [
+    "99-Templates/Handlebars-JSON/Burgs-FMG-JSON Handlerbars Template.md",
+    "99-Templates/Handlebars-JSON/Cultures-FMG-JSON Handlebars Template.md",
+    "Home.md",
+    "99-Templates/Handlebars-JSON/Atlas-FMG-JSON Handlebar Template.md",
+    "01-Campaigns/Test Campaign 99/10-Atlas/Test Campaign 99 Atlas.md",
+    "01-Campaigns/Test Campaign 99/05-Cultures/BASIC/Chilton.md",
+    "01-Campaigns/Test Campaign 99/05-Cultures/BASIC/Thornby.md",
+    "01-Campaigns/Test Campaign 99/05-Cultures/BASIC/Guildford.md",
+    "01-Campaigns/Test Campaign 99/05-Cultures/BASIC/Durton.md",
+    "01-Campaigns/Test Campaign 99/05-Cultures/BASIC/North.md",
+    "01-Campaigns/Test Campaign 99/05-Cultures/BASIC/Dodble.md",
+    "01-Campaigns/Test Campaign 99/05-Cultures/BASIC/Swaretown.md",
+    "01-Campaigns/Test Campaign 99/05-Cultures/BASIC/Manch.md",
+    "01-Campaigns/Test Campaign 99/05-Cultures/BASIC/Totham.md",
+    "01-Campaigns/Test Campaign 99/05-Cultures/BASIC/Normouth.md",
+    "01-Campaigns/Test Campaign 99/05-Cultures/BASIC/Wildlands.md",
+    "01-Campaigns/Test Campaign 99/05-Cultures/BASIC",
+    "99-Templates/newCampaignAtlas.md",
+    "90-Tools & Helpers/Buttons.md",
+    "01-Campaigns/Test Campaign 99/99-Misc Notes",
+    "01-Campaigns/Test Campaign 99/23-Deities",
+    "01-Campaigns/Test Campaign 99/22-Groups",
+    "01-Campaigns/Test Campaign 99/21-NPCs",
+    "01-Campaigns/Test Campaign 99/20-PCs",
+    "01-Campaigns/Test Campaign 99/13-Items & Artifacts",
+    "01-Campaigns/Test Campaign 99/12-Organizations",
+    "01-Campaigns/Test Campaign 99/11-Points of Interest",
+    "01-Campaigns/Test Campaign 99/10-Atlas",
+    "01-Campaigns/Test Campaign 99/Test Campaign 99 Home.md",
+    "99-Templates/Handlebars-JSON/Cultures-BASIC-JSON Template.md",
     "01-Campaigns/Test Campaign 01/05-Cultures/BASIC/Chilton.md",
     "01-Campaigns/Test Campaign 01/05-Cultures/BASIC/Dodble.md",
-    "99-Templates/Handlebars-JSON/Cultures-BASIC-JSON Template.md",
-    "99-Templates/Handlebars-JSON/Cultures-FMG-JSON Handlebars Template.md",
     "01-Campaigns/Test Campaign 01/05-Cultures/BASIC/Thornby.md",
     "01-Campaigns/Test Campaign 01/05-Cultures/BASIC/Guildford.md",
     "01-Campaigns/Test Campaign 01/05-Cultures/BASIC/Durton.md",
-    "01-Campaigns/Test Campaign 01/05-Cultures/BASIC/North.md",
-    "01-Campaigns/Test Campaign 01/05-Cultures/BASIC/Swaretown.md",
-    "01-Campaigns/Test Campaign 01/05-Cultures/BASIC/Manch.md",
-    "01-Campaigns/Test Campaign 01/05-Cultures/BASIC/Totham.md",
-    "01-Campaigns/Test Campaign 01/05-Cultures/BASIC/Normouth.md",
-    "01-Campaigns/Test Campaign 01/05-Cultures/BASIC/Wildlands.md",
-    "01-Campaigns/Test Campaign 01/05-Cultures/BASIC",
-    "01-Campaigns/Test Campaign 01/05-Cultures/Dodble.md",
-    "01-Campaigns/Test Campaign 01/10-Atlas/Burgs/Draxningra.md",
-    "99-Templates/Handlebars-JSON/Burgs-FMG-JSON Handlerbars Template.md",
-    "01-Campaigns/Test Campaign 01/10-Atlas/Burgs/Altford.md",
-    "01-Campaigns/Test Campaign 01/10-Atlas/Burgs/Aldock.md",
-    "01-Campaigns/Test Campaign 01/05-Cultures/Chilton.md",
-    "Home.md",
-    "01-Campaigns/Test Campaign 01/05-Cultures/Thornby.md",
-    "01-Campaigns/Test Campaign 01/05-Cultures/Guildford.md",
-    "01-Campaigns/Test Campaign 01/05-Cultures/Durton.md",
-    "01-Campaigns/Test Campaign 01/05-Cultures/North.md",
-    "01-Campaigns/Test Campaign 01/05-Cultures/Swaretown.md",
-    "01-Campaigns/Test Campaign 01/10-Atlas/Burgs",
-    "01-Campaigns/Test Campaign 01/Test Campaign 01/10-Atlas/Burgs",
-    "01-Campaigns/Test Campaign 01/Test Campaign 01/10-Atlas",
-    "01-Campaigns/Test Campaign 01/Test Campaign 01",
-    "01-Campaigns/Test Campaign 01/05-Cultures",
-    "01-Campaigns/Test Campaign 01/Burgs",
-    "01-Campaigns/Test Campaign 01/10-Atlas/Provinces",
-    "01-Campaigns/Test Campaign 01/10-Atlas/States",
-    "99-Templates/Handlebars-JSON/Helpers-FMG-JSON.js",
     "91-Assets/_general/PlaceholderImage.png",
     "91-Assets/_general/Grauern Cosmology-1920x1920.png"
   ]
