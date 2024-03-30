@@ -23,7 +23,7 @@ tags:
 template: "[[Handlebar - FMG - Burg CSV Template]]"
 templateVersion: 11
 type: {{type}}
-created: {{DATE:yyyy-mm-dd}}
+created: {{getDateTimestamp @importSettings}}
 WBProcess: FALSE
 world: {{@importdataRoot.info.mapName}}
 ---

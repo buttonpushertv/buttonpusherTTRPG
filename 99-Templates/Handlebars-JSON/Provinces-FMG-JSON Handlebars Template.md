@@ -2,7 +2,6 @@
 campaign: "{{getCampaignName @importSettings}}"
 capital: "[[{{getBurgName burg @importDataRoot.pack.burgs}}]]"
 color: {{color}}
-created: <% tp.file.creation_date("YYYY-MM-DD HH:mm") %>
 formName: {{formName}}
 fullName: {{fullName}}
 id: {{i}}
@@ -16,6 +15,7 @@ tags:
 - {{getStateName state @importDataRoot.pack.states}}-Province
 templateLink: "[[Handlebar - FMG- Provinces JSON Template]]"
 templateVersion: 1
+created: {{getDateTimestamp @importSettings}}
 WBProcess: FALSE
 world: {{@importDataRoot.info.mapName}}
 ---
@@ -68,12 +68,6 @@ world: {{@importDataRoot.info.mapName}}
 
 ### Zones/Regions
 
-> [!note|no-t] Zones/Regions
-> ```dataview
-> TABLE WITHOUT ID Zones
-> WHERE file = this.file
-> ```
-
 %% Zones & regions are any areas that need to be defined. See Points of Interest below as another place to add specific locations that are noteworthy. You can identify Zones/Regions in the properties above (metadata is searchable/indexable). And you can add specific info about any of them below. Use '[!note]- {Zone/Region name}' to place each one in it's own callout. %%
 
 ## History
@@ -114,35 +108,6 @@ Siginifcant Incidents in `=this.name`'s history:
 
 NOTE: In practice, you probably won't be adding items to these categories from this State page. You'll likely want to add them to the appropriate Province (less often) or Burg (more often) to give each of them a specific location or base of operation. %%
 
-> [!metadata|characters]- NPCs/Characters
-> `button-add-new-npc-modal` <- You may add groups here that are nomadic (range over the Province).
-> **However**, it's better to add them within the Province or Burg where they reside.
-> Below is a listing of all NPCs within `=this.name`:
-> ```dataview
-> table Pronouns, Party1Standing AS "Party Standing", join(Occupation, ", ") AS "Occupation(s)", join(link(AssociatedGroup), ", ") AS "Group(s)"
-> WHERE province = this.file.name AND contains(NoteType, "NPC") AND !contains(Condition, "Dead")
-> SORT file.name ASC
-> ```
-
-> [!metadata|groups]- Groups 
-> `button-add-new-group-modal` <- You may add groups here that are nomadic (range over the Province).
-> **However**, it's better to add them within the Province or Burg where they reside.
-> Below is a listing of all Groups within `=this.name`:
-> ```dataview 
-> table join(NoteType, ", ") AS "Note Type"
-> WHERE province = this.file.name AND contains(NoteType, "Group")
-> SORT Type ASC
-> ```
-
-> [!metadata|pois]- Points of Interest
-> `button-add-new-poi` <- You may add POIs here.
-> **However**, it's better to add them within the Province or Burg where they are located.
-> Below is a listing of all POIs within `=this.name`:
-> ```dataview
-> table join(NoteType, ", ") AS "Note Type", join(link(AffiliatedGroup), ", ") AS "Group(s)"
-> WHERE province = this.file.name AND contains(NoteType, "POI")
-> SORT file.name ASC
-> ```
 
 ---
 

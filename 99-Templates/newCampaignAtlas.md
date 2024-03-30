@@ -1,6 +1,6 @@
 ### States
 ```dataview
-TABLE FullName as "Full Name", ProvinceList as "Provinces", Capital as "Capital"
+TABLE WITHOUT ID file.link as "Full Name", ProvinceList as "Provinces", Capital as "Capital"
 FROM #State and "{{VALUE:newCampaignPath}}/10-Atlas"
 SORT file.name ASC
 ```
@@ -20,7 +20,6 @@ SORT State ASC
 ```dataview
 TABLE FullName as "Full Name", ProvinceList as "Provinces", Capital as "Capital"
 FROM #Burg and "{{VALUE:newCampaignPath}}/10-Atlas"
-WHERE AtlasType = "Burg"
 SORT file.name ASC
 ```
 
