@@ -54,3 +54,36 @@ pulled out of Burg Template - needs to be re-worked before putting back in
 > SORT file.name ASC
 > ```
 ```
+
+---
+
+pulled out of State template - needs to be re-worked before putting back in
+
+```
+> [!metadata|characters]- NPCs/Characters
+> Add NPCs within the Province or Burg where they reside.
+> Below is a listing of all NPCs within `=this.name`:
+> ```dataview
+> table Pronouns, Party1Standing AS "Party Standing", join(Occupation, ", ") AS "Occupation(s)", join(link(AssociatedGroup), ", ") AS "Group(s)"
+> WHERE state = this.file.name AND contains(NoteType, "NPC") AND !contains(Condition, "Dead")
+> SORT file.name ASC
+> ```
+
+> [!metadata|gropups]- Groups
+> Add Groups within the Province or Burg where they reside.
+> Below is a listing of all Groups within `=this.name`:
+> ```dataview 
+> table join(NoteType, ", ") AS "Note Type"
+> WHERE state = this.file.name AND contains(NoteType, "Group")
+> SORT Type ASC
+> ```
+
+> [!metadata|pois]- Points of Interest
+> Add POIs within the Province or Burg where they reside.
+> Below is a listing of all POIs within `=this.name`:
+> ```dataview
+> table join(NoteType, ", ") AS "Note Type", join(link(AffiliatedGroup), ", ") AS "Group(s)"
+> WHERE state = this.file.name AND contains(NoteType, "POI")
+> SORT file.name ASC
+> ```
+```

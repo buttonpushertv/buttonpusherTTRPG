@@ -14,6 +14,8 @@ const folderNames = [
 "02-WorldBuilding",
 "03-Story Arcs",
 "04-Lore",
+"05-Cultures",
+"06-Religions",
 "10-Atlas",
 "11-Points of Interest",
 "12-Organizations",
@@ -40,18 +42,21 @@ for (const folderName of folderNames) {
 
 ## Player Characters
 
-(PC info will go here)
-
+-
 ![random|sban+hmicro](https://source.unsplash.com/random?abstract,fire)
 ## Sessions
-
-(Session info will go here)
-
+```dataview
+table SessionStatus as "Status", Summary as "Summary" from "{{VALUE:newCampaignPath}}"
+where contains(type,"session")
+SORT SessionDate DESC
+```
 ![random|sban+hmicro](https://source.unsplash.com/random?abstract,paper)
 ## Story Arcs
-
-(Story Arc info will go here)
-
+```dataview
+table Status as "Status", Summary as "Summary" from "{{VALUE:newCampaignPath}}"
+where contains(type,"arc") AND !contains(status,"complete") 
+SORT SessionDate DESC
+```
 ![random|sban+hmicro](https://source.unsplash.com/random?abstract,water)
 
 ## Truths about the campaign/world
@@ -60,4 +65,6 @@ for (const folderName of folderNames) {
 
 ## Custom rules
 
-(Custom Rules info will go here)
+- [[Character options]]
+- [[House rules]]
+- [[Safety Tools]]

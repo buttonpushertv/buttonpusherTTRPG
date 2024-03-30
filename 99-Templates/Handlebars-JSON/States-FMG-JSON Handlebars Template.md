@@ -1,13 +1,13 @@
 ---
 alert: {{alert}}
-alias:
+alias: {{name}}
 area: {{totalArea area}}
 burgs: {{burgs}}
 campaign: "{{getCampaignName @importSettings}}"
 capital: "[[{{getBurgName capital @importDataRoot.pack.burgs}}]]"
 color: {{color}}
-created: <% tp.file.creation_date("YYYY-MM-DD HH:mm") %>
-culture: {{getCultureName culture @importDataRoot.pack.cultures}}]]"
+created: {{getDateTimestamp @importSettings}}
+culture: "[[{{getCultureName culture @importDataRoot.pack.cultures}}]]"
 emblem: "{{getCampaignName @importSettings}} Emblem {{fullName}}"
 expansionism: {{expansionism}}
 form: {{form}}
@@ -31,7 +31,7 @@ shortDescription:
 urban: {{calcPopulation urban}}
 tags:
 - State
-templateLink: "[[Handlebar - FMG - States JSON Template]]"
+templateLink: "[[States-FMG-JSON Handlebars Template]]"
 templateVersion: 1
 type: {{type}}
 WBProcess: FALSE
@@ -42,6 +42,7 @@ world: {{@importDataRoot.info.mapName}}
 [[{{getCampaignHomeNote @importSettings}}]] | [[{{getCampaignAtlasNote @importSettings}}]]
 
 %% Edit the map data by updating the 'lat' & 'long' values to center the default map view one the location. %% 
+
 > [!metadata|map]- {{name}} Map
 > ```leaflet
 > id: State-{{name}}
@@ -61,6 +62,7 @@ world: {{@importDataRoot.info.mapName}}
 > ```
 
 %% All the info in this 'infobox' will appear in the panel to the right. Most of these values are pulled from the metadata in the properties above. %%
+
 > [!infobox]
 > ![[{{@importDataRoot.info.mapName}} Emblem {{fullName}}.svg]]
 > ###### Info
@@ -95,6 +97,7 @@ world: {{@importDataRoot.info.mapName}}
 # **`=this.fullName`**
 
 %% Below is the fancy callout box where you can place some basic info. Precede any new lines with a '>' & space to place them within the box. %%
+
 > [!recite|no-t text-center]+ Introduction
 > *`= this.shortDescription` *
 
@@ -137,39 +140,6 @@ Siginifcant Incidents in `=this.name`'s history:
 
 > [!question]- Hidden Details
 >
-
----
-
-%% The metadata sections below allow you to add some detailed info about NPCs, Groups, and Points of Interest.
-
-NOTE: In practice, you probably won't be adding items to these categories from this State page. You'll likely want to add them to the appropriate Province (less often) or Burg (more often) to give each of them a specific location or base of operation. %%
-
-> [!metadata|characters]- NPCs/Characters
-> Add NPCs within the Province or Burg where they reside.
-> Below is a listing of all NPCs within `=this.name`:
-> ```dataview
-> table Pronouns, Party1Standing AS "Party Standing", join(Occupation, ", ") AS "Occupation(s)", join(link(AssociatedGroup), ", ") AS "Group(s)"
-> WHERE state = this.file.name AND contains(NoteType, "NPC") AND !contains(Condition, "Dead")
-> SORT file.name ASC
-> ```
-
-> [!metadata|gropups]- Groups
-> Add Groups within the Province or Burg where they reside.
-> Below is a listing of all Groups within `=this.name`:
-> ```dataview 
-> table join(NoteType, ", ") AS "Note Type"
-> WHERE state = this.file.name AND contains(NoteType, "Group")
-> SORT Type ASC
-> ```
-
-> [!metadata|pois]- Points of Interest
-> Add POIs within the Province or Burg where they reside.
-> Below is a listing of all POIs within `=this.name`:
-> ```dataview
-> table join(NoteType, ", ") AS "Note Type", join(link(AffiliatedGroup), ", ") AS "Group(s)"
-> WHERE state = this.file.name AND contains(NoteType, "POI")
-> SORT file.name ASC
-> ```
 
 ---
 

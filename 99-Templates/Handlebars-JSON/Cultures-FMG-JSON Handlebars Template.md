@@ -1,13 +1,13 @@
 ---
 alias:
 campaign: "{{getCampaignName @importSettings}}"
-id: {{i}}
 cultureName: "{{name}}"
-name: "{{name}}"
 code: {{code}}
 color: {{color}}
 center: {{center}}
+created: {{getDateTimestamp @importSettings}}
 expansionism: {{expansionism}}
+id: {{i}}
 namesbase: {{base}}
 origins: {{origins}}
 pronounced:
@@ -15,10 +15,9 @@ shortDescription:
 shield: {{shield}}
 tags:
 - Culture
-template: "[[Handlebar-FMG-Cultures-JSON]]"
+template: "[[Cultures-FMG-JSON Handlebars Template]]"
 templateVersion: 1
 type: {{type}}
-created: {{getDateTimestamp @importSettings}}
 WBProcess: FALSE
 world: {{@importdataRoot.info.mapName}}
 ---
@@ -28,6 +27,7 @@ world: {{@importdataRoot.info.mapName}}
 [[{{getCampaignHomeNote @importSettings}}]] | [[{{getCampaignAtlasNote @importSettings}}]]
 
 %% All the info in this 'infobox' will appear in the panel to the right. Most of these values are pulled from the metadata in the properties above. %%
+
 > [!infobox]
 > ###### Info
 >  |
@@ -37,8 +37,6 @@ world: {{@importdataRoot.info.mapName}}
 >
 
 # **`=this.cultureName`**
-
-Name: `=this.name`
  
 > [!recite|no-t text-center]+ Introduction
 > *`=this.shortDescription`*
@@ -54,11 +52,8 @@ Below are any notable zones or regions within `=this.cultureName`
 
 %% You can use the 'Timeline' Callout features of the ITS theme here to create a timeline of any important events. Remove the line below that reads '(delete this line to enable timeline)' and the trailing double percent signs & add a set of double percent signs here ->
 
-> [!timeline|t-l] **`=this.burgName` Founded** _Date of founding._
-> `=this.burgName` was founded by...
-
-> [!timeline|t-r] **`=this.burgName` Founded** _Date of Founding_
-> And then, `=this.burgName` was founded.
+> [!timeline|t-l] **`=this.cultureName` Founded** _Date of founding._
+> `=this.cultureName` was founded by...
 
 > [!timeline|t-l t-2] **Something Happened** *A significant event.*
 > Something momentous occurred on this day.
