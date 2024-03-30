@@ -1705,7 +1705,8 @@ var DEFAULT_SETTINGS = {
   exportFileOpen: true,
   exportFileNewLeaf: true,
   exportFileWhenLoaded: false,
-  debugMode: false
+  debugMode: false,
+  descriptionLength: 50
 };
 var ShareMyPluginSettingTab = class extends import_obsidian3.PluginSettingTab {
   constructor(app, plugin) {
@@ -1715,8 +1716,19 @@ var ShareMyPluginSettingTab = class extends import_obsidian3.PluginSettingTab {
   display() {
     let { containerEl } = this;
     containerEl.empty();
+    new import_obsidian3.Setting(this.containerEl).setName("Max length of description").setDesc("-1: do not output description. 0: output description no matter how long it is. >0: output description up to the specified length.").addText((cb) => {
+      cb.setPlaceholder("length").setValue(this.plugin.settings.descriptionLength.toString()).onChange(async (newValue) => {
+        const v = Number(newValue);
+        if (Number.isNaN(v)) {
+          new import_obsidian3.Notice(`The length must be a number!`);
+        } else {
+          this.plugin.settings.descriptionLength = v;
+          await this.plugin.saveSettings();
+        }
+      });
+    });
     containerEl.createEl("h2", { text: "Export to file" });
-    new import_obsidian3.Setting(this.containerEl).setName("Path of file to export").setDesc("IMPORTANT: This file will be overwritten by the plugin, i.e., old content would be deleted.").addSearch((cb) => {
+    new import_obsidian3.Setting(this.containerEl).setName("Path of file to export").setDesc("IMPORTANT: This file will be overwritten by the plugin, i.e., old content would be deleted.").addText((cb) => {
       new FileSuggest(this.app, cb.inputEl);
       cb.setPlaceholder("output/ShareMyPlugin.md").setValue(this.plugin.settings.exportFilePath).onChange(async (newValue) => {
         this.plugin.settings.exportFilePath = newValue;
@@ -1735,7 +1747,7 @@ var ShareMyPluginSettingTab = class extends import_obsidian3.PluginSettingTab {
       });
     });
     if (this.plugin.settings.exportFileOpen) {
-      new import_obsidian3.Setting(containerEl).setName("Open in new leaf").setDesc("Open the exported file in a new leaf.").addToggle((toggle) => {
+      new import_obsidian3.Setting(containerEl).setName("Open in new tab").setDesc("Open the exported file in a new tab (leaf).").addToggle((toggle) => {
         toggle.setValue(this.plugin.settings.exportFileNewLeaf).onChange(async (value) => {
           this.plugin.settings.exportFileNewLeaf = value;
           await this.plugin.saveSettings();
@@ -1774,7 +1786,8 @@ var EN = {
   },
   genTableTemplate: {
     Heading: "|Name|Author|Version|",
-    Align: "|----|------|-------|"
+    Align: "|----|------|-------|",
+    headerDescription: "Description|"
   }
 };
 var ZH = {
@@ -1787,20 +1800,8 @@ var ZH = {
   },
   genTableTemplate: {
     Heading: "|\u540D\u79F0|\u4F5C\u8005|\u7248\u672C|",
-    Align: "|---|---|---|"
-  }
-};
-var ZHtw = {
-  command: {
-    GenerateActiveList: "\u532F\u51FA\u555F\u7528\u63D2\u4EF6\u5217\u8868",
-    GenerateActiveTable: "\u532F\u51FA\u555F\u7528\u63D2\u4EF6\u8868\u683C",
-    GenerateInactiveList: "\u532F\u51FA\u7981\u7528\u63D2\u4EF6\u5217\u8868",
-    GenerateInactiveTable: "\u532F\u51FA\u7981\u7528\u63D2\u4EF6\u8868\u683C",
-    ExportFile: "\u532F\u51FA\u5230\u6A94\u6848"
-  },
-  genTableTemplate: {
-    Heading: "|\u540D\u7A31|\u4F5C\u8005|\u7248\u672C|",
-    Align: "|---|---|---|"
+    Align: "|---|---|---|",
+    headerDescription: "\u63CF\u8FF0|"
   }
 };
 var Locals = class {
@@ -1810,7 +1811,7 @@ var Locals = class {
       case "zh":
         return ZH;
       case "zh-tw":
-        return ZHtw;
+        return ZH;
       default:
         return EN;
     }
@@ -1970,7 +1971,7 @@ var ShareMyPlugin = class extends import_obsidian4.Plugin {
         content = this.genTable(plugins);
         break;
       default:
-        new import_obsidian4.Notice(`Unknow export file format: ${this.settings.exportFileFormat}`);
+        new import_obsidian4.Notice(`Unknown export file format: ${this.settings.exportFileFormat}`);
         return;
     }
     const commentPrefix = "<!-- ShareMyPlugin begin -->";
@@ -2006,6 +2007,9 @@ var ShareMyPlugin = class extends import_obsidian4.Plugin {
         line += ` by [*${m.author2}*](${m.authorUrl})`;
       }
       line += processFunding(m);
+      if (this.settings.descriptionLength >= 0) {
+        line += ` ^[${m == null ? void 0 : m.description}]`;
+      }
       text.push(line);
     }
     this.debug(text);
@@ -2014,9 +2018,10 @@ var ShareMyPlugin = class extends import_obsidian4.Plugin {
   genTable(plugins) {
     this.debug("genTable");
     const t = Locals.get();
+    const hasDesc = this.settings.descriptionLength >= 0;
     let text = [""];
-    text.push(t.genTableTemplate.Heading);
-    text.push(t.genTableTemplate.Align);
+    text.push(t.genTableTemplate.Heading + (hasDesc ? t.genTableTemplate.headerDescription : ""));
+    text.push(t.genTableTemplate.Align + (hasDesc ? "---|" : ""));
     for (let key in plugins) {
       this.debug(plugins[key]);
       const m = plugins[key].manifest;
@@ -2026,7 +2031,16 @@ var ShareMyPlugin = class extends import_obsidian4.Plugin {
         author = `[${m == null ? void 0 : m.author2}](${m == null ? void 0 : m.authorUrl})`;
       }
       author += processFunding(m);
-      text.push(`|${name}|${author}|${m == null ? void 0 : m.version}|`);
+      let line = `|${name}|${author}|${m == null ? void 0 : m.version}|`;
+      if (hasDesc) {
+        let description = m == null ? void 0 : m.description;
+        if (this.settings.descriptionLength > 0 && description.length > this.settings.descriptionLength) {
+          description = description.slice(0, this.settings.descriptionLength).replace(/ +.{1,8}$/, "");
+          description += "...";
+        }
+        line += `${description}|`;
+      }
+      text.push(line);
     }
     this.debug(text);
     return text.join("\n") + "\n";

@@ -4,19 +4,15 @@
     "type": "split",
     "children": [
       {
-        "id": "e7afbf722a25a472",
+        "id": "3f5130884804daa6",
         "type": "tabs",
         "children": [
           {
-            "id": "0e5567f6f150a7b2",
+            "id": "4f430e3d6ddf9d32",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Home.md",
-                "mode": "preview",
-                "source": true
-              }
+              "type": "empty",
+              "state": {}
             }
           }
         ]
@@ -85,7 +81,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Home.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +97,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Home.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -124,9 +118,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "Home.md"
-              }
+              "state": {}
             }
           },
           {
@@ -136,15 +128,24 @@
               "type": "DICE_ROLLER_VIEW",
               "state": {}
             }
+          },
+          {
+            "id": "3638fcfeaa4bbc98",
+            "type": "leaf",
+            "state": {
+              "type": "advanced-tables-toolbar",
+              "state": {}
+            }
           }
         ]
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 303.5
   },
   "left-ribbon": {
     "hiddenItems": {
+      "obsidian-import-json:JSON/CSV Importer": false,
       "homepage:Open homepage": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
@@ -153,48 +154,50 @@
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
       "obsidian-excalidraw-plugin:Create new drawing": false,
-      "obsidian-import-json:JSON/CSV Importer": false,
       "obsidian-leaflet-plugin:Open Leaflet Map": false,
-      "templater-obsidian:Templater": false
+      "templater-obsidian:Templater": false,
+      "workspaces:Manage workspace layouts": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "0e5567f6f150a7b2",
+  "active": "4f430e3d6ddf9d32",
   "lastOpenFiles": [
-    "97-External Files/buttonpusherTTRPG(Mac).code-workspace",
-    "01-Campaigns/Campaign Index.md",
-    "99-Templates/newCampaignTemplate.md",
-    "01-Campaigns/Test Campaign 05/00-Campaign Home/Test Campaign 05 Home.md",
-    "90-Tools & Helpers/Buttons.md",
-    "01-Campaigns/Test Campaign 05/99-Misc Notes",
-    "01-Campaigns/Test Campaign 05/23-Deities",
-    "01-Campaigns/Test Campaign 05/22-Groups",
-    "01-Campaigns/Test Campaign 05/21-NPCs",
-    "01-Campaigns/Test Campaign 05/20-PCs",
-    "01-Campaigns/Test Campaign 05/13-Items & Artifacts",
-    "01-Campaigns/Test Campaign 05/12-Organizations",
-    "01-Campaigns/Test Campaign 05/11-Points of Interest",
-    "01-Campaigns/Test Campaign 05/10-Atlas",
-    "01-Campaigns/Test Campaign 05/06-Religions",
+    "01-Campaigns/Test Campaign 01/05-Cultures/BASIC/Chilton.md",
+    "01-Campaigns/Test Campaign 01/05-Cultures/BASIC/Dodble.md",
+    "99-Templates/Handlebars-JSON/Cultures-BASIC-JSON Template.md",
+    "99-Templates/Handlebars-JSON/Cultures-FMG-JSON Handlebars Template.md",
+    "01-Campaigns/Test Campaign 01/05-Cultures/BASIC/Thornby.md",
+    "01-Campaigns/Test Campaign 01/05-Cultures/BASIC/Guildford.md",
+    "01-Campaigns/Test Campaign 01/05-Cultures/BASIC/Durton.md",
+    "01-Campaigns/Test Campaign 01/05-Cultures/BASIC/North.md",
+    "01-Campaigns/Test Campaign 01/05-Cultures/BASIC/Swaretown.md",
+    "01-Campaigns/Test Campaign 01/05-Cultures/BASIC/Manch.md",
+    "01-Campaigns/Test Campaign 01/05-Cultures/BASIC/Totham.md",
+    "01-Campaigns/Test Campaign 01/05-Cultures/BASIC/Normouth.md",
+    "01-Campaigns/Test Campaign 01/05-Cultures/BASIC/Wildlands.md",
+    "01-Campaigns/Test Campaign 01/05-Cultures/BASIC",
+    "01-Campaigns/Test Campaign 01/05-Cultures/Dodble.md",
+    "01-Campaigns/Test Campaign 01/10-Atlas/Burgs/Draxningra.md",
+    "99-Templates/Handlebars-JSON/Burgs-FMG-JSON Handlerbars Template.md",
+    "01-Campaigns/Test Campaign 01/10-Atlas/Burgs/Altford.md",
+    "01-Campaigns/Test Campaign 01/10-Atlas/Burgs/Aldock.md",
+    "01-Campaigns/Test Campaign 01/05-Cultures/Chilton.md",
     "Home.md",
-    "01-Campaigns/Test Campaign 04/00-Campaign Home/Test Campaign 04 Home.md",
-    "01-Campaigns/Test Campaign 03/00-Campaign Home/Test Campaign 03 Home.md",
-    "01-Campaigns/Test campaign 02/00-Campaign Home/Test campaign 02 Home.md",
-    "99-Templates/Handlebars-JSON/Handlebar - FMG - Cultures JSON Template.md",
-    "99-Templates/Template Archives/Log Style Templates/Scene log template.md",
-    "99-Templates/Template Archives/Log Style Templates/PC log.md",
-    "99-Templates/Template Archives/Log Style Templates/NPC log.md",
-    "99-Templates/Template Archives/Log Style Templates/Monster log.md",
-    "99-Templates/Template Archives/Log Style Templates/Location log.md",
-    "99-Templates/Template Archives/Log Style Templates/Item log.md",
-    "99-Templates/Template Archives/Log Style Templates/Faction log.md",
-    "99-Templates/Template Archives/Log Style Templates/Adventure log template.md",
-    "99-Templates/Template Archives/Log Style Templates/Ability log.md",
-    "99-Templates/TTRPG Templates/Text_Generator/Textgen Monster Template.md",
-    "99-Templates/TTRPG Templates/Text_Generator/TextGen Location.md",
-    "99-Templates/TTRPG Templates/Text_Generator/NPC template for Datasphere.md",
-    "99-Templates/TTRPG Templates/Text_Generator/GM GPT NPC template.md",
-    "99-Templates/TTRPG Templates/Text_Generator/DM brainstorming.md",
-    "99-Templates/TTRPG Templates/Story Arcs/Template - Story Arc.md",
-    "99-Templates/TTRPG Templates/Session Notes/Template - Session Notes.md"
+    "01-Campaigns/Test Campaign 01/05-Cultures/Thornby.md",
+    "01-Campaigns/Test Campaign 01/05-Cultures/Guildford.md",
+    "01-Campaigns/Test Campaign 01/05-Cultures/Durton.md",
+    "01-Campaigns/Test Campaign 01/05-Cultures/North.md",
+    "01-Campaigns/Test Campaign 01/05-Cultures/Swaretown.md",
+    "01-Campaigns/Test Campaign 01/10-Atlas/Burgs",
+    "01-Campaigns/Test Campaign 01/Test Campaign 01/10-Atlas/Burgs",
+    "01-Campaigns/Test Campaign 01/Test Campaign 01/10-Atlas",
+    "01-Campaigns/Test Campaign 01/Test Campaign 01",
+    "01-Campaigns/Test Campaign 01/05-Cultures",
+    "01-Campaigns/Test Campaign 01/Burgs",
+    "01-Campaigns/Test Campaign 01/10-Atlas/Provinces",
+    "01-Campaigns/Test Campaign 01/10-Atlas/States",
+    "99-Templates/Handlebars-JSON/Helpers-FMG-JSON.js",
+    "91-Assets/_general/PlaceholderImage.png",
+    "91-Assets/_general/Grauern Cosmology-1920x1920.png"
   ]
 }

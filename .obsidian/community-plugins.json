@@ -6,7 +6,6 @@
   "obsidian-dice-roller",
   "editing-toolbar",
   "obsidian-excalidraw-plugin",
-  "obsidian-import-json",
   "obsidian-leaflet-plugin",
   "obsidian-meta-bind-plugin",
   "quickadd",
@@ -16,5 +15,6 @@
   "various-complements",
   "obsidian-sort-and-permute-lines",
   "homepage",
-  "table-editor-obsidian"
+  "table-editor-obsidian",
+  "obsidian-import-json"
 ]

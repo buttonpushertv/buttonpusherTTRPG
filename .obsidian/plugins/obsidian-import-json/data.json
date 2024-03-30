@@ -1,9 +1,9 @@
 {
-  "jsonName": "info.mapName",
+  "jsonName": "name",
   "jsonNamePath": false,
   "jsonUrl": "",
-  "folderName": "01-Campaigns/Test Campaign 01/10-Atlas/",
-  "topField": "",
+  "folderName": "01-Campaigns/Test Campaign 01/05-Cultures/BASIC",
+  "topField": "pack.cultures",
   "notePrefix": "",
   "noteSuffix": "",
   "handleExistingNote": 1,
