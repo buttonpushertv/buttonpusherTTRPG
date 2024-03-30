@@ -1,25 +1,28 @@
 // Here is a list of all the custom helpers in this file with all the data input they expect
 /*
-getCampaignName(importSettings)
-getCampaignHomeNote(importSettings)
-getCampaignAtlasNote(importSettings)
-getCampaignCalendar(importSettings)
-getBurgName(burgId,allBurgs)
-getStateName(stateId,allStates)
-getProvinceName(provinceId,allProvinces)
-getCultureName(cultureId,allCultures)
-getMfcgURL(currentBurg, mapSeed, allCells, mapSettings)
-getHeight(currentCell, mapSettings, allCells)
-totalArea(area)
-calcPopulation(popValue)
-totalPopulation(rural,urban)
-burgProvinceLookup(cellId,allCells,allProvinces)
+(indicated by the 3-digit number at head of the line - for easy locating of them)
+001 getCampaignName(importSettings)
+002 getCampaignHomeNote(importSettings)
+003 getCampaignAtlasNote(importSettings)
+004 getCampaignCalendar(importSettings)
+005 getDateTimestamp(importSettings)
+006 getBurgName(burgId,allBurgs)
+007 getStateName(stateId,allStates)
+008 getProvinceName(provinceId,allProvinces)
+009 getCultureName(cultureId,allCultures)
+010 getMfcgURL(currentBurg, mapSeed, allCells, mapSettings)
+011 getCoatOfArmsEmblem (currentBurg, "coa fields") <----- TO BE DONE
+012 getHeight(currentCell, mapSettings, allCells)
+013 totalArea(area)
+014 calcPopulation(popValue)
+015 totalPopulation(rural,urban)
+016 burgProvinceLookup(cellId,allCells,allProvinces)
 
 IMPORTANT: All of these helpers rely on the campaigns being stored in the vault in a sub-folder within a sub-solder off of the root of the vault. For example, by default, other scripts in this vault will store any newly created campaigns under: "01-Campaigns" + campiagn name off of the root of the buttonpusherTTRPG vault. All of the helpers below require that method of storing the campaigns. See the common line, in most of the helpers that reads: const (somevariable) = `${folders[1]}` - that is what is extracting the location of the specific campaign that is the target for that process.
 
 */
 
-
+// 001
 // Custom helper function to extract thisCampaignName from @importSettings
 handlebars.registerHelper('getCampaignName', function(importSettings) {
   // console.log("importSettings: ", importSettings);
@@ -29,6 +32,7 @@ handlebars.registerHelper('getCampaignName', function(importSettings) {
   return thisCampaignName;
 });
 
+// 002
 // Custom helper function to extract thisCampaignHomeNote from @importSettings
 handlebars.registerHelper('getCampaignHomeNote', function(importSettings) {
   // console.log("importSettings: ", importSettings);
@@ -37,6 +41,7 @@ handlebars.registerHelper('getCampaignHomeNote', function(importSettings) {
   return thisCampaignHomeNote;
 });
 
+// 003
 // Custom helper function to extract thisCampaignAtlasNote from @importSettings
 handlebars.registerHelper('getCampaignAtlasNote', function(importSettings) {
   // console.log("importSettings: ", importSettings);
@@ -45,6 +50,7 @@ handlebars.registerHelper('getCampaignAtlasNote', function(importSettings) {
   return thisCampaignAtlasNote;
 });
 
+// 004
 // Custom helper function to extract thisCampaignCalendar from @importSettings
 handlebars.registerHelper('getCampaignCalendar', function(importSettings) {
   // console.log("importSettings: ", importSettings);
@@ -54,6 +60,21 @@ handlebars.registerHelper('getCampaignCalendar', function(importSettings) {
   return thisCampaignCalendar;
 });
 
+// 005
+// Custom helper function to get the current date and time and format them for timestamping on import
+handlebars.registerHelper('getDateTimestamp', function(importSettings) {
+  const currentDate = new Date();
+
+  const year = currentDate.getFullYear();
+  const month = String(currentDate.getMonth() + 1).padStart(2, '0');
+  const day = String(currentDate.getDate()).padStart(2, '0');
+  const hours = String(currentDate.getHours()).padStart(2, '0');
+  const minutes = String(currentDate.getMinutes()).padStart(2, '0');
+
+  return `${year}-${month}-${day}-${hours}:${minutes}`;
+});
+
+// 006
 // Custom helper function to get Burg Name
 handlebars.registerHelper('getBurgName', function(burgId,allBurgs) {
   //console.log("burgId:", burgId);
@@ -67,6 +88,7 @@ handlebars.registerHelper('getBurgName', function(burgId,allBurgs) {
   return burgFound ? burgFound.name : 'Unknown';
 });
 
+// 007
 // Custom helper function to get State Name
 handlebars.registerHelper('getStateName', function(stateId,allStates) {
   //console.log("StateId:", stateId);
@@ -80,6 +102,7 @@ handlebars.registerHelper('getStateName', function(stateId,allStates) {
   return stateName ? stateName.name : 'Unknown';
 });
 
+// 008
 // Custom helper function to get Province Name
 handlebars.registerHelper('getProvinceName', function(provinceId,allProvinces) {
   //console.log("provinceId:", provinceId);
@@ -92,6 +115,7 @@ handlebars.registerHelper('getProvinceName', function(provinceId,allProvinces) {
   return provinceName ? provinceName.fullName : 'Unknown';
 });
 
+// 009
 // Custom helper function to get Culture Name
 handlebars.registerHelper('getCultureName', function(cultureId,allCultures) {
   //console.log("cultureId:", cultureId);
@@ -105,6 +129,7 @@ handlebars.registerHelper('getCultureName', function(cultureId,allCultures) {
   return cultureName ? cultureName.name : 'Unknown';
 });
 
+// 010
 // Custom helper to construct the Medieval Fantasy City Generator link
 // based on the data model for Fantasy Map Generator - https://github.com/Azgaar/Fantasy-Map-Generator/wiki/Data-model
 // Portions of this code are adapted from the Fantasy Map Generator Code - https://github.com/Azgaar/Fantasy-Map-Generator
@@ -200,6 +225,15 @@ handlebars.registerHelper('getMfcgURL', function(currentBurg, mapSeed, allCells,
 
 });
 
+// 011
+// Custom helper to create code for display of Coat of Arms Emblem
+// This code is pulled from the 'coa' elements
+// based on the data model for Fantasy Map Generator - https://github.com/Azgaar/Fantasy-Map-Generator/wiki/Data-model
+// using Amoria API - (link to Amoria)
+// Portions of this code are adapted from the Fantasy Map Generator Code - https://github.com/Azgaar/Fantasy-Map-Generator
+// TO BE DONE
+
+// 012
 // Custom Helper to calculate height value from map data
 // Portions of this code are adapted from the Fantasy Map Generator Code - https://github.com/Azgaar/Fantasy-Map-Generator
   handlebars.registerHelper('getHeight', function(currentCell, mapSettings, allCells) {
@@ -229,6 +263,7 @@ handlebars.registerHelper('getMfcgURL', function(currentBurg, mapSeed, allCells,
     };
   });
 
+// 013
 // Custom helper to derive total area
 handlebars.registerHelper('totalArea', function(area) {
   if (area === undefined) {
@@ -237,6 +272,7 @@ handlebars.registerHelper('totalArea', function(area) {
   return Math.floor(area * 9).toLocaleString();
   });
 
+// 014
 // Custom helper to calculate population
 handlebars.registerHelper('calcPopulation', function(popValue) {
   if (popValue === undefined) {
@@ -245,6 +281,7 @@ handlebars.registerHelper('calcPopulation', function(popValue) {
     return Math.floor(popValue * 1000).toLocaleString();
   });
 
+// 015
 // Custom helper to derive total population
 handlebars.registerHelper('totalPopulation', function(rural,urban) {
   if (rural === undefined || urban === undefined) {
@@ -254,6 +291,7 @@ handlebars.registerHelper('totalPopulation', function(rural,urban) {
   return Math.floor(tempTotalPop * 1000).toLocaleString();
   });
 
+// 016
 // Custom helper to return the values from a given cell
 handlebars.registerHelper('burgProvinceLookup', function(cellId,allCells,allProvinces) {
   if (cellId === undefined) {

@@ -1,5 +1,5 @@
 ---
-alias: {{name}}
+alias:
 campaign: "{{getCampaignName @importSettings}}"
 id: {{i}}
 cultureName: "{{name}}"
@@ -10,7 +10,7 @@ center: {{center}}
 expansionism: {{expansionism}}
 namesbase: {{base}}
 origins: {{origins}}
-pronounced:{{name}}
+pronounced:
 shortDescription:
 shield: {{shield}}
 tags:
@@ -18,7 +18,7 @@ tags:
 template: "[[Handlebar-FMG-Cultures-JSON]]"
 templateVersion: 1
 type: {{type}}
-created: <% tp.file.creation_date("YYYY-MM-DD HH:mm") %>
+created: {{getDateTimestamp @importSettings}}
 WBProcess: FALSE
 world: {{@importdataRoot.info.mapName}}
 ---
@@ -46,13 +46,7 @@ Name: `=this.name`
 %% GENERAL NOTES GO HERE - free-form text or images %%
 
 ### Zones/Regions/Neighborhoods
-Below are any notable zones or regions within `=this.burgName`
-
-> [!note]- Zones/Regions
-> ```dataview
-> TABLE WITHOUT ID Zones
-> WHERE file = this.file
-> ```
+Below are any notable zones or regions within `=this.cultureName`
 
 %% Zones & regions are any areas that need to be defined. See Points of Interest below as another place to add specific locations that are noteworthy. You can identify Zones/Regions in the properties above (metadata is searchable/indexable). And you can add specific info about any of them below. Use '[!note]- {Zone/Region name}' to place each one in it's own callout. %%
 
