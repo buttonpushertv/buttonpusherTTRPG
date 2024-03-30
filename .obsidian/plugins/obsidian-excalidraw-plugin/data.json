@@ -1,6 +1,7 @@
 {
   "folder": "Excalidraw",
   "cropFolder": "",
+  "annotateFolder": "",
   "embedUseExcalidrawFolder": false,
   "templateFilePath": "Excalidraw/Template.excalidraw",
   "scriptFolderPath": "Excalidraw/Scripts",
@@ -15,6 +16,7 @@
   "drawingFilenameDateTime": "YYYY-MM-DD HH.mm.ss",
   "useExcalidrawExtension": true,
   "cropPrefix": "cropped_",
+  "annotatePrefix": "annotated_",
   "previewImageType": "SVGIMG",
   "allowImageCache": true,
   "displayExportedImageIfAvailable": false,
@@ -89,7 +91,7 @@
   "mdCSS": "",
   "scriptEngineSettings": {},
   "defaultTrayMode": true,
-  "previousRelease": "2.0.25",
+  "previousRelease": "2.0.26",
   "showReleaseNotes": true,
   "showNewVersionNotification": true,
   "latexBoilerplate": "\\color{blue}",
@@ -729,5 +731,7 @@
     }
   },
   "slidingPanesSupport": false,
-  "areaZoomLimit": 1
+  "areaZoomLimit": 1,
+  "longPressDesktop": 500,
+  "longPressMobile": 500
 }

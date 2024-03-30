@@ -1,0 +1,9 @@
+{
+	"id": "sort-frontmatter",
+	"name": "Sort Frontmatter",
+	"minAppVersion": "1.0.20",
+	"description": "Sort frontmatter recursively",
+	"author": "Kanzi",
+	"isDesktopOnly": true,
+	"version": "1.0.24"
+}

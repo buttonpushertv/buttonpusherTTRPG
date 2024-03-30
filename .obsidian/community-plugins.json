@@ -16,5 +16,6 @@
   "obsidian-sort-and-permute-lines",
   "homepage",
   "table-editor-obsidian",
-  "obsidian-import-json"
+  "obsidian-import-json",
+  "sort-frontmatter"
 ]
