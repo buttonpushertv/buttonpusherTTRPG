@@ -6,6 +6,10 @@
 [[Obsidian Formatting Cheat Sheet]]
 [[Obsidian Formatting Cheat Sheet#ITS Theme Syntax]]
 
+## Utils
+`BUTTON[reload-vault]` | `BUTTON[load-workspace]`
+
+
 ## Docs for Plugins
 [GitHub - javalent/the-calendarium: The ultimate Obsidian plugin for crafting mind-bending fantasy and sci-fi calendars](https://github.com/javalent/the-calendarium)
 [GitHub - javalent/dice-roller: Inline dice rolling for Obsidian.md](https://github.com/javalent/dice-roller)
