@@ -32,7 +32,8 @@ There are some things that need to be modified in the FMG JSON file for the Hand
 > 	"i": 0,
 > 	"name": "Neutral",
 > 	"state": 0
-> },```
+> },
+> ```
 
 5. Paste it where you see the lone `0,` before the `[1]` element - replacing the `0,` entirely.
 6. Make sure there is a comma after the final curly bracket so that the JSON Importer reads it as an array element.

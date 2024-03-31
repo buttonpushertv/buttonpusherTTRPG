@@ -1,5 +1,6 @@
 ---
 alias:
+burgMapLink: {{getBurgMapLink this @importDataRoot.info.seed @importDataRoot.pack.cells @importDataRoot.settings @importDataRoot.grid}}
 campaign: "{{getCampaignName @importSettings}}"
 capital: {{capital}}
 cityGeneratorLink: {{getMfcgURL this @importDataRoot.info.seed @importDataRoot.pack.cells @importDataRoot.settings}}
@@ -58,7 +59,7 @@ world: {{@importdataRoot.info.mapName}}
 >  **Pronounced:**| "`=this.pronounced`"
 > **Population** | `=this.population` |
 >  **Elevation:** | `=this.elevation`|
->  **Burg Map Link:**|`=elink(this.cityGeneratorLink,"Burg Map")`
+>  **Burg Map Link:**|`=elink(this.burgMapLink,"Burg Map")`
 >  
 > ###### Politics
 >  |
