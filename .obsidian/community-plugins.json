@@ -10,12 +10,10 @@
   "obsidian-meta-bind-plugin",
   "quickadd",
   "obsidian-style-settings",
-  "supercharged-links-obsidian",
   "templater-obsidian",
   "various-complements",
   "obsidian-sort-and-permute-lines",
   "homepage",
   "table-editor-obsidian",
-  "obsidian-import-json",
-  "sort-frontmatter"
+  "obsidian-import-json"
 ]

@@ -30,6 +30,34 @@
           "command": "quickadd:choice:2fbf6b35-69f7-4821-a1fa-2ff526c54da1"
         }
       ]
+    },
+    {
+      "label": "Load Workspace",
+      "hidden": false,
+      "class": "",
+      "tooltip": "Load a workspace",
+      "id": "load-workspace",
+      "style": "primary",
+      "actions": [
+        {
+          "type": "command",
+          "command": "workspaces:load"
+        }
+      ]
+    },
+    {
+      "label": "Reload App",
+      "hidden": false,
+      "class": "",
+      "tooltip": "Reload the app without saving.",
+      "id": "reload-vault",
+      "style": "default",
+      "actions": [
+        {
+          "type": "command",
+          "command": "app:reload"
+        }
+      ]
     }
   ],
   "excludedFolders": [

@@ -4,35 +4,23 @@
     "type": "split",
     "children": [
       {
-        "id": "fee522c18ad6ec2a",
+        "id": "200e32bb38b99bb8",
         "type": "tabs",
         "children": [
           {
-            "id": "7152d8338da0d1a0",
+            "id": "624c0407ea52145f",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "99-Templates/Handlebars-JSON/Atlas-FMG-JSON Handlebar Template.md",
-                "mode": "source",
-                "source": true
-              }
-            }
-          },
-          {
-            "id": "04603b3f493e74d7",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "90-Tools & Helpers/JSON Import How To.md",
+                "file": "01-Campaigns/Test Campaign 01/10-Atlas/Barisia World Atlas.md",
                 "mode": "preview",
                 "source": true
               }
             }
           },
           {
-            "id": "1a9e785d0a5a4851",
+            "id": "aff8cd730dfb2572",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -73,7 +61,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "WHY",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -105,12 +93,24 @@
         "type": "tabs",
         "children": [
           {
+            "id": "8c1d2257340444cb",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "90-Tools & Helpers/Buttons.md",
+                "mode": "preview",
+                "source": true
+              }
+            }
+          },
+          {
             "id": "c1171c2d318b0368",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "90-Tools & Helpers/JSON Import How To.md",
+                "file": "99-Templates/Handlebars-JSON/Burgs-FMG-JSON Handlerbars Template.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -127,7 +127,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "90-Tools & Helpers/JSON Import How To.md",
+                "file": "99-Templates/Handlebars-JSON/Burgs-FMG-JSON Handlerbars Template.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -150,7 +150,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "90-Tools & Helpers/JSON Import How To.md"
+                "file": "99-Templates/Handlebars-JSON/Burgs-FMG-JSON Handlerbars Template.md"
               }
             }
           },
@@ -185,44 +185,44 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "04603b3f493e74d7",
+  "active": "aff8cd730dfb2572",
   "lastOpenFiles": [
-    "99-Templates/Handlebars-JSON/Atlas-FMG-JSON Handlebar Template.md",
-    "01-Campaigns/Test Campaign 01/10-Atlas/Barisia.md",
+    "99-Templates/Handlebars-JSON/Provinces-FMG-JSON Handlebars Template.md",
+    "99-Templates/Handlebars-JSON/States-FMG-JSON Handlebars Template.md",
+    "01-Campaigns/Test Campaign 01/10-Atlas/States/Hatrinch.md",
+    "01-Campaigns/Test Campaign 01/10-Atlas/Provinces/Tutrinch Seneschalty.md",
+    "01-Campaigns/Test Campaign 01/10-Atlas/Burgs/Tutrinch.md",
+    "01-Campaigns/Test Campaign 01/10-Atlas/Provinces/Shersterton Seneschalty.md",
     "01-Campaigns/Test Campaign 01/10-Atlas/Test Campaign 01 Atlas.md",
-    "90-Tools & Helpers/JSON Import How To.md",
-    "99-Templates/newCampaignTemplate.md",
     "01-Campaigns/Test Campaign 01/Test Campaign 01 Home.md",
-    "01-Campaigns/Campaign Index.md",
-    "01-Campaigns/Test Campaign 01/10-Atlas/Cultures/Wildlands.md",
-    "01-Campaigns/Test Campaign 01/10-Atlas/Cultures/Totham.md",
-    "01-Campaigns/Test Campaign 01/10-Atlas/Cultures/Thornby.md",
-    "01-Campaigns/Test Campaign 01/10-Atlas/Cultures/Swaretown.md",
-    "01-Campaigns/Test Campaign 01/10-Atlas/Cultures/North.md",
-    "01-Campaigns/Test Campaign 01/10-Atlas/Cultures/Normouth.md",
-    "01-Campaigns/Test Campaign 01/10-Atlas/Cultures/Manch.md",
-    "01-Campaigns/Test Campaign 01/10-Atlas/Cultures/Guildford.md",
-    "01-Campaigns/Test Campaign 01/10-Atlas/Cultures/Durton.md",
-    "01-Campaigns/Test Campaign 01/10-Atlas/Cultures/Dodble.md",
-    "01-Campaigns/Test Campaign 01/10-Atlas/Cultures/Chilton.md",
-    "01-Campaigns/Test Campaign 01/10-Atlas/Religions/Chilton Faith.md",
-    "01-Campaigns/Test Campaign 01/10-Atlas/Religions/Watchian Beliefs.md",
-    "01-Campaigns/Test Campaign 01/10-Atlas/Religions/Totham Forefathers.md",
-    "01-Campaigns/Test Campaign 01/10-Atlas/Religions/Thornby Faith.md",
-    "01-Campaigns/Test Campaign 01/10-Atlas/Religions/North Beliefs.md",
-    "01-Campaigns/Test Campaign 01/10-Atlas/Religions/Swaretown Deities.md",
-    "01-Campaigns/Test Campaign 01/10-Atlas/Religions/Normouth Beliefs.md",
-    "01-Campaigns/Test Campaign 01/10-Atlas/Religions/No religion.md",
-    "01-Campaigns/Test Campaign 01/10-Atlas/Religions",
-    "01-Campaigns/Test Campaign 01/10-Atlas/Cultures",
-    "01-Campaigns/Test Campaign 01/10-Atlas/Burgs",
-    "01-Campaigns/Test Campaign 01/10-Atlas/Provinces",
-    "01-Campaigns/Test Campaign 01/10-Atlas/States",
-    "01-Campaigns/Test Campaign 99/10-Atlas/States",
-    "01-Campaigns/Test Campaign 99/10-Atlas",
-    "01-Campaigns/Test Campaign 99",
-    "01-Campaigns/Test Campaign 01/99-Misc Notes",
-    "01-Campaigns/Test Campaign 01/23-Deities",
+    "Home.md",
+    "01-Campaigns/Test Campaign 01/10-Atlas/Barisia World Atlas.md",
+    "99-Templates/newCampaignAtlas.md",
+    "99-Templates/Handlebars-JSON/Atlas-FMG-JSON Handlebar Template.md",
+    "01-Campaigns/Test Campaign 02/10-Atlas/Test Campaign 02 Atlas.md",
+    "90-Tools & Helpers/Buttons.md",
+    "01-Campaigns/Test Campaign 02/99-Misc Notes",
+    "01-Campaigns/Test Campaign 02/23-Deities",
+    "01-Campaigns/Test Campaign 02/22-Groups",
+    "01-Campaigns/Test Campaign 02/21-NPCs",
+    "01-Campaigns/Test Campaign 02/20-PCs",
+    "01-Campaigns/Test Campaign 02/13-Items & Artifacts",
+    "01-Campaigns/Test Campaign 02/12-Organizations",
+    "01-Campaigns/Test Campaign 02/11-Points of Interest",
+    "01-Campaigns/Test Campaign 02/10-Atlas",
+    "01-Campaigns/Test Campaign 02/04-Lore",
+    "01-Campaigns/Test Campaign 02/Test Campaign 02 Home.md",
+    "01-Campaigns/Test Campaign 01/10-Atlas/Burgs/Brashone.md",
+    "01-Campaigns/Test Campaign 01/10-Atlas/Burgs/Clifton.md",
+    "01-Campaigns/Test Campaign 01/10-Atlas/States/Yeowland.md",
+    "01-Campaigns/Test Campaign 01/10-Atlas/States/Penkwar.md",
+    "01-Campaigns/Test Campaign 01/10-Atlas/States/Lereteria.md",
+    "01-Campaigns/Test Campaign 01/10-Atlas/States/Uxbrigh.md",
+    "01-Campaigns/Test Campaign 01/10-Atlas/States/Chil.md",
+    "01-Campaigns/Test Campaign 01/10-Atlas/States/Mouria.md",
+    "01-Campaigns/Test Campaign 01/10-Atlas/States/Southesia.md",
+    "01-Campaigns/Test Campaign 01/10-Atlas/States/Godgia.md",
+    "01-Campaigns/Test Campaign 01/10-Atlas/States/Framplia.md",
     "91-Assets/_general/PlaceholderImage.png",
     "91-Assets/_general/Grauern Cosmology-1920x1920.png"
   ]
