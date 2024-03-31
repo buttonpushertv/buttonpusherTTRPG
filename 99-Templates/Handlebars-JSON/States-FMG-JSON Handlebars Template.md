@@ -87,11 +87,11 @@ world: {{@importDataRoot.info.mapName}}
 >  ---: | --- |
 >  **Neighbors** |  |
 {{#each neighbors}}
->  || [[{{getStateName this @importDataRoot.pack.states}}]] |
+>  | [[{{getStateName this @importDataRoot.pack.states}}]] |
 {{/each}}  
 >  **Provinces** |  |
 {{#each provinces}}
->  || [[{{getProvinceName this @importDataRoot.pack.provinces}}]] |
+>  | [[{{getProvinceName this @importDataRoot.pack.provinces}}]] |
 {{/each}}  
 
 # **`=this.fullName`**
