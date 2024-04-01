@@ -3,8 +3,6 @@ alias:
 burgMapLink: {{getBurgMapLink this @importDataRoot.info.seed @importDataRoot.pack.cells @importDataRoot.settings @importDataRoot.grid}}
 campaign: "{{getCampaignName @importSettings}}"
 capital: {{capital}}
-cityGeneratorLink: {{getMfcgURL this @importDataRoot.info.seed @importDataRoot.pack.cells @importDataRoot.settings}}
-created: {{getDateTimestamp @importSettings}}
 culture: {{getCultureName culture @importDataRoot.pack.cultures}}
 elevation: {{getHeight cell @importDataRoot.settings @importDataRoot.pack.cells}}
 emblem: "{{getCampaignName @importSettings}} Emblem {{name}}.png"
@@ -32,6 +30,7 @@ world: {{@importdataRoot.info.mapName}}
 [[{{getCampaignHomeNote @importSettings}}]] | [[{{getCampaignAtlasNote @importSettings}}]] | `=link(this.state)` | `=link(this.province)`
 
 %% For Burgs, you'll probably want to update the value of 'image' to a map of the Burg itself. At the top of the 'infobox' is the Fantasy Map Generator's link to Watabou's Fantasy City Generator.%% 
+
 > [!metadata|map]- Map
 > ```leaflet
 > id: Burg-{{name}}

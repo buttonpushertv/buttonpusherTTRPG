@@ -1,3 +1,11 @@
+Code for pulling in COA element - this is all that it appears needs to be fed the draw() function from the data:
+
+`{{drawCOA i coa}}`
+
+But, there is sooooo much more that needs to be included in the helper to make it work properly.
+
+---
+
 Code below is for JSON/CSV Importer to process a small bit of js code during the import process:
 
 @{return `${(this.state > 0) && dataRoot.pack.states.find(state => state.i === this.state)?.name || "Unknown" }-${this.name}`}
@@ -7,6 +15,39 @@ output: `state_name-burg_name`
 @{return `${this.name}-${(this.state > 0) && dataRoot.pack.states.find(state => state.i === this.state)?.name || "Unknown" }`}
 
 output: `burg_name-state_name`
+
+---
+removed from Burg Template - in switch to new function for MFCG or Village Generator Link:
+
+```
+cityGeneratorLink: {{getMfcgURL this @importDataRoot.info.seed @importDataRoot.pack.cells @importDataRoot.settings}}
+created: {{getDateTimestamp @importSettings}}
+```
+
+---
+removed from [[JSON Import How To]] - this fix doesn't seem to be needed any longer
+
+2. The JSON object `pack.provinces` is missing some child elements that will cause the JSON/CSV Importer to fail.
+	1. Navigate to the `pack.provinces` object.
+	2. This element has a `[0]` child element that contains no values.
+	3. You will need to add valid element here for JSON/CSV Importer to succeed.
+	4. Use this code & paste it into the `pack.provinces`
+
+> [! NOTE] Code to place into `pack.provinces[0]` element
+> ```js
+> {
+> 	"burg": 0,
+> 	"color": "#ffffff",
+> 	"formName": "Neutral",
+> 	"fullName": "Neutral",
+> 	"i": 0,
+> 	"name": "Neutral",
+> 	"state": 0
+> },
+> ```
+
+5. Paste it where you see the lone `0,` before the `[1]` element - replacing the `0,` entirely.
+6. Make sure there is a comma after the final curly bracket so that the JSON Importer reads it as an array element.
 
 ---
 

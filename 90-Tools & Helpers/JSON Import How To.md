@@ -16,27 +16,6 @@ There are some things that need to be modified in the FMG JSON file for the Hand
 	3. Enter `"thisCampaign": "name_here"` - place the campaign name from above inside the quotes, replacing `name_here`  & add a comma to the end of the line. _Make sure to surround items in double quotations like other elements._
 	4. On a second new line enter `"thisCampaignPath": "01-Campaigns/name_here"` - replace the `name_here` part with the name above.
 
-2. The JSON object `pack.provinces` is missing some child elements that will cause the JSON/CSV Importer to fail.
-	1. Navigate to the `pack.provinces` object.
-	2. This element has a `[0]` child element that contains no values.
-	3. You will need to add valid element here for JSON/CSV Importer to succeed.
-	4. Use this code & paste it into the `pack.provinces`
-
-> [! NOTE] Code to place into `pack.provinces[0]` element
-> ```js
-> {
-> 	"burg": 0,
-> 	"color": "#ffffff",
-> 	"formName": "Neutral",
-> 	"fullName": "Neutral",
-> 	"i": 0,
-> 	"name": "Neutral",
-> 	"state": 0
-> },
-> ```
-
-5. Paste it where you see the lone `0,` before the `[1]` element - replacing the `0,` entirely.
-6. Make sure there is a comma after the final curly bracket so that the JSON Importer reads it as an array element.
 
 # Handlebar Helper
 In order to process the data from FMG's JSON file, the data needs to be processed to convert numeric values for things like IDs into human-readable elements. I've reverse engineered a lot of the functions from the FMG code to recreate similar data. The Handlebar Helper for this import is on the larger side and contains many functions. All import passes will need to make use of the Handlebar Helper file at: 99-Templates/Handlebars-JSON/Helpers-FMG-JSON.js
