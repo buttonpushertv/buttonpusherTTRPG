@@ -41,6 +41,13 @@
       },
       "openFile": false,
       "openFileInMode": "default"
+    },
+    {
+      "id": "3738502a-c53f-43ee-b3ab-2775a0e6afd2",
+      "name": "Open Button Page",
+      "type": "Macro",
+      "command": false,
+      "macroId": "2eb30ab1-15cf-4f11-9510-d9b1dd676ed5"
     }
   ],
   "macros": [
@@ -126,6 +133,12 @@
           }
         }
       ],
+      "runOnStartup": false
+    },
+    {
+      "name": "Open Button Page",
+      "id": "2eb30ab1-15cf-4f11-9510-d9b1dd676ed5",
+      "commands": [],
       "runOnStartup": false
     }
   ],

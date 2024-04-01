@@ -25,8 +25,8 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "90-Tools & Helpers/JSON Import How To.md",
-                "mode": "preview",
+                "file": "99-Templates/Handlebars-JSON/States-FMG-JSON Handlebars Template.md",
+                "mode": "source",
                 "source": true
               }
             }
@@ -77,6 +77,56 @@
               "type": "bookmarks",
               "state": {}
             }
+          },
+          {
+            "id": "ca699238ddcc64c0",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "99-Templates/Handlebars-JSON/States-FMG-JSON Handlebars Template.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "c1171c2d318b0368",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "99-Templates/Handlebars-JSON/States-FMG-JSON Handlebars Template.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "4e9216679722d063",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "1b0558b5f265f70b",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "99-Templates/Handlebars-JSON/States-FMG-JSON Handlebars Template.md"
+              }
+            }
           }
         ]
       }
@@ -101,56 +151,6 @@
                 "file": "90-Tools & Helpers/Buttons.md",
                 "mode": "preview",
                 "source": true
-              }
-            }
-          },
-          {
-            "id": "c1171c2d318b0368",
-            "type": "leaf",
-            "state": {
-              "type": "backlink",
-              "state": {
-                "file": "90-Tools & Helpers/JSON Import How To.md",
-                "collapseAll": false,
-                "extraContext": false,
-                "sortOrder": "alphabetical",
-                "showSearch": false,
-                "searchQuery": "",
-                "backlinkCollapsed": false,
-                "unlinkedCollapsed": true
-              }
-            }
-          },
-          {
-            "id": "ca699238ddcc64c0",
-            "type": "leaf",
-            "state": {
-              "type": "outgoing-link",
-              "state": {
-                "file": "90-Tools & Helpers/JSON Import How To.md",
-                "linksCollapsed": false,
-                "unlinkedCollapsed": true
-              }
-            }
-          },
-          {
-            "id": "4e9216679722d063",
-            "type": "leaf",
-            "state": {
-              "type": "tag",
-              "state": {
-                "sortOrder": "frequency",
-                "useHierarchy": true
-              }
-            }
-          },
-          {
-            "id": "1b0558b5f265f70b",
-            "type": "leaf",
-            "state": {
-              "type": "outline",
-              "state": {
-                "file": "90-Tools & Helpers/JSON Import How To.md"
               }
             }
           },
@@ -187,43 +187,51 @@
   },
   "active": "6f1c15551dda1a3b",
   "lastOpenFiles": [
-    "99-Templates/Handlebars-JSON/Burgs-FMG-JSON Handlerbars Template.md",
+    "00-INBOX/Scratch Pad.md",
+    "99-Templates/Handlebars-JSON/States-FMG-JSON Handlebars Template.md",
+    "Home.md",
+    "01-Campaigns/Test Campaign 02/10-Atlas/States/Petrica.md",
+    "01-Campaigns/Test Campaign 02/10-Atlas/States/Histharoseia.md",
+    "01-Campaigns/Test Campaign 02/10-Atlas/States/Bhrymaion.md",
+    "01-Campaigns/Test Campaign 02/10-Atlas/States/Ingnia.md",
+    "01-Campaigns/Test Campaign 02/10-Atlas/States/Alocenia.md",
+    "01-Campaigns/Test Campaign 02/10-Atlas/States/Aporesia.md",
+    "01-Campaigns/Test Campaign 02/10-Atlas/States/Esmosia.md",
+    "01-Campaigns/Test Campaign 02/10-Atlas/States/Calhosia.md",
+    "01-Campaigns/Test Campaign 02/10-Atlas/States/Thas.md",
+    "01-Campaigns/Test Campaign 02/10-Atlas/States/Tiormaa.md",
+    "01-Campaigns/Test Campaign 02/10-Atlas/States/Kunszavasia.md",
+    "01-Campaigns/Test Campaign 02/10-Atlas/States/Esiagasia.md",
+    "01-Campaigns/Test Campaign 02/10-Atlas/States/Marbeilia.md",
+    "01-Campaigns/Test Campaign 02/10-Atlas/States/Histhepia.md",
+    "01-Campaigns/Test Campaign 02/10-Atlas/States/Kunkania.md",
+    "01-Campaigns/Test Campaign 02/10-Atlas/States/Mauna.md",
+    "01-Campaigns/Test Campaign 02/10-Atlas/States/Nikmaa.md",
+    "01-Campaigns/Test Campaign 02/10-Atlas/States/Upunia.md",
+    "01-Campaigns/Test Campaign 02/10-Atlas/States/Neutrals.md",
+    "01-Campaigns/Test Campaign 02/10-Atlas/States",
+    "91-Assets/charges/wyvernWithWingsDisplayed.svg",
+    "91-Assets/charges/wyvern.svg",
+    "91-Assets/charges/wolfStatant.svg",
+    "91-Assets/charges/wolfRampant.svg",
+    "91-Assets/charges/wolfPassant.svg",
+    "91-Assets/charges/wolfHeadErased.svg",
+    "91-Assets/charges/wingSword.svg",
+    "91-Assets/charges/wing.svg",
+    "91-Assets/charges/windmill.svg",
+    "91-Assets/charges/wheel.svg",
+    "91-Assets/charges",
+    "01-Campaigns/Test Campaign 02/10-Atlas/Test Campaign 02 Atlas.md",
+    "01-Campaigns/Test Campaign 02/10-Atlas/Ladonia World Atlas.md",
+    "01-Campaigns/Test Campaign 02/10-Atlas/Religions/Cythoporystism.md",
+    "01-Campaigns/Test Campaign 02/10-Atlas/Religions/Witnesses of Saucedavas.md",
+    "01-Campaigns/Test Campaign 02/10-Atlas/Religions",
+    "01-Campaigns/Test Campaign 02/10-Atlas/Cultures",
+    "01-Campaigns/Test Campaign 02/10-Atlas/Burgs",
+    "01-Campaigns/Test Campaign 02/10-Atlas/Provinces",
+    "99-Templates/Handlebars-JSON/Ladonia Full 2024-03-31-10-23-MODDED.json",
     "99-Templates/Handlebars-JSON/FMG-JSON-SCHEMA-v1.95.05.json",
     "99-Templates/Handlebars-JSON/Ladonia Full 2024-03-31-10-23.json",
-    "01-Campaigns/Test Campaign 01/10-Atlas/Burgs/Asingshil.md",
-    "01-Campaigns/Test Campaign 01/10-Atlas/Test Campaign 01 Atlas.md",
-    "01-Campaigns/Test Campaign 01/10-Atlas/Burgs/Reaford.md",
-    "01-Campaigns/Test Campaign 01/10-Atlas/Burgs/Hornley.md",
-    "01-Campaigns/Test Campaign 01/10-Atlas/Burgs/Chinden.md",
-    "01-Campaigns/Test Campaign 01/10-Atlas/Burgs/Sudford.md",
-    "01-Campaigns/Test Campaign 01/10-Atlas/Burgs/Dunsle1.md",
-    "01-Campaigns/Test Campaign 01/10-Atlas/Burgs/Watlelisted.md",
-    "01-Campaigns/Test Campaign 01/10-Atlas/Burgs/Hertham.md",
-    "01-Campaigns/Test Campaign 01/10-Atlas/Burgs/Westcham1.md",
-    "01-Campaigns/Test Campaign 01/10-Atlas/Burgs/Chawbig.md",
-    "01-Campaigns/Test Campaign 01/10-Atlas/Burgs/Darton.md",
-    "01-Campaigns/Test Campaign 01/10-Atlas/Burgs/Birton.md",
-    "01-Campaigns/Test Campaign 01/10-Atlas/Burgs/Uxbridhurst.md",
-    "01-Campaigns/Test Campaign 01/10-Atlas/Burgs/Chartonver.md",
-    "01-Campaigns/Test Campaign 01/10-Atlas/Burgs/Hatherstore.md",
-    "01-Campaigns/Test Campaign 01/10-Atlas/Burgs/Brample.md",
-    "01-Campaigns/Test Campaign 01/10-Atlas/Burgs/Atford.md",
-    "01-Campaigns/Test Campaign 01/10-Atlas/Burgs/Norlow.md",
-    "01-Campaigns/Test Campaign 01/10-Atlas/Burgs/Penkhampton.md",
-    "01-Campaigns/Test Campaign 01/10-Atlas/Burgs/Sudmin.md",
-    "01-Campaigns/Test Campaign 01/10-Atlas/Burgs/Sealisham.md",
-    "01-Campaigns/Test Campaign 01/10-Atlas/Burgs/Yeorough.md",
-    "01-Campaigns/Test Campaign 01/10-Atlas/Burgs/Axbrid.md",
-    "01-Campaigns/Test Campaign 01/10-Atlas/Burgs/Chipton.md",
-    "01-Campaigns/Test Campaign 01/10-Atlas/Burgs",
-    "99-Templates/Handlebars-JSON/Ladonia Full 2024-03-31-09-42.json",
-    "01-Campaigns/Test Campaign 02/99-Misc Notes",
-    "01-Campaigns/Test Campaign 02/23-Deities",
-    "01-Campaigns/Test Campaign 02/22-Groups",
-    "01-Campaigns/Test Campaign 02/21-NPCs",
-    "01-Campaigns/Test Campaign 02/20-PCs",
-    "01-Campaigns/Test Campaign 02/13-Items & Artifacts",
-    "91-Assets/_general/PlaceholderImage.png",
-    "91-Assets/_general/Grauern Cosmology-1920x1920.png"
+    "01-Campaigns/Test Campaign 01/10-Atlas/Burgs"
   ]
 }
