@@ -1,4 +1,7 @@
 ## Campaign Index
+
+`BUTTON[new-campaign]`
+
 ![[Campaign Index]]
 
 ## Tools & Helpers

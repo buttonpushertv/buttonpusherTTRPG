@@ -4,6 +4,8 @@ tags:
  - campaigns
 ---
 
+#tag-test
+
 ## List of current campaigns
 
 ```dataviewjs
@@ -22,8 +24,8 @@ function getNumOfGames(campaign) {
 	return numOfGames
 }
 
-dv.table(["Campaign","System","Sessions", "Role","Status"],dv.pages('"01-Campaigns"')
-  .where(b => b.type === "campaign")
+dv.table(["Campaign","System","Sessions","Status"],dv.pages('"01-Campaigns"').where(b => String(b.tags).includes("campaign-home"))
   .sort(b => b.status)
-  .map(b => [dv.fileLink(b.file.path,false,[b.campaign]),b.system,getNumOfGames(b.campaign),b.role,b.status]))
+  .map(b => [dv.fileLink(b.file.path,false,[b.campaignName]),b.campaignSystem,getNumOfGames(b.campaignName),b.campaignStatus]))
 ```
+

@@ -3,6 +3,8 @@ tags:
  - buttons
 ---
 
+`BUTTON[campaign-index]`
+
 ## Campaign Setup
 
 `BUTTON[new-campaign]`

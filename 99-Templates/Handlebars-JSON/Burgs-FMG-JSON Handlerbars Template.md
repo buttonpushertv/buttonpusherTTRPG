@@ -1,11 +1,11 @@
 ---
-alias:
+alias: {{name}}
 burgMapLink: {{getBurgMapLink this @importDataRoot.info.seed @importDataRoot.pack.cells @importDataRoot.settings @importDataRoot.grid}}
-campaign: "{{getCampaignName @importSettings}}"
+campaign: "{{@importDataRoot.info.thisCampaign}}"
 capital: {{capital}}
 culture: {{getCultureName culture @importDataRoot.pack.cultures}}
 elevation: {{getHeight cell @importDataRoot.settings @importDataRoot.pack.cells}}
-emblem: "{{getCampaignName @importSettings}} Emblem {{name}}.png"
+emblem: "{{@importDataRoot.info.thisCampaignShortCode}}-{{@importDataRoot.info.mapName}} Emblem {{name}}.png"
 id: {{i}}
 burgName: {{name}}
 population: {{calcPopulation population}}
@@ -18,11 +18,11 @@ x: {{x}}
 y: {{y}}
 tags:
 - Burg
-template: "[[Burgs-FMG-JSON Handlerbars Template]]"
-templateVersion: 1
+- {{@importDataRoot.info.mapName}}
+- {{@importDataRoot.info.thisCampaignShortCode}}
 type: {{type}}
 WBProcess: FALSE
-world: {{@importdataRoot.info.mapName}}
+world: {{@importDataRoot.info.mapName}}
 ---
 
 %% Change the World Building Process (WBProcess) property to true once you have placed/updated any info onto the page. Basically this allows sorting based on what has & hasn't had world building stuff done for it. %%
@@ -51,7 +51,7 @@ world: {{@importdataRoot.info.mapName}}
 %% All the info in this 'infobox' will appear in the panel to the right. Most of these values are pulled from the metadata in the properties above. %%
 
 > [!infobox]
-> ![[{{Emblem}}]]
+> ![[{{@importDataRoot.info.thisCampaignShortCode}}-{{@importDataRoot.info.mapName}} Emblem {{name}}.png]]
 > ###### Info
 >  |
 >  ---: | --- |

@@ -1,12 +1,39 @@
 ---
-campaign: "{{VALUE:newCampaignName}}" 
-status: setup
-role: gm
-system: 
-type: campaign
-Template: "[[newCampaignTemplate]]"
-TemplateVersion: 1
+campaignName: {{VALUE:newCampaignName}}
+campaignPath: {{VALUE:newCampaignPath}}
+campaignShortCode: {{VALUE:newCampaignShortCode}}
+campaignHomeNote: {{VALUE:newCampaignHomeNote}}
+campaignAtlas: {{VALUE:newCampaignAtlas}}
+campaignCalendar: {{VALUE:newCampaignCalendar}}
+campaignStatus: 
+campaignSystem: 
+tags:
+- campaign-home
+- {{@importDataRoot.info.mapName}}
+- {{VALUE:newCampaignShortCode}}
 ---
+
+> [!metadata|metadata]- Metadata 
+>> [!metadata|metadataoption]+ System
+>> #### System
+>>  |
+>> ---|---|
+> **Tags** | `INPUT[Tags][inlineListSuggester:tags]` |
+> **Game System**|`INPUT[textArea:campaignSystem]`
+>
+>> [!metadata|metadataoption]- Art
+>> #### Art
+>>  |
+>> ---|---|
+>> **Art** | `INPUT[imageSuggester(optionQuery("")):campaignArt]` |
+>
+>> [!metadata|metadataoption]+ Info
+>> #### Info
+>>  |
+>> ---|---|
+>> **Aliases** | `INPUT[list:aliases]` |
+>> **Quick Notes** |  `INPUT[textArea:quicknote]`
+>> **Status** | `INPUT[Status][:campaignStatus]` |
 
 <%*
 const folderNames = [
@@ -14,23 +41,22 @@ const folderNames = [
 "02-WorldBuilding",
 "03-Story Arcs",
 "04-Lore",
-"10-Atlas",
-"11-Points of Interest",
-"12-Organizations",
-"13-Items & Artifacts",
+"06-Points of Interest",
+"07-Organizations",
+"08-Items & Artifacts",
 "20-PCs",
 "21-NPCs",
 "22-Groups",
 "23-Deities",
 "99-Misc Notes"
 ]
-//console.log(folderNames)
+console.log(folderNames)
 const baseFolder = '{{VALUE:newCampaignPath}}'
 //console.log(baseFolder)
 for (const folderName of folderNames) {
-	const folderPath = baseFolder + "/" + folderName
-	console.log(folderPath)
-	await this.app.vault.createFolder(folderPath)
+  const folderPath = baseFolder + "/" + folderName
+  console.log("creating: ", folderPath)
+  await this.app.vault.createFolder(folderPath)
     }
 %>
 

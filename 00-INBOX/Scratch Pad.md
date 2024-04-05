@@ -1,3 +1,13 @@
+# HOLDING AREA
+
+campaignHomeNote: "{{VALUE:newCampaignHomeNote}}"
+campaignAtlas: "{{VALUE:newCampaignAtlas}}"
+campaignCalendar: "{{VALUE:newCampaignCalendar}}"
+campaignStatus: 
+campaignSystem:
+
+---
+
 Code for pulling in COA element - this is all that it appears needs to be fed the draw() function from the data:
 
 `{{drawCOA i coa}}`

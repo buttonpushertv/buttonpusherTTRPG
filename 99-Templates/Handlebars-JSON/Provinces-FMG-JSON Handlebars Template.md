@@ -1,8 +1,10 @@
 ---
-campaign: "{{getCampaignName @importSettings}}"
+alias: {{name}}
+campaign: "{{@importDataRoot.info.thisCampaign}}"
 capital: "[[{{getBurgName burg @importDataRoot.pack.burgs}}]]"
 color: {{color}}
 created: {{getDateTimestamp @importSettings}}
+emblem: "{{@importDataRoot.info.thisCampaignShortCode}}-{{@importDataRoot.info.mapName}} Emblem {{fullName}}.png"
 formName: {{formName}}
 fullName: {{fullName}}
 id: {{i}}
@@ -13,9 +15,7 @@ shortDescription:
 state: "[[{{getStateName state @importDataRoot.pack.states}}]]"
 tags:
 - Province
-- {{getStateName state @importDataRoot.pack.states}}-Province
-templateLink: "[[Provinces-FMG-JSON Handlebars Template]]"
-templateVersion: 1
+- {{@importDataRoot.info.mapName}}
 WBProcess: FALSE
 world: {{@importDataRoot.info.mapName}}
 ---
@@ -47,7 +47,7 @@ world: {{@importDataRoot.info.mapName}}
 %% All the info in this 'infobox' will appear in the panel to the right. Most of these values are pulled from the metadata in the properties above. %%
 
 > [!infobox]
-> ![[{{@importDataRoot.info.mapName}} Emblem {{fullName}}.svg]]
+> ![[{{@importDataRoot.info.thisCampaignShortCode}}-{{@importDataRoot.info.mapName}} Emblem {{fullName}}.png]]
 > ###### Info
 >  |
 >  ---: | --- |

@@ -1,6 +1,6 @@
 ---
 alias:
-campaign: "{{getCampaignName @importSettings}}"
+campaign: "{{@importDataRoot.info.thisCampaign}}"
 center: {{center}}
 code: {{code}}
 color: {{color}}
@@ -17,11 +17,9 @@ religionName: "{{name}}"
 shortDescription:
 tags:
 - Religion
-template: "[[Religions-FMG-JSON Handlebars Template]]"
-templateVersion: 1
 type: {{type}}
 WBProcess: FALSE
-world: {{@importdataRoot.info.mapName}}
+world: {{@importDataRoot.info.mapName}}
 ---
 
 %% Change the World Building Process (WBProcess) property to true once you have placed/updated any info onto the page. Basically this allows sorting based on what has & hasn't had world building stuff done for it. %%

@@ -3,12 +3,12 @@ alert: {{alert}}
 alias: {{name}}
 area: {{totalArea area}}
 burgs: {{burgs}}
-campaign: "{{getCampaignName @importSettings}}"
+campaign: "{{@importDataRoot.info.thisCampaign}}"
 capital: "[[{{getBurgName capital @importDataRoot.pack.burgs}}]]"
 color: {{color}}
 created: {{getDateTimestamp @importSettings}}
 culture: "[[{{getCultureName culture @importDataRoot.pack.cultures}}]]"
-emblem: "{{getCampaignName @importSettings}} Emblem {{fullName}}"
+emblem: "{{@importDataRoot.info.thisCampaignShortCode}}-{{@importDataRoot.info.mapName}} Emblem {{fullName}}.png"
 expansionism: {{expansionism}}
 form: {{form}}
 formName: {{formName}}
@@ -31,12 +31,12 @@ shortDescription:
 urban: {{calcPopulation urban}}
 tags:
 - State
-templateLink: "[[States-FMG-JSON Handlebars Template]]"
-templateVersion: 1
+- {{@importDataRoot.info.mapName}}
 type: {{type}}
 WBProcess: FALSE
 world: {{@importDataRoot.info.mapName}}
 ---
+
 %% Change the World Building Process (WBProcess) property to true once you have placed/updated any info onto the page. You can use 'true' & 'false' or you can use other values ('started', a percentage, or 'inProgress') to indicate pages you may be working on. Basically this allows sorting based on what has & hasn't had world building stuff done for it or that you may have started, but not finished. %%
 
 [[{{getCampaignHomeNote @importSettings}}]] | [[{{getCampaignAtlasNote @importSettings}}]]
@@ -64,13 +64,13 @@ world: {{@importDataRoot.info.mapName}}
 %% All the info in this 'infobox' will appear in the panel to the right. Most of these values are pulled from the metadata in the properties above. %%
 
 > [!infobox]
-> ![[{{@importDataRoot.info.mapName}} Emblem {{fullName}}.svg]]
+> ![[{{@importDataRoot.info.thisCampaignShortCode}}-{{@importDataRoot.info.mapName}} Emblem {{fullName}}.png]]
 > ###### Info
 >  |
 >  ---: | --- |
 >  **Pronounced:**| "`=this.pronounced`"
 > **Population** | `=this.totalPopulation` |
->  |  <span style="font-size:x-small">**Urban**<br>**Rural**|`=this.urban`<br>`=this.rural`</span> |
+>  <span style="font-size:x-small">**Urban**<br>**Rural** </span>| <span style="font-size:x-small">`=this.urban`<br>`=this.rural`</span> |
 > **Area (sq. mi)** | `=this.area` |
 >  **Dominant Geographic Feature** | `=this.type` |
 >  
