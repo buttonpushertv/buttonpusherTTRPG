@@ -13,7 +13,8 @@
   "templater-obsidian",
   "various-complements",
   "obsidian-sort-and-permute-lines",
-  "table-editor-obsidian",
   "obsidian-import-json",
-  "homepage"
+  "homepage",
+  "nldates-obsidian",
+  "obsidian-linter"
 ]

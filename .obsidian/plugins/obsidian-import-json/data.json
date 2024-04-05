@@ -1,13 +1,13 @@
 {
-  "jsonName": "name",
+  "jsonName": "info.thisCampaign",
   "jsonNamePath": false,
   "jsonUrl": "",
-  "folderName": "01-Campaigns/Test Campaign 02/10-Atlas/States",
-  "topField": "pack.states",
+  "folderName": "01-Campaigns/Test Campaign Ladonia/05-Atlas",
+  "topField": "",
   "notePrefix": "",
-  "noteSuffix": "",
+  "noteSuffix": "-BurgMapLinks",
   "handleExistingNote": 1,
   "forceArray": true,
   "multipleJSON": false,
-  "uniqueNames": true
+  "uniqueNames": false
 }

@@ -48,6 +48,13 @@
       "type": "Macro",
       "command": false,
       "macroId": "2eb30ab1-15cf-4f11-9510-d9b1dd676ed5"
+    },
+    {
+      "id": "d661e66b-e072-4760-95e6-1e172dadb98c",
+      "name": "Add a Session Note",
+      "type": "Macro",
+      "command": true,
+      "macroId": "dab715ed-3609-409f-9304-7140b778e320"
     }
   ],
   "macros": [
@@ -91,30 +98,92 @@
               "direction": "vertical",
               "focus": true
             },
+            "openFile": true,
+            "openFileInMode": "default",
+            "fileExistsMode": "Overwrite the file",
+            "setFileExistsBehavior": true
+          }
+        },
+        {
+          "name": "Create New Campaign Simple Atlas",
+          "type": "NestedChoice",
+          "id": "deb926bc-9d13-4254-bf72-e8d3e581452d",
+          "choice": {
+            "id": "49145b24-73f4-466f-aae7-7dd8fb3da5f0",
+            "name": "Create New Campaign Simple Atlas",
+            "type": "Template",
+            "command": false,
+            "templatePath": "99-Templates/newCampaignSimpleAtlasTemplate.md",
+            "fileNameFormat": {
+              "enabled": true,
+              "format": "{{VALUE:newCampaignName}}-Simple Atlas"
+            },
+            "folder": {
+              "enabled": true,
+              "folders": [
+                "{{VALUE:newCampaignPath}}/05-Atlas/"
+              ],
+              "chooseWhenCreatingNote": false,
+              "createInSameFolderAsActiveFile": false,
+              "chooseFromSubfolders": false
+            },
+            "appendLink": false,
+            "openFileInNewTab": {
+              "enabled": true,
+              "direction": "vertical",
+              "focus": true
+            },
             "openFile": false,
             "openFileInMode": "default",
             "fileExistsMode": "Increment the file name",
             "setFileExistsBehavior": false
           }
+        }
+      ],
+      "runOnStartup": false
+    },
+    {
+      "name": "Open Button Page",
+      "id": "2eb30ab1-15cf-4f11-9510-d9b1dd676ed5",
+      "commands": [],
+      "runOnStartup": false
+    },
+    {
+      "name": "Add a Session Note",
+      "id": "dab715ed-3609-409f-9304-7140b778e320",
+      "commands": [
+        {
+          "name": "getThisCampaign",
+          "type": "UserScript",
+          "id": "90b33053-a16a-4275-b676-1991a73385fd",
+          "path": "98-Userscripts/getThisCampaign.js",
+          "settings": {}
         },
         {
-          "name": "Create New Campaign Atlas Note",
+          "name": "promptAndParseNaturalLanguageDate",
+          "type": "UserScript",
+          "id": "eff98027-711d-40a8-9dc2-e46f0bdec867",
+          "path": "98-Userscripts/promptAndParseNaturalLanguageDate.js",
+          "settings": {}
+        },
+        {
+          "name": "sessionNoteTemplate",
           "type": "NestedChoice",
-          "id": "c8418442-77d7-48b1-bcbb-3f791fe8ef66",
+          "id": "a97a4eb1-8953-4a64-9f5e-d782b468714b",
           "choice": {
-            "id": "9b615344-0dce-415c-9029-90ab3773d6fe",
-            "name": "Create New Campaign Atlas Note",
+            "id": "0df50061-b0a5-4608-aafe-862a0fb32d89",
+            "name": "sessionNoteTemplate",
             "type": "Template",
             "command": false,
-            "templatePath": "99-Templates/newCampaignAtlas.md",
+            "templatePath": "99-Templates/sessionNotesTemplate.md",
             "fileNameFormat": {
               "enabled": true,
-              "format": "{{VALUE:newCampaignAtlas}}"
+              "format": "{{VALUE:extractedDate}} Session Note"
             },
             "folder": {
               "enabled": true,
               "folders": [
-                "{{VALUE:newCampaignPath}}/10-Atlas"
+                "{{VALUE:thisCampaignPath}}/01-Sessions"
               ],
               "chooseWhenCreatingNote": false,
               "createInSameFolderAsActiveFile": false,
@@ -133,12 +202,6 @@
           }
         }
       ],
-      "runOnStartup": false
-    },
-    {
-      "name": "Open Button Page",
-      "id": "2eb30ab1-15cf-4f11-9510-d9b1dd676ed5",
-      "commands": [],
       "runOnStartup": false
     }
   ],

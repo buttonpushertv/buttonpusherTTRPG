@@ -1,21 +1,29 @@
 {
   "devMode": false,
-  "ignoreCodeBlockRestrictions": false,
+  "ignoreCodeBlockRestrictions": true,
   "preferredDateFormat": "YYYY-MM-DD",
-  "useUsDateInputOrder": false,
   "firstWeekday": {
-    "index": 1,
-    "name": "Monday",
-    "shortName": "Mo"
+    "index": 0,
+    "name": "Sunday",
+    "shortName": "Su"
   },
   "syncInterval": 200,
   "minSyncInterval": 50,
   "maxSyncInterval": 1000,
-  "enableJs": false,
+  "enableJs": true,
   "viewFieldDisplayNullAsEmpty": false,
   "enableSyntaxHighlighting": true,
   "enableEditorRightClickMenu": true,
-  "inputFieldTemplates": [],
+  "inputFieldTemplates": [
+    {
+      "name": "Status",
+      "declaration": "INPUT[inlineSelect(option(null), option(setup), option(active), option(hiatus), option(completed))]"
+    },
+    {
+      "name": "Tags",
+      "declaration": "INPUT[inlineSelect(option(#Location), option(#Settlement), option(#Character), option(#Organization), option(#NPC), option(#Player), option(#POI), option(#SessionNote), option(#Service), option(#Letter), option(#Party), option(#Deity), option(#Geography), option(#Landmark), option(#Ancestry), option(#Quest), option(#KeyedLocation), option(#District), option(#Key), option(#Adventure), option(#County), option(#Literature), option(#JourneyBoard), option(#Hierarchy))]"
+    }
+  ],
   "buttonTemplates": [
     {
       "label": "Add New Campaign",
@@ -58,9 +66,41 @@
           "command": "app:reload"
         }
       ]
+    },
+    {
+      "label": "Add New Session Note",
+      "icon": "",
+      "hidden": false,
+      "class": "",
+      "tooltip": "Add a new Session in the current Campaign",
+      "id": "new-session",
+      "style": "primary",
+      "actions": [
+        {
+          "type": "command",
+          "command": "quickadd:choice:d661e66b-e072-4760-95e6-1e172dadb98c"
+        }
+      ]
+    },
+    {
+      "label": "Campaign Index",
+      "icon": "",
+      "hidden": false,
+      "class": "",
+      "tooltip": "Open the Campaign Index",
+      "id": "campaign-index",
+      "style": "primary",
+      "actions": [
+        {
+          "type": "open",
+          "link": "[[obsidian://open?vault=buttonpusherTTRPG&file=01-Campaigns%2FCampaign%20Index]]",
+          "newTab": true
+        }
+      ]
     }
   ],
   "excludedFolders": [
     "templates"
-  ]
+  ],
+  "useUsDateInputOrder": false
 }

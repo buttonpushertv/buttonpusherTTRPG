@@ -17,7 +17,7 @@
   "allowHtml": true,
   "inlineQueryPrefix": "=",
   "inlineJsQueryPrefix": "$=",
-  "inlineQueriesInCodeblocks": true,
+  "inlineQueriesInCodeblocks": false,
   "enableInlineDataview": true,
   "enableDataviewJs": true,
   "enableInlineDataviewJs": true,
