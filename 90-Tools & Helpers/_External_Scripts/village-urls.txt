@@ -1,0 +1,9 @@
+https://watabou.github.io/village-generator/?pop=1006&name=&seed=9151100960310&width=1400&height=636&tags=highway%2Cno+square%2Cdense
+https://watabou.github.io/village-generator/?pop=1006&name=&seed=9151100960343&width=1400&height=636&tags=highway%2Cno+square%2Cdense
+https://watabou.github.io/village-generator/?pop=1011&name=&seed=9151100960331&width=1400&height=636&tags=highway%2Cdense
+https://watabou.github.io/village-generator/?pop=1011&name=&seed=9151100960340&width=1400&height=636&tags=highway%2Cno+square%2Cdense
+https://watabou.github.io/village-generator/?pop=1013&name=&seed=9151100960338&width=1400&height=636&tags=highway%2Cno+square%2Cdense
+https://watabou.github.io/village-generator/?pop=1015&name=&seed=9151100960282&width=1400&height=636&tags=highway%2Cdense
+https://watabou.github.io/village-generator/?pop=1018&name=&seed=9151100960352&width=1400&height=636&tags=highway%2Cdense
+https://watabou.github.io/village-generator/?pop=1020&name=&seed=9151100960300&width=1400&height=636&tags=highway%2Cdense
+https://watabou.github.io/village-generator/?pop=1025&name=&seed=9151100960299&width=1400&height=636&tags=river%2Chighway%2Cno+square%2Cdense

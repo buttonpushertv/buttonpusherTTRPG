@@ -1,5 +1,7 @@
-| ID | Burg | BurgMapLink |
-| -- | ---- | ----------- |
+# Burgs
+
+| ID  | Name | BurgMapLink |
+| --- | ---- | ----------- |
 {{#each pack.burgs}}
-| {{this.i}} | {{this.name}} | {{getBurgMapLink this @importDataRoot.info.seed @importDataRoot.pack.cells @importDataRoot.settings @importDataRoot.grid}} |
+| {{i}} | {{name}} |  {{getBurgMapLink this ../info.seed ../pack.cells ../settings ../grid}} | 
 {{/each}}

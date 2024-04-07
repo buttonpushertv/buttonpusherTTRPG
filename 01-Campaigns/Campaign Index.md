@@ -4,8 +4,6 @@ tags:
  - campaigns
 ---
 
-#tag-test
-
 ## List of current campaigns
 
 ```dataviewjs

@@ -138,7 +138,16 @@ handlebars.registerHelper('getCultureName', function(cultureId,allCultures) {
 // based on the data model for Fantasy Map Generator - https://github.com/Azgaar/Fantasy-Map-Generator/wiki/Data-model
 // Portions of this code are adapted from the Fantasy Map Generator Code - https://github.com/Azgaar/Fantasy-Map-Generator
 handlebars.registerHelper('getBurgMapLink', function(currentBurg, mapSeed, allCells, mapSettings, grid) {
+  if (currentBurg === 0) {
+    console.log("currentBurg has no value");
+    return 'not defined';
+  }
+  //console.log("mapSeed: ", mapSeed);
+  //console.log("allCells: ", allCells);
+  //console.log("mapSettings: ", mapSettings);
+  //console.log("currentBurg:", currentBurg);
   //console.log("Processing Burg ID: ", currentBurg.i, " - Name: ", currentBurg.name);
+
   //console.log("mapSettings: ", mapSettings);
   const {options} = mapSettings;
   //console.log("options: ", options);
@@ -146,7 +155,7 @@ handlebars.registerHelper('getBurgMapLink', function(currentBurg, mapSeed, allCe
   const pop = rn(currentBurg.population * mapSettings.populationRate * mapSettings.urbanization);
   // console.log("population: ", pop);
 
-  //console.log("currentBurg:", currentBurg);
+
   //console.log("POP TEST: population:", pop, "options.villageMaxPopulation: ", options.villageMaxPopulation);
 
   if (!options.villageMaxPopulation){
@@ -209,8 +218,9 @@ handlebars.registerHelper('getBurgMapLink', function(currentBurg, mapSeed, allCe
     const url = new URL("https://watabou.github.io/city-generator/");
     url.search = new URLSearchParams(parameters);
     if (sea) url.searchParams.append("sea", sea);
-    //console.log(currentBurg.name, " - MFCG URL: ", url.toString());
-    return url.toString();
+    console.log(currentBurg.name, " - MFCG URL: ", url.toString());
+    const toReturn = url.toString();
+    return toReturn.substring(25);
   
     function getSeaDirections(i) {
       const p1 = currentCell.p;
@@ -268,9 +278,10 @@ handlebars.registerHelper('getBurgMapLink', function(currentBurg, mapSeed, allCe
       const height = rn(width / 2.2);
     
       const Vurl = new URL("https://watabou.github.io/village-generator/");
-      Vurl.search = new URLSearchParams({pop, name: "", seed: burgSeed, width, height, tags});
-      //console.log(currentBurg.name, " - Village URL: ", Vurl.toString());
-      return Vurl.toString();
+      Vurl.search = new URLSearchParams({pop, name, seed: burgSeed, width, height, tags});
+      console.log(currentBurg.name, " - Village URL: ", Vurl.toString());
+      const toReturn = Vurl.toString();
+      return toReturn.substring(25);
     };
  
 

@@ -1,39 +1,39 @@
 ---
-alias: {{name}}
-burgMapLink: https://watabou.github.io{{getBurgMapLink this @importDataRoot.info.seed @importDataRoot.pack.cells @importDataRoot.settings @importDataRoot.grid}}
-campaign: "{{@importDataRoot.info.thisCampaign}}"
-capital: {{capital}}
-culture: {{getCultureName culture @importDataRoot.pack.cultures}}
-elevation: {{getHeight cell @importDataRoot.settings @importDataRoot.pack.cells}}
-emblem: "{{@importDataRoot.info.thisCampaignShortCode}}-{{@importDataRoot.info.mapName}} Emblem {{name}}.png"
-id: {{i}}
-burgName: {{name}}
-population: {{calcPopulation population}}
+alias: Abderikast
+burgMapLink: https://watabou.github.io/city-generator/?name=Abderikast&population=17951&size=39&seed=9151100960451&river=0&coast=0&farms=1&citadel=0&urban_castle=0&hub=false&plaza=1&temple=0&walls=1&shantytown=0&gates=-1
+campaign: "Test Campaign Ladonia"
+capital: 0
+culture: Elladan
+elevation: 2953 ft
+emblem: "TCL-Ladonia Emblem Abderikast.png"
+id: 451
+burgName: Abderikast
+population: 17,951
 pronounced: 
-province: "{{burgProvinceLookup cell @importDataRoot.pack.cells @importDataRoot.pack.provinces}}"
+province: "Abderikast County"
 rulers: 
 shortDescription: 
-state: {{getStateName state @importDataRoot.pack.states}}
-x: {{x}}
-y: {{y}}
+state: Thas
+x: 1140.72
+y: 1229.54
 tags:
 - Burg
-- {{@importDataRoot.info.mapName}}
-- {{@importDataRoot.info.thisCampaignShortCode}}
-type: {{type}}
+- Ladonia
+- TCL
+type: Generic
 WBProcess: FALSE
-world: {{@importDataRoot.info.mapName}}
+world: Ladonia
 ---
 
 %% Change the World Building Process (WBProcess) property to true once you have placed/updated any info onto the page. Basically this allows sorting based on what has & hasn't had world building stuff done for it. %%
 
-[[{{getCampaignHomeNote @importSettings}}]] | [[{{getCampaignAtlasNote @importSettings}}]] | `=link(this.state)` | `=link(this.province)`
+[[Test Campaign Ladonia Home]] | [[Test Campaign Ladonia-Linked Atlas]] | `=link(this.state)` | `=link(this.province)`
 
 %% For Burgs, you'll probably want to update the value of 'image' to a map of the Burg itself. At the top of the 'infobox' is the Fantasy Map Generator's link to Watabou's Fantasy City Generator.%% 
 
 > [!metadata|map]- Map
 > ```leaflet
-> id: Burg-{{name}}
+> id: Burg-Abderikast
 > image: [[PlaceholderImage.png]]
 > height: 600px
 > width: 100%
@@ -50,23 +50,23 @@ world: {{@importDataRoot.info.mapName}}
 
 > [!metadata]- City Map
 > ```custom-frames
-> frame: Watabou-Procgen Arcana
+> frame: Watabou-City Generator
 > style: height: 1000px;
-> urlSuffix: {{getBurgMapLink this @importDataRoot.info.seed @importDataRoot.pack.cells @importDataRoot.settings @importDataRoot.grid}}
+> urlSuffix: ?name=Abderikast&population=17951&size=39&seed=9151100960451&river=0&coast=0&farms=1&citadel=0&urban_castle=0&hub=false&plaza=1&temple=0&walls=1&shantytown=0&gates=-1
 > ```
 >  `=elink(this.burgMapLink,"Visit Burg Map")`
+
 
 %% All the info in this 'infobox' will appear in the panel to the right. Most of these values are pulled from the metadata in the properties above. %%
 
 > [!infobox]
-> ![[{{@importDataRoot.info.thisCampaignShortCode}}-{{@importDataRoot.info.mapName}} Emblem {{name}}.png]]
+> ![[TCL-Ladonia Emblem Abderikast.png]]
 > ###### Info
 >  |
 >  ---: | --- |
 >  **Pronounced:**| "`=this.pronounced`"
 > **Population** | `=this.population` |
 >  **Elevation:** | `=this.elevation`|
->  **Burg Map Link:**|`=elink(this.burgMapLink,"Burg Map")`
 >  
 > ###### Politics
 >  |
@@ -117,4 +117,4 @@ Below are any notable zones or regions within `=this.burgName`
 
 ---
 
-[[{{getCampaignHomeNote @importSettings}}]] | [[{{getCampaignAtlasNote @importSettings}}]] | `=link(this.state)` | `=link(this.province)`
+[[Test Campaign Ladonia Home]] | [[Test Campaign Ladonia-Linked Atlas]] | `=link(this.state)` | `=link(this.province)`
