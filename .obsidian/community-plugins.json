@@ -16,5 +16,6 @@
   "obsidian-import-json",
   "homepage",
   "nldates-obsidian",
-  "obsidian-linter"
+  "obsidian-linter",
+  "obsidian-table-to-csv-exporter"
 ]

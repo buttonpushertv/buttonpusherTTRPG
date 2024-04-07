@@ -7,5 +7,6 @@
   "ITS@@drwn": false,
   "ITS@@mini": false,
   "ITS@@notion": false,
-  "ITS@@its-d": false
+  "ITS@@its-d": false,
+  "ITS@@file-line-width": 1000
 }
