@@ -1,114 +1,5 @@
 {
-  "mapMarkers": [
-    {
-      "id": "Burg-Abderikast",
-      "lastAccessed": 1712454709801,
-      "markers": [
-        {
-          "id": "ID_3b7aea28a869",
-          "type": "default",
-          "loc": [
-            -750.9204988215671,
-            882.1003396011466
-          ],
-          "layer": "%5B%5Babderikast.png%5D%5D",
-          "mutable": true,
-          "command": false,
-          "percent": null,
-          "description": null,
-          "minZoom": null,
-          "maxZoom": null,
-          "tooltip": "hover"
-        },
-        {
-          "id": "ID_aaa819aaaaca",
-          "type": "default",
-          "loc": [
-            -756.8067737283432,
-            782.0336661859545
-          ],
-          "layer": "%5B%5Babderikast.png%5D%5D",
-          "mutable": true,
-          "command": false,
-          "percent": null,
-          "description": null,
-          "minZoom": null,
-          "maxZoom": null,
-          "tooltip": "hover"
-        },
-        {
-          "id": "ID_083babb90a79",
-          "type": "default",
-          "loc": [
-            -809.0627401988828,
-            839.6893026590251
-          ],
-          "layer": "%5B%5Babderikast.png%5D%5D",
-          "mutable": true,
-          "command": false,
-          "percent": null,
-          "description": null,
-          "minZoom": null,
-          "maxZoom": null,
-          "tooltip": "hover"
-        },
-        {
-          "id": "ID_7a88f9da896a",
-          "type": "default",
-          "loc": [
-            -823.2048758226138,
-            808.5766042868171
-          ],
-          "layer": "%5B%5Babderikast.png%5D%5D",
-          "mutable": true,
-          "command": false,
-          "percent": null,
-          "description": null,
-          "minZoom": null,
-          "maxZoom": null,
-          "tooltip": "hover"
-        },
-        {
-          "id": "ID_daea9ad8a9e9",
-          "type": "default",
-          "loc": [
-            -881.417111263753,
-            772.3633574105369
-          ],
-          "layer": "%5B%5Babderikast.png%5D%5D",
-          "mutable": true,
-          "command": false,
-          "percent": null,
-          "description": null,
-          "minZoom": null,
-          "maxZoom": null,
-          "tooltip": "hover"
-        },
-        {
-          "id": "ID_b95a8bb9ea3a",
-          "type": "default",
-          "loc": [
-            -759.9033464867387,
-            943.0412421971578
-          ],
-          "layer": "%5B%5Babderikast.png%5D%5D",
-          "mutable": true,
-          "command": false,
-          "percent": null,
-          "description": null,
-          "minZoom": null,
-          "maxZoom": null,
-          "tooltip": "hover"
-        }
-      ],
-      "overlays": [],
-      "shapes": [],
-      "files": [
-        "00-INBOX/Abderikast-custom frames to map.md",
-        "01-Campaigns/Test Campaign Ladonia/05-Atlas/Burgs/Abderikast.md"
-      ]
-    }
-  ],
+  "mapMarkers": [],
   "defaultMarker": {
     "type": "default",
     "iconName": "map-marker",
@@ -132,12 +23,66 @@
     "patch": 5
   },
   "warnedAboutMapMarker": false,
-  "copyOnClick": false,
+  "copyOnClick": true,
   "displayMarkerTooltips": "hover",
   "displayOverlayTooltips": true,
   "configDirectory": null,
   "mapViewEnabled": true,
-  "mapViewParameters": {},
+  "mapViewParameters": {
+    "darkMode": false,
+    "defaultZoom": -1.25,
+    "distanceMultiplier": 1,
+    "drawColor": "#3388ff",
+    "geojson": [],
+    "geojsonColor": "#3388ff",
+    "gpx": [],
+    "gpxColor": "#3388ff",
+    "height": "600px",
+    "image": "[[Ladonia World Map.svg]]",
+    "imageOverlay": [],
+    "isMapView": false,
+    "layers": [
+      "[[Ladonia World Map.svg]]"
+    ],
+    "linksFrom": [],
+    "linksTo": [],
+    "marker": [
+      "default, 332,1001,,name"
+    ],
+    "commandMarker": [],
+    "markerFile": [],
+    "markerFolder": [],
+    "markerTag": [],
+    "maxZoom": 5,
+    "minZoom": -1.5,
+    "osmLayer": true,
+    "overlay": [],
+    "overlayColor": "blue",
+    "scale": 2,
+    "showAllMarkers": false,
+    "tileServer": [],
+    "verbose": false,
+    "zoomDelta": 0.25,
+    "zoomFeatures": false,
+    "id": "State-Bhrymaion",
+    "bounds": [
+      [
+        0,
+        0
+      ],
+      [
+        1317,
+        2291
+      ]
+    ],
+    "coordinates": [
+      658.5,
+      1145.5
+    ],
+    "width": "100%",
+    "unit": "miles",
+    "filterTag": []
+  },
   "enableDraw": true,
   "defaultUnitType": "imperial",
   "defaultTile": "https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}.png",

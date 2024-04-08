@@ -11,7 +11,7 @@
   "minSyncInterval": 50,
   "maxSyncInterval": 1000,
   "enableJs": true,
-  "viewFieldDisplayNullAsEmpty": false,
+  "viewFieldDisplayNullAsEmpty": true,
   "enableSyntaxHighlighting": true,
   "enableEditorRightClickMenu": true,
   "inputFieldTemplates": [
