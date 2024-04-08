@@ -3,12 +3,12 @@ alert: {{alert}}
 alias: {{name}}
 area: {{totalArea area}}
 burgs: {{burgs}}
-campaign: "{{@importDataRoot.info.thisCampaign}}"
-capital: "[[{{getBurgName capital @importDataRoot.pack.burgs}}]]"
+campaign: {{@importDataRoot.info.thisCampaign}}
+capital: [[{{getBurgName capital @importDataRoot.pack.burgs}}]]
 color: {{color}}
 created: {{getDateTimestamp @importSettings}}
-culture: "[[{{getCultureName culture @importDataRoot.pack.cultures}}]]"
-emblem: "{{@importDataRoot.info.thisCampaignShortCode}}-{{@importDataRoot.info.mapName}} Emblem {{fullName}}.png"
+culture: [[{{getCultureName culture @importDataRoot.pack.cultures}}]]
+emblem: {{@importDataRoot.info.thisCampaignShortCode}}-{{@importDataRoot.info.mapName}} Emblem {{fullName}}.png
 expansionism: {{expansionism}}
 form: {{form}}
 formName: {{formName}}
@@ -17,12 +17,12 @@ id: {{i}}
 name: {{name}}
 neighbors: 
 {{#each neighbors}}
-- "[[{{getStateName this @importDataRoot.pack.states}}]]"
+- [[{{getStateName this @importDataRoot.pack.states}}]]
 {{/each}}
 pronounced:
 provinces:
 {{#each provinces}}
-- "[[{{getProvinceName this @importDataRoot.pack.provinces}}]]"
+- [[{{getProvinceName this @importDataRoot.pack.provinces}}]]
 {{/each}}
 totalPopulation: {{totalPopulation rural urban}}
 rulers:
@@ -43,22 +43,24 @@ world: {{@importDataRoot.info.mapName}}
 
 %% Edit the map data by updating the 'lat' & 'long' values to center the default map view one the location. %% 
 
-> [!metadata|map]- {{name}} Map
+> [!metadata|map]+ {{name}} Map
 > ```leaflet
 > id: State-{{name}}
-> image: [[PlaceholderImage.png]]
-> bounds: [[0,0],[4622.61,11965.22]]
+> image: [[{{@importDataRoot.info.mapName}} World Map.svg]]
+> bounds: 
+> - [0,0]
+> - [{{@importDataRoot.info.mapHeight}},{{@importDataRoot.info.mapWidth}}]
+> coordinates: [{{@importDataRoot.info.mapCenterH}},{{@importDataRoot.info.mapCenterW}}]
 > height: 600px
 > width: 100%
-> lat: 50
-> long: 50
-> minZoom: -3.5
-> maxZoom: 2.25
-> defaultZoom: -3
+> minZoom: -1.5
+> maxZoom: 5
+> defaultZoom: -1.25
 > zoomDelta: 0.25
 > unit: miles
-> scale: 1
+> scale: 2
 > darkMode: false
+> marker: default, {{getLeafletBurgYPos capital @importDataRoot.pack.burgs @importDataRoot.info.mapHeight}},{{getBurgXPos capital @importDataRoot.pack.burgs}},[[{{getBurgName capital @importDataRoot.pack.burgs}}]],Captial-{{getBurgName capital @importDataRoot.pack.burgs}}
 > ```
 
 %% All the info in this 'infobox' will appear in the panel to the right. Most of these values are pulled from the metadata in the properties above. %%

@@ -89,6 +89,56 @@ handlebars.registerHelper('getBurgName', function(burgId,allBurgs) {
   return burgFound ? burgFound.name : 'Unknown';
 });
 
+// 006b
+// Custom helper function to get Burg X Position
+handlebars.registerHelper('getBurgXPos', function(burgId,allBurgs) {
+  //console.log("burgId:", burgId);
+  //console.log("allBurgs: ", allBurgs);
+  if (burgId === undefined || burgId === 0 ) {
+    // console.log("##### burgId was undefined or zero #####");
+    return ''; // skip if the element is undefined or zero
+  };
+  const burgFound = allBurgs.find(burg => burg.i === burgId);
+  //console.log("burgFound:", burgFound.name);
+  return burgFound ? burgFound.x : 'Unknown';
+});
+
+// 006c
+// Custom helper function to get Burg Y Position
+handlebars.registerHelper('getBurgYPos', function(burgId,allBurgs) {
+  //console.log("burgId:", burgId);
+  //console.log("allBurgs: ", allBurgs);
+  if (burgId === undefined || burgId === 0 ) {
+    // console.log("##### burgId was undefined or zero #####");
+    return ''; // skip if the element is undefined or zero
+  };
+  const burgFound = allBurgs.find(burg => burg.i === burgId);
+  //console.log("burgFound:", burgFound.name);
+  return burgFound ? burgFound.y : 'Unknown';
+});
+
+// 006d
+// Custom helper function to get Burg Y Position
+// This is specifically coded to account for the differnce between Azgaar's FMG & Obsidian Leaflet
+// The value this will return will subtract the currentBurg.x from the info.mapHeight value
+// That should invert the coordinate value so that it works correctly with Obsidian Leaflet
+handlebars.registerHelper('getLeafletBurgYPos', function(burgId,allBurgs, mapHeight) {
+  //console.log("burgId:", burgId);
+  //console.log("allBurgs: ", allBurgs);
+  if (burgId === undefined || burgId === 0 ) {
+    // console.log("##### burgId was undefined or zero #####");
+    return ''; // skip if the element is undefined or zero
+  };
+  const burgFound = allBurgs.find(burg => burg.i === burgId);
+  //console.log("burgFound:", burgFound.name);
+  console.log(burgFound.name, " - Y Value: ", burgFound.y);
+  const tempYValue = burgFound.y;
+  const leafletValidYValue = mapHeight - tempYValue;
+  console.log("leaflet adjust value: ", leafletValidYValue);
+  return leafletValidYValue;
+});
+
+
 // 007
 // Custom helper function to get State Name
 handlebars.registerHelper('getStateName', function(stateId,allStates) {
@@ -131,7 +181,24 @@ handlebars.registerHelper('getCultureName', function(cultureId,allCultures) {
 });
 
 // 010
-// AVAIALABLE
+// Custom Helper to determine Burg Map Units
+handlebars.registerHelper('burgMapUnits', function(currentBurg, mapSettings) {
+  const {options} = mapSettings;
+  if (!options.villageMaxPopulation){
+    console.log ("## - JSON does not contain options.villageMaxPopulation - ##");
+    return 'meters'
+  } else if (pop >= options.villageMaxPopulation || currentBurg.citadel || currentBurg.walls || currentBurg.temple || currentBurg.shanty) {
+    return 'meters';
+  } else {
+    return 'feet';
+  };
+
+
+  if (popValue === undefined) {
+    return ''; // skip if population value is undefined
+  };
+    return Math.floor(popValue * 1000).toLocaleString();
+  });
 
 // 011
 // Custom helper to construct the Map link for a Burg. If population is over 2,000 it uses https://watabou.github.io/city-generator/. If population is under 2,000 it uses https://watabou.github.io/village-generator/

@@ -21,6 +21,9 @@ In the step above, when you created you campaign, you entered some info. You wil
 # Export Full JSON from FMG
 Export the "Full JSON" File from Fantasy Map Generator.
 
+# Export an SVG of the FMG map itself
+Export an SVG of the map. It will be useful to check the box that says "Show all labels" - this will show all the names of the States and Burgs on the map. Provinces do not have labels to show - it would probably get confusing if they were there as well.
+
 # Modifications to FMG Full JSON file
 There are some things that need to be modified in the FMG JSON file for the Handlebar Templates and Helpers to work properly. It's a good idea to work from a copy of the raw JSON export from FMG. That will give you a backup of what you get out of FMG and you can revert to the original data, if needed. Make a duplicate of the JSON file and add something like "-MODDED" or "-forIMPORT" to the filename. Open this copied JSON file in a text editor. **Be very careful to keep the JSON valid for this to work.**
 
@@ -31,9 +34,14 @@ There are some things that need to be modified in the FMG JSON file for the Hand
 1. Under the `info` element, add some Campaign specific stuff. _You should modify this info for each campaign you wish to import this JSON into. It will create some relative path info needed in the various notes you will be creating._
 	1. First you'll need to grab the name of your campaign. This is the _exact_ name under `01-Campaigns` from your vault.
 	2. After the `"version"` element, add a comma and then press enter to create a new line
-	3. Enter `"thisCampaign": "name_here"` - place the campaign name from above inside the quotes, replacing `name_here`  & add a comma to the end of the line. _Make sure to surround items in double quotations like other elements._
-	4. On a second new line enter `"thisCampaignPath": "01-Campaigns/name_here"` - replace the `name_here` part with the name above.
-	5. On a third line, enter `"thisCampaignShortCode": "shortcode_here"` - replace the `shortcode-here` part with the campaign's short code.
+	3. Enter `"thisCampaign": "name_here",` - place the campaign name from above inside the quotes, replacing `name_here`  & add a comma to the end of the line - outside the double quotes. _Make sure to surround items in double quotations like other elements._
+	4. On a second new line enter `"thisCampaignPath": "01-Campaigns/name_here",` - replace the `name_here` part with the name above. Don't forget the comma.
+	5. On a third line, enter `"thisCampaignShortCode": "shortcode_here",` - replace the `shortcode-here` part with the campaign's short code. Again, add a comma after you close the double quotes.
+	6. On a fourth line, enter `"mapWidth": map_width_here,` - replace the `mapwidth_here` with the width of your map from FMG. You can find the value under `Options`->`Canvas Size` of your map. Remember the comma.
+	7. On a fifth line, enter `"mapWidth": map_width_here,` - replace the `mapwidth_here` with the width of your map from FMG. You can find the value under `Options`->`Canvas Size` of your map. Again with the comma.
+	8. On the sixth line, add `"mapCenterH": half_mapHeight_value,` - just divide the map's height by 2 and enter it here. include any fractional result you get. Add that comma.
+	9. On the seventh line,  add `"mapCenterW": half_mapWidth_value,` - just divide the map's width by 2 and enter it here. include any fractional result you get. **DO NOT ADD A COMMA TO THIS LINE'S END**
+	10. Make sure that after whatever final line you add, you do not have a comma at the end of that last line. It will mess up the JSON if you do.
 
 > [!INFO] Storing the MODDED JSON file - a suggested location
 > When you save the MODDED JSON file from FMG, it's probably a good idea to store it in this folder of this vault: `99-Templates\Handlebars-JSON`.
@@ -329,4 +337,61 @@ Steps undertaken to wrangle the FMG emblems connected to each State, Province, a
 
 	=CONCATENATE("rename ", A778, " ", CHAR(34),"campaign_name OR world_name Emblem ", B778, ".png", CHAR(34)
 The `CHAR(34)` code will insert double quote marks to wrap the filename that will have spaces. The `campaign_name OR world_name` portion can be whatever you want to use. If you've followed importing steps at the top of this document, the templates are setup to use the `campaignShortCode` you entered when you created a new campaign. The frontmatter field called `emblem` within States, Provinces, and Burgs should pre-populate with an item that is formatted like this: `campaignShortCode-world_name Emblem location_name.png` - where `location_name` will be whatever you're locations are named and `world_name` is the name of the FMG world taken from the JSON element at `info.mapName`.
+8. Once you have created this listing via `CONCATENATE`, select that column and copy it to the clipoard.
+9. Navigate to the folder where you've saved the FMG Emblems, and open a command line window.
+10. Create a new `.bat` file, call it `emblem-rename.bat` and open it for editing and paste the `CONCATENATE` column results into the file and save it.
+11. Running that `.bat` file now will rename all your FMG Emblem files so that they should match the emblem with the State/Province/Burg it goes with.
 
+# Wrangling FMG Burg Maps
+FMG includes connections to Watabou's [Medieval Fantasy City Generator](https://watabou.github.io/city-generator/?size=25&seed=981800034&greens=0&citadel=1&urban_castle=1&plaza=1&temple=1&walls=0&shantytown=0&coast=1&river=0&gates=-1&sea=0.2) and [Village Generator](https://watabou.github.io/village-generator/?seed=1714876149&tags=no%20square,highway). The URL links to maps for each of your map's Burgs is available to extract from the JSON, but it does not exist in a JSON field as the URL. It has to be extracted via some HelperJS functions in [[Helpers-FMG-JSON.js]].
+
+You don't need to do anything to get that info. The URLs that link to the same maps directly out of the FMG map are extracted here as a part of the import process. There will be a link to the map in the info box on each Burg's individual note.
+
+There are two ways to get the map itself to appear as part of the Burg's note.
+
+### The Custom Frames Method
+Pros: 
+- "live" URL you can access on demand
+- no extra work to do to implement this
+Cons: 
+- Internet connection required
+- Cannot add  any pins or other details within Obsidian 
+
+This feature is created as a part of the import process. You can use it if you want or you can remove it.
+
+It makes use of the extracted URL and the Custom Frames plugin included in the vault. It should just be there on each Burg note after the import.
+
+### The Local Map Image Method
+Pros:
+- Using Obsidian Leaflet, you can add pins and other info to the map
+- lock in the way the Burg looks - as Watabou and FMG are updated, sometimes the maps will procedurally generate differently from the first time you may have seen them. Or things could change with out you realizing it.
+- Locally serving the images means you do not need an active connection to the Internet (once you've got them all downloaded)
+Cons:
+- Extracting the URLs can be a bit of a chore - it's fairly automated, but the steps must be done precisely or it will likely fairly (see below for the steps).
+- Have to use PNG images for this because the SVGs from Watabou's apps have some formatting issues that make them not so pretty or useful (City Generator text has giant strokes around all the letters that obscure map beneath & Village Generator does not scale the text based on the window size - a small viewport will be mostly the Village Name - Azgaar blanks out the name on the FMG site because of this)
+
+Pulling down the images of all the Burgs consists of using a Dataview within Obsidian to filter the Burg URLs. Then using the Table to CSV Exporter to export the results of that Dataview to a CSV file. Using an external script, AutoHotKey V1 in this case, to automatically pull down all the images for all the Burg URLs.
+
+This is a fiddly process and it is not to be undertaken lightly. It does work, but it has to be done just so to work correctly.
+
+Here are the steps to this process:
+
+1. Import the Burgs from your FMG map as described above [[JSON Import How To#Burgs]]
+2. Create a new note with this Dataview code on it (and nothing else):
+```
+(first line with 3 ticks & 'dataview')
+TABLE WITHOUT ID file.link as "Name", burgMapLink as "burgMapLink"
+FROM #Burg and "01-Campaigns/specific_campaign_name"
+SORT file.name ASC
+(close with 3 tick marks)
+```
+You need to include a `specific_campaign_name` or it will pull in all the Burg URLs from every Burg note in the vault.
+3. Use the Table to CSV Exporter plugin to export this note to a CSV file. It will likely store the exported file in the root of the vault and call it something like `table-export-001.csv`.
+4. Import the CSV into an app where you can access the individual columns. We *want to keep* the Burg Name and URL relationship intact, at least, somewhere. This will be helpful if there are issues with missing files.
+5. (the AutoHotKey script - in 90-Tools & Helpers/_External_Scripts)
+6. (sorting the CSV lines by the URL field to separate the City and Village URLs)
+7. (saving the URLs only to `city-urls.csv` and `village-urls.csv` in the same folder as the AHK script)
+8. (Running the AHK script - using Firefox seems to avoid the CityGen-PNG bug where it loses some map elements - they just don't display)
+9. (Let it cook)
+10. (Move the files to 91-Assets & within a subfolder for the specific campaign)
+11. (renaming files to be hashed out next)

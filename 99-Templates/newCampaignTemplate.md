@@ -60,6 +60,8 @@ for (const folderName of folderNames) {
     }
 %>
 
+[[Campaign Index]]
+
 # The World of {{VALUE:newCampaignName}}
 
 [[{{VALUE:newCampaignAtlas}}]]
