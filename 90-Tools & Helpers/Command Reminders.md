@@ -25,5 +25,7 @@
 >> - bug
 >> - example
 
+[[Obsidian Formatting Cheat Sheet]]
+[[Obsidian Formatting Cheat Sheet#ITS Theme Syntax]]
 
-[[ITS Theme - SlRvb's Documentation - Obsidian Publish](https://publish.obsidian.md/slrvb-docs/ITS+Theme/ITS+Theme)]
+[ITS Theme Documentation](https://publish.obsidian.md/slrvb-docs/ITS+Theme/ITS+Theme)
