@@ -1,13 +1,13 @@
 ---
 alert: {{alert}}
-alias: {{name}}
+aliases: {{name}}
 area: {{totalArea area}}
 burgs: {{burgs}}
 campaign: {{@importDataRoot.info.thisCampaign}}
-capital: [[{{getBurgName capital @importDataRoot.pack.burgs}}]]
+capital: "[[{{getBurgName capital @importDataRoot.pack.burgs}}]]"
 color: {{color}}
 created: {{getDateTimestamp @importSettings}}
-culture: [[{{getCultureName culture @importDataRoot.pack.cultures}}]]
+culture: "[[{{getCultureName culture @importDataRoot.pack.cultures}}]]"
 emblem: {{@importDataRoot.info.thisCampaignShortCode}}-{{@importDataRoot.info.mapName}} Emblem {{fullName}}.png
 expansionism: {{expansionism}}
 form: {{form}}
@@ -17,12 +17,12 @@ id: {{i}}
 name: {{name}}
 neighbors: 
 {{#each neighbors}}
-- [[{{getStateName this @importDataRoot.pack.states}}]]
+- "[[{{getStateName this @importDataRoot.pack.states}}]]"
 {{/each}}
 pronounced:
 provinces:
 {{#each provinces}}
-- [[{{getProvinceName this @importDataRoot.pack.provinces}}]]
+- "[[{{getProvinceName this @importDataRoot.pack.provinces}}]]"
 {{/each}}
 totalPopulation: {{totalPopulation rural urban}}
 rulers:
@@ -33,17 +33,36 @@ tags:
 - State
 - {{@importDataRoot.info.mapName}}
 type: {{type}}
-WBProcess: FALSE
+WBProcess: Imported
 world: {{@importDataRoot.info.mapName}}
 ---
 
-%% Change the World Building Process (WBProcess) property to true once you have placed/updated any info onto the page. You can use 'true' & 'false' or you can use other values ('started', a percentage, or 'inProgress') to indicate pages you may be working on. Basically this allows sorting based on what has & hasn't had world building stuff done for it or that you may have started, but not finished. %%
+> [!metadata|metadata]- Metadata 
+>> [!metadata|metadataoption]- System
+>> #### System
+>>  |
+>> ---|---|
+>> **Tags** | `INPUT[Tags][inlineListSuggester:tags]` |
+>> **World Building Progress**| `INPUT[WBProgress][inlineSelect:wbprogress]`
+>>> [!note]- Tracking World Building Progress
+>>> Update the World Building Progress property as you update any info on the page. Your choices are `Imported`, `In Progress`, `Game-ready`, `Nearly Complete,` and `Done`. 
+>>> 
+>>> This allows sorting based on what has & hasn't had world building stuff done for it. There are Dataviews setup on the campaign home page that sort by these progress key words.
+>
+>> [!metadata|metadataoption]- Info
+>> #### Info
+>>  |
+>> ---|---|
+> **Pronounced** |  `INPUT[text:pronounced]`
+> **Aliases** | `INPUT[list:aliases]` |
+> **Rulers**|`INPUT[list:rulers]`|
+> **Short Description**|`INPUT[textArea:shortDescription]`
 
 [[{{getCampaignHomeNote @importSettings}}]] | [[{{getCampaignAtlasNote @importSettings}}]]
 
 %% Edit the map data by updating the 'lat' & 'long' values to center the default map view one the location. %% 
 
-> [!metadata|map]+ {{name}} Map
+> [!metadata|map]+ {{name}} World Map
 > ```leaflet
 > id: State-{{name}}
 > image: [[{{@importDataRoot.info.mapName}} World Map.svg]]
@@ -60,17 +79,27 @@ world: {{@importDataRoot.info.mapName}}
 > unit: miles
 > scale: 2
 > darkMode: false
-> marker: default, {{getLeafletBurgYPos capital @importDataRoot.pack.burgs @importDataRoot.info.mapHeight}},{{getBurgXPos capital @importDataRoot.pack.burgs}},[[{{getBurgName capital @importDataRoot.pack.burgs}}]],Captial-{{getBurgName capital @importDataRoot.pack.burgs}}
+> marker: default, {{getLeafletBurgYPos capital @importDataRoot.pack.burgs @importDataRoot.info.mapHeight}},{{getBurgXPos capital @importDataRoot.pack.burgs}},[[{{getBurgName capital @importDataRoot.pack.burgs}}]],Capital-{{getBurgName capital @importDataRoot.pack.burgs}}
 > ```
 
 %% All the info in this 'infobox' will appear in the panel to the right. Most of these values are pulled from the metadata in the properties above. %%
 
 > [!infobox]
 > ![[{{@importDataRoot.info.thisCampaignShortCode}}-{{@importDataRoot.info.mapName}} Emblem {{fullName}}.png]]
-> ###### Info
+>
+>  |
+>  --- |
+> 
+>  # **Pronounced:**
+>  # "`=this.pronounced`"
+> 
+>  |
+>  --- |
+>  
+>> [!note|title-center c-gray] ### Info
+> 
 >  |
 >  ---: | --- |
->  **Pronounced:**| "`=this.pronounced`"
 > **Population** | `=this.totalPopulation` |
 >  <span style="font-size:x-small">**Urban**<br>**Rural** </span>| <span style="font-size:x-small">`=this.urban`<br>`=this.rural`</span> |
 > **Area (sq. mi)** | `=this.area` |

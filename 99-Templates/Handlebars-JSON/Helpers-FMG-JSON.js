@@ -461,6 +461,7 @@ handlebars.registerHelper('burgProvinceLookup', function(cellId,allCells,allProv
 
 // 017
 // Custom helper to return religion name from passed religionID
+// THIS NEEDS TO BE RE-WORKED - RELIGION IS STORED IN THE 'CELLS' JSON ELEMENTS
 handlebars.registerHelper('getReligionName', function(religionID,allReligions) {
   //console.log("religionId:", religionId);
   //console.log("allreligions: ", allreligions);

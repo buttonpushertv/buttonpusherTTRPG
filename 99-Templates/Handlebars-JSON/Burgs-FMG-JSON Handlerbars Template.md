@@ -1,5 +1,5 @@
 ---
-alias: {{name}}
+aliases: {{name}}
 burgMapLink: https://watabou.github.io{{getBurgMapLink this @importDataRoot.info.seed @importDataRoot.pack.cells @importDataRoot.settings @importDataRoot.grid}}
 campaign: "{{@importDataRoot.info.thisCampaign}}"
 capital: {{capital}}
@@ -21,7 +21,7 @@ tags:
 - {{@importDataRoot.info.mapName}}
 - {{@importDataRoot.info.thisCampaignShortCode}}
 type: {{type}}
-WBProcess: FALSE
+WBProcess: Imported
 world: {{@importDataRoot.info.mapName}}
 ---
 
@@ -30,17 +30,21 @@ world: {{@importDataRoot.info.mapName}}
 >> #### System
 >>  |
 >> ---|---|
-> **Tags** | `INPUT[Tags][inlineListSuggester:tags]` |
->
+>> **Tags** | `INPUT[Tags][inlineListSuggester:tags]` |
+>> **World Building Progress**| `INPUT[WBProgress][inlineSelect:wbprogress]`|
+>>> [!note]- Tracking World Building Progress
+>>> Update the World Building Progress property as you update any info on the page. Your choices are `Imported`, `In Progress`, `Game-ready`, `Nearly Complete,` and `Done`. 
+>>> 
+>>> This allows sorting based on what has & hasn't had world building stuff done for it. There are Dataviews setup on the campaign home page that sort by these progress key words.
+> 
 >> [!metadata|metadataoption]- Info
 >> #### Info
 >>  |
 >> ---|---|
 > **Pronounced** |  `INPUT[text:pronounced]`
-> **Aliases** | `INPUT[list:alias]` |
+> **Aliases** | `INPUT[list:aliasese]` |
 > **Rulers**|`INPUT[list:rulers]`|
-
-%% Change the World Building Process (WBProcess) property to true once you have placed/updated any info onto the page. Basically this allows sorting based on what has & hasn't had world building stuff done for it. %%
+> **Short Description**|`INPUT[textArea:shortDescription]`
 
 [[{{getCampaignHomeNote @importSettings}}]] | [[{{getCampaignAtlasNote @importSettings}}]] | `=link(this.state)` | `=link(this.province)`
 
@@ -83,10 +87,20 @@ world: {{@importDataRoot.info.mapName}}
 
 > [!infobox]
 > ![[{{@importDataRoot.info.thisCampaignShortCode}}-{{@importDataRoot.info.mapName}} Emblem {{name}}.png]]
-> ###### Info
+>
+>  |
+>  --- |
+> 
+>  # **Pronounced:**
+>  # "`=this.pronounced`"
+> 
+>  |
+>  --- |
+>  
+>> [!note|title-center c-gray] ### Info
+> 
 >  |
 >  ---: | --- |
->  **Pronounced:**| "`=this.pronounced`"
 > **Population** | `=this.population` |
 >  **Elevation:** | `=this.elevation`|
 >  **Burg Map Link:**|`=elink(this.burgMapLink,"Burg Map")`

@@ -1,5 +1,5 @@
 ---
-alias: {{name}}
+aliases: {{name}}
 campaign: "{{@importDataRoot.info.thisCampaign}}"
 capital: "[[{{getBurgName burg @importDataRoot.pack.burgs}}]]"
 color: {{color}}
@@ -16,42 +16,73 @@ state: "[[{{getStateName state @importDataRoot.pack.states}}]]"
 tags:
 - Province
 - {{@importDataRoot.info.mapName}}
-WBProcess: FALSE
+WBProcess: Imported
 world: {{@importDataRoot.info.mapName}}
 ---
 
-%% Change the World Building Process (WBProcess) property to true once you have placed/updated any info onto the page. Basically this allows sorting based on what has & hasn't had world building stuff done for it. %%
+> [!metadata|metadata]- Metadata 
+>> [!metadata|metadataoption]- System
+>> #### System
+>>  |
+>> ---|---|
+>> **Tags** | `INPUT[Tags][inlineListSuggester:tags]` |
+>> **World Building Progress**| `INPUT[WBProgress][inlineSelect:wbprogress]`|
+>>> [!note]- Tracking World Building Progress
+>>> Update the World Building Progress property as you update any info on the page. Your choices are `Imported`, `In Progress`, `Game-ready`, `Nearly Complete,` and `Done`. 
+>>> 
+>>> This allows sorting based on what has & hasn't had world building stuff done for it. There are Dataviews setup on the campaign home page that sort by these progress key words.
+> 
+>> [!metadata|metadataoption]- Info
+>> #### Info
+>>  |
+>> ---|---|
+> **Pronounced** |  `INPUT[text:pronounced]`
+> **Aliases** | `INPUT[list:aliases]` |
+> **Rulers**|`INPUT[list:rulers]`|
+> **Short Description**|`INPUT[textArea:shortDescription]`
 
 [[{{getCampaignHomeNote @importSettings}}]] | [[{{getCampaignAtlasNote @importSettings}}]] | `=link(this.state)`
 
 %% Edit the map data by updating the 'lat' & 'long' values to center the default map view one the location. %% 
 
-> [!metadata|map]- Map
+> [!metadata|map]+ {{name}} World Map
 > ```leaflet
-> id: State-{{State}}
-> image: [[PlaceholderImage.png]]
-> bounds: [[0,0],[4622.61,11965.22]]
+> id: State-{{getStateName state @importDataRoot.pack.states}}
+> image: [[{{@importDataRoot.info.mapName}} World Map.svg]]
+> bounds: 
+> - [0,0]
+> - [{{@importDataRoot.info.mapHeight}},{{@importDataRoot.info.mapWidth}}]
+> coordinates: [{{@importDataRoot.info.mapCenterH}},{{@importDataRoot.info.mapCenterW}}]
 > height: 600px
 > width: 100%
-> lat: 50
-> long: 50
-> minZoom: -3.5
-> maxZoom: 2.25
-> defaultZoom: -3
+> minZoom: -1.5
+> maxZoom: 5
+> defaultZoom: -1.25
 > zoomDelta: 0.25
 > unit: miles
-> scale: 1
+> scale: 2
 > darkMode: false
+> marker: default, {{getLeafletBurgYPos capital @importDataRoot.pack.burgs @importDataRoot.info.mapHeight}},{{getBurgXPos capital @importDataRoot.pack.burgs}},[[{{getBurgName capital @importDataRoot.pack.burgs}}]],Capital-{{getBurgName capital @importDataRoot.pack.burgs}}
 > ```
 
 %% All the info in this 'infobox' will appear in the panel to the right. Most of these values are pulled from the metadata in the properties above. %%
 
 > [!infobox]
 > ![[{{@importDataRoot.info.thisCampaignShortCode}}-{{@importDataRoot.info.mapName}} Emblem {{fullName}}.png]]
-> ###### Info
+>
+>  |
+>  --- |
+> 
+>  # **Pronounced:**
+>  # "`=this.pronounced`"
+> 
+>  |
+>  --- |
+>  
+>> [!note|title-center c-gray] ### Info
+> 
 >  |
 >  ---: | --- |
->  **Pronounced:**| "`=this.pronounced`"
 >  
 > ###### Politics
 >  |
