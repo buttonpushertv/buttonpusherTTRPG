@@ -4,23 +4,35 @@
     "type": "split",
     "children": [
       {
-        "id": "ef62449c81d65e02",
+        "id": "c0b311e7b4d4f5d6",
         "type": "tabs",
         "children": [
           {
-            "id": "7a14917c06c6bcdb",
+            "id": "e0b40af1c52b2d3d",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "99-Templates/Handlebars-JSON/Burgs-FMG-JSON Handlerbars Template.md",
+                "file": "99-Templates/newCampaignSimpleAtlasTemplate.md",
                 "mode": "source",
                 "source": true
               }
             }
           },
           {
-            "id": "f1578cb070ad96e7",
+            "id": "db65e2ab2f4dda96",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "99-Templates/newCampaignSimpleAtlasTemplate.md",
+                "mode": "source",
+                "source": true
+              }
+            }
+          },
+          {
+            "id": "89de4f73ba52e503",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -31,8 +43,50 @@
               }
             }
           }
+        ]
+      },
+      {
+        "id": "cae1f1a2c70fa505",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e03bf43c067fb087",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "99-Templates/Handlebars-JSON/Provinces-FMG-JSON Handlebars Template.md",
+                "mode": "source",
+                "source": true
+              }
+            }
+          },
+          {
+            "id": "d54bd5a3f1468aa7",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "99-Templates/Handlebars-JSON/States-FMG-JSON Handlebars Template.md",
+                "mode": "source",
+                "source": true
+              }
+            }
+          },
+          {
+            "id": "dfbf7c30b5427074",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "99-Templates/Handlebars-JSON/Burgs-FMG-JSON Handlerbars Template.md",
+                "mode": "source",
+                "source": true
+              }
+            }
+          }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -84,7 +138,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Home.md",
+                "file": "99-Templates/Handlebars-JSON/Burgs-FMG-JSON Handlerbars Template.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -96,7 +150,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Home.md",
+                "file": "99-Templates/Handlebars-JSON/Burgs-FMG-JSON Handlerbars Template.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -124,7 +178,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Home.md"
+                "file": "99-Templates/Handlebars-JSON/Burgs-FMG-JSON Handlerbars Template.md"
               }
             }
           }
@@ -143,18 +197,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "8c1d2257340444cb",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "90-Tools & Helpers/Buttons.md",
-                "mode": "preview",
-                "source": true
-              }
-            }
-          },
-          {
             "id": "969e6b31d86c73e8",
             "type": "leaf",
             "state": {
@@ -166,7 +208,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 303.5
+    "width": 303.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -184,15 +227,35 @@
       "obsidian-import-json:JSON/CSV Importer": false
     }
   },
-  "active": "f1578cb070ad96e7",
+  "active": "dfbf7c30b5427074",
   "lastOpenFiles": [
-    "99-Templates/Handlebars-JSON/Burgs-FMG-JSON Handlerbars Template.md",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/Burgs/Abderikast.md",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/Burgs/Acciarovia.md",
-    "90-Tools & Helpers/JSON Import How To.md",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/Burgs/Acharnas.md",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/Burgs/Achargydon.md",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/Alocenia.md",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/Burgs/Riofrioli.md",
+    "99-Templates/newCampaignSimpleAtlasTemplate.md",
+    "Home.md",
+    "90-Tools & Helpers/Map Information Worksheet.md",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/Test Campaign Ladonia-Simple Atlas.md",
     "99-Templates/Handlebars-JSON/States-FMG-JSON Handlebars Template.md",
+    "01-Campaigns/Test Campaign Ladonia/Test Campaign Ladonia Home.md",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/Provinces/Abderikast County.md",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/Test Campaign Ladonia-Linked Atlas.md",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/Burgs/Abderikast.md",
+    "99-Templates/Handlebars-JSON/Provinces-FMG-JSON Handlebars Template.md",
+    "99-Templates/Handlebars-JSON/Burgs-FMG-JSON Handlerbars Template.md",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/Aporesia.md",
+    "90-Tools & Helpers/Command Reminders.md",
+    "99-Templates/Handlebars-JSON/Religions-FMG-JSON Handlebars Template.md",
+    "99-Templates/Handlebars-JSON/Cultures-FMG-JSON Handlebars Template.md",
+    "90-Tools & Helpers/Buttons.md",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/Upunia.md",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/Tiormaa.md",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/Thas.md",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/Petrica.md",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/Nikmaa.md",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/Neutrals.md",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/Mauna.md",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/Marbeilia.md",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States",
     "91-Assets/Test Campaign Ladonia/Village-PNGs/Zagyhad.png",
     "91-Assets/Test Campaign Ladonia/Village-PNGs/Yryry.png",
     "91-Assets/Test Campaign Ladonia/Village-PNGs/Woldenhober.png",
@@ -203,26 +266,6 @@
     "91-Assets/Test Campaign Ladonia/Village-PNGs/Valvice.png",
     "91-Assets/Test Campaign Ladonia/Village-PNGs/Vaaksa.png",
     "91-Assets/Test Campaign Ladonia/Village-PNGs/Unajarvinen.png",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/Burgs/Riofrioli.md",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/Alocenia.md",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/Test Campaign Ladonia-Simple Atlas.md",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/Aporesia.md",
-    "01-Campaigns/Test Campaign Ladonia/Test Campaign Ladonia Home.md",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/Marbeilia.md",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/Burgs/Sugentaivet.md",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/BurgMapLinks-Dataview.md",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/Ingnia.md",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/Calhosia.md",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/Burgs/Coimbral.md",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/Bhrymaion.md",
-    "Home.md",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/Petrica.md",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/Histharoseia.md",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/Esmosia.md",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/Thas.md",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/Tiormaa.md",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/Kunszavasia.md",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States",
     "99-Templates/Handlebars-JSON/Ladonia 2024-03-31-10-44.map",
     "01-Campaigns/Test Campaign Ladonia/05-Atlas/Burgs",
     "91-Assets/Test Campaign Ladonia/City-SVGs",

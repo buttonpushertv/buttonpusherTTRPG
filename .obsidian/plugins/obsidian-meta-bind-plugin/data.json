@@ -22,6 +22,10 @@
     {
       "name": "Tags",
       "declaration": "INPUT[inlineSelect(option(#Location), option(#Settlement), option(#Character), option(#Organization), option(#NPC), option(#Player), option(#POI), option(#SessionNote), option(#Service), option(#Letter), option(#Party), option(#Deity), option(#Geography), option(#Landmark), option(#Ancestry), option(#Quest), option(#KeyedLocation), option(#District), option(#Key), option(#Adventure), option(#County), option(#Literature), option(#JourneyBoard), option(#Hierarchy))]"
+    },
+    {
+      "name": "WBProgress",
+      "declaration": "INPUT[inlineSelect(option(Imported), option(In Progress), option(Game-ready), option(Nearly Complete), option(Completed), showcase)]"
     }
   ],
   "buttonTemplates": [
