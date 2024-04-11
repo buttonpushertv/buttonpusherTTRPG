@@ -6,6 +6,9 @@ campaignCalendar: "{{VALUE:newCampaignCalendar}}"
 campaignStatus: 
 campaignSystem:
 
+putting the world map in the center:
+[{{getLeafletCenterH @importDataRoot.info}},{{getLeafletCenterW @importDataRoot.info}}]
+
 ---
 
 Code for pulling in COA element - this is all that it appears needs to be fed the draw() function from the data:
