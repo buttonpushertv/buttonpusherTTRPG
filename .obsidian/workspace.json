@@ -4,89 +4,22 @@
     "type": "split",
     "children": [
       {
-        "id": "c0b311e7b4d4f5d6",
+        "id": "c0a0852a0b4c32d8",
         "type": "tabs",
         "children": [
           {
-            "id": "e0b40af1c52b2d3d",
+            "id": "795e49f25b29c077",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "99-Templates/newCampaignSimpleAtlasTemplate.md",
-                "mode": "source",
-                "source": true
-              }
-            }
-          },
-          {
-            "id": "db65e2ab2f4dda96",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "99-Templates/newCampaignSimpleAtlasTemplate.md",
-                "mode": "source",
-                "source": true
-              }
-            }
-          },
-          {
-            "id": "89de4f73ba52e503",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Home.md",
+                "file": "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/Esmosia.md",
                 "mode": "preview",
                 "source": true
               }
             }
           }
         ]
-      },
-      {
-        "id": "cae1f1a2c70fa505",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "e03bf43c067fb087",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "99-Templates/Handlebars-JSON/Provinces-FMG-JSON Handlebars Template.md",
-                "mode": "source",
-                "source": true
-              }
-            }
-          },
-          {
-            "id": "d54bd5a3f1468aa7",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "99-Templates/Handlebars-JSON/States-FMG-JSON Handlebars Template.md",
-                "mode": "source",
-                "source": true
-              }
-            }
-          },
-          {
-            "id": "dfbf7c30b5427074",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "99-Templates/Handlebars-JSON/Burgs-FMG-JSON Handlerbars Template.md",
-                "mode": "source",
-                "source": true
-              }
-            }
-          }
-        ],
-        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -115,7 +48,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "getLeafletBurgXPos",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -138,7 +71,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "99-Templates/Handlebars-JSON/Burgs-FMG-JSON Handlerbars Template.md",
+                "file": "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/Esmosia.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -150,7 +83,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "99-Templates/Handlebars-JSON/Burgs-FMG-JSON Handlerbars Template.md",
+                "file": "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/Esmosia.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -178,7 +111,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "99-Templates/Handlebars-JSON/Burgs-FMG-JSON Handlerbars Template.md"
+                "file": "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/Esmosia.md"
               }
             }
           }
@@ -223,39 +156,40 @@
       "templater-obsidian:Templater": false,
       "workspaces:Manage workspace layouts": false,
       "obsidian-leaflet-plugin:Open Leaflet Map": false,
-      "obsidian-excalidraw-plugin:Create new drawing": false,
-      "obsidian-import-json:JSON/CSV Importer": false
+      "obsidian-import-json:JSON/CSV Importer": false,
+      "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "dfbf7c30b5427074",
+  "active": "795e49f25b29c077",
   "lastOpenFiles": [
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/Alocenia.md",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/Burgs/Riofrioli.md",
-    "99-Templates/newCampaignSimpleAtlasTemplate.md",
-    "Home.md",
-    "90-Tools & Helpers/Map Information Worksheet.md",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/Test Campaign Ladonia-Simple Atlas.md",
-    "99-Templates/Handlebars-JSON/States-FMG-JSON Handlebars Template.md",
-    "01-Campaigns/Test Campaign Ladonia/Test Campaign Ladonia Home.md",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/Provinces/Abderikast County.md",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/Test Campaign Ladonia-Linked Atlas.md",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/Burgs/Abderikast.md",
-    "99-Templates/Handlebars-JSON/Provinces-FMG-JSON Handlebars Template.md",
-    "99-Templates/Handlebars-JSON/Burgs-FMG-JSON Handlerbars Template.md",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/Provinces/Esmos County.md",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/Burgs/Esmos.md",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/Esmosia.md",
     "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/Aporesia.md",
-    "90-Tools & Helpers/Command Reminders.md",
-    "99-Templates/Handlebars-JSON/Religions-FMG-JSON Handlebars Template.md",
-    "99-Templates/Handlebars-JSON/Cultures-FMG-JSON Handlebars Template.md",
-    "90-Tools & Helpers/Buttons.md",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/Upunia.md",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/Tiormaa.md",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/Thas.md",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/Provinces/Iros Margrave.md",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/Alocenia.md",
+    "99-Templates/Handlebars-JSON/States-FMG-JSON Handlebars Template.md",
     "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/Petrica.md",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/Nikmaa.md",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/Neutrals.md",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/Mauna.md",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/Histharoseia.md",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/Bhrymaion.md",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/Ingnia.md",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/Calhosia.md",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/Thas.md",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/Tiormaa.md",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/Kunszavasia.md",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/Esiagasia.md",
     "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/Marbeilia.md",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/Histhepia.md",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/Kunkania.md",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/Mauna.md",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/Nikmaa.md",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/Upunia.md",
     "01-Campaigns/Test Campaign Ladonia/05-Atlas/States",
+    "99-Templates/Handlebars-JSON/Provinces-FMG-JSON Handlebars Template.md",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/Burgs/Thaphos.md",
+    "00-INBOX/Scratch Pad.md",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/Neutrals.md",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States tester",
     "91-Assets/Test Campaign Ladonia/Village-PNGs/Zagyhad.png",
     "91-Assets/Test Campaign Ladonia/Village-PNGs/Yryry.png",
     "91-Assets/Test Campaign Ladonia/Village-PNGs/Woldenhober.png",
@@ -273,7 +207,6 @@
     "90-Tools & Helpers/_External_Scripts/city-urls.csv",
     "90-Tools & Helpers/_External_Scripts/save-BurgMapLink-urls.ahk",
     "table-export-002.csv",
-    "91-Assets/Test Campaign Ladonia/Village-SVGs/-file-listing.txt",
-    "91-Assets/Test Campaign Ladonia/Village-SVGs"
+    "91-Assets/Test Campaign Ladonia/Village-SVGs/-file-listing.txt"
   ]
 }
