@@ -1,39 +1,35 @@
 // Here is a list of all the custom helpers in this file with all the data input they expect
 /*
 (indicated by the 3-digit number at head of the line - for easy locating of them)
-001 getCampaignName(importSettings)
-002 getCampaignHomeNote(importSettings)
-003 getCampaignAtlasNote(importSettings)
-004 getCampaignCalendar(importSettings)
+001* getCampaignHomeNote(importSettings)
+002 AVAILABLE
+003 AVAILABLE
+004* getCampaignCalendar(importSettings)
 005 getDateTimestamp(importSettings)
 006 getBurgName(burgId,allBurgs)
 007 getStateName(stateId,allStates)
 008 getProvinceName(provinceId,allProvinces)
 009 getCultureName(cultureId,allCultures)
-010 AVAILABLE
-011 getBurgMapLink (currentBurg, mapSeed, allCells, mapSettings)
+010 burgMapUnits(currentBurg, mapSettings)
+011 getBurgMapLink(currentBurg, mapSeed, allCells, mapSettings)
 012 getHeight(currentCell, mapSettings, allCells)
 013 totalArea(area)
 014 calcPopulation(popValue)
 015 totalPopulation(rural,urban)
 016 burgProvinceLookup(cellId,allCells,allProvinces)
-017 getReligionName (religionID,allReligions)
+017* getReligionName(religionID,allReligions)
+018 getLeafletBounds(mapInfo)
+019 getLeafletBurgXY(burgId,allBurgs,mapInfo)
+020 getCellLeafletXY(cellId, allCells, mapInfo)
+021 getPoleLeafletXY(state, mapInfo)
+
+* - NEEDS TO BE REWORKED
 
 IMPORTANT: All of these helpers rely on the campaigns being stored in the vault in a sub-folder within a sub-solder off of the root of the vault. For example, by default, other scripts in this vault will store any newly created campaigns under: "01-Campaigns" + campiagn name off of the root of the buttonpusherTTRPG vault. All of the helpers below require that method of storing the campaigns. See the common line, in most of the helpers that reads: const (somevariable) = `${folders[1]}` - that is what is extracting the location of the specific campaign that is the target for that process.
 
 */
 
-// 001
-// Custom helper function to extract thisCampaignName from @importSettings
-handlebars.registerHelper('getCampaignName', function(importSettings) {
-  // console.log("importSettings: ", importSettings);
-  const folders = importSettings.folderName.split('/');
-  const thisCampaignName = `${folders[1]}`;
-  //console.log("### campaignName: ", thisCampaignName);
-  return thisCampaignName;
-});
-
-// 002
+// 001 - NEEDS TO BE UPDATED TO USE JSON ELEMENT @ info.thisCampaign & info.thisCampaignPath
 // Custom helper function to extract thisCampaignHomeNote from @importSettings
 handlebars.registerHelper('getCampaignHomeNote', function(importSettings) {
   // console.log("importSettings: ", importSettings);
@@ -42,16 +38,11 @@ handlebars.registerHelper('getCampaignHomeNote', function(importSettings) {
   return thisCampaignHomeNote;
 });
 
-// 003
-// Custom helper function to extract thisCampaignAtlasNote from @importSettings
-handlebars.registerHelper('getCampaignAtlasNote', function(importSettings) {
-  // console.log("importSettings: ", importSettings);
-  const folders = importSettings.folderName.split('/');
-  const thisCampaignAtlasNote = `${folders[1]}` + "-Linked Atlas";
-  return thisCampaignAtlasNote;
-});
+// 002 - AVAILABLE
 
-// 004
+// 003 - AVAILABLE
+
+// 004 - NEEDS TO BE UPDATED TO USE JSON ELEMENT @ info.thisCampaign & info.thisCampaignPath
 // Custom helper function to extract thisCampaignCalendar from @importSettings
 handlebars.registerHelper('getCampaignCalendar', function(importSettings) {
   // console.log("importSettings: ", importSettings);
@@ -88,56 +79,6 @@ handlebars.registerHelper('getBurgName', function(burgId,allBurgs) {
   //console.log("burgFound:", burgFound.name);
   return burgFound ? burgFound.name : 'Unknown';
 });
-
-// 006b
-// Custom helper function to get Burg X Position
-handlebars.registerHelper('getBurgXPos', function(burgId,allBurgs) {
-  //console.log("burgId:", burgId);
-  //console.log("allBurgs: ", allBurgs);
-  if (burgId === undefined || burgId === 0 ) {
-    // console.log("##### burgId was undefined or zero #####");
-    return ''; // skip if the element is undefined or zero
-  };
-  const burgFound = allBurgs.find(burg => burg.i === burgId);
-  //console.log("burgFound:", burgFound.name);
-  return burgFound ? burgFound.x : 'Unknown';
-});
-
-// 006c
-// Custom helper function to get Burg Y Position
-handlebars.registerHelper('getBurgYPos', function(burgId,allBurgs) {
-  //console.log("burgId:", burgId);
-  //console.log("allBurgs: ", allBurgs);
-  if (burgId === undefined || burgId === 0 ) {
-    // console.log("##### burgId was undefined or zero #####");
-    return ''; // skip if the element is undefined or zero
-  };
-  const burgFound = allBurgs.find(burg => burg.i === burgId);
-  //console.log("burgFound:", burgFound.name);
-  return burgFound ? burgFound.y : 'Unknown';
-});
-
-// 006d
-// Custom helper function to get Burg Y Position
-// This is specifically coded to account for the differnce between Azgaar's FMG & Obsidian Leaflet
-// The value this will return will subtract the currentBurg.x from the info.mapHeight value
-// That should invert the coordinate value so that it works correctly with Obsidian Leaflet
-handlebars.registerHelper('getLeafletBurgYPos', function(burgId,allBurgs, mapHeight) {
-  //console.log("burgId:", burgId);
-  //console.log("allBurgs: ", allBurgs);
-  if (burgId === undefined || burgId === 0 ) {
-    // console.log("##### burgId was undefined or zero #####");
-    return ''; // skip if the element is undefined or zero
-  };
-  const burgFound = allBurgs.find(burg => burg.i === burgId);
-  //console.log("burgFound:", burgFound.name);
-  console.log(burgFound.name, " - Y Value: ", burgFound.y);
-  const tempYValue = burgFound.y;
-  const leafletValidYValue = mapHeight - tempYValue;
-  console.log("leaflet adjust value: ", leafletValidYValue);
-  return leafletValidYValue;
-});
-
 
 // 007
 // Custom helper function to get State Name
@@ -192,13 +133,7 @@ handlebars.registerHelper('burgMapUnits', function(currentBurg, mapSettings) {
   } else {
     return 'feet';
   };
-
-
-  if (popValue === undefined) {
-    return ''; // skip if population value is undefined
-  };
-    return Math.floor(popValue * 1000).toLocaleString();
-  });
+});
 
 // 011
 // Custom helper to construct the Map link for a Burg. If population is over 2,000 it uses https://watabou.github.io/city-generator/. If population is under 2,000 it uses https://watabou.github.io/village-generator/
@@ -474,3 +409,206 @@ handlebars.registerHelper('getReligionName', function(religionID,allReligions) {
   return religionName ? reilgionName.name : 'Unknown';
 });
 
+// 018
+// Custom helper to return Leaflet Compatible Bounds for HEIGHT & WIDTH
+handlebars.registerHelper('getLeafletBounds', function(mapInfo) {
+  const scaleMultiplier = (mapInfo.mapScalePixelsPerUnit / mapInfo.mapScaleUnitAmount);
+  //console.log("scaleMultiplier: ", scaleMultiplier);
+  const mapBoundsH = (mapInfo.mapHeight / scaleMultiplier);
+  //console.log("mapBoundsH: ",mapBoundsH);
+  const mapBoundsW = (mapInfo.mapWidth / scaleMultiplier);
+  //console.log("mapBoundsW:",mapBoundsW);
+  return `${mapBoundsH},${mapBoundsW}`;
+});
+
+// 019
+// Custom helper function to get Leaflet Compatible Burg X & Y Position 
+// This is specifically coded to account for the differnce between Azgaar's FMG & Obsidian Leaflet
+// The value this will return will subtract the currentBurg.x from the info.mapHeight value
+// That should invert the coordinate value so that it works correctly with Obsidian Leaflet
+handlebars.registerHelper('getLeafletBurgXY', function(burgId,allBurgs,mapInfo) {
+  console.log("burgId:", burgId);
+  //console.log("allBurgs: ", allBurgs);
+  if (burgId === undefined || burgId === 0 ) {
+    console.log("##### burgId was undefined or zero #####");
+    return ''; // skip if the element is undefined or zero
+  };
+  const burgFound = allBurgs.find(burg => burg.i === burgId);
+  //console.log("X-burgFound:", burgFound.name, "- mapInfo:", mapInfo);
+  const scaleMultiplier = (mapInfo.mapScalePixelsPerUnit / mapInfo.mapScaleUnitAmount);
+  const mapBoundsH = (mapInfo.mapHeight / scaleMultiplier);
+  //console.log(burgFound.name, "- scaleMultiplier: ", scaleMultiplier);
+  const leafletValidXValue = (burgFound.x / scaleMultiplier);
+  const leafletValidYValue = (mapBoundsH - (burgFound.y / scaleMultiplier));
+  //console.log(burgFound.name, "- leaflet adjusted X value: ", leafletValidXValue);
+  return `${leafletValidYValue},${leafletValidXValue}`;
+});
+
+// 020
+// Custom Helper to derive the Leaflet Compatible X & Y Coords of a Cell
+handlebars.registerHelper('getCellLeafletXY', function(cellId, allCells, mapInfo) {
+  const foundCell = allCells.find(cell => cell.i === cellId);
+  //console.log("cellId: ", cellId, " -- foundCell: ", foundCell);
+  const foundCellX = foundCell.p[0];
+  const foundCellY = foundCell.p[1];
+  const scaleMultiplier = (mapInfo.mapScalePixelsPerUnit / mapInfo.mapScaleUnitAmount);
+  const leafletW = (foundCellX / scaleMultiplier);
+  const mapBoundsH = (mapInfo.mapHeight / scaleMultiplier);
+  const leafletH = mapBoundsH - (foundCellY / scaleMultiplier);
+  //console.log("leafletH: ", leafletH, " -- leafletW: ", leafletW);
+  return `${leafletH},${leafletW}`;
+});
+
+// 021
+// Custom Helper to derive the Leaflet Compatible X & Y Coords of the "pole" of a State
+// the "pole" is the visual center - Concept Decsription: https://blog.mapbox.com/a-new-algorithm-for-finding-a-visual-center-of-a-polygon-7c77e6492fbc
+handlebars.registerHelper('getPoleLeafletXY', function(state, mapInfo) {
+  const poleX = state.pole[0];
+  const poleY = state.pole[1];
+  const scaleMultiplier = (mapInfo.mapScalePixelsPerUnit / mapInfo.mapScaleUnitAmount);
+  const leafletW = (poleX / scaleMultiplier).toFixed(3);
+  const mapBoundsH = (mapInfo.mapHeight / scaleMultiplier);
+  const leafletH = (mapBoundsH - (poleY / scaleMultiplier)).toFixed(3);
+  //console.log(state.name,"-POLE- leafletH: ", leafletH, " -- leafletW: ", leafletW);
+  return `${leafletH},${leafletW}`;
+});
+
+
+
+/*
+HOLDING AREA FOR HELPERS THAT HAVE BEEN DEPRECATED OR HAVE BEEN RE-WORKED
+JUST KEEPING THE CODE AROUND, JUST IN CASE
+
+// 001 - DEPRECATED
+// Custom helper function to extract thisCampaignName from @importSettings
+handlebars.registerHelper('getCampaignName', function(importSettings) {
+  // console.log("importSettings: ", importSettings);
+  const folders = importSettings.folderName.split('/');
+  const thisCampaignName = `${folders[1]}`;
+  //console.log("### campaignName: ", thisCampaignName);
+  return thisCampaignName;
+});
+
+// 003- DEPRECATED
+// Custom helper function to extract thisCampaignAtlasNote from @importSettings
+handlebars.registerHelper('getCampaignAtlasNote', function(importSettings) {
+  // console.log("importSettings: ", importSettings);
+  const folders = importSettings.folderName.split('/');
+  const thisCampaignAtlasNote = `${folders[1]}` + "-Linked Atlas";
+  return thisCampaignAtlasNote;
+});
+
+// 006b
+// Custom helper function to get Burg X Position
+handlebars.registerHelper('getBurgXPos', function(burgId,allBurgs) {
+  //console.log("burgId:", burgId);
+  //console.log("allBurgs: ", allBurgs);
+  if (burgId === undefined || burgId === 0 ) {
+    // console.log("##### burgId was undefined or zero #####");
+    return ''; // skip if the element is undefined or zero
+  };
+  const burgFound = allBurgs.find(burg => burg.i === burgId);
+  //console.log("burgFound:", burgFound.name);
+  return burgFound ? burgFound.x : 'Unknown';
+});
+
+// 006c
+// Custom helper function to get Burg Y Position
+handlebars.registerHelper('getBurgYPos', function(burgId,allBurgs) {
+  //console.log("burgId:", burgId);
+  //console.log("allBurgs: ", allBurgs);
+  if (burgId === undefined || burgId === 0 ) {
+    // console.log("##### burgId was undefined or zero #####");
+    return ''; // skip if the element is undefined or zero
+  };
+  const burgFound = allBurgs.find(burg => burg.i === burgId);
+  //console.log("burgFound:", burgFound.name);
+  return burgFound ? burgFound.y : 'Unknown';
+});
+
+// 006d
+// Custom helper function to get Burg X Position for Leaflet
+// This is specifically coded to account for the differnce between Azgaar's FMG & Obsidian Leaflet
+// The value this will return will subtract the currentBurg.x from the info.mapHeight value
+// That should invert the coordinate value so that it works correctly with Obsidian Leaflet
+handlebars.registerHelper('getLeafletBurgXPos', function(burgId,allBurgs,mapInfo) {
+  //console.log("burgId:", burgId);
+  //console.log("allBurgs: ", allBurgs);
+  if (burgId === undefined || burgId === 0 ) {
+    // console.log("##### burgId was undefined or zero #####");
+    return ''; // skip if the element is undefined or zero
+  };
+  const burgFound = allBurgs.find(burg => burg.i === burgId);
+  //console.log("X-burgFound:", burgFound.name, "- mapInfo:", mapInfo);
+  const tempX = parseInt(burgFound.x);
+  const scaleMultiplier = (mapInfo.mapScalePixelsPerUnit / mapInfo.mapScaleUnitAmount);
+  //console.log(burgFound.name, "- scaleMultiplier: ", scaleMultiplier);
+  const leafletValidXValue = (tempX / scaleMultiplier);
+  //console.log(burgFound.name, "- leaflet adjusted X value: ", leafletValidXValue);
+  return leafletValidXValue;
+});
+
+
+// 006e
+// Custom helper function to get Burg Y Position for Leaflet
+// This is specifically coded to account for the differnce between Azgaar's FMG & Obsidian Leaflet
+// The value this will return will subtract the currentBurg.x from the info.mapHeight value
+// That should invert the coordinate value so that it works correctly with Obsidian Leaflet
+handlebars.registerHelper('getLeafletBurgYPos', function(burgId,allBurgs,mapInfo) {
+  //console.log("burgId:", burgId);
+  //console.log("allBurgs: ", allBurgs);
+  if (burgId === undefined || burgId === 0 ) {
+    // console.log("##### burgId was undefined or zero #####");
+    return ''; // skip if the element is undefined or zero
+  };
+  const burgFound = allBurgs.find(burg => burg.i === burgId);
+  //console.log("Y-burgFound:", burgFound.name, "- mapInfo:", mapInfo);
+  //console.log("burgFound:", burgFound.name);
+  const scaleMultiplier = (mapInfo.mapScalePixelsPerUnit / mapInfo.mapScaleUnitAmount);
+  //console.log(burgFound.name, "- scaleMultiplier: ", scaleMultiplier);
+  const mapBoundsH = (mapInfo.mapHeight / scaleMultiplier);
+  const tempYValue = (parseInt(burgFound.y) / scaleMultiplier);
+  const leafletValidYValue =  (mapBoundsH - tempYValue);
+  //console.log(burgFound.name, "- leaflet adjusted Y value: ", leafletValidYValue);
+  return leafletValidYValue;
+});
+
+// 018b - DEPRECATED
+// Custom helper to return Leaflet Compatible Bounds for HEIGHT
+handlebars.registerHelper('getLeafletBoundsH', function(mapInfo) {
+  const scaleMultiplier = (mapInfo.mapScalePixelsPerUnit / mapInfo.mapScaleUnitAmount);
+  //console.log("scaleMultiplier: ", scaleMultiplier);
+  const mapBoundsH = (mapInfo.mapHeight / scaleMultiplier);
+  //console.log("mapBoundsH: ",mapBoundsH);
+  return mapBoundsH;
+});
+
+// 018c - DEPRECATED
+// Custom helper to return Leaflet Compatible Bounds for WIDTH
+handlebars.registerHelper('getLeafletBoundsW', function(mapInfo) {
+  const scaleMultiplier = (mapInfo.mapScalePixelsPerUnit / mapInfo.mapScaleUnitAmount);
+  //console.log("scaleMultiplier: ", scaleMultiplier);
+  const mapBoundsW = (mapInfo.mapWidth / scaleMultiplier);
+  //console.log("mapBoundsW:",mapBoundsW);
+  return mapBoundsW;
+});
+
+// 019 - DEPRECTATED
+// Custom helper to return Leaflet Compatible CENTER for HEIGHT
+handlebars.registerHelper('getLeafletCenterH', function(mapInfo) {
+  const scaleMultiplier = (mapInfo.mapScalePixelsPerUnit / mapInfo.mapScaleUnitAmount);
+  const mapCenterH = (mapInfo.mapHeight / scaleMultiplier) / 2 ;
+  //console.log("mapCenter",mapCenterH);
+  return mapCenterH;
+});
+
+// 019b - DEPRECATED
+// Custom helper to return Leaflet Compatible CENTER for WIDTH
+handlebars.registerHelper('getLeafletCenterW', function(mapInfo) {
+  const scaleMultiplier = (mapInfo.mapScalePixelsPerUnit / mapInfo.mapScaleUnitAmount);
+  const mapCenterW = (mapInfo.mapWidth / scaleMultiplier) / 2 ;
+  //console.log("mapCenterW:",mapCenterW);
+  return mapCenterW;
+});
+
+*/

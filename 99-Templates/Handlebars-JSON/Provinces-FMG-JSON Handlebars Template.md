@@ -43,28 +43,6 @@ world: {{@importDataRoot.info.mapName}}
 
 [[{{getCampaignHomeNote @importSettings}}]] | [[{{getCampaignAtlasNote @importSettings}}]] | `=link(this.state)`
 
-%% Edit the map data by updating the 'lat' & 'long' values to center the default map view one the location. %% 
-
-> [!metadata|map]+ {{name}} World Map
-> ```leaflet
-> id: State-{{getStateName state @importDataRoot.pack.states}}
-> image: [[{{@importDataRoot.info.mapName}} World Map.svg]]
-> bounds: 
-> - [0,0]
-> - [{{@importDataRoot.info.mapHeight}},{{@importDataRoot.info.mapWidth}}]
-> coordinates: [{{@importDataRoot.info.mapCenterH}},{{@importDataRoot.info.mapCenterW}}]
-> height: 600px
-> width: 100%
-> minZoom: -1.5
-> maxZoom: 5
-> defaultZoom: -1.25
-> zoomDelta: 0.25
-> unit: miles
-> scale: 2
-> darkMode: false
-> marker: default, {{getLeafletBurgYPos capital @importDataRoot.pack.burgs @importDataRoot.info.mapHeight}},{{getBurgXPos capital @importDataRoot.pack.burgs}},[[{{getBurgName capital @importDataRoot.pack.burgs}}]],Capital-{{getBurgName capital @importDataRoot.pack.burgs}}
-> ```
-
 %% All the info in this 'infobox' will appear in the panel to the right. Most of these values are pulled from the metadata in the properties above. %%
 
 > [!infobox]

@@ -15,7 +15,7 @@ tags:
 
 This Leaflet block is setup to display within a collapsible callout block. This allows the map to be set to be collapsed or expanded by default.
 
-To make the Leaflet block below visible on this note, remove the indicated line below the Leaflet block and place a set of double quote marks here-->
+To make the Leaflet block below visible on this note, remove the indicated line below the Leaflet block and place a set of double percentage characters here-->
 
 > [!metadata|map]+ World Map
 > ```leaflet
@@ -32,7 +32,8 @@ To make the Leaflet block below visible on this note, remove the indicated line 
 > image: [[your_map_name_here]]
 > ### To set the bounds of your map, you need to figure out the values you need to use
 > ### FMG Import will provide you with these values if you have added them to the JSON file from FMG. You can find the values in the Leaflet block from any State or the Atlas import, look for the `bounds:` property.
-> ### To determine the value for the `scale` value below, you will need to 
+> ### To determine the value for the `scale` value below, you will need to measure the pixel
+> ### value between two marks on the Scale Legend of your map. 
 > ### map_bounds_height = Map Pixel Height x 1 / (Pixels between Bar Scale / 100)
 > ### map_bounds_width = Map Pixel Width x 1 / (Pixels between Bar Scale / 100) 
 > ### Note that this formula requires adjustments depending on your map. The idea is to determine the number of units between your bar scale. We divide by 100 here because my bar scale measures in 100 units. If your maps scale bar measures in units of 50 them you should divide by 50 instead. The idea is to calculate how many pixels are equal to 1 unit.
@@ -63,6 +64,7 @@ To make the Leaflet block below visible on this note, remove the indicated line 
 > ```
 
 Remove this entire line and the one before the Leaflet block to make it visible --> %%
+(Want to place a map of your world here? View this page in Source Mode to see hidden comments about how to enable it.)
 
 ### States
 ```dataview

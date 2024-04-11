@@ -5,7 +5,8 @@ area: {{totalArea area}}
 burgs: {{burgs}}
 campaign: {{@importDataRoot.info.thisCampaign}}
 capital: "[[{{getBurgName capital @importDataRoot.pack.burgs}}]]"
-color: {{color}}
+center: {{this.center}}
+color: "{{color}}"
 created: {{getDateTimestamp @importSettings}}
 culture: "[[{{getCultureName culture @importDataRoot.pack.cultures}}]]"
 emblem: {{@importDataRoot.info.thisCampaignShortCode}}-{{@importDataRoot.info.mapName}} Emblem {{fullName}}.png
@@ -62,24 +63,24 @@ world: {{@importDataRoot.info.mapName}}
 
 %% Edit the map data by updating the 'lat' & 'long' values to center the default map view one the location. %% 
 
-> [!metadata|map]+ {{name}} World Map
+> [!metadata|map]+ {{name}} Map
 > ```leaflet
 > id: State-{{name}}
 > image: [[{{@importDataRoot.info.mapName}} World Map.svg]]
 > bounds: 
 > - [0,0]
-> - [{{@importDataRoot.info.mapHeight}},{{@importDataRoot.info.mapWidth}}]
-> coordinates: [{{@importDataRoot.info.mapCenterH}},{{@importDataRoot.info.mapCenterW}}]
+> - [{{getLeafletBounds @importDataRoot.info}}]
+> coordinates: [{{getPoleLeafletXY this @importDataRoot.info}}]
 > height: 600px
 > width: 100%
-> minZoom: -1.5
+> minZoom: -3
 > maxZoom: 5
-> defaultZoom: -1.25
+> defaultZoom: .5
 > zoomDelta: 0.25
-> unit: miles
-> scale: 2
+> unit: {{@importDataRoot.info.mapScaleUnits}}
+> scale: 1
 > darkMode: false
-> marker: default, {{getLeafletBurgYPos capital @importDataRoot.pack.burgs @importDataRoot.info.mapHeight}},{{getBurgXPos capital @importDataRoot.pack.burgs}},[[{{getBurgName capital @importDataRoot.pack.burgs}}]],Capital-{{getBurgName capital @importDataRoot.pack.burgs}}
+> marker: default,{{getLeafletBurgXY capital @importDataRoot.pack.burgs @importDataRoot.info}},[[{{getBurgName capital @importDataRoot.pack.burgs}}]],{{name}} Capital
 > ```
 
 %% All the info in this 'infobox' will appear in the panel to the right. Most of these values are pulled from the metadata in the properties above. %%
@@ -147,6 +148,14 @@ Siginifcant Incidents in `=this.name`'s history:
 | ---- | ---------- | -------- |
 {{#each campaigns}} 
 | {{name}} | {{start}} | {{end}} |
+{{/each}}
+
+
+## Military 
+| Icon | Name | Infantry | Archers | Cavalry | Artillery | Fleet | Total |
+| -----| ---- | -------- | ------- | ------- | --------- | ----- | ----- |
+{{#each military}}
+| {{icon}} | {{name}} | {{u.infantry}} | {{u.archers}} | {{u.cavalry}} | {{u.artillery}} | {{u.fleet}} | {{a}} |
 {{/each}}
 
 %% You can use the 'Timeline' Callout features of the ITS theme here to create a timeline of any important events. Remove the line below that reads '(delete this line to enable timeline)' and the trailing double percent signs & add a set of double percent signs here ->
