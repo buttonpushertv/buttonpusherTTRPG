@@ -1,7 +1,7 @@
 ---
 aliases: {{name}}
 campaign: "{{@importDataRoot.info.thisCampaign}}"
-capital: "[[{{getBurgName burg @importDataRoot.pack.burgs}}]]"
+provincialCapital: "[[{{getBurgName burg @importDataRoot.pack.burgs}}]]"
 color: {{color}}
 created: {{getDateTimestamp @importSettings}}
 emblem: "{{@importDataRoot.info.thisCampaignShortCode}}-{{@importDataRoot.info.mapName}} Emblem {{fullName}}.png"
@@ -16,7 +16,7 @@ state: "[[{{getStateName state @importDataRoot.pack.states}}]]"
 tags:
 - Province
 - {{@importDataRoot.info.mapName}}
-WBProcess: Imported
+WBProgress: Imported
 world: {{@importDataRoot.info.mapName}}
 ---
 
@@ -26,7 +26,7 @@ world: {{@importDataRoot.info.mapName}}
 >>  |
 >> ---|---|
 >> **Tags** | `INPUT[Tags][inlineListSuggester:tags]` |
->> **World Building Progress**| `INPUT[WBProgress][inlineSelect:wbprogress]`|
+>> **World Building Progress**| `INPUT[WBProgress][inlineSelect:WBProgress]`|
 >>> [!note]- Tracking World Building Progress
 >>> Update the World Building Progress property as you update any info on the page. Your choices are `Imported`, `In Progress`, `Game-ready`, `Nearly Complete,` and `Done`. 
 >>> 
@@ -41,7 +41,7 @@ world: {{@importDataRoot.info.mapName}}
 > **Rulers**|`INPUT[list:rulers]`|
 > **Short Description**|`INPUT[textArea:shortDescription]`
 
-[[{{getCampaignHomeNote @importSettings}}]] | [[{{getCampaignAtlasNote @importSettings}}]] | `=link(this.state)`
+[[{{getCampaignHomeNote @importSettings}}]] | [[{{getCampaignAtlasNote @importSettings}}]] | `=this.state`
 
 %% All the info in this 'infobox' will appear in the panel to the right. Most of these values are pulled from the metadata in the properties above. %%
 
@@ -65,9 +65,31 @@ world: {{@importDataRoot.info.mapName}}
 > ###### Politics
 >  |
 > ---: | --- |
-> **Capital** | `=link(this.capital)` |
+> **State** |`=this.state`|
+> **Provincial Capital** | `=this.provincialCapital` |
 > **Ruler(s)** | `=link(this.rulers)` |
 >
+
+%% During the import process, much of the data for the Leaflet fields should have been pulled in from the JSON. You will need to update the defaultZoom and (maybe) the coordinates values, but it should be pretty close - good enough to get a start with it. The goal is to cut down on the amount of manual effort you need to go through to pull your data in from the FMG JSON %% 
+
+> [!metadata|map]+ {{name}} Provinces Map
+> ```leaflet
+> id: Province-{{name}}
+> image: [[{{@importDataRoot.info.mapName}} Provinces World Map.svg]]
+> bounds: 
+> - [0,0]
+> - [{{getLeafletBounds @importDataRoot.info}}]
+> coordinates: [{{getCellLeafletXY this.center @importDataRoot.pack.cells @importDataRoot.info}}]
+> height: 600px
+> width: 100%
+> minZoom: -3
+> maxZoom: 5
+> defaultZoom: .5
+> zoomDelta: 0.25
+> unit: {{@importDataRoot.info.mapScaleUnits}}
+> scale: 1
+> darkMode: false
+> ```
 
 # **`=this.fullName`**
 
@@ -115,5 +137,5 @@ Siginifcant Incidents in `=this.name`'s history:
 
 ---
 
-[[{{getCampaignHomeNote @importSettings}}]] | [[{{getCampaignAtlasNote @importSettings}}]] | `=link(this.state)`
+[[{{getCampaignHomeNote @importSettings}}]] | [[{{getCampaignAtlasNote @importSettings}}]] | `=this.state`
 

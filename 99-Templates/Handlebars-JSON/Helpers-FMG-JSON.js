@@ -3,7 +3,7 @@
 (indicated by the 3-digit number at head of the line - for easy locating of them)
 001* getCampaignHomeNote(importSettings)
 002 AVAILABLE
-003 AVAILABLE
+003 getCampaignAtlasNote(importSettings)
 004* getCampaignCalendar(importSettings)
 005 getDateTimestamp(importSettings)
 006 getBurgName(burgId,allBurgs)
@@ -40,7 +40,14 @@ handlebars.registerHelper('getCampaignHomeNote', function(importSettings) {
 
 // 002 - AVAILABLE
 
-// 003 - AVAILABLE
+// 003
+// Custom helper function to extract thisCampaignAtlasNote from @importSettings
+handlebars.registerHelper('getCampaignAtlasNote', function(importSettings) {
+  // console.log("importSettings: ", importSettings);
+  const folders = importSettings.folderName.split('/');
+  const thisCampaignAtlasNote = `${folders[1]}` + "-Linked Atlas";
+  return thisCampaignAtlasNote;
+});
 
 // 004 - NEEDS TO BE UPDATED TO USE JSON ELEMENT @ info.thisCampaign & info.thisCampaignPath
 // Custom helper function to extract thisCampaignCalendar from @importSettings
@@ -125,6 +132,7 @@ handlebars.registerHelper('getCultureName', function(cultureId,allCultures) {
 // Custom Helper to determine Burg Map Units
 handlebars.registerHelper('burgMapUnits', function(currentBurg, mapSettings) {
   const {options} = mapSettings;
+  const pop = (currentBurg.population * 1000);
   if (!options.villageMaxPopulation){
     console.log ("## - JSON does not contain options.villageMaxPopulation - ##");
     return 'meters'
@@ -489,14 +497,7 @@ handlebars.registerHelper('getCampaignName', function(importSettings) {
   return thisCampaignName;
 });
 
-// 003- DEPRECATED
-// Custom helper function to extract thisCampaignAtlasNote from @importSettings
-handlebars.registerHelper('getCampaignAtlasNote', function(importSettings) {
-  // console.log("importSettings: ", importSettings);
-  const folders = importSettings.folderName.split('/');
-  const thisCampaignAtlasNote = `${folders[1]}` + "-Linked Atlas";
-  return thisCampaignAtlasNote;
-});
+
 
 // 006b
 // Custom helper function to get Burg X Position

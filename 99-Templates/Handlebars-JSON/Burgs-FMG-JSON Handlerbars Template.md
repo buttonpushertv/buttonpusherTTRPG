@@ -10,10 +10,10 @@ id: {{i}}
 burgName: {{name}}
 population: {{calcPopulation population}}
 pronounced: 
-province: "{{burgProvinceLookup cell @importDataRoot.pack.cells @importDataRoot.pack.provinces}}"
+province: "[[{{burgProvinceLookup cell @importDataRoot.pack.cells @importDataRoot.pack.provinces}}]]"
 rulers: 
 shortDescription: 
-state: {{getStateName state @importDataRoot.pack.states}}
+state: "[[{{getStateName state @importDataRoot.pack.states}}]]"
 x: {{x}}
 y: {{y}}
 tags:
@@ -21,7 +21,7 @@ tags:
 - {{@importDataRoot.info.mapName}}
 - {{@importDataRoot.info.thisCampaignShortCode}}
 type: {{type}}
-WBProcess: Imported
+WBProgress: Imported
 world: {{@importDataRoot.info.mapName}}
 ---
 
@@ -31,7 +31,7 @@ world: {{@importDataRoot.info.mapName}}
 >>  |
 >> ---|---|
 >> **Tags** | `INPUT[Tags][inlineListSuggester:tags]` |
->> **World Building Progress**| `INPUT[WBProgress][inlineSelect:wbprogress]`|
+>> **World Building Progress**| `INPUT[WBProgress][inlineSelect:WBProgress]`|
 >>> [!note]- Tracking World Building Progress
 >>> Update the World Building Progress property as you update any info on the page. Your choices are `Imported`, `In Progress`, `Game-ready`, `Nearly Complete,` and `Done`. 
 >>> 
@@ -46,7 +46,7 @@ world: {{@importDataRoot.info.mapName}}
 > **Rulers**|`INPUT[list:rulers]`|
 > **Short Description**|`INPUT[textArea:shortDescription]`
 
-[[{{getCampaignHomeNote @importSettings}}]] | [[{{getCampaignAtlasNote @importSettings}}]] | `=link(this.state)` | `=link(this.province)`
+[[{{getCampaignHomeNote @importSettings}}]] | [[{{getCampaignAtlasNote @importSettings}}]] | `=this.state` | `=this.province`
 
 %% If you want to place the image for the Burg in the Map(Interactive) window below, you can use Fantasy Map Generator's link to Watabou's Fantasy City or Village Generator - see the `infobox` link or the `burgMapLink` URL up in the properties of this note. You can save the map image somewhere in the vault (`91-Assets/your_campaign_subfolder`, for instance) and it will show up in this window. There is an elaborate method (see [[JSON Import How To#Wrangling FMG Burg Maps]]) to save all the maps so you can have them locally and make use of the data that was placed here on import from the JSON.%% 
 
@@ -56,13 +56,11 @@ world: {{@importDataRoot.info.mapName}}
 > image: [[{{name}}.png]]
 > height: 600px
 > width: 100%
-> lat: 50
-> long: 50
 > minZoom: -3.5
 > maxZoom: 2.25
 > defaultZoom: -1.5
 > zoomDelta: 0.25
-> unit: {{burgMapUnits}}
+> unit: {{burgMapUnits this @importDataRoot.settings }}
 > scale: .5
 > darkMode: false
 > ```
@@ -91,7 +89,7 @@ world: {{@importDataRoot.info.mapName}}
 >  |
 >  --- |
 > 
->  # **Pronounced:**
+>  # **Pronounced**
 >  # "`=this.pronounced`"
 > 
 >  |
@@ -102,8 +100,9 @@ world: {{@importDataRoot.info.mapName}}
 >  |
 >  ---: | --- |
 > **Population** | `=this.population` |
->  **Elevation:** | `=this.elevation`|
->  **Burg Map Link:**|`=elink(this.burgMapLink,"Burg Map")`
+>  **Elevation** | `=this.elevation`|
+>  **State** |`=this.state`|
+>  **Province** |`=this.province`|
 >  
 > ###### Politics
 >  |
@@ -154,4 +153,4 @@ Below are any notable zones or regions within `=this.burgName`
 
 ---
 
-[[{{getCampaignHomeNote @importSettings}}]] | [[{{getCampaignAtlasNote @importSettings}}]] | `=link(this.state)` | `=link(this.province)`
+[[{{getCampaignHomeNote @importSettings}}]] | [[{{getCampaignAtlasNote @importSettings}}]] | `=this.state` | `=this.province`
