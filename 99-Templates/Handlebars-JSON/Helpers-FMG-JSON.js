@@ -22,6 +22,9 @@
 019 getLeafletBurgXY(burgId,allBurgs,mapInfo)
 020 getCellLeafletXY(cellId, allCells, mapInfo)
 021 getPoleLeafletXY(state, mapInfo)
+022 getReligionFollowers(religion,allCells,allBurgs,mapSettings)
+023 getTemperature(burg,allData)
+024 getTemperatureLikeness(burg,allData)
 
 * - NEEDS TO BE REWORKED
 
@@ -228,7 +231,7 @@ handlebars.registerHelper('getBurgMapLink', function(currentBurg, mapSeed, allCe
     const url = new URL("https://watabou.github.io/city-generator/");
     url.search = new URLSearchParams(parameters);
     if (sea) url.searchParams.append("sea", sea);
-    console.log(currentBurg.name, " - MFCG URL: ", url.toString());
+    //console.log(currentBurg.name, " - MFCG URL: ", url.toString());
     const toReturn = url.toString();
     return toReturn.substring(25);
   
@@ -289,7 +292,7 @@ handlebars.registerHelper('getBurgMapLink', function(currentBurg, mapSeed, allCe
     
       const Vurl = new URL("https://watabou.github.io/village-generator/");
       Vurl.search = new URLSearchParams({pop, name, seed: burgSeed, width, height, tags});
-      console.log(currentBurg.name, " - Village URL: ", Vurl.toString());
+      //console.log(currentBurg.name, " - Village URL: ", Vurl.toString());
       const toReturn = Vurl.toString();
       return toReturn.substring(25);
     };
@@ -405,16 +408,25 @@ handlebars.registerHelper('burgProvinceLookup', function(cellId,allCells,allProv
 // 017
 // Custom helper to return religion name from passed religionID
 // THIS NEEDS TO BE RE-WORKED - RELIGION IS STORED IN THE 'CELLS' JSON ELEMENTS
-handlebars.registerHelper('getReligionName', function(religionID,allReligions) {
-  //console.log("religionId:", religionId);
+handlebars.registerHelper('getReligionName', function(cellId,allCells,allReligions) {
+  // console.log("cellId:", cellId);
   //console.log("allreligions: ", allreligions);
-  if (religionId === undefined) {
+  if (cellId === undefined) {
     return ''; // skip if the element is undefined
-    
   };
-  const religionName = allreligions.find(religion => religion.i === religionId);
-  //console.log("religionName found:", religionName);
-  return religionName ? reilgionName.name : 'Unknown';
+  // because the religion value is saved under the pack.cells[x].religion element we need to look up the value of a cell within the passed item in order to find the religion associated with that location
+  // this does mean, however that we can look up the cell's religion value by simply passing a cell id to this function - that means it can find religion for not just States, but Provinces and Burgs as well
+  // for States, we'll use the pack.states[x].center value
+  // for Provinces, we'll use the pack.provinces[x].center value
+  // for Burgs, we'll use the pack.burgs[x].cell alue
+  // whichever you're using, just pass that value in the Handlebar template to this Helper and it will do the cross-referencing
+  const cellReligion = allCells.find(cellr => cellr.i === cellId);
+  // console.log("cellReligion: ", cellReligion);
+  const foundCellReligion = cellReligion.religion;
+  // console.log("foundCellReligion: ", foundCellReligion);
+  const religionName = allReligions.find(religion => religion.i === foundCellReligion);
+  // console.log("religionName found:", religionName);
+  return religionName ? religionName.name : 'Unknown';
 });
 
 // 018
@@ -444,10 +456,10 @@ handlebars.registerHelper('getLeafletBurgXY', function(burgId,allBurgs,mapInfo) 
   const burgFound = allBurgs.find(burg => burg.i === burgId);
   //console.log("X-burgFound:", burgFound.name, "- mapInfo:", mapInfo);
   const scaleMultiplier = (mapInfo.mapScalePixelsPerUnit / mapInfo.mapScaleUnitAmount);
-  const mapBoundsH = (mapInfo.mapHeight / scaleMultiplier);
+  const mapBoundsH = (mapInfo.mapHeight / scaleMultiplier).toFixed(3);
   //console.log(burgFound.name, "- scaleMultiplier: ", scaleMultiplier);
   const leafletValidXValue = (burgFound.x / scaleMultiplier);
-  const leafletValidYValue = (mapBoundsH - (burgFound.y / scaleMultiplier));
+  const leafletValidYValue = (mapBoundsH - (burgFound.y / scaleMultiplier)).toFixed(3);
   //console.log(burgFound.name, "- leaflet adjusted X value: ", leafletValidXValue);
   return `${leafletValidYValue},${leafletValidXValue}`;
 });
@@ -460,9 +472,9 @@ handlebars.registerHelper('getCellLeafletXY', function(cellId, allCells, mapInfo
   const foundCellX = foundCell.p[0];
   const foundCellY = foundCell.p[1];
   const scaleMultiplier = (mapInfo.mapScalePixelsPerUnit / mapInfo.mapScaleUnitAmount);
-  const leafletW = (foundCellX / scaleMultiplier);
+  const leafletW = (foundCellX / scaleMultiplier).toFixed(3);
   const mapBoundsH = (mapInfo.mapHeight / scaleMultiplier);
-  const leafletH = mapBoundsH - (foundCellY / scaleMultiplier);
+  const leafletH = mapBoundsH - (foundCellY / scaleMultiplier).toFixed(3);
   //console.log("leafletH: ", leafletH, " -- leafletW: ", leafletW);
   return `${leafletH},${leafletW}`;
 });
@@ -480,6 +492,193 @@ handlebars.registerHelper('getPoleLeafletXY', function(state, mapInfo) {
   //console.log(state.name,"-POLE- leafletH: ", leafletH, " -- leafletW: ", leafletW);
   return `${leafletH},${leafletW}`;
 });
+
+// 022
+// Custom helper to calulate the number of followers for a religion
+handlebars.registerHelper('getReligionFollowers', function(religion,allCells,allBurgs,mapSettings) {
+  if (religion.removed) return "0";
+  
+  // console.log("religion: ", religion);
+  // console.log("allCells: ", allCells);
+
+  var ruralTemp = 0;
+  var urbanTemp = 0 ;
+
+  for (cell of allCells) {
+    if (cell.h < 20) continue;
+    if (cell.religion != religion.i) continue;
+    ruralTemp += cell.pop;
+    burgId = cell.burg;
+    if (burgId) urbanTemp += allBurgs[burgId].population;
+  };
+
+  // console.log("rualTemp: ", ruralTemp," - urbanTemp: ", urbanTemp);
+
+  const rural = (ruralTemp * mapSettings.populationRate);
+  const urban = (urbanTemp * mapSettings.populationRate * mapSettings.urbanization);
+  const foundReligionFollowers = rn(rural + urban);
+
+  console.log(religion.name, " - foundReligionFollowers: ", foundReligionFollowers);
+  return foundReligionFollowers;
+
+    // round value to d decimals
+    function rn(v, d = 0) {
+      const m = Math.pow(10, d);
+      return Math.round(v * m) / m;
+    }
+
+});
+
+// 023
+// Custom Helper to calculate temperature based on the temperatureScale in the JSON - usually °F or °C
+// but other scales are available
+handlebars.registerHelper('getTemperature', function(burg,allData) {
+  //console.log(burg.i , " - burgName: ", burg.name);
+  const scale = allData.settings.temperatureScale;
+  //console.log("Temperature scale: ", scale);
+  const temp = allData.grid.cells[allData.pack.cells[burg.cell].g].temp;
+  //console.log("Burg Name: ", burg.name, " - temp: ", temp);
+  
+// FMG utils related to units
+
+// conver temperature from °C to other scales
+  const temperatureConversionMap = {
+  "°C": temp => rn(temp) + "°C",
+  "°F": temp => rn((temp * 9) / 5 + 32) + "°F",
+  K: temp => rn(temp + 273.15) + "K",
+  "°R": temp => rn(((temp + 273.15) * 9) / 5) + "°R",
+  "°De": temp => rn(((100 - temp) * 3) / 2) + "°De",
+  "°N": temp => rn((temp * 33) / 100) + "°N",
+  "°Ré": temp => rn((temp * 4) / 5) + "°Ré",
+  "°Rø": temp => rn((temp * 21) / 40 + 7.5) + "°Rø"
+};
+
+const convertedTemperature = convertTemperature(temp, scale);
+
+return convertedTemperature;
+
+  function convertTemperature(temp, scale = temperatureScale.value || "°C") {
+   return temperatureConversionMap[scale](temp);
+};
+
+    // round value to d decimals
+    function rn(v, d = 0) {
+      const m = Math.pow(10, d);
+      return Math.round(v * m) / m;
+    }
+
+
+})
+
+// 024
+// Custom Helper to calculate temperature likeness to Earth temps
+// Portions of this code are adapted from the Fantasy Map Generator Code - https://github.com/Azgaar/Fantasy-Map-Generator
+handlebars.registerHelper('getTemperatureLikeness', function(burg,allData) {
+
+const temperature = allData.grid.cells[allData.pack.cells[burg.cell].g].temp;
+
+const earthLocale = getTemperatureLikeness(temperature);
+
+return earthLocale;
+
+// in °C, array from -1 °C; source: https://en.wikipedia.org/wiki/List_of_cities_by_average_temperature
+// These locations are more North American focused
+function getTemperatureLikeness(temperature) {
+  if (temperature < -5) return "Iqaluit (Canada)";
+  const cities = [
+    "Snag (Yukon)", // -5
+    "Yellowknife (Canada)", // -4
+    "Okhotsk (Russia)", // -3
+    "Fairbanks (Alaska)", // -2
+    "Nuuk (Greenland)", // -1
+    "Whitehorse (Canada)", // 0
+    "Arkhangelsk (Russia)", // 1
+    "Anchorage (Alaska)", // 2
+    "Winnipeg (Canada)", // 3
+    "Saskatoon (Canada)", // 4
+    "St. John's (Canada)", // 5
+    "Saint Pierre (Canada)", // 6
+    "Minneapolis (Minnesota)", // 7
+    "Milwaukee (Wisconsin)", // 8
+    "Chicago (Illinois)", // 9
+    "Denver (Colorado)", // 10
+    "Seattle (Washington)", // 11
+    "New York City (New York)", // 12
+    "Baltimore (Maryland)", // 13
+    "San Francisco (California) or D.C.", // 14
+    "Nashville, (Tennessee)", // 15
+    "Sacramento (California)", // 16
+    "Memphis (Tennessee)", // 17
+    "El Paso (Texas)", // 18
+    "Dalls (Texas)", // 19
+    "Las Vegas (Nevada)", // 20
+    "Tuscon (Arizona)", // 21
+    "Tampa (Florida)", // 22
+    "Phoenix (Arizona)", // 23
+    "Palm Springs (California)", // 24
+    "Miami (Florida)", // 25
+    "Atlanta (Georgia - Summer)", // 26
+    "San Juan (Puerto Rico)", // 27
+    "Panama City (Panama)", // 28
+    "San Antonio (Texas - Summer)", // 29
+    "Austin (Texas - Summer)" // 30
+  ];
+  if (temperature > 30) return "Death Valley";
+  return cities[temperature + 5] || null;
+};
+
+/*
+// These locations are globally located
+function getTemperatureLikeness(temperature) {
+  if (temperature < -5) return "Yakutsk";
+  const cities = [
+    "Snag (Yukon)", // -5
+    "Yellowknife (Canada)", // -4
+    "Okhotsk (Russia)", // -3
+    "Fairbanks (Alaska)", // -2
+    "Nuuk (Greenland)", // -1
+    "Murmansk", // 0
+    "Arkhangelsk", // 1
+    "Anchorage", // 2
+    "Tromsø", // 3
+    "Reykjavik", // 4
+    "Riga", // 5
+    "Stockholm", // 6
+    "Halifax", // 7
+    "Prague", // 8
+    "Copenhagen", // 9
+    "London", // 10
+    "Antwerp", // 11
+    "Paris", // 12
+    "Milan", // 13
+    "Batumi", // 14
+    "Rome", // 15
+    "Dubrovnik", // 16
+    "Lisbon", // 17
+    "Barcelona", // 18
+    "Marrakesh", // 19
+    "Alexandria", // 20
+    "Tegucigalpa", // 21
+    "Guangzhou", // 22
+    "Rio de Janeiro", // 23
+    "Dakar", // 24
+    "Miami", // 25
+    "Jakarta", // 26
+    "Mogadishu", // 27
+    "Bangkok", // 28
+    "Aden", // 29
+    "Khartoum" // 30
+  ];
+
+
+*/
+
+
+})
+/*
+
+*/
+
 
 
 

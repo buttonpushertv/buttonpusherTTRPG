@@ -10,6 +10,7 @@ fullName: {{fullName}}
 id: {{i}}
 name: {{name}}
 pronounced:
+religion: "[[{{getReligionName this.center @importDataRoot.pack.cells @importDataRoot.pack.religions}}]]"
 rulers:
 shortDescription:
 state: "[[{{getStateName state @importDataRoot.pack.states}}]]"
@@ -43,6 +44,28 @@ world: {{@importDataRoot.info.mapName}}
 
 [[{{getCampaignHomeNote @importSettings}}]] | [[{{getCampaignAtlasNote @importSettings}}]] | `=this.state`
 
+%% During the import process, much of the data for the Leaflet fields should have been pulled in from the JSON. You will need to update the defaultZoom and (maybe) the coordinates values, but it should be pretty close - good enough to get a start with it. The goal is to cut down on the amount of manual effort you need to go through to pull your data in from the FMG JSON %% 
+
+> [!metadata|map]+ {{name}} Provinces Map
+> ```leaflet
+> id: Province-{{name}}
+> image: [[{{@importDataRoot.info.mapName}} Provinces World Map.svg]]
+> bounds: 
+> - [0,0]
+> - [{{getLeafletBounds @importDataRoot.info}}]
+> coordinates: [{{getCellLeafletXY this.center @importDataRoot.pack.cells @importDataRoot.info}}]
+> height: 600px
+> width: 100%
+> minZoom: -3
+> maxZoom: 5
+> defaultZoom: .5
+> zoomDelta: 0.25
+> unit: {{@importDataRoot.info.mapScaleUnits}}
+> scale: 1
+> darkMode: false
+> marker: prov_capital,{{getLeafletBurgXY burg @importDataRoot.pack.burgs @importDataRoot.info}},[[{{getBurgName burg @importDataRoot.pack.burgs}}]],{{name}} Provincial Capital
+> ```
+
 %% All the info in this 'infobox' will appear in the panel to the right. Most of these values are pulled from the metadata in the properties above. %%
 
 > [!infobox]
@@ -68,28 +91,9 @@ world: {{@importDataRoot.info.mapName}}
 > **State** |`=this.state`|
 > **Provincial Capital** | `=this.provincialCapital` |
 > **Ruler(s)** | `=link(this.rulers)` |
+> **Dominant Culture** | `=link(this.culture)` |
+> **Dominant Religion** | `=link(this.religion)` |
 >
-
-%% During the import process, much of the data for the Leaflet fields should have been pulled in from the JSON. You will need to update the defaultZoom and (maybe) the coordinates values, but it should be pretty close - good enough to get a start with it. The goal is to cut down on the amount of manual effort you need to go through to pull your data in from the FMG JSON %% 
-
-> [!metadata|map]+ {{name}} Provinces Map
-> ```leaflet
-> id: Province-{{name}}
-> image: [[{{@importDataRoot.info.mapName}} Provinces World Map.svg]]
-> bounds: 
-> - [0,0]
-> - [{{getLeafletBounds @importDataRoot.info}}]
-> coordinates: [{{getCellLeafletXY this.center @importDataRoot.pack.cells @importDataRoot.info}}]
-> height: 600px
-> width: 100%
-> minZoom: -3
-> maxZoom: 5
-> defaultZoom: .5
-> zoomDelta: 0.25
-> unit: {{@importDataRoot.info.mapScaleUnits}}
-> scale: 1
-> darkMode: false
-> ```
 
 # **`=this.fullName`**
 

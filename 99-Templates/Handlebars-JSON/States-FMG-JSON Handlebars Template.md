@@ -26,6 +26,7 @@ provinces:
 - "[[{{getProvinceName this @importDataRoot.pack.provinces}}]]"
 {{/each}}
 totalPopulation: {{totalPopulation rural urban}}
+religion: "[[{{getReligionName this.center @importDataRoot.pack.cells @importDataRoot.pack.religions}}]]"
 rulers:
 rural: {{calcPopulation rural}}
 shortDescription:
@@ -80,7 +81,7 @@ world: {{@importDataRoot.info.mapName}}
 > unit: {{@importDataRoot.info.mapScaleUnits}}
 > scale: 1
 > darkMode: false
-> marker: default,{{getLeafletBurgXY capital @importDataRoot.pack.burgs @importDataRoot.info}},[[{{getBurgName capital @importDataRoot.pack.burgs}}]],{{name}} Capital
+> marker: capital,{{getLeafletBurgXY capital @importDataRoot.pack.burgs @importDataRoot.info}},[[{{getBurgName capital @importDataRoot.pack.burgs}}]],{{name}} Capital
 > ```
 
 %% All the info in this 'infobox' will appear in the panel to the right. Most of these values are pulled from the metadata in the properties above. %%
@@ -184,5 +185,3 @@ Siginifcant Incidents in `=this.name`'s history:
 ---
 
 [[{{getCampaignHomeNote @importSettings}}]] | [[{{getCampaignAtlasNote @importSettings}}]]
-
-

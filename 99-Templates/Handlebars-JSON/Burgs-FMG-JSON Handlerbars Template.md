@@ -1,29 +1,44 @@
 ---
 aliases: {{name}}
 burgMapLink: https://watabou.github.io{{getBurgMapLink this @importDataRoot.info.seed @importDataRoot.pack.cells @importDataRoot.settings @importDataRoot.grid}}
+burgName: {{name}}
 campaign: "{{@importDataRoot.info.thisCampaign}}"
 capital: {{capital}}
+cell: {{cell}}
+citadel: {{citadel}}
 culture: {{getCultureName culture @importDataRoot.pack.cultures}}
 elevation: {{getHeight cell @importDataRoot.settings @importDataRoot.pack.cells}}
 emblem: "{{@importDataRoot.info.thisCampaignShortCode}}-{{@importDataRoot.info.mapName}} Emblem {{name}}.png"
+feature: {{feature}}
 id: {{i}}
-burgName: {{name}}
+plaza: {{plaza}}
 population: {{calcPopulation population}}
+port: {{port}}
 pronounced: 
 province: "[[{{burgProvinceLookup cell @importDataRoot.pack.cells @importDataRoot.pack.provinces}}]]"
+religion: "[[{{getReligionName this.cell @importDataRoot.pack.cells @importDataRoot.pack.religions}}]]"
 rulers: 
+shanty: {{shanty}}
 shortDescription: 
 state: "[[{{getStateName state @importDataRoot.pack.states}}]]"
-x: {{x}}
-y: {{y}}
+temple: {{temple}}
+temperature: {{getTemperature this @importDataRoot}}
+temperatureLikeness: {{getTemperatureLikeness this @importDataRoot}}
 tags:
 - Burg
 - {{@importDataRoot.info.mapName}}
 - {{@importDataRoot.info.thisCampaignShortCode}}
 type: {{type}}
+walls: {{walls}}
 WBProgress: Imported
 world: {{@importDataRoot.info.mapName}}
+x: {{x}}
+y: {{y}}
 ---
+
+%% You can copy the line below and paste it into this Burg's State and/or Province Leaflet map block and it will add a marker for this burg to that map that will also link back to this note. Copy this line:
+marker: burg,{{getLeafletBurgXY this.i @importDataRoot.pack.burgs @importDataRoot.info}},[[{{name}}]]
+%%
 
 > [!metadata|metadata]- Metadata 
 >> [!metadata|metadataoption]- System
@@ -50,7 +65,7 @@ world: {{@importDataRoot.info.mapName}}
 
 %% If you want to place the image for the Burg in the Map(Interactive) window below, you can use Fantasy Map Generator's link to Watabou's Fantasy City or Village Generator - see the `infobox` link or the `burgMapLink` URL up in the properties of this note. You can save the map image somewhere in the vault (`91-Assets/your_campaign_subfolder`, for instance) and it will show up in this window. There is an elaborate method (see [[JSON Import How To#Wrangling FMG Burg Maps]]) to save all the maps so you can have them locally and make use of the data that was placed here on import from the JSON.%% 
 
-> [!metadata|map]- Map (Interactive)
+> [!metadata|map]+ Burg Map (Interactive)
 > ```leaflet
 > id: Burg-{{name}}
 > image: [[{{name}}.png]]
@@ -64,6 +79,7 @@ world: {{@importDataRoot.info.mapName}}
 > scale: .5
 > darkMode: false
 > ```
+> `=elink(this.burgMapLink,"Visit Burg Map")`
 > > [!Note]- City Maps may need Scale adjusting
 > > The `scale` setting of `.5` is arbitrary. It seems to work for Village maps. There is no scale, but by setting the unit (in the Leaflet block above) to `feet` things seem to feel about the right size.
 > > 
@@ -73,7 +89,7 @@ world: {{@importDataRoot.info.mapName}}
 > >
 > > Oh, and *yes*, it is annoying that Villages work in `feet` and Cities are in `meters`. These are *your* maps though. There's nothing to say you can't set City maps to all be in `yards` instead of `meters`. The distances will be near enough.
 
-> [!metadata]- Map (Live from Web)
+> [!metadata]- Burg Map (Live from Web)
 > ```custom-frames
 > frame: Watabou-Procgen Arcana
 > style: height: 1000px;
@@ -100,6 +116,8 @@ world: {{@importDataRoot.info.mapName}}
 >  |
 >  ---: | --- |
 > **Population** | `=this.population` |
+> **Annual Avg. Temp** | `=this.temperature` |
+> <span style="font-size:x-small">**Temps Like**</span> |<span style="font-size:x-small">`=this.temperatureLikeness`</span>|
 >  **Elevation** | `=this.elevation`|
 >  **State** |`=this.state`|
 >  **Province** |`=this.province`|
