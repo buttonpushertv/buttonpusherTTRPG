@@ -8,5 +8,7 @@
   "ITS@@mini": false,
   "ITS@@notion": false,
   "ITS@@its-d": false,
+  "ITS@@writing-document": false,
+  "ITS@@paper": false,
   "ITS@@file-line-width": 1000
 }

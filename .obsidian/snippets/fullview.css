@@ -1,0 +1,10 @@
+.workspace-tabs .workspace-leaf .view-content, 
+.fullview.mod-cm6.is-readable-line-width .cm-line, 
+.fullview.mod-cm6.is-readable-line-width .cm-content,
+.fullview.mod-cm6.is-readable-line-width .cm-line{
+  max-width: 100%;
+}
+
+.data-callout-metadata{
+  max-width: 100%;
+}

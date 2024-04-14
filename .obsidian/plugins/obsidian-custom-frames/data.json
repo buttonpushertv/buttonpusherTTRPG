@@ -11,6 +11,18 @@
       "forceIframe": false,
       "customCss": "",
       "customJs": ""
+    },
+    {
+      "url": "https://azgaar.github.io/Fantasy-Map-Generator/",
+      "displayName": "Azgaar's Fantasy Map Generator",
+      "icon": "globe",
+      "hideOnMobile": true,
+      "addRibbonIcon": false,
+      "openInCenter": false,
+      "zoomLevel": 1,
+      "forceIframe": false,
+      "customCss": "",
+      "customJs": ""
     }
   ],
   "padding": 5

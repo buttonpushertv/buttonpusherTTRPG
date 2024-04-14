@@ -2,5 +2,7 @@
   "accentColor": "",
   "cssTheme": "ITS Theme",
   "theme": "obsidian",
-  "enabledCssSnippets": []
+  "enabledCssSnippets": [
+    "optional-full-width"
+  ]
 }
