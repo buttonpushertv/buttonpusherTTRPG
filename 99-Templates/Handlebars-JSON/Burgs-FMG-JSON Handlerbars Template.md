@@ -2,13 +2,13 @@
 aliases: {{name}}
 burgMapLink: https://watabou.github.io{{getBurgMapLink this @importDataRoot.info.seed @importDataRoot.pack.cells @importDataRoot.settings @importDataRoot.grid}}
 burgName: {{name}}
-campaign: "{{@importDataRoot.info.thisCampaign}}"
+campaign: {{@importDataRoot.info.thisCampaign}}
 capital: {{capital}}
 cell: {{cell}}
 citadel: {{citadel}}
 culture: {{getCultureName culture @importDataRoot.pack.cultures}}
 elevation: {{getHeight cell @importDataRoot.settings @importDataRoot.pack.cells}}
-emblem: "{{@importDataRoot.info.thisCampaignShortCode}}-{{@importDataRoot.info.mapName}} Emblem {{name}}.png"
+emblem: {{@importDataRoot.info.thisCampaignShortCode}}-{{@importDataRoot.info.mapName}} Emblem {{name}}.png
 feature: {{feature}}
 id: {{i}}
 plaza: {{plaza}}
@@ -16,7 +16,7 @@ population: {{calcPopulation population}}
 port: {{port}}
 pronounced: 
 province: "[[{{burgProvinceLookup cell @importDataRoot.pack.cells @importDataRoot.pack.provinces}}]]"
-religion: "[[{{getReligionName this.cell @importDataRoot.pack.cells @importDataRoot.pack.religions}}]]"
+religion: [[{{getReligionName this.cell @importDataRoot.pack.cells @importDataRoot.pack.religions}}]]
 rulers: 
 shanty: {{shanty}}
 shortDescription: 
@@ -75,7 +75,7 @@ marker: burg,{{getLeafletBurgXY this.i @importDataRoot.pack.burgs @importDataRoo
 > maxZoom: 2.25
 > defaultZoom: -1.5
 > zoomDelta: 0.25
-> unit: {{burgMapUnits this @importDataRoot.settings }}
+> unit: {{burgMapUnits this @importDataRoot.settings}}
 > scale: .5
 > darkMode: false
 > ```
@@ -88,6 +88,8 @@ marker: burg,{{getLeafletBurgXY this.i @importDataRoot.pack.burgs @importDataRoo
 > >  In Leaflet, zoom in to the corner where the scale legend is and, by Shift-Clicking, you can create a measurement tool. Start at '0' and measure over to the first increment. Adjust the `scale` value in the Leaflet block above so that the measurement tool is accurate. It's difficult to get it exactly precise. Once you start adjusting them, though you begin to develop a sense of which way to go to get it dialed.
 > >
 > > Oh, and *yes*, it is annoying that Villages work in `feet` and Cities are in `meters`. These are *your* maps though. There's nothing to say you can't set City maps to all be in `yards` instead of `meters`. The distances will be near enough.
+> 
+> [Link to {{name}} on FMG Map]({{@importDataRoot.info.mapDropboxFMGLink}}&scale=3{{getFMGCellXY this.cell @importDataRoot.pack.cells}})
 
 > [!metadata]- Burg Map (Live from Web)
 > ```custom-frames

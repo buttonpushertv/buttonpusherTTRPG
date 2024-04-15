@@ -17,8 +17,8 @@
 014 calcPopulation(popValue)
 015 totalPopulation(rural,urban)
 016 burgProvinceLookup(cellId,allCells,allProvinces)
-017* getReligionName(religionID,allReligions)
-018 getLeafletBounds(mapInfo)
+017 getReligionName(religionID,allReligions)
+018 AVAILABLE
 019 getLeafletBurgXY(burgId,allBurgs,mapInfo)
 020 getCellLeafletXY(cellId, allCells, mapInfo)
 021 getPoleLeafletXY(state, mapInfo)
@@ -407,7 +407,6 @@ handlebars.registerHelper('burgProvinceLookup', function(cellId,allCells,allProv
 
 // 017
 // Custom helper to return religion name from passed religionID
-// THIS NEEDS TO BE RE-WORKED - RELIGION IS STORED IN THE 'CELLS' JSON ELEMENTS
 handlebars.registerHelper('getReligionName', function(cellId,allCells,allReligions) {
   // console.log("cellId:", cellId);
   //console.log("allreligions: ", allreligions);
@@ -429,16 +428,14 @@ handlebars.registerHelper('getReligionName', function(cellId,allCells,allReligio
   return religionName ? religionName.name : 'Unknown';
 });
 
-// 018
-// Custom helper to return Leaflet Compatible Bounds for HEIGHT & WIDTH
-handlebars.registerHelper('getLeafletBounds', function(mapInfo) {
-  const scaleMultiplier = (mapInfo.mapScalePixelsPerUnit / mapInfo.mapScaleUnitAmount);
-  //console.log("scaleMultiplier: ", scaleMultiplier);
-  const mapBoundsH = (mapInfo.mapHeight / scaleMultiplier);
-  //console.log("mapBoundsH: ",mapBoundsH);
-  const mapBoundsW = (mapInfo.mapWidth / scaleMultiplier);
-  //console.log("mapBoundsW:",mapBoundsW);
-  return `${mapBoundsH},${mapBoundsW}`;
+// 018 -
+// Custom Helper to return a Cell's X & Y value for inclusion in FMG URL
+handlebars.registerHelper('getFMGCellXY', function(cellId, allCells) {
+  const foundCell = allCells.find(cell => cell.i === cellId);
+  //console.log("cellId: ", cellId, " -- foundCell: ", foundCell);
+  const foundCellX = foundCell.p[0];
+  const foundCellY = foundCell.p[1];
+  return `&x=${foundCellX}&y=${foundCellY}`;
 });
 
 // 019
@@ -447,7 +444,7 @@ handlebars.registerHelper('getLeafletBounds', function(mapInfo) {
 // The value this will return will subtract the currentBurg.x from the info.mapHeight value
 // That should invert the coordinate value so that it works correctly with Obsidian Leaflet
 handlebars.registerHelper('getLeafletBurgXY', function(burgId,allBurgs,mapInfo) {
-  console.log("burgId:", burgId);
+  //console.log("burgId:", burgId);
   //console.log("allBurgs: ", allBurgs);
   if (burgId === undefined || burgId === 0 ) {
     console.log("##### burgId was undefined or zero #####");
@@ -455,12 +452,9 @@ handlebars.registerHelper('getLeafletBurgXY', function(burgId,allBurgs,mapInfo) 
   };
   const burgFound = allBurgs.find(burg => burg.i === burgId);
   //console.log("X-burgFound:", burgFound.name, "- mapInfo:", mapInfo);
-  const scaleMultiplier = (mapInfo.mapScalePixelsPerUnit / mapInfo.mapScaleUnitAmount);
-  const mapBoundsH = (mapInfo.mapHeight / scaleMultiplier).toFixed(3);
-  //console.log(burgFound.name, "- scaleMultiplier: ", scaleMultiplier);
-  const leafletValidXValue = (burgFound.x / scaleMultiplier);
-  const leafletValidYValue = (mapBoundsH - (burgFound.y / scaleMultiplier)).toFixed(3);
-  //console.log(burgFound.name, "- leaflet adjusted X value: ", leafletValidXValue);
+  const leafletValidXValue = burgFound.x.toFixed(3);
+  const leafletValidYValue = (mapInfo.mapHeight - burgFound.y).toFixed(3);
+  console.log(burgFound.name, "- leaflet X value: ", leafletValidXValue, " - Leaflet Y value:", leafletValidYValue);
   return `${leafletValidYValue},${leafletValidXValue}`;
 });
 
@@ -471,10 +465,8 @@ handlebars.registerHelper('getCellLeafletXY', function(cellId, allCells, mapInfo
   //console.log("cellId: ", cellId, " -- foundCell: ", foundCell);
   const foundCellX = foundCell.p[0];
   const foundCellY = foundCell.p[1];
-  const scaleMultiplier = (mapInfo.mapScalePixelsPerUnit / mapInfo.mapScaleUnitAmount);
-  const leafletW = (foundCellX / scaleMultiplier).toFixed(3);
-  const mapBoundsH = (mapInfo.mapHeight / scaleMultiplier);
-  const leafletH = mapBoundsH - (foundCellY / scaleMultiplier).toFixed(3);
+  const leafletW = foundCellX.toFixed(3);
+  const leafletH = (mapInfo.mapHeight - foundCellY).toFixed(3);
   //console.log("leafletH: ", leafletH, " -- leafletW: ", leafletW);
   return `${leafletH},${leafletW}`;
 });
@@ -485,10 +477,8 @@ handlebars.registerHelper('getCellLeafletXY', function(cellId, allCells, mapInfo
 handlebars.registerHelper('getPoleLeafletXY', function(state, mapInfo) {
   const poleX = state.pole[0];
   const poleY = state.pole[1];
-  const scaleMultiplier = (mapInfo.mapScalePixelsPerUnit / mapInfo.mapScaleUnitAmount);
-  const leafletW = (poleX / scaleMultiplier).toFixed(3);
-  const mapBoundsH = (mapInfo.mapHeight / scaleMultiplier);
-  const leafletH = (mapBoundsH - (poleY / scaleMultiplier)).toFixed(3);
+  const leafletW = poleX.toFixed(3);
+  const leafletH = (mapInfo.mapHeight - poleY).toFixed(3);
   //console.log(state.name,"-POLE- leafletH: ", leafletH, " -- leafletW: ", leafletW);
   return `${leafletH},${leafletW}`;
 });
@@ -675,140 +665,3 @@ function getTemperatureLikeness(temperature) {
 
 
 })
-/*
-
-*/
-
-
-
-
-/*
-HOLDING AREA FOR HELPERS THAT HAVE BEEN DEPRECATED OR HAVE BEEN RE-WORKED
-JUST KEEPING THE CODE AROUND, JUST IN CASE
-
-// 001 - DEPRECATED
-// Custom helper function to extract thisCampaignName from @importSettings
-handlebars.registerHelper('getCampaignName', function(importSettings) {
-  // console.log("importSettings: ", importSettings);
-  const folders = importSettings.folderName.split('/');
-  const thisCampaignName = `${folders[1]}`;
-  //console.log("### campaignName: ", thisCampaignName);
-  return thisCampaignName;
-});
-
-
-
-// 006b
-// Custom helper function to get Burg X Position
-handlebars.registerHelper('getBurgXPos', function(burgId,allBurgs) {
-  //console.log("burgId:", burgId);
-  //console.log("allBurgs: ", allBurgs);
-  if (burgId === undefined || burgId === 0 ) {
-    // console.log("##### burgId was undefined or zero #####");
-    return ''; // skip if the element is undefined or zero
-  };
-  const burgFound = allBurgs.find(burg => burg.i === burgId);
-  //console.log("burgFound:", burgFound.name);
-  return burgFound ? burgFound.x : 'Unknown';
-});
-
-// 006c
-// Custom helper function to get Burg Y Position
-handlebars.registerHelper('getBurgYPos', function(burgId,allBurgs) {
-  //console.log("burgId:", burgId);
-  //console.log("allBurgs: ", allBurgs);
-  if (burgId === undefined || burgId === 0 ) {
-    // console.log("##### burgId was undefined or zero #####");
-    return ''; // skip if the element is undefined or zero
-  };
-  const burgFound = allBurgs.find(burg => burg.i === burgId);
-  //console.log("burgFound:", burgFound.name);
-  return burgFound ? burgFound.y : 'Unknown';
-});
-
-// 006d
-// Custom helper function to get Burg X Position for Leaflet
-// This is specifically coded to account for the differnce between Azgaar's FMG & Obsidian Leaflet
-// The value this will return will subtract the currentBurg.x from the info.mapHeight value
-// That should invert the coordinate value so that it works correctly with Obsidian Leaflet
-handlebars.registerHelper('getLeafletBurgXPos', function(burgId,allBurgs,mapInfo) {
-  //console.log("burgId:", burgId);
-  //console.log("allBurgs: ", allBurgs);
-  if (burgId === undefined || burgId === 0 ) {
-    // console.log("##### burgId was undefined or zero #####");
-    return ''; // skip if the element is undefined or zero
-  };
-  const burgFound = allBurgs.find(burg => burg.i === burgId);
-  //console.log("X-burgFound:", burgFound.name, "- mapInfo:", mapInfo);
-  const tempX = parseInt(burgFound.x);
-  const scaleMultiplier = (mapInfo.mapScalePixelsPerUnit / mapInfo.mapScaleUnitAmount);
-  //console.log(burgFound.name, "- scaleMultiplier: ", scaleMultiplier);
-  const leafletValidXValue = (tempX / scaleMultiplier);
-  //console.log(burgFound.name, "- leaflet adjusted X value: ", leafletValidXValue);
-  return leafletValidXValue;
-});
-
-
-// 006e
-// Custom helper function to get Burg Y Position for Leaflet
-// This is specifically coded to account for the differnce between Azgaar's FMG & Obsidian Leaflet
-// The value this will return will subtract the currentBurg.x from the info.mapHeight value
-// That should invert the coordinate value so that it works correctly with Obsidian Leaflet
-handlebars.registerHelper('getLeafletBurgYPos', function(burgId,allBurgs,mapInfo) {
-  //console.log("burgId:", burgId);
-  //console.log("allBurgs: ", allBurgs);
-  if (burgId === undefined || burgId === 0 ) {
-    // console.log("##### burgId was undefined or zero #####");
-    return ''; // skip if the element is undefined or zero
-  };
-  const burgFound = allBurgs.find(burg => burg.i === burgId);
-  //console.log("Y-burgFound:", burgFound.name, "- mapInfo:", mapInfo);
-  //console.log("burgFound:", burgFound.name);
-  const scaleMultiplier = (mapInfo.mapScalePixelsPerUnit / mapInfo.mapScaleUnitAmount);
-  //console.log(burgFound.name, "- scaleMultiplier: ", scaleMultiplier);
-  const mapBoundsH = (mapInfo.mapHeight / scaleMultiplier);
-  const tempYValue = (parseInt(burgFound.y) / scaleMultiplier);
-  const leafletValidYValue =  (mapBoundsH - tempYValue);
-  //console.log(burgFound.name, "- leaflet adjusted Y value: ", leafletValidYValue);
-  return leafletValidYValue;
-});
-
-// 018b - DEPRECATED
-// Custom helper to return Leaflet Compatible Bounds for HEIGHT
-handlebars.registerHelper('getLeafletBoundsH', function(mapInfo) {
-  const scaleMultiplier = (mapInfo.mapScalePixelsPerUnit / mapInfo.mapScaleUnitAmount);
-  //console.log("scaleMultiplier: ", scaleMultiplier);
-  const mapBoundsH = (mapInfo.mapHeight / scaleMultiplier);
-  //console.log("mapBoundsH: ",mapBoundsH);
-  return mapBoundsH;
-});
-
-// 018c - DEPRECATED
-// Custom helper to return Leaflet Compatible Bounds for WIDTH
-handlebars.registerHelper('getLeafletBoundsW', function(mapInfo) {
-  const scaleMultiplier = (mapInfo.mapScalePixelsPerUnit / mapInfo.mapScaleUnitAmount);
-  //console.log("scaleMultiplier: ", scaleMultiplier);
-  const mapBoundsW = (mapInfo.mapWidth / scaleMultiplier);
-  //console.log("mapBoundsW:",mapBoundsW);
-  return mapBoundsW;
-});
-
-// 019 - DEPRECTATED
-// Custom helper to return Leaflet Compatible CENTER for HEIGHT
-handlebars.registerHelper('getLeafletCenterH', function(mapInfo) {
-  const scaleMultiplier = (mapInfo.mapScalePixelsPerUnit / mapInfo.mapScaleUnitAmount);
-  const mapCenterH = (mapInfo.mapHeight / scaleMultiplier) / 2 ;
-  //console.log("mapCenter",mapCenterH);
-  return mapCenterH;
-});
-
-// 019b - DEPRECATED
-// Custom helper to return Leaflet Compatible CENTER for WIDTH
-handlebars.registerHelper('getLeafletCenterW', function(mapInfo) {
-  const scaleMultiplier = (mapInfo.mapScalePixelsPerUnit / mapInfo.mapScaleUnitAmount);
-  const mapCenterW = (mapInfo.mapWidth / scaleMultiplier) / 2 ;
-  //console.log("mapCenterW:",mapCenterW);
-  return mapCenterW;
-});
-
-*/

@@ -70,7 +70,7 @@ world: {{@importDataRoot.info.mapName}}
 > image: [[{{@importDataRoot.info.mapName}} World Map.svg]]
 > bounds: 
 > - [0,0]
-> - [{{getLeafletBounds @importDataRoot.info}}]
+> - [{{@importDataRoot.info.mapHeight}},{{@importDataRoot.info.mapWidth}}]
 > coordinates: [{{getPoleLeafletXY this @importDataRoot.info}}]
 > height: 600px
 > width: 100%
@@ -78,11 +78,12 @@ world: {{@importDataRoot.info.mapName}}
 > maxZoom: 5
 > defaultZoom: .5
 > zoomDelta: 0.25
-> unit: {{@importDataRoot.info.mapScaleUnits}}
-> scale: 1
+> unit: {{@importDataRoot.settings.distanceUnit}}
+> scale: {{@importDataRoot.settings.distanceScale}}
 > darkMode: false
 > marker: capital,{{getLeafletBurgXY capital @importDataRoot.pack.burgs @importDataRoot.info}},[[{{getBurgName capital @importDataRoot.pack.burgs}}]],{{name}} Capital
 > ```
+> [Link to {{name}} on FMG Map]({{@importDataRoot.info.mapDropboxFMGLink}}&scale=3{{getFMGCellXY this.center @importDataRoot.pack.cells}})
 
 %% All the info in this 'infobox' will appear in the panel to the right. Most of these values are pulled from the metadata in the properties above. %%
 
