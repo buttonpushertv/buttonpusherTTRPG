@@ -454,7 +454,7 @@ handlebars.registerHelper('getLeafletBurgXY', function(burgId,allBurgs,mapInfo) 
   //console.log("X-burgFound:", burgFound.name, "- mapInfo:", mapInfo);
   const leafletValidXValue = burgFound.x.toFixed(3);
   const leafletValidYValue = (mapInfo.mapHeight - burgFound.y).toFixed(3);
-  console.log(burgFound.name, "- leaflet X value: ", leafletValidXValue, " - Leaflet Y value:", leafletValidYValue);
+  // console.log(burgFound.name, "- leaflet X value: ", leafletValidXValue, " - Leaflet Y value:", leafletValidYValue);
   return `${leafletValidYValue},${leafletValidXValue}`;
 });
 
@@ -508,7 +508,7 @@ handlebars.registerHelper('getReligionFollowers', function(religion,allCells,all
   const urban = (urbanTemp * mapSettings.populationRate * mapSettings.urbanization);
   const foundReligionFollowers = rn(rural + urban);
 
-  console.log(religion.name, " - foundReligionFollowers: ", foundReligionFollowers);
+  //console.log(religion.name, " - foundReligionFollowers: ", foundReligionFollowers);
   return foundReligionFollowers;
 
     // round value to d decimals
