@@ -1,19 +1,19 @@
 ---
 aliases: {{name}}
 campaign: "{{@importDataRoot.info.thisCampaign}}"
-provincialCapital: "[[{{getBurgName burg @importDataRoot.pack.burgs}}]]"
+provincialCapital: {{getBurgName burg @importDataRoot.pack.burgs}}
 color: {{color}}
 created: {{getDateTimestamp @importSettings}}
-emblem: "{{@importDataRoot.info.thisCampaignShortCode}}-{{@importDataRoot.info.mapName}} Emblem {{fullName}}.png"
+emblem: {{@importDataRoot.info.thisCampaignShortCode}}-{{@importDataRoot.info.mapName}} Emblem {{fullName}}.png
 formName: {{formName}}
 fullName: {{fullName}}
 id: {{i}}
 name: {{name}}
 pronounced:
-religion: "[[{{getReligionName this.center @importDataRoot.pack.cells @importDataRoot.pack.religions}}]]"
+religion: {{getReligionName this.center @importDataRoot.pack.cells @importDataRoot.pack.religions}}
 rulers:
 shortDescription:
-state: "[[{{getStateName state @importDataRoot.pack.states}}]]"
+state: {{getStateName state @importDataRoot.pack.states}}
 tags:
 - Province
 - {{@importDataRoot.info.mapName}}
@@ -96,6 +96,12 @@ world: {{@importDataRoot.info.mapName}}
 > **Dominant Culture** | `=link(this.culture)` |
 > **Dominant Religion** | `=link(this.religion)` |
 >
+> ```dataview
+> TABLE WITHOUT ID file.link as "Burgs"
+> FROM #Burg and  "{{@importDataRoot.info.thisCampaignPath}}"
+> WHERE contains(this.fullName, province)
+> SORT file.name ASC
+> ```
 
 # **`=this.fullName`**
 

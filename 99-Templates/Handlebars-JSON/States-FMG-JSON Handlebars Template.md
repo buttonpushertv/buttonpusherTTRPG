@@ -4,11 +4,11 @@ aliases: {{name}}
 area: {{totalArea area}}
 burgs: {{burgs}}
 campaign: {{@importDataRoot.info.thisCampaign}}
-capital: "[[{{getBurgName capital @importDataRoot.pack.burgs}}]]"
+capital: {{getBurgName capital @importDataRoot.pack.burgs}}
 center: {{this.center}}
-color: "{{color}}"
+color: {{color}}
 created: {{getDateTimestamp @importSettings}}
-culture: "[[{{getCultureName culture @importDataRoot.pack.cultures}}]]"
+culture: {{getCultureName culture @importDataRoot.pack.cultures}}
 emblem: {{@importDataRoot.info.thisCampaignShortCode}}-{{@importDataRoot.info.mapName}} Emblem {{fullName}}.png
 expansionism: {{expansionism}}
 form: {{form}}
@@ -18,15 +18,15 @@ id: {{i}}
 name: {{name}}
 neighbors: 
 {{#each neighbors}}
-- "[[{{getStateName this @importDataRoot.pack.states}}]]"
+- {{getStateName this @importDataRoot.pack.states}}
 {{/each}}
 pronounced:
 provinces:
 {{#each provinces}}
-- "[[{{getProvinceName this @importDataRoot.pack.provinces}}]]"
+- {{getProvinceName this @importDataRoot.pack.provinces}}
 {{/each}}
 totalPopulation: {{totalPopulation rural urban}}
-religion: "[[{{getReligionName this.center @importDataRoot.pack.cells @importDataRoot.pack.religions}}]]"
+religion: {{getReligionName this.center @importDataRoot.pack.cells @importDataRoot.pack.religions}}
 rulers:
 rural: {{calcPopulation rural}}
 shortDescription:
@@ -117,16 +117,22 @@ world: {{@importDataRoot.info.mapName}}
 >**Dominant Culture** | `=link(this.culture)` |
 > **Dominant Religion** | `=link(this.religion)` |
 >
->  |
->  ---: | --- |
->  **Neighbors** |  |
-{{#each neighbors}}
->  | [[{{getStateName this @importDataRoot.pack.states}}]] |
-{{/each}}  
->  **Provinces** |  |
-{{#each provinces}}
->  | [[{{getProvinceName this @importDataRoot.pack.provinces}}]] |
-{{/each}}  
+> ```dataview
+> TABLE WITHOUT ID link(neighbors) as "Neighbors"
+> FROM ""
+> WHERE file.name = this.file.name
+> ```
+> ```dataview
+> TABLE WITHOUT ID link(provinces) as "Provinces"
+> FROM ""
+> WHERE file.name = this.file.name
+> ```
+> ```dataview
+> TABLE WITHOUT ID file.link as "Burgs"
+> FROM #Burg and "{{@importDataRoot.info.thisCampaignPath}}"
+> WHERE contains(this.name, state)
+> SORT file.name ASC
+> ```
 
 # **`=this.fullName`**
 

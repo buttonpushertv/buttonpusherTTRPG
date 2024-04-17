@@ -15,12 +15,12 @@ plaza: {{plaza}}
 population: {{calcPopulation population}}
 port: {{port}}
 pronounced: 
-province: "[[{{burgProvinceLookup cell @importDataRoot.pack.cells @importDataRoot.pack.provinces}}]]"
-religion: [[{{getReligionName this.cell @importDataRoot.pack.cells @importDataRoot.pack.religions}}]]
+province: {{burgProvinceLookup cell @importDataRoot.pack.cells @importDataRoot.pack.provinces}}
+religion: {{getReligionName this.cell @importDataRoot.pack.cells @importDataRoot.pack.religions}}
 rulers: 
 shanty: {{shanty}}
 shortDescription: 
-state: "[[{{getStateName state @importDataRoot.pack.states}}]]"
+state: {{getStateName state @importDataRoot.pack.states}}
 temple: {{temple}}
 temperature: {{getTemperature this @importDataRoot}}
 temperatureLikeness: {{getTemperatureLikeness this @importDataRoot}}
