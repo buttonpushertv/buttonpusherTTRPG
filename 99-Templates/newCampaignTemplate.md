@@ -6,7 +6,14 @@ campaignHomeNote: {{VALUE:newCampaignHomeNote}}
 campaignAtlas: {{VALUE:newCampaignAtlas}}
 campaignCalendar: {{VALUE:newCampaignCalendar}}
 campaignStatus: 
-campaignSystem: 
+campaignSystem:
+pageType: campaign-home
+nextSession: 
+sessionDate1: 
+sessionDate2: 
+sessionDate3: 
+sessionDate4: 
+sessionDate5: 
 tags:
 - campaign-home
 - {{@importDataRoot.info.mapName}}
@@ -72,6 +79,17 @@ for (const folderName of folderNames) {
 
 ![random|sban+hmicro](https://source.unsplash.com/random?abstract,fire)
 ## Sessions
+
+%% This is just an idea - using these metadata fields, can this info be used when creating a sessionNote? %%
+# Next Session Dates
+**Next Session** | `INPUT[datePicker:nextSession]`
+
+Following Sessions:
+- Next<sup>1</sup> - `INPUT[datePicker:sessionDate1]`
+- Next<sup>2</sup> - `INPUT[datePicker:sessionDate2]`
+- Next<sup>3</sup> - `INPUT[datePicker:sessionDate3]` 
+- Next<sup>4</sup> - `INPUT[datePicker:sessionDate4]`
+- Next<sup>5</sup> - `INPUT[datePicker:sessionDate5]`
 
 (Session info will go here)
 
