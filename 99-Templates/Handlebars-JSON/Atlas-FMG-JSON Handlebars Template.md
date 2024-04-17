@@ -9,7 +9,10 @@ WBProcess: FALSE
 world: {{@importDataRoot.info.mapName}}
 ---
 
-**(Edit this page in source mode to see comments about some manual edits that you may need to perform after the import is completed.)****
+
+> [!NOTE] Edit This Note
+> **(Edit this page in source mode to see comments about some manual edits that you may need to perform after the import is completed.)****
+> %% See comments below for editing instructions. You can delete this callout if you want. %%
 
 # States
 
@@ -25,10 +28,10 @@ world: {{@importDataRoot.info.mapName}}
 
 %% The Neutral peoples of this world have no State, hence the empty field %%
 
-| ID  | Province | Full Name | State |
+| ID  | Province | Capital | State |
 | --- | -------- | --------- | ----- |
 {{#each pack.provinces}}
-| {{i}} | [[{{../info.thisCampaignPath}}/05-Atlas/Provinces/{{fullName}}\|{{fullName}}]] | {{fullName}} | [[{{../info.thisCampaignPath}}/05-Atlas/States/{{getStateName state ../pack.states}}\|{{getStateName state ../pack.states}}]] |
+| {{i}} | [[{{../info.thisCampaignPath}}/05-Atlas/Provinces/{{fullName}}\|{{fullName}}]] | [[{{getBurgName capital ../pack.burgs}}]] | [[{{../info.thisCampaignPath}}/05-Atlas/States/{{getStateName state ../pack.states}}\|{{getStateName state ../pack.states}}]] |
 {{/each}}
 
 # Burgs
