@@ -4,7 +4,9 @@
 
 
 ## TO DO
-
+- [ ] get the `mapDropboxFMGLink` into the [[newCampaignTemplate]] metadata - use it in [[newCampaignSimpleAtlasTemplate]] as well
+- [ ] Rework the "adding a map" section in the [[newCampaignSimpleAtlasTemplate]] - we can now make use of data in the JSON to calculate the scale units
+- [ ] Is there a way to pull all the marker data for each State, Province, and Burg to create sections of Leaflet map markers?
 - [ ] Refactor all the handlebar helpers to make use of just the `@importDataRoot` object and pass it to all the helpers as `allData` & remove all the other different subsets using that (like `@importDataRoot.pack.cells`, etc)
 - [ ] make use of the `full-width` cssclass where needed...if we want. 
 	- [ ] make other not-quite-full-width classes?
