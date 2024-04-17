@@ -1,9 +1,9 @@
 {
-  "jsonName": "info.mapName",
+  "jsonName": "name",
   "jsonNamePath": false,
   "jsonUrl": "",
-  "folderName": "01-Campaigns/Test Campaign Ladonia/05-Atlas/",
-  "topField": "",
+  "folderName": "01-Campaigns/Test Campaign Ladonia/05-Atlas/Burgs",
+  "topField": "pack.burgs",
   "notePrefix": "",
   "noteSuffix": "",
   "handleExistingNote": 1,
