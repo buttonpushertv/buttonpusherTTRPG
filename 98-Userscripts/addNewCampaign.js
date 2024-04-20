@@ -19,8 +19,8 @@ module.exports = async (params) => {
 
     // Calculate the path & name of the Campaign's Home Note
     let newCampaignHomeNote = newCampaignName + " Home";
-    // Calculate the path & name of the Campaign's Atlas Note
-    let newCampaignAtlas = newCampaignName + "-Simple Atlas";
+    // Calculate the path & name of the Campaign's Simple Atlas Note
+    let newCampaignSimpleAtlas = newCampaignName + "-Simple Atlas";
     // the name of the Campaign Calendarium for this campaign
     const newCampaignCalendar = newCampaignName + "-Calendar";
 
@@ -28,7 +28,7 @@ module.exports = async (params) => {
     params.variables["newCampaignPath"] = newCampaignPath;
     params.variables["newCampaignShortCode"] = newCampaignShortCode;
     params.variables["newCampaignHomeNote"] = newCampaignHomeNote;
-    params.variables["newCampaignAtlas"] = newCampaignAtlas;
+    params.variables["newCampaignSimpleAtlas"] = newCampaignSimpleAtlas;
     params.variables["newCampaignCalendar"] = newCampaignCalendar;
     console.log("addNewCampaign - END - params");
     console.log(params);

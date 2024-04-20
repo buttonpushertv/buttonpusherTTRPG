@@ -1,13 +1,19 @@
 ---
 <%*
-var thisCampaignMetaData = this.app.metadataCache.getFileCache(tp.file.find_tfile("{{VALUE:'thisCampaignHomeNote}}"))?.frontmatter || {};'
+var thisCampaignMetaData = this.app.metadataCache.getFileCache(tp.file.find_tfile("{{VALUE:thisCampaignHomeNote}}"))?.frontmatter || {};
 console.log(thisCampaignMetaData);
 _%>
-campaign: "<% thisCampaignMetaData.campaignName %>"
-campaignHomeNote: "<% thisCampaignMetaData.campaignHomeNote %>"
+campaign: <% thisCampaignMetaData.campaignName %>
+campaignHomeNote: <% thisCampaignMetaData.campaignHomeNote %>
 campaignShortCode: <% thisCampaignMetaData.campaignShortCode %>
 created: <% tp.file.creation_date() %>
-sessionDate: "{{VALUE:extractedDate}}" 
+sessionDate: {{VALUE:extractedDate}}
+Campaign: <% thisCampaignMetaData.campaignName %>
+campaignHomeNote: <% thisCampaignMetaData.campaignHomeNote %>
+campaignShortCode: <% thisCampaignMetaData.campaignShortCode %>
+Created: <% tp.file.creation_date() %>
+SessionDate: {{VALUE:extractedDate}}
+IsNextSession: true
 SessionStatus: Prep
 Summary: '<% (await tp.system.prompt("Enter a summary?")) %>'
 tags:

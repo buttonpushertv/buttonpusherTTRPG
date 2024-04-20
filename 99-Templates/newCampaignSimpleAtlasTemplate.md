@@ -1,14 +1,10 @@
 ---
-<%*
-var thisCampaignMetaData = this.app.metadataCache.getFileCache(tp.file.find_tfile("{{VALUE:'thisCampaignHomeNote}}"))?.frontmatter || {};'
-console.log(thisCampaignMetaData);
-_%>
 campaignName: {{VALUE:newCampaignName}}
 campaignPath: {{VALUE:newCampaignPath}}
 campaignShortCode: {{VALUE:newCampaignShortCode}}
 tags:
 - simple-atlas
-- <% thisCampaignMetaData.campaignShortCode %>
+- {{VALUE:newCampaignShortCode}}
 ---
 
 %% The map section below will need to be customized to use with your world map. The following block is taken from [Josh Plunkett's Tutorial](https://youtu.be/54EyMzJP5DU) and [Bag Of Tips' v2.0 Vault](https://ko-fi.com/s/37dd17499a) and adapted for the FMG Import process. Follow `###` commented instruction lines and it should work. If you have imported an FMG map, you can pull the Leaflet block from the Linked Atlas that is created in that import process. 

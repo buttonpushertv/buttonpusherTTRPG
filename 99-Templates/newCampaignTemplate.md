@@ -3,14 +3,13 @@ campaignName: {{VALUE:newCampaignName}}
 campaignPath: {{VALUE:newCampaignPath}}
 campaignShortCode: {{VALUE:newCampaignShortCode}}
 campaignHomeNote: {{VALUE:newCampaignHomeNote}}
-campaignAtlas: {{VALUE:newCampaignAtlas}}
+campaignSimpleAtlas: {{VALUE:newCampaignSimpleAtlas}}
 campaignCalendar: {{VALUE:newCampaignCalendar}}
 campaignStatus: 
 campaignSystem:
 pageType: campaign-home
 tags:
 - campaign-home
-- {{@importDataRoot.info.mapName}}
 - {{VALUE:newCampaignShortCode}}
 ---
 
@@ -65,7 +64,7 @@ for (const folderName of folderNames) {
 
 # The World of {{VALUE:newCampaignName}}
 
-[[{{VALUE:newCampaignAtlas}}]]
+[[{{VALUE:newCampaignSimpleAtlas}}]]
 
 ## Player Characters
 
