@@ -1,0 +1,7 @@
+.mb-medium-width-text-input {
+	width: 65%;
+}
+
+.mb-medium-width-text-input > input {
+	width: 65%;
+}

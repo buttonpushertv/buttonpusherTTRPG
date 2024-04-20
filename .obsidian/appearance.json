@@ -3,6 +3,8 @@
   "cssTheme": "ITS Theme",
   "theme": "obsidian",
   "enabledCssSnippets": [
-    "optional-full-width"
+    "optional-full-width",
+    "metabind-custom",
+    "its_snippets"
   ]
 }

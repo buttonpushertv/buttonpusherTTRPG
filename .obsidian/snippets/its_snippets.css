@@ -1,0 +1,5 @@
+.table-wrapper, .tables-medium table,
+.t-m .cm-table-widget.markdown-rendered .table-wrapper,
+.t-m table {
+  width: 80%;
+}
