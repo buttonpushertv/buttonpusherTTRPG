@@ -1,7 +1,7 @@
 # buttonpusherTTRPG Home Page
 
-> [!TLDR] Version Info
-> Wyrmling Edition - v. 0.0.0
+> [!NOTE] Version & Changes
+> ![[VERSION|no-t]]
 >
 > [[CHANGELOG]] 
 
