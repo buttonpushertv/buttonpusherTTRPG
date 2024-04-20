@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "adceb19337b59043",
+        "id": "e5ea0164f2c48f93",
         "type": "tabs",
         "children": [
           {
-            "id": "cc175f17203cb139",
+            "id": "32d52ec4715fbce1",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -18,8 +18,21 @@
                 "source": true
               }
             }
+          },
+          {
+            "id": "6de94975d3e4d51c",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "99-Templates/newCampaignTemplate.md",
+                "mode": "preview",
+                "source": true
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -71,7 +84,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "README.md",
+                "file": "99-Templates/newCampaignTemplate.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -83,7 +96,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "README.md",
+                "file": "99-Templates/newCampaignTemplate.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +124,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "README.md"
+                "file": "99-Templates/newCampaignTemplate.md"
               }
             }
           }
@@ -126,11 +139,11 @@
     "type": "split",
     "children": [
       {
-        "id": "0969454409aa4513",
+        "id": "fbe3e638bae3e1ea",
         "type": "tabs",
         "children": [
           {
-            "id": "05ec5a48fde0365e",
+            "id": "969e6b31d86c73e8",
             "type": "leaf",
             "state": {
               "type": "DICE_ROLLER_VIEW",
@@ -160,46 +173,46 @@
       "obsidian-import-json:JSON/CSV Importer": false
     }
   },
-  "active": "cc175f17203cb139",
+  "active": "6fa5b99a9c780db4",
   "lastOpenFiles": [
-    "Home.md",
-    "README.md",
     "VERSION.md",
-    "90-Tools & Helpers/JSON Import How To.md",
-    "90-Tools & Helpers/FMG JSON SCHEMA.md",
-    "90-Tools & Helpers/Command Reminders.md",
-    "90-Tools & Helpers/Buttons.md",
-    "91-Assets/Map Symbols/Anvil_Forge.png",
-    "CHANGELOG.md",
     "LICENSE.md",
-    "01-Campaigns/Test Campaign Ladonia/Text Campaign Ladonia Session Hub.md",
-    "01-Campaigns/Test Campaign Ladonia/Test Campaign Ladonia Home.md",
     "99-Templates/newCampaignSessionHub.md",
-    "99-Templates/sessionNotesTemplate.md",
-    "99-Templates/Handlebars-JSON/Atlas-FMG-JSON Handlebars Template.md",
-    "99-Templates/newCampaignTemplate.md",
-    "00-INBOX/Scratch Pad.md",
+    "90-Tools & Helpers/FMG JSON SCHEMA.md",
+    "README.md",
+    "01-Campaigns/Test Campaign 106/Test Campaign 106 Home.md",
+    "01-Campaigns/Test Campaign 106/05-Atlas/Test Campaign 106-Simple Atlas.md",
+    "01-Campaigns/Test Campaign 106/99-Misc Notes",
+    "01-Campaigns/Test Campaign 106/23-Deities",
+    "01-Campaigns/Test Campaign 106/22-Groups",
+    "01-Campaigns/Test Campaign 106/21-NPCs",
+    "01-Campaigns/Test Campaign 106/20-PCs",
+    "01-Campaigns/Test Campaign 106/08-Items & Artifacts",
+    "01-Campaigns/Test Campaign 106/07-Organizations",
+    "01-Campaigns/Test Campaign 106/06-Points of Interest",
+    "01-Campaigns/Test Campaign 106/04-Lore",
+    "01-Campaigns/Test Campaign 106/03-Story Arcs",
     "99-Templates/newCampaignSimpleAtlasTemplate.md",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/Test Campaign Ladonia-Linked Atlas.md",
-    "99-Templates/Handlebars-JSON/Provinces-FMG-JSON Handlebars Template.md",
-    "99-Templates/Handlebars-JSON/States-FMG-JSON Handlebars Template.md",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/Test Campaign Ladonia-Simple Atlas.md",
+    "99-Templates/newCampaignTemplate.md",
+    "01-Campaigns/Test Campaign 105/05-Atlas/Test Campaign 105-Simple Atlas.md",
+    "01-Campaigns/Test Campaign 104/Test Campaign 104 Home.md",
+    "01-Campaigns/Test Campaign 104/05-Atlas/Test Campaign 104-Simple Atlas.md",
+    "00-INBOX/Scratch Pad.md",
+    "01-Campaigns/Test Campaign 103/Test Campaign 103 Home.md",
+    "01-Campaigns/Test Campaign 103/05-Atlas/Test Campaign 103-Simple Atlas.md",
+    "99-Templates/sessionNotesTemplate.md",
+    "01-Campaigns/Test Campaign 102/Test Campaign 102 Home.md",
+    "01-Campaigns/Test Campaign 102/05-Atlas/Test Campaign 102-Simple Atlas.md",
+    "01-Campaigns/Test Campaign 101/05-Atlas/Test Campaign 101-Simple Atlas.md",
+    "01-Campaigns/Test Campaign 101/Test Campaign 101 Home.md",
+    "00-INBOX/DataView Testing.md",
+    "01-Campaigns/Campaign Index.md",
+    "CHANGELOG.md",
+    "01-Campaigns/Test Campaign 01/10-Atlas/Test Campaign 01 Atlas.md",
+    "Home.md",
     "01-Campaigns/Test Campaign Ladonia/05-Atlas/Burgs/Viohrari.md",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/Burgs/Tameskisa.md",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/Burgs/Kautio.md",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/Burgs/Kalahmaski.md",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/Burgs/Aijarvo.md",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/Burgs",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/Provinces",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/Cultures",
-    "99-Templates/Handlebars-JSON/Helpers-FMG-JSON-deprecated-older.js.txt",
-    "99-Templates/Handlebars-JSON/Helpers-FMG-JSON-deprecated-older.js",
-    "99-Templates/Handlebars-JSON/Helpers-FMG-JSON-deprecated-older-js.txt",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/states-tester",
     "91-Assets/Test Campaign Ladonia/Ladonia World Map.svg",
     "91-Assets/Test Campaign Ladonia/Ladonia 2024-04-12-16-12.svg",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/Religions",
     "91-Assets/Test Campaign Ladonia/Ladonia Religions World Map.svg",
     "91-Assets/Test Campaign Ladonia/Ladonia 2024-04-12-11-16.svg",
     "91-Assets/Map Symbols/Stronghold.png",
@@ -207,6 +220,6 @@
     "91-Assets/Map Symbols/Shield.png",
     "91-Assets/Map Symbols/Orcs.png",
     "91-Assets/Map Symbols/Monolith.png",
-    "91-Assets/Map Symbols"
+    "91-Assets/Map Symbols/Skull.png"
   ]
 }
