@@ -3,14 +3,11 @@
 var thisCampaignMetaData = this.app.metadataCache.getFileCache(tp.file.find_tfile("{{VALUE:'thisCampaignHomeNote}}"))?.frontmatter || {};'
 console.log(thisCampaignMetaData);
 _%>
-Campaign: "<% thisCampaignMetaData.campaignName %>"
+campaign: "<% thisCampaignMetaData.campaignName %>"
 campaignHomeNote: "<% thisCampaignMetaData.campaignHomeNote %>"
 campaignShortCode: <% thisCampaignMetaData.campaignShortCode %>
-Created: <% tp.file.creation_date() %>
-SessionDate: "{{VALUE:extractedDate}}" 
-Template: "[[sessionNotesTemplate]]"
-TemplateVersion: 1
-IsNextSession: true
+created: <% tp.file.creation_date() %>
+sessionDate: "{{VALUE:extractedDate}}" 
 SessionStatus: Prep
 Summary: '<% (await tp.system.prompt("Enter a summary?")) %>'
 tags:
