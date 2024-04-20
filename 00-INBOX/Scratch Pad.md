@@ -1,13 +1,22 @@
 # HOLDING AREA
 
+taken out of Ladonia MODDED JSON:
+```
+        "mapCenterH": 658.5,
+        "mapCenterW": 1145.5,
+        "mapScaleUnits": "miles",
+        "mapScaleUnitAmount": 80,
+        "mapScalePixelsPerUnit": 40,
+```
+(these elements have been deprecated)
+
+
+#### taken from YAML - read via QuickAdd
 campaignHomeNote: "{{VALUE:newCampaignHomeNote}}"
 campaignAtlas: "{{VALUE:newCampaignAtlas}}"
 campaignCalendar: "{{VALUE:newCampaignCalendar}}"
 campaignStatus: 
 campaignSystem:
-
-putting the world map in the center:
-[{{getLeafletCenterH @importDataRoot.info}},{{getLeafletCenterW @importDataRoot.info}}]
 
 ---
 
