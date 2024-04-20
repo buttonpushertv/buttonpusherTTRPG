@@ -1,10 +1,11 @@
 ---
 alias:
-campaign: "{{@importDataRoot.info.thisCampaign}}"
+campaign: {{@importDataRoot.info.thisCampaign}}
 created: {{getDateTimestamp @importSettings}}
 tags: 
 - linked-atlas
-- <% thisCampaignMetaData.campaignShortCode %>
+- {{@importDataRoot.info.thisCampaignShortCode}}
+- {{@importDataRoot.info.mapName}}
 WBProcess: FALSE
 world: {{@importDataRoot.info.mapName}}
 ---
@@ -13,6 +14,29 @@ world: {{@importDataRoot.info.mapName}}
 > [!NOTE] Edit This Note
 > **(Edit this page in source mode to see comments about some manual edits that you may need to perform after the import is completed.)****
 > %% See comments below for editing instructions. You can delete this callout if you want. %%
+
+%% This Leaflet map block is created out of the elements added to the JSON file before import %%
+
+> [!metadata|map]+ {{name}} World Map
+> ```leaflet
+> id: State-{{name}}
+> image: [[{{@importDataRoot.info.mapName}} World Map.svg]]
+> bounds: 
+> - [0,0]
+> - [{{@importDataRoot.info.mapHeight}},{{@importDataRoot.info.mapWidth}}]
+> coordinates: [{{divide @importDataRoot.info.mapHeight 2}},{{divide @importDataRoot.info.mapWidth 2}}]
+> height: 600px
+> width: 100%
+> minZoom: -3
+> maxZoom: 5
+> defaultZoom: -1.25
+> zoomDelta: 0.25
+> unit: {{@importDataRoot.settings.distanceUnit}}
+> scale: {{@importDataRoot.settings.distanceScale}}
+> darkMode: false
+> ```
+> [Link to {{name}} on FMG Map]({{@importDataRoot.info.mapDropboxFMGLink}})
+
 
 # States
 
@@ -26,12 +50,14 @@ world: {{@importDataRoot.info.mapName}}
 
 # Provinces
 
-%% The Neutral peoples of this world have no State, hence the empty field %%
+%% The Neutral peoples of this world have no State, hence the empty field. Also, any Capital fields that contain `[[]]` mean that that province does not have a Provincial Capital.
+
+%%
 
 | ID  | Province | Capital | State |
 | --- | -------- | --------- | ----- |
 {{#each pack.provinces}}
-| {{i}} | [[{{../info.thisCampaignPath}}/05-Atlas/Provinces/{{fullName}}\|{{fullName}}]] | [[{{getBurgName capital ../pack.burgs}}]] | [[{{../info.thisCampaignPath}}/05-Atlas/States/{{getStateName state ../pack.states}}\|{{getStateName state ../pack.states}}]] |
+| {{i}} | [[{{../info.thisCampaignPath}}/05-Atlas/Provinces/{{fullName}}\|{{fullName}}]] | [[{{getBurgName burg ../pack.burgs}}]] | [[{{../info.thisCampaignPath}}/05-Atlas/States/{{getStateName state ../pack.states}}\|{{getStateName state ../pack.states}}]] |
 {{/each}}
 
 # Burgs

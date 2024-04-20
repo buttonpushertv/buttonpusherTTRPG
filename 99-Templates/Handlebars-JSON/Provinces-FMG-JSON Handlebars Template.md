@@ -1,7 +1,6 @@
 ---
 aliases: {{name}}
 campaign: "{{@importDataRoot.info.thisCampaign}}"
-provincialCapital: {{getBurgName burg @importDataRoot.pack.burgs}}
 color: {{color}}
 created: {{getDateTimestamp @importSettings}}
 emblem: {{@importDataRoot.info.thisCampaignShortCode}}-{{@importDataRoot.info.mapName}} Emblem {{fullName}}.png
@@ -10,6 +9,7 @@ fullName: {{fullName}}
 id: {{i}}
 name: {{name}}
 pronounced:
+provincialCapital: {{getBurgName burg @importDataRoot.pack.burgs}}
 religion: {{getReligionName this.center @importDataRoot.pack.cells @importDataRoot.pack.religions}}
 rulers:
 shortDescription:

@@ -82,7 +82,7 @@ handlebars.registerHelper('getBurgName', function(burgId,allBurgs) {
   //console.log("burgId:", burgId);
   //console.log("allBurgs: ", allBurgs);
   if (burgId === undefined || burgId === 0 ) {
-    // console.log("##### burgId was undefined or zero #####");
+    console.log("##### burgId was undefined or zero #####");
     return ''; // skip if the element is undefined or zero
   };
   const burgFound = allBurgs.find(burg => burg.i === burgId);
