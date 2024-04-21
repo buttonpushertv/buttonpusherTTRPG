@@ -105,6 +105,41 @@
           }
         },
         {
+          "name": "Create New Campaign Session Hub",
+          "type": "NestedChoice",
+          "id": "3f0314bb-883c-45f8-8038-6632d3b61730",
+          "choice": {
+            "id": "4fe15eaf-38f9-42b2-ac7f-a376211da59b",
+            "name": "Create New Campaign Session Hub",
+            "type": "Template",
+            "command": false,
+            "templatePath": "99-Templates/newCampaignSessionHub.md",
+            "fileNameFormat": {
+              "enabled": true,
+              "format": "{{VALUE:newCampaignName}} Session Hub"
+            },
+            "folder": {
+              "enabled": true,
+              "folders": [
+                "{{VALUE:newCampaignPath}}/01-Sessions"
+              ],
+              "chooseWhenCreatingNote": false,
+              "createInSameFolderAsActiveFile": false,
+              "chooseFromSubfolders": false
+            },
+            "appendLink": false,
+            "openFileInNewTab": {
+              "enabled": false,
+              "direction": "vertical",
+              "focus": true
+            },
+            "openFile": false,
+            "openFileInMode": "default",
+            "fileExistsMode": "Increment the file name",
+            "setFileExistsBehavior": false
+          }
+        },
+        {
           "name": "Create New Campaign Simple Atlas",
           "type": "NestedChoice",
           "id": "deb926bc-9d13-4254-bf72-e8d3e581452d",

@@ -4,7 +4,7 @@
   "theme": "obsidian",
   "enabledCssSnippets": [
     "optional-full-width",
-    "metabind-custom",
-    "its_snippets"
+    "its_snippets",
+    "metabind-custom"
   ]
 }
