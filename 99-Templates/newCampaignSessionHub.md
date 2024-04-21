@@ -1,11 +1,8 @@
 ---
-<%*
-var thisCampaignMetaData = this.app.metadataCache.getFileCache(tp.file.find_tfile("{{VALUE:'thisCampaignHomeNote}}"))?.frontmatter || {};'
-console.log(thisCampaignMetaData);
-_%>
-campaign: "<% thisCampaignMetaData.campaignName %>"
-campaignHomeNote: "<% thisCampaignMetaData.campaignHomeNote %>"
-campaignShortCode: <% thisCampaignMetaData.campaignShortCode %>
+campaignName: {{VALUE:newCampaignName}}
+campaignPath: {{VALUE:newCampaignPath}}
+campaignShortCode: {{VALUE:newCampaignShortCode}}
+campaignHomeNote: {{VALUE:newCampaignHomeNote}}
 created: <% tp.file.creation_date() %>
 nextSession:
 sessionDate1:
@@ -21,7 +18,7 @@ session4Note:
 session5Note:
 tags:
 - session-hub
-- <% thisCampaignMetaData.campaignShortCode %>
+- {{VALUE:newCampaignShortCode}}
 ---
 
 # Next Session Dates

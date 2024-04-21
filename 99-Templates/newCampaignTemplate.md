@@ -37,7 +37,6 @@ tags:
 
 <%*
 const folderNames = [
-"01-Sessions",
 "02-WorldBuilding",
 "03-Story Arcs",
 "04-Lore",
@@ -72,6 +71,8 @@ for (const folderName of folderNames) {
 
 ![random|sban+hmicro](https://source.unsplash.com/random?abstract,fire)
 ## Sessions
+
+![[{{VALUE:newCampaignName}} Session Hub]]
 
 (Session info will go here)
 
