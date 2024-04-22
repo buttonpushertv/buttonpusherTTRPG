@@ -4,6 +4,7 @@ campaign: "{{@importDataRoot.info.thisCampaign}}"
 color: {{color}}
 created: {{getDateTimestamp @importSettings}}
 emblem: {{@importDataRoot.info.thisCampaignShortCode}}-{{@importDataRoot.info.mapName}} Emblem {{fullName}}.png
+fileName: {{fullName}}-{{i}}
 formName: {{formName}}
 fullName: {{fullName}}
 id: {{i}}
@@ -42,7 +43,7 @@ world: {{@importDataRoot.info.mapName}}
 > **Rulers**|`INPUT[list:rulers]`|
 > **Short Description**|`INPUT[textArea:shortDescription]`
 
-[[{{getCampaignHomeNote @importSettings}}]] | [[{{getCampaignAtlasNote @importSettings}}]] | `=this.state`
+[[{{getCampaignHomeNote @importSettings}}]] | [[{{getCampaignAtlasNote @importSettings}}]] | `=link(this.state)`
 
 %% During the import process, much of the data for the Leaflet fields should have been pulled in from the JSON. You will need to update the defaultZoom and (maybe) the coordinates values, but it should be pretty close - good enough to get a start with it. The goal is to cut down on the amount of manual effort you need to go through to pull your data in from the FMG JSON %% 
 
@@ -90,8 +91,8 @@ world: {{@importDataRoot.info.mapName}}
 > ###### Politics
 >  |
 > ---: | --- |
-> **State** |`=this.state`|
-> **Provincial Capital** | `=this.provincialCapital` |
+> **State** |`=link(this.state)`|
+> **Provincial Capital** | `=link(this.provincialCapital)` |
 > **Ruler(s)** | `=link(this.rulers)` |
 > **Dominant Culture** | `=link(this.culture)` |
 > **Dominant Religion** | `=link(this.religion)` |
@@ -99,7 +100,7 @@ world: {{@importDataRoot.info.mapName}}
 > ```dataview
 > TABLE WITHOUT ID file.link as "Burgs"
 > FROM #Burg and  "{{@importDataRoot.info.thisCampaignPath}}"
-> WHERE contains(this.fullName, province)
+> WHERE contains(this.fileName, province)
 > SORT file.name ASC
 > ```
 
@@ -149,5 +150,5 @@ Siginifcant Incidents in `=this.name`'s history:
 
 ---
 
-[[{{getCampaignHomeNote @importSettings}}]] | [[{{getCampaignAtlasNote @importSettings}}]] | `=this.state`
+[[{{getCampaignHomeNote @importSettings}}]] | [[{{getCampaignAtlasNote @importSettings}}]] | `=link(this.state)`
 

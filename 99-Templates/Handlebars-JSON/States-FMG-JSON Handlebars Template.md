@@ -23,7 +23,7 @@ neighbors:
 pronounced:
 provinces:
 {{#each provinces}}
-- {{getProvinceName this @importDataRoot.pack.provinces}}
+- {{getProvinceName this @importDataRoot.pack.provinces}}-{{this}}
 {{/each}}
 totalPopulation: {{totalPopulation rural urban}}
 religion: {{getReligionName this.center @importDataRoot.pack.cells @importDataRoot.pack.religions}}

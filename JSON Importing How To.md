@@ -189,7 +189,7 @@ To import the Provinces Notes, here are the settings for the "Import JSON/CSV di
 | Choose HELPERS file|**_Helpers-FMG-JSON.js_** |
 | Field containing the data|**_pack.provinces_** |
 | Each subfield is a separate note|**_unchecked_** |
-| Field to use as Note name|**_fullName_** (this will create files named *"Provincename County"*, etc.) |
+| Field to use as Note name|**_`${fullNname}-${i}`_** (this will create files named *"Provincename County"*, etc., w/ index appended) |
 | Add suffix on duplicate note names|**_checked_** |
 | Note name prefix/suffix|**_leave both blank_** |
 | Allow paths in Note name|**_unchecked_**
@@ -211,7 +211,7 @@ To import the Burg Notes, here are the settings for the "Import JSON/CSV dialog"
 | Choose HELPERS file|**_Helpers-FMG-JSON.js_** |
 | Field containing the data|**_pack.burgs_** |
 | Each subfield is a separate note|**_unchecked_** |
-| Field to use as Note name|**_name_** |
+| Field to use as Note name|**_`${name}-${i}`_** (will create filenames with index appended) |
 | Add suffix on duplicate note names|**_checked_** |
 | Note name prefix/suffix|**_leave both blank_** |
 | Allow paths in Note name|**_unchecked_**

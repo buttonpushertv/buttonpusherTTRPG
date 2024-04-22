@@ -16,7 +16,7 @@ plaza: {{plaza}}
 population: {{calcPopulation population}}
 port: {{port}}
 pronounced: 
-province: {{burgProvinceLookup cell @importDataRoot.pack.cells @importDataRoot.pack.provinces}}
+province: {{burgProvinceLookup cell @importDataRoot.pack.cells @importDataRoot.pack.provinces}}-{{getProvinceIdFromCell cell @importDataRoot.pack.cells}}
 religion: {{getReligionName this.cell @importDataRoot.pack.cells @importDataRoot.pack.religions}}
 rulers: 
 shanty: {{shanty}}
