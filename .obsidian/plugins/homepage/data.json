@@ -2,14 +2,14 @@
   "version": 3,
   "homepages": {
     "Main Homepage": {
-      "value": "Home",
+      "value": "README",
       "kind": "File",
       "openOnStartup": true,
       "openMode": "Replace all open notes",
       "manualOpenMode": "Keep open notes",
       "view": "Reading view",
       "revertView": true,
-      "openWhenEmpty": false,
+      "openWhenEmpty": true,
       "refreshDataview": false,
       "autoCreate": true,
       "autoScroll": false,

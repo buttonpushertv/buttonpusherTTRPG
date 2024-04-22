@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "3e4d72d25c778d25",
+        "id": "01a96773c8d044f2",
         "type": "tabs",
         "children": [
           {
-            "id": "028d8ecd781e89ee",
+            "id": "f437b05876472795",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "01-Campaigns/Test Campaign 111/01-Sessions/Test Campaign 111 Session Hub.md",
+                "file": "JSON Importing How To.md",
                 "mode": "preview",
                 "source": true
               }
@@ -71,7 +71,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "01-Campaigns/Test Campaign 111/01-Sessions/Test Campaign 111 Session Hub.md",
+                "file": "JSON Importing How To.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -83,7 +83,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "01-Campaigns/Test Campaign 111/01-Sessions/Test Campaign 111 Session Hub.md",
+                "file": "JSON Importing How To.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +111,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "01-Campaigns/Test Campaign 111/01-Sessions/Test Campaign 111 Session Hub.md"
+                "file": "JSON Importing How To.md"
               }
             }
           }
@@ -160,9 +160,37 @@
       "obsidian-import-json:JSON/CSV Importer": false
     }
   },
-  "active": "028d8ecd781e89ee",
+  "active": "f437b05876472795",
   "lastOpenFiles": [
-    "01-Campaigns/Test Campaign 111/Test Campaign 111 Home.md",
+    "CHANGELOG.md",
+    "99-Templates/newCampaignSessionHub.md",
+    "README.md",
+    "99-Templates/Handlebars-JSON/Burgs-FMG-JSON Handlerbars Template.md",
+    "JSON Importing How To.md",
+    "Home.md",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/Alocenia-14.md",
+    "99-Templates/Handlebars-JSON/States-FMG-JSON Handlebars Template.md",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/Burgs/Riofrioli-14.md",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/Upunia-1.md",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/Burgs/Abderikast-451.md",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/Petrica-18.md",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/Histharoseia-17.md",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/Bhrymaion-16.md",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/Ingnia-15.md",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/Aporesia-13.md",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/Esmosia-12.md",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/Calhosia-11.md",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/Thas-10.md",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/Tiormaa-9.md",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/Kunszavasia-8.md",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/Esiagasia-7.md",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/Marbeilia-6.md",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/Histhepia-5.md",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/Kunkania-4.md",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/Mauna-3.md",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/Provinces",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/Burgs",
     "01-Campaigns/Test Campaign 111/99-Misc Notes",
     "01-Campaigns/Test Campaign 111/23-Deities",
     "01-Campaigns/Test Campaign 111/22-Groups",
@@ -170,33 +198,6 @@
     "01-Campaigns/Test Campaign 111/20-PCs",
     "01-Campaigns/Test Campaign 111/08-Items & Artifacts",
     "01-Campaigns/Test Campaign 111/07-Organizations",
-    "01-Campaigns/Test Campaign 111/06-Points of Interest",
-    "01-Campaigns/Test Campaign 111/04-Lore",
-    "01-Campaigns/Test Campaign 111/03-Story Arcs",
-    "01-Campaigns/Test Campaign 111/05-Atlas/Test Campaign 111-Simple Atlas.md",
-    "01-Campaigns/Test Campaign 111/01-Sessions/Test Campaign 111 Session Hub.md",
-    "README.md",
-    "99-Templates/newCampaignTemplate.md",
-    "01-Campaigns/Test Campaign 110/01-Sessions/Test Campaign 110 Session Hub.md",
-    "00-INBOX/Scratch Pad.md",
-    "99-Templates/newCampaignSessionHub.md",
-    "01-Campaigns/Test Campaign 110/05-Atlas/Test Campaign 110-Simple Atlas.md",
-    "01-Campaigns/Test Campaign 110/Test Campaign 110 Home.md",
-    "01-Campaigns/Test Campaign 108/Test Campaign 108 Home.md",
-    "01-Campaigns/Test Campaign 108/05-Atlas/Test Campaign 108-Simple Atlas.md",
-    "01-Campaigns/Test Campaign 108/01-Sessions/Test Campaign 108 Session Hub.md",
-    "01-Campaigns/Test Campaign 107/Test Campaign 107 Home.md",
-    "01-Campaigns/Test Campaign 107/05-Atlas/Test Campaign 107-Simple Atlas.md",
-    "01-Campaigns/Test Campaign 107/01-Sessions/Test Campaign 107 Session Hub.md",
-    "01-Campaigns/Test Campaign 106/Test Campaign 106 Home.md",
-    "01-Campaigns/Test Campaign 106/05-Atlas/Test Campaign 106-Simple Atlas.md",
-    "99-Templates/sessionNotesTemplate.md",
-    "99-Templates/newCampaignSimpleAtlasTemplate.md",
-    "VERSION.md",
-    "LICENSE.md",
-    "90-Tools & Helpers/FMG JSON SCHEMA.md",
-    "01-Campaigns/Test Campaign 105/05-Atlas/Test Campaign 105-Simple Atlas.md",
-    "01-Campaigns/Test Campaign 104/Test Campaign 104 Home.md",
     "91-Assets/Test Campaign Ladonia/Ladonia World Map.svg",
     "91-Assets/Test Campaign Ladonia/Ladonia 2024-04-12-16-12.svg",
     "91-Assets/Test Campaign Ladonia/Ladonia Religions World Map.svg",
