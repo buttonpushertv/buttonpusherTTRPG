@@ -4,7 +4,7 @@ aliases: {{name}}
 area: {{totalArea area}}
 burgs: {{burgs}}
 campaign: {{@importDataRoot.info.thisCampaign}}
-capital: {{getBurgName capital @importDataRoot.pack.burgs}}
+capital: {{getBurgName capital @importDataRoot.pack.burgs}}-{{capital}}
 center: {{this.center}}
 color: {{color}}
 created: {{getDateTimestamp @importSettings}}
@@ -81,7 +81,7 @@ world: {{@importDataRoot.info.mapName}}
 > unit: {{@importDataRoot.settings.distanceUnit}}
 > scale: {{@importDataRoot.settings.distanceScale}}
 > darkMode: false
-> marker: capital,{{getLeafletBurgXY capital @importDataRoot.pack.burgs @importDataRoot.info}},[[{{getBurgName capital @importDataRoot.pack.burgs}}]],{{name}} Capital
+> marker: capital,{{getLeafletBurgXY capital @importDataRoot.pack.burgs @importDataRoot.info}},[[{{getBurgName capital @importDataRoot.pack.burgs}}-{{capital}}]],{{name}} Capital
 > ```
 > [Link to {{name}} on FMG Map]({{@importDataRoot.info.mapDropboxFMGLink}}&scale=3{{getFMGCellXY this.center @importDataRoot.pack.cells}})
 

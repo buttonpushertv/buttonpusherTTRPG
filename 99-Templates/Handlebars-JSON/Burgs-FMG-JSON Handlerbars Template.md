@@ -10,6 +10,7 @@ culture: {{getCultureName culture @importDataRoot.pack.cultures}}
 elevation: {{getHeight cell @importDataRoot.settings @importDataRoot.pack.cells}}
 emblem: {{@importDataRoot.info.thisCampaignShortCode}}-{{@importDataRoot.info.mapName}} Emblem {{name}}.png
 feature: {{feature}}
+fileName: {{name}}-{{i}}
 id: {{i}}
 plaza: {{plaza}}
 population: {{calcPopulation population}}
@@ -37,7 +38,7 @@ y: {{y}}
 ---
 
 %% You can copy the line below and paste it into this Burg's State and/or Province Leaflet map block and it will add a marker for this burg to that map that will also link back to this note. Copy this line:
-marker: burg,{{getLeafletBurgXY this.i @importDataRoot.pack.burgs @importDataRoot.info}},[[{{name}}]]
+marker: burg,{{getLeafletBurgXY this.i @importDataRoot.pack.burgs @importDataRoot.info}},[[{{name}}-{{i}}]]
 %%
 
 > [!metadata|metadata]- Metadata 
@@ -61,7 +62,7 @@ marker: burg,{{getLeafletBurgXY this.i @importDataRoot.pack.burgs @importDataRoo
 > **Rulers**|`INPUT[list:rulers]`|
 > **Short Description**|`INPUT[textArea:shortDescription]`
 
-[[{{getCampaignHomeNote @importSettings}}]] | [[{{getCampaignAtlasNote @importSettings}}]] | `=this.state` | `=this.province`
+[[{{getCampaignHomeNote @importSettings}}]] | [[{{getCampaignAtlasNote @importSettings}}]] | `=link(this.state)` | `=link(this.province)`
 
 %% If you want to place the image for the Burg in the Map(Interactive) window below, you can use Fantasy Map Generator's link to Watabou's Fantasy City or Village Generator - see the `infobox` link or the `burgMapLink` URL up in the properties of this note. You can save the map image somewhere in the vault (`91-Assets/your_campaign_subfolder`, for instance) and it will show up in this window. There is an elaborate method (see [[JSON Import How To#Wrangling FMG Burg Maps]]) to save all the maps so you can have them locally and make use of the data that was placed here on import from the JSON.%% 
 
@@ -173,4 +174,4 @@ Below are any notable zones or regions within `=this.burgName`
 
 ---
 
-[[{{getCampaignHomeNote @importSettings}}]] | [[{{getCampaignAtlasNote @importSettings}}]] | `=this.state` | `=this.province`
+[[{{getCampaignHomeNote @importSettings}}]] | [[{{getCampaignAtlasNote @importSettings}}]] | `=link(this.state)` | `=link(this.province)`

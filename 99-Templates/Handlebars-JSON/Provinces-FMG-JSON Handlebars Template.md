@@ -9,7 +9,7 @@ fullName: {{fullName}}
 id: {{i}}
 name: {{name}}
 pronounced:
-provincialCapital: {{getBurgName burg @importDataRoot.pack.burgs}}
+provincialCapital: {{getBurgName burg @importDataRoot.pack.burgs}}-{{burg}}
 religion: {{getReligionName this.center @importDataRoot.pack.cells @importDataRoot.pack.religions}}
 rulers:
 shortDescription:
@@ -63,7 +63,7 @@ world: {{@importDataRoot.info.mapName}}
 > unit: {{@importDataRoot.settings.distanceUnit}}
 > scale: {{@importDataRoot.settings.distanceScale}}
 > darkMode: false
-> marker: prov_capital,{{getLeafletBurgXY burg @importDataRoot.pack.burgs @importDataRoot.info}},[[{{getBurgName burg @importDataRoot.pack.burgs}}]],{{name}} Provincial Capital
+> marker: prov_capital,{{getLeafletBurgXY burg @importDataRoot.pack.burgs @importDataRoot.info}},[[{{getBurgName burg @importDataRoot.pack.burgs}}-{{burg}}]],{{name}} Provincial Capital
 > ```
 >  [Link to {{fullName}} on FMG Map]({{@importDataRoot.info.mapDropboxFMGLink}}&scale=3{{getFMGCellXY this.center @importDataRoot.pack.cells}})
 
