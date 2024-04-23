@@ -57,7 +57,7 @@ world: {{@importDataRoot.info.mapName}}
 > image: [[{{@importDataRoot.info.mapName}} Religions World Map.svg]]
 > bounds: 
 > - [0,0]
-> - [{{getLeafletBounds @importDataRoot.info}}]
+> - [{{@importDataRoot.info.mapHeight}},{{@importDataRoot.info.mapWidth}}]
 > coordinates: [{{getCellLeafletXY center @importDataRoot.pack.cells @importDataRoot.info}}]
 > height: 600px
 > width: 100%
@@ -65,8 +65,8 @@ world: {{@importDataRoot.info.mapName}}
 > maxZoom: 5
 > defaultZoom: .5
 > zoomDelta: 0.25
-> unit: {{@importDataRoot.info.mapScaleUnits}}
-> scale: 1
+> unit: {{@importDataRoot.settings.distanceUnit}}
+> scale: {{@importDataRoot.settings.distanceScale}}
 > darkMode: false
 > marker: religion,{{getCellLeafletXY center @importDataRoot.pack.cells @importDataRoot.info}},,Religion's Center
 > ```
