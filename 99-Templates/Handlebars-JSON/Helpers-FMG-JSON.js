@@ -111,7 +111,7 @@ handlebars.registerHelper('getProvinceName', function(provinceId,allProvinces) {
   //console.log("provinceId:", provinceId);
   //console.log("allProvinces: ", allProvinces);
   if (provinceId === undefined || provinceId === 0) {
-    return 'Province Not Defined'; // skip if the element is undefined or zero
+    return 'No Province'; // skip if the element is undefined or zero
   };
   const provinceName = allProvinces.find(province => province.i === provinceId);
   //console.log("provinceName found:", provinceName);
