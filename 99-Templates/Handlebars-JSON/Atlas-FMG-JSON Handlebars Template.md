@@ -45,7 +45,7 @@ world: {{@importDataRoot.info.mapName}}
 | ID | State | Capital |
 | -- | ----- | ------- |
 {{#each pack.states}}
-| {{i}} | [[{{../info.thisCampaignPath}}/05-Atlas/States/{{name}}\|{{name}}]] | [[{{getBurgName capital ../pack.burgs}}-{{capital}}]] |
+| {{i}} | [[{{../info.thisCampaignPath}}/05-Atlas/States/{{i}}-{{name}}/{{name}}\|{{name}}]] | [[{{getBurgName capital ../pack.burgs}}]] |
 {{/each}}
 
 # Provinces
@@ -57,7 +57,7 @@ world: {{@importDataRoot.info.mapName}}
 | ID  | Province | Capital | State |
 | --- | -------- | --------- | ----- |
 {{#each pack.provinces}}
-| {{i}} | [[{{../info.thisCampaignPath}}/05-Atlas/Provinces/{{fullName}}-{{i}}\|{{fullName}}-{{i}}]] | [[{{getBurgName burg ../pack.burgs}}-{{burg}}]] | [[{{../info.thisCampaignPath}}/05-Atlas/States/{{getStateName state ../pack.states}}\|{{getStateName state ../pack.states}}]] |
+| {{i}} | [[{{../info.thisCampaignPath}}/05-Atlas/States/{{state}}-{{getStateName state ../pack/states}}/{{i}}-{{fullName}}/{{fullName}}\|{{fullName}}]] | [[{{getBurgName burg ../pack.burgs}}]] | [[{{../info.thisCampaignPath}}/05-Atlas/States/{{state}}-{{getStateName state ../pack/states}}/{{getStateName state ../pack.states}}\|{{getStateName state ../pack.states}}]] |
 {{/each}}
 
 # Burgs
@@ -65,7 +65,7 @@ world: {{@importDataRoot.info.mapName}}
 | ID  | Name | Population | State | Province |
 | --- | ---- | ---------- | ----- | -------- |
 {{#each pack.burgs}}
-| {{i}} | [[{{../info.thisCampaignPath}}/05-Atlas/Burgs/{{name}}-{{i}}\|{{name}}-{{i}}]] | {{calcPopulation population}} | [[{{../info.thisCampaignPath}}/05-Atlas/States/{{getStateName state ../pack.states}}\|{{getStateName state ../pack.states}}]] | [[{{../info.thisCampaignPath}}/05-Atlas/Provinces/{{burgProvinceLookup cell ../pack.cells ../pack.provinces}}-{{getProvinceIdFromCell cell ../pack.cells}}\|{{burgProvinceLookup cell ../pack.cells ../pack.provinces}}-{{getProvinceIdFromCell cell ../pack.cells}}]] |
+| {{i}} | [[{{../info.thisCampaignPath}}/05-Atlas/States/{{state}}-{{getStateName state ../pack/states}}/{{getProvinceIdFromCell cell ../pack.cells}}-{{burgProvinceLookup cell ../pack.cells ../pack.provinces}}/{{name}}\|{{name}}]] | {{calcPopulation population}} | [[{{../info.thisCampaignPath}}/05-Atlas/States/{{state}}-{{getStateName state ../pack/states}}/{{getStateName state ../pack.states}}\|{{getStateName state ../pack.states}}]] | [[{{../info.thisCampaignPath}}/05-Atlas/States/{{state}}-{{getStateName state ../pack/states}}/{{getProvinceIdFromCell cell ../pack.cells}}-{{burgProvinceLookup cell ../pack.cells ../pack.provinces}}/{{burgProvinceLookup cell ../pack.cells ../pack.provinces}}\|{{burgProvinceLookup cell ../pack.cells ../pack.provinces}}]] |
 {{/each}}
 
 # Diplomacy
