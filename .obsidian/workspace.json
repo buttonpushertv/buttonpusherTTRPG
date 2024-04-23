@@ -139,11 +139,11 @@
     "type": "split",
     "children": [
       {
-        "id": "fbe3e638bae3e1ea",
+        "id": "40817c6ca049c0b6",
         "type": "tabs",
         "children": [
           {
-            "id": "969e6b31d86c73e8",
+            "id": "c4568fe88b1014b0",
             "type": "leaf",
             "state": {
               "type": "DICE_ROLLER_VIEW",
@@ -175,10 +175,10 @@
   },
   "active": "40273f4d327068c0",
   "lastOpenFiles": [
+    "90-Tools & Helpers/_External_Scripts/OBSIDIAN-JSONImporter-HOTKEYS.ahk",
     "JSON Importing How To.md",
     "00-INBOX/Scratch Pad.md",
     "Home.md",
-    "90-Tools & Helpers/_External_Scripts/OBSIDIAN-JSONImporter-HOTKEYS.ahk",
     "90-Tools & Helpers/_External_Scripts/OBSIDIAN-HOTKEYS.ahk",
     "99-Templates/Handlebars-JSON/Burgs-FMG-JSON Handlerbars Template.md",
     "99-Templates/Handlebars-JSON/Atlas-FMG-JSON Handlebars Template.md",
