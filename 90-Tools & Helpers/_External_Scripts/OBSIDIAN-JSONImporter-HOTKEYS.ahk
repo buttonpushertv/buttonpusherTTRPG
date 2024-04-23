@@ -98,7 +98,7 @@ Loop, 6
         Send, {Tab}
         Sleep, sleepShort
     }
-clipboard := "01-Campaigns/Test Campaign Ladonia/05-Atlas/Burgs" ; CUSTOMIZE THIS LINE WITH YOUR INFO
+clipboard := "01-Campaigns/yourCampaignHere/05-Atlas/States" ; CUSTOMIZE THIS LINE WITH YOUR INFO
 
 Return
 
@@ -159,7 +159,7 @@ Loop, 6
         Send, {Tab}
         Sleep, sleepShort
     }
-clipboard := "01-Campaigns/Test Campaign Ladonia/05-Atlas/Provinces" ; CUSTOMIZE THIS LINE WITH YOUR INFO
+clipboard := "01-Campaigns/yourCampaignHere/05-Atlas/States" ; CUSTOMIZE THIS LINE WITH YOUR INFO
 Return
 
 F15:: ;<-- Import States
@@ -219,7 +219,7 @@ Loop, 6
         Send, {Tab}
         Sleep, sleepShort
     }
-clipboard := "01-Campaigns/Test Campaign Ladonia/05-Atlas/States" ; CUSTOMIZE THIS LINE WITH YOUR INFO
+clipboard := "01-Campaigns/yourCampaignHere/05-Atlas/States" ; CUSTOMIZE THIS LINE WITH YOUR INFO
 Return
 
 F16:: ;<-- Import Cultures
@@ -279,7 +279,7 @@ Loop, 6
         Send, {Tab}
         Sleep, sleepShort
     }
-clipboard := "01-Campaigns/Test Campaign Ladonia/05-Atlas/Cultures" ; CUSTOMIZE THIS LINE WITH YOUR INFO
+clipboard := "01-Campaigns/yourCampaignHere/05-Atlas/Cultures" ; CUSTOMIZE THIS LINE WITH YOUR INFO
 Return
 
 F17:: ;<-- Import Religions
@@ -339,7 +339,7 @@ Loop, 6
         Send, {Tab}
         Sleep, sleepShort
     }
-clipboard := "01-Campaigns/Test Campaign Ladonia/05-Atlas/Religions" ; CUSTOMIZE THIS LINE WITH YOUR INFO
+clipboard := "01-Campaigns/yourCampaignHere/05-Atlas/Religions" ; CUSTOMIZE THIS LINE WITH YOUR INFO
 Return
 
 F18:: ;<-- Import Atlas
@@ -405,7 +405,7 @@ Loop, 3
         Send, {Tab}
         Sleep, sleepShort
     }
-clipboard := "01-Campaigns/Test Campaign Ladonia/05-Atlas" ; CUSTOMIZE THIS LINE WITH YOUR INFO
+clipboard := "01-Campaigns/yourCampaignHere/05-Atlas" ; CUSTOMIZE THIS LINE WITH YOUR INFO
 Return
 
 
