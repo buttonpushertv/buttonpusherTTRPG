@@ -17,6 +17,12 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 #SingleInstance force ; Ensures that there is only a single instance of this script running.
 ; SetTitleMatchMode, 2 ; sets title matching to search for "containing" instead of "exact"
 
+; The 2 lines below pertain to the 'reload on save' function below (CheckScriptUpdate).
+; They are required for it to work.
+; UNCOMMENT THE NEXT 2 LINES TO ENABLE & SEE END OF SCRIPT
+;FileGetTime ScriptStartModTime, %A_ScriptFullPath%
+;SetTimer CheckScriptUpdate, 100, 0x7FFFFFFF ; 100 ms, highest priority
+
 ;===== INITIALIZATION - VARIABLES ==============================================================
 ; Sleep shortcuts - use these to standardize sleep times
 sleepMicro := 5
@@ -85,7 +91,6 @@ Loop, 2
 Sleep, sleepMedium
 Send, {Backspace}
 Sleep, sleepShort
-;Send, name ; field name here
 Send, @{{}return ``${{}this.state{}}-${{}(this.state > 0) && dataRoot.pack.states.find(state => state.i === this.state)?.name || "Unknown" {}}/${{}dataRoot.pack.cells.find(c => c.i === this.cell)?.province{}}-${{}dataRoot.pack.provinces.find(p => p.i === dataRoot.pack.cells.find(c => c.i === this.cell)?.province)?.fullName{}}/${{}this.name{}}``{}}
 Sleep, sleepShort
 Loop, 6
@@ -104,7 +109,7 @@ Send, {Enter}
 Sleep, sleepShort
 ; Load the JSON File
 WinWaitActive, Open
-Send, Ladonia Full 2024-03-31-10-23-MODDED.json
+Send, Ladonia Full 2024-03-31-10-23-MODDED.json ; CUSTOMIZE THIS LINE WITH YOUR INFO
 Sleep, sleepShort
 Send, {ENTER}
 Sleep, sleepMedium
@@ -147,7 +152,6 @@ Loop, 2
 Sleep, sleepMedium
 Send, {Backspace}
 Sleep, sleepShort
-; Send, fullName ; field name here
 Send, @{{}return ``${{}this.state{}}-${{}(this.state > 0) && dataRoot.pack.states.find(state => state.i === this.state)?.name || "Unknown" {}}/${{}this.i{}}-${{}(this.i > 0) && this.fullName || "Unknown"{}}/${{}this.fullName{}}``{}}
 Sleep, sleepShort
 Loop, 6
@@ -155,7 +159,7 @@ Loop, 6
         Send, {Tab}
         Sleep, sleepShort
     }
-clipboard := "01-Campaigns/Test Campaign Ladonia/05-Atlas/Provinces"
+clipboard := "01-Campaigns/Test Campaign Ladonia/05-Atlas/Provinces" ; CUSTOMIZE THIS LINE WITH YOUR INFO
 Return
 
 F15:: ;<-- Import States
@@ -165,7 +169,7 @@ Send, {Enter}
 Sleep, sleepShort
 ; Load the JSON File
 WinWaitActive, Open
-Send, Ladonia Full 2024-03-31-10-23-MODDED.json
+Send, Ladonia Full 2024-03-31-10-23-MODDED.json ; CUSTOMIZE THIS LINE WITH YOUR INFO
 Sleep, sleepShort
 Send, {ENTER}
 Sleep, sleepMedium
@@ -208,7 +212,6 @@ Loop, 2
 Sleep, sleepMedium
 Send, {Backspace}
 Sleep, sleepShort
-;Send, name ; field name here
 Send, ${{}i{}}-${{}name{}}/${{}name{}}
 Sleep, sleepShort
 Loop, 6
@@ -216,7 +219,7 @@ Loop, 6
         Send, {Tab}
         Sleep, sleepShort
     }
-clipboard := "01-Campaigns/Test Campaign Ladonia/05-Atlas/States"
+clipboard := "01-Campaigns/Test Campaign Ladonia/05-Atlas/States" ; CUSTOMIZE THIS LINE WITH YOUR INFO
 Return
 
 F16:: ;<-- Import Cultures
@@ -226,7 +229,7 @@ Send, {Enter}
 Sleep, sleepShort
 ; Load the JSON File
 WinWaitActive, Open
-Send, Ladonia Full 2024-03-31-10-23-MODDED.json
+Send, Ladonia Full 2024-03-31-10-23-MODDED.json ; CUSTOMIZE THIS LINE WITH YOUR INFO
 Sleep, sleepShort
 Send, {ENTER}
 Sleep, sleepMedium
@@ -276,7 +279,7 @@ Loop, 6
         Send, {Tab}
         Sleep, sleepShort
     }
-clipboard := "01-Campaigns/Test Campaign Ladonia/05-Atlas/Cultures"
+clipboard := "01-Campaigns/Test Campaign Ladonia/05-Atlas/Cultures" ; CUSTOMIZE THIS LINE WITH YOUR INFO
 Return
 
 F17:: ;<-- Import Religions
@@ -286,7 +289,7 @@ Send, {Enter}
 Sleep, sleepShort
 ; Load the JSON File
 WinWaitActive, Open
-Send, Ladonia Full 2024-03-31-10-23-MODDED.json
+Send, Ladonia Full 2024-03-31-10-23-MODDED.json ; CUSTOMIZE THIS LINE WITH YOUR INFO
 Sleep, sleepShort
 Send, {ENTER}
 Sleep, sleepMedium
@@ -336,7 +339,7 @@ Loop, 6
         Send, {Tab}
         Sleep, sleepShort
     }
-clipboard := "01-Campaigns/Test Campaign Ladonia/05-Atlas/Religions"
+clipboard := "01-Campaigns/Test Campaign Ladonia/05-Atlas/Religions" ; CUSTOMIZE THIS LINE WITH YOUR INFO
 Return
 
 F18:: ;<-- Import Atlas
@@ -346,7 +349,7 @@ Send, {Enter}
 Sleep, sleepShort
 ; Load the JSON File
 WinWaitActive, Open
-Send, Ladonia Full 2024-03-31-10-23-MODDED.json
+Send, Ladonia Full 2024-03-31-10-23-MODDED.json ; CUSTOMIZE THIS LINE WITH YOUR INFO
 Sleep, sleepShort
 Send, {ENTER}
 Sleep, sleepMedium
@@ -402,8 +405,10 @@ Loop, 3
         Send, {Tab}
         Sleep, sleepShort
     }
-clipboard := "01-Campaigns/Test Campaign Ladonia/05-Atlas"
+clipboard := "01-Campaigns/Test Campaign Ladonia/05-Atlas" ; CUSTOMIZE THIS LINE WITH YOUR INFO
 Return
+
+
 
 ;===============================================================================================
 
