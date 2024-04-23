@@ -1,6 +1,16 @@
 # Changelog
 
-(Once I get this to a place where I feel like it's ready to share, I'll start tracking changes here)
+## Wyrmling Edition
+
+#### -v.0.1 & -v.0.2
+Pre-pre-alpha versions that were almost ready for sharing
+
+### -v.0.3 - released 2024-Apr-23-1600EST
+Early Alpha version. First share with the community.
+Seeking reactions and input from others who may find it useful or have things to contribute.
+
+
+
 
 
 # JSON ELEMENTS INCORPORATED
@@ -30,6 +40,8 @@ Unchecked are elements that would be nice to import.
 	- [ ] make other not-quite-full-width classes?
 
 ### TO DO (Archives)
+
+- [x] Import process uses subfolder hierarchy to deal with duplicate items from FMG JSON - is this clean enough?
 
 (This doesn't easily work - I think the Templater code has a priority issue with the JSON/CSV Importer code)
 - [ ] ~~Refactor with the Templater code found at the top of [[sessionNotesTemplate]] to pull in the campaign specific info from the frontmatter of the campaign home note - that works with JSON/CSV Importer and can bring over those values to insert into the notes created on Import~~

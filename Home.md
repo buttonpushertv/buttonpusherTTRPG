@@ -3,6 +3,8 @@
 > [!NOTE] Version & Changes
 > ![[VERSION|no-t]]
 >
+> [[README]]
+> 
 > [[CHANGELOG]] 
 
 ![random|sban+hmicro](https://source.unsplash.com/random?sand)
