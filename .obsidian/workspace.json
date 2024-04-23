@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "01a96773c8d044f2",
+        "id": "c2c1c9b0dad2bee6",
         "type": "tabs",
         "children": [
           {
-            "id": "f437b05876472795",
+            "id": "110a715041f759f4",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -18,8 +18,21 @@
                 "source": true
               }
             }
+          },
+          {
+            "id": "40273f4d327068c0",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "00-INBOX/Scratch Pad.md",
+                "mode": "preview",
+                "source": true
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -71,7 +84,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "JSON Importing How To.md",
+                "file": "00-INBOX/Scratch Pad.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -83,7 +96,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "JSON Importing How To.md",
+                "file": "00-INBOX/Scratch Pad.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +124,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "JSON Importing How To.md"
+                "file": "00-INBOX/Scratch Pad.md"
               }
             }
           }
@@ -160,44 +173,43 @@
       "obsidian-import-json:JSON/CSV Importer": false
     }
   },
-  "active": "f437b05876472795",
+  "active": "40273f4d327068c0",
   "lastOpenFiles": [
-    "CHANGELOG.md",
-    "99-Templates/newCampaignSessionHub.md",
-    "README.md",
-    "99-Templates/Handlebars-JSON/Burgs-FMG-JSON Handlerbars Template.md",
     "JSON Importing How To.md",
+    "00-INBOX/Scratch Pad.md",
     "Home.md",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/Alocenia-14.md",
+    "90-Tools & Helpers/_External_Scripts/OBSIDIAN-JSONImporter-HOTKEYS.ahk",
+    "90-Tools & Helpers/_External_Scripts/OBSIDIAN-HOTKEYS.ahk",
+    "99-Templates/Handlebars-JSON/Burgs-FMG-JSON Handlerbars Template.md",
+    "99-Templates/Handlebars-JSON/Atlas-FMG-JSON Handlebars Template.md",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/Test Campaign Ladonia-Linked Atlas.md",
     "99-Templates/Handlebars-JSON/States-FMG-JSON Handlebars Template.md",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/Burgs/Riofrioli-14.md",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/Upunia-1.md",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/Burgs/Abderikast-451.md",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/Petrica-18.md",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/Histharoseia-17.md",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/Bhrymaion-16.md",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/Ingnia-15.md",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/Aporesia-13.md",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/Esmosia-12.md",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/Calhosia-11.md",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/Thas-10.md",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/Tiormaa-9.md",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/Kunszavasia-8.md",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/Esiagasia-7.md",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/Marbeilia-6.md",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/Histhepia-5.md",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/Kunkania-4.md",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/Mauna-3.md",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/Provinces",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/Burgs",
-    "01-Campaigns/Test Campaign 111/99-Misc Notes",
-    "01-Campaigns/Test Campaign 111/23-Deities",
-    "01-Campaigns/Test Campaign 111/22-Groups",
-    "01-Campaigns/Test Campaign 111/21-NPCs",
-    "01-Campaigns/Test Campaign 111/20-PCs",
-    "01-Campaigns/Test Campaign 111/08-Items & Artifacts",
-    "01-Campaigns/Test Campaign 111/07-Organizations",
+    "README.md",
+    "99-Templates/Handlebars-JSON/Provinces-FMG-JSON Handlebars Template.md",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/1-Upunia/Upunia.md",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/2-Nikmaa/13-Antse Canton/Antse.md",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/2-Nikmaa/Nikmaa.md",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/13-Aporesia/107-Askroiragi Landgrave/Askroiragi Landgrave.md",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/13-Aporesia/Aporesia.md",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/1-Upunia/1-Hauta Earldom/Hauta Earldom.md",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/13-Aporesia/107-Askroiragi Landgrave/Menionticea.md",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/13-Aporesia/107-Askroiragi Landgrave/Therchiapa.md",
+    "00-INBOX/DataView Testing.md",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/1-Upunia/1-Hauta Earldom/Karjasa.md",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/1-Upunia/1-Hauta Earldom/Vailajarja.md",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/1-Upunia/1-Hauta Earldom/Kotve.md",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/9-Tiormaa/60-Hatia County/Viohrari.md",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/9-Tiormaa/146-Tameskisa Region/Tameskisa.md",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/9-Tiormaa/55-Viilapara County/Kautio.md",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/9-Tiormaa/53-Hoskia County/Kalahmaski.md",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/14-Alocenia/0-undefined",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/18-Petrica/164-Giucia Land",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/18-Petrica/163-Serganoria Territory",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/18-Petrica/162-Castri Land",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/18-Petrica/161-Carea Territory",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/12-Esmosia/160-Pantiochmo Territory",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/12-Esmosia/159-Bytherythia Territory",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/12-Esmosia/158-Pitha Territory",
     "91-Assets/Test Campaign Ladonia/Ladonia World Map.svg",
     "91-Assets/Test Campaign Ladonia/Ladonia 2024-04-12-16-12.svg",
     "91-Assets/Test Campaign Ladonia/Ladonia Religions World Map.svg",
