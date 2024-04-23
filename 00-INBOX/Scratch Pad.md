@@ -1,5 +1,31 @@
 # HOLDING AREA
 
+
+### AHK tuned JSON Field Naming with paths
+These are tuned for AHK with the opening and closing brackets escaped:
+```js
+
+States:
+State-${name}/${name}
+
+States (for AHK):
+State-${{}name{}}/${{}name{}}
+
+Provinces:
+@{{}return ``${{}this.state{}}-${{}(this.state > 0) && dataRoot.pack.states.find(state => state.i === this.state)?.name || "Unknown" {}}/${{}this.i{}}-${{}(this.i > 0) && this.fullName || "Unknown"{}}/${{}this.fullName{}}``{}}
+
+Provinces (for AHK):
+Send, @{{}return ``${{}this.state{}}-${{}(this.state > 0) && dataRoot.pack.states.find(state => state.i === this.state)?.name || "Unknown" {}}/${{}this.i{}}-${{}(this.i > 0) && this.fullName || "Unknown"{}}/${{}this.fullName{}}``{}}
+
+Burgs:
+@{return `${this.state}-${(this.state > 0) && dataRoot.pack.states.find(state => state.i === this.state)?.name || "Unknown" }/${dataRoot.pack.cells.find(c => c.i === this.cell)?.province}-${dataRoot.pack.provinces.find(p => p.i === dataRoot.pack.cells.find(c => c.i === this.cell)?.province)?.fullName}/${this.name}`}
+
+Burgs (for AHK):
+Send, @{{}return ``${{}this.state{}}-${{}(this.state > 0) && dataRoot.pack.states.find(state => state.i === this.state)?.name || "Unknown" {}}/${{}dataRoot.pack.cells.find(c => c.i === this.cell)?.province{}}-${{}dataRoot.pack.provinces.find(p => p.i === dataRoot.pack.cells.find(c => c.i === this.cell)?.province)?.fullName{}}/${{}this.name{}}``{}}
+
+```
+
+
 #### taken from YAML - read via QuickAdd
 =======
 ---

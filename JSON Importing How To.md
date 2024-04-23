@@ -86,15 +86,12 @@ FMG can and does create locations with duplicate names, not a lot, but it happen
 Thankfully, the JSON/CSV Importer plugin can handle these sorts of duplicates. Read the section below for info on how the duplicate names are currently handled in the Handlebar templates. 
 
 > [!INFO] CURRENT DUPLICATE NAME PROCEDURE
-> As of Wyrmling Edition v0.1, the current process for dealing with duplicate names is this:
-> 1. State names don't seem to get duplicated very often, although it could happen.
-> 2. Province & Burg names do tend to get duplicated more commonly - usually 1-5 times in an average sized FMG map.svg
-> 3. The Handlebar Templates are currently set up to:
-> 	1. Create Burgs with this naming convention: `name-id`
-> 	2. Create Provinces with this naming convention: `fullName-id`
-> 4. This will create files with those names, but the `name` & `fullName` fields are also populated into the `alias` field of the frontmatter/properties, so it should be easy to link to the correct file
-> 5. This is a *less desirable* way of handling the duplicated names, but for now it's how they are setup.
-> 6. This *may change* in a future version.
+> As of Wyrmling Edition v0.3, the current process for dealing with duplicate names is this:
+> 1. We are going to create a folder hierarchy of subfolders for each State with their Provinces inside those State subfolders, and then the individual Burgs inside their respective Province subfolders.
+> 2. All of this can be created during the import process and is coded into the Handlebar Templates and the Helpers.
+> 3. We will be using an advanced method in the JSON/CSV Importer setting `Field to use as Note Name`. We will be using a combination on extracting data from fields and the limited JavaScript capabilities (added in release 0.35.0).
+> 4. Follow the instructions down below for each of the passes to set up the naming scheme properly.
+> 5. As a back up, you can check the box for the JSON/CSV Importer setting to "Add suffix on duplicate Note Names," as a precaution. It will append a numeral after any names that show up duplicated, but I think that should be a rare occurrence with the way we're doing the naming now. 
 
 The section below this goes through the other methods for handling duplicates in more detail. Expand the sections you wish to learn more about. You would need to modify some of the Handlebar Template code in the Burgs, Provinces, & States template files to remove the hard-coding of names discussed in the callout above.
 
@@ -112,7 +109,9 @@ To handle duplicates, the JSON/CSV Importer has two features. You can use a comb
 > That means your pages would end up being named things like: `burgname-457-1`. It isn't quite helpful to figure out what those numbers mean. You would want to use a small bit of JS code in the JSON Import dialog to turn those numbers into human-readable names. Here is an example that should import the state names as a part of the name field
 >> ```@{return `${(this.state > 0) && dataRoot.pack.states.find(state => state.i === this.state)?.name || "Unknown" }-${this.name}`}```
 >
->> [!QUESTION] JSON/CSV Importer Helpers on Import Feature Request
+> **THE METHOD ABOVE IS THE CURRENT RECOMMENDED METHOD FOR DUPE HANDLING. SEE EACH SECTION BELOW FOR DETAILED INSTRUCTIONS.**
+>
+>> [!QUESTION]- JSON/CSV Importer Helpers on Import Feature Request
 >> A feature request for having Custom Helpers run on fields within the import dialog box was made. The reply was that in an updated version, there is now an ability to run limited JS helpers directly in the field. So, the feature is sort of added in version [0.36.0](https://github.com/farling42/obsidian-import-json/releases/tag/0.36.0) of the JSON/CSV Importer, but the accessing the full `Helpers-FMG-JSON.js` from the import dialog is not likely to be included.
 >> 
 >> Issue on Gihub: [Process helpers on fieldname values from import dialog? · Issue #68 · farling42/obsidian-import-json · GitHub](https://github.com/farling42/obsidian-import-json/issues/68)
@@ -149,8 +148,26 @@ These importing processes are **destructive**. They will overwrite or append exi
 ## Delete is your friend 
 In the process of importing, you may discover that you need to repeat the import steps more than once. In testing, I have found that it is sometimes most helpful to fully delete all the files that a previous import process created before re-running it, particularly if there are lots of errors in the console.
 
+Due to the nature of nested subfolders we will generate on import, if things get messed up, the only way to reset back a step, will be to delete everything and start over. In testing, one solution that came in handy was to make back up copies of the campaign's `..05-Atlas\States` folder after the States and the Provinces passes. That way, if either the Provinces or Burgs import pass goes wrong, you can delete the messed up version and restore to a known good pass.
+
 # Import Passes
 Handlebars Templates and Helpers reside in the folder: ***99-Templates\Handlebars-JSON***
+
+> [!warning]- AutoHotKey Helper (Windows automation) - OPTIONAL
+> The JSON/CSV Importer import process cannot be automated within Obsidian. There is no way to save the settings for the upper three fields we set on each import pass: `Choose JSON/CSV file`, `Choose TEMPLATE file`, and `Choose HELPERS file`. This is a limitation in the method the plugin creator has to interact with local files. As of yet, it doesn't seem likely to change in the future.
+> 
+> The hassle is that, because we are running multiple passes, you end up needing to click around a bunch to setup the JSON Import Dialog on each pass. To that end, there is an optional AutoHotKey scripti, if you're on Windows,  that can help to add some automation to this import process.
+> 
+> You can find the script in the 90-Tool & Helpers\_External_Scripts. It is setup to open the JSON Importer Dialog via the hotkey `Control-Alt-J`, which you will need to set up in Obsidian. Also, it works best if you open it once manually, before triggering a hotkey, and navigate to the folder where you have stored the FMG JSON File, the Handlebar Templates & the Helper js file.
+>
+> This script sets up hotkeys for the States, Provinces, Burgs, Cultures, Religions, and Linked Atlas passes. It does this via keyboard only, so it shouldn't require moving the mouse or clicking anywhere. Once it has completed, it will end with the `Name of the Destination Folder` field highlighted and will copy that passes destination path to the clipboard. If everything looks good, you can paste that path in and start the import.
+> 
+> 
+> **Caveat Emptor!**
+
+> [!TIP] Keyboard Maestro (Mac automation) - OPTIONAL - COMING SOON
+> It's on my ToDo list...eventually.
+
 
 ## States
 The States Notes pass will create individual notes for each State in the JSON file. 
@@ -167,12 +184,19 @@ To import the States Notes, here are the settings for the "Import JSON/CSV dialo
 | Choose HELPERS file|**_Helpers-FMG-JSON.js_** |
 | Field containing the data|**_pack.states_** |
 | Each subfield is a separate note|**_unchecked_** |
-| Field to use as Note name|**_name_** |
-| Add suffix on duplicate note names|**_checked_** |
+| Field to use as Note Name|**_(see code block below - must be copy/pasted *exactly* as is)_** |
+| Add suffix on duplicate Note Names|**_checked_** |
 | Note name prefix/suffix|**_leave both blank_** |
-| Allow paths in Note name|**_unchecked_**
+| Allow paths in Note Name|**_CHECKED_** |
 | How to Handle Existing Notes|**_REPLACE_** (see note above) |
 | Name of Destination Folder in Vault|**_01-Campaigns/(specific Campaign Path)/05-Atlas/States_** (sub-folder will be created)|
+
+##### States Note Name Code
+Copy/paste _exactly_ as is:
+```js
+State-${name}/${name}
+```
+
 
 # Provinces 
 The Provinces Notes pass will create individual notes for each Province in the JSON file. 
@@ -189,12 +213,18 @@ To import the Provinces Notes, here are the settings for the "Import JSON/CSV di
 | Choose HELPERS file|**_Helpers-FMG-JSON.js_** |
 | Field containing the data|**_pack.provinces_** |
 | Each subfield is a separate note|**_unchecked_** |
-| Field to use as Note name|**_`${fullNname}-${i}`_** (this will create files named *"Provincename County"*, etc., w/ index appended) |
-| Add suffix on duplicate note names|**_checked_** |
+| Field to use as Note name| **_(see code block below - must be copy/pasted *exactly* as is)_** |
+| Add suffix on duplicate note names|**_checked_** (OPTIONAL - use as a just-in-case) |
 | Note name prefix/suffix|**_leave both blank_** |
-| Allow paths in Note name|**_unchecked_**
+| Allow paths in Note name|**_CHECKED_** |
 | How to Handle Existing Notes|**_REPLACE_** (see note above) |
-| Name of Destination Folder in Vault|**_01-Campaigns/(specific Campaign Path)/05-Atlas/Provinces_** (sub-folder will be created)|
+| Name of Destination Folder in Vault|**_01-Campaigns/(specific Campaign Path)/05-Atlas/States_** (sub-folders for each State's Provinces will be created as `id-fullProvinceName` within the respective State subfolder)|
+
+##### Provinces Note Name Code
+Copy/paste *exactly* as is:
+```js
+@{return `${this.state}-${(this.state > 0) && dataRoot.pack.states.find(state => state.i === this.state)?.name || "Unknown" }/${this.i}-${(this.i > 0) && this.fullName || "Unknown"}/${this.fullName}`}
+```
 
 # Burgs
 The Burgs Notes pass will create individual notes for each Burg in the JSON file. 
@@ -211,13 +241,18 @@ To import the Burg Notes, here are the settings for the "Import JSON/CSV dialog"
 | Choose HELPERS file|**_Helpers-FMG-JSON.js_** |
 | Field containing the data|**_pack.burgs_** |
 | Each subfield is a separate note|**_unchecked_** |
-| Field to use as Note name|**_`${name}-${i}`_** (will create filenames with index appended) |
-| Add suffix on duplicate note names|**_checked_** |
+| Field to use as Note name|**_(see code block below - must be copy/pasted *exactly* as is)_** |
+| Add suffix on duplicate note names|**_checked_** (OPTIONAL - use as a just-in-case) |
 | Note name prefix/suffix|**_leave both blank_** |
-| Allow paths in Note name|**_unchecked_**
+| Allow paths in Note name|**_CHECKED**
 | How to Handle Existing Notes|**_REPLACE_** (see note above) |
-| Name of Destination Folder in Vault|**_01-Campaigns/(specific Campaign Path)/05-Atlas/Burgs_** (sub-folder will be created)|
+| Name of Destination Folder in Vault|**_01-Campaigns/(specific Campaign Path)/05-Atlas/States_** (notes will be created within the respective Provinces subfolders within the Respective State subfolders)|
 
+##### Burgs Note Name Code
+Copy/paste *exactly* as is:
+```js
+@{return `${this.state}-${(this.state > 0) && dataRoot.pack.states.find(state => state.i === this.state)?.name || "Unknown" }/${dataRoot.pack.cells.find(c => c.i === this.cell)?.province}-${dataRoot.pack.provinces.find(p => p.i === dataRoot.pack.cells.find(c => c.i === this.cell)?.province)?.fullName}/${this.name}`}
+```
 
 # Cultures 
 The Cultures Notes pass will create individual notes for each Culture in the JSON file. 
@@ -282,7 +317,7 @@ To import the Atlas Note, here are the settings for the "Import JSON/CSV dialog"
 | Choose HELPERS file|**_Helpers-FMG-JSON.js_** |
 | Field containing the data|**_(leave blank)_** (you will be pulling from the entire JSON file) |
 | Each subfield is a separate note|**_unchecked_** |
-| Field to use as Note name|**_${info.thisCampaign}_** |
+| Field to use as Note name|**_info.thisCampaign_** |
 | Add suffix on duplicate note names|**_unchecked_** (only creating a single note)|
 | Note name prefix/suffix|**_Prefix: blank / Suffix: "-Linked Atlas"_** |
 | Allow paths in Note name|**_unchecked_**
@@ -293,6 +328,7 @@ To import the Atlas Note, here are the settings for the "Import JSON/CSV dialog"
 # Wrangling the FMG Emblems
 
 Steps undertaken to wrangle the FMG emblems connected to each State, Province, and Burg:
+(instruction documentation still in-progress)
 
 1. In Azgaar's FMG, under `Tools`, open the `Emblems` dialog.
 2. Along the bottom there is an icon that looks like 3 stacked squares, that will download an HTML file that contains all the Emblems as SVG data.
@@ -365,7 +401,7 @@ The `CHAR(34)` code will insert double quote marks to wrap the filename that wil
 10. Create a new `.bat` file, call it `emblem-rename.bat` and open it for editing and paste the `CONCATENATE` column results into the file and save it.
 11. Running that `.bat` file now will rename all your FMG Emblem files so that they should match the emblem with the State/Province/Burg it goes with.
 12. (OPTIONAL - you could add `state`, `province`, and `burg` to the respective file names. )
-13. (Dealing with duplicated names - the files that would have been renamed to an existing duplicate name are still named `svgexport-???.png` - use the id numbers to find what they should be named - rename to correct name and add `1` to filename - will need to correct these manually after import )
+13. (Dealing with duplicated names - If you had any dupe files with suffix added, the files that would have been renamed to an existing duplicate name are still named `svgexport-???.png` - use the id numbers to find what they should be named - rename to create a unique filname. You could add  `-stateName` to any of the dupes. You will need to correct these manually after import.)
 
 # Wrangling FMG Burg Maps
 FMG includes connections to Watabou's [Medieval Fantasy City Generator](https://watabou.github.io/city-generator/?size=25&seed=981800034&greens=0&citadel=1&urban_castle=1&plaza=1&temple=1&walls=0&shantytown=0&coast=1&river=0&gates=-1&sea=0.2) and [Village Generator](https://watabou.github.io/village-generator/?seed=1714876149&tags=no%20square,highway). The URL links to maps for each of your map's Burgs is available to extract from the JSON, but it does not exist in a JSON field as the URL. It has to be extracted via some HelperJS functions in [[Helpers-FMG-JSON.js]].
@@ -400,6 +436,7 @@ Pulling down the images of all the Burgs consists of using a Dataview within Obs
 This is a fiddly process and it is not to be undertaken lightly. It does work, but it has to be done just so to work correctly.
 
 Here are the steps to this process:
+(instruction documentation still in-progress)
 
 1. Import the Burgs from your FMG map as described above [[JSON Import How To#Burgs]]
 2. Create a new note with this Dataview code on it (and nothing else):

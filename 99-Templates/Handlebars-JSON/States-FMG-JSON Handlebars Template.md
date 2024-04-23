@@ -4,7 +4,7 @@ aliases: {{name}}
 area: {{totalArea area}}
 burgs: {{burgs}}
 campaign: {{@importDataRoot.info.thisCampaign}}
-capital: {{getBurgName capital @importDataRoot.pack.burgs}}-{{capital}}
+capital: {{getBurgName capital @importDataRoot.pack.burgs}}
 center: {{this.center}}
 color: {{color}}
 created: {{getDateTimestamp @importSettings}}
@@ -23,7 +23,7 @@ neighbors:
 pronounced:
 provinces:
 {{#each provinces}}
-- {{getProvinceName this @importDataRoot.pack.provinces}}-{{this}}
+- {{getProvinceName this @importDataRoot.pack.provinces}}
 {{/each}}
 totalPopulation: {{totalPopulation rural urban}}
 religion: {{getReligionName this.center @importDataRoot.pack.cells @importDataRoot.pack.religions}}
@@ -34,6 +34,7 @@ urban: {{calcPopulation urban}}
 tags:
 - State
 - {{@importDataRoot.info.mapName}}
+- {{@importDataRoot.info.campaignShortCode}}
 type: {{type}}
 WBProcess: Imported
 world: {{@importDataRoot.info.mapName}}
@@ -81,7 +82,7 @@ world: {{@importDataRoot.info.mapName}}
 > unit: {{@importDataRoot.settings.distanceUnit}}
 > scale: {{@importDataRoot.settings.distanceScale}}
 > darkMode: false
-> marker: capital,{{getLeafletBurgXY capital @importDataRoot.pack.burgs @importDataRoot.info}},[[{{getBurgName capital @importDataRoot.pack.burgs}}-{{capital}}]],{{name}} Capital
+> marker: capital,{{getLeafletBurgXY capital @importDataRoot.pack.burgs @importDataRoot.info}},[[{{getBurgName capital @importDataRoot.pack.burgs}}]],{{name}} Capital
 > ```
 > [Link to {{name}} on FMG Map]({{@importDataRoot.info.mapDropboxFMGLink}}&scale=3{{getFMGCellXY this.center @importDataRoot.pack.cells}})
 
@@ -127,12 +128,6 @@ world: {{@importDataRoot.info.mapName}}
 > FROM ""
 > WHERE file.name = this.file.name
 > ```
-> ```dataview
-> TABLE WITHOUT ID file.link as "Burgs"
-> FROM #Burg and "{{@importDataRoot.info.thisCampaignPath}}"
-> WHERE contains(this.name, state)
-> SORT file.name ASC
-> ```
 
 # **`=this.fullName`**
 
@@ -146,6 +141,14 @@ world: {{@importDataRoot.info.mapName}}
 ### Zones/Regions
 
 > [!note|no-t] Zones/Regions
+>
+>> [!note]- Burgs
+>> ```dataview
+>> TABLE WITHOUT ID file.link as "Burgs", link(provinceName) as "Province Name"
+>> FROM #Burg and "{{@importDataRoot.info.thisCampaignPath}}/05-Atlas/States/{{i}}-{{name}}"
+>> WHERE econtains(stateId,this.id)
+>> SORT file.name ASC
+>> ```
 
 %% Zones & regions are any areas that need to be defined. See Points of Interest below as another place to add specific locations that are noteworthy. You can identify Zones/Regions in the properties above (metadata is searchable/indexable). And you can add specific info about any of them below. Use '[!note]- {Zone/Region name}' to place each one in it's own callout. %%
 

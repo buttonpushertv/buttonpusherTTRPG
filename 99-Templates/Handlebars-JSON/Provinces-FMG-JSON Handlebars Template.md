@@ -1,16 +1,15 @@
 ---
 aliases: {{name}}
-campaign: "{{@importDataRoot.info.thisCampaign}}"
+campaign: {{@importDataRoot.info.thisCampaign}}
 color: {{color}}
 created: {{getDateTimestamp @importSettings}}
 emblem: {{@importDataRoot.info.thisCampaignShortCode}}-{{@importDataRoot.info.mapName}} Emblem {{fullName}}.png
-fileName: {{fullName}}-{{i}}
 formName: {{formName}}
 fullName: {{fullName}}
 id: {{i}}
 name: {{name}}
 pronounced:
-provincialCapital: {{getBurgName burg @importDataRoot.pack.burgs}}-{{burg}}
+provincialCapital: {{getBurgName burg @importDataRoot.pack.burgs}}
 religion: {{getReligionName this.center @importDataRoot.pack.cells @importDataRoot.pack.religions}}
 rulers:
 shortDescription:
@@ -64,7 +63,7 @@ world: {{@importDataRoot.info.mapName}}
 > unit: {{@importDataRoot.settings.distanceUnit}}
 > scale: {{@importDataRoot.settings.distanceScale}}
 > darkMode: false
-> marker: prov_capital,{{getLeafletBurgXY burg @importDataRoot.pack.burgs @importDataRoot.info}},[[{{getBurgName burg @importDataRoot.pack.burgs}}-{{burg}}]],{{name}} Provincial Capital
+> marker: prov_capital,{{getLeafletBurgXY burg @importDataRoot.pack.burgs @importDataRoot.info}},[[{{getBurgName burg @importDataRoot.pack.burgs}}]],{{name}} Provincial Capital
 > ```
 >  [Link to {{fullName}} on FMG Map]({{@importDataRoot.info.mapDropboxFMGLink}}&scale=3{{getFMGCellXY this.center @importDataRoot.pack.cells}})
 
@@ -98,9 +97,9 @@ world: {{@importDataRoot.info.mapName}}
 > **Dominant Religion** | `=link(this.religion)` |
 >
 > ```dataview
-> TABLE WITHOUT ID file.link as "Burgs"
-> FROM #Burg and  "{{@importDataRoot.info.thisCampaignPath}}"
-> WHERE contains(this.fileName, province)
+> TABLE WITHOUT ID file.link as "Burgs", link(provinceName) as "Province Name"
+> FROM #Burg and "{{@importDataRoot.info.thisCampaignPath}}/05-Atlas/States/{{i}}-{{name}}"
+> WHERE econtains(provinceId,this.id)
 > SORT file.name ASC
 > ```
 
