@@ -1,5 +1,20 @@
 # HOLDING AREA
 
+
+### AHK tuned JSON Field Naming with paths
+These are tuned for AHK with the opening and closing brackets escaped:
+```
+States:
+State-${name}/${name}
+
+Provinces:
+Send, @{{}return ``${{}this.state{}}-${{}(this.state > 0) && dataRoot.pack.states.find(state => state.i === this.state)?.name || "Unknown" {}}/${{}this.i{}}-${{}this.fullName{}}/${{}this.fullName{}}``{}}
+
+Burgs:
+@{{}return ``${{}this.state{}}-${{}(this.state > 0) && dataRoot.pack.states.find(state => state.i === this.state)?.name || "Unknown" {}}/${{}dataRoot.pack.cells.find(c => c.i === this.cell)?.province{}}-${{}dataRoot.pack.provinces.find(p => p.i === dataRoot.pack.cells.find(c => c.i === this.cell)?.province)?.fullName{}}/${{}this.name{}}``{}}
+```
+
+
 #### taken from YAML - read via QuickAdd
 =======
 ---
