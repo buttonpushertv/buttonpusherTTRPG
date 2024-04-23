@@ -3,7 +3,7 @@
 > [!NOTE] Version & Changes
 > ![[VERSION|no-t]]
 >
-> [[README]]
+> [[README]] <-- **START HERE FOR LINK TO GUIDE**
 > 
 > [[CHANGELOG]] 
 
