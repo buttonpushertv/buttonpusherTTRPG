@@ -67,7 +67,7 @@ marker: burg,{{getLeafletBurgXY this.i @importDataRoot.pack.burgs @importDataRoo
 
 %% If you want to place the image for the Burg in the Map(Interactive) window below, you can use Fantasy Map Generator's link to Watabou's Fantasy City or Village Generator - see the `infobox` link or the `burgMapLink` URL up in the properties of this note. You can save the map image somewhere in the vault (`91-Assets/your_campaign_subfolder`, for instance) and it will show up in this window. There is an elaborate method (see [[JSON Import How To#Wrangling FMG Burg Maps]]) to save all the maps so you can have them locally and make use of the data that was placed here on import from the JSON.%% 
 
-> [!metadata|map]+ Burg Map (Interactive)
+> [!metadata|map]- Burg Map (Interactive)
 > ```leaflet
 > id: Burg-{{name}}
 > image: [[{{name}}.png]]
@@ -93,7 +93,7 @@ marker: burg,{{getLeafletBurgXY this.i @importDataRoot.pack.burgs @importDataRoo
 > 
 > [Link to {{name}} on FMG Map]({{@importDataRoot.info.mapDropboxFMGLink}}&scale=3{{getFMGCellXY this.cell @importDataRoot.pack.cells}})
 
-> [!metadata]- Burg Map (Live from Web)
+> [!metadata]+ Burg Map (Live from Web)
 > ```custom-frames
 > frame: Watabou-Procgen Arcana
 > style: height: 1000px;
