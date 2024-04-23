@@ -64,7 +64,7 @@ Remove this entire line and the one before the Leaflet block to make it visible 
 
 ### States
 ```dataview
-TABLE WITHOUT ID file.link as "Full Name", provinces as "Provinces", capital as "Capital"
+TABLE WITHOUT ID file.link as "Full Name", link(provinces) as "Provinces", link(capital) as "Capital"
 FROM #State and "{{VALUE:newCampaignPath}}"
 SORT file.name ASC
 ```
@@ -73,7 +73,7 @@ SORT file.name ASC
 
 ### Provinces
 ```dataview
-TABLE WITHOUT ID file.link as "Name", state as "State"
+TABLE WITHOUT ID file.link as "Name", link(state) as "State"
 FROM #Province and "{{VALUE:newCampaignPath}}"
 SORT state ASC, province ASC
 ```
@@ -82,7 +82,7 @@ SORT state ASC, province ASC
 
 ### Burgs
 ```dataview
-TABLE WITHOUT ID file.link as "Name", province as "Province", state as "State"
+TABLE WITHOUT ID file.link as "Name", link(province) as "Province", link(state) as "State"
 FROM #Burg and "{{VALUE:newCampaignPath}}"
 SORT file.name ASC
 ```
