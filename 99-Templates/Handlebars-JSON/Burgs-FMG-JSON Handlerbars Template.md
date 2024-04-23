@@ -70,7 +70,7 @@ marker: burg,{{getLeafletBurgXY this.i @importDataRoot.pack.burgs @importDataRoo
 > [!metadata|map]- Burg Map (Interactive)
 > ```leaflet
 > id: Burg-{{name}}
-> image: [[{{name}}.png]]
+> image: [[{{name}}.webp]]
 > height: 600px
 > width: 100%
 > minZoom: -3.5
