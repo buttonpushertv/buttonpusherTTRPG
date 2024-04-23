@@ -671,16 +671,16 @@ function getTemperatureLikeness(temperature) {
 // 025
 // Custom Helper to get a Province ID from a supplied cell
 handlebars.registerHelper('getProvinceIdFromCell', function(cell,allCells) {
-  console.log("getProvinceIdFromCell process - passed cell value: ", cell);
+  // console.log("getProvinceIdFromCell process - passed cell value: ", cell);
   if (cell === undefined || cell === 0) {
     return ''; // skip if cell value is zero or undefined
   };
   const foundCell = allCells.find(c => c.i === cell)
-  console.log("foundCell: ",foundCell);
+  // console.log("foundCell: ",foundCell);
   const foundCellProvinceId = foundCell.province;
   if (foundCellProvinceId === 0 ) {
     return 'No Province'; // If no Province Defined end here
   };
-  console.log("foundCellProvinceId: ", foundCellProvinceId);
+  // console.log("foundCellProvinceId: ", foundCellProvinceId);
   return foundCellProvinceId;
 })
