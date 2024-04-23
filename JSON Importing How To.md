@@ -162,6 +162,8 @@ Handlebars Templates and Helpers reside in the folder: ***99-Templates\Handlebar
 >
 > This script sets up hotkeys for the States, Provinces, Burgs, Cultures, Religions, and Linked Atlas passes. It does this via keyboard only, so it shouldn't require moving the mouse or clicking anywhere. Once it has completed, it will end with the `Name of the Destination Folder` field highlighted and will copy that passes destination path to the clipboard. If everything looks good, you can paste that path in and start the import.
 > 
+> Look at the script before running it. You will need to paste your info in on the lines where you see `; CUSTOMIZE THIS LINE WITH YOUR INFO` - put your paths in these places.
+> 
 > 
 > **Caveat Emptor!**
 
