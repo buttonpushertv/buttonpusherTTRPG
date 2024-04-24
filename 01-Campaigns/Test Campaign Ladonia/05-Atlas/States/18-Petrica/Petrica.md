@@ -7,7 +7,7 @@ campaign: Test Campaign Ladonia
 capital: Petritone
 center: 356
 color: #ffda3b
-created: 2024-04-24-15:50
+created: 2024-04-24-16:17
 culture: Tallian
 emblem: TCL-Ladonia Emblem Petrican Empire.png
 expansionism: 3.1
@@ -17,7 +17,7 @@ fullName: Petrican Empire
 id: 18
 name: Petrica
 neighbors: 
-- 
+- Neutrals
 - Thas
 pronounced:
 provinces:

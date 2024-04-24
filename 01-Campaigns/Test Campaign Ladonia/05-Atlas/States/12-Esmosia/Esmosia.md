@@ -7,7 +7,7 @@ campaign: Test Campaign Ladonia
 capital: Esmos
 center: 4670
 color: #f4da5b
-created: 2024-04-24-15:50
+created: 2024-04-24-16:17
 culture: Elladan
 emblem: TCL-Ladonia Emblem Kingdom of Esmosia.png
 expansionism: 4.6
@@ -19,7 +19,7 @@ name: Esmosia
 neighbors: 
 - Histhepia
 - Aporesia
-- 
+- Neutrals
 - Thas
 pronounced:
 provinces:

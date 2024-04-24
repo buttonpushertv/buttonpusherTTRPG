@@ -7,7 +7,7 @@ campaign: Test Campaign Ladonia
 capital: Corma
 center: 5279
 color: #70e4a8
-created: 2024-04-24-15:50
+created: 2024-04-24-16:17
 culture: Elladan
 emblem: TCL-Ladonia Emblem Aporesian Despotate.png
 expansionism: 1.5

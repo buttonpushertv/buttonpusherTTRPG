@@ -7,7 +7,7 @@ campaign: Test Campaign Ladonia
 capital: Riofrioli
 center: 649
 color: #ff8b7f
-created: 2024-04-24-15:50
+created: 2024-04-24-16:17
 culture: Astellian
 emblem: TCL-Ladonia Emblem City-state of Alocenia.png
 expansionism: 1

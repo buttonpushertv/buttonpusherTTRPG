@@ -7,7 +7,7 @@ campaign: Test Campaign Ladonia
 capital: Virpan
 center: 3293
 color: #8da0cb
-created: 2024-04-24-15:50
+created: 2024-04-24-16:17
 culture: Soumi
 emblem: TCL-Ladonia Emblem Maunan Theocracy.png
 expansionism: 5

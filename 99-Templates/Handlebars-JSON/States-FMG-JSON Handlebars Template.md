@@ -25,12 +25,12 @@ provinces:
 {{#each provinces}}
 - {{getProvinceName this @importDataRoot.pack.provinces}}
 {{/each}}
-totalPopulation: {{totalPopulation rural urban}}
+totalPopulation: {{totalPopulation rural urban @importDataRoot.settings.populationRate}}
 religion: {{getReligionName this.center @importDataRoot.pack.cells @importDataRoot.pack.religions}}
 rulers:
-rural: {{calcPopulation rural}}
+rural: {{calcPopulation rural @importDataRoot.settings.populationRate}}
 shortDescription:
-urban: {{calcPopulation urban}}
+urban: {{calcPopulation urban @importDataRoot.settings.populationRate}}
 tags:
 - State
 - {{@importDataRoot.info.mapName}}

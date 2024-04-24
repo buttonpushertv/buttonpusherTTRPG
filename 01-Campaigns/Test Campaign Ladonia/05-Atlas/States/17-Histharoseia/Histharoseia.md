@@ -7,7 +7,7 @@ campaign: Test Campaign Ladonia
 capital: Esmostos
 center: 6223
 color: #c6e956
-created: 2024-04-24-15:50
+created: 2024-04-24-16:17
 culture: Elladan
 emblem: TCL-Ladonia Emblem Eparchy of Histharoseia.png
 expansionism: 1.5

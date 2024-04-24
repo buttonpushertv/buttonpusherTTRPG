@@ -7,7 +7,7 @@ campaign: Test Campaign Ladonia
 capital: Papoli
 center: 3947
 color: #a6d854
-created: 2024-04-24-15:50
+created: 2024-04-24-16:17
 culture: Elladan
 emblem: TCL-Ladonia Emblem Principality of Histhepia.png
 expansionism: 3.3
@@ -19,7 +19,7 @@ name: Histhepia
 neighbors: 
 - Esiagasia
 - Esmosia
-- 
+- Neutrals
 pronounced:
 provinces:
 - Papoli County

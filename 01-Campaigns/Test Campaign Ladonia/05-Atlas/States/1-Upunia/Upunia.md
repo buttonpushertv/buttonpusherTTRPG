@@ -7,7 +7,7 @@ campaign: Test Campaign Ladonia
 capital: Kotve
 center: 4124
 color: #66c2a5
-created: 2024-04-24-15:50
+created: 2024-04-24-16:17
 culture: Soumi
 emblem: TCL-Ladonia Emblem Kingdom of Upunia.png
 expansionism: 2.8
@@ -21,7 +21,7 @@ neighbors:
 - Nikmaa
 - Kunkania
 - Kunszavasia
-- 
+- Neutrals
 pronounced:
 provinces:
 - Hauta Earldom

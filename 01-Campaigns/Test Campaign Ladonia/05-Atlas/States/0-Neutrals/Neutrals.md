@@ -7,7 +7,7 @@ campaign: Test Campaign Ladonia
 capital: 
 center: 
 color: 
-created: 2024-04-24-15:50
+created: 2024-04-24-16:17
 culture: 
 emblem: TCL-Ladonia Emblem .png
 expansionism: 

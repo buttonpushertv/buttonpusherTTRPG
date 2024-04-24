@@ -12,7 +12,7 @@ emblem: {{@importDataRoot.info.thisCampaignShortCode}}-{{@importDataRoot.info.ma
 feature: {{feature}}
 id: {{i}}
 plaza: {{plaza}}
-population: {{calcPopulation population}}
+population: {{calcPopulation population @importDataRoot.settings.populationRate}}
 port: {{port}}
 pronounced:
 provinceId: {{getProvinceIdFromCell cell @importDataRoot.pack.cells}}

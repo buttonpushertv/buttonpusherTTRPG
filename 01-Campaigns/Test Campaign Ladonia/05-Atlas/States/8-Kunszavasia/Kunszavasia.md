@@ -7,7 +7,7 @@ campaign: Test Campaign Ladonia
 capital: Tisokeresz
 center: 6855
 color: #ff8b7f
-created: 2024-04-24-15:50
+created: 2024-04-24-16:17
 culture: Vengrian
 emblem: TCL-Ladonia Emblem Republic of Kunszavasia.png
 expansionism: 2.9
@@ -19,7 +19,7 @@ name: Kunszavasia
 neighbors: 
 - Kunkania
 - Upunia
-- 
+- Neutrals
 pronounced:
 provinces:
 - Tisokeresz Province

@@ -7,7 +7,7 @@ campaign: Test Campaign Ladonia
 capital: Kalvasali
 center: 4913
 color: #e78ac3
-created: 2024-04-24-15:50
+created: 2024-04-24-16:17
 culture: Soumi
 emblem: TCL-Ladonia Emblem Protectorate of Kunkania.png
 expansionism: 2.6

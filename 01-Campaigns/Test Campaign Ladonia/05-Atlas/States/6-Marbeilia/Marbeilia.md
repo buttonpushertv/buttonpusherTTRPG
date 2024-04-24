@@ -7,7 +7,7 @@ campaign: Test Campaign Ladonia
 capital: Sugentaivet
 center: 945
 color: #ffd92f
-created: 2024-04-24-15:50
+created: 2024-04-24-16:17
 culture: Luari
 emblem: TCL-Ladonia Emblem Marbeilian League.png
 expansionism: 5

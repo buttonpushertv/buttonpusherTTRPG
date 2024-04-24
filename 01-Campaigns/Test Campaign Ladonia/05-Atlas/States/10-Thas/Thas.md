@@ -7,7 +7,7 @@ campaign: Test Campaign Ladonia
 capital: Mypethera
 center: 5625
 color: #dab1c9
-created: 2024-04-24-15:50
+created: 2024-04-24-16:17
 culture: Elladan
 emblem: TCL-Ladonia Emblem Thas Empire.png
 expansionism: 5.3
@@ -22,7 +22,7 @@ neighbors:
 - Aporesia
 - Esmosia
 - Histharoseia
-- 
+- Neutrals
 pronounced:
 provinces:
 - Mypethera County

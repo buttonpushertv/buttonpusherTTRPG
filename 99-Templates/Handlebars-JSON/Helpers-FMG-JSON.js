@@ -95,10 +95,10 @@ handlebars.registerHelper('getBurgName', function(burgId,allBurgs) {
 // 007
 // Custom helper function to get State Name
 handlebars.registerHelper('getStateName', function(stateId,allStates) {
-  //console.log("StateId:", stateId);
+  //console.log("getStateName - StateId:", stateId);
   //console.log("allStates: ", allStates);
-  if (stateId === undefined || stateId === 0) {
-    console.log("##### getStateName - stateId was undefined or zero #####");
+  if (stateId === undefined) {
+    console.log("##### getStateName - stateId was undefined #####");
     return ''; // skip if the element is undefined or zero
   };
   const stateName = allStates.find(state => state.i === stateId);
@@ -381,23 +381,23 @@ handlebars.registerHelper('totalArea', function(area) {
 
 // 014
 // Custom helper to calculate population
-handlebars.registerHelper('calcPopulation', function(popValue) {
+handlebars.registerHelper('calcPopulation', function(popValue,populationRate) {
   if (popValue === undefined || popValue === 0) {
     console.log("##### calcPopulation - popValue was undefined or zero #####");
     return ''; // skip if population value is undefined
   };
-    return Math.floor(popValue * 1000).toLocaleString();
+    return Math.floor(popValue * populationRate).toLocaleString();
   });
 
 // 015
 // Custom helper to derive total population
-handlebars.registerHelper('totalPopulation', function(rural,urban) {
+handlebars.registerHelper('totalPopulation', function(rural,urban,populationRate) {
   if (rural === undefined || rural === 0 || urban === undefined || urban === 0) {
     console.log("##### totalPopulation - rural/urban was undefined or zero #####");
     return ''; // skip if population value is undefined
   };
     const tempTotalPop = rural + urban;
-  return Math.floor(tempTotalPop * 1000).toLocaleString();
+  return Math.floor(tempTotalPop * populationRate).toLocaleString();
   });
 
 // 016
@@ -497,9 +497,11 @@ handlebars.registerHelper('getCellLeafletXY', function(cellId, allCells, mapInfo
 // Custom Helper to derive the Leaflet Compatible X & Y Coords of the "pole" of a State
 // the "pole" is the visual center - Concept Decsription: https://blog.mapbox.com/a-new-algorithm-for-finding-a-visual-center-of-a-polygon-7c77e6492fbc
 handlebars.registerHelper('getPoleLeafletXY', function(state, mapInfo) {
-  console.log("getPoleLeafletXY - state: ",state);
+  //console.log("getPoleLeafletXY - state: ",state);
   if (state.pole === undefined || state.pole ===0 ) {
-    console.log("##### getPoleLeafletXY - state.pole  was undefined or zero #####");
+    console.log("##### getPoleLeafletXY - state.pole  was undefined or zero -");
+    console.log("getPoleLeafletXY - state: ", state);
+    console.log("#####");
     return ''; // skip if the element is undefined
   };
   const poleX = state.pole[0];

@@ -7,7 +7,7 @@ campaign: Test Campaign Ladonia
 capital: Rhyrapa
 center: 3612
 color: #61dabd
-created: 2024-04-24-15:50
+created: 2024-04-24-16:17
 culture: Elladan
 emblem: TCL-Ladonia Emblem Esiagasian Despotate.png
 expansionism: 3.5
@@ -18,7 +18,7 @@ id: 7
 name: Esiagasia
 neighbors: 
 - Histhepia
-- 
+- Neutrals
 pronounced:
 provinces:
 - Aros County
