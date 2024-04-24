@@ -1,5 +1,5 @@
 ---
-{{setvar currentCapital capital}}
+{{setvar currentCapital (getBurgName capital @importDataRoot.pack.burgs)}}
 center: {{this.center}}
 id: {{i}}
 name: {{name}}
