@@ -28,6 +28,8 @@ In the step above, when you created you campaign, you entered some info. You wil
 # Export Full JSON from FMG
 Export the "Full JSON" File from Fantasy Map Generator.
 
+In case you're curious, here is the JSON schema of an FMG JSON - [[FMG JSON SCHEMA]]. More info can be found in the [Data model · Azgaar/Fantasy-Map-Generator Wiki · GitHub](https://github.com/Azgaar/Fantasy-Map-Generator/wiki/Data-model) page.
+
 # Export an SVG of the FMG map itself
 In FMG, under Options, choose the Layers Preset you would like to use. Using the Political Map layer preset works well for the world map. You can enable the Relief layer if you want to give your map a little extra detail. 
 
@@ -71,13 +73,13 @@ The JSON/CSV Importer plugin requires some different settings for each pass of t
 **It is important to maintain the sub-folder structure for each of the import passes because the Atlas import pass (the final one below) makes use of these paths to find and link to the correct files**
 
 Here are the individual import passes you'll need to run to import the data:
-
-1. Importing [[JSON Import How To#States|States]]
-2. Importing [[JSON Import How To#Provinces|Provinces]]
-3. Importing [[JSON Import How To#Burgs|Burgs]]
-4. Importing [[JSON Import How To#Cultures]]
-5. Importing [[JSON Import How To#Religions]]
-6. Importing [[JSON Import How To#Atlas]]
+(also, you probably will want to perform these passes in the order laid out below)
+1. Importing [[JSON Importing How To#States|States]]
+2. Importing [[JSON Importing How To#Provinces|Provinces]]
+3. Importing [[JSON Importing How To#Burgs|Burgs]]
+4. Importing [[JSON Importing How To#Cultures|Cultures]]
+5. Importing [[JSON Importing How To#Religions|Religions]]
+6. Importing [[JSON Importing How To#Atlas|Atlas]]
 
 ## Dealing with Duplicated Names 
 
@@ -89,7 +91,7 @@ Thankfully, the JSON/CSV Importer plugin can handle these sorts of duplicates. R
 > As of Wyrmling Edition v0.3, the current process for dealing with duplicate names is this:
 > 1. We are going to create a folder hierarchy of subfolders for each State with their Provinces inside those State subfolders, and then the individual Burgs inside their respective Province subfolders.
 > 2. All of this can be created during the import process and is coded into the Handlebar Templates and the Helpers.
-> 3. We will be using an advanced method in the JSON/CSV Importer setting `Field to use as Note Name`. We will be using a combination on extracting data from fields and the limited JavaScript capabilities (added in release 0.35.0).
+> 3. We will be using an advanced method in the JSON/CSV Importer setting `Field to use as Note Name`. We will be using a combination of extracting data from fields and the limited JavaScript capabilities (added in release 0.35.0).
 > 4. Follow the instructions down below for each of the passes to set up the naming scheme properly.
 > 5. As a back up, you can check the box for the JSON/CSV Importer setting to "Add suffix on duplicate Note Names," as a precaution. It will append a numeral after any names that show up duplicated, but I think that should be a rare occurrence with the way we're doing the naming now. 
 
@@ -152,6 +154,14 @@ Due to the nature of nested subfolders we will generate on import, if things get
 
 # Import Passes
 Handlebars Templates and Helpers reside in the folder: ***99-Templates\Handlebars-JSON***
+
+Importing should be done in this order based on the folders each step creates & subsequent steps will need those folder to exist:
+1. [[JSON Importing How To#States|States]]
+2. [[JSON Importing How To#Provinces|Provinces]]
+3. [[JSON Importing How To#Burgs|Burgs]]
+4. [[JSON Importing How To#Cultures|Cultures]]
+5. [[JSON Importing How To#Religions|Religions]]
+6. [[JSON Importing How To#Atlas|Linked Atlas]]
 
 > [!warning]- AutoHotKey Helper (Windows automation) - OPTIONAL
 > The JSON/CSV Importer import process cannot be automated within Obsidian. There is no way to save the settings for the upper three fields we set on each import pass: `Choose JSON/CSV file`, `Choose TEMPLATE file`, and `Choose HELPERS file`. This is a limitation in the method the plugin creator has to interact with local files. As of yet, it doesn't seem likely to change in the future.
@@ -404,6 +414,7 @@ The `CHAR(34)` code will insert double quote marks to wrap the filename that wil
 11. Running that `.bat` file now will rename all your FMG Emblem files so that they should match the emblem with the State/Province/Burg it goes with.
 12. (OPTIONAL - you could add `state`, `province`, and `burg` to the respective file names. )
 13. (Dealing with duplicated names - If you had any dupe files with suffix added, the files that would have been renamed to an existing duplicate name are still named `svgexport-???.png` - use the id numbers to find what they should be named - rename to create a unique filname. You could add  `-stateName` to any of the dupes. You will need to correct these manually after import.)
+14. (OPTIONAL - converting PNG images of Burg maps to WEBP with ImageMagick - steps to come)
 
 # Wrangling FMG Burg Maps
 FMG includes connections to Watabou's [Medieval Fantasy City Generator](https://watabou.github.io/city-generator/?size=25&seed=981800034&greens=0&citadel=1&urban_castle=1&plaza=1&temple=1&walls=0&shantytown=0&coast=1&river=0&gates=-1&sea=0.2) and [Village Generator](https://watabou.github.io/village-generator/?seed=1714876149&tags=no%20square,highway). The URL links to maps for each of your map's Burgs is available to extract from the JSON, but it does not exist in a JSON field as the URL. It has to be extracted via some HelperJS functions in [[Helpers-FMG-JSON.js]].
