@@ -7,7 +7,7 @@ campaign: Test Campaign Ladonia
 capital: Thaphos
 center: 5076
 color: #d6afce
-created: 2024-04-23-17:55
+created: 2024-04-24-15:50
 culture: Elladan
 emblem: TCL-Ladonia Emblem Bhrymaionese Despotate.png
 expansionism: 1.3
@@ -31,7 +31,7 @@ urban: 87,977
 tags:
 - State
 - Ladonia
-- 
+- TCL
 type: Generic
 WBProcess: Imported
 world: Ladonia

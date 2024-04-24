@@ -82,12 +82,13 @@ handlebars.registerHelper('getDateTimestamp', function(importSettings) {
 handlebars.registerHelper('getBurgName', function(burgId,allBurgs) {
   //console.log("burgId:", burgId);
   //console.log("allBurgs: ", allBurgs);
-  if (burgId === undefined || burgId === 0 ) {
-    console.log("##### burgId was undefined or zero #####");
-    return ''; // skip if the element is undefined or zero
+  if (burgId === undefined) {
+    console.log("##### getBurgName - burgId was undefined #####");
+    return ''; // skip if the element is undefined
   };
+  //console.log("burgId wasn't 0 or undefined");
   const burgFound = allBurgs.find(burg => burg.i === burgId);
-  //console.log("burgFound:", burgFound.name);
+  // console.log("burgFound:", burgFound.name);
   return burgFound ? burgFound.name : 'Unknown';
 });
 
@@ -97,7 +98,7 @@ handlebars.registerHelper('getStateName', function(stateId,allStates) {
   //console.log("StateId:", stateId);
   //console.log("allStates: ", allStates);
   if (stateId === undefined || stateId === 0) {
-  //console.log("##### stateId was undefined or zero #####");
+    console.log("##### getStateName - stateId was undefined or zero #####");
     return ''; // skip if the element is undefined or zero
   };
   const stateName = allStates.find(state => state.i === stateId);
@@ -111,7 +112,8 @@ handlebars.registerHelper('getProvinceName', function(provinceId,allProvinces) {
   //console.log("provinceId:", provinceId);
   //console.log("allProvinces: ", allProvinces);
   if (provinceId === undefined || provinceId === 0) {
-    return 'No Province'; // skip if the element is undefined or zero
+    console.log("##### getProvinceName - provinceId was undefined or zero #####");
+    return ''; // skip if the element is undefined or zero
   };
   const provinceName = allProvinces.find(province => province.i === provinceId);
   //console.log("provinceName found:", provinceName);
@@ -123,7 +125,8 @@ handlebars.registerHelper('getProvinceName', function(provinceId,allProvinces) {
 handlebars.registerHelper('getCultureName', function(cultureId,allCultures) {
   //console.log("cultureId:", cultureId);
   //console.log("allCultures: ", allCultures);
-  if (cultureId === undefined) {
+  if (cultureId === undefined || cultureId === 0) {
+    console.log("##### getCultureName - cultureId was undefined or zero #####");
     return ''; // skip if the element is undefined
     
   };
@@ -135,6 +138,10 @@ handlebars.registerHelper('getCultureName', function(cultureId,allCultures) {
 // 010
 // Custom Helper to determine Burg Map Units
 handlebars.registerHelper('burgMapUnits', function(currentBurg, mapSettings) {
+  if (currentBurg === undefined || currentBurg === 0) {
+    console.log("##### burgMapUnits - currentBurg was undefined or zero #####");
+    return ''; // skip if currentCell is undefined
+  };
   const {options} = mapSettings;
   const pop = (currentBurg.population * 1000);
   if (!options.villageMaxPopulation){
@@ -152,10 +159,10 @@ handlebars.registerHelper('burgMapUnits', function(currentBurg, mapSettings) {
 // based on the data model for Fantasy Map Generator - https://github.com/Azgaar/Fantasy-Map-Generator/wiki/Data-model
 // Portions of this code are adapted from the Fantasy Map Generator Code - https://github.com/Azgaar/Fantasy-Map-Generator
 handlebars.registerHelper('getBurgMapLink', function(currentBurg, mapSeed, allCells, mapSettings, grid) {
-  if (currentBurg === 0) {
-    console.log("currentBurg has no value");
-    return 'not defined';
-  }
+  if (currentBurg === undefined || currentBurg === 0) {
+    console.log("##### getBurgMapLink - currentBurg was undefined or zero #####");
+    return ''; // skip if currentCell is undefined
+  };
   //console.log("mapSeed: ", mapSeed);
   //console.log("allCells: ", allCells);
   //console.log("mapSettings: ", mapSettings);
@@ -335,7 +342,8 @@ handlebars.registerHelper('getBurgMapLink', function(currentBurg, mapSeed, allCe
 // Custom Helper to calculate height value from map data
 // Portions of this code are adapted from the Fantasy Map Generator Code - https://github.com/Azgaar/Fantasy-Map-Generator
   handlebars.registerHelper('getHeight', function(currentCell, mapSettings, allCells) {
-    if (currentCell === undefined) {
+    if (currentCell === undefined || currentCell === 0) {
+      console.log("##### getHeight - currentCell was undefined or zero #####");
       return ''; // skip if currentCell is undefined
     };
     const tempH = allCells.find(ch => ch.i === currentCell);
@@ -364,7 +372,8 @@ handlebars.registerHelper('getBurgMapLink', function(currentBurg, mapSeed, allCe
 // 013
 // Custom helper to derive total area
 handlebars.registerHelper('totalArea', function(area) {
-  if (area === undefined) {
+  if (area === undefined || area === 0) {
+    console.log("##### totalArea - area was undefined or zero #####");
     return ''; // skip if population value is undefined
   };
   return Math.floor(area * 9).toLocaleString();
@@ -373,7 +382,8 @@ handlebars.registerHelper('totalArea', function(area) {
 // 014
 // Custom helper to calculate population
 handlebars.registerHelper('calcPopulation', function(popValue) {
-  if (popValue === undefined) {
+  if (popValue === undefined || popValue === 0) {
+    console.log("##### calcPopulation - popValue was undefined or zero #####");
     return ''; // skip if population value is undefined
   };
     return Math.floor(popValue * 1000).toLocaleString();
@@ -382,7 +392,8 @@ handlebars.registerHelper('calcPopulation', function(popValue) {
 // 015
 // Custom helper to derive total population
 handlebars.registerHelper('totalPopulation', function(rural,urban) {
-  if (rural === undefined || urban === undefined) {
+  if (rural === undefined || rural === 0 || urban === undefined || urban === 0) {
+    console.log("##### totalPopulation - rural/urban was undefined or zero #####");
     return ''; // skip if population value is undefined
   };
     const tempTotalPop = rural + urban;
@@ -394,12 +405,13 @@ handlebars.registerHelper('totalPopulation', function(rural,urban) {
 handlebars.registerHelper('burgProvinceLookup', function(cellId,allCells,allProvinces) {
   //console.log("burgProvinceLookup for cellId: ", cellId );
   if (cellId === undefined || cellId === 0) {
-    return ''; // skip if population value is undefined
+    console.log("##### burgProvinceLookup - cellId was undefined or zero #####");
+    return ''; // skip if cellId value is undefined
   };
   const foundCell = allCells.find(cell => cell.i === cellId)
   const foundCellProvinceId = foundCell.province;
   if (foundCellProvinceId === 0 ) {
-    return 'No Province'; // If no Province Defined end here
+    return ''; // If no Province Defined end here
   };
   const foundProvinceName = allProvinces.find(prov => prov.i === foundCellProvinceId).fullName;
   //console.log("burgProvinceLookup process - foundProvinceName: ", foundProvinceName);
@@ -411,7 +423,8 @@ handlebars.registerHelper('burgProvinceLookup', function(cellId,allCells,allProv
 handlebars.registerHelper('getReligionName', function(cellId,allCells,allReligions) {
   // console.log("cellId:", cellId);
   //console.log("allreligions: ", allreligions);
-  if (cellId === undefined) {
+  if (cellId === undefined || cellId ===0 ) {
+    console.log("##### getReligionName - cellId was undefined or zero #####");
     return ''; // skip if the element is undefined
   };
   // because the religion value is saved under the pack.cells[x].religion element we need to look up the value of a cell within the passed item in order to find the religion associated with that location
@@ -432,6 +445,10 @@ handlebars.registerHelper('getReligionName', function(cellId,allCells,allReligio
 // 018 -
 // Custom Helper to return a Cell's X & Y value for inclusion in FMG URL
 handlebars.registerHelper('getFMGCellXY', function(cellId, allCells) {
+  if (cellId === undefined || cellId ===0 ) {
+    console.log("##### getFMGCellXY - cellId was undefined or zero #####");
+    return ''; // skip if the element is undefined
+  };
   const foundCell = allCells.find(cell => cell.i === cellId);
   //console.log("cellId: ", cellId, " -- foundCell: ", foundCell);
   const foundCellX = foundCell.p[0];
@@ -448,7 +465,7 @@ handlebars.registerHelper('getLeafletBurgXY', function(burgId,allBurgs,mapInfo) 
   //console.log("burgId:", burgId);
   //console.log("allBurgs: ", allBurgs);
   if (burgId === undefined || burgId === 0 ) {
-    console.log("##### burgId was undefined or zero #####");
+    console.log("##### getLeafletBurgXY - burgId was undefined or zero #####");
     return ''; // skip if the element is undefined or zero
   };
   const burgFound = allBurgs.find(burg => burg.i === burgId);
@@ -462,6 +479,10 @@ handlebars.registerHelper('getLeafletBurgXY', function(burgId,allBurgs,mapInfo) 
 // 020
 // Custom Helper to derive the Leaflet Compatible X & Y Coords of a Cell
 handlebars.registerHelper('getCellLeafletXY', function(cellId, allCells, mapInfo) {
+  if (cellId === undefined || cellId ===0 ) {
+    console.log("##### getCellLeafletXY - cellId was undefined or zero #####");
+    return ''; // skip if the element is undefined
+  };
   const foundCell = allCells.find(cell => cell.i === cellId);
   //console.log("cellId: ", cellId, " -- foundCell: ", foundCell);
   const foundCellX = foundCell.p[0];
@@ -476,6 +497,11 @@ handlebars.registerHelper('getCellLeafletXY', function(cellId, allCells, mapInfo
 // Custom Helper to derive the Leaflet Compatible X & Y Coords of the "pole" of a State
 // the "pole" is the visual center - Concept Decsription: https://blog.mapbox.com/a-new-algorithm-for-finding-a-visual-center-of-a-polygon-7c77e6492fbc
 handlebars.registerHelper('getPoleLeafletXY', function(state, mapInfo) {
+  console.log("getPoleLeafletXY - state: ",state);
+  if (state.pole === undefined || state.pole ===0 ) {
+    console.log("##### getPoleLeafletXY - state.pole  was undefined or zero #####");
+    return ''; // skip if the element is undefined
+  };
   const poleX = state.pole[0];
   const poleY = state.pole[1];
   const leafletW = poleX.toFixed(3);

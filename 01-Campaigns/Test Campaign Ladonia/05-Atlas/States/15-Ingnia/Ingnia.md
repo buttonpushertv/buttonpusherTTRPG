@@ -7,7 +7,7 @@ campaign: Test Campaign Ladonia
 capital: Escres
 center: 1106
 color: #8caae6
-created: 2024-04-23-17:55
+created: 2024-04-24-15:50
 culture: Luari
 emblem: TCL-Ladonia Emblem Protectorate of Ingnia.png
 expansionism: 4.2
@@ -34,7 +34,7 @@ urban: 109,861
 tags:
 - State
 - Ladonia
-- 
+- TCL
 type: Naval
 WBProcess: Imported
 world: Ladonia

@@ -7,7 +7,7 @@ campaign: Test Campaign Ladonia
 capital: Papoli
 center: 3947
 color: #a6d854
-created: 2024-04-23-17:55
+created: 2024-04-24-15:50
 culture: Elladan
 emblem: TCL-Ladonia Emblem Principality of Histhepia.png
 expansionism: 3.3
@@ -40,7 +40,7 @@ urban: 285,877
 tags:
 - State
 - Ladonia
-- 
+- TCL
 type: Generic
 WBProcess: Imported
 world: Ladonia

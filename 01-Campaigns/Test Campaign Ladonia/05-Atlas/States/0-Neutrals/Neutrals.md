@@ -1,43 +1,42 @@
 ---
-alert: 1.87
-aliases: Esiagasia
-area: 374,301
-burgs: 25
+alert: 
+aliases: Neutrals
+area: 1,324,017
+burgs: 0
 campaign: Test Campaign Ladonia
-capital: Rhyrapa
-center: 3612
-color: #61dabd
+capital: 
+center: 
+color: 
 created: 2024-04-24-15:50
-culture: Elladan
-emblem: TCL-Ladonia Emblem Esiagasian Despotate.png
-expansionism: 3.5
-form: Monarchy
-formName: Despotate
-fullName: Esiagasian Despotate
-id: 7
-name: Esiagasia
+culture: 
+emblem: TCL-Ladonia Emblem .png
+expansionism: 
+form: 
+formName: 
+fullName: 
+id: 0
+name: Neutrals
 neighbors: 
+- Petrica
+- Esiagasia
 - Histhepia
-- 
+- Esmosia
+- Thas
+- Upunia
+- Kunszavasia
 pronounced:
 provinces:
-- Aros County
-- Nenaidia Earldom
-- Pseidyria County
-- Nepiris Earldom
-- Trosiapia County
-- Thysaion Land
-totalPopulation: 1,322,782
-religion: Cythoporystism
+totalPopulation: 
+religion: 
 rulers:
-rural: 1,133,080
+rural: 118,138
 shortDescription:
-urban: 189,702
+urban: 
 tags:
 - State
 - Ladonia
 - TCL
-type: Generic
+type: 
 WBProcess: Imported
 world: Ladonia
 ---
@@ -67,14 +66,14 @@ world: Ladonia
 
 %% During the import process, much of the data for the Leaflet fields should have been pulled in from the JSON. You will need to update the defaultZoom and (maybe) the coordinates values, but it should be pretty close - good enough to get a start with it. The goal is to cut down on the amount of manual effort you need to go through to pull your data in from the FMG JSON %% 
 
-> [!metadata|map]+ Esiagasia Map
+> [!metadata|map]+ Neutrals Map
 > ```leaflet
-> id: State-Esiagasia
+> id: State-Neutrals
 > image: [[Ladonia World Map.svg]]
 > bounds: 
 > - [0,0]
 > - [1317,2291]
-> coordinates: [618.678,64.834]
+> coordinates: []
 > height: 600px
 > width: 100%
 > minZoom: -3
@@ -84,14 +83,14 @@ world: Ladonia
 > unit: mi
 > scale: 2
 > darkMode: false
-> marker: capital,698.500,53.500,[[Rhyrapa]],Esiagasia Capital
+> marker: capital,,[[]],Neutrals Capital
 > ```
-> [Link to Esiagasia on FMG Map](https://azgaar.github.io/Fantasy-Map-Generator/?maplink=https://dl.dropboxusercontent.com/scl/fi/s1ildj50q943p20hgqsvz/Ladonia-2024-04-13-18-07.map?rlkey=tt7j7x4gqbhxu043p5q2f2ucx&dl=0&scale=3&x=50.76&y=628.38)
+> [Link to Neutrals on FMG Map](https://azgaar.github.io/Fantasy-Map-Generator/?maplink=https://dl.dropboxusercontent.com/scl/fi/s1ildj50q943p20hgqsvz/Ladonia-2024-04-13-18-07.map?rlkey=tt7j7x4gqbhxu043p5q2f2ucx&dl=0&scale=3)
 
 %% All the info in this 'infobox' will appear in the panel to the right. Most of these values are pulled from the metadata in the properties above. %%
 
 > [!infobox]
-> ![[TCL-Ladonia Emblem Esiagasian Despotate.png]]
+> ![[TCL-Ladonia Emblem .png]]
 >
 >  |
 >  --- |
@@ -147,7 +146,7 @@ world: Ladonia
 >> [!note]- Burgs
 >> ```dataview
 >> TABLE WITHOUT ID file.link as "Burgs", link(provinceName) as "Province Name"
->> FROM #Burg and "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/7-Esiagasia"
+>> FROM #Burg and "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/0-Neutrals"
 >> WHERE econtains(stateId,this.id)
 >> SORT file.name ASC
 >> ```
@@ -159,18 +158,11 @@ Siginifcant Incidents in `=this.name`'s history:
 
 | Name | Start Year | End Year |
 | ---- | ---------- | -------- |
-| Itho Conquest | 1 | 2 |
-| Pithonese Rebellion | 226 | 227 |
 
 
 ## Military 
 | Icon | Name | Infantry | Archers | Cavalry | Artillery | Fleet | Total |
 | -----| ---- | -------- | ------- | ------- | --------- | ----- | ----- |
-| 👑 | 1st (Aros) Regiment | 2252 | 2346 | 540 | 61 |  | 5199 |
-| ⚔️ | 2nd (Pseidyria) Regiment | 2033 | 1338 | 1205 | 27 |  | 4603 |
-| 🏹 | 3rd (Nenaidia) Regiment | 946 | 1181 | 152 | 36 |  | 2315 |
-| 🌊 | 1st Fleet |  |  |  |  | 15 | 15 |
-| 🌊 | 2nd Fleet |  |  |  |  | 4 | 4 |
 
 %% You can use the 'Timeline' Callout features of the ITS theme here to create a timeline of any important events. Remove the line below that reads '(delete this line to enable timeline)' and the trailing double percent signs & add a set of double percent signs here ->
 

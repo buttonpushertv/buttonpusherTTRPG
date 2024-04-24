@@ -4,7 +4,7 @@ aliases: {{name}}
 area: {{totalArea area}}
 burgs: {{burgs}}
 campaign: {{@importDataRoot.info.thisCampaign}}
-capital: {{getBurgName capital @importDataRoot.pack.burgs}}
+{{setvar "currentCapital" (getBurgName capital @importDataRoot.pack.burgs)}}capital: {{"currentCapital"}}
 center: {{this.center}}
 color: {{color}}
 created: {{getDateTimestamp @importSettings}}
@@ -34,7 +34,7 @@ urban: {{calcPopulation urban}}
 tags:
 - State
 - {{@importDataRoot.info.mapName}}
-- {{@importDataRoot.info.campaignShortCode}}
+- {{@importDataRoot.info.thisCampaignShortCode}}
 type: {{type}}
 WBProcess: Imported
 world: {{@importDataRoot.info.mapName}}
@@ -82,7 +82,7 @@ world: {{@importDataRoot.info.mapName}}
 > unit: {{@importDataRoot.settings.distanceUnit}}
 > scale: {{@importDataRoot.settings.distanceScale}}
 > darkMode: false
-> marker: capital,{{getLeafletBurgXY capital @importDataRoot.pack.burgs @importDataRoot.info}},[[{{getBurgName capital @importDataRoot.pack.burgs}}]],{{name}} Capital
+> marker: capital,{{getLeafletBurgXY capital @importDataRoot.pack.burgs @importDataRoot.info}},[[{{"currentCapital"}}]],{{name}} Capital
 > ```
 > [Link to {{name}} on FMG Map]({{@importDataRoot.info.mapDropboxFMGLink}}&scale=3{{getFMGCellXY this.center @importDataRoot.pack.cells}})
 

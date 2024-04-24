@@ -7,7 +7,7 @@ campaign: Test Campaign Ladonia
 capital: Tamesu
 center: 3286
 color: #cdd265
-created: 2024-04-23-17:55
+created: 2024-04-24-15:50
 culture: Soumi
 emblem: TCL-Ladonia Emblem Tiormaan Empire.png
 expansionism: 3.6
@@ -57,7 +57,7 @@ urban: 485,367
 tags:
 - State
 - Ladonia
-- 
+- TCL
 type: Generic
 WBProcess: Imported
 world: Ladonia

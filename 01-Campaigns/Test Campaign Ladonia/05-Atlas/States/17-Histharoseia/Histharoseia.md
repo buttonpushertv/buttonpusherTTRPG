@@ -7,7 +7,7 @@ campaign: Test Campaign Ladonia
 capital: Esmostos
 center: 6223
 color: #c6e956
-created: 2024-04-23-17:55
+created: 2024-04-24-15:50
 culture: Elladan
 emblem: TCL-Ladonia Emblem Eparchy of Histharoseia.png
 expansionism: 1.5
@@ -31,7 +31,7 @@ urban: 19,920
 tags:
 - State
 - Ladonia
-- 
+- TCL
 type: Generic
 WBProcess: Imported
 world: Ladonia

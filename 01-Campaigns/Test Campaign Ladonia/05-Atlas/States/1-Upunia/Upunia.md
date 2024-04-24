@@ -7,7 +7,7 @@ campaign: Test Campaign Ladonia
 capital: Kotve
 center: 4124
 color: #66c2a5
-created: 2024-04-23-17:55
+created: 2024-04-24-15:50
 culture: Soumi
 emblem: TCL-Ladonia Emblem Kingdom of Upunia.png
 expansionism: 2.8
@@ -50,7 +50,7 @@ urban: 308,316
 tags:
 - State
 - Ladonia
-- 
+- TCL
 type: Generic
 WBProcess: Imported
 world: Ladonia

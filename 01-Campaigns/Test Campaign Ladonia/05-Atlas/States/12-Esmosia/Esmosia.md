@@ -7,7 +7,7 @@ campaign: Test Campaign Ladonia
 capital: Esmos
 center: 4670
 color: #f4da5b
-created: 2024-04-23-17:55
+created: 2024-04-24-15:50
 culture: Elladan
 emblem: TCL-Ladonia Emblem Kingdom of Esmosia.png
 expansionism: 4.6
@@ -43,7 +43,7 @@ urban: 212,737
 tags:
 - State
 - Ladonia
-- 
+- TCL
 type: Generic
 WBProcess: Imported
 world: Ladonia

@@ -7,7 +7,7 @@ campaign: Test Campaign Ladonia
 capital: Mypethera
 center: 5625
 color: #dab1c9
-created: 2024-04-23-17:55
+created: 2024-04-24-15:50
 culture: Elladan
 emblem: TCL-Ladonia Emblem Thas Empire.png
 expansionism: 5.3
@@ -55,7 +55,7 @@ urban: 417,632
 tags:
 - State
 - Ladonia
-- 
+- TCL
 type: Generic
 WBProcess: Imported
 world: Ladonia

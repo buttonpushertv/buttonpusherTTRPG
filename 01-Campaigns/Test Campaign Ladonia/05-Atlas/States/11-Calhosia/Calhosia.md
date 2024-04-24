@@ -7,7 +7,7 @@ campaign: Test Campaign Ladonia
 capital: Coimbral
 center: 671
 color: #c1ef58
-created: 2024-04-23-17:55
+created: 2024-04-24-15:50
 culture: Portuzian
 emblem: TCL-Ladonia Emblem Kingdom of Calhosia.png
 expansionism: 4.8
@@ -43,7 +43,7 @@ urban: 263,769
 tags:
 - State
 - Ladonia
-- 
+- TCL
 type: Generic
 WBProcess: Imported
 world: Ladonia

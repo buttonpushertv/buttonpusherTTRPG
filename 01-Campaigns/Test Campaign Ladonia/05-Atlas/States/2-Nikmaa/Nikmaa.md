@@ -7,7 +7,7 @@ campaign: Test Campaign Ladonia
 capital: Tulpsala
 center: 4461
 color: #fc8d62
-created: 2024-04-23-17:55
+created: 2024-04-24-15:50
 culture: Soumi
 emblem: TCL-Ladonia Emblem Nikmaan League.png
 expansionism: 2.3
@@ -33,7 +33,7 @@ urban: 83,095
 tags:
 - State
 - Ladonia
-- 
+- TCL
 type: Generic
 WBProcess: Imported
 world: Ladonia

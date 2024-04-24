@@ -16,6 +16,7 @@ shortDescription:
 state: {{getStateName state @importDataRoot.pack.states}}
 tags:
 - Province
+- {{@importDataRoot.info.thisCampaignShortCode}}
 - {{@importDataRoot.info.mapName}}
 WBProgress: Imported
 world: {{@importDataRoot.info.mapName}}

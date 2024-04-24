@@ -7,7 +7,7 @@ campaign: Test Campaign Ladonia
 capital: Petritone
 center: 356
 color: #ffda3b
-created: 2024-04-23-17:55
+created: 2024-04-24-15:50
 culture: Tallian
 emblem: TCL-Ladonia Emblem Petrican Empire.png
 expansionism: 3.1
@@ -43,7 +43,7 @@ urban: 230,109
 tags:
 - State
 - Ladonia
-- 
+- TCL
 type: Nomadic
 WBProcess: Imported
 world: Ladonia

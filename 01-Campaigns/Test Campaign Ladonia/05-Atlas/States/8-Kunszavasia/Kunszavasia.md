@@ -7,7 +7,7 @@ campaign: Test Campaign Ladonia
 capital: Tisokeresz
 center: 6855
 color: #ff8b7f
-created: 2024-04-23-17:55
+created: 2024-04-24-15:50
 culture: Vengrian
 emblem: TCL-Ladonia Emblem Republic of Kunszavasia.png
 expansionism: 2.9
@@ -40,7 +40,7 @@ urban: 246,002
 tags:
 - State
 - Ladonia
-- 
+- TCL
 type: River
 WBProcess: Imported
 world: Ladonia
