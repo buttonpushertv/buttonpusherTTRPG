@@ -52,6 +52,8 @@ tags:
 > I have left the Dropbox link to the FMG map up as well(as long as it lasts) so you can see how that interaction works - see a State or Atlas Leaflet block has a link to it's location in the FMG map file - it's pretty cool
 > 
 > Also, with this example, I haven't done much to update things, so you can see some of the issues that arise during import. Look at the State of [[Alocenia]] - it has no provinces and the Capital gets some confused links in the [[Test Campaign Ladonia-Linked Atlas]]. Worth seeing the kinds of problems that arise.
+> 
+> One last minute change is that I had to convert the Burg Map images to WEBP - Github kept timing out on upload of the PNG versions. That conversion is not yet documented, but it's in this test import to conserve space.
 
 
 
