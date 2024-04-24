@@ -4,29 +4,41 @@
     "type": "split",
     "children": [
       {
-        "id": "b1816a4bf0559a89",
+        "id": "610fbe11c439ea80",
         "type": "tabs",
         "children": [
           {
-            "id": "cd7260a8142790d6",
+            "id": "181dfcf36a05a81a",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
                 "file": "CHANGELOG.md",
-                "mode": "preview",
+                "mode": "source",
                 "source": true
               }
             }
           },
           {
-            "id": "16f83c5c37d6f6e1",
+            "id": "e7057dbdb2771836",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "VERSION.md",
-                "mode": "preview",
+                "file": "01-Campaigns/Test Campaign Ladonia/Test Campaign Ladonia Home.md",
+                "mode": "source",
+                "source": true
+              }
+            }
+          },
+          {
+            "id": "9290fee4a8b26ce8",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "99-Templates/Handlebars-JSON/Burgs-FMG-JSON Handlerbars Template.md",
+                "mode": "source",
                 "source": true
               }
             }
@@ -84,7 +96,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "VERSION.md",
+                "file": "01-Campaigns/Test Campaign Ladonia/Test Campaign Ladonia Home.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -96,7 +108,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "VERSION.md",
+                "file": "01-Campaigns/Test Campaign Ladonia/Test Campaign Ladonia Home.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -124,7 +136,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "VERSION.md"
+                "file": "01-Campaigns/Test Campaign Ladonia/Test Campaign Ladonia Home.md"
               }
             }
           }
@@ -173,53 +185,53 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "16f83c5c37d6f6e1",
+  "active": "e7057dbdb2771836",
   "lastOpenFiles": [
-    "Home.md",
-    "CHANGELOG.md",
-    "JSON Importing How To.md",
-    "README.md",
-    "00-INBOX/Scratch Pad.md",
-    "90-Tools & Helpers/_External_Scripts/OBSIDIAN-JSONImporter-HOTKEYS.ahk",
-    "90-Tools & Helpers/_External_Scripts/OBSIDIAN-HOTKEYS.ahk",
-    "99-Templates/Handlebars-JSON/Burgs-FMG-JSON Handlerbars Template.md",
-    "99-Templates/Handlebars-JSON/Atlas-FMG-JSON Handlebars Template.md",
+    "91-Assets/Test Campaign Ladonia/City-WEBPs/Riofrioli.webp",
+    "91-Assets/Test Campaign Ladonia/City-WEBPs/Rhyrapa.webp",
+    "91-Assets/Test Campaign Ladonia/City-WEBPs/Ujsvaroszarad.webp",
+    "91-Assets/Test Campaign Ladonia/City-WEBPs/Kiulala.webp",
+    "91-Assets/Test Campaign Ladonia/City-WEBPs/Hoski.webp",
+    "91-Assets/Test Campaign Ladonia/City-WEBPs/Methumele.webp",
+    "91-Assets/Test Campaign Ladonia/City-WEBPs/Tismizsak.webp",
+    "91-Assets/Test Campaign Ladonia/City-WEBPs/Peinala.webp",
+    "91-Assets/Test Campaign Ladonia/City-WEBPs/Sodoyken.webp",
+    "91-Assets/Test Campaign Ladonia/City-WEBPs/Sergo.webp",
+    "91-Assets/Test Campaign Ladonia/City-WEBPs/Orydodolis.webp",
     "01-Campaigns/Test Campaign Ladonia/05-Atlas/Test Campaign Ladonia-Linked Atlas.md",
-    "99-Templates/Handlebars-JSON/States-FMG-JSON Handlebars Template.md",
-    "99-Templates/Handlebars-JSON/Provinces-FMG-JSON Handlebars Template.md",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/1-Upunia/Upunia.md",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/2-Nikmaa/13-Antse Canton/Antse.md",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/2-Nikmaa/Nikmaa.md",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/13-Aporesia/107-Askroiragi Landgrave/Askroiragi Landgrave.md",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/13-Aporesia/Aporesia.md",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/1-Upunia/1-Hauta Earldom/Hauta Earldom.md",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/13-Aporesia/107-Askroiragi Landgrave/Menionticea.md",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/13-Aporesia/107-Askroiragi Landgrave/Therchiapa.md",
-    "00-INBOX/DataView Testing.md",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/1-Upunia/1-Hauta Earldom/Karjasa.md",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/1-Upunia/1-Hauta Earldom/Vailajarja.md",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/1-Upunia/1-Hauta Earldom/Kotve.md",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/9-Tiormaa/60-Hatia County/Viohrari.md",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/9-Tiormaa/146-Tameskisa Region/Tameskisa.md",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/9-Tiormaa/55-Viilapara County/Kautio.md",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/9-Tiormaa/53-Hoskia County/Kalahmaski.md",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/Test Campaign Ladonia-Simple Atlas.md",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/Religions/Cythoporystism.md",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/Religions/Witnesses of Saucedavas.md",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/Religions/Vengrian Deities.md",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/Religions/Soumi Beliefs.md",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/Religions/Elladan Beliefs.md",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/Religions/Luari Ancestors.md",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/Religions/Tallian Beliefs.md",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/Religions/Norse Beliefs.md",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/Religions/Shwazen Forefathers.md",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/Religions/Astellian Beliefs.md",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/Religions/Portuzian Spirits.md",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/Religions",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/Cultures/Vengrian.md",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/Cultures/Soumi.md",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/Cultures/Elladan.md",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/Cultures/Luari.md",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/Cultures/Tallian.md",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/Cultures/Norse.md",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/Cultures/Shwazen.md",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/Cultures/Astellian.md",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/Cultures/Portuzian.md",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/Cultures/Wildlands.md",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/Cultures",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/16-Bhrymaion/114-Crori Earldom/Thaphos.md",
+    "01-Campaigns/Test Campaign Ladonia/Test Campaign Ladonia Home.md",
     "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/14-Alocenia/0-undefined",
+    "91-Assets/Test Campaign Ladonia/Village-WEBPs",
+    "91-Assets/Test Campaign Ladonia/City-WEBPs",
     "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/18-Petrica/164-Giucia Land",
     "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/18-Petrica/163-Serganoria Territory",
     "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/18-Petrica/162-Castri Land",
     "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/18-Petrica/161-Carea Territory",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/12-Esmosia/160-Pantiochmo Territory",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/12-Esmosia/159-Bytherythia Territory",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/12-Esmosia/158-Pitha Territory",
-    "91-Assets/Test Campaign Ladonia/Ladonia World Map.svg",
-    "91-Assets/Test Campaign Ladonia/Ladonia 2024-04-12-16-12.svg",
-    "91-Assets/Test Campaign Ladonia/Ladonia Religions World Map.svg",
-    "91-Assets/Test Campaign Ladonia/Ladonia 2024-04-12-11-16.svg",
-    "91-Assets/Map Symbols/Stronghold.png",
-    "91-Assets/Map Symbols/Snake.png",
-    "91-Assets/Map Symbols/Shield.png",
-    "91-Assets/Map Symbols/Orcs.png",
-    "91-Assets/Map Symbols/Monolith.png",
-    "91-Assets/Map Symbols/Skull.png"
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/12-Esmosia/160-Pantiochmo Territory"
   ]
 }

@@ -9,5 +9,5 @@
   "handleExistingNote": 1,
   "forceArray": true,
   "multipleJSON": false,
-  "uniqueNames": false
+  "uniqueNames": true
 }
