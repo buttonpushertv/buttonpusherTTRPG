@@ -9,7 +9,10 @@ Pre-pre-alpha versions that were almost ready for sharing
 Early Alpha version. First share with the community.
 Seeking reactions and input from others who may find it useful or have things to contribute.
 
+### -v.0.5 - released 2024-Apr-23-1700EST
+An updated version with a few fixes (of course you always find the glitches and bugs *after* you release your first version).
 
+This now includes a Sample Imported FMG map - see `01-Campaigns/Test Campaign Ladonia` for the kinds of things the import process will create.
 
 
 
