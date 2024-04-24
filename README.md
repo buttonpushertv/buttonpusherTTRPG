@@ -7,6 +7,8 @@ An Obsidian Vault for managing TTRPG campaigns with these features:
 
 First, you'll want to download this vault and open it in [Obsidian](https://obsidian.md/).
 
+Download this vault. It contains all the plugins you need to get going. Primarily, the JSON import is handled by [JSON/CSV Importer](https://github.com/farling42/obsidian-import-json)
+
 Once you've done that, open [[JSON Import How To]] for the instructions on how to get your FMG map imported into a campaign.
 
 
