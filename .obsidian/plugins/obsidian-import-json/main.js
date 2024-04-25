@@ -12764,10 +12764,15 @@ var JsonImport = class extends import_obsidian.Plugin {
   hb_setvar() {
     if (arguments.length != 3)
       return arguments[0];
+    //console.log("JC-imp: ", arguments);
     let varName = arguments[0];
     let varValue = arguments[1];
     let options = arguments[2];
     options.data.root[varName] = varValue;
+    //console.log("JC-varName: ", varName);
+    //console.log("JC-varValue: ", varValue);
+    //console.log("JC-options: ", options);
+    //console.log("hb_utils: ", hb_utils);
     return hb_utils.value("");
   }
   checkPath(filename) {
