@@ -7,3 +7,7 @@
 .full-width .markdown-preview-section {
 	max-width: 100% !important;
 }
+
+.eighty-pct-width .markdown-preview-section {
+	max-width: 80% !important;
+}
