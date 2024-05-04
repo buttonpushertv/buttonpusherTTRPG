@@ -70,7 +70,7 @@ marker: burg,1170.640,1924.420,[[Tormosotil]]
 > [!metadata|map]- Burg Map (Interactive)
 > ```leaflet
 > id: Burg-Tormosotil
-> image: [[Tormosotil.webp]]
+> image: [[117-Tormosotil.png]]
 > height: 600px
 > width: 100%
 > minZoom: -3.5
@@ -82,6 +82,32 @@ marker: burg,1170.640,1924.420,[[Tormosotil]]
 > darkMode: false
 > ```
 > `=elink(this.burgMapLink,"Visit Burg Map")`
+>
+>> ```meta-bind-js-view
+> {burgMapLink} as mapLink
+> {burgName} as name
+> {id} as id
+> ---
+> let fileName = context.bound.id + "-" + context.bound.name;
+> console.log("##### - :", fileName);
+> navigator.clipboard.writeText(fileName);
+> let url = encodeURIComponent(context.bound.mapLink) + "%26export%3DPNG";
+> return engine.markdown.create(`
+> ~~~meta-bind-button
+> label: Download Map as PNG
+> icon: ""
+> hidden: false
+> class: ""
+> tooltip: ""
+> id: ""
+> style: primary
+> actions:
+>   - type: open
+>     link: "obsidian://opengate?title=${encodeURIComponent(context.bound.name)}&url=${url}&position=center"
+> ~~~
+> `)
+> ```
+>
 > > [!Note]- City Maps may need Scale adjusting
 > > The `scale` setting of `.5` is arbitrary. It seems to work for Village maps. There is no scale, but by setting the unit (in the Leaflet block above) to `feet` things seem to feel about the right size.
 > > 
@@ -100,6 +126,7 @@ marker: burg,1170.640,1924.420,[[Tormosotil]]
 > urlSuffix: /city-generator/?name=Tormosotil&population=11908&size=33&seed=9151100960117&river=0&coast=0&farms=1&citadel=0&urban_castle=0&hub=false&plaza=1&temple=0&walls=0&shantytown=0&gates=-1
 > ```
 >  `=elink(this.burgMapLink,"Visit Burg Map")`
+>
 
 %% All the info in this 'infobox' will appear in the panel to the right. Most of these values are pulled from the metadata in the properties above. %%
 

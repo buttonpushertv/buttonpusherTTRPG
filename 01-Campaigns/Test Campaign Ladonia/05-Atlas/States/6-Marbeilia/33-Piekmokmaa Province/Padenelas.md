@@ -70,7 +70,7 @@ marker: burg,1135.390,2090.510,[[Padenelas]]
 > [!metadata|map]- Burg Map (Interactive)
 > ```leaflet
 > id: Burg-Padenelas
-> image: [[Padenelas.webp]]
+> image: [[500-Padenelas.png]]
 > height: 600px
 > width: 100%
 > minZoom: -3.5
@@ -82,6 +82,32 @@ marker: burg,1135.390,2090.510,[[Padenelas]]
 > darkMode: false
 > ```
 > `=elink(this.burgMapLink,"Visit Burg Map")`
+>
+>> ```meta-bind-js-view
+> {burgMapLink} as mapLink
+> {burgName} as name
+> {id} as id
+> ---
+> let fileName = context.bound.id + "-" + context.bound.name;
+> console.log("##### - :", fileName);
+> navigator.clipboard.writeText(fileName);
+> let url = encodeURIComponent(context.bound.mapLink) + "%26export%3DPNG";
+> return engine.markdown.create(`
+> ~~~meta-bind-button
+> label: Download Map as PNG
+> icon: ""
+> hidden: false
+> class: ""
+> tooltip: ""
+> id: ""
+> style: primary
+> actions:
+>   - type: open
+>     link: "obsidian://opengate?title=${encodeURIComponent(context.bound.name)}&url=${url}&position=center"
+> ~~~
+> `)
+> ```
+>
 > > [!Note]- City Maps may need Scale adjusting
 > > The `scale` setting of `.5` is arbitrary. It seems to work for Village maps. There is no scale, but by setting the unit (in the Leaflet block above) to `feet` things seem to feel about the right size.
 > > 
@@ -100,6 +126,7 @@ marker: burg,1135.390,2090.510,[[Padenelas]]
 > urlSuffix: /village-generator/?pop=1256&name=Padenelas&seed=9151100960500&width=1400&height=636&tags=highway%2Cuncultivated%2Cno+square%2Cdense
 > ```
 >  `=elink(this.burgMapLink,"Visit Burg Map")`
+>
 
 %% All the info in this 'infobox' will appear in the panel to the right. Most of these values are pulled from the metadata in the properties above. %%
 

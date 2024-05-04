@@ -70,7 +70,7 @@ marker: burg,779.270,1995.330,[[Aijarvo]]
 > [!metadata|map]- Burg Map (Interactive)
 > ```leaflet
 > id: Burg-Aijarvo
-> image: [[Aijarvo.webp]]
+> image: [[592-Aijarvo.png]]
 > height: 600px
 > width: 100%
 > minZoom: -3.5
@@ -82,6 +82,32 @@ marker: burg,779.270,1995.330,[[Aijarvo]]
 > darkMode: false
 > ```
 > `=elink(this.burgMapLink,"Visit Burg Map")`
+>
+>> ```meta-bind-js-view
+> {burgMapLink} as mapLink
+> {burgName} as name
+> {id} as id
+> ---
+> let fileName = context.bound.id + "-" + context.bound.name;
+> console.log("##### - :", fileName);
+> navigator.clipboard.writeText(fileName);
+> let url = encodeURIComponent(context.bound.mapLink) + "%26export%3DPNG";
+> return engine.markdown.create(`
+> ~~~meta-bind-button
+> label: Download Map as PNG
+> icon: ""
+> hidden: false
+> class: ""
+> tooltip: ""
+> id: ""
+> style: primary
+> actions:
+>   - type: open
+>     link: "obsidian://opengate?title=${encodeURIComponent(context.bound.name)}&url=${url}&position=center"
+> ~~~
+> `)
+> ```
+>
 > > [!Note]- City Maps may need Scale adjusting
 > > The `scale` setting of `.5` is arbitrary. It seems to work for Village maps. There is no scale, but by setting the unit (in the Leaflet block above) to `feet` things seem to feel about the right size.
 > > 
@@ -100,6 +126,7 @@ marker: burg,779.270,1995.330,[[Aijarvo]]
 > urlSuffix: /city-generator/?name=Aijarvo&population=13388&size=35&seed=9151100960592&river=1&coast=0&farms=1&citadel=0&urban_castle=0&hub=false&plaza=1&temple=0&walls=0&shantytown=0&gates=-1
 > ```
 >  `=elink(this.burgMapLink,"Visit Burg Map")`
+>
 
 %% All the info in this 'infobox' will appear in the panel to the right. Most of these values are pulled from the metadata in the properties above. %%
 

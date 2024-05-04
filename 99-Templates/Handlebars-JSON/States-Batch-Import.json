@@ -1,0 +1,7 @@
+{
+    "fieldName": "pack.states",
+    "noteName": "State-${name}/${name}",
+    "namePrefix": "",
+    "nameSuffix": "",
+    "batchStep": "States"
+}

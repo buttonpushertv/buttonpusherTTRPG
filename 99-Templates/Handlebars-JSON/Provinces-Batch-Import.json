@@ -1,0 +1,8 @@
+{
+    "fieldName": "pack.provinces",
+    "noteName": "@{return `${this.state}-${(this.state > 0) && dataRoot.pack.states.find(state => state.i === this.state)?.name || "Unknown" }/${this.i}-${(this.i > 0) && this.fullName || "Unknown"}/${this.fullName}`}",
+    "folderName": "01-Campaigns/Test Campaign Ladonia/05-Atlas/States",
+    "namePrefix": "",
+    "nameSuffix": "",
+    "batchStep": "Provinces"
+}
