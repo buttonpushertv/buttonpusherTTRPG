@@ -255,7 +255,13 @@ handlebars.registerHelper('getBurgMapLink', function(currentBurg, mapSeed, allCe
   function createVillageGeneratorLink(currentBurg, mapSeed, allCells, mapSettings, grid) {
       //console.log("##- ", currentBurg.name, " is a VILLAGE - ##");
       var burgSeed = `${mapSeed}${String(currentBurg.i).padStart(4, 0)}`;
-      const name = currentBurg.name;
+      // NAME ON VILLAGE GENERATOR - SIZE ISSUE
+      // The image that appears on the village gen for the name of the burg is set to use a very large font size
+      // If you wish to have the name appear, it needs to be included as a parameter in the URL
+      // uncomment the next line & comment out the line just below that so that the name will appear
+      // const name = currentBurg.name;
+      // UNCOMMENT line above and comment out next line to have name appear on village gen map
+      const name = "";
       //console.log("currentBurg:", currentBurg);
       const pop = rn(currentBurg.population * mapSettings.populationRate * mapSettings.urbanization);
       //console.log("population: ", population);
