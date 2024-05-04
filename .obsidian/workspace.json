@@ -4,17 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "92085490b8de9f68",
+        "id": "0b86d4a175490589",
         "type": "tabs",
         "children": [
           {
-            "id": "1596285a3f24cc34",
+            "id": "2a9c2aca32ce44e6",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "99-Templates/newCampaignTemplate.md",
-                "mode": "source",
+                "file": "Home.md",
+                "mode": "preview",
                 "source": true
               }
             }
@@ -71,7 +71,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "99-Templates/newCampaignTemplate.md",
+                "file": "Home.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -83,7 +83,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "99-Templates/newCampaignTemplate.md",
+                "file": "Home.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +111,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "99-Templates/newCampaignTemplate.md"
+                "file": "Home.md"
               }
             }
           }
@@ -126,11 +126,11 @@
     "type": "split",
     "children": [
       {
-        "id": "40817c6ca049c0b6",
+        "id": "bc58c3d2af7d8522",
         "type": "tabs",
         "children": [
           {
-            "id": "c4568fe88b1014b0",
+            "id": "eccb48a7268b5b33",
             "type": "leaf",
             "state": {
               "type": "DICE_ROLLER_VIEW",
@@ -141,7 +141,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 303.5,
+    "width": 719.5,
     "collapsed": true
   },
   "left-ribbon": {
@@ -156,57 +156,56 @@
       "templater-obsidian:Templater": false,
       "workspaces:Manage workspace layouts": false,
       "obsidian-leaflet-plugin:Open Leaflet Map": false,
-      "obsidian-import-json:JSON/CSV Importer": false,
-      "obsidian-excalidraw-plugin:Create new drawing": false
+      "obsidian-excalidraw-plugin:Create new drawing": false,
+      "obsidian-import-json:JSON/CSV Importer": false
     }
   },
-  "active": "1596285a3f24cc34",
+  "active": "2a9c2aca32ce44e6",
   "lastOpenFiles": [
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/1-Upunia/Upunia.md",
-    "99-Templates/Handlebars-JSON/States-FMG-JSON Handlebars Template.md",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/Test Campaign Ladonia-Linked Atlas.md",
-    "99-Templates/Handlebars-JSON/Provinces-FMG-JSON Handlebars Template.md",
-    "99-Templates/Handlebars-JSON/Burgs-FMG-JSON Handlerbars Template.md",
-    "01-Campaigns/Test Campaign Ladonia/Test Campaign Ladonia Home.md",
-    "01-Campaigns/Test Campaign Ladonia/99-Misc Notes/Misc Notes Placeholder.md",
-    "99-Templates/Handlebars-JSON/states-tester-FMG-JSON-Template.md",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/0-Neutrals/Neutrals.md",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/0-Neutrals",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/state-test/18-Petrica/Petrica.md",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/state-test/18-Petrica",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/state-test/17-Histharoseia/Histharoseia.md",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/state-test/17-Histharoseia",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/state-test/16-Bhrymaion/Bhrymaion.md",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/state-test/16-Bhrymaion",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/state-test/15-Ingnia/Ingnia.md",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/state-test/15-Ingnia",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/state-test/14-Alocenia/Alocenia.md",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/state-test/14-Alocenia",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/state-test/13-Aporesia/Aporesia.md",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/state-test/13-Aporesia",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/state-test/12-Esmosia/Esmosia.md",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/state-test/12-Esmosia",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/state-test/11-Calhosia/Calhosia.md",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/state-test/11-Calhosia",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/state-test/10-Thas/Thas.md",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/state-test/10-Thas",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/state-test/9-Tiormaa/Tiormaa.md",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/state-test/8-Kunszavasia/Kunszavasia.md",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/state-test/7-Esiagasia/Esiagasia.md",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/state-test/6-Marbeilia/Marbeilia.md",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/state-test/5-Histhepia/Histhepia.md",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/state-test/4-Kunkania/Kunkania.md",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/state-test/3-Mauna/Mauna.md",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/state-test/2-Nikmaa/Nikmaa.md",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/1-Upunia/2-Hatveria County/Bjorvimaaja.md",
+    "Home.md",
+    "91-Assets/Test Campaign Ladonia/City-PNGs/Village-PNGs/521-Bjorvimaaja.png",
+    "91-Assets/Test Campaign Ladonia/City-PNGs/Village-PNGs",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/1-Upunia/2-Hatveria County/Hoski.md",
+    "JSON Importing How To.md",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/9-Tiormaa/60-Hatia County/Viohrari.md",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/9-Tiormaa/146-Tameskisa Region/Tameskisa.md",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/9-Tiormaa/146-Tameskisa Region",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/9-Tiormaa/55-Viilapara County/Kautio.md",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/9-Tiormaa/53-Hoskia County/Kalahmaski.md",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/9-Tiormaa/65-Tiorho County/Aijarvo.md",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/9-Tiormaa/61-Tamesa County/Kaula.md",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/18-Petrica/163-Serganoria Territory/Labriasecca.md",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/11-Calhosia/90-Freuhau County/Herbengen.md",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/6-Marbeilia/37-Alesia Province/Cuerderare.md",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/11-Calhosia/92-Viguzialia County/Torvo.md",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/10-Thas/83-Schal County/Schal.md",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/18-Petrica/161-Carea Territory/Casta.md",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/11-Calhosia/97-Silhalhena County/Alhadinxa.md",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/11-Calhosia/97-Silhalhena County/Silhalhena.md",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/11-Calhosia/91-Wolberg County/Fluordorf.md",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/11-Calhosia/155-Mavaia Area/Hasbad.md",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/11-Calhosia/155-Mavaia Area/Schonach.md",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/11-Calhosia/155-Mavaia Area/Arempil.md",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/10-Thas/150-Thaphine Territory/Segeamia.md",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/10-Thas/150-Thaphine Territory/Hubros.md",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/8-Kunszavasia/144-Nafold Land/Bereny.md",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/10-Thas/75-Thurionia County",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/15-Ingnia/111-Klaukka Landgrave",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/11-Calhosia/98-Riros County",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/11-Calhosia/156-Albach Territory",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/12-Esmosia/160-Pantiochmo Territory",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/1-Upunia/6-Haplakos Earldom",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/18-Petrica/123-Seglialenose County",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/8-Kunszavasia/48-Morvasza Province",
+    "91-Assets/Test Campaign Ladonia/City-PNGs/458-Kohttajaa.png",
+    "91-Assets/Test Campaign Ladonia/City-PNGs/81-Karjasa.png",
+    "91-Assets/Test Campaign Ladonia/City-PNGs/riofrioli.png",
     "91-Assets/Test Campaign Ladonia/City-WEBPs/Riofrioli.webp",
     "91-Assets/Test Campaign Ladonia/City-WEBPs/Rhyrapa.webp",
     "91-Assets/Test Campaign Ladonia/City-WEBPs/Ujsvaroszarad.webp",
     "91-Assets/Test Campaign Ladonia/City-WEBPs/Kiulala.webp",
     "91-Assets/Test Campaign Ladonia/City-WEBPs/Hoski.webp",
-    "91-Assets/Test Campaign Ladonia/City-WEBPs/Methumele.webp",
-    "91-Assets/Test Campaign Ladonia/City-WEBPs/Tismizsak.webp",
-    "91-Assets/Test Campaign Ladonia/City-WEBPs/Peinala.webp",
-    "91-Assets/Test Campaign Ladonia/City-WEBPs/Sodoyken.webp",
-    "91-Assets/Test Campaign Ladonia/City-WEBPs/Sergo.webp"
+    "91-Assets/Test Campaign Ladonia/City-WEBPs/Methumele.webp"
   ]
 }

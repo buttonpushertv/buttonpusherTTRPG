@@ -17,5 +17,7 @@
   "homepage",
   "nldates-obsidian",
   "obsidian-linter",
-  "obsidian-table-to-csv-exporter"
+  "obsidian-table-to-csv-exporter",
+  "js-engine",
+  "open-gate"
 ]

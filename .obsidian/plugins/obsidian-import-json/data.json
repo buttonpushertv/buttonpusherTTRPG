@@ -1,9 +1,9 @@
 {
-  "jsonName": "${i}-${name}/${name}",
+  "jsonName": "@{return `${this.state}-${(this.state > 0) && dataRoot.pack.states.find(state => state.i === this.state)?.name || \"Unknown\" }/${dataRoot.pack.cells.find(c => c.i === this.cell)?.province}-${dataRoot.pack.provinces.find(p => p.i === dataRoot.pack.cells.find(c => c.i === this.cell)?.province)?.fullName}/${this.name}`}",
   "jsonNamePath": true,
   "jsonUrl": "",
   "folderName": "01-Campaigns/Test Campaign Ladonia/05-Atlas/States",
-  "topField": "pack.states",
+  "topField": "pack.burgs",
   "notePrefix": "",
   "noteSuffix": "",
   "handleExistingNote": 1,

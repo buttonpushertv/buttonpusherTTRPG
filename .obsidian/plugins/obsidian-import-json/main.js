@@ -12622,7 +12622,9 @@ var DEFAULT_SETTINGS = {
   handleExistingNote: 0,
   forceArray: true,
   multipleJSON: false,
-  uniqueNames: false
+  uniqueNames: false,
+  batchFile: null,
+  batchStep: null
 };
 var DIR_SEP = "/";
 function convertCsv(source) {
@@ -12764,15 +12766,10 @@ var JsonImport = class extends import_obsidian.Plugin {
   hb_setvar() {
     if (arguments.length != 3)
       return arguments[0];
-    //console.log("JC-imp: ", arguments);
     let varName = arguments[0];
     let varValue = arguments[1];
     let options = arguments[2];
     options.data.root[varName] = varValue;
-    //console.log("JC-varName: ", varName);
-    //console.log("JC-varValue: ", varValue);
-    //console.log("JC-options: ", options);
-    //console.log("hb_utils: ", hb_utils);
     return hb_utils.value("");
   }
   checkPath(filename) {
@@ -12793,6 +12790,7 @@ var JsonImport = class extends import_obsidian.Plugin {
   }
   generateNotes(objdata, sourcefile, templatefile, helperfile, settings) {
     return __async(this, null, function* () {
+      var _a;
       console.log(`generateNotes`, { templatefile, helperfile, settings });
       let sourcefilename = sourcefile.name;
       this.knownpaths = new Set();
@@ -12837,7 +12835,8 @@ var JsonImport = class extends import_obsidian.Plugin {
         importSourceFile: sourcefile,
         importDataRoot: objdata,
         importHelperFile: helperfile,
-        importSettings: settings
+        importSettings: settings,
+        importBatchStep: (_a = settings.batchStep) != null ? _a : ""
       };
       console.debug(`hboptions`, hboptions);
       let notefunc;
@@ -12851,7 +12850,7 @@ var JsonImport = class extends import_obsidian.Plugin {
           console.info(`Ignoring element ${index} which is not an object: ${JSON.stringify(row)}`);
           continue;
         }
-        hboptions.data.sourceIndex = index;
+        hboptions.data.importSourceIndex = index;
         row.SourceIndex = index;
         row.dataRoot = objdata;
         if (sourcefilename)
@@ -12961,7 +12960,14 @@ var FileSelectionModal = class extends import_obsidian.Modal {
         accept: ".js"
       }
     });
-    const setting3b = new import_obsidian.Setting(this.contentEl).setName("Field containing the data").setDesc("The field containing the array of data (leave blank to use entire file)");
+    const setting2b = new import_obsidian.Setting(this.contentEl).setName("Choose BATCH File").setDesc("Optionally select a file which controls multiple parses of the data");
+    const inputBatchFile = setting2b.controlEl.createEl("input", {
+      attr: {
+        type: "file",
+        accept: ".json"
+      }
+    });
+    const setting3b = new import_obsidian.Setting(this.contentEl).setName("Field containing the data").setDesc("The field containing the array of data (leave blank to use entire file) [in batch file 'fieldName']");
     const inputTopField = setting3b.controlEl.createEl("input", {
       attr: {
         type: "string"
@@ -12975,7 +12981,7 @@ var FileSelectionModal = class extends import_obsidian.Modal {
       }
     });
     inputForceArray.checked = !this.default_settings.forceArray;
-    const setting3 = new import_obsidian.Setting(this.contentEl).setName("Field to use as Note name").setDesc("Field in each row of the JSON/CSV data to be used for the note name");
+    const setting3 = new import_obsidian.Setting(this.contentEl).setName("Field to use as Note name").setDesc("Field in each row of the JSON/CSV data to be used for the note name [in batch file 'noteName']");
     const inputJsonName = setting3.controlEl.createEl("input", {
       attr: {
         type: "string",
@@ -12990,7 +12996,7 @@ var FileSelectionModal = class extends import_obsidian.Modal {
       }
     });
     inputUniqueNames.checked = this.default_settings.uniqueNames;
-    const settingPrefix = new import_obsidian.Setting(this.contentEl).setName("Note name prefix/suffix").setDesc("Optional prefix/suffix to be added either side of the value from the above Note name field");
+    const settingPrefix = new import_obsidian.Setting(this.contentEl).setName("Note name prefix/suffix").setDesc("Optional prefix/suffix to be added either side of the value from the above Note name field [in batch file 'namePrefix', 'nameSuffix']");
     const inputNotePrefix = settingPrefix.controlEl.createEl("input", {
       attr: {
         type: "string",
@@ -13020,7 +13026,7 @@ var FileSelectionModal = class extends import_obsidian.Modal {
     inputHandleExisting.add(new Option("REPLACE", 1 .toString()));
     inputHandleExisting.add(new Option("APPEND", 2 .toString()));
     inputHandleExisting.selectedIndex = this.default_settings.handleExistingNote;
-    const setting4 = new import_obsidian.Setting(this.contentEl).setName("Name of Destination Folder in Vault").setDesc("The name of the folder in your Obsidian Vault, which will be created if required");
+    const setting4 = new import_obsidian.Setting(this.contentEl).setName("Name of Destination Folder in Vault").setDesc("The name of the folder in your Obsidian Vault, which will be created if required [in batch file, 'folderName']");
     const inputFolderName = setting4.controlEl.createEl("input", {
       attr: {
         type: "string"
@@ -13031,7 +13037,7 @@ var FileSelectionModal = class extends import_obsidian.Modal {
     const input5 = setting5.controlEl.createEl("button");
     input5.textContent = "IMPORT";
     input5.onclick = () => __async(this, null, function* () {
-      var _a;
+      var _a, _b;
       const { files: templatefiles } = inputTemplateFile;
       if (!templatefiles.length) {
         new import_obsidian.Notice("No Template file selected");
@@ -13049,18 +13055,45 @@ var FileSelectionModal = class extends import_obsidian.Modal {
         handleExistingNote: parseInt(inputHandleExisting.value),
         forceArray: !inputForceArray.checked,
         multipleJSON: inputMultipleJSON.checked,
-        uniqueNames: inputUniqueNames.checked
+        uniqueNames: inputUniqueNames.checked,
+        batchFile: (_a = inputBatchFile.files) == null ? void 0 : _a[0]
       };
       function parsejson(text) {
         return settings.multipleJSON ? text.split(/(?<=})\s*(?={)/).map((obj) => JSON.parse(obj)) : [JSON.parse(text)];
+      }
+      function callHandler(objdata, sourcefile) {
+        return __async(this, null, function* () {
+          var _a2;
+          if (!settings.batchFile) {
+            yield this.handler.call(this.caller, objdata, sourcefile, templatefiles[0], helperfile == null ? void 0 : helperfile[0], settings);
+          } else {
+            let batch = JSON.parse(yield settings.batchFile.text());
+            console.log(batch);
+            for (let iter of batch) {
+              if (iter.fieldName)
+                settings.topField = iter.fieldName;
+              if (iter.noteName)
+                settings.jsonName = iter.noteName;
+              if (iter.folderName)
+                settings.folderName = iter.folderName;
+              if (iter.namePrefix)
+                settings.notePrefix = iter.notePrefix;
+              if (iter.nameSuffix)
+                settings.noteSuffix = iter.noteSuffix;
+              settings.batchStep = (_a2 = iter.batchStep) != null ? _a2 : "";
+              console.log(`BATCH processing '${settings.topField}', '${settings.jsonName}', '${settings.folderName}'`);
+              yield this.handler.call(this.caller, objdata, sourcefile, templatefiles[0], helperfile == null ? void 0 : helperfile[0], settings);
+            }
+          }
+        });
       }
       let srctext = inputJsonText.value;
       if (srctext.length > 0) {
         const is_json = srctext.startsWith("{") && srctext.endsWith("}");
         const objdataarray = is_json ? parsejson(srctext) : [convertCsv(srctext)];
         for (const objdata of objdataarray)
-          yield this.handler.call(this.caller, objdata, null, templatefiles[0], helperfile == null ? void 0 : helperfile[0], settings);
-      } else if (((_a = inputJsonUrl.value) == null ? void 0 : _a.length) > 0) {
+          yield callHandler(objdata, null);
+      } else if (((_b = inputJsonUrl.value) == null ? void 0 : _b.length) > 0) {
         const fromurl = yield fileFromUrl(inputJsonUrl.value).catch((e) => {
           new import_obsidian.Notice("Failed to GET data from URL");
           return null;
@@ -13069,7 +13102,7 @@ var FileSelectionModal = class extends import_obsidian.Modal {
           const objdataarray = parsejson(fromurl);
           console.debug(`JSON data from '${inputJsonUrl.value}' =`, objdataarray);
           for (const objdata of objdataarray)
-            yield this.handler.call(this.caller, objdata, null, templatefiles[0], helperfile == null ? void 0 : helperfile[0], settings);
+            yield callHandler.call(this, objdata, null);
         }
       } else {
         const { files: datafiles } = inputDataFile;
@@ -13083,7 +13116,7 @@ var FileSelectionModal = class extends import_obsidian.Modal {
           let is_json = datafiles[i].name.endsWith(".json");
           let objdataarray = is_json ? parsejson(srctext) : [convertCsv(srctext)];
           for (const objdata of objdataarray)
-            yield this.handler.call(this.caller, objdata, datafiles[i], templatefiles[0], helperfile == null ? void 0 : helperfile[0], settings);
+            yield callHandler.call(this, objdata, datafiles[i]);
         }
       }
       new import_obsidian.Notice("Import Finished");
