@@ -137,6 +137,15 @@ handlebars.registerHelper('getCultureName', function(cultureId,allCultures) {
 
 // 010
 // Custom Helper to determine Burg Map Units
+// as of v.0.6, I've had a switch in mindset about the scale units of Burg Maps
+// I've decided to turn off the scale bar of the City Gen map images and go with everything as feet.
+// this code is still here if you decided to put it back in the use of 'meters' or feet
+//
+// In the Burg Handlebar template, it is now hard-coded to use only feet always.
+//
+// If you want to put it back to use this helper, you'll need to change the line of the Burg handlebar template
+// that currently reads: "> unit: feet" to "> unit: {{burgMapUnits this @importDataRoot.settings}}"
+// it's around line 80 (as of v.0.6)
 handlebars.registerHelper('burgMapUnits', function(currentBurg, mapSettings) {
   if (currentBurg === undefined || currentBurg === 0) {
     console.log("##### burgMapUnits - currentBurg was undefined or zero #####");
@@ -256,12 +265,13 @@ handlebars.registerHelper('getBurgMapLink', function(currentBurg, mapSeed, allCe
       //console.log("##- ", currentBurg.name, " is a VILLAGE - ##");
       var burgSeed = `${mapSeed}${String(currentBurg.i).padStart(4, 0)}`;
       // NAME ON VILLAGE GENERATOR - SIZE ISSUE
-      // The image that appears on the village gen for the name of the burg is set to use a very large font size
+      // The image that appears on the village gen for the name of the burg is set to use a seemingly fixed and large font size
+      // this means the name text appears very large when shown in a small window (as seen in the Live Map Callout on a Burg's note)
       // If you wish to have the name appear, it needs to be included as a parameter in the URL
-      // uncomment the next line & comment out the line just below that so that the name will appear
-      // const name = currentBurg.name;
-      // UNCOMMENT line above and comment out next line to have name appear on village gen map
-      const name = "";
+      // comment out the next line to hide the name via the URL `name` parameter
+      const name = currentBurg.name;
+      // COMMENT OUT line above and UNcomment next line to have name be hidden on village gen map
+      // const name = "";
       //console.log("currentBurg:", currentBurg);
       const pop = rn(currentBurg.population * mapSettings.populationRate * mapSettings.urbanization);
       //console.log("population: ", population);

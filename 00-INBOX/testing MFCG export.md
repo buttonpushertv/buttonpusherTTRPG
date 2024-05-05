@@ -53,3 +53,32 @@ actions:
 ~~~
 `)
 ```
+
+```meta-bind-js-view
+{burgMapLink} as mapLink
+{burgName} as name
+{id} as id
+---
+let fileName = context.bound.id + "-" + context.bound.name;
+console.log("##### - :", fileName);
+navigator.clipboard.writeText(fileName);
+let url = "firefox.exe " + context.bound.mapLink;
+return engine.markdown.create(`
+~~~meta-bind-button
+label: Open map in Browser to download
+style: primary
+action:
+ type: open
+ link: ${url}
+~~~
+`)
+```
+
+
+```meta-bind-button
+label: Open Firefox
+style: primary
+action:
+  type: open
+  link: "firefox.exe"
+```
