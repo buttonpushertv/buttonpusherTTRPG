@@ -65,7 +65,11 @@ marker: burg,625.000,237.000,[[Saros]]
 
 [[Test Campaign Ladonia Home]] | [[Test Campaign Ladonia-Linked Atlas]] | `=link(this.stateName)` | `=link(this.provinceName)`
 
-%% If you want to place the image for the Burg in the Map(Interactive) window below, you can use Fantasy Map Generator's link to Watabou's Fantasy City or Village Generator - see the `infobox` link or the `burgMapLink` URL up in the properties of this note. You can save the map image somewhere in the vault (`91-Assets/your_campaign_subfolder`, for instance) and it will show up in this window. There is an elaborate method (see [[JSON Import How To#Wrangling FMG Burg Maps]]) to save all the maps so you can have them locally and make use of the data that was placed here on import from the JSON.%% 
+%% If you want to place the image for the Burg in the Map(Interactive) window below, you can use Fantasy Map Generator's link to Watabou's Fantasy City or Village Generator - see the `infobox` link or the `burgMapLink` URL up in the properties of this note. You can save the map image somewhere in the vault (`91-Assets/your_campaign_subfolder`, for instance) and it will show up in this window. The name for this image is pre-populated with info from the JSON Import. The filename should be the Burg's id value and the Burg's burgName - both available up in the frontmatter.
+
+You may also use the Meta-Bind button at the bottom of the callout to open the burgMapLink in a browser window and save it there. On clicking that button, you will open the Burg's URL (City or Village) and then it will set this Burg's index and name on the clipboard like this: {id}-{burgName} - you can then just paste that in to the file name field of the save file dialog window, once you navigate to the vault folder you want to save them into.
+
+There is an elaborate method (see [[JSON Import How To#Wrangling FMG Burg Maps]]) to save all the maps so you can have them locally and make use of the data that was placed here on import from the JSON.%% 
 
 > [!metadata|map]- Burg Map (Interactive)
 > ```leaflet
@@ -77,13 +81,13 @@ marker: burg,625.000,237.000,[[Saros]]
 > maxZoom: 2.25
 > defaultZoom: -1.5
 > zoomDelta: 0.25
-> unit: meters
-> scale: .5
+> unit: feet
+> scale: 1
 > darkMode: false
 > ```
 > `=elink(this.burgMapLink,"Visit Burg Map")`
 >
->> ```meta-bind-js-view
+> ```meta-bind-js-view
 > {burgMapLink} as mapLink
 > {burgName} as name
 > {id} as id
@@ -91,35 +95,23 @@ marker: burg,625.000,237.000,[[Saros]]
 > let fileName = context.bound.id + "-" + context.bound.name;
 > console.log("##### - :", fileName);
 > navigator.clipboard.writeText(fileName);
-> let url = encodeURIComponent(context.bound.mapLink) + "%26export%3DPNG";
+> let url = context.bound.mapLink;
 > return engine.markdown.create(`
 > ~~~meta-bind-button
-> label: Download Map as PNG
-> icon: ""
-> hidden: false
-> class: ""
-> tooltip: ""
-> id: ""
+> label: Open map in Browser to download
 > style: primary
-> actions:
->   - type: open
->     link: "obsidian://opengate?title=${encodeURIComponent(context.bound.name)}&url=${url}&position=center"
+> action:
+>  type: open
+>  link: ${url}
 > ~~~
 > `)
 > ```
->
-> > [!Note]- City Maps may need Scale adjusting
-> > The `scale` setting of `.5` is arbitrary. It seems to work for Village maps. There is no scale, but by setting the unit (in the Leaflet block above) to `feet` things seem to feel about the right size.
-> > 
-> > If it's a City Generator map, there is a scale legend, but they don't seem to have a uniform sizing. The scale can be different, even between multiple maps with a `0-200m` scale legend. It's annoying, and can probably be ignored, but if you *want* to get it close, you can adjust it.
-> > 
-> >  In Leaflet, zoom in to the corner where the scale legend is and, by Shift-Clicking, you can create a measurement tool. Start at '0' and measure over to the first increment. Adjust the `scale` value in the Leaflet block above so that the measurement tool is accurate. It's difficult to get it exactly precise. Once you start adjusting them, though you begin to develop a sense of which way to go to get it dialed.
-> >
-> > Oh, and *yes*, it is annoying that Villages work in `feet` and Cities are in `meters`. These are *your* maps though. There's nothing to say you can't set City maps to all be in `yards` instead of `meters`. The distances will be near enough.
 > 
 > [Link to Saros on FMG Map](https://azgaar.github.io/Fantasy-Map-Generator/?maplink=https://dl.dropboxusercontent.com/scl/fi/s1ildj50q943p20hgqsvz/Ladonia-2024-04-13-18-07.map?rlkey=tt7j7x4gqbhxu043p5q2f2ucx&dl=0&scale=3&x=236.9&y=698.3)
 
-> [!metadata]+ Burg Map (Live from Web)
+%% City Maps may need Scale adjusting - see `unit: feet` line above in Leaflet block (around line 80-81) The `scale` setting of `1` is arbitrary. It seems to work for the Burg maps - City or Village. By default the CityGen maps will likely have the `scale bar` visible. I recommend hiding it. The City Gen uses meters. The Village Gen has no scale defined. Once you hide it in the CityGen Settings, it should stay hidden for several visits to these maps.%%
+
+> [!metadata]- Burg Map (Live from Web)
 > ```custom-frames
 > frame: Watabou-Procgen Arcana
 > style: height: 1000px;

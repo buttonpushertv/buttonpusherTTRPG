@@ -55,7 +55,7 @@ SORT state ASC, province ASC
 
 ### Burgs
 ```dataview
-TABLE WITHOUT ID file.link as "Name", link(province) as "Province", link(state) as "State"
+TABLE WITHOUT ID file.link as "Name", link(provinceName) as "Province", link(stateName) as "State"
 FROM #Burg and "01-Campaigns/Test Campaign Ladonia"
 SORT file.name ASC
 ```
