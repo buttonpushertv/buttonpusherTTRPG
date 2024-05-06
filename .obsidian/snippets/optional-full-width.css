@@ -8,6 +8,18 @@
 	max-width: 100% !important;
 }
 
+.ninety-pct-width .markdown-preview-section {
+	max-width: 90% !important;
+}
+
 .eighty-pct-width .markdown-preview-section {
 	max-width: 80% !important;
+}
+
+.seventy-pct-width .markdown-preview-section {
+	max-width: 70% !important;
+}
+
+.sixty-pct-width .markdown-preview-section {
+	max-width: 60% !important;
 }
