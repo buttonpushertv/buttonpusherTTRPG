@@ -6,6 +6,7 @@ campaign: {{@importDataRoot.info.thisCampaign}}
 capital: {{capital}}
 cell: {{cell}}
 citadel: {{citadel}}
+cssclass: sixty-pct-width
 culture: {{getCultureName culture @importDataRoot.pack.cultures}}
 elevation: {{getHeight cell @importDataRoot.settings @importDataRoot.pack.cells}}
 emblem: {{@importDataRoot.info.thisCampaignShortCode}}-{{@importDataRoot.info.mapName}} Emblem {{name}}.png
@@ -47,6 +48,7 @@ marker: burg,{{getLeafletBurgXY this.i @importDataRoot.pack.burgs @importDataRoo
 >> #### System
 >>  |
 >> ---|---|
+>> **cssClass**|`INPUT[cssClass][inlineSelect:cssclass]` |
 >> **Tags** | `INPUT[Tags][inlineListSuggester:tags]` |
 >> **World Building Progress**| `INPUT[WBProgress][inlineSelect:WBProgress]`|
 >>> [!note]- Tracking World Building Progress
@@ -75,39 +77,41 @@ There is an elaborate method (see [[JSON Import How To#Wrangling FMG Burg Maps]]
 > ```leaflet
 > id: Burg-{{name}}
 > image: [[{{i}}-{{name}}.png]]
-> height: 600px
+> height: 800px
 > width: 100%
 > minZoom: -3.5
 > maxZoom: 2.25
-> defaultZoom: -1.5
+> defaultZoom: -1
 > zoomDelta: 0.25
 > unit: feet
 > scale: 1
 > darkMode: false
 > ```
-> `=elink(this.burgMapLink,"Visit Burg Map")`
 >
-> ```meta-bind-js-view
-> {burgMapLink} as mapLink
-> {burgName} as name
-> {id} as id
-> ---
-> let fileName = context.bound.id + "-" + context.bound.name;
-> console.log("##### - :", fileName);
-> navigator.clipboard.writeText(fileName);
-> let url = context.bound.mapLink;
-> return engine.markdown.create(`
-> ~~~meta-bind-button
-> label: Open map in Browser to download
-> style: primary
-> action:
->  type: open
->  link: ${url}
-> ~~~
-> `)
-> ```
-> 
-> [Link to {{name}} on FMG Map]({{@importDataRoot.info.mapDropboxFMGLink}}&scale=6{{getFMGCellXY this.cell @importDataRoot.pack.cells}})
+> [Link to {{name}} on FMG Map]({{@importDataRoot.info.mapDropboxFMGLink}}&scale=6{{getFMGCellXY this.cell @importDataRoot.pack.cells}})| `BUTTON[mapLink-to-download]`
+
+```meta-bind-js-view
+{burgMapLink} as mapLink
+{burgName} as name
+{id} as id
+---
+let fileName = context.bound.id + "-" + context.bound.name;
+console.log("##### - :", fileName);
+navigator.clipboard.writeText(fileName);
+let url = context.bound.mapLink;
+return engine.markdown.create(`
+~~~meta-bind-button
+label: Open map in Browser to Download - ID-Name to Clipboard
+id: mapLink-to-download
+style: primary
+hidden: true
+action:
+ type: open
+ link: ${url}
+~~~
+`)
+```
+
 
 %% City Maps may need Scale adjusting - see `unit: feet` line above in Leaflet block (around line 80-81) The `scale` setting of `1` is arbitrary. It seems to work for the Burg maps - City or Village. By default the CityGen maps will likely have the `scale bar` visible. I recommend hiding it. The City Gen uses meters. The Village Gen has no scale defined. Once you hide it in the CityGen Settings, it should stay hidden for several visits to these maps.%%
 
