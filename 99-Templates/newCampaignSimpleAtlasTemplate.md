@@ -13,6 +13,10 @@ This Leaflet block is setup to display within a collapsible callout block. This 
 
 To make the Leaflet block below visible on this note, remove the indicated line below the Leaflet block and place a set of double percentage characters here-->
 
+# `this.campaignName` - Simple Atlas
+
+[[{{VALUE:newCampaignHomeNote}}]] | [[{{VALUE:newCampaignLinkedAtlas}}]]
+
 > [!metadata|map]+ World Map
 > ```leaflet
 > ### Remove lines commented with single octothorpes to activate the feature

@@ -63,13 +63,14 @@ for (const folderName of folderNames) {
 
 # The World of {{VALUE:newCampaignName}}
 
-[[{{VALUE:newCampaignSimpleAtlas}}]]
+[[{{VALUE:newCampaignSimpleAtlas}}]] | [[{{VALUE:newCampaignLinkedAtlas}}]]
 
 ## Player Characters
 
 (PC info will go here)
 
 ![random|sban+hmicro](https://source.unsplash.com/random?abstract,fire)
+
 ## Sessions
 
 %% This Session Hub file is part of a future idea. I hope to have the ability to create a session note for the 'next session'. And also have a button that will then pull up all the dates of the subsequent sessions along with their comments. Only partly implemented thus far. %%
