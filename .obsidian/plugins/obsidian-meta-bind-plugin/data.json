@@ -26,6 +26,10 @@
     {
       "name": "WBProgress",
       "declaration": "INPUT[inlineSelect(option(Imported), option(In Progress), option(Game-ready), option(Nearly Complete), option(Completed), showcase)]"
+    },
+    {
+      "name": "cssClass",
+      "declaration": "INPUT[inlineSelect(option(sixty-pct-width),option(seventy-pct-width),option(eighty-pct-width),option(ninety-pct-width),option(full-width))]"
     }
   ],
   "buttonTemplates": [
@@ -99,6 +103,38 @@
           "type": "open",
           "link": "[[obsidian://open?vault=buttonpusherTTRPG&file=01-Campaigns%2FCampaign%20Index]]",
           "newTab": true
+        }
+      ]
+    },
+    {
+      "label": "Remove Burg Help Callout",
+      "icon": "",
+      "hidden": false,
+      "class": "",
+      "tooltip": "",
+      "id": "remove-burg-callout",
+      "style": "destructive",
+      "actions": [
+        {
+          "type": "regexpReplaceInNote",
+          "regexp": "!\\[\\[Burg Help Info\\]\\]",
+          "replacement": "%%Burg Help Info%%"
+        }
+      ]
+    },
+    {
+      "label": "Insert Burg Help Callout",
+      "icon": "",
+      "hidden": false,
+      "class": "",
+      "tooltip": "",
+      "id": "insert-burg-callout",
+      "style": "default",
+      "actions": [
+        {
+          "type": "regexpReplaceInNote",
+          "regexp": "%%Burg Help Info%%",
+          "replacement": "![[Burg Help Info]]"
         }
       ]
     }
