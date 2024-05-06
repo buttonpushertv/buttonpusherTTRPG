@@ -2,6 +2,7 @@
 alias:
 campaign: {{@importDataRoot.info.thisCampaign}}
 created: {{getDateTimestamp @importSettings}}
+cssclass: wider
 tags: 
 - linked-atlas
 - {{@importDataRoot.info.thisCampaignShortCode}}
@@ -10,10 +11,12 @@ WBProcess: FALSE
 world: {{@importDataRoot.info.mapName}}
 ---
 
+# `=this.campaign` Linked Atlas
+[[{{getCampaignHomeNote @importSettings}}]] | [[{{@importDataRoot.info.thisCampaign}}-Simple Atlas]]
 
-> [!NOTE] Edit This Note
-> **(Edit this page in source mode to see comments about some manual edits that you may need to perform after the import is completed.)****
-> %% See comments below for editing instructions. You can delete this callout if you want. %%
+**(Edit this page in source mode to see comments about some manual edits that you may need to perform after the import is completed.)**
+
+ %% Feel free to delete or comment the line above if you wish. See comments below for editing instructions. Use `find` to search for double percentage characters to find each of the comment sections. %%
 
 %% This Leaflet map block is created out of the elements added to the JSON file before import %%
 
@@ -29,7 +32,7 @@ world: {{@importDataRoot.info.mapName}}
 > width: 100%
 > minZoom: -3
 > maxZoom: 5
-> defaultZoom: -1.25
+> defaultZoom: -0.75
 > zoomDelta: 0.25
 > unit: {{@importDataRoot.settings.distanceUnit}}
 > scale: {{@importDataRoot.settings.distanceScale}}
@@ -37,6 +40,7 @@ world: {{@importDataRoot.info.mapName}}
 > ```
 > [Link to {{name}} on FMG Map]({{@importDataRoot.info.mapDropboxFMGLink}})
 
+%% If you created a Dropbox Link to your FMG map, you can save that into the Modded JSON file and it will appear in the link above. %%
 
 # States
 
@@ -65,7 +69,7 @@ world: {{@importDataRoot.info.mapName}}
 | ID  | Name | Population | State | Province |
 | --- | ---- | ---------- | ----- | -------- |
 {{#each pack.burgs}}
-| {{i}} | [[{{../info.thisCampaignPath}}/05-Atlas/States/{{state}}-{{getStateName state ../pack/states}}/{{getProvinceIdFromCell cell ../pack.cells}}-{{burgProvinceLookup cell ../pack.cells ../pack.provinces}}/{{name}}\|{{name}}]] | {{calcPopulation population}} | [[{{../info.thisCampaignPath}}/05-Atlas/States/{{state}}-{{getStateName state ../pack/states}}/{{getStateName state ../pack.states}}\|{{getStateName state ../pack.states}}]] | [[{{../info.thisCampaignPath}}/05-Atlas/States/{{state}}-{{getStateName state ../pack/states}}/{{getProvinceIdFromCell cell ../pack.cells}}-{{burgProvinceLookup cell ../pack.cells ../pack.provinces}}/{{burgProvinceLookup cell ../pack.cells ../pack.provinces}}\|{{burgProvinceLookup cell ../pack.cells ../pack.provinces}}]] |
+| {{i}} | [[{{../info.thisCampaignPath}}/05-Atlas/States/{{state}}-{{getStateName state ../pack/states}}/{{getProvinceIdFromCell cell ../pack.cells}}-{{burgProvinceLookup cell ../pack.cells ../pack.provinces}}/{{name}}\|{{name}}]] | {{calcPopulation population ../settings.populationRate}} | [[{{../info.thisCampaignPath}}/05-Atlas/States/{{state}}-{{getStateName state ../pack/states}}/{{getStateName state ../pack.states}}\|{{getStateName state ../pack.states}}]] | [[{{../info.thisCampaignPath}}/05-Atlas/States/{{state}}-{{getStateName state ../pack/states}}/{{getProvinceIdFromCell cell ../pack.cells}}-{{burgProvinceLookup cell ../pack.cells ../pack.provinces}}/{{burgProvinceLookup cell ../pack.cells ../pack.provinces}}\|{{burgProvinceLookup cell ../pack.cells ../pack.provinces}}]] |
 {{/each}}
 
 # Diplomacy
@@ -89,7 +93,7 @@ world: {{@importDataRoot.info.mapName}}
 
 # Religions
 
-%% The Wildlands has no organized religion but, again feel free to make note of non-traditional spiritual practices that exist in the lands beyond traditional cultures and societies. 
+%% The Wildlands have no organized religion but, again feel free to make note of non-traditional spiritual practices that exist in the lands beyond traditional cultures and societies. 
 
 Also, Religions with "Unknown" Cultures are older religions that may not have many adherents or followers but are the parent religions to others.%%
 
