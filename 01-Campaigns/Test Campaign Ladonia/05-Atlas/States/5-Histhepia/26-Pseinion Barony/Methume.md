@@ -6,6 +6,7 @@ campaign: Test Campaign Ladonia
 capital: 0
 cell: 4220
 citadel: 0
+cssclass: sixty-pct-width
 culture: Elladan
 elevation: 1736 ft
 emblem: TCL-Ladonia Emblem Methume.png
@@ -47,6 +48,7 @@ marker: burg,497.820,285.130,[[Methume]]
 >> #### System
 >>  |
 >> ---|---|
+>> **cssClass**|`INPUT[cssClass][inlineSelect:cssclass]` |
 >> **Tags** | `INPUT[Tags][inlineListSuggester:tags]` |
 >> **World Building Progress**| `INPUT[WBProgress][inlineSelect:WBProgress]`|
 >>> [!note]- Tracking World Building Progress
@@ -75,39 +77,41 @@ There is an elaborate method (see [[JSON Import How To#Wrangling FMG Burg Maps]]
 > ```leaflet
 > id: Burg-Methume
 > image: [[211-Methume.png]]
-> height: 600px
+> height: 800px
 > width: 100%
 > minZoom: -3.5
 > maxZoom: 2.25
-> defaultZoom: -1.5
+> defaultZoom: -1
 > zoomDelta: 0.25
 > unit: feet
 > scale: 1
 > darkMode: false
 > ```
-> `=elink(this.burgMapLink,"Visit Burg Map")`
 >
-> ```meta-bind-js-view
-> {burgMapLink} as mapLink
-> {burgName} as name
-> {id} as id
-> ---
-> let fileName = context.bound.id + "-" + context.bound.name;
-> console.log("##### - :", fileName);
-> navigator.clipboard.writeText(fileName);
-> let url = context.bound.mapLink;
-> return engine.markdown.create(`
-> ~~~meta-bind-button
-> label: Open map in Browser to download
-> style: primary
-> action:
->  type: open
->  link: ${url}
-> ~~~
-> `)
-> ```
-> 
-> [Link to Methume on FMG Map](https://azgaar.github.io/Fantasy-Map-Generator/?maplink=https://dl.dropboxusercontent.com/scl/fi/s1ildj50q943p20hgqsvz/Ladonia-2024-04-13-18-07.map?rlkey=tt7j7x4gqbhxu043p5q2f2ucx&dl=0&scale=3&x=285.33&y=819.38)
+> [Link to Methume on FMG Map](https://azgaar.github.io/Fantasy-Map-Generator/?maplink=https://dl.dropboxusercontent.com/scl/fi/s1ildj50q943p20hgqsvz/Ladonia-2024-04-13-18-07.map?rlkey=tt7j7x4gqbhxu043p5q2f2ucx&dl=0&scale=6&x=285.33&y=819.38)| `BUTTON[mapLink-to-download]`
+
+```meta-bind-js-view
+{burgMapLink} as mapLink
+{burgName} as name
+{id} as id
+---
+let fileName = context.bound.id + "-" + context.bound.name;
+console.log("##### - :", fileName);
+navigator.clipboard.writeText(fileName);
+let url = context.bound.mapLink;
+return engine.markdown.create(`
+~~~meta-bind-button
+label: Open map in Browser to Download - ID-Name to Clipboard
+id: mapLink-to-download
+style: primary
+hidden: true
+action:
+ type: open
+ link: ${url}
+~~~
+`)
+```
+
 
 %% City Maps may need Scale adjusting - see `unit: feet` line above in Leaflet block (around line 80-81) The `scale` setting of `1` is arbitrary. It seems to work for the Burg maps - City or Village. By default the CityGen maps will likely have the `scale bar` visible. I recommend hiding it. The City Gen uses meters. The Village Gen has no scale defined. Once you hide it in the CityGen Settings, it should stay hidden for several visits to these maps.%%
 
