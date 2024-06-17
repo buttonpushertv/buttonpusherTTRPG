@@ -7,7 +7,7 @@
 > 
 > [[CHANGELOG]] 
 
-![random|sban+hmicro](https://source.unsplash.com/random?sand)
+---
 
 ## Campaign Index
 
@@ -15,14 +15,14 @@
 
 ![[Campaign Index]]
 
-![random|sban+hmicro](https://source.unsplash.com/random?abstract,clouds)
+---
 
 ## Tools & Helpers
 `BUTTON[reload-vault]` | `BUTTON[load-workspace]`
 
 ![[Command Reminders]]
 
-![random|sban+hmicro](https://source.unsplash.com/random?abstract,dirt)
+---
 
 ## Docs for Plugins
 [Calendarium](https://github.com/javalent/the-calendarium)
@@ -35,4 +35,4 @@
 [QuickAdd](https://quickadd.obsidian.guide)
 [Templater](https://silentvoid13.github.io/Templater/)
 
-![random|sban+hmicro](https://source.unsplash.com/random?abstract,water)
+---

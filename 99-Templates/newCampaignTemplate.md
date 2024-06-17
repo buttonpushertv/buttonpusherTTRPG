@@ -69,7 +69,7 @@ for (const folderName of folderNames) {
 
 (PC info will go here)
 
-![random|sban+hmicro](https://source.unsplash.com/random?abstract,fire)
+---
 
 ## Sessions
 
@@ -78,12 +78,12 @@ for (const folderName of folderNames) {
 
 (Session info will go here)
 
-![random|sban+hmicro](https://source.unsplash.com/random?abstract,paper)
+---
 ## Story Arcs
 
 (Story Arc info will go here)
 
-![random|sban+hmicro](https://source.unsplash.com/random?abstract,water)
+---
 
 ## Truths about the campaign/world
 
