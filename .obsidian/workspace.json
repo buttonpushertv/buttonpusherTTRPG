@@ -4,28 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "eb8fa8d969c78a24",
+        "id": "e11743e8b5f5892f",
         "type": "tabs",
         "children": [
           {
-            "id": "70d99b3299caefd4",
+            "id": "b5454cf0eb572e37",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/1-Upunia/1-Hauta Earldom/Kotve.md",
-                "mode": "preview",
-                "source": true
-              }
-            }
-          },
-          {
-            "id": "3bd7d87764826061",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/1-Upunia/1-Hauta Earldom/Karjasa.md",
+                "file": "Home.md",
                 "mode": "preview",
                 "source": true
               }
@@ -83,7 +71,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/1-Upunia/1-Hauta Earldom/Kotve.md",
+                "file": "Home.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -95,7 +83,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/1-Upunia/1-Hauta Earldom/Kotve.md",
+                "file": "Home.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -123,7 +111,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/1-Upunia/1-Hauta Earldom/Kotve.md"
+                "file": "Home.md"
               }
             }
           }
@@ -138,11 +126,11 @@
     "type": "split",
     "children": [
       {
-        "id": "bc58c3d2af7d8522",
+        "id": "8c2f557914f69c9e",
         "type": "tabs",
         "children": [
           {
-            "id": "eccb48a7268b5b33",
+            "id": "fd99f1d3e2f42c7c",
             "type": "leaf",
             "state": {
               "type": "DICE_ROLLER_VIEW",
@@ -165,15 +153,18 @@
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
-      "templater-obsidian:Templater": false,
       "workspaces:Manage workspace layouts": false,
       "obsidian-leaflet-plugin:Open Leaflet Map": false,
-      "obsidian-excalidraw-plugin:Create new drawing": false,
-      "obsidian-import-json:JSON/CSV Importer": false
+      "obsidian-import-json:JSON/CSV Importer": false,
+      "templater-obsidian:Templater": false,
+      "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "70d99b3299caefd4",
+  "active": "b5454cf0eb572e37",
   "lastOpenFiles": [
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/Test Campaign Ladonia-Simple Atlas.md",
+    "01-Campaigns/Test Campaign Ladonia/Test Campaign Ladonia Home.md",
+    "Home.md",
     "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/1-Upunia/1-Hauta Earldom/Kohttajaa.md",
     "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/1-Upunia/1-Hauta Earldom/Kotve.md",
     "91-Assets/Test Campaign Ladonia/City-PNGs/1-Kotve.png",
@@ -182,7 +173,6 @@
     "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/1-Upunia/1-Hauta Earldom/Karjasa.md",
     "99-Templates/Handlebars-JSON/Burgs-FMG-JSON Handlerbars Template.md",
     "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/1-Upunia/2-Hatveria County/Kuntioki.md",
-    "Home.md",
     "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/1-Upunia/5-Tampaaniai Earldom/Syrpio-Linked Atlas.md",
     "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/4-Kunkania/21-Szarkeny County/Koszent-Linked Atlas.md",
     "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/1-Upunia/1-Hauta Earldom/Kohttajaa-Linked Atlas.md",
@@ -199,7 +189,6 @@
     "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/10-Thas/84-Parnia County/Achargydon-Linked Atlas.md",
     "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/16-Bhrymaion/114-Crori Earldom/Eleuros-Linked Atlas.md",
     "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/4-Kunkania/22-Varmu County/Kouvaa-Linked Atlas.md",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/1-Upunia/5-Tampaaniai Earldom/Ouvatti-Linked Atlas.md",
     "91-Assets/Test Campaign Ladonia/City-PNGs/458-Kohttajaa.png",
     "90-Tools & Helpers/FMG Note Help Info Files",
     "91-Assets/Test Campaign Ladonia/City-PNGs/523-Kuntioki.png",
