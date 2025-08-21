@@ -6,6 +6,7 @@ code: {{code}}
 color: {{color}}
 center: {{center}}
 created: {{getDateTimestamp @importSettings}}
+cssclass: sixty-pct-width
 expansionism: {{expansionism}}
 id: {{i}}
 leaders: 
@@ -16,6 +17,7 @@ shortDescription:
 shield: {{shield}}
 tags:
 - Culture
+templateVersion: 1.0
 type: {{type}}
 WBProcess: Imported
 world: {{@importDataRoot.info.mapName}}

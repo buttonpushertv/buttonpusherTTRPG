@@ -264,6 +264,17 @@ F16::
             Send, ^w
     return
 
+F17:: ; <-- testing
+    ; Make sure we are in a new Chrome window
+    WinActivate, New Tab
+    Sleep, sleepShort
+    ; re-position the window to a specifc size
+    WinMove, New Tab,,-7,0, 2307, 1447
+    ; We are going to save both the PNG and the SVG of each URL
+        ;First the PNG
+        ; postion cursor
+        MouseMove, 2272, 140
+    return
 
 !F24:: ; <-- Reload CHROME-HOTKEYS.ahk
     ;MSGBOX, , DEBUG,Reloading save-vilage-urls, 1

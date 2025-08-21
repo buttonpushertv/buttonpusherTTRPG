@@ -40,8 +40,8 @@ var import_obsidian = require("obsidian");
 
 // src/fns/getSvgIcon.ts
 var getSvgIcon = (siteUrl) => {
-  const siteId = encodeURIComponent(btoa(siteUrl));
-  return `<svg viewBox="0 0 100 100"><image href="https://fetch-favicon.fly.dev/favicon/${siteId}" height="100" width="100" /></svg>`;
+  const domain = new URL(siteUrl).hostname;
+  return `<svg viewBox="0 0 100 100"><image href="https://icon.horse/icon/${domain}" height="100" width="100" /></svg>`;
 };
 
 // src/fns/normalizeGateOption.ts
@@ -250,13 +250,13 @@ var SettingTab = class extends import_obsidian3.PluginSettingTab {
     });
     new import_obsidian3.Setting(containerEl).setName("Follow me on Twitter").setDesc("@duocdev").addButton((button) => {
       button.setCta();
-      button.setButtonText("Follow for update").onClick(() => {
-        window.open("https://twitter.com/duocdev");
+      button.setButtonText("Join Community").onClick(() => {
+        window.open("https://community.aiocean.io/");
       });
     }).addButton((button) => {
       button.setCta();
-      button.setButtonText("Bug report").onClick(() => {
-        window.open("https://aiocean.atlassian.net/servicedesk/customer/portal/4");
+      button.setButtonText("Follow for update").onClick(() => {
+        window.open("https://twitter.com/duocdev");
       });
     }).addButton((button) => {
       button.buttonEl.outerHTML = "<a href='https://paypal.me/duocnguyen' target='_blank'><img style='border:0px;height:35px;' src='https://cdn.ko-fi.com/cdn/kofi3.png?v=3' /></a>";
@@ -271,9 +271,9 @@ var import_obsidian4 = require("obsidian");
 var DEFAULT_URL = "about:blank";
 var GOOGLE_URL = "https://google.com";
 var OPEN_GATE_WEBVIEW_CLASS = "open-gate-webview";
-var createWebviewTag = (params, onReady) => {
+var createWebviewTag = (params, onReady, parentDoc) => {
   var _a, _b;
-  const webviewTag = document.createElement("webview");
+  const webviewTag = (parentDoc || document).createElement("webview");
   webviewTag.setAttribute("partition", "persist:" + params.profileKey);
   webviewTag.setAttribute("src", (_a = params.url) != null ? _a : DEFAULT_URL);
   webviewTag.setAttribute("httpreferrer", (_b = params.url) != null ? _b : GOOGLE_URL);
@@ -368,6 +368,10 @@ var GateView = class extends import_obsidian4.ItemView {
     this.addActions();
     this.contentEl.empty();
     this.contentEl.addClass("open-gate-view");
+    this.frameDoc = this.contentEl.doc;
+    this.createFrame();
+  }
+  createFrame() {
     const onReady = () => {
       if (!this.isFrameReady) {
         this.isFrameReady = true;
@@ -377,12 +381,23 @@ var GateView = class extends import_obsidian4.ItemView {
     if (this.useIframe) {
       this.frame = createIframe(this.options, onReady);
     } else {
-      this.frame = createWebviewTag(this.options, onReady);
+      this.frame = createWebviewTag(this.options, onReady, this.frameDoc);
+      this.frame.addEventListener("destroyed", () => {
+        if (this.frameDoc != this.contentEl.doc) {
+          if (this.frame) {
+            this.frame.remove();
+          }
+          this.frameDoc = this.contentEl.doc;
+          this.createFrame();
+        }
+      });
     }
     this.contentEl.appendChild(this.frame);
   }
   onunload() {
-    this.frame.remove();
+    if (this.frame) {
+      this.frame.remove();
+    }
     super.onunload();
   }
   onPaneMenu(menu, source) {
@@ -484,18 +499,20 @@ var GateView = class extends import_obsidian4.ItemView {
 
 // src/fns/openView.ts
 var openView = async (workspace, id, position) => {
-  let leaf;
   let leafs = workspace.getLeavesOfType(id);
   if (leafs.length > 0) {
     workspace.revealLeaf(leafs[0]);
     return leafs[0];
   }
-  leaf = await createView(workspace, id, position);
+  const leaf = await createView(workspace, id, position);
+  if (!leaf) {
+    throw new Error(`Failed to create view with id: ${id}`);
+  }
   workspace.revealLeaf(leaf);
   return leaf;
 };
 var createView = async (workspace, id, position) => {
-  let leaf;
+  let leaf = null;
   switch (position) {
     case "left":
       leaf = workspace.getLeftLeaf(false);
@@ -508,8 +525,11 @@ var createView = async (workspace, id, position) => {
       leaf = workspace.getRightLeaf(false);
       break;
   }
-  await (leaf == null ? void 0 : leaf.setViewState({ type: id, active: true }));
-  return leaf;
+  if (leaf) {
+    await leaf.setViewState({ type: id, active: true });
+    return leaf;
+  }
+  return void 0;
 };
 
 // src/fns/registerGate.ts
@@ -546,6 +566,14 @@ var ModalOnBoarding = class extends import_obsidian7.Modal {
     contentEl.createEl("h3", { text: "Welcome to OpenGate" });
     contentEl.createEl("p", {
       text: "OpenGate is a plugin that allows you to embed any website in Obsidian. You will never have to leave Obsidian again!"
+    });
+    contentEl.createEl("p", {
+      text: "If you need help, please join our community."
+    });
+    contentEl.createEl("a", {
+      cls: "community-link",
+      text: "Community",
+      attr: { href: "https://community.aiocean.io/" }
     });
     contentEl.createEl("p", {
       text: "But now you have to create your first gate."
@@ -1373,7 +1401,6 @@ var Collection = class extends NodeBase {
     }
   }
 };
-Collection.maxFlowStringSingleLineLength = 60;
 
 // node_modules/yaml/browser/dist/stringify/stringifyComment.js
 var stringifyComment = (str) => str.replace(/^(?!$)(?: $)?/gm, "#");
@@ -1391,6 +1418,8 @@ var FOLD_QUOTED = "quoted";
 function foldFlowLines(text, indent, mode = "flow", { indentAtStart, lineWidth = 80, minContentWidth = 20, onFold, onOverflow } = {}) {
   if (!lineWidth || lineWidth < 0)
     return text;
+  if (lineWidth < minContentWidth)
+    minContentWidth = 0;
   const endStep = Math.max(1 + minContentWidth, 1 + lineWidth - indent.length);
   if (text.length <= endStep)
     return text;
@@ -1410,7 +1439,7 @@ function foldFlowLines(text, indent, mode = "flow", { indentAtStart, lineWidth =
   let escStart = -1;
   let escEnd = -1;
   if (mode === FOLD_BLOCK) {
-    i = consumeMoreIndentedLines(text, i);
+    i = consumeMoreIndentedLines(text, i, indent.length);
     if (i !== -1)
       end = i + endStep;
   }
@@ -1434,8 +1463,8 @@ function foldFlowLines(text, indent, mode = "flow", { indentAtStart, lineWidth =
     }
     if (ch === "\n") {
       if (mode === FOLD_BLOCK)
-        i = consumeMoreIndentedLines(text, i);
-      end = i + endStep;
+        i = consumeMoreIndentedLines(text, i, indent.length);
+      end = i + indent.length + endStep;
       split = void 0;
     } else {
       if (ch === " " && prev && prev !== " " && prev !== "\n" && prev !== "	") {
@@ -1490,15 +1519,23 @@ ${indent}${text.slice(fold + 1, end2)}`;
   }
   return res;
 }
-function consumeMoreIndentedLines(text, i) {
-  let ch = text[i + 1];
+function consumeMoreIndentedLines(text, i, indent) {
+  let end = i;
+  let start = i + 1;
+  let ch = text[start];
   while (ch === " " || ch === "	") {
-    do {
-      ch = text[i += 1];
-    } while (ch && ch !== "\n");
-    ch = text[i + 1];
+    if (i < start + indent) {
+      ch = text[++i];
+    } else {
+      do {
+        ch = text[++i];
+      } while (ch && ch !== "\n");
+      end = i;
+      start = i + 1;
+      ch = text[start];
+    }
   }
-  return i;
+  return end;
 }
 
 // node_modules/yaml/browser/dist/stringify/stringifyString.js
@@ -1688,21 +1725,29 @@ function blockString({ comment, type, value }, ctx, onComment, onChompKeep) {
     start = start.replace(/\n+/g, `$&${indent}`);
   }
   const indentSize = indent ? "2" : "1";
-  let header = (literal ? "|" : ">") + (startWithSpace ? indentSize : "") + chomp;
+  let header = (startWithSpace ? indentSize : "") + chomp;
   if (comment) {
     header += " " + commentString(comment.replace(/ ?[\r\n]+/g, " "));
     if (onComment)
       onComment();
   }
-  if (literal) {
-    value = value.replace(/\n+/g, `$&${indent}`);
-    return `${header}
-${indent}${start}${value}${end}`;
-  }
-  value = value.replace(/\n+/g, "\n$&").replace(/(?:^|\n)([\t ].*)(?:([\n\t ]*)\n(?![\n\t ]))?/g, "$1$2").replace(/\n+/g, `$&${indent}`);
-  const body = foldFlowLines(`${start}${value}${end}`, indent, FOLD_BLOCK, getFoldOptions(ctx, true));
-  return `${header}
+  if (!literal) {
+    const foldedValue = value.replace(/\n+/g, "\n$&").replace(/(?:^|\n)([\t ].*)(?:([\n\t ]*)\n(?![\n\t ]))?/g, "$1$2").replace(/\n+/g, `$&${indent}`);
+    let literalFallback = false;
+    const foldOptions = getFoldOptions(ctx, true);
+    if (blockQuote !== "folded" && type !== Scalar.BLOCK_FOLDED) {
+      foldOptions.onOverflow = () => {
+        literalFallback = true;
+      };
+    }
+    const body = foldFlowLines(`${start}${foldedValue}${end}`, indent, FOLD_BLOCK, foldOptions);
+    if (!literalFallback)
+      return `>${header}
 ${indent}${body}`;
+  }
+  value = value.replace(/\n+/g, `$&${indent}`);
+  return `|${header}
+${indent}${start}${value}${end}`;
 }
 function plainString(item, ctx, onComment, onChompKeep) {
   const { type, value } = item;
@@ -1824,10 +1869,15 @@ function getTagObject(tags, item) {
   let obj;
   if (isScalar(item)) {
     obj = item.value;
-    const match = tags.filter((t) => {
+    let match = tags.filter((t) => {
       var _a2;
       return (_a2 = t.identify) == null ? void 0 : _a2.call(t, obj);
     });
+    if (match.length > 1) {
+      const testMatch = match.filter((t) => t.test);
+      if (testMatch.length > 0)
+        match = testMatch;
+    }
     tagObj = (_b = match.find((t) => t.format === item.format)) != null ? _b : match.find((t) => !t.format);
   } else {
     obj = item;
@@ -1893,7 +1943,7 @@ function stringifyPair({ key, value }, ctx, onComment, onChompKeep) {
     if (keyComment) {
       throw new Error("With simple keys, key nodes cannot have comments");
     }
-    if (isCollection(key)) {
+    if (isCollection(key) || !isNode(key) && typeof key === "object") {
       const msg = "With simple keys, collection cannot be used as a key value";
       throw new Error(msg);
     }
@@ -2018,43 +2068,31 @@ function warn(logLevel, warning) {
   }
 }
 
-// node_modules/yaml/browser/dist/nodes/addPairToJSMap.js
+// node_modules/yaml/browser/dist/schema/yaml-1.1/merge.js
 var MERGE_KEY = "<<";
-function addPairToJSMap(ctx, map2, { key, value }) {
-  if ((ctx == null ? void 0 : ctx.doc.schema.merge) && isMergeKey(key)) {
-    value = isAlias(value) ? value.resolve(ctx.doc) : value;
-    if (isSeq(value))
-      for (const it of value.items)
-        mergeToJSMap(ctx, map2, it);
-    else if (Array.isArray(value))
-      for (const it of value)
-        mergeToJSMap(ctx, map2, it);
-    else
-      mergeToJSMap(ctx, map2, value);
-  } else {
-    const jsKey = toJS(key, "", ctx);
-    if (map2 instanceof Map) {
-      map2.set(jsKey, toJS(value, jsKey, ctx));
-    } else if (map2 instanceof Set) {
-      map2.add(jsKey);
-    } else {
-      const stringKey = stringifyKey(key, jsKey, ctx);
-      const jsValue = toJS(value, stringKey, ctx);
-      if (stringKey in map2)
-        Object.defineProperty(map2, stringKey, {
-          value: jsValue,
-          writable: true,
-          enumerable: true,
-          configurable: true
-        });
-      else
-        map2[stringKey] = jsValue;
-    }
-  }
-  return map2;
+var merge = {
+  identify: (value) => value === MERGE_KEY || typeof value === "symbol" && value.description === MERGE_KEY,
+  default: "key",
+  tag: "tag:yaml.org,2002:merge",
+  test: /^<<$/,
+  resolve: () => Object.assign(new Scalar(Symbol(MERGE_KEY)), {
+    addToJSMap: addMergeToJSMap
+  }),
+  stringify: () => MERGE_KEY
+};
+var isMergeKey = (ctx, key) => (merge.identify(key) || isScalar(key) && (!key.type || key.type === Scalar.PLAIN) && merge.identify(key.value)) && (ctx == null ? void 0 : ctx.doc.schema.tags.some((tag) => tag.tag === merge.tag && tag.default));
+function addMergeToJSMap(ctx, map2, value) {
+  value = ctx && isAlias(value) ? value.resolve(ctx.doc) : value;
+  if (isSeq(value))
+    for (const it of value.items)
+      mergeValue(ctx, map2, it);
+  else if (Array.isArray(value))
+    for (const it of value)
+      mergeValue(ctx, map2, it);
+  else
+    mergeValue(ctx, map2, value);
 }
-var isMergeKey = (key) => key === MERGE_KEY || isScalar(key) && key.value === MERGE_KEY && (!key.type || key.type === Scalar.PLAIN);
-function mergeToJSMap(ctx, map2, value) {
+function mergeValue(ctx, map2, value) {
   const source = ctx && isAlias(value) ? value.resolve(ctx.doc) : value;
   if (!isMap(source))
     throw new Error("Merge sources must be maps or map aliases");
@@ -2072,6 +2110,35 @@ function mergeToJSMap(ctx, map2, value) {
         enumerable: true,
         configurable: true
       });
+    }
+  }
+  return map2;
+}
+
+// node_modules/yaml/browser/dist/nodes/addPairToJSMap.js
+function addPairToJSMap(ctx, map2, { key, value }) {
+  if (isNode(key) && key.addToJSMap)
+    key.addToJSMap(ctx, map2, value);
+  else if (isMergeKey(ctx, key))
+    addMergeToJSMap(ctx, map2, value);
+  else {
+    const jsKey = toJS(key, "", ctx);
+    if (map2 instanceof Map) {
+      map2.set(jsKey, toJS(value, jsKey, ctx));
+    } else if (map2 instanceof Set) {
+      map2.add(jsKey);
+    } else {
+      const stringKey = stringifyKey(key, jsKey, ctx);
+      const jsValue = toJS(value, stringKey, ctx);
+      if (stringKey in map2)
+        Object.defineProperty(map2, stringKey, {
+          value: jsValue,
+          writable: true,
+          enumerable: true,
+          configurable: true
+        });
+      else
+        map2[stringKey] = jsValue;
     }
   }
   return map2;
@@ -2186,7 +2253,7 @@ ${indent}${line}` : "\n";
     onChompKeep();
   return str;
 }
-function stringifyFlowCollection({ comment, items }, ctx, { flowChars, itemIndent, onComment }) {
+function stringifyFlowCollection({ items }, ctx, { flowChars, itemIndent }) {
   const { indent, indentStep, flowCollectionPadding: fcPadding, options: { commentString } } = ctx;
   itemIndent += indentStep;
   const itemCtx = Object.assign({}, ctx, {
@@ -2199,13 +2266,13 @@ function stringifyFlowCollection({ comment, items }, ctx, { flowChars, itemInden
   const lines = [];
   for (let i = 0; i < items.length; ++i) {
     const item = items[i];
-    let comment2 = null;
+    let comment = null;
     if (isNode(item)) {
       if (item.spaceBefore)
         lines.push("");
       addCommentBefore(ctx, lines, item.commentBefore, false);
       if (item.comment)
-        comment2 = item.comment;
+        comment = item.comment;
     } else if (isPair(item)) {
       const ik = isNode(item.key) ? item.key : null;
       if (ik) {
@@ -2218,51 +2285,44 @@ function stringifyFlowCollection({ comment, items }, ctx, { flowChars, itemInden
       const iv = isNode(item.value) ? item.value : null;
       if (iv) {
         if (iv.comment)
-          comment2 = iv.comment;
+          comment = iv.comment;
         if (iv.commentBefore)
           reqNewline = true;
       } else if (item.value == null && (ik == null ? void 0 : ik.comment)) {
-        comment2 = ik.comment;
+        comment = ik.comment;
       }
     }
-    if (comment2)
+    if (comment)
       reqNewline = true;
-    let str2 = stringify(item, itemCtx, () => comment2 = null);
+    let str = stringify(item, itemCtx, () => comment = null);
     if (i < items.length - 1)
-      str2 += ",";
-    if (comment2)
-      str2 += lineComment(str2, itemIndent, commentString(comment2));
-    if (!reqNewline && (lines.length > linesAtValue || str2.includes("\n")))
+      str += ",";
+    if (comment)
+      str += lineComment(str, itemIndent, commentString(comment));
+    if (!reqNewline && (lines.length > linesAtValue || str.includes("\n")))
       reqNewline = true;
-    lines.push(str2);
+    lines.push(str);
     linesAtValue = lines.length;
   }
-  let str;
   const { start, end } = flowChars;
   if (lines.length === 0) {
-    str = start + end;
+    return start + end;
   } else {
     if (!reqNewline) {
       const len = lines.reduce((sum, line) => sum + line.length + 2, 2);
-      reqNewline = len > Collection.maxFlowStringSingleLineLength;
+      reqNewline = ctx.options.lineWidth > 0 && len > ctx.options.lineWidth;
     }
     if (reqNewline) {
-      str = start;
+      let str = start;
       for (const line of lines)
         str += line ? `
 ${indentStep}${indent}${line}` : "\n";
-      str += `
+      return `${str}
 ${indent}${end}`;
     } else {
-      str = `${start}${fcPadding}${lines.join(" ")}${fcPadding}${end}`;
+      return `${start}${fcPadding}${lines.join(" ")}${fcPadding}${end}`;
     }
   }
-  if (comment) {
-    str += lineComment(str, indent, commentString(comment));
-    if (onComment)
-      onComment();
-  }
-  return str;
 }
 function addCommentBefore({ indent, options: { commentString } }, lines, comment, chompKeep) {
   if (comment && chompKeep)
@@ -2568,7 +2628,7 @@ var floatNaN = {
   identify: (value) => typeof value === "number",
   default: true,
   tag: "tag:yaml.org,2002:float",
-  test: /^(?:[-+]?\.(?:inf|Inf|INF|nan|NaN|NAN))$/,
+  test: /^(?:[-+]?\.(?:inf|Inf|INF)|\.nan|\.NaN|\.NAN)$/,
   resolve: (str) => str.slice(-3).toLowerCase() === "nan" ? NaN : str[0] === "-" ? Number.NEGATIVE_INFINITY : Number.POSITIVE_INFINITY,
   stringify: stringifyNumber
 };
@@ -2676,7 +2736,7 @@ var jsonScalars = [
     identify: (value) => typeof value === "boolean",
     default: true,
     tag: "tag:yaml.org,2002:bool",
-    test: /^true|false$/,
+    test: /^true$|^false$/,
     resolve: (str) => str === "true",
     stringify: stringifyJSON
   },
@@ -2903,7 +2963,7 @@ var falseTag = {
   identify: (value) => value === false,
   default: true,
   tag: "tag:yaml.org,2002:bool",
-  test: /^(?:N|n|[Nn]o|NO|[Ff]alse|FALSE|[Oo]ff|OFF)$/i,
+  test: /^(?:N|n|[Nn]o|NO|[Ff]alse|FALSE|[Oo]ff|OFF)$/,
   resolve: () => new Scalar(false),
   stringify: boolStringify
 };
@@ -2913,7 +2973,7 @@ var floatNaN2 = {
   identify: (value) => typeof value === "number",
   default: true,
   tag: "tag:yaml.org,2002:float",
-  test: /^[-+]?\.(?:inf|Inf|INF|nan|NaN|NAN)$/,
+  test: /^(?:[-+]?\.(?:inf|Inf|INF)|\.nan|\.NaN|\.NAN)$/,
   resolve: (str) => str.slice(-3).toLowerCase() === "nan" ? NaN : str[0] === "-" ? Number.NEGATIVE_INFINITY : Number.POSITIVE_INFINITY,
   stringify: stringifyNumber
 };
@@ -3164,7 +3224,7 @@ var timestamp = {
     }
     return new Date(date);
   },
-  stringify: ({ value }) => value.toISOString().replace(/((T00:00)?:00)?\.000Z$/, "")
+  stringify: ({ value }) => value.toISOString().replace(/(T00:00:00)?\.000Z$/, "")
 };
 
 // node_modules/yaml/browser/dist/schema/yaml-1.1/schema.js
@@ -3183,6 +3243,7 @@ var schema3 = [
   floatExp2,
   float2,
   binary,
+  merge,
   omap,
   pairs,
   set,
@@ -3211,6 +3272,7 @@ var tagsByName = {
   intOct,
   intTime,
   map,
+  merge,
   null: nullTag,
   omap,
   pairs,
@@ -3220,13 +3282,18 @@ var tagsByName = {
 };
 var coreKnownTags = {
   "tag:yaml.org,2002:binary": binary,
+  "tag:yaml.org,2002:merge": merge,
   "tag:yaml.org,2002:omap": omap,
   "tag:yaml.org,2002:pairs": pairs,
   "tag:yaml.org,2002:set": set,
   "tag:yaml.org,2002:timestamp": timestamp
 };
-function getTags(customTags, schemaName) {
-  let tags = schemas.get(schemaName);
+function getTags(customTags, schemaName, addMergeTag) {
+  const schemaTags = schemas.get(schemaName);
+  if (schemaTags && !customTags) {
+    return addMergeTag && !schemaTags.includes(merge) ? schemaTags.concat(merge) : schemaTags.slice();
+  }
+  let tags = schemaTags;
   if (!tags) {
     if (Array.isArray(customTags))
       tags = [];
@@ -3241,26 +3308,29 @@ function getTags(customTags, schemaName) {
   } else if (typeof customTags === "function") {
     tags = customTags(tags.slice());
   }
-  return tags.map((tag) => {
-    if (typeof tag !== "string")
-      return tag;
-    const tagObj = tagsByName[tag];
-    if (tagObj)
-      return tagObj;
-    const keys = Object.keys(tagsByName).map((key) => JSON.stringify(key)).join(", ");
-    throw new Error(`Unknown custom tag "${tag}"; use one of ${keys}`);
-  });
+  if (addMergeTag)
+    tags = tags.concat(merge);
+  return tags.reduce((tags2, tag) => {
+    const tagObj = typeof tag === "string" ? tagsByName[tag] : tag;
+    if (!tagObj) {
+      const tagName = JSON.stringify(tag);
+      const keys = Object.keys(tagsByName).map((key) => JSON.stringify(key)).join(", ");
+      throw new Error(`Unknown custom tag ${tagName}; use one of ${keys}`);
+    }
+    if (!tags2.includes(tagObj))
+      tags2.push(tagObj);
+    return tags2;
+  }, []);
 }
 
 // node_modules/yaml/browser/dist/schema/Schema.js
 var sortMapEntriesByKey = (a, b) => a.key < b.key ? -1 : a.key > b.key ? 1 : 0;
 var Schema = class {
-  constructor({ compat, customTags, merge, resolveKnownTags, schema: schema4, sortMapEntries, toStringDefaults }) {
+  constructor({ compat, customTags, merge: merge2, resolveKnownTags, schema: schema4, sortMapEntries, toStringDefaults }) {
     this.compat = Array.isArray(compat) ? getTags(compat, "compat") : compat ? getTags(null, compat) : null;
-    this.merge = !!merge;
     this.name = typeof schema4 === "string" && schema4 || "core";
     this.knownTags = resolveKnownTags ? coreKnownTags : {};
-    this.tags = getTags(customTags, this.name);
+    this.tags = getTags(customTags, this.name, merge2);
     this.toStringOptions = toStringDefaults != null ? toStringDefaults : null;
     Object.defineProperty(this, MAP, { value: map });
     Object.defineProperty(this, SCALAR, { value: string });
@@ -3367,6 +3437,7 @@ var Document = class {
       logLevel: "warn",
       prettyErrors: true,
       strict: true,
+      stringKeys: false,
       uniqueKeys: true,
       version: "1.2"
     }, options);
@@ -3504,7 +3575,7 @@ var Document = class {
           this.directives.yaml.version = "1.1";
         else
           this.directives = new Directives({ version: "1.1" });
-        opt = { merge: true, resolveKnownTags: false, schema: "yaml-1.1" };
+        opt = { resolveKnownTags: false, schema: "yaml-1.1" };
         break;
       case "1.2":
       case "next":
@@ -3512,7 +3583,7 @@ var Document = class {
           this.directives.yaml.version = version;
         else
           this.directives = new Directives({ version });
-        opt = { merge: false, resolveKnownTags: true, schema: "core" };
+        opt = { resolveKnownTags: true, schema: "core" };
         break;
       case null:
         if (this.directives)
@@ -3622,17 +3693,18 @@ ${pointer}
 };
 
 // node_modules/yaml/browser/dist/compose/resolve-props.js
-function resolveProps(tokens, { flow, indicator, next, offset, onError, startOnNewline }) {
+function resolveProps(tokens, { flow, indicator, next, offset, onError, parentIndent, startOnNewline }) {
   let spaceBefore = false;
   let atNewline = startOnNewline;
   let hasSpace = startOnNewline;
   let comment = "";
   let commentSep = "";
   let hasNewline = false;
-  let hasNewlineAfterProp = false;
   let reqSpace = false;
+  let tab = null;
   let anchor = null;
   let tag = null;
+  let newlineAfterProp = null;
   let comma = null;
   let found = null;
   let start = null;
@@ -3642,10 +3714,17 @@ function resolveProps(tokens, { flow, indicator, next, offset, onError, startOnN
         onError(token.offset, "MISSING_CHAR", "Tags and anchors must be separated from the next token by white space");
       reqSpace = false;
     }
+    if (tab) {
+      if (atNewline && token.type !== "comment" && token.type !== "newline") {
+        onError(tab, "TAB_AS_INDENT", "Tabs are not allowed as indentation");
+      }
+      tab = null;
+    }
     switch (token.type) {
       case "space":
-        if (!flow && atNewline && indicator !== "doc-start" && token.source[0] === "	")
-          onError(token, "TAB_AS_INDENT", "Tabs are not allowed as indentation");
+        if (!flow && (indicator !== "doc-start" || (next == null ? void 0 : next.type) !== "flow-collection") && token.source.includes("	")) {
+          tab = token;
+        }
         hasSpace = true;
         break;
       case "comment": {
@@ -3671,7 +3750,7 @@ function resolveProps(tokens, { flow, indicator, next, offset, onError, startOnN
         atNewline = true;
         hasNewline = true;
         if (anchor || tag)
-          hasNewlineAfterProp = true;
+          newlineAfterProp = token;
         hasSpace = true;
         break;
       case "anchor":
@@ -3703,7 +3782,7 @@ function resolveProps(tokens, { flow, indicator, next, offset, onError, startOnN
         if (found)
           onError(token, "UNEXPECTED_TOKEN", `Unexpected ${token.source} in ${flow != null ? flow : "collection"}`);
         found = token;
-        atNewline = false;
+        atNewline = indicator === "seq-item-ind" || indicator === "explicit-key-ind";
         hasSpace = false;
         break;
       case "comma":
@@ -3723,17 +3802,20 @@ function resolveProps(tokens, { flow, indicator, next, offset, onError, startOnN
   }
   const last = tokens[tokens.length - 1];
   const end = last ? last.offset + last.source.length : offset;
-  if (reqSpace && next && next.type !== "space" && next.type !== "newline" && next.type !== "comma" && (next.type !== "scalar" || next.source !== ""))
+  if (reqSpace && next && next.type !== "space" && next.type !== "newline" && next.type !== "comma" && (next.type !== "scalar" || next.source !== "")) {
     onError(next.offset, "MISSING_CHAR", "Tags and anchors must be separated from the next token by white space");
+  }
+  if (tab && (atNewline && tab.indent <= parentIndent || (next == null ? void 0 : next.type) === "block-map" || (next == null ? void 0 : next.type) === "block-seq"))
+    onError(tab, "TAB_AS_INDENT", "Tabs are not allowed as indentation");
   return {
     comma,
     found,
     spaceBefore,
     comment,
     hasNewline,
-    hasNewlineAfterProp,
     anchor,
     tag,
+    newlineAfterProp,
     end,
     start: start != null ? start : end
   };
@@ -3791,7 +3873,7 @@ function mapIncludes(ctx, items, search) {
   const { uniqueKeys } = ctx.options;
   if (uniqueKeys === false)
     return false;
-  const isEqual = typeof uniqueKeys === "function" ? uniqueKeys : (a, b) => a === b || isScalar(a) && isScalar(b) && a.value === b.value && !(a.value === "<<" && ctx.schema.merge);
+  const isEqual = typeof uniqueKeys === "function" ? uniqueKeys : (a, b) => a === b || isScalar(a) && isScalar(b) && a.value === b.value;
   return items.some((pair) => isEqual(pair.key, search));
 }
 
@@ -3812,6 +3894,7 @@ function resolveBlockMap({ composeNode: composeNode2, composeEmptyNode: composeE
       next: key != null ? key : sep == null ? void 0 : sep[0],
       offset,
       onError,
+      parentIndent: bm.indent,
       startOnNewline: true
     });
     const implicitKey = !keyProps.found;
@@ -3832,16 +3915,18 @@ function resolveBlockMap({ composeNode: composeNode2, composeEmptyNode: composeE
         }
         continue;
       }
-      if (keyProps.hasNewlineAfterProp || containsNewline(key)) {
+      if (keyProps.newlineAfterProp || containsNewline(key)) {
         onError(key != null ? key : start[start.length - 1], "MULTILINE_IMPLICIT_KEY", "Implicit keys need to be on a single line");
       }
     } else if (((_b = keyProps.found) == null ? void 0 : _b.indent) !== bm.indent) {
       onError(offset, "BAD_INDENT", startColMsg);
     }
+    ctx.atKey = true;
     const keyStart = keyProps.end;
     const keyNode = key ? composeNode2(ctx, key, keyProps, onError) : composeEmptyNode2(ctx, keyStart, start, null, keyProps, onError);
     if (ctx.schema.compat)
       flowIndentCheck(bm.indent, key, onError);
+    ctx.atKey = false;
     if (mapIncludes(ctx, map2.items, keyNode))
       onError(keyStart, "DUPLICATE_KEY", "Map keys must be unique");
     const valueProps = resolveProps(sep != null ? sep : [], {
@@ -3849,6 +3934,7 @@ function resolveBlockMap({ composeNode: composeNode2, composeEmptyNode: composeE
       next: value,
       offset: keyNode.range[2],
       onError,
+      parentIndent: bm.indent,
       startOnNewline: !key || key.type === "block-scalar"
     });
     offset = valueProps.end;
@@ -3895,6 +3981,8 @@ function resolveBlockSeq({ composeNode: composeNode2, composeEmptyNode: composeE
   const seq2 = new NodeClass(ctx.schema);
   if (ctx.atRoot)
     ctx.atRoot = false;
+  if (ctx.atKey)
+    ctx.atKey = false;
   let offset = bs.offset;
   let commentEnd = null;
   for (const { start, value } of bs.items) {
@@ -3903,6 +3991,7 @@ function resolveBlockSeq({ composeNode: composeNode2, composeEmptyNode: composeE
       next: value,
       offset,
       onError,
+      parentIndent: bs.indent,
       startOnNewline: true
     });
     if (!props.found) {
@@ -3978,6 +4067,8 @@ function resolveFlowCollection({ composeNode: composeNode2, composeEmptyNode: co
   const atRoot = ctx.atRoot;
   if (atRoot)
     ctx.atRoot = false;
+  if (ctx.atKey)
+    ctx.atKey = false;
   let offset = fc.offset + fc.start.source.length;
   for (let i = 0; i < fc.items.length; ++i) {
     const collItem = fc.items[i];
@@ -3988,6 +4079,7 @@ function resolveFlowCollection({ composeNode: composeNode2, composeEmptyNode: co
       next: key != null ? key : sep == null ? void 0 : sep[0],
       offset,
       onError,
+      parentIndent: fc.indent,
       startOnNewline: false
     });
     if (!props.found) {
@@ -4048,16 +4140,19 @@ function resolveFlowCollection({ composeNode: composeNode2, composeEmptyNode: co
       if (isBlock(value))
         onError(valueNode.range, "BLOCK_IN_FLOW", blockMsg);
     } else {
+      ctx.atKey = true;
       const keyStart = props.end;
       const keyNode = key ? composeNode2(ctx, key, props, onError) : composeEmptyNode2(ctx, keyStart, start, null, props, onError);
       if (isBlock(key))
         onError(keyNode.range, "BLOCK_IN_FLOW", blockMsg);
+      ctx.atKey = false;
       const valueProps = resolveProps(sep != null ? sep : [], {
         flow: fcName,
         indicator: "map-value-ind",
         next: value,
         offset: keyNode.range[2],
         onError,
+        parentIndent: fc.indent,
         startOnNewline: false
       });
       if (valueProps.found) {
@@ -4102,6 +4197,8 @@ function resolveFlowCollection({ composeNode: composeNode2, composeEmptyNode: co
         const map2 = new YAMLMap(ctx.schema);
         map2.flow = true;
         map2.items.push(pair);
+        const endRange = (valueNode != null ? valueNode : keyNode).range;
+        map2.range = [keyNode.range[0], endRange[1], endRange[2]];
         coll.items.push(map2);
       }
       offset = valueNode ? valueNode.range[2] : valueProps.end;
@@ -4146,11 +4243,20 @@ function resolveCollection(CN2, ctx, token, onError, tagName, tag) {
     coll.tag = tagName;
   return coll;
 }
-function composeCollection(CN2, ctx, token, tagToken, onError) {
+function composeCollection(CN2, ctx, token, props, onError) {
   var _a, _b;
+  const tagToken = props.tag;
   const tagName = !tagToken ? null : ctx.directives.tagName(tagToken.source, (msg) => onError(tagToken, "TAG_RESOLVE_FAILED", msg));
+  if (token.type === "block-seq") {
+    const { anchor, newlineAfterProp: nl } = props;
+    const lastProp = anchor && tagToken ? anchor.offset > tagToken.offset ? anchor : tagToken : anchor != null ? anchor : tagToken;
+    if (lastProp && (!nl || nl.offset < lastProp.offset)) {
+      const message = "Missing newline after block sequence props";
+      onError(lastProp, "MISSING_CHAR", message);
+    }
+  }
   const expType = token.type === "block-map" ? "map" : token.type === "block-seq" ? "seq" : token.start.source === "{" ? "map" : "seq";
-  if (!tagToken || !tagName || tagName === "!" || tagName === YAMLMap.tagName && expType === "map" || tagName === YAMLSeq.tagName && expType === "seq" || !expType) {
+  if (!tagToken || !tagName || tagName === "!" || tagName === YAMLMap.tagName && expType === "map" || tagName === YAMLSeq.tagName && expType === "seq") {
     return resolveCollection(CN2, ctx, token, onError, tagName);
   }
   let tag = ctx.schema.tags.find((t) => t.tag === tagName && t.collection === expType);
@@ -4179,9 +4285,9 @@ function composeCollection(CN2, ctx, token, tagToken, onError) {
 }
 
 // node_modules/yaml/browser/dist/compose/resolve-block-scalar.js
-function resolveBlockScalar(scalar, strict, onError) {
+function resolveBlockScalar(ctx, scalar, onError) {
   const start = scalar.offset;
-  const header = parseBlockScalarHeader(scalar, strict, onError);
+  const header = parseBlockScalarHeader(scalar, ctx.options.strict, onError);
   if (!header)
     return { value: "", type: null, comment: "", range: [start, start, start] };
   const type = header.mode === ">" ? Scalar.BLOCK_FOLDED : Scalar.BLOCK_LITERAL;
@@ -4217,6 +4323,10 @@ function resolveBlockScalar(scalar, strict, onError) {
       if (header.indent === 0)
         trimIndent = indent.length;
       contentStart = i;
+      if (trimIndent === 0 && !ctx.atRoot) {
+        const message = "Block scalar values in collections must be indented";
+        onError(offset, "BAD_INDENT", message);
+      }
       break;
     }
     offset += indent.length + content.length + 1;
@@ -4423,7 +4533,7 @@ function foldLines(source) {
   try {
     first = new RegExp("(.*?)(?<![ 	])[ 	]*\r?\n", "sy");
     line = new RegExp("[ 	]*(.*?)(?:(?<![ 	])[ 	]*)?\r?\n", "sy");
-  } catch (_) {
+  } catch (e) {
     first = /(.*?)[ \t]*\r?\n/sy;
     line = /[ \t]*(.*?)[ \t]*\r?\n/sy;
   }
@@ -4547,9 +4657,17 @@ function parseCharCode(source, offset, length, onError) {
 
 // node_modules/yaml/browser/dist/compose/compose-scalar.js
 function composeScalar(ctx, token, tagToken, onError) {
-  const { value, type, comment, range } = token.type === "block-scalar" ? resolveBlockScalar(token, ctx.options.strict, onError) : resolveFlowScalar(token, ctx.options.strict, onError);
+  const { value, type, comment, range } = token.type === "block-scalar" ? resolveBlockScalar(ctx, token, onError) : resolveFlowScalar(token, ctx.options.strict, onError);
   const tagName = tagToken ? ctx.directives.tagName(tagToken.source, (msg) => onError(tagToken, "TAG_RESOLVE_FAILED", msg)) : null;
-  const tag = tagToken && tagName ? findScalarTagByName(ctx.schema, value, tagName, tagToken, onError) : token.type === "scalar" ? findScalarTagByTest(ctx, value, token, onError) : ctx.schema[SCALAR];
+  let tag;
+  if (ctx.options.stringKeys && ctx.atKey) {
+    tag = ctx.schema[SCALAR];
+  } else if (tagName)
+    tag = findScalarTagByName(ctx.schema, value, tagName, tagToken, onError);
+  else if (token.type === "scalar")
+    tag = findScalarTagByTest(ctx, value, token, onError);
+  else
+    tag = ctx.schema[SCALAR];
   let scalar;
   try {
     const res = tag.resolve(value, (msg) => onError(tagToken != null ? tagToken : token, "TAG_RESOLVE_FAILED", msg), ctx.options);
@@ -4595,11 +4713,11 @@ function findScalarTagByName(schema4, value, tagName, tagToken, onError) {
   onError(tagToken, "TAG_RESOLVE_FAILED", `Unresolved tag: ${tagName}`, tagName !== "tag:yaml.org,2002:str");
   return schema4[SCALAR];
 }
-function findScalarTagByTest({ directives, schema: schema4 }, value, token, onError) {
+function findScalarTagByTest({ atKey, directives, schema: schema4 }, value, token, onError) {
   var _a;
   const tag = schema4.tags.find((tag2) => {
     var _a2;
-    return tag2.default && ((_a2 = tag2.test) == null ? void 0 : _a2.test(value));
+    return (tag2.default === true || atKey && tag2.default === "key") && ((_a2 = tag2.test) == null ? void 0 : _a2.test(value));
   }) || schema4[SCALAR];
   if (schema4.compat) {
     const compat = (_a = schema4.compat.find((tag2) => {
@@ -4644,6 +4762,7 @@ function emptyScalarPosition(offset, before, pos) {
 // node_modules/yaml/browser/dist/compose/compose-node.js
 var CN = { composeNode, composeEmptyNode };
 function composeNode(ctx, token, props, onError) {
+  const atKey = ctx.atKey;
   const { spaceBefore, comment, anchor, tag } = props;
   let node;
   let isSrcToken = true;
@@ -4664,7 +4783,7 @@ function composeNode(ctx, token, props, onError) {
     case "block-map":
     case "block-seq":
     case "flow-collection":
-      node = composeCollection(CN, ctx, token, tag, onError);
+      node = composeCollection(CN, ctx, token, props, onError);
       if (anchor)
         node.anchor = anchor.source.substring(1);
       break;
@@ -4677,6 +4796,10 @@ function composeNode(ctx, token, props, onError) {
   }
   if (anchor && node.anchor === "")
     onError(anchor, "BAD_ALIAS", "Anchor cannot be an empty string");
+  if (atKey && ctx.options.stringKeys && (!isScalar(node) || typeof node.value !== "string" || node.tag && node.tag !== "tag:yaml.org,2002:str")) {
+    const msg = "With stringKeys, all keys must be strings";
+    onError(tag != null ? tag : token, "NON_STRING_KEY", msg);
+  }
   if (spaceBefore)
     node.spaceBefore = true;
   if (comment) {
@@ -4729,6 +4852,7 @@ function composeDoc(options, directives, { offset, start, value, end }, onError)
   const opts = Object.assign({ _directives: directives }, options);
   const doc = new Document(void 0, opts);
   const ctx = {
+    atKey: false,
     atRoot: true,
     directives: doc.directives,
     options: doc.options,
@@ -4739,6 +4863,7 @@ function composeDoc(options, directives, { offset, start, value, end }, onError)
     next: value != null ? value : end == null ? void 0 : end[0],
     offset,
     onError,
+    parentIndent: 0,
     startOnNewline: true
   });
   if (props.found) {
@@ -5063,11 +5188,11 @@ function isEmpty(ch) {
       return false;
   }
 }
-var hexDigits = "0123456789ABCDEFabcdef".split("");
-var tagChars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz-#;/?:@&=+$_.!~*'()".split("");
-var invalidFlowScalarChars = ",[]{}".split("");
-var invalidAnchorChars = " ,[]{}\n\r	".split("");
-var isNotAnchorChar = (ch) => !ch || invalidAnchorChars.includes(ch);
+var hexDigits = new Set("0123456789ABCDEFabcdef");
+var tagChars = new Set("0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz-#;/?:@&=+$_.!~*'()");
+var flowIndicatorChars = new Set(",[]{}");
+var invalidAnchorChars = new Set(" ,[]{}\n\r	");
+var isNotAnchorChar = (ch) => !ch || invalidAnchorChars.has(ch);
 var Lexer = class {
   constructor() {
     this.atEnd = false;
@@ -5085,6 +5210,8 @@ var Lexer = class {
   *lex(source, incomplete = false) {
     var _a;
     if (source) {
+      if (typeof source !== "string")
+        throw TypeError("source is not a string");
       this.buffer = this.buffer ? this.buffer + source : source;
       this.lineEndPos = null;
     }
@@ -5182,11 +5309,15 @@ var Lexer = class {
     }
     if (line[0] === "%") {
       let dirEnd = line.length;
-      const cs = line.indexOf("#");
-      if (cs !== -1) {
+      let cs = line.indexOf("#");
+      while (cs !== -1) {
         const ch = line[cs - 1];
-        if (ch === " " || ch === "	")
+        if (ch === " " || ch === "	") {
           dirEnd = cs - 1;
+          break;
+        } else {
+          cs = line.indexOf("#", cs + 1);
+        }
       }
       while (true) {
         const ch = line[dirEnd - 1];
@@ -5217,14 +5348,11 @@ var Lexer = class {
       if (!this.atEnd && !this.hasChars(4))
         return this.setNext("line-start");
       const s = this.peek(3);
-      if (s === "---" && isEmpty(this.charAt(3))) {
+      if ((s === "---" || s === "...") && isEmpty(this.charAt(3))) {
         yield* this.pushCount(3);
         this.indentValue = 0;
         this.indentNext = 0;
-        return "doc";
-      } else if (s === "..." && isEmpty(this.charAt(3))) {
-        yield* this.pushCount(3);
-        return "stream";
+        return s === "---" ? "doc" : "stream";
       }
     }
     this.indentValue = yield* this.pushSpaces(false);
@@ -5410,17 +5538,17 @@ var Lexer = class {
     let indent = 0;
     let ch;
     loop:
-      for (let i = this.pos; ch = this.buffer[i]; ++i) {
+      for (let i2 = this.pos; ch = this.buffer[i2]; ++i2) {
         switch (ch) {
           case " ":
             indent += 1;
             break;
           case "\n":
-            nl = i;
+            nl = i2;
             indent = 0;
             break;
           case "\r": {
-            const next = this.buffer[i + 1];
+            const next = this.buffer[i2 + 1];
             if (!next && !this.atEnd)
               return this.setNext("block-scalar");
             if (next === "\n")
@@ -5435,8 +5563,9 @@ var Lexer = class {
     if (indent >= this.indentNext) {
       if (this.blockScalarIndent === -1)
         this.indentNext = indent;
-      else
-        this.indentNext += this.blockScalarIndent;
+      else {
+        this.indentNext = this.blockScalarIndent + (this.indentNext === 0 ? 1 : this.indentNext);
+      }
       do {
         const cs = this.continueScalar(nl + 1);
         if (cs === -1)
@@ -5449,17 +5578,25 @@ var Lexer = class {
         nl = this.buffer.length;
       }
     }
-    if (!this.blockScalarKeep) {
+    let i = nl + 1;
+    ch = this.buffer[i];
+    while (ch === " ")
+      ch = this.buffer[++i];
+    if (ch === "	") {
+      while (ch === "	" || ch === " " || ch === "\r" || ch === "\n")
+        ch = this.buffer[++i];
+      nl = i - 1;
+    } else if (!this.blockScalarKeep) {
       do {
-        let i = nl - 1;
-        let ch2 = this.buffer[i];
+        let i2 = nl - 1;
+        let ch2 = this.buffer[i2];
         if (ch2 === "\r")
-          ch2 = this.buffer[--i];
-        const lastChar = i;
-        while (ch2 === " " || ch2 === "	")
-          ch2 = this.buffer[--i];
-        if (ch2 === "\n" && i >= this.pos && i + 1 + indent > lastChar)
-          nl = i;
+          ch2 = this.buffer[--i2];
+        const lastChar = i2;
+        while (ch2 === " ")
+          ch2 = this.buffer[--i2];
+        if (ch2 === "\n" && i2 >= this.pos && i2 + 1 + indent > lastChar)
+          nl = i2;
         else
           break;
       } while (true);
@@ -5476,7 +5613,7 @@ var Lexer = class {
     while (ch = this.buffer[++i]) {
       if (ch === ":") {
         const next = this.buffer[i + 1];
-        if (isEmpty(next) || inFlow && next === ",")
+        if (isEmpty(next) || inFlow && flowIndicatorChars.has(next))
           break;
         end = i;
       } else if (isEmpty(ch)) {
@@ -5489,7 +5626,7 @@ var Lexer = class {
           } else
             end = i;
         }
-        if (next === "#" || inFlow && invalidFlowScalarChars.includes(next))
+        if (next === "#" || inFlow && flowIndicatorChars.has(next))
           break;
         if (ch === "\n") {
           const cs = this.continueScalar(i + 1);
@@ -5498,7 +5635,7 @@ var Lexer = class {
           i = Math.max(i, cs - 2);
         }
       } else {
-        if (inFlow && invalidFlowScalarChars.includes(ch))
+        if (inFlow && flowIndicatorChars.has(ch))
           break;
         end = i;
       }
@@ -5538,7 +5675,7 @@ var Lexer = class {
       case ":": {
         const inFlow = this.flowLevel > 0;
         const ch1 = this.charAt(1);
-        if (isEmpty(ch1) || inFlow && invalidFlowScalarChars.includes(ch1)) {
+        if (isEmpty(ch1) || inFlow && flowIndicatorChars.has(ch1)) {
           if (!inFlow)
             this.indentNext = this.indentValue + 1;
           else if (this.flowKey)
@@ -5560,9 +5697,9 @@ var Lexer = class {
       let i = this.pos + 1;
       let ch = this.buffer[i];
       while (ch) {
-        if (tagChars.includes(ch))
+        if (tagChars.has(ch))
           ch = this.buffer[++i];
-        else if (ch === "%" && hexDigits.includes(this.buffer[i + 1]) && hexDigits.includes(this.buffer[i + 2])) {
+        else if (ch === "%" && hexDigits.has(this.buffer[i + 1]) && hexDigits.has(this.buffer[i + 2])) {
           ch = this.buffer[i += 3];
         } else
           break;
@@ -5863,7 +6000,7 @@ var Parser = class {
             it.value = token;
           } else {
             Object.assign(it, { key: token, sep: [] });
-            this.onKeyLine = !includesToken(it.start, "explicit-key-ind");
+            this.onKeyLine = !it.explicitKey;
             return;
           }
           break;
@@ -6053,7 +6190,8 @@ var Parser = class {
         return;
     }
     if (this.indent >= map2.indent) {
-      const atNextItem = !this.onKeyLine && this.indent === map2.indent && it.sep;
+      const atMapIndent = !this.onKeyLine && this.indent === map2.indent;
+      const atNextItem = atMapIndent && (it.sep || it.explicitKey) && this.type !== "seq-item-ind";
       let start = [];
       if (atNextItem && it.sep && !it.value) {
         const nl = [];
@@ -6090,23 +6228,24 @@ var Parser = class {
           }
           return;
         case "explicit-key-ind":
-          if (!it.sep && !includesToken(it.start, "explicit-key-ind")) {
+          if (!it.sep && !it.explicitKey) {
             it.start.push(this.sourceToken);
+            it.explicitKey = true;
           } else if (atNextItem || it.value) {
             start.push(this.sourceToken);
-            map2.items.push({ start });
+            map2.items.push({ start, explicitKey: true });
           } else {
             this.stack.push({
               type: "block-map",
               offset: this.offset,
               indent: this.indent,
-              items: [{ start: [this.sourceToken] }]
+              items: [{ start: [this.sourceToken], explicitKey: true }]
             });
           }
           this.onKeyLine = true;
           return;
         case "map-value-ind":
-          if (includesToken(it.start, "explicit-key-ind")) {
+          if (it.explicitKey) {
             if (!it.sep) {
               if (includesToken(it.start, "newline")) {
                 Object.assign(it, { key: null, sep: [this.sourceToken] });
@@ -6133,7 +6272,8 @@ var Parser = class {
               const key = it.key;
               const sep = it.sep;
               sep.push(this.sourceToken);
-              delete it.key, delete it.sep;
+              delete it.key;
+              delete it.sep;
               this.stack.push({
                 type: "block-map",
                 offset: this.offset,
@@ -6182,7 +6322,7 @@ var Parser = class {
         default: {
           const bv = this.startBlockValue(map2);
           if (bv) {
-            if (atNextItem && bv.type !== "block-seq" && includesToken(it.start, "explicit-key-ind")) {
+            if (atMapIndent && bv.type !== "block-seq") {
               map2.items.push({ start });
             }
             this.stack.push(bv);
@@ -6394,7 +6534,7 @@ var Parser = class {
           type: "block-map",
           offset: this.offset,
           indent: this.indent,
-          items: [{ start }]
+          items: [{ start, explicitKey: true }]
         };
       }
       case "map-value-ind": {
@@ -6738,19 +6878,21 @@ var OpenGatePlugin = class extends import_obsidian12.Plugin {
     this.registerObsidianProtocolHandler("opengate", this.handleCustomProtocol.bind(this));
   }
   getGateOptionFromProtocolData(data) {
-    const { title, url, id } = data;
+    const { title, url, id, position } = data;
     let targetGate;
     if (id && this.settings.gates[id]) {
       targetGate = this.settings.gates[id];
+    } else {
+      targetGate = Object.values(this.settings.gates).find((gate) => title && gate.title.toLowerCase() === title.toLowerCase() || url && gate.url.toLowerCase() === url.toLowerCase());
     }
-    if (targetGate === void 0 && title) {
-      targetGate = Object.values(this.settings.gates).find((gate) => gate.title.toLowerCase() === title.toLowerCase());
+    if (!targetGate) {
+      targetGate = createEmptyGateOption();
     }
-    if (targetGate === void 0 && url) {
-      targetGate = Object.values(this.settings.gates).find((gate) => gate.url.toLowerCase() === url.toLowerCase());
-    }
-    if (targetGate !== void 0 && url) {
+    if (url) {
       targetGate.url = url;
+    }
+    if (position) {
+      targetGate.position = position;
     }
     return targetGate;
   }
@@ -6765,6 +6907,7 @@ var OpenGatePlugin = class extends import_obsidian12.Plugin {
         return;
       }
     }
+    console.log(targetGate);
     const gate = await openView(this.app.workspace, (targetGate == null ? void 0 : targetGate.id) || "temp-gate", targetGate == null ? void 0 : targetGate.position);
     const gateView = gate.view;
     gateView == null ? void 0 : gateView.onFrameReady(() => {
@@ -6811,3 +6954,5 @@ var OpenGatePlugin = class extends import_obsidian12.Plugin {
     return Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
   }
 };
+
+/* nosourcemap */

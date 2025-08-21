@@ -5,8 +5,9 @@ campaign: "{{@importDataRoot.info.thisCampaign}}"
 center: {{this.center}}
 code: {{code}}
 color: {{color}}
-culture: {{getCultureName culture @importDataRoot.pack.cultures}}
 created: {{getDateTimestamp @importSettings}}
+cssclass: sixty-pct-width
+culture: {{getCultureName culture @importDataRoot.pack.cultures}}
 deity: {{deity}}
 expansion: {{expansion}}
 expansionism: {{expansionism}}
@@ -22,6 +23,7 @@ tags:
 - Religion
 - {{@importDataRoot.info.mapName}}
 type: {{type}}
+templateVersion: 1.0
 WBProgress: Imported
 world: {{@importDataRoot.info.mapName}}
 ---
@@ -139,8 +141,6 @@ Below are any notable zones or regions within `=this.religionName`
 
 Change the '-' after the closing square bracket of each callout line (starts with open bracket followed by an exclamation point) to a '+' to have it be expanded by default. 
 %%
-
-
 ---
 
 [[{{getCampaignHomeNote @importSettings}}]] | [[{{getCampaignAtlasNote @importSettings}}]]

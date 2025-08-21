@@ -2,19 +2,20 @@
 
 ## Wyrmling Edition
 
-#### -v.0.1 & -v.0.2
-Pre-pre-alpha versions that were almost ready for sharing
-
-### -v.0.3 - released 2024-Apr-23-1600EST
-Early Alpha version. First share with the community.
-Seeking reactions and input from others who may find it useful or have things to contribute.
+### -v.0.6 - released ????
+An update to deal with changes to the FMG JSON data after new features were added and things were reworked (e.g.- v1.99 (Routes rework))
 
 ### -v.0.5 - released 2024-Apr-23-1700EST
 An updated version with a few fixes (of course you always find the glitches and bugs *after* you release your first version).
 
 This now includes a Sample Imported FMG map - see `01-Campaigns/Test Campaign Ladonia` for the kinds of things the import process will create.
 
+### -v.0.3 - released 2024-Apr-23-1600EST
+Early Alpha version. First share with the community.
+Seeking reactions and input from others who may find it useful or have things to contribute.
 
+#### -v.0.1 & -v.0.2
+Pre-pre-alpha versions that were almost ready for sharing
 
 # JSON ELEMENTS INCORPORATED
 
@@ -38,12 +39,20 @@ Unchecked are elements that would be nice to import.
 ## TO DO
 
 - [ ] Is there a way to pull all the marker data for each State, Province, and Burg to create sections of Leaflet map markers?
-- [ ] Refactor all the handlebar helpers to make use of just the `@importDataRoot` object and pass it to all the helpers as `allData` & remove all the other different subsets using that (like `@importDataRoot.pack.cells`, etc)
+
+- [ ] What happens if you try to import a map where you have deleted any of the following *after* FMG generates the map:
+  - [ ] State
+  - [x] Province (will show up in 01-Campaign/your_campaign/States/unDefined - can delete without harm)
+  - [ ] Burg
+  - [ ] Culture
+  - [ ] Religion
+
 - [ ] make use of the `full-width` cssclass where needed...if we want. 
 	- [ ] make other not-quite-full-width classes?
 
 ### TO DO (Archives)
 
+- [x] Refactor all the handlebar helpers to make use of just the `@importDataRoot` object and pass it to all the helpers as `allData` & remove all the other different subsets using that (like `@importDataRoot.pack.cells`, etc)
 - [x] Import process uses subfolder hierarchy to deal with duplicate items from FMG JSON - is this clean enough?
 
 (This doesn't easily work - I think the Templater code has a priority issue with the JSON/CSV Importer code)

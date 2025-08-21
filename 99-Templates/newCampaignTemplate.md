@@ -36,6 +36,8 @@ tags:
 >> **Status** | `INPUT[Status][:campaignStatus]` |
 
 <%*
+console.log("##### - Starting folder creation js block")
+const newCampaignName = '{{VALUE:newCampaignName}}'
 const folderNames = [
 "02-WorldBuilding",
 "03-Story Arcs",
@@ -47,6 +49,7 @@ const folderNames = [
 "21-NPCs",
 "22-Groups",
 "23-Deities",
+"98-" + newCampaignName + " Assets",
 "99-Misc Notes"
 ]
 console.log(folderNames)

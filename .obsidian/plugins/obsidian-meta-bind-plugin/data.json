@@ -8,8 +8,6 @@
     "shortName": "Su"
   },
   "syncInterval": 200,
-  "minSyncInterval": 50,
-  "maxSyncInterval": 1000,
   "enableJs": true,
   "viewFieldDisplayNullAsEmpty": true,
   "enableSyntaxHighlighting": true,
@@ -137,10 +135,61 @@
           "replacement": "![[Burg Help Info]]"
         }
       ]
+    },
+    {
+      "label": "Hide Interactive Burg Map",
+      "icon": "",
+      "style": "default",
+      "class": "",
+      "cssStyle": "",
+      "backgroundImage": "",
+      "tooltip": "",
+      "id": "hide_int_map",
+      "hidden": false,
+      "actions": [
+        {
+          "type": "regexpReplaceInNote",
+          "regexp": "%%InteractiveMapTOP%%",
+          "replacement": "%%InteractiveMapTOP-",
+          "regexpFlags": "g"
+        },
+        {
+          "type": "regexpReplaceInNote",
+          "regexp": "%%InteractiveMapTAIL%%",
+          "replacement": "-InteractiveMapTAIL%%",
+          "regexpFlags": "g"
+        }
+      ]
+    },
+    {
+      "label": "Show Interactive Burg Map",
+      "icon": "",
+      "style": "default",
+      "class": "",
+      "cssStyle": "",
+      "backgroundImage": "",
+      "tooltip": "",
+      "id": "show_int_map",
+      "hidden": false,
+      "actions": [
+        {
+          "type": "regexpReplaceInNote",
+          "regexp": "%%InteractiveMapTOP-",
+          "replacement": "%%InteractiveMapTOP%%",
+          "regexpFlags": "g"
+        },
+        {
+          "type": "regexpReplaceInNote",
+          "regexp": "-InteractiveMapTAIL%%",
+          "replacement": "%%InteractiveMapTAIL%%",
+          "regexpFlags": "g"
+        }
+      ]
     }
   ],
   "excludedFolders": [
     "templates"
   ],
-  "useUsDateInputOrder": false
+  "minSyncInterval": 50,
+  "maxSyncInterval": 1000
 }

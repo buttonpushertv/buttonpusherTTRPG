@@ -1,0 +1,2 @@
+https://watabou.github.io/city-generator/?name=Aber&population=1958&size=17&seed=8861372910176&river=1&coast=0&farms=1&citadel=1&urban_castle=1&hub=false&plaza=0&temple=0&walls=1&shantytown=0&gates=-1&export=png
+https://watabou.github.io/city-generator/?name=Aberal&population=5268&size=24&seed=8861372910096&river=1&coast=0&farms=1&citadel=0&urban_castle=0&hub=false&plaza=1&temple=0&walls=0&shantytown=0&gates=-1&export=png

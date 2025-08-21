@@ -2,6 +2,18 @@
 HOLDING AREA FOR HELPERS THAT HAVE BEEN DEPRECATED OR HAVE BEEN RE-WORKED
 JUST KEEPING THE CODE AROUND, JUST IN CASE
 
+// Debug 
+console.log("DEBUG - allCells: ", allCells);
+console.log("DEBUG - currentBurg.name:", currentBurg.name);
+console.log("DEBUG - currentBurg.cell:", currentBurg.cell);
+console.log("DEBUG - currentCell: ", currentCell);
+console.log("DEBUG - route: ", route);
+console.log("DEBUG - roadsAround: ", roadsAround);
+
+
+
+
+
 // 001 - DEPRECATED
 // Custom helper function to extract thisCampaignName from @importSettings
 handlebars.registerHelper('getCampaignName', function(importSettings) {
@@ -177,5 +189,11 @@ handlebars.registerHelper('getPoleLeafletXY', function(state, mapInfo) {
   return `${leafletH},${leafletW}`;
 });
 
+
+// 022 - Previous FMG version - prior to FMG 1.99 (Routes rework)
+      if (currentCell.h >= 20 && currentCell.road) roadsAround = currentCell.h * currentCell.road;
+      if (roadsAround > 1) tags.push("highway");
+      else if (roadsAround === 1) tags.push("dead end");
+      else tags.push("isolated");
 
 */

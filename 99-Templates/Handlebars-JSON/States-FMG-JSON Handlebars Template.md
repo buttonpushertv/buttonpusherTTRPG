@@ -8,8 +8,9 @@ campaign: {{@importDataRoot.info.thisCampaign}}
 center: {{this.center}}
 color: {{color}}
 created: {{getDateTimestamp @importSettings}}
+cssclasses: sixty-pct-width
 culture: {{getCultureName culture @importDataRoot.pack.cultures}}
-emblem: {{@importDataRoot.info.thisCampaignShortCode}}-{{@importDataRoot.info.mapName}} Emblem {{fullName}}.png
+emblem: {{@importDataRoot.info.mapName}} Emblem {{fullName}}.png
 expansionism: {{expansionism}}
 form: {{form}}
 formName: {{formName}}
@@ -35,6 +36,7 @@ tags:
 - State
 - {{@importDataRoot.info.mapName}}
 - {{@importDataRoot.info.thisCampaignShortCode}}
+templateVersion: 1.2
 type: {{type}}
 WBProcess: Imported
 world: {{@importDataRoot.info.mapName}}
@@ -61,7 +63,7 @@ world: {{@importDataRoot.info.mapName}}
 > **Rulers**|`INPUT[list:rulers]`|
 > **Short Description**|`INPUT[textArea:shortDescription]`
 
-[[{{getCampaignHomeNote @importSettings}}]] | [[{{getCampaignAtlasNote @importSettings}}]]
+[[{{getCampaignHomeNote @importSettings}}|Campaign Home]] | [[{{getCampaignAtlasNote @importSettings}}|Campaign Atlas]] | Capital: `=link(this.capital)`
 
 %% During the import process, much of the data for the Leaflet fields should have been pulled in from the JSON. You will need to update the defaultZoom and (maybe) the coordinates values, but it should be pretty close - good enough to get a start with it. The goal is to cut down on the amount of manual effort you need to go through to pull your data in from the FMG JSON %% 
 
@@ -88,19 +90,21 @@ world: {{@importDataRoot.info.mapName}}
 
 %% All the info in this 'infobox' will appear in the panel to the right. Most of these values are pulled from the metadata in the properties above. %%
 
-> [!infobox]
-> ![[{{@importDataRoot.info.thisCampaignShortCode}}-{{@importDataRoot.info.mapName}} Emblem {{fullName}}.png]]
->
->  |
->  --- |
-> 
->  # **Pronounced:**
->  # "`=this.pronounced`"
+> [!infobox]+
 > 
 >  |
 >  --- |
 >  
->> [!note|title-center c-gray] ### Info
+>> [!note|no-t text-center]
+>> **Emblem of**
+>> **`=this.fullName`**
+>> ![[{{@importDataRoot.info.mapName}} Emblem {{fullName}}.png]]
+>>
+> 
+>  |
+>  --- |
+>  
+> ## <p align="left"><font color="#c00000">Info</font></p>
 > 
 >  |
 >  ---: | --- |
@@ -109,7 +113,11 @@ world: {{@importDataRoot.info.mapName}}
 > **Area (sq. mi)** | `=this.area` |
 >  **Dominant Geographic Feature** | `=this.type` |
 >  
-> ###### Politics
+>  |
+>  --- |
+>  
+> ## <p align="left"><font color="#c00000">Politics</font></p>
+> 
 >  |
 > ---: | --- |
 > **Capital** | `=link(this.capital)` |
@@ -118,18 +126,19 @@ world: {{@importDataRoot.info.mapName}}
 >**Dominant Culture** | `=link(this.culture)` |
 > **Dominant Religion** | `=link(this.religion)` |
 >
+>  |
+>  --- |
+>  
 > ```dataview
 > TABLE WITHOUT ID link(neighbors) as "Neighbors"
 > FROM ""
 > WHERE file.name = this.file.name
 > ```
-> ```dataview
-> TABLE WITHOUT ID link(provinces) as "Provinces"
-> FROM ""
-> WHERE file.name = this.file.name
-> ```
+
 
 # **`=this.fullName`**
+
+**Pronounced:** "`=this.pronounced`"
 
 %% Below is the fancy callout box where you can place some basic info. Precede any new lines with a '>' & space to place them within the box. %%
 
@@ -138,22 +147,8 @@ world: {{@importDataRoot.info.mapName}}
 
 %% GENERAL NOTES GO HERE - free-form text or images %%
 
-### Zones/Regions
-
-> [!note|no-t] Zones/Regions
->
->> [!note]- Burgs
->> ```dataview
->> TABLE WITHOUT ID file.link as "Burgs", link(provinceName) as "Province Name"
->> FROM #Burg and "{{@importDataRoot.info.thisCampaignPath}}/05-Atlas/States/{{i}}-{{name}}"
->> WHERE econtains(stateId,this.id)
->> SORT file.name ASC
->> ```
-
-%% Zones & regions are any areas that need to be defined. See Points of Interest below as another place to add specific locations that are noteworthy. You can identify Zones/Regions in the properties above (metadata is searchable/indexable). And you can add specific info about any of them below. Use '[!note]- {Zone/Region name}' to place each one in it's own callout. %%
-
 ## History
-Siginifcant Incidents in `=this.name`'s history:
+Significant incidents in `=this.name`'s history:
 
 | Name | Start Year | End Year |
 | ---- | ---------- | -------- |
@@ -161,26 +156,18 @@ Siginifcant Incidents in `=this.name`'s history:
 | {{name}} | {{start}} | {{end}} |
 {{/each}}
 
-
-## Military 
-| Icon | Name | Infantry | Archers | Cavalry | Artillery | Fleet | Total |
-| -----| ---- | -------- | ------- | ------- | --------- | ----- | ----- |
-{{#each military}}
-| {{icon}} | {{name}} | {{u.infantry}} | {{u.archers}} | {{u.cavalry}} | {{u.artillery}} | {{u.fleet}} | {{a}} |
-{{/each}}
-
-%% You can use the 'Timeline' Callout features of the ITS theme here to create a timeline of any important events. Remove the line below that reads '(delete this line to enable timeline)' and the trailing double percent signs & add a set of double percent signs here ->
-
-> [!timeline|t-l] **`=this.fullname` Founded** _Date of founding._
-> `=this.fullName` was founded by...
-
-> [!timeline|t-r] **Something Happened** *A significant event.*
-> Something momentous occurred on this day.
-
-> [!timeline|t-l t-2] **Another thing happened** *Less significant this time.*
-> Today was only a moderately important day.
-
-(delete this line to enable timeline) %%
+> [!note]- Timeline
+> (Edit this doc to update the timeline - and remove this line, too.)
+> 
+>> [!timeline|t-l] **`=this.fullname` Founded** _Date of founding._
+>> `=this.fullName` was founded by...
+>
+>> [!timeline|t-r] **Something Happened** *A significant event.*
+>> Something momentous occurred on this day.
+>
+>> [!timeline|t-l t-2] **Another thing happened** *Less significant this time.*
+>> Today was only a moderately important day.
+>
 
 ## Notes
 
@@ -192,6 +179,45 @@ Siginifcant Incidents in `=this.name`'s history:
 > [!question]- Hidden Details
 >
 
+### Zones/Regions
+
+%% Zones & regions are any areas that need to be defined. See Points of Interest below as another place to add specific locations that are noteworthy. You can identify Zones/Regions in the properties above (metadata is searchable/indexable). And you can add specific info about any of them below. Use '[!note]- {Zone/Region name}' to place each one in it's own callout. %%
+
+## Related Links
+
+> [!note|wmed]- Burgs
+> ```dataview
+> TABLE WITHOUT ID file.link as "Burgs", link(provinceName) as "Province Name"
+> FROM #Burg and "01-Campaigns/Braia/05-Atlas/States/1-Lavenhelmia"
+> WHERE econtains(stateId,this.id)
+> SORT file.name ASC
+> ```
+
+> [!NOTE|wmed]- Neighbors
+> ```dataview
+> TABLE WITHOUT ID link(neighbors) as "Neighbors"
+> FROM ""
+> WHERE file.name = this.file.name
+> ```
+
+> [!NOTE|wmed]- Provinces
+> ```dataview
+> TABLE WITHOUT ID link(provinces) as "Provinces"
+> FROM ""
+> WHERE file.name = this.file.name
+> ```
+
+#### Other Information
+
+> [!note]- Military
+> ### Military Units of `=this.name`
+> | Icon | Name | Infantry | Archers | Cavalry | Artillery | Fleet | Total |
+> | -----| ---- | -------- | ------- | ------- | --------- | ----- | ----- |
+> {{#each military}}
+> | {{icon}} | {{name}} | {{u.infantry}} | {{u.archers}} | {{u.cavalry}} | {{u.artillery}} | {{u.fleet}} | {{a}} |
+> {{/each}}
+
+
 ---
 
-[[{{getCampaignHomeNote @importSettings}}]] | [[{{getCampaignAtlasNote @importSettings}}]]
+[[{{getCampaignHomeNote @importSettings}}|Campaign Home]] | [[{{getCampaignAtlasNote @importSettings}}|Campaign Atlas]] | Capital: `=link(this.capital)`

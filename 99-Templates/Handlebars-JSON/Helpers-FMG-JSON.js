@@ -80,13 +80,13 @@ handlebars.registerHelper('getDateTimestamp', function(importSettings) {
 // 006
 // Custom helper function to get Burg Name
 handlebars.registerHelper('getBurgName', function(burgId,allBurgs) {
-  //console.log("burgId:", burgId);
-  //console.log("allBurgs: ", allBurgs);
+  // console.log("burgId:", burgId);
+  // console.log("allBurgs: ", allBurgs);
   if (burgId === undefined) {
     console.log("##### getBurgName - burgId was undefined #####");
     return ''; // skip if the element is undefined
   };
-  //console.log("burgId wasn't 0 or undefined");
+  // console.log("burgId wasn't 0 or undefined");
   const burgFound = allBurgs.find(burg => burg.i === burgId);
   // console.log("burgFound:", burgFound.name);
   return burgFound ? burgFound.name : 'Unknown';
@@ -95,43 +95,43 @@ handlebars.registerHelper('getBurgName', function(burgId,allBurgs) {
 // 007
 // Custom helper function to get State Name
 handlebars.registerHelper('getStateName', function(stateId,allStates) {
-  //console.log("getStateName - StateId:", stateId);
-  //console.log("allStates: ", allStates);
+  // console.log("getStateName - StateId:", stateId);
+  // console.log("allStates: ", allStates);
   if (stateId === undefined) {
     console.log("##### getStateName - stateId was undefined #####");
     return ''; // skip if the element is undefined or zero
   };
   const stateName = allStates.find(state => state.i === stateId);
-  //console.log("stateName found:", stateName);
+  // console.log("stateName found:", stateName);
   return stateName ? stateName.name : 'Unknown';
 });
 
 // 008
 // Custom helper function to get Province Name
 handlebars.registerHelper('getProvinceName', function(provinceId,allProvinces) {
-  //console.log("provinceId:", provinceId);
-  //console.log("allProvinces: ", allProvinces);
+  // console.log("provinceId:", provinceId);
+  // console.log("allProvinces: ", allProvinces);
   if (provinceId === undefined || provinceId === 0) {
     console.log("##### getProvinceName - provinceId was undefined or zero #####");
     return ''; // skip if the element is undefined or zero
   };
   const provinceName = allProvinces.find(province => province.i === provinceId);
-  //console.log("provinceName found:", provinceName);
+  // console.log("provinceName found:", provinceName.fullName);
   return provinceName ? provinceName.fullName : 'Unknown';
 });
 
 // 009
 // Custom helper function to get Culture Name
 handlebars.registerHelper('getCultureName', function(cultureId,allCultures) {
-  //console.log("cultureId:", cultureId);
-  //console.log("allCultures: ", allCultures);
+  // console.log("cultureId:", cultureId);
+  // console.log("allCultures: ", allCultures);
   if (cultureId === undefined || cultureId === 0) {
     console.log("##### getCultureName - cultureId was undefined or zero #####");
     return ''; // skip if the element is undefined
     
   };
   const cultureName = allCultures.find(culture => culture.i === cultureId);
-  //console.log("cultureName found:", cultureName);
+  // console.log("cultureName found:", cultureName);
   return cultureName ? cultureName.name : 'Unknown';
 });
 
@@ -168,60 +168,62 @@ handlebars.registerHelper('burgMapUnits', function(currentBurg, mapSettings) {
 // based on the data model for Fantasy Map Generator - https://github.com/Azgaar/Fantasy-Map-Generator/wiki/Data-model
 // Portions of this code are adapted from the Fantasy Map Generator Code - https://github.com/Azgaar/Fantasy-Map-Generator
 handlebars.registerHelper('getBurgMapLink', function(currentBurg, mapSeed, allCells, mapSettings, grid) {
-  if (currentBurg === undefined || currentBurg === 0) {
+  if (!currentBurg === undefined || currentBurg.SourceIndex === 0) {
     console.log("##### getBurgMapLink - currentBurg was undefined or zero #####");
     return ''; // skip if currentCell is undefined
   };
-  //console.log("mapSeed: ", mapSeed);
-  //console.log("allCells: ", allCells);
-  //console.log("mapSettings: ", mapSettings);
-  //console.log("currentBurg:", currentBurg);
-  //console.log("Processing Burg ID: ", currentBurg.i, " - Name: ", currentBurg.name);
+  // console.log("mapSeed: ", mapSeed);
+  // console.log("allCells: ", allCells);
+  // console.log("mapSettings: ", mapSettings);
 
-  //console.log("mapSettings: ", mapSettings);
+  // console.log("Processing Burg ID: ", currentBurg.i, " - Name: ", currentBurg.name);
+  // console.log("currentBurg:", currentBurg);
+
+  // console.log("mapSettings: ", mapSettings);
   const {options} = mapSettings;
-  //console.log("options: ", options);
+  // console.log("options: ", options);
 
   const pop = rn(currentBurg.population * mapSettings.populationRate * mapSettings.urbanization);
-  // console.log("population: ", pop);
+  // console.log("DEBUG - population: ", pop);
 
-
-  //console.log("POP TEST: population:", pop, "options.villageMaxPopulation: ", options.villageMaxPopulation);
-
+  // console.log("POP TEST: population:", pop, "options.villageMaxPopulation: ", options.villageMaxPopulation);
+  // console.log("DEBUG - testing for Village or City");
   if (!options.villageMaxPopulation){
     console.log ("## - JSON does not contain options.villageMaxPopulation - ##");
     return createMfcgLink(currentBurg, mapSeed, allCells, mapSettings, grid);
   } else if (pop >= options.villageMaxPopulation || currentBurg.citadel || currentBurg.walls || currentBurg.temple || currentBurg.shanty) {
+    // console.log("DEBUG - It's a City - using MFCG");
     return createMfcgLink(currentBurg, mapSeed, allCells, mapSettings, grid);
   } else {
+    // console.log("DEBUG - It's a Village - using Village Gen");
     return createVillageGeneratorLink(currentBurg, mapSeed, allCells, mapSettings, grid);
   };
 
   function createMfcgLink(currentBurg, mapSeed, allCells, mapSettings) {
-    //console.log("++- ", currentBurg.name, " is a CITY - ++");
+    // console.log("++- ", currentBurg.name, " is a CITY - ++");
     var seed = `${mapSeed}${String(currentBurg.i).padStart(4, 0)}`;
     const name = currentBurg.name;
-    //console.log("currentBurg:", currentBurg);
+    // console.log("currentBurg:", currentBurg);
     const currentCell = allCells.find(bc => bc.i === currentBurg.cell);
     const havenCell = allCells.find(hc => hc.i === currentCell.haven);
-    //console.log("currentCell: ", currentCell);
+    // console.log("currentCell: ", currentCell);
     const sizeRaw = 2.13 * Math.pow((currentBurg.population * mapSettings.populationRate) / mapSettings.urbanDensity, 0.385);
     const size = minmax(Math.ceil(sizeRaw), 6, 100);
     const population = rn(currentBurg.population * mapSettings.populationRate * mapSettings.urbanization);
-    //console.log("population: ", population);
+    // console.log("population: ", population);
     const river = currentCell.r ? 1 : 0;
     const coast = Number(currentBurg.port > 0);
     const sea = coast && currentCell.haven ? getSeaDirections(currentCell.i) : null;
-    //console.log("river: ", river, "---coast: ", coast,"---sea: ", sea);
+    // console.log("river: ", river, "---coast: ", coast,"---sea: ", sea);
     const biome = currentCell.biome;
     const arableBiomes = river ? [1, 2, 3, 4, 5, 6, 7, 8] : [5, 6, 7, 8];
     const farms = +arableBiomes.includes(biome);
-    //console.log("farms: ", farms);
+    // console.log("farms: ", farms);
     const citadel = +currentBurg.citadel;
     const urban_castle = +(citadel && each(2)(currentBurg.i));
-    //console.log("urban_castle: ", urban_castle);
+    // console.log("urban_castle: ", urban_castle);
     const hub = +currentCell.road > 50;
-    //console.log("hub: ", hub);
+    // console.log("hub: ", hub);
     const walls = +currentBurg.walls;
     const plaza = +currentBurg.plaza;
     const temple = +currentBurg.temple;
@@ -248,7 +250,7 @@ handlebars.registerHelper('getBurgMapLink', function(currentBurg, mapSeed, allCe
     const url = new URL("https://watabou.github.io/city-generator/");
     url.search = new URLSearchParams(parameters);
     if (sea) url.searchParams.append("sea", sea);
-    //console.log(currentBurg.name, " - MFCG URL: ", url.toString());
+    // console.log(currentBurg.name, " - MFCG URL: ", url.toString());
     const toReturn = url.toString();
     return toReturn.substring(25);
   
@@ -262,36 +264,54 @@ handlebars.registerHelper('getBurgMapLink', function(currentBurg, mapSeed, allCe
   };
 
   function createVillageGeneratorLink(currentBurg, mapSeed, allCells, mapSettings, grid) {
-      //console.log("##- ", currentBurg.name, " is a VILLAGE - ##");
+
       var burgSeed = `${mapSeed}${String(currentBurg.i).padStart(4, 0)}`;
+
       // NAME ON VILLAGE GENERATOR - SIZE ISSUE
       // The image that appears on the village gen for the name of the burg is set to use a seemingly fixed and large font size
       // this means the name text appears very large when shown in a small window (as seen in the Live Map Callout on a Burg's note)
       // If you wish to have the name appear, it needs to be included as a parameter in the URL
       // comment out the next line to hide the name via the URL `name` parameter
+
       const name = currentBurg.name;
       // COMMENT OUT line above and UNcomment next line to have name be hidden on village gen map
       // const name = "";
-      //console.log("currentBurg:", currentBurg);
+
       const pop = rn(currentBurg.population * mapSettings.populationRate * mapSettings.urbanization);
-      //console.log("population: ", population);
       const currentCell = allCells.find(bc => bc.i === currentBurg.cell);
       const cellTemp = grid.cells.find(ct => ct.i === currentCell.i);
       const tags = [];
-      //console.log("currentCell: ", currentCell);
-    
+
+      
+
       if (currentCell.r && currentCell.haven) tags.push("estuary");
       else if (currentCell.haven && currentCell.f === 1) tags.push("island,district");
       else if (currentBurg.port) tags.push("coast");
       else if (currentCell.conf) tags.push("confluence");
       else if (currentCell.r) tags.push("river");
       else if (pop < 200 && each(4)(currentBurg.cell)) tags.push("pond");
-    
-      if (currentCell.h >= 20 && currentCell.road) roadsAround = currentCell.h * currentCell.road;
-      if (roadsAround > 1) tags.push("highway");
-      else if (roadsAround === 1) tags.push("dead end");
-      else tags.push("isolated");
-      
+  
+      if (currentCell.routes) {
+        const connections = currentCell.routes[currentCell] || {};
+        const roadsAround = Object.values(connections).filter(routeId => {
+          const route = pack.routes[routeId];
+          return route.group === "roads" || route.group === "trails";
+        }).length;
+
+        // new process taken from FMG 1.99 code
+        // tags.push(roads > 1 ? "highway" : roads === 1 ? "dead end" : "isolated");
+
+        if (roadsAround > 1) {
+          tags.push("highway");
+        } else if (roadsAround === 1) {
+          tags.push("dead end");
+        } else {
+          tags.push("isolated");
+        }
+      } else {
+        tags.push("isolated");
+      }
+
       const biome = currentCell.biome;
       const arableBiomes = currentCell.r ? [1, 2, 3, 4, 5, 6, 7, 8] : [5, 6, 7, 8];
       if (!arableBiomes.includes(biome)) tags.push("uncultivated");
@@ -299,11 +319,12 @@ handlebars.registerHelper('getBurgMapLink', function(currentBurg, mapSeed, allCe
       
       const temp = cellTemp;
       if (temp <= 0 || temp > 28 || (temp > 25 && each(3)(currentCell))) tags.push("no orchards");
+      
       if (!currentBurg.plaza) tags.push("no square");
     
       if (pop < 100) tags.push("sparse");
       else if (pop > 300) tags.push("dense");
-    
+      
       const width = (() => {
         if (pop > 1500) return 1600;
         if (pop > 1000) return 1400;
@@ -316,11 +337,26 @@ handlebars.registerHelper('getBurgMapLink', function(currentBurg, mapSeed, allCe
     
       const Vurl = new URL("https://watabou.github.io/village-generator/");
       Vurl.search = new URLSearchParams({pop, name, seed: burgSeed, width, height, tags});
-      //console.log(currentBurg.name, " - Village URL: ", Vurl.toString());
       const toReturn = Vurl.toString();
       return toReturn.substring(25);
     };
  
+      // DEBUG SECTION - these are for debugging the VillageGeneratorLink function.
+      // Place them where appropriate in the code above to see the values of the variables at that point in the code
+      // console.log("## DEBUG - VillageGeneratorLink function: ", currentBurg.name, " is a VILLAGE - ##");
+      // console.log("VillageGeneratorLink function: currentBurg: ", currentBurg);
+      // console.log("VillageGeneratorLink function: currentCell: ", currentCell);
+      // console.log("## DEBUG - VillageGeneratorLink function: name assigned: ", name, " - ##");
+      // console.log("## DEBUG - VillageGeneratorLink function: pop assigned: ", pop, " - ##");
+      // console.log("currentCell: ", currentCell);
+      // console.log("## DEBUG - VillageGeneratorLink function: 1st tags assigned: ", tags, " - (empty?)##");
+      // console.log("## DEBUG - VillageGeneratorLink function: currentCell assigned: ", currentCell, " - ##");
+      // console.log("## DEBUG - VillageGeneratorLink function: 2nd tags assigned: ", tags, " - ##");
+      // console.log("## DEBUG - VillageGeneratorLink function: 3rd tags assigned: ", tags, " - ##");
+      // console.log("## DEBUG - VillageGeneratorLink function: Final tags assigned: ", tags, " - ##");
+      // console.log("## DEBUG - VillageGeneratorLink function: width: ", width, " - height: ", height, " - ##");
+      // console.log(currentBurg.name, " - Village URL: ", Vurl.toString());
+
 
   // FMG utils related to numbers
 
@@ -366,7 +402,7 @@ handlebars.registerHelper('getBurgMapLink', function(currentBurg, mapSeed, allCe
     const h = tempH.h;
     const unit = mapSettings.heightUnit;
     const hExpon = mapSettings.heightExponent;
-    //console.log("currentCell: ", currentCell, "h: ", h, "unit: ", unit );
+    // console.log("currentCell: ", currentCell, "h: ", h, "unit: ", unit );
     let unitRatio = 3.281; // default calculations are in feet
     if (unit === "m") unitRatio = 1; // if meter
     else if (unit === "f") unitRatio = 0.5468; // if fathom
@@ -374,8 +410,8 @@ handlebars.registerHelper('getBurgMapLink', function(currentBurg, mapSeed, allCe
     if (h >= 20) height = Math.pow(h - 18, +hExpon);
     else if (h < 20 && h > 0) height = ((h - 20) / h) * 50;
     const result = rn(height * unitRatio) + " " + unit;
-    //console.log("height:", height, "unitRatio: ", unitRatio);
-    //console.log("result: ", result);
+    // console.log("height:", height, "unitRatio: ", unitRatio);
+    // console.log("result: ", result);
     return result;
 
     // round value to d decimals
@@ -419,7 +455,7 @@ handlebars.registerHelper('totalPopulation', function(rural,urban,populationRate
 // 016
 // Custom helper to lookup what Province a Burg resides within
 handlebars.registerHelper('burgProvinceLookup', function(cellId,allCells,allProvinces) {
-  //console.log("burgProvinceLookup for cellId: ", cellId );
+  // console.log("burgProvinceLookup for cellId: ", cellId );
   if (cellId === undefined || cellId === 0) {
     console.log("##### burgProvinceLookup - cellId was undefined or zero #####");
     return ''; // skip if cellId value is undefined
@@ -430,7 +466,7 @@ handlebars.registerHelper('burgProvinceLookup', function(cellId,allCells,allProv
     return ''; // If no Province Defined end here
   };
   const foundProvinceName = allProvinces.find(prov => prov.i === foundCellProvinceId).fullName;
-  //console.log("burgProvinceLookup process - foundProvinceName: ", foundProvinceName);
+  // console.log("burgProvinceLookup process - foundProvinceName: ", foundProvinceName);
   return foundProvinceName;
 });
 
@@ -438,7 +474,7 @@ handlebars.registerHelper('burgProvinceLookup', function(cellId,allCells,allProv
 // Custom helper to return religion name from passed religionID
 handlebars.registerHelper('getReligionName', function(cellId,allCells,allReligions) {
   // console.log("cellId:", cellId);
-  //console.log("allreligions: ", allreligions);
+  // console.log("allreligions: ", allreligions);
   if (cellId === undefined || cellId ===0 ) {
     console.log("##### getReligionName - cellId was undefined or zero #####");
     return ''; // skip if the element is undefined
@@ -466,7 +502,7 @@ handlebars.registerHelper('getFMGCellXY', function(cellId, allCells) {
     return ''; // skip if the element is undefined
   };
   const foundCell = allCells.find(cell => cell.i === cellId);
-  //console.log("cellId: ", cellId, " -- foundCell: ", foundCell);
+  // console.log("cellId: ", cellId, " -- foundCell: ", foundCell);
   const foundCellX = foundCell.p[0];
   const foundCellY = foundCell.p[1];
   return `&x=${foundCellX}&y=${foundCellY}`;
@@ -478,14 +514,14 @@ handlebars.registerHelper('getFMGCellXY', function(cellId, allCells) {
 // The value this will return will subtract the currentBurg.x from the info.mapHeight value
 // That should invert the coordinate value so that it works correctly with Obsidian Leaflet
 handlebars.registerHelper('getLeafletBurgXY', function(burgId,allBurgs,mapInfo) {
-  //console.log("burgId:", burgId);
-  //console.log("allBurgs: ", allBurgs);
+  // console.log("burgId:", burgId);
+  // console.log("allBurgs: ", allBurgs);
   if (burgId === undefined || burgId === 0 ) {
     console.log("##### getLeafletBurgXY - burgId was undefined or zero #####");
     return ''; // skip if the element is undefined or zero
   };
   const burgFound = allBurgs.find(burg => burg.i === burgId);
-  //console.log("X-burgFound:", burgFound.name, "- mapInfo:", mapInfo);
+  // console.log("X-burgFound:", burgFound.name, "- mapInfo:", mapInfo);
   const leafletValidXValue = burgFound.x.toFixed(3);
   const leafletValidYValue = (mapInfo.mapHeight - burgFound.y).toFixed(3);
   // console.log(burgFound.name, "- leaflet X value: ", leafletValidXValue, " - Leaflet Y value:", leafletValidYValue);
@@ -500,12 +536,12 @@ handlebars.registerHelper('getCellLeafletXY', function(cellId, allCells, mapInfo
     return ''; // skip if the element is undefined
   };
   const foundCell = allCells.find(cell => cell.i === cellId);
-  //console.log("cellId: ", cellId, " -- foundCell: ", foundCell);
+  // console.log("cellId: ", cellId, " -- foundCell: ", foundCell);
   const foundCellX = foundCell.p[0];
   const foundCellY = foundCell.p[1];
   const leafletW = foundCellX.toFixed(3);
   const leafletH = (mapInfo.mapHeight - foundCellY).toFixed(3);
-  //console.log("leafletH: ", leafletH, " -- leafletW: ", leafletW);
+  // console.log("leafletH: ", leafletH, " -- leafletW: ", leafletW);
   return `${leafletH},${leafletW}`;
 });
 
@@ -513,7 +549,7 @@ handlebars.registerHelper('getCellLeafletXY', function(cellId, allCells, mapInfo
 // Custom Helper to derive the Leaflet Compatible X & Y Coords of the "pole" of a State
 // the "pole" is the visual center - Concept Decsription: https://blog.mapbox.com/a-new-algorithm-for-finding-a-visual-center-of-a-polygon-7c77e6492fbc
 handlebars.registerHelper('getPoleLeafletXY', function(state, mapInfo) {
-  //console.log("getPoleLeafletXY - state: ",state);
+  // console.log("getPoleLeafletXY - state: ",state);
   if (state.pole === undefined || state.pole ===0 ) {
     console.log("##### getPoleLeafletXY - state.pole  was undefined or zero -");
     console.log("getPoleLeafletXY - state: ", state);
@@ -524,7 +560,7 @@ handlebars.registerHelper('getPoleLeafletXY', function(state, mapInfo) {
   const poleY = state.pole[1];
   const leafletW = poleX.toFixed(3);
   const leafletH = (mapInfo.mapHeight - poleY).toFixed(3);
-  //console.log(state.name,"-POLE- leafletH: ", leafletH, " -- leafletW: ", leafletW);
+  // console.log(state.name,"-POLE- leafletH: ", leafletH, " -- leafletW: ", leafletW);
   return `${leafletH},${leafletW}`;
 });
 
@@ -553,7 +589,7 @@ handlebars.registerHelper('getReligionFollowers', function(religion,allCells,all
   const urban = (urbanTemp * mapSettings.populationRate * mapSettings.urbanization);
   const foundReligionFollowers = rn(rural + urban);
 
-  //console.log(religion.name, " - foundReligionFollowers: ", foundReligionFollowers);
+  // console.log(religion.name, " - foundReligionFollowers: ", foundReligionFollowers);
   return foundReligionFollowers;
 
     // round value to d decimals
@@ -568,11 +604,15 @@ handlebars.registerHelper('getReligionFollowers', function(religion,allCells,all
 // Custom Helper to calculate temperature based on the temperatureScale in the JSON - usually °F or °C
 // but other scales are available
 handlebars.registerHelper('getTemperature', function(burg,allData) {
-  //console.log(burg.i , " - burgName: ", burg.name);
+  if (burg === undefined || burg.SourceIndex === 0) {
+    console.log("##### getTemperature - burg was undefined or zero #####");
+    return ''; // skip if the element is undefined
+  };
+  // console.log(burg.i , " - burgName: ", burg.name);
   const scale = allData.settings.temperatureScale;
-  //console.log("Temperature scale: ", scale);
+  // console.log("Temperature scale: ", scale);
   const temp = allData.grid.cells[allData.pack.cells[burg.cell].g].temp;
-  //console.log("Burg Name: ", burg.name, " - temp: ", temp);
+  // console.log("Burg Name: ", burg.name, " - temp: ", temp);
   
 // FMG utils related to units
 
@@ -609,58 +649,61 @@ return convertedTemperature;
 // Custom Helper to calculate temperature likeness to Earth temps
 // Portions of this code are adapted from the Fantasy Map Generator Code - https://github.com/Azgaar/Fantasy-Map-Generator
 handlebars.registerHelper('getTemperatureLikeness', function(burg,allData) {
+  if (burg === undefined || burg.SourceIndex === 0) {
+    console.log("##### getTemperature - burg was undefined or zero #####");
+    return ''; // skip if the element is undefined
+  };
+  const temperature = allData.grid.cells[allData.pack.cells[burg.cell].g].temp;
 
-const temperature = allData.grid.cells[allData.pack.cells[burg.cell].g].temp;
+  const earthLocale = getTemperatureLikeness(temperature);
 
-const earthLocale = getTemperatureLikeness(temperature);
+  return earthLocale;
 
-return earthLocale;
-
-// in °C, array from -1 °C; source: https://en.wikipedia.org/wiki/List_of_cities_by_average_temperature
-// These locations are more North American focused
-function getTemperatureLikeness(temperature) {
-  if (temperature < -5) return "Iqaluit (Canada)";
-  const cities = [
-    "Snag (Yukon)", // -5
-    "Yellowknife (Canada)", // -4
-    "Okhotsk (Russia)", // -3
-    "Fairbanks (Alaska)", // -2
-    "Nuuk (Greenland)", // -1
-    "Whitehorse (Canada)", // 0
-    "Arkhangelsk (Russia)", // 1
-    "Anchorage (Alaska)", // 2
-    "Winnipeg (Canada)", // 3
-    "Saskatoon (Canada)", // 4
-    "St. John's (Canada)", // 5
-    "Saint Pierre (Canada)", // 6
-    "Minneapolis (Minnesota)", // 7
-    "Milwaukee (Wisconsin)", // 8
-    "Chicago (Illinois)", // 9
-    "Denver (Colorado)", // 10
-    "Seattle (Washington)", // 11
-    "New York City (New York)", // 12
-    "Baltimore (Maryland)", // 13
-    "San Francisco (California) or D.C.", // 14
-    "Nashville, (Tennessee)", // 15
-    "Sacramento (California)", // 16
-    "Memphis (Tennessee)", // 17
-    "El Paso (Texas)", // 18
-    "Dalls (Texas)", // 19
-    "Las Vegas (Nevada)", // 20
-    "Tuscon (Arizona)", // 21
-    "Tampa (Florida)", // 22
-    "Phoenix (Arizona)", // 23
-    "Palm Springs (California)", // 24
-    "Miami (Florida)", // 25
-    "Atlanta (Georgia - Summer)", // 26
-    "San Juan (Puerto Rico)", // 27
-    "Panama City (Panama)", // 28
-    "San Antonio (Texas - Summer)", // 29
-    "Austin (Texas - Summer)" // 30
-  ];
-  if (temperature > 30) return "Death Valley";
-  return cities[temperature + 5] || null;
-};
+  // in °C, array from -1 °C; source: https://en.wikipedia.org/wiki/List_of_cities_by_average_temperature
+  // These locations are more North American focused
+  function getTemperatureLikeness(temperature) {
+    if (temperature < -5) return "Iqaluit (Canada)";
+    const cities = [
+      "Snag (Yukon)", // -5
+      "Yellowknife (Canada)", // -4
+      "Okhotsk (Russia)", // -3
+      "Fairbanks (Alaska)", // -2
+      "Nuuk (Greenland)", // -1
+      "Whitehorse (Canada)", // 0
+      "Arkhangelsk (Russia)", // 1
+      "Anchorage (Alaska)", // 2
+      "Winnipeg (Canada)", // 3
+      "Saskatoon (Canada)", // 4
+      "St. John's (Canada)", // 5
+      "Saint Pierre (Canada)", // 6
+      "Minneapolis (Minnesota)", // 7
+      "Milwaukee (Wisconsin)", // 8
+      "Chicago (Illinois)", // 9
+      "Denver (Colorado)", // 10
+      "Seattle (Washington)", // 11
+      "New York City (New York)", // 12
+      "Baltimore (Maryland)", // 13
+      "San Francisco (California) or D.C.", // 14
+      "Nashville, (Tennessee)", // 15
+      "Sacramento (California)", // 16
+      "Memphis (Tennessee)", // 17
+      "El Paso (Texas)", // 18
+      "Dalls (Texas)", // 19
+      "Las Vegas (Nevada)", // 20
+      "Tuscon (Arizona)", // 21
+      "Tampa (Florida)", // 22
+      "Phoenix (Arizona)", // 23
+      "Palm Springs (California)", // 24
+      "Miami (Florida)", // 25
+      "Atlanta (Georgia - Summer)", // 26
+      "San Juan (Puerto Rico)", // 27
+      "Panama City (Panama)", // 28
+      "San Antonio (Texas - Summer)", // 29
+      "Austin (Texas - Summer)" // 30
+    ];
+    if (temperature > 30) return "Death Valley";
+    return cities[temperature + 5] || null;
+  };
 
 /*
 // These locations are globally located

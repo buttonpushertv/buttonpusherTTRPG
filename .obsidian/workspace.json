@@ -1,14 +1,29 @@
 {
   "main": {
-    "id": "1f6a1d7e313eeb8f",
+    "id": "5324373015726ba8",
     "type": "split",
     "children": [
       {
-        "id": "e11743e8b5f5892f",
+        "id": "4509724f8bf84da7",
         "type": "tabs",
+        "dimension": 57.28346456692913,
         "children": [
           {
-            "id": "b5454cf0eb572e37",
+            "id": "e7a7b303c61786dc",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "90-Tools & Helpers/JSON Importing How To Notes/03b-Multi-step Importing Process.md",
+                "mode": "preview",
+                "source": true
+              },
+              "icon": "lucide-file",
+              "title": "03b-Multi-step Importing Process"
+            }
+          },
+          {
+            "id": "c7cb1fee6dccfd7a",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -16,7 +31,45 @@
                 "file": "Home.md",
                 "mode": "preview",
                 "source": true
-              }
+              },
+              "icon": "lucide-file",
+              "title": "Home"
+            }
+          },
+          {
+            "id": "d4f2c303ab1f20d6",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "01-Campaigns/Braia/05-Atlas/States/2-Lalaparo/Lalaparo.md",
+                "mode": "preview",
+                "source": true
+              },
+              "icon": "lucide-file",
+              "title": "Lalaparo"
+            }
+          }
+        ],
+        "currentTab": 2
+      },
+      {
+        "id": "e15205705e45e640",
+        "type": "tabs",
+        "dimension": 42.71653543307087,
+        "children": [
+          {
+            "id": "174810edb1504396",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "99-Templates/Handlebars-JSON/States-FMG-JSON Handlebars Template.md",
+                "mode": "source",
+                "source": true
+              },
+              "icon": "lucide-file",
+              "title": "States-FMG-JSON Handlebars Template"
             }
           }
         ]
@@ -38,8 +91,11 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "alphabetical"
-              }
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
             }
           },
           {
@@ -48,13 +104,15 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "thisCampaignMetaData",
+                "query": "deli ",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical"
-              }
+              },
+              "icon": "lucide-search",
+              "title": "Search"
             }
           },
           {
@@ -62,7 +120,9 @@
             "type": "leaf",
             "state": {
               "type": "bookmarks",
-              "state": {}
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
             }
           },
           {
@@ -71,10 +131,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Home.md",
+                "file": "README.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
-              }
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from README"
             }
           },
           {
@@ -83,7 +145,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Home.md",
+                "file": "README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -91,7 +153,9 @@
                 "searchQuery": "",
                 "backlinkCollapsed": false,
                 "unlinkedCollapsed": true
-              }
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for README"
             }
           },
           {
@@ -102,7 +166,9 @@
               "state": {
                 "sortOrder": "frequency",
                 "useHierarchy": true
-              }
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
             }
           },
           {
@@ -111,30 +177,44 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Home.md"
-              }
+                "file": "README.md"
+              },
+              "icon": "lucide-list",
+              "title": "Outline of README"
             }
           }
         ]
       }
     ],
     "direction": "horizontal",
-    "width": 428.5
+    "width": 304.5
   },
   "right": {
     "id": "93482ffa1a519a97",
     "type": "split",
     "children": [
       {
-        "id": "bb25796325759935",
+        "id": "0939e4ef63eba918",
         "type": "tabs",
         "children": [
           {
-            "id": "48df00768e0ee07f",
+            "id": "341ba8f4b422f18c",
             "type": "leaf",
             "state": {
               "type": "DICE_ROLLER_VIEW",
-              "state": {}
+              "state": {},
+              "icon": "lucide-file",
+              "title": "Plugin no longer active"
+            }
+          },
+          {
+            "id": "9a7e3320769a42f8",
+            "type": "leaf",
+            "state": {
+              "type": "DICE_ROLLER_VIEW",
+              "state": {},
+              "icon": "dices",
+              "title": "Dice Tray"
             }
           }
         ]
@@ -153,60 +233,60 @@
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
       "workspaces:Manage workspace layouts": false,
-      "obsidian-excalidraw-plugin:Create new drawing": false,
+      "obsidian-excalidraw-plugin:New drawing": false,
       "obsidian-leaflet-plugin:Open Leaflet Map": false,
       "templater-obsidian:Templater": false,
       "obsidian-import-json:JSON/CSV Importer": false,
       "homepage:Open homepage": false
     }
   },
-  "active": "b5454cf0eb572e37",
+  "active": "d4f2c303ab1f20d6",
   "lastOpenFiles": [
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/Test Campaign Ladonia-Simple Atlas.md",
-    "01-Campaigns/Test Campaign Ladonia/Test Campaign Ladonia Home.md",
+    "01-Campaigns/Braia/05-Atlas/States/1-Lavenhelmia/Lavenhelmia.md",
+    "99-Templates/Handlebars-JSON/States-FMG-JSON Handlebars Template.md",
+    "01-Campaigns/Braia/05-Atlas/States/1-Lavenhelmia/1-Shimouth County/Shimouth.md",
     "Home.md",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/1-Upunia/1-Hauta Earldom/Kohttajaa.md",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/1-Upunia/1-Hauta Earldom/Kotve.md",
-    "91-Assets/Test Campaign Ladonia/City-PNGs/1-Kotve.png",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/1-Upunia/1-Hauta Earldom/Koulajarvi.md",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/1-Upunia/1-Hauta Earldom/Roykka.md",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/1-Upunia/1-Hauta Earldom/Karjasa.md",
-    "99-Templates/Handlebars-JSON/Burgs-FMG-JSON Handlerbars Template.md",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/1-Upunia/2-Hatveria County/Kuntioki.md",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/1-Upunia/5-Tampaaniai Earldom/Syrpio-Linked Atlas.md",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/4-Kunkania/21-Szarkeny County/Koszent-Linked Atlas.md",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/1-Upunia/1-Hauta Earldom/Kohttajaa-Linked Atlas.md",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/1-Upunia/2-Hatveria County/Hoski-Linked Atlas.md",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/9-Tiormaa/66-Lepsa County/Rausi-Linked Atlas.md",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/11-Calhosia/92-Viguzialia County/Sintralhedo-Linked Atlas.md",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/6-Marbeilia/35-Tempa Province/Lempaari-Linked Atlas.md",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/18-Petrica/162-Castri Land/Bracca-Linked Atlas.md",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/8-Kunszavasia/144-Nafold Land/Kodajklos-Linked Atlas.md",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/10-Thas/74-Abderikast County/Abderikast-Linked Atlas.md",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/1-Upunia/9-Palhokide Shire/Palhokide-Linked Atlas.md",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/10-Thas/74-Abderikast County/Braurion-Linked Atlas.md",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/1-Upunia/131-Nyeklabapios Land/Sarmat-Linked Atlas.md",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/10-Thas/84-Parnia County/Achargydon-Linked Atlas.md",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/16-Bhrymaion/114-Crori Earldom/Eleuros-Linked Atlas.md",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/4-Kunkania/22-Varmu County/Kouvaa-Linked Atlas.md",
-    "91-Assets/Test Campaign Ladonia/City-PNGs/458-Kohttajaa.png",
-    "90-Tools & Helpers/FMG Note Help Info Files",
-    "91-Assets/Test Campaign Ladonia/City-PNGs/523-Kuntioki.png",
-    "91-Assets/Test Campaign Ladonia/City-PNGs/457-Hoski.png",
-    "91-Assets/Test Campaign Ladonia/Village-PNGs/368-Suori.png",
-    "91-Assets/Test Campaign Ladonia/City-PNGs/81-Karjasa.png",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/14-Alocenia/0-undefined",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/18-Petrica/164-Giucia Land",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/18-Petrica/163-Serganoria Territory",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/18-Petrica/162-Castri Land",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/18-Petrica/161-Carea Territory",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/12-Esmosia/160-Pantiochmo Territory",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/12-Esmosia/159-Bytherythia Territory",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/12-Esmosia/158-Pitha Territory",
-    "01-Campaigns/Test Campaign Ladonia/05-Atlas/States/12-Esmosia/157-Aktospon Territory",
-    "91-Assets/Test Campaign Ladonia/Village-PNGs/521-Bjorvimaaja.png",
-    "91-Assets/Test Campaign Ladonia/City-PNGs/Village-PNGs/521-Bjorvimaaja.png",
-    "91-Assets/Test Campaign Ladonia/City-PNGs/riofrioli.png",
-    "91-Assets/Test Campaign Ladonia/City-WEBPs/Riofrioli.webp"
+    "01-Campaigns/05-Atlas/States/5-Narag/Narag.md",
+    "01-Campaigns/05-Atlas/States/5-Narag",
+    "01-Campaigns/05-Atlas/States/4-Pearlia/Pearlia.md",
+    "01-Campaigns/05-Atlas/States/4-Pearlia",
+    "01-Campaigns/05-Atlas/States/3-Zazilnabu/Zazilnabu.md",
+    "01-Campaigns/05-Atlas/States/3-Zazilnabu",
+    "01-Campaigns/05-Atlas/States/2-Lalaparo/Lalaparo.md",
+    "01-Campaigns/05-Atlas/States/2-Lalaparo",
+    "01-Campaigns/05-Atlas/States/1-Lavenhelmia/Lavenhelmia.md",
+    "01-Campaigns/05-Atlas/States/1-Lavenhelmia",
+    "01-Campaigns/05-Atlas/States/0-Neutrals/Neutrals.md",
+    "01-Campaigns/05-Atlas/States/0-Neutrals",
+    "01-Campaigns/05-Atlas/States",
+    "01-Campaigns/05-Atlas",
+    "90-Tools & Helpers/JSON Importing How To Notes/03b-Multi-step Importing Process.md",
+    "01-Campaigns/Braia/98-Braia Assets/FMG-emblems-PNG/Braia Emblem Kingdom of Lavenhelmia.png",
+    "01-Campaigns/Braia/98-Braia Assets/FMG-emblems-PNG/3.png",
+    "01-Campaigns/Braia/98-Braia Assets/FMG-emblems-PNG",
+    "01-Campaigns/Braia/98-Braia Assets/FMG-villages-WEBP",
+    "99-Templates/Handlebars-JSON/Burgs-FMG-JSON Handlebars Template.md",
+    "01-Campaigns/Braia/05-Atlas/Braia-Linked Atlas.md",
+    "01-Campaigns/Braia/05-Atlas/Religions/Kharan Pantheon.md",
+    "01-Campaigns/Braia/05-Atlas/Religions/Dail (Human)ism.md",
+    "01-Campaigns/Braia/05-Atlas/Religions/Oxbreachism.md",
+    "01-Campaigns/Braia/05-Atlas/Religions/Newden Religion.md",
+    "01-Campaigns/Braia/05-Atlas/Religions/Old Dail (Human) Shamanism.md",
+    "01-Campaigns/Braia/05-Atlas/Religions/Rake (Drakonic) Deities.md",
+    "01-Campaigns/Braia/05-Atlas/Religions/Khazadur (Dwarven) Faith.md",
+    "01-Campaigns/Braia/05-Atlas/Religions/Dunirr (Dwarven) Druids.md",
+    "01-Campaigns/Braia/05-Atlas/Religions/No religion.md",
+    "01-Campaigns/Braia/05-Atlas/Cultures/Dail (Human).md",
+    "01-Campaigns/Braia/05-Atlas/Cultures/Rake (Drakonic).md",
+    "01-Campaigns/Braia/05-Atlas/Cultures/Khazadur (Dwarven).md",
+    "01-Campaigns/Braia/05-Atlas/Cultures/Dunirr (Dwarven).md",
+    "01-Campaigns/Braia/98-Braia Assets/FMG-cities-WEBP/1-Shimouth.webp",
+    "01-Campaigns/Braia/98-Braia Assets/Braia Provinces World Map.svg",
+    "01-Campaigns/Braia/98-Braia Assets/Braia World Map.svg",
+    "01-Campaigns/Test Campaign Cheia/98-Test Campaign Cheia Assets/FMG_emblems-PNG/Cheia Emblem Mocharenaga.png",
+    "01-Campaigns/Test Campaign Cheia/98-Test Campaign Cheia Assets/FMG_emblems-PNG/Cheia Emblem Mocha.png",
+    "01-Campaigns/Test Campaign Cheia/98-Test Campaign Cheia Assets/FMG_emblems-PNG/Cheia Emblem Mitletownia Territory.png",
+    "01-Campaigns/Test Campaign Cheia/98-Test Campaign Cheia Assets/FMG_emblems-PNG/Cheia Emblem Mistad.png",
+    "01-Campaigns/Test Campaign Cheia/98-Test Campaign Cheia Assets/FMG_emblems-PNG/Cheia Emblem Migny.png"
   ]
 }

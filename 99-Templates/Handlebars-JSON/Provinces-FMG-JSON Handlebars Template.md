@@ -3,9 +3,11 @@ aliases: {{name}}
 campaign: {{@importDataRoot.info.thisCampaign}}
 color: {{color}}
 created: {{getDateTimestamp @importSettings}}
-emblem: {{@importDataRoot.info.thisCampaignShortCode}}-{{@importDataRoot.info.mapName}} Emblem {{fullName}}.png
+cssclass: sixty-pct-width
+emblem: {{@importDataRoot.info.mapName}} Emblem {{fullName}}.png
 formName: {{formName}}
 fullName: {{fullName}}
+{{setvar "nameToPull" (getProvinceName i @importDataRoot.pack.provinces)}}pulledName: {{"nameToPull"}}
 id: {{i}}
 name: {{name}}
 pronounced:
@@ -18,6 +20,7 @@ tags:
 - Province
 - {{@importDataRoot.info.thisCampaignShortCode}}
 - {{@importDataRoot.info.mapName}}
+templateVersion: 1.1
 WBProgress: Imported
 world: {{@importDataRoot.info.mapName}}
 ---
@@ -43,7 +46,7 @@ world: {{@importDataRoot.info.mapName}}
 > **Rulers**|`INPUT[list:rulers]`|
 > **Short Description**|`INPUT[textArea:shortDescription]`
 
-[[{{getCampaignHomeNote @importSettings}}]] | [[{{getCampaignAtlasNote @importSettings}}]] | `=link(this.state)`
+[[{{getCampaignHomeNote @importSettings}}|Campaign Home]] | [[{{getCampaignAtlasNote @importSettings}}|Campaign Atlas]] | State: `=link(this.stateName)`
 
 %% During the import process, much of the data for the Leaflet fields should have been pulled in from the JSON. You will need to update the defaultZoom and (maybe) the coordinates values, but it should be pretty close - good enough to get a start with it. The goal is to cut down on the amount of manual effort you need to go through to pull your data in from the FMG JSON %% 
 
@@ -72,7 +75,7 @@ world: {{@importDataRoot.info.mapName}}
 %% All the info in this 'infobox' will appear in the panel to the right. Most of these values are pulled from the metadata in the properties above. %%
 
 > [!infobox]
-> ![[{{@importDataRoot.info.thisCampaignShortCode}}-{{@importDataRoot.info.mapName}} Emblem {{fullName}}.png]]
+> ![[{{@importDataRoot.info.mapName}} Emblem {{fullName}}.png]]
 >
 >  |
 >  --- |
@@ -150,5 +153,4 @@ Siginifcant Incidents in `=this.name`'s history:
 
 ---
 
-[[{{getCampaignHomeNote @importSettings}}]] | [[{{getCampaignAtlasNote @importSettings}}]] | `=link(this.state)`
-
+[[{{getCampaignHomeNote @importSettings}}|Campaign Home]] | [[{{getCampaignAtlasNote @importSettings}}|Campaign Atlas]] | State: `=link(this.stateName)`

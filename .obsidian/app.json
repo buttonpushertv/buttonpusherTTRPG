@@ -6,5 +6,6 @@
   "newFileLocation": "current",
   "showUnsupportedFiles": true,
   "defaultViewMode": "preview",
-  "showInlineTitle": false
+  "showInlineTitle": false,
+  "promptDelete": false
 }

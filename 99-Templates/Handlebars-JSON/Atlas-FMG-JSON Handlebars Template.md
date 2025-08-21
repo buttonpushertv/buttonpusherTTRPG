@@ -2,11 +2,12 @@
 alias:
 campaign: {{@importDataRoot.info.thisCampaign}}
 created: {{getDateTimestamp @importSettings}}
-cssclass: wider
+cssclass: sixty-pct-width
 tags: 
 - linked-atlas
 - {{@importDataRoot.info.thisCampaignShortCode}}
 - {{@importDataRoot.info.mapName}}
+templateVersion: 1.1
 WBProcess: FALSE
 world: {{@importDataRoot.info.mapName}}
 ---

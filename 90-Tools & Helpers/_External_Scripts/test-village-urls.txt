@@ -1,0 +1,3 @@
+https://watabou.github.io/village-generator/?pop=1039&name=Auria&seed=8861372910463&width=1400&height=636&tags=river%2Cisolated%2Cno+square%2Cdense
+https://watabou.github.io/village-generator/?pop=1065&name=Itxeriana&seed=8861372910269&width=1400&height=636&tags=estuary%2Cisolated%2Cuncultivated%2Cno+square%2Cdense
+https://watabou.github.io/village-generator/?pop=1071&name=Porvao&seed=8861372910471&width=1400&height=636&tags=confluence%2Cisolated%2Cuncultivated%2Cdense

@@ -5,7 +5,166 @@
       "name": "Add New Campaign",
       "type": "Macro",
       "command": true,
-      "macroId": "348507e8-4494-49a0-b826-533a8bb5b9fa"
+      "macro": {
+        "id": "348507e8-4494-49a0-b826-533a8bb5b9fa",
+        "name": "Add New Campaign",
+        "commands": [
+          {
+            "name": "addNewCampaign",
+            "type": "UserScript",
+            "id": "ea76284e-22f0-429e-8ac6-6be2a5dc7b6a",
+            "path": "98-Userscripts/addNewCampaign.js",
+            "settings": {}
+          },
+          {
+            "name": "Create New Campaign Home Note",
+            "type": "NestedChoice",
+            "id": "8e231e22-9673-486b-80ca-d77f69485a52",
+            "choice": {
+              "id": "e1a024f2-38bf-461e-8184-cfc165721adb",
+              "name": "Create New Campaign Home Note",
+              "type": "Template",
+              "command": false,
+              "templatePath": "99-Templates/newCampaignTemplate.md",
+              "fileNameFormat": {
+                "enabled": true,
+                "format": "{{VALUE:newCampaignName}} Home"
+              },
+              "folder": {
+                "enabled": true,
+                "folders": [
+                  "{{VALUE:newCampaignPath}}"
+                ],
+                "chooseWhenCreatingNote": false,
+                "createInSameFolderAsActiveFile": false,
+                "chooseFromSubfolders": false
+              },
+              "appendLink": false,
+              "openFileInNewTab": {
+                "enabled": false,
+                "direction": "vertical",
+                "focus": true
+              },
+              "openFile": true,
+              "openFileInMode": "default",
+              "fileExistsMode": "Overwrite the file",
+              "setFileExistsBehavior": true,
+              "fileOpening": {
+                "location": "tab",
+                "direction": "vertical",
+                "mode": "default",
+                "focus": true
+              }
+            }
+          },
+          {
+            "name": "Create New Campaign Session Hub",
+            "type": "NestedChoice",
+            "id": "3f0314bb-883c-45f8-8038-6632d3b61730",
+            "choice": {
+              "id": "4fe15eaf-38f9-42b2-ac7f-a376211da59b",
+              "name": "Create New Campaign Session Hub",
+              "type": "Template",
+              "command": false,
+              "templatePath": "99-Templates/newCampaignSessionHub.md",
+              "fileNameFormat": {
+                "enabled": true,
+                "format": "{{VALUE:newCampaignName}} Session Hub"
+              },
+              "folder": {
+                "enabled": true,
+                "folders": [
+                  "{{VALUE:newCampaignPath}}/01-Sessions"
+                ],
+                "chooseWhenCreatingNote": false,
+                "createInSameFolderAsActiveFile": false,
+                "chooseFromSubfolders": false
+              },
+              "appendLink": false,
+              "openFileInNewTab": {
+                "enabled": false,
+                "direction": "vertical",
+                "focus": true
+              },
+              "openFile": false,
+              "openFileInMode": "default",
+              "fileExistsMode": "Increment the file name",
+              "setFileExistsBehavior": false
+            }
+          },
+          {
+            "name": "Create New Campaign Simple Atlas",
+            "type": "NestedChoice",
+            "id": "deb926bc-9d13-4254-bf72-e8d3e581452d",
+            "choice": {
+              "id": "49145b24-73f4-466f-aae7-7dd8fb3da5f0",
+              "name": "Create New Campaign Simple Atlas",
+              "type": "Template",
+              "command": false,
+              "templatePath": "99-Templates/newCampaignSimpleAtlasTemplate.md",
+              "fileNameFormat": {
+                "enabled": true,
+                "format": "{{VALUE:newCampaignName}}-Simple Atlas"
+              },
+              "folder": {
+                "enabled": true,
+                "folders": [
+                  "{{VALUE:newCampaignPath}}/05-Atlas/"
+                ],
+                "chooseWhenCreatingNote": false,
+                "createInSameFolderAsActiveFile": false,
+                "chooseFromSubfolders": false
+              },
+              "appendLink": false,
+              "openFileInNewTab": {
+                "enabled": true,
+                "direction": "vertical",
+                "focus": true
+              },
+              "openFile": false,
+              "openFileInMode": "default",
+              "fileExistsMode": "Increment the file name",
+              "setFileExistsBehavior": false
+            }
+          },
+          {
+            "name": "Create New Campaign Burg List Note",
+            "type": "NestedChoice",
+            "id": "ea478056-476d-412d-8ab5-fa6bcfd78608",
+            "choice": {
+              "id": "dd7a8f81-8ea0-4532-aabe-415c8932ab71",
+              "name": "Create New Campaign Burg List Note",
+              "type": "Template",
+              "command": false,
+              "templatePath": "99-Templates/newCampaignBurgListTemplate.md",
+              "fileNameFormat": {
+                "enabled": true,
+                "format": "{{VALUE:newCampaignName}}-Burg-URLs-Listing"
+              },
+              "folder": {
+                "enabled": true,
+                "folders": [
+                  "{{VALUE:newCampaignPath}}/05-Atlas"
+                ],
+                "chooseWhenCreatingNote": false,
+                "createInSameFolderAsActiveFile": false,
+                "chooseFromSubfolders": false
+              },
+              "appendLink": false,
+              "openFile": false,
+              "fileOpening": {
+                "location": "tab",
+                "direction": "vertical",
+                "mode": "default",
+                "focus": true
+              },
+              "fileExistsMode": "Increment the file name",
+              "setFileExistsBehavior": false
+            }
+          }
+        ]
+      },
+      "runOnStartup": false
     },
     {
       "id": "baaa64d1-384b-438d-b10e-5b3aea99dbb8",
@@ -40,203 +199,86 @@
         "focus": true
       },
       "openFile": false,
-      "openFileInMode": "default"
+      "openFileInMode": "default",
+      "fileOpening": {
+        "location": "tab",
+        "direction": "vertical",
+        "focus": true,
+        "mode": "default"
+      }
     },
     {
       "id": "3738502a-c53f-43ee-b3ab-2775a0e6afd2",
       "name": "Open Button Page",
       "type": "Macro",
       "command": false,
-      "macroId": "2eb30ab1-15cf-4f11-9510-d9b1dd676ed5"
+      "macro": {
+        "id": "2eb30ab1-15cf-4f11-9510-d9b1dd676ed5",
+        "name": "Open Button Page",
+        "commands": []
+      },
+      "runOnStartup": false
     },
     {
       "id": "d661e66b-e072-4760-95e6-1e172dadb98c",
       "name": "Add a Session Note",
       "type": "Macro",
       "command": true,
-      "macroId": "dab715ed-3609-409f-9304-7140b778e320"
-    }
-  ],
-  "macros": [
-    {
-      "name": "Add New Campaign",
-      "id": "348507e8-4494-49a0-b826-533a8bb5b9fa",
-      "commands": [
-        {
-          "name": "addNewCampaign",
-          "type": "UserScript",
-          "id": "ea76284e-22f0-429e-8ac6-6be2a5dc7b6a",
-          "path": "98-Userscripts/addNewCampaign.js",
-          "settings": {}
-        },
-        {
-          "name": "Create New Campaign Home Note",
-          "type": "NestedChoice",
-          "id": "8e231e22-9673-486b-80ca-d77f69485a52",
-          "choice": {
-            "id": "e1a024f2-38bf-461e-8184-cfc165721adb",
-            "name": "Create New Campaign Home Note",
-            "type": "Template",
-            "command": false,
-            "templatePath": "99-Templates/newCampaignTemplate.md",
-            "fileNameFormat": {
-              "enabled": true,
-              "format": "{{VALUE:newCampaignName}} Home"
-            },
-            "folder": {
-              "enabled": true,
-              "folders": [
-                "{{VALUE:newCampaignPath}}"
-              ],
-              "chooseWhenCreatingNote": false,
-              "createInSameFolderAsActiveFile": false,
-              "chooseFromSubfolders": false
-            },
-            "appendLink": false,
-            "openFileInNewTab": {
-              "enabled": false,
-              "direction": "vertical",
-              "focus": true
-            },
-            "openFile": true,
-            "openFileInMode": "default",
-            "fileExistsMode": "Overwrite the file",
-            "setFileExistsBehavior": true
-          }
-        },
-        {
-          "name": "Create New Campaign Session Hub",
-          "type": "NestedChoice",
-          "id": "3f0314bb-883c-45f8-8038-6632d3b61730",
-          "choice": {
-            "id": "4fe15eaf-38f9-42b2-ac7f-a376211da59b",
-            "name": "Create New Campaign Session Hub",
-            "type": "Template",
-            "command": false,
-            "templatePath": "99-Templates/newCampaignSessionHub.md",
-            "fileNameFormat": {
-              "enabled": true,
-              "format": "{{VALUE:newCampaignName}} Session Hub"
-            },
-            "folder": {
-              "enabled": true,
-              "folders": [
-                "{{VALUE:newCampaignPath}}/01-Sessions"
-              ],
-              "chooseWhenCreatingNote": false,
-              "createInSameFolderAsActiveFile": false,
-              "chooseFromSubfolders": false
-            },
-            "appendLink": false,
-            "openFileInNewTab": {
-              "enabled": false,
-              "direction": "vertical",
-              "focus": true
-            },
-            "openFile": false,
-            "openFileInMode": "default",
-            "fileExistsMode": "Increment the file name",
-            "setFileExistsBehavior": false
-          }
-        },
-        {
-          "name": "Create New Campaign Simple Atlas",
-          "type": "NestedChoice",
-          "id": "deb926bc-9d13-4254-bf72-e8d3e581452d",
-          "choice": {
-            "id": "49145b24-73f4-466f-aae7-7dd8fb3da5f0",
-            "name": "Create New Campaign Simple Atlas",
-            "type": "Template",
-            "command": false,
-            "templatePath": "99-Templates/newCampaignSimpleAtlasTemplate.md",
-            "fileNameFormat": {
-              "enabled": true,
-              "format": "{{VALUE:newCampaignName}}-Simple Atlas"
-            },
-            "folder": {
-              "enabled": true,
-              "folders": [
-                "{{VALUE:newCampaignPath}}/05-Atlas/"
-              ],
-              "chooseWhenCreatingNote": false,
-              "createInSameFolderAsActiveFile": false,
-              "chooseFromSubfolders": false
-            },
-            "appendLink": false,
-            "openFileInNewTab": {
-              "enabled": true,
-              "direction": "vertical",
-              "focus": true
-            },
-            "openFile": false,
-            "openFileInMode": "default",
-            "fileExistsMode": "Increment the file name",
-            "setFileExistsBehavior": false
-          }
-        }
-      ],
-      "runOnStartup": false
-    },
-    {
-      "name": "Open Button Page",
-      "id": "2eb30ab1-15cf-4f11-9510-d9b1dd676ed5",
-      "commands": [],
-      "runOnStartup": false
-    },
-    {
-      "name": "Add a Session Note",
-      "id": "dab715ed-3609-409f-9304-7140b778e320",
-      "commands": [
-        {
-          "name": "getThisCampaign",
-          "type": "UserScript",
-          "id": "90b33053-a16a-4275-b676-1991a73385fd",
-          "path": "98-Userscripts/getThisCampaign.js",
-          "settings": {}
-        },
-        {
-          "name": "promptAndParseNaturalLanguageDate",
-          "type": "UserScript",
-          "id": "eff98027-711d-40a8-9dc2-e46f0bdec867",
-          "path": "98-Userscripts/promptAndParseNaturalLanguageDate.js",
-          "settings": {}
-        },
-        {
-          "name": "sessionNoteTemplate",
-          "type": "NestedChoice",
-          "id": "a97a4eb1-8953-4a64-9f5e-d782b468714b",
-          "choice": {
-            "id": "0df50061-b0a5-4608-aafe-862a0fb32d89",
+      "macro": {
+        "id": "dab715ed-3609-409f-9304-7140b778e320",
+        "name": "Add a Session Note",
+        "commands": [
+          {
+            "name": "getThisCampaign",
+            "type": "UserScript",
+            "id": "90b33053-a16a-4275-b676-1991a73385fd",
+            "path": "98-Userscripts/getThisCampaign.js",
+            "settings": {}
+          },
+          {
+            "name": "promptAndParseNaturalLanguageDate",
+            "type": "UserScript",
+            "id": "eff98027-711d-40a8-9dc2-e46f0bdec867",
+            "path": "98-Userscripts/promptAndParseNaturalLanguageDate.js",
+            "settings": {}
+          },
+          {
             "name": "sessionNoteTemplate",
-            "type": "Template",
-            "command": false,
-            "templatePath": "99-Templates/sessionNotesTemplate.md",
-            "fileNameFormat": {
-              "enabled": true,
-              "format": "{{VALUE:extractedDate}} Session Note"
-            },
-            "folder": {
-              "enabled": true,
-              "folders": [
-                "{{VALUE:thisCampaignPath}}/01-Sessions"
-              ],
-              "chooseWhenCreatingNote": false,
-              "createInSameFolderAsActiveFile": false,
-              "chooseFromSubfolders": false
-            },
-            "appendLink": false,
-            "openFileInNewTab": {
-              "enabled": false,
-              "direction": "vertical",
-              "focus": true
-            },
-            "openFile": false,
-            "openFileInMode": "default",
-            "fileExistsMode": "Increment the file name",
-            "setFileExistsBehavior": false
+            "type": "NestedChoice",
+            "id": "a97a4eb1-8953-4a64-9f5e-d782b468714b",
+            "choice": {
+              "id": "0df50061-b0a5-4608-aafe-862a0fb32d89",
+              "name": "sessionNoteTemplate",
+              "type": "Template",
+              "command": false,
+              "templatePath": "99-Templates/sessionNotesTemplate.md",
+              "fileNameFormat": {
+                "enabled": true,
+                "format": "{{VALUE:extractedDate}} Session Note"
+              },
+              "folder": {
+                "enabled": true,
+                "folders": [
+                  "{{VALUE:thisCampaignPath}}/01-Sessions"
+                ],
+                "chooseWhenCreatingNote": false,
+                "createInSameFolderAsActiveFile": false,
+                "chooseFromSubfolders": false
+              },
+              "appendLink": false,
+              "openFileInNewTab": {
+                "enabled": false,
+                "direction": "vertical",
+                "focus": true
+              },
+              "openFile": false,
+              "openFileInMode": "default",
+              "fileExistsMode": "Increment the file name",
+              "setFileExistsBehavior": false
+            }
           }
-        }
-      ],
+        ]
+      },
       "runOnStartup": false
     }
   ],
@@ -244,9 +286,10 @@
   "devMode": false,
   "templateFolderPath": "99-Templates",
   "announceUpdates": true,
-  "version": "1.11.1",
+  "version": "2.1.0",
   "disableOnlineFeatures": true,
   "enableRibbonIcon": false,
+  "showCaptureNotification": true,
   "ai": {
     "defaultModel": "Ask me",
     "defaultSystemPrompt": "As an AI assistant within Obsidian, your primary goal is to help users manage their ideas and knowledge more effectively. Format your responses using Markdown syntax. Please use the [[Obsidian]] link format. You can write aliases for the links by writing [[Obsidian|the alias after the pipe symbol]]. To use mathematical notation, use LaTeX syntax. LaTeX syntax for larger equations should be on separate lines, surrounded with double dollar signs ($$). You can also inline math expressions by wrapping it in $ symbols. For example, use $$w_{ij}^{\text{new}}:=w_{ij}^{\text{current}}+etacdotdelta_jcdot x_{ij}$$ on a separate line, but you can write \"($eta$ = learning rate, $delta_j$ = error term, $x_{ij}$ = input)\" inline.",
@@ -296,6 +339,8 @@
     "incrementFileNameSettingMoveToDefaultBehavior": true,
     "mutualExclusionInsertAfterAndWriteToBottomOfFile": true,
     "setVersionAfterUpdateModalRelease": true,
-    "addDefaultAIProviders": true
+    "addDefaultAIProviders": true,
+    "removeMacroIndirection": true,
+    "migrateFileOpeningSettings": true
   }
 }
