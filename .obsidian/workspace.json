@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Home.md",
+                "file": "01-Campaigns/Test Campaign 100/05-Atlas/Braia/Braia-Linked Atlas.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "Home"
+              "title": "Braia-Linked Atlas"
             }
           }
         ]
@@ -192,13 +192,7 @@
   },
   "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
-    "01-Campaigns/Test Campaign 100/05-Atlas/Braia/States/1-Lavenhelmia/84-Whitland Land/Whitland Land.md",
-    "01-Campaigns/Test Campaign 100/05-Atlas/Braia/States/1-Lavenhelmia/Lavenhelmia.md",
-    "01-Campaigns/Test Campaign 100/05-Atlas/Braia/States/0-Neutrals/Neutrals.md",
-    "01-Campaigns/Test Campaign 100/05-Atlas/Braia/Cultures/Wildlands.md",
-    "01-Campaigns/Test Campaign 100/05-Atlas/Braia/Braia-Linked Atlas.md",
-    "01-Campaigns/Test Campaign 100/05-Atlas/Braia/Cultures/Dunirr (Dwarven).md",
-    "01-Campaigns/Test Campaign 100/05-Atlas/Braia/Cultures/Dail (Human).md",
+    "Home.md",
     "01-Campaigns/Test Campaign 100/05-Atlas/Braia/Religions/Kharan Pantheon.md",
     "01-Campaigns/Test Campaign 100/05-Atlas/Braia/Religions/Dail (Human)ism.md",
     "01-Campaigns/Test Campaign 100/05-Atlas/Braia/Religions/Oxbreachism.md",
@@ -209,8 +203,11 @@
     "01-Campaigns/Test Campaign 100/05-Atlas/Braia/Religions/Dunirr (Dwarven) Druids.md",
     "01-Campaigns/Test Campaign 100/05-Atlas/Braia/Religions/No religion.md",
     "01-Campaigns/Test Campaign 100/05-Atlas/Braia/Religions",
+    "01-Campaigns/Test Campaign 100/05-Atlas/Braia/Cultures/Dail (Human).md",
     "01-Campaigns/Test Campaign 100/05-Atlas/Braia/Cultures/Rake (Drakonic).md",
     "01-Campaigns/Test Campaign 100/05-Atlas/Braia/Cultures/Khazadur (Dwarven).md",
+    "01-Campaigns/Test Campaign 100/05-Atlas/Braia/Cultures/Dunirr (Dwarven).md",
+    "01-Campaigns/Test Campaign 100/05-Atlas/Braia/Cultures/Wildlands.md",
     "01-Campaigns/Test Campaign 100/05-Atlas/Braia/Cultures",
     "01-Campaigns/Test Campaign 100/05-Atlas/Braia/States/3-Zazilnabu/90-Braz Territory/Shadab.md",
     "01-Campaigns/Test Campaign 100/05-Atlas/Braia/States/3-Zazilnabu/90-Braz Territory/Durmer.md",
@@ -220,6 +217,9 @@
     "01-Campaigns/Test Campaign 100/05-Atlas/Braia/States/3-Zazilnabu/91-Scorcross Area/Dramefalls.md",
     "01-Campaigns/Test Campaign 100/05-Atlas/Braia/States/2-Lalaparo/33-Alrila Margrave/Oreramaloth.md",
     "01-Campaigns/Test Campaign 100/05-Atlas/Braia/States/1-Lavenhelmia/6-Dogburesia County/Ghosthtown.md",
+    "01-Campaigns/Test Campaign 100/05-Atlas/Braia/States/2-Lalaparo/40-Khakaste County/Galglarauroth.md",
+    "01-Campaigns/Test Campaign 100/05-Atlas/Braia/States/1-Lavenhelmia/83-Zz'ptanartra Area/Moonzegro.md",
+    "01-Campaigns/Test Campaign 100/05-Atlas/Braia/States/2-Lalaparo/85-Craglassar Land/Jarathrylym.md",
     "01-Campaigns/Test Campaign 100/05-Atlas/Braia/States/undefined-Unknown/undefined-undefined",
     "01-Campaigns/Test Campaign 100/05-Atlas/Braia/States/undefined-Unknown",
     "01-Campaigns/Test Campaign 100/05-Atlas/Braia/States/4-Pearlia/94-Irongria Land",
