@@ -145,12 +145,12 @@ To import the States Notes, here are the settings for the "Import JSON/CSV dialo
 | Note name prefix/suffix|**_leave both blank_** |
 | Allow paths in Note Name|**_CHECKED_** |
 | How to Handle Existing Notes|**_REPLACE_** (see note above) |
-| Name of Destination Folder in Vault|**_01-Campaigns/(specific Campaign Path)/05-Atlas/States_** (sub-folder will be created)|
+| Name of Destination Folder in Vault|**_01-Campaigns/_** (sub-folder will be created)|
 
 ##### States Note Name Code
 Copy/paste _exactly_ as is:
 ```js
-${i}-${name}/${name}
+@{return `${dataRoot.importInfo.thisCampaign}/05-Atlas/${dataRoot.info.mapName}/States/${this.i}-${this.name}/${this.name}`}
 ```
 
 
@@ -174,12 +174,12 @@ To import the Provinces Notes, here are the settings for the "Import JSON/CSV di
 | Note name prefix/suffix|**_leave both blank_** |
 | Allow paths in Note name|**_CHECKED_** |
 | How to Handle Existing Notes|**_REPLACE_** (see note above) |
-| Name of Destination Folder in Vault|**_01-Campaigns/(specific Campaign Path)/05-Atlas/States_** (sub-folders for each State's Provinces will be created as `id-fullProvinceName` within the respective State subfolder)|
+| Name of Destination Folder in Vault|**_01-Campaigns/_** (sub-folders for each State's Provinces will be created as `id-fullProvinceName` within the respective State subfolder)|
 
 ##### Provinces Note Name Code
 Copy/paste *exactly* as is:
 ```js
-@{return `${this.state}-${(this.state > 0) && dataRoot.pack.states.find(state => state.i === this.state)?.name || "Unknown" }/${this.i}-${(this.i > 0) && this.fullName || "Unknown"}/${this.fullName}`}
+@{return `${dataRoot.importInfo.thisCampaign}/05-Atlas/${dataRoot.info.mapName}/States/${this.state}-${(this.state > 0) && dataRoot.pack.states.find(state => state.i === this.state)?.name || "Unknown" }/${this.i}-${(this.i > 0) && this.fullName || "Unknown"}/${this.fullName}`}
 ```
 
 ### Burgs
@@ -202,12 +202,12 @@ To import the Burg Notes, here are the settings for the "Import JSON/CSV dialog"
 | Note name prefix/suffix|**_leave both blank_** |
 | Allow paths in Note name|**_CHECKED**
 | How to Handle Existing Notes|**_REPLACE_** (see note above) |
-| Name of Destination Folder in Vault|**_01-Campaigns/(specific Campaign Path)/05-Atlas/States_** (notes will be created within the respective Provinces subfolders within the Respective State subfolders)|
+| Name of Destination Folder in Vault|**_01-Campaigns/_** (notes will be created within the respective Provinces subfolders within the Respective State subfolders)|
 
 ##### Burgs Note Name Code
 Copy/paste *exactly* as is:
 ```js
-@{return `${this.state}-${(this.state > 0) && dataRoot.pack.states.find(state => state.i === this.state)?.name || "Unknown" }/${dataRoot.pack.cells.find(c => c.i === this.cell)?.province}-${dataRoot.pack.provinces.find(p => p.i === dataRoot.pack.cells.find(c => c.i === this.cell)?.province)?.fullName}/${this.name}`}
+@{return `${dataRoot.importInfo.thisCampaign}/05-Atlas/${dataRoot.info.mapName}/States/${this.state}-${(this.state > 0) && dataRoot.pack.states.find(state => state.i === this.state)?.name || "Unknown" }/${dataRoot.pack.cells.find(c => c.i === this.cell)?.province}-${dataRoot.pack.provinces.find(p => p.i === dataRoot.pack.cells.find(c => c.i === this.cell)?.province)?.fullName}/${this.name}`}
 ```
 
 ### Cultures 
@@ -225,12 +225,20 @@ To import the Culture Notes, here are the settings for the "Import JSON/CSV dial
 | Choose HELPERS file|**_Helpers-FMG-JSON.js_** |
 | Field containing the data|**_pack.cultures_** |
 | Each subfield is a separate note|**_unchecked_** |
-| Field to use as Note name|**_name_** |
+| Field to use as Note name|**_(see code block below - must be copy/pasted *exactly* as is)_** |
 | Add suffix on duplicate note names|**_checked_** |
 | Note name prefix/suffix|**_leave both blank_** |
 | Allow paths in Note name|**_unchecked_**
 | How to Handle Existing Notes|**_REPLACE_** (see note above) |
-| Name of Destination Folder in Vault|**_01-Campaigns/(specific Campaign Path)/05-Atlas/Cultures_** (sub-folder will be created)|
+| Name of Destination Folder in Vault|**_01-Campaigns/_** (sub-folder will be created)|
+
+##### Cultures Note Name Code
+
+Copy/paste _exactly_ as is:
+```js
+@{return `${dataRoot.importInfo.thisCampaign}/05-Atlas/${dataRoot.info.mapName}/Cultures/${this.name}`}
+```
+
 
 ### Religions 
 The Religion Notes pass will create individual notes for each Religion in the JSON file. 
@@ -247,12 +255,19 @@ To import the Religion Notes, here are the settings for the "Import JSON/CSV dia
 | Choose HELPERS file|**_Helpers-FMG-JSON.js_** |
 | Field containing the data|**_pack.reilgions_** |
 | Each subfield is a separate note|**_unchecked_** |
-| Field to use as Note name|**_name_** |
+| Field to use as Note name|**_**_(see code block below - must be copy/pasted *exactly* as is)_**_** |
 | Add suffix on duplicate note names|**_checked_** |
 | Note name prefix/suffix|**_leave both blank_** |
 | Allow paths in Note name|**_unchecked_**
 | How to Handle Existing Notes|**_REPLACE_** (see note above) |
-| Name of Destination Folder in Vault|**_01-Campaigns/(specific Campaign Path)/05-Atlas/Religions_** (sub-folder will be created)|
+| Name of Destination Folder in Vault|**_01-Campaigns/** (sub-folder will be created)|
+
+##### Religions Note Name Code
+
+Copy/paste _exactly_ as is:
+```js
+@{return `${dataRoot.importInfo.thisCampaign}/05-Atlas/${dataRoot.info.mapName}/Religions/${this.name}`}
+```
 
 ### Atlas
 The Atlas Note pass will create a single note from multiple elements in the JSON file. This will contain tables of the States, Provinces, Burgs, Cultures, and Religions from the JSON data. They will be grouped by category and sorted, within their respective tables, by ID (the `{i}` element from each grouping within FMG JSON data).
@@ -273,9 +288,16 @@ To import the Atlas Note, here are the settings for the "Import JSON/CSV dialog"
 | Choose HELPERS file|**_Helpers-FMG-JSON.js_** |
 | Field containing the data|**_(leave blank)_** (you will be pulling from the entire JSON file) |
 | Each subfield is a separate note|**_unchecked_** |
-| Field to use as Note name|**_info.thisCampaign_** |
+| Field to use as Note name|**_(see code block below - must be copy/pasted *exactly* as is)_** |
 | Add suffix on duplicate note names|**_unchecked_** (only creating a single note)|
 | Note name prefix/suffix|**_Prefix: blank / Suffix: "-Linked Atlas"_** |
-| Allow paths in Note name|**_unchecked_**
+| Allow paths in Note name|**_checked_**
 | How to Handle Existing Notes|**_REPLACE_** (see note above) |
-| Name of Destination Folder in Vault|**_01-Campaigns/(specific Campaign Path)/05-Atlas/_** |
+| Name of Destination Folder in Vault|**_01-Campaigns/${import-info.thisCampaign}_** |
+
+##### Atlas Note Name Code
+
+Copy/paste _exactly_ as is:
+```js
+@{return `${dataRoot.importInfo.thisCampaign}/05-Atlas/${dataRoot.info.mapName}/${dataRoot.info.mapName}-Linked Atlas`}
+```

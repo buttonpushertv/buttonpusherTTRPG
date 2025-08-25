@@ -54,4 +54,4 @@ Here are the steps for doing a batch import of the FMG JSON you prepped in the p
 
 Previous Step: [[02-The FMG JSON File]] | Nest Step: [[04-Wrangling FMG Emblems]]
 
-[^1]: I hope to add some of the other content in the FMG map at some point. The Markers, Rivers, and Military info is all in there and would be cool to extract as well. Someday.
+[^1]: I hope to add some of the other content in the FMG map at some point. The data for Markers, Rivers, and lots of other stuff is all in there and would be cool to extract as well. Someday...

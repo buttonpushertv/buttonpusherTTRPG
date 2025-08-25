@@ -16,6 +16,49 @@ These instructions are a guide for importing the content from an [Azgaar's Fanta
 
 This is a multi-step process. As the warning above states, this is very complex, but not impossible. Just follow the steps and [[#Where to Ask for Help|ask for help]] if you are stuck.
 
+
+# The Premise
+
+### TBD - {describe the process this import will undertake. The idea that you will create a Campaign and then the info from a given FMG map will be stored within that Campaign's Atas folder, under a subfolder called the name of the map.}
+
+# How Big is Your Map?
+
+FMG can create maps that are small or large, meaning that it can create maps that show just a portion of the world you are building, or it can be configured to show an entire planet's worth of landmasses. 
+
+The trade-off tends to be that the larger area your map covers, the smaller the size of geography you are creating for, the more detail & granularity you can achieve.
+
+However, due to some limitations and the way FMG works, it is not easy to create several smaller maps and then combine them into one large, world map.
+
+### TBD - {Working with smaller maps to combine in to a larger "map"}
+
+### TBD - {settings for generating Earth-sized maps} 
+
+### TBD - {Working backwards from a larger map and then using the FMG Submap feature }
+
+# Defining Terms
+
+Throughout these instructions, we will use some shorthand terms to refer to pieces of this import process. 
+
+Where possible, these terms should appear as `inline codeblocks` within Obsidian. 
+
+Also, whenever there is a value that you need to enter or update, it will be indicated, surrounded, by curly braces as well, like this: `{put_your_value_here}` AND _unless_ you are instructed to do so, **do not** leave the curly braces behind when you are putting your values in to replace. Remove them as well.
+
+Here is a list of the shorthand terms we will use and what they are referring to:
+
+| Term | Meaning |
+| --- | --- |
+| `FMG` | This can mean [Azgaar's Fantasy Map Generator](https://azgaar.github.io/Fantasy-Map-Generator/) OR just the concept of the map you may have generated from that website |
+| `{thisFMG...}` | As above, but this may be used when specifically referring to the FMG data files that may be connected to a given map (FMG JSON, FMG States, FMG Provinces, FMG Burgs, FMG Emblems, etc) |
+| `{thisCampaign...}` | This refers to the specific Campaign you are importing this FMG map into. It may also be used to refer to specific items or file locations under the folder hierarchy of the specific Campaign (i.e.- thisCampaignName, thisCampaignAssets, thisCampaignPath, etc) More specific definitions below. |
+| `{thisCampaignName}` | The name you gave the campaign when you created it. |
+| `{thisCampaignPath`} | The location, within this vault of where the files related to a specific Campaign are located. To be precise, it will be located here: `01-Campaigns/{thisCampaignName}` |
+| `{thisCampaignAtlas}` | The campaign-specific location where the files created by this import process will be stored in the vault. Specifically, `01-Campaigns/{thisCampaignName}/05-Atlas` |
+| `{thisFMGMapName}` | Every `FMGmap` has a name. It can be found on the FMG page itself on the "Options" menu pane - 4th item from the top - "Map Name." That info will be part of the `FMGJSONdata`, so we can make use of it to refer to the full set of data imported from this `FMGmap`. |
+
+
+
+
+
 # FMG JSON Import - The Steps
 
 Here are the major sections of the process:
