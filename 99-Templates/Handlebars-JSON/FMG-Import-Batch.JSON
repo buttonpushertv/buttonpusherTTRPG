@@ -2,7 +2,7 @@
     {
     "fieldName": "",
     "noteName": "@{return `${dataRoot.importInfo.thisCampaign}/05-Atlas/${dataRoot.info.mapName}/${dataRoot.info.mapName}-Linked Atlas`}",
-    "folderName": "01-Campaigns/",
+    "folderName": "01-Campaigns",
     "namePrefix": "",
     "nameSuffix": "",
     "batchStep": "Atlas"
@@ -10,7 +10,7 @@
     {
     "fieldName": "pack.states",
     "noteName": "@{return `${dataRoot.importInfo.thisCampaign}/05-Atlas/${dataRoot.info.mapName}/States/${this.i}-${this.name}/${this.name}`}",
-    "folderName": "01-Campaigns/",
+    "folderName": "01-Campaigns",
     "namePrefix": "",
     "nameSuffix": "",
     "batchStep": "States"
@@ -18,7 +18,7 @@
     {
     "fieldName": "pack.provinces",
     "noteName": "@{return `${dataRoot.importInfo.thisCampaign}/05-Atlas/${dataRoot.info.mapName}/States/${this.state}-${(this.state > 0) && dataRoot.pack.states.find(state => state.i === this.state)?.name || 'Unknown' }/${this.i}-${(this.i > 0) && this.fullName || 'Unknown'}/${this.fullName}`}",
-    "folderName": "01-Campaigns/",
+    "folderName": "01-Campaigns",
     "namePrefix": "",
     "nameSuffix": "",
     "batchStep": "Provinces"
@@ -26,7 +26,7 @@
     {
     "fieldName": "pack.burgs",
     "noteName": "@{return `${dataRoot.importInfo.thisCampaign}/05-Atlas/${dataRoot.info.mapName}/States/${this.state}-${(this.state > 0) && dataRoot.pack.states.find(state => state.i === this.state)?.name || 'Unknown' }/${dataRoot.pack.cells.find(c => c.i === this.cell)?.province}-${dataRoot.pack.provinces.find(p => p.i === dataRoot.pack.cells.find(c => c.i === this.cell)?.province)?.fullName}/${this.name}`}",
-    "folderName": "01-Campaigns/",
+    "folderName": "01-Campaigns",
     "namePrefix": "",
     "nameSuffix": "",
     "batchStep": "Burgs"
@@ -34,7 +34,7 @@
     {
     "fieldName": "pack.cultures",
     "noteName": "@{return `${dataRoot.importInfo.thisCampaign}/05-Atlas/${dataRoot.info.mapName}/Cultures/${this.name}`}",
-    "folderName": "01-Campaigns/",
+    "folderName": "01-Campaigns",
     "namePrefix": "",
     "nameSuffix": "",
     "batchStep": "Cultures"
@@ -42,7 +42,7 @@
     {
     "fieldName": "pack.religions",
     "noteName": "@{return `${dataRoot.importInfo.thisCampaign}/05-Atlas/${dataRoot.info.mapName}/Religions/${this.name}`}",
-    "folderName": "01-Campaigns/",
+    "folderName": "01-Campaigns",
     "namePrefix": "",
     "nameSuffix": "",
     "batchStep": "Religions"
