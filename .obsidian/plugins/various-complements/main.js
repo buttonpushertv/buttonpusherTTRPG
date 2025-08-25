@@ -1081,19 +1081,6 @@ function isInternalLink(text2) {
 function smartLineBreakSplit(text2) {
   return text2.split("\n").filter((x) => x);
 }
-function* splitRaw(text2, regexp) {
-  let previousIndex = 0;
-  for (let r of text2.matchAll(regexp)) {
-    if (previousIndex !== r.index) {
-      yield text2.slice(previousIndex, r.index);
-    }
-    yield text2[r.index];
-    previousIndex = r.index + 1;
-  }
-  if (previousIndex !== text2.length) {
-    yield text2.slice(previousIndex, text2.length);
-  }
-}
 function findCommonPrefix(strs) {
   if (strs.length === 0) {
     return null;
@@ -4760,27 +4747,45 @@ var AbstractTokenizer = class {
 };
 
 // src/tokenizer/tokenizers/DefaultTokenizer.ts
-function pickTokens(content, trimPattern) {
-  return content.split(trimPattern).filter((x) => x !== "");
-}
 var DefaultTokenizer = class extends AbstractTokenizer {
   tokenize(content, raw) {
-    const tokens = raw ? Array.from(splitRaw(content, this.getTrimPattern("indexing"))).filter(
-      (x) => x !== " "
-    ) : pickTokens(content, this.getTrimPattern("indexing"));
-    return tokens.map((x) => x.replace(/\.+$/g, ""));
+    const tokenized = Array.from(this.__tokenize(content, "indexing"));
+    return raw ? tokenized.map((x) => x.word) : tokenized.map((x) => x.word).filter((x) => !x.match(this.getTrimPattern("indexing"))).map((x) => x.replace(/\.+$/g, ""));
   }
   recursiveTokenize(content) {
-    const trimIndexes = Array.from(
-      content.matchAll(this.getTrimPattern("input"))
-    ).sort((a, b) => a.index - b.index).map((x) => x.index);
-    return [
-      { word: content, offset: 0 },
-      ...trimIndexes.map((i) => ({
-        word: content.slice(i + 1),
-        offset: i + 1
-      }))
-    ];
+    const offsets = Array.from(this.__tokenize(content, "input")).filter((x) => !x.word.match(this.getTrimPattern("input"))).map((x) => x.offset);
+    const results = offsets.map((i) => ({
+      word: content.slice(i),
+      offset: i
+    }));
+    return results[0].offset === 0 ? results : [{ word: content, offset: 0 }, ...results];
+  }
+  // Diffirent with _tokenize of other tokenizers
+  *__tokenize(content, target) {
+    let startIndex = 0;
+    let previousType = "none";
+    for (let i = 0; i < content.length; i++) {
+      if (content[i].match(super.getTrimPattern(target))) {
+        const word = content.slice(startIndex, i);
+        if (word !== "") {
+          yield { word, offset: startIndex };
+        }
+        previousType = "trim";
+        startIndex = i;
+        continue;
+      }
+      if (previousType === "others" || previousType === "none") {
+        previousType = "others";
+        continue;
+      }
+      yield { word: content.slice(startIndex, i), offset: startIndex };
+      previousType = "others";
+      startIndex = i;
+    }
+    yield {
+      word: content.slice(startIndex, content.length),
+      offset: startIndex
+    };
   }
 };
 

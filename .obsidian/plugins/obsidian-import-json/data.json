@@ -1,13 +1,15 @@
 {
-  "jsonName": "${i}-${name}/${name}",
+  "jsonName": "@{return `${dataRoot.importInfo.thisCampaign}/05-Atlas/${dataRoot.info.mapName}/Religions/${this.name}`}",
   "jsonNamePath": true,
   "jsonUrl": "",
-  "folderName": "01-Campaigns/Braia/05-Atlas/States",
-  "topField": "pack.states",
+  "folderName": "01-Campaigns/",
+  "topField": "pack.religions",
   "notePrefix": "",
   "noteSuffix": "",
   "handleExistingNote": 1,
   "forceArray": true,
   "multipleJSON": false,
-  "uniqueNames": false
+  "uniqueNames": true,
+  "batchFile": {},
+  "batchStep": "Religions"
 }

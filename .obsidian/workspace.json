@@ -6,24 +6,9 @@
       {
         "id": "4509724f8bf84da7",
         "type": "tabs",
-        "dimension": 57.28346456692913,
         "children": [
           {
             "id": "e7a7b303c61786dc",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "90-Tools & Helpers/JSON Importing How To Notes/03b-Multi-step Importing Process.md",
-                "mode": "preview",
-                "source": true
-              },
-              "icon": "lucide-file",
-              "title": "03b-Multi-step Importing Process"
-            }
-          },
-          {
-            "id": "c7cb1fee6dccfd7a",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -34,42 +19,6 @@
               },
               "icon": "lucide-file",
               "title": "Home"
-            }
-          },
-          {
-            "id": "d4f2c303ab1f20d6",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "01-Campaigns/Braia/05-Atlas/States/2-Lalaparo/Lalaparo.md",
-                "mode": "preview",
-                "source": true
-              },
-              "icon": "lucide-file",
-              "title": "Lalaparo"
-            }
-          }
-        ],
-        "currentTab": 2
-      },
-      {
-        "id": "e15205705e45e640",
-        "type": "tabs",
-        "dimension": 42.71653543307087,
-        "children": [
-          {
-            "id": "174810edb1504396",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "99-Templates/Handlebars-JSON/States-FMG-JSON Handlebars Template.md",
-                "mode": "source",
-                "source": true
-              },
-              "icon": "lucide-file",
-              "title": "States-FMG-JSON Handlebars Template"
             }
           }
         ]
@@ -187,7 +136,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 304.5
+    "width": 460.5
   },
   "right": {
     "id": "93482ffa1a519a97",
@@ -226,6 +175,7 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "bases:Create new base": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
@@ -240,53 +190,53 @@
       "homepage:Open homepage": false
     }
   },
-  "active": "d4f2c303ab1f20d6",
+  "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
-    "01-Campaigns/Braia/05-Atlas/States/1-Lavenhelmia/Lavenhelmia.md",
-    "99-Templates/Handlebars-JSON/States-FMG-JSON Handlebars Template.md",
-    "01-Campaigns/Braia/05-Atlas/States/1-Lavenhelmia/1-Shimouth County/Shimouth.md",
-    "Home.md",
-    "01-Campaigns/05-Atlas/States/5-Narag/Narag.md",
-    "01-Campaigns/05-Atlas/States/5-Narag",
-    "01-Campaigns/05-Atlas/States/4-Pearlia/Pearlia.md",
-    "01-Campaigns/05-Atlas/States/4-Pearlia",
-    "01-Campaigns/05-Atlas/States/3-Zazilnabu/Zazilnabu.md",
-    "01-Campaigns/05-Atlas/States/3-Zazilnabu",
-    "01-Campaigns/05-Atlas/States/2-Lalaparo/Lalaparo.md",
-    "01-Campaigns/05-Atlas/States/2-Lalaparo",
-    "01-Campaigns/05-Atlas/States/1-Lavenhelmia/Lavenhelmia.md",
-    "01-Campaigns/05-Atlas/States/1-Lavenhelmia",
-    "01-Campaigns/05-Atlas/States/0-Neutrals/Neutrals.md",
-    "01-Campaigns/05-Atlas/States/0-Neutrals",
-    "01-Campaigns/05-Atlas/States",
-    "01-Campaigns/05-Atlas",
-    "90-Tools & Helpers/JSON Importing How To Notes/03b-Multi-step Importing Process.md",
-    "01-Campaigns/Braia/98-Braia Assets/FMG-emblems-PNG/Braia Emblem Kingdom of Lavenhelmia.png",
-    "01-Campaigns/Braia/98-Braia Assets/FMG-emblems-PNG/3.png",
-    "01-Campaigns/Braia/98-Braia Assets/FMG-emblems-PNG",
-    "01-Campaigns/Braia/98-Braia Assets/FMG-villages-WEBP",
-    "99-Templates/Handlebars-JSON/Burgs-FMG-JSON Handlebars Template.md",
-    "01-Campaigns/Braia/05-Atlas/Braia-Linked Atlas.md",
-    "01-Campaigns/Braia/05-Atlas/Religions/Kharan Pantheon.md",
-    "01-Campaigns/Braia/05-Atlas/Religions/Dail (Human)ism.md",
-    "01-Campaigns/Braia/05-Atlas/Religions/Oxbreachism.md",
-    "01-Campaigns/Braia/05-Atlas/Religions/Newden Religion.md",
-    "01-Campaigns/Braia/05-Atlas/Religions/Old Dail (Human) Shamanism.md",
-    "01-Campaigns/Braia/05-Atlas/Religions/Rake (Drakonic) Deities.md",
-    "01-Campaigns/Braia/05-Atlas/Religions/Khazadur (Dwarven) Faith.md",
-    "01-Campaigns/Braia/05-Atlas/Religions/Dunirr (Dwarven) Druids.md",
-    "01-Campaigns/Braia/05-Atlas/Religions/No religion.md",
-    "01-Campaigns/Braia/05-Atlas/Cultures/Dail (Human).md",
-    "01-Campaigns/Braia/05-Atlas/Cultures/Rake (Drakonic).md",
-    "01-Campaigns/Braia/05-Atlas/Cultures/Khazadur (Dwarven).md",
-    "01-Campaigns/Braia/05-Atlas/Cultures/Dunirr (Dwarven).md",
-    "01-Campaigns/Braia/98-Braia Assets/FMG-cities-WEBP/1-Shimouth.webp",
-    "01-Campaigns/Braia/98-Braia Assets/Braia Provinces World Map.svg",
-    "01-Campaigns/Braia/98-Braia Assets/Braia World Map.svg",
-    "01-Campaigns/Test Campaign Cheia/98-Test Campaign Cheia Assets/FMG_emblems-PNG/Cheia Emblem Mocharenaga.png",
-    "01-Campaigns/Test Campaign Cheia/98-Test Campaign Cheia Assets/FMG_emblems-PNG/Cheia Emblem Mocha.png",
-    "01-Campaigns/Test Campaign Cheia/98-Test Campaign Cheia Assets/FMG_emblems-PNG/Cheia Emblem Mitletownia Territory.png",
-    "01-Campaigns/Test Campaign Cheia/98-Test Campaign Cheia Assets/FMG_emblems-PNG/Cheia Emblem Mistad.png",
-    "01-Campaigns/Test Campaign Cheia/98-Test Campaign Cheia Assets/FMG_emblems-PNG/Cheia Emblem Migny.png"
+    "01-Campaigns/Test Campaign 100/05-Atlas/Braia/States/1-Lavenhelmia/84-Whitland Land/Whitland Land.md",
+    "01-Campaigns/Test Campaign 100/05-Atlas/Braia/States/1-Lavenhelmia/Lavenhelmia.md",
+    "01-Campaigns/Test Campaign 100/05-Atlas/Braia/States/0-Neutrals/Neutrals.md",
+    "01-Campaigns/Test Campaign 100/05-Atlas/Braia/Cultures/Wildlands.md",
+    "01-Campaigns/Test Campaign 100/05-Atlas/Braia/Braia-Linked Atlas.md",
+    "01-Campaigns/Test Campaign 100/05-Atlas/Braia/Cultures/Dunirr (Dwarven).md",
+    "01-Campaigns/Test Campaign 100/05-Atlas/Braia/Cultures/Dail (Human).md",
+    "01-Campaigns/Test Campaign 100/05-Atlas/Braia/Religions/Kharan Pantheon.md",
+    "01-Campaigns/Test Campaign 100/05-Atlas/Braia/Religions/Dail (Human)ism.md",
+    "01-Campaigns/Test Campaign 100/05-Atlas/Braia/Religions/Oxbreachism.md",
+    "01-Campaigns/Test Campaign 100/05-Atlas/Braia/Religions/Newden Religion.md",
+    "01-Campaigns/Test Campaign 100/05-Atlas/Braia/Religions/Old Dail (Human) Shamanism.md",
+    "01-Campaigns/Test Campaign 100/05-Atlas/Braia/Religions/Rake (Drakonic) Deities.md",
+    "01-Campaigns/Test Campaign 100/05-Atlas/Braia/Religions/Khazadur (Dwarven) Faith.md",
+    "01-Campaigns/Test Campaign 100/05-Atlas/Braia/Religions/Dunirr (Dwarven) Druids.md",
+    "01-Campaigns/Test Campaign 100/05-Atlas/Braia/Religions/No religion.md",
+    "01-Campaigns/Test Campaign 100/05-Atlas/Braia/Religions",
+    "01-Campaigns/Test Campaign 100/05-Atlas/Braia/Cultures/Rake (Drakonic).md",
+    "01-Campaigns/Test Campaign 100/05-Atlas/Braia/Cultures/Khazadur (Dwarven).md",
+    "01-Campaigns/Test Campaign 100/05-Atlas/Braia/Cultures",
+    "01-Campaigns/Test Campaign 100/05-Atlas/Braia/States/3-Zazilnabu/90-Braz Territory/Shadab.md",
+    "01-Campaigns/Test Campaign 100/05-Atlas/Braia/States/3-Zazilnabu/90-Braz Territory/Durmer.md",
+    "01-Campaigns/Test Campaign 100/05-Atlas/Braia/States/2-Lalaparo/86-Maramantrand Territory/Ringliiv.md",
+    "01-Campaigns/Test Campaign 100/05-Atlas/Braia/States/5-Narag/77-Bundur County/Khanargzar.md",
+    "01-Campaigns/Test Campaign 100/05-Atlas/Braia/States/1-Lavenhelmia/3-Hearthgro Barony/Cloudtown.md",
+    "01-Campaigns/Test Campaign 100/05-Atlas/Braia/States/3-Zazilnabu/91-Scorcross Area/Dramefalls.md",
+    "01-Campaigns/Test Campaign 100/05-Atlas/Braia/States/2-Lalaparo/33-Alrila Margrave/Oreramaloth.md",
+    "01-Campaigns/Test Campaign 100/05-Atlas/Braia/States/1-Lavenhelmia/6-Dogburesia County/Ghosthtown.md",
+    "01-Campaigns/Test Campaign 100/05-Atlas/Braia/States/undefined-Unknown/undefined-undefined",
+    "01-Campaigns/Test Campaign 100/05-Atlas/Braia/States/undefined-Unknown",
+    "01-Campaigns/Test Campaign 100/05-Atlas/Braia/States/4-Pearlia/94-Irongria Land",
+    "01-Campaigns/Test Campaign 100/05-Atlas/Braia/States/4-Pearlia/93-Smalder Land",
+    "01-Campaigns/Test Campaign 100/05-Atlas/Braia/States/3-Zazilnabu/92-Cleomyardia Island",
+    "01-Campaigns/Test Campaign 100/05-Atlas/Braia/States/3-Zazilnabu/91-Scorcross Area",
+    "01-Campaigns/Test Campaign 100/05-Atlas/Braia/States/3-Zazilnabu/90-Braz Territory",
+    "01-Campaigns/Test Campaign 100/05-Atlas/Braia/States/2-Lalaparo/89-Dunster Island",
+    "01-Campaigns/Test Campaign 100/98-Test Campaign 100 Assets/FMG-emblems-PNG/Braia Emblem Kingdom of Lavenhelmia.png",
+    "01-Campaigns/Test Campaign 100/98-Test Campaign 100 Assets/FMG-emblems-export-PNG/svgexport-0464.png",
+    "01-Campaigns/Test Campaign 100/98-Test Campaign 100 Assets/FMG-emblems-export-PNG/svgexport-0452.png",
+    "01-Campaigns/Test Campaign 100/98-Test Campaign 100 Assets/FMG-emblems-export-PNG/svgexport-0455.png",
+    "01-Campaigns/Test Campaign 100/98-Test Campaign 100 Assets/FMG-emblems-export-PNG/svgexport-0446.png",
+    "01-Campaigns/Test Campaign 100/98-Test Campaign 100 Assets/FMG-emblems-export-PNG/svgexport-0445.png",
+    "01-Campaigns/Test Campaign 100/98-Test Campaign 100 Assets/FMG-emblems-export-PNG/svgexport-0436.png",
+    "01-Campaigns/Test Campaign 100/98-Test Campaign 100 Assets/FMG-emblems-export-PNG/svgexport-0435.png",
+    "01-Campaigns/Test Campaign 100/98-Test Campaign 100 Assets/FMG-emblems-export-PNG/svgexport-0400.png",
+    "01-Campaigns/Test Campaign 100/98-Test Campaign 100 Assets/FMG-emblems-export-PNG/svgexport-0434.png"
   ]
 }
