@@ -3,7 +3,7 @@ alert: {{alert}}
 aliases: {{name}}
 area: {{totalArea area}}
 burgs: {{burgs}}
-campaign: {{@importDataRoot.info.thisCampaign}}
+campaign: {{@importDataRoot.importInfo.thisCampaign}}
 {{setvar "currentCapital" (getBurgName capital @importDataRoot.pack.burgs)}}capital: {{"currentCapital"}}
 center: {{this.center}}
 color: {{color}}
@@ -16,8 +16,9 @@ form: {{form}}
 formName: {{formName}}
 fullName: {{fullName}}
 id: {{i}}
+mapName: {{@importDataRoot.info.mapName}}
 name: {{name}}
-neighbors: 
+neighbors:
 {{#each neighbors}}
 - {{getStateName this @importDataRoot.pack.states}}
 {{/each}}
@@ -35,14 +36,13 @@ urban: {{calcPopulation urban @importDataRoot.settings.populationRate}}
 tags:
 - State
 - {{@importDataRoot.info.mapName}}
-- {{@importDataRoot.info.thisCampaignShortCode}}
-templateVersion: 1.2
+- {{@importDataRoot.importInfo.thisCampaignShortCode}}
+templateVersion: 2.0
 type: {{type}}
 WBProcess: Imported
-world: {{@importDataRoot.info.mapName}}
 ---
 
-> [!metadata|metadata]- Metadata 
+> [!metadata|metadata]- Metadata
 >> [!metadata|metadataoption]- System
 >> #### System
 >>  |
@@ -50,8 +50,8 @@ world: {{@importDataRoot.info.mapName}}
 >> **Tags** | `INPUT[Tags][inlineListSuggester:tags]` |
 >> **World Building Progress**| `INPUT[WBProgress][inlineSelect:wbprogress]`
 >>> [!note]- Tracking World Building Progress
->>> Update the World Building Progress property as you update any info on the page. Your choices are `Imported`, `In Progress`, `Game-ready`, `Nearly Complete,` and `Done`. 
->>> 
+>>> Update the World Building Progress property as you update any info on the page. Your choices are `Imported`, `In Progress`, `Game-ready`, `Nearly Complete,` and `Done`.
+>>>
 >>> This allows sorting based on what has & hasn't had world building stuff done for it. There are Dataviews setup on the campaign home page that sort by these progress key words.
 >
 >> [!metadata|metadataoption]- Info
@@ -65,15 +65,15 @@ world: {{@importDataRoot.info.mapName}}
 
 [[{{getCampaignHomeNote @importSettings}}|Campaign Home]] | [[{{getCampaignAtlasNote @importSettings}}|Campaign Atlas]] | Capital: `=link(this.capital)`
 
-%% During the import process, much of the data for the Leaflet fields should have been pulled in from the JSON. You will need to update the defaultZoom and (maybe) the coordinates values, but it should be pretty close - good enough to get a start with it. The goal is to cut down on the amount of manual effort you need to go through to pull your data in from the FMG JSON %% 
+%% During the import process, much of the data for the Leaflet fields should have been pulled in from the JSON. You will need to update the defaultZoom and (maybe) the coordinates values, but it should be pretty close - good enough to get a start with it. The goal is to cut down on the amount of manual effort you need to go through to pull your data in from the FMG JSON %%
 
 > [!metadata|map]+ {{name}} Map
 > ```leaflet
 > id: State-{{name}}
 > image: [[{{@importDataRoot.info.mapName}} World Map.svg]]
-> bounds: 
+> bounds:
 > - [0,0]
-> - [{{@importDataRoot.info.mapHeight}},{{@importDataRoot.info.mapWidth}}]
+> - [{{@importDataRoot.info.height}},{{@importDataRoot.info.width}}]
 > coordinates: [{{getPoleLeafletXY this @importDataRoot.info}}]
 > height: 600px
 > width: 100%
@@ -86,38 +86,38 @@ world: {{@importDataRoot.info.mapName}}
 > darkMode: false
 > marker: capital,{{getLeafletBurgXY capital @importDataRoot.pack.burgs @importDataRoot.info}},[[{{"currentCapital"}}]],{{name}} Capital
 > ```
-> [Link to {{name}} on FMG Map]({{@importDataRoot.info.mapDropboxFMGLink}}&scale=3{{getFMGCellXY this.center @importDataRoot.pack.cells}})
+> [Link to {{name}} on FMG Map]({{@importDataRoot.importInfo.mapDropboxFMGLink}}&scale=3{{getFMGCellXY this.center @importDataRoot.pack.cells}})
 
 %% All the info in this 'infobox' will appear in the panel to the right. Most of these values are pulled from the metadata in the properties above. %%
 
 > [!infobox]+
-> 
+>
 >  |
 >  --- |
->  
+> 
 >> [!note|no-t text-center]
 >> **Emblem of**
 >> **`=this.fullName`**
 >> ![[{{@importDataRoot.info.mapName}} Emblem {{fullName}}.png]]
 >>
-> 
+>
 >  |
 >  --- |
->  
-> ## <p align="left"><font color="#c00000">Info</font></p>
 > 
+> ## <p align="left"><font color="#c00000">Info</font></p>
+>
 >  |
 >  ---: | --- |
 > **Population** | `=this.totalPopulation` |
 >  <span style="font-size:x-small">**Urban**<br>**Rural** </span>| <span style="font-size:x-small">`=this.urban`<br>`=this.rural`</span> |
 > **Area (sq. mi)** | `=this.area` |
 >  **Dominant Geographic Feature** | `=this.type` |
->  
+> 
 >  |
 >  --- |
->  
-> ## <p align="left"><font color="#c00000">Politics</font></p>
 > 
+> ## <p align="left"><font color="#c00000">Politics</font></p>
+>
 >  |
 > ---: | --- |
 > **Capital** | `=link(this.capital)` |
@@ -128,7 +128,7 @@ world: {{@importDataRoot.info.mapName}}
 >
 >  |
 >  --- |
->  
+> 
 > ```dataview
 > TABLE WITHOUT ID link(neighbors) as "Neighbors"
 > FROM ""
@@ -152,13 +152,13 @@ Significant incidents in `=this.name`'s history:
 
 | Name | Start Year | End Year |
 | ---- | ---------- | -------- |
-{{#each campaigns}} 
+{{#each campaigns}}
 | {{name}} | {{start}} | {{end}} |
 {{/each}}
 
 > [!note]- Timeline
 > (Edit this doc to update the timeline - and remove this line, too.)
-> 
+>
 >> [!timeline|t-l] **`=this.fullname` Founded** _Date of founding._
 >> `=this.fullName` was founded by...
 >
@@ -174,7 +174,7 @@ Significant incidents in `=this.name`'s history:
 %% Further notes. These 2 callouts will be hidden by default. Change the '-' after the closing square bracket to a '+' to have it be expanded by default. %%
 
 > [!hint]- Plot Hooks
-> 
+>
 
 > [!question]- Hidden Details
 >
@@ -188,7 +188,7 @@ Significant incidents in `=this.name`'s history:
 > [!note|wmed]- Burgs
 > ```dataview
 > TABLE WITHOUT ID file.link as "Burgs", link(provinceName) as "Province Name"
-> FROM #Burg and "01-Campaigns/Braia/05-Atlas/States/1-Lavenhelmia"
+> FROM #Burg and "{{@importDataRoot.importInfo.thisCampaignPath}}/{{@importDataRoot.info.mapName}}/05-Atlas/States/{{i}}-{{name}}"
 > WHERE econtains(stateId,this.id)
 > SORT file.name ASC
 > ```

@@ -33,7 +33,7 @@ IMPORTANT: All of these helpers rely on the campaigns being stored in the vault 
 
 */
 
-// 001 - NEEDS TO BE UPDATED TO USE JSON ELEMENT @ info.thisCampaign & info.thisCampaignPath
+// 001 - NEEDS TO BE UPDATED TO USE JSON ELEMENT @ importInfo.thisCampaign & importInfo.thisCampaignPath
 // Custom helper function to extract thisCampaignHomeNote from @importSettings
 handlebars.registerHelper('getCampaignHomeNote', function(importSettings) {
   // console.log("importSettings: ", importSettings);
@@ -53,7 +53,7 @@ handlebars.registerHelper('getCampaignAtlasNote', function(importSettings) {
   return thisCampaignAtlasNote;
 });
 
-// 004 - NEEDS TO BE UPDATED TO USE JSON ELEMENT @ info.thisCampaign & info.thisCampaignPath
+// 004 - NEEDS TO BE UPDATED TO USE JSON ELEMENT @ importInfo.thisCampaign & importInfo.thisCampaignPath
 // Custom helper function to extract thisCampaignCalendar from @importSettings
 handlebars.registerHelper('getCampaignCalendar', function(importSettings) {
   // console.log("importSettings: ", importSettings);
@@ -128,7 +128,7 @@ handlebars.registerHelper('getCultureName', function(cultureId,allCultures) {
   if (cultureId === undefined || cultureId === 0) {
     console.log("##### getCultureName - cultureId was undefined or zero #####");
     return ''; // skip if the element is undefined
-    
+   
   };
   const cultureName = allCultures.find(culture => culture.i === cultureId);
   // console.log("cultureName found:", cultureName);
@@ -253,7 +253,7 @@ handlebars.registerHelper('getBurgMapLink', function(currentBurg, mapSeed, allCe
     // console.log(currentBurg.name, " - MFCG URL: ", url.toString());
     const toReturn = url.toString();
     return toReturn.substring(25);
-  
+ 
     function getSeaDirections(i) {
       const p1 = currentCell.p;
       const p2 = havenCell.p;
@@ -282,7 +282,7 @@ handlebars.registerHelper('getBurgMapLink', function(currentBurg, mapSeed, allCe
       const cellTemp = grid.cells.find(ct => ct.i === currentCell.i);
       const tags = [];
 
-      
+     
 
       if (currentCell.r && currentCell.haven) tags.push("estuary");
       else if (currentCell.haven && currentCell.f === 1) tags.push("island,district");
@@ -290,7 +290,7 @@ handlebars.registerHelper('getBurgMapLink', function(currentBurg, mapSeed, allCe
       else if (currentCell.conf) tags.push("confluence");
       else if (currentCell.r) tags.push("river");
       else if (pop < 200 && each(4)(currentBurg.cell)) tags.push("pond");
-  
+ 
       if (currentCell.routes) {
         const connections = currentCell.routes[currentCell] || {};
         const roadsAround = Object.values(connections).filter(routeId => {
@@ -316,15 +316,15 @@ handlebars.registerHelper('getBurgMapLink', function(currentBurg, mapSeed, allCe
       const arableBiomes = currentCell.r ? [1, 2, 3, 4, 5, 6, 7, 8] : [5, 6, 7, 8];
       if (!arableBiomes.includes(biome)) tags.push("uncultivated");
       else if (each(6)(currentCell)) tags.push("farmland");
-      
+     
       const temp = cellTemp;
       if (temp <= 0 || temp > 28 || (temp > 25 && each(3)(currentCell))) tags.push("no orchards");
-      
+     
       if (!currentBurg.plaza) tags.push("no square");
-    
+   
       if (pop < 100) tags.push("sparse");
       else if (pop > 300) tags.push("dense");
-      
+     
       const width = (() => {
         if (pop > 1500) return 1600;
         if (pop > 1000) return 1400;
@@ -334,13 +334,13 @@ handlebars.registerHelper('getBurgMapLink', function(currentBurg, mapSeed, allCe
         return 400;
       })();
       const height = rn(width / 2.2);
-    
+   
       const Vurl = new URL("https://watabou.github.io/village-generator/");
       Vurl.search = new URLSearchParams({pop, name, seed: burgSeed, width, height, tags});
       const toReturn = Vurl.toString();
       return toReturn.substring(25);
     };
- 
+
       // DEBUG SECTION - these are for debugging the VillageGeneratorLink function.
       // Place them where appropriate in the code above to see the values of the variables at that point in the code
       // console.log("## DEBUG - VillageGeneratorLink function: ", currentBurg.name, " is a VILLAGE - ##");
@@ -509,9 +509,9 @@ handlebars.registerHelper('getFMGCellXY', function(cellId, allCells) {
 });
 
 // 019
-// Custom helper function to get Leaflet Compatible Burg X & Y Position 
+// Custom helper function to get Leaflet Compatible Burg X & Y Position
 // This is specifically coded to account for the differnce between Azgaar's FMG & Obsidian Leaflet
-// The value this will return will subtract the currentBurg.x from the info.mapHeight value
+// The value this will return will subtract the currentBurg.x from the info.height value
 // That should invert the coordinate value so that it works correctly with Obsidian Leaflet
 handlebars.registerHelper('getLeafletBurgXY', function(burgId,allBurgs,mapInfo) {
   // console.log("burgId:", burgId);
@@ -523,7 +523,7 @@ handlebars.registerHelper('getLeafletBurgXY', function(burgId,allBurgs,mapInfo) 
   const burgFound = allBurgs.find(burg => burg.i === burgId);
   // console.log("X-burgFound:", burgFound.name, "- mapInfo:", mapInfo);
   const leafletValidXValue = burgFound.x.toFixed(3);
-  const leafletValidYValue = (mapInfo.mapHeight - burgFound.y).toFixed(3);
+  const leafletValidYValue = (mapInfo.height - burgFound.y).toFixed(3);
   // console.log(burgFound.name, "- leaflet X value: ", leafletValidXValue, " - Leaflet Y value:", leafletValidYValue);
   return `${leafletValidYValue},${leafletValidXValue}`;
 });
@@ -540,7 +540,7 @@ handlebars.registerHelper('getCellLeafletXY', function(cellId, allCells, mapInfo
   const foundCellX = foundCell.p[0];
   const foundCellY = foundCell.p[1];
   const leafletW = foundCellX.toFixed(3);
-  const leafletH = (mapInfo.mapHeight - foundCellY).toFixed(3);
+  const leafletH = (mapInfo.height - foundCellY).toFixed(3);
   // console.log("leafletH: ", leafletH, " -- leafletW: ", leafletW);
   return `${leafletH},${leafletW}`;
 });
@@ -559,7 +559,7 @@ handlebars.registerHelper('getPoleLeafletXY', function(state, mapInfo) {
   const poleX = state.pole[0];
   const poleY = state.pole[1];
   const leafletW = poleX.toFixed(3);
-  const leafletH = (mapInfo.mapHeight - poleY).toFixed(3);
+  const leafletH = (mapInfo.height - poleY).toFixed(3);
   // console.log(state.name,"-POLE- leafletH: ", leafletH, " -- leafletW: ", leafletW);
   return `${leafletH},${leafletW}`;
 });
@@ -568,7 +568,7 @@ handlebars.registerHelper('getPoleLeafletXY', function(state, mapInfo) {
 // Custom helper to calulate the number of followers for a religion
 handlebars.registerHelper('getReligionFollowers', function(religion,allCells,allBurgs,mapSettings) {
   if (religion.removed) return "0";
-  
+ 
   // console.log("religion: ", religion);
   // console.log("allCells: ", allCells);
 
@@ -613,7 +613,7 @@ handlebars.registerHelper('getTemperature', function(burg,allData) {
   // console.log("Temperature scale: ", scale);
   const temp = allData.grid.cells[allData.pack.cells[burg.cell].g].temp;
   // console.log("Burg Name: ", burg.name, " - temp: ", temp);
-  
+ 
 // FMG utils related to units
 
 // conver temperature from °C to other scales

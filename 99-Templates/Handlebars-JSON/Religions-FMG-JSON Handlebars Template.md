@@ -1,7 +1,7 @@
 ---
 aliases:
-area: 
-campaign: "{{@importDataRoot.info.thisCampaign}}"
+area:
+campaign: "{{@importDataRoot.importInfo.thisCampaign}}"
 center: {{this.center}}
 code: {{code}}
 color: {{color}}
@@ -15,6 +15,7 @@ followers: {{getReligionFollowers this @importDataRoot.pack.cells @importDataRoo
 form: {{form}}
 id: {{i}}
 leaders:
+mapName: {{@importDataRoot.info.mapName}}
 origins: {{origins}}
 pronounced:
 religionName: "{{name}}"
@@ -23,12 +24,11 @@ tags:
 - Religion
 - {{@importDataRoot.info.mapName}}
 type: {{type}}
-templateVersion: 1.0
+templateVersion: 2.0
 WBProgress: Imported
-world: {{@importDataRoot.info.mapName}}
 ---
 
-> [!metadata|metadata]- Metadata 
+> [!metadata|metadata]- Metadata
 >> [!metadata|metadataoption]- System
 >> #### System
 >>  |
@@ -36,10 +36,10 @@ world: {{@importDataRoot.info.mapName}}
 >> **Tags** | `INPUT[Tags][inlineListSuggester:tags]` |
 >> **World Building Progress**| `INPUT[WBProgress][inlineSelect:WBProgress]`|
 >>> [!note]- Tracking World Building Progress
->>> Update the World Building Progress property as you update any info on the page. Your choices are `Imported`, `In Progress`, `Game-ready`, `Nearly Complete,` and `Done`. 
->>> 
+>>> Update the World Building Progress property as you update any info on the page. Your choices are `Imported`, `In Progress`, `Game-ready`, `Nearly Complete,` and `Done`.
+>>>
 >>> This allows sorting based on what has & hasn't had world building stuff done for it. There are Dataviews setup on the campaign home page that sort by these progress key words.
-> 
+>
 >> [!metadata|metadataoption]- Info
 >> #### Info
 >>  |
@@ -51,15 +51,15 @@ world: {{@importDataRoot.info.mapName}}
 
 [[{{getCampaignHomeNote @importSettings}}]] | [[{{getCampaignAtlasNote @importSettings}}]]
 
-%% During the import process, much of the data for the Leaflet fields should have been pulled in from the JSON. You will need to update the defaultZoom and (maybe) the coordinates values, but it should be pretty close - good enough to get a start with it. The goal is to cut down on the amount of manual effort you need to go through to pull your data in from the FMG JSON %% 
+%% During the import process, much of the data for the Leaflet fields should have been pulled in from the JSON. You will need to update the defaultZoom and (maybe) the coordinates values, but it should be pretty close - good enough to get a start with it. The goal is to cut down on the amount of manual effort you need to go through to pull your data in from the FMG JSON %%
 
 > [!metadata|map]- {{name}} Religions Map
 > ```leaflet
 > id: Religion-{{name}}
 > image: [[{{@importDataRoot.info.mapName}} Religions World Map.svg]]
-> bounds: 
+> bounds:
 > - [0,0]
-> - [{{@importDataRoot.info.mapHeight}},{{@importDataRoot.info.mapWidth}}]
+> - [{{@importDataRoot.info.height}},{{@importDataRoot.info.width}}]
 > coordinates: [{{getCellLeafletXY center @importDataRoot.pack.cells @importDataRoot.info}}]
 > height: 600px
 > width: 100%
@@ -81,25 +81,25 @@ world: {{@importDataRoot.info.mapName}}
 > [!infobox]
 >  |
 >  --- |
-> 
+>
 >  # **Pronounced:**
 >  # "`=this.pronounced`"
-> 
+>
 >  |
 >  --- |
->  
->> [!note|title-center c-gray] ### Info
 > 
+>> [!note|title-center c-gray] ### Info
+>
 >  |
 >  ---: | --- |
 > **Deity** | `=this.deity` |
 > **Form** | `=this.form`|
 > **Culture** | `=this.culture`|
 > **Leaders** | `=this.leaders`|
->  
+> 
 
 # **`=this.religionName`**
- 
+
 > [!recite|no-t text-center]+ Introduction
 > *`=this.shortDescription`*
 
@@ -133,13 +133,13 @@ Below are any notable zones or regions within `=this.religionName`
 >
 
 > [!question]- Hidden Details
-> 
+>
 
 ## More Details
 
 %% The metadata sections below allow you to add some detailed info about NPCs, Groups, Points of Interest, and Shops & Services.
 
-Change the '-' after the closing square bracket of each callout line (starts with open bracket followed by an exclamation point) to a '+' to have it be expanded by default. 
+Change the '-' after the closing square bracket of each callout line (starts with open bracket followed by an exclamation point) to a '+' to have it be expanded by default.
 %%
 ---
 

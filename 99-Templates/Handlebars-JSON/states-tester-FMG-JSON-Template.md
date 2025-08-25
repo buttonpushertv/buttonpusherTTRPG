@@ -3,13 +3,13 @@ alert: {{alert}}
 aliases: {{name}}
 area: {{totalArea area}}
 burgs: {{burgs}}
-campaign: {{@importDataRoot.info.thisCampaign}}
+campaign: {{@importDataRoot.importInfo.thisCampaign}}
 {{setvar "currentCapital" (getBurgName capital @importDataRoot.pack.burgs)}}capital: {{"currentCapital"}}
 center: {{this.center}}
 color: {{color}}
 created: {{getDateTimestamp @importSettings}}
 culture: {{getCultureName culture @importDataRoot.pack.cultures}}
-emblem: {{@importDataRoot.info.thisCampaignShortCode}}-{{@importDataRoot.info.mapName}} Emblem {{fullName}}.png
+emblem: {{@importDataRoot.importInfo.thisCampaignShortCode}}-{{@importDataRoot.info.mapName}} Emblem {{fullName}}.png
 expansionism: {{expansionism}}
 form: {{form}}
 formName: {{formName}}
@@ -34,7 +34,7 @@ urban: {{calcPopulation urban}}
 tags:
 - State
 - {{@importDataRoot.info.mapName}}
-- {{@importDataRoot.info.campaignShortCode}}
+- {{@importDataRoot.importInfo.campaignShortCode}}
 type: {{type}}
 WBProcess: Imported
 world: {{@importDataRoot.info.mapName}}
@@ -68,7 +68,7 @@ world: {{@importDataRoot.info.mapName}}
 > image: [[{{@importDataRoot.info.mapName}} World Map.svg]]
 > bounds: 
 > - [0,0]
-> - [{{@importDataRoot.info.mapHeight}},{{@importDataRoot.info.mapWidth}}]
+> - [{{@importDataRoot.info.height}},{{@importDataRoot.info.width}}]
 > coordinates: [{{getPoleLeafletXY this @importDataRoot.info}}]
 > height: 600px
 > width: 100%

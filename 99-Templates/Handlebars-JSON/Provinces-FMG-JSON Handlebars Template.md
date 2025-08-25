@@ -1,6 +1,6 @@
 ---
 aliases: {{name}}
-campaign: {{@importDataRoot.info.thisCampaign}}
+campaign: {{@importDataRoot.importInfo.thisCampaign}}
 color: {{color}}
 created: {{getDateTimestamp @importSettings}}
 cssclass: sixty-pct-width
@@ -10,6 +10,7 @@ fullName: {{fullName}}
 {{setvar "nameToPull" (getProvinceName i @importDataRoot.pack.provinces)}}pulledName: {{"nameToPull"}}
 id: {{i}}
 name: {{name}}
+mapName: {{@importDataRoot.info.mapName}}
 pronounced:
 provincialCapital: {{getBurgName burg @importDataRoot.pack.burgs}}
 religion: {{getReligionName this.center @importDataRoot.pack.cells @importDataRoot.pack.religions}}
@@ -18,14 +19,13 @@ shortDescription:
 state: {{getStateName state @importDataRoot.pack.states}}
 tags:
 - Province
-- {{@importDataRoot.info.thisCampaignShortCode}}
+- {{@importDataRoot.importInfo.thisCampaignShortCode}}
 - {{@importDataRoot.info.mapName}}
-templateVersion: 1.1
+templateVersion: 2.0
 WBProgress: Imported
-world: {{@importDataRoot.info.mapName}}
 ---
 
-> [!metadata|metadata]- Metadata 
+> [!metadata|metadata]- Metadata
 >> [!metadata|metadataoption]- System
 >> #### System
 >>  |
@@ -33,10 +33,10 @@ world: {{@importDataRoot.info.mapName}}
 >> **Tags** | `INPUT[Tags][inlineListSuggester:tags]` |
 >> **World Building Progress**| `INPUT[WBProgress][inlineSelect:WBProgress]`|
 >>> [!note]- Tracking World Building Progress
->>> Update the World Building Progress property as you update any info on the page. Your choices are `Imported`, `In Progress`, `Game-ready`, `Nearly Complete,` and `Done`. 
->>> 
+>>> Update the World Building Progress property as you update any info on the page. Your choices are `Imported`, `In Progress`, `Game-ready`, `Nearly Complete,` and `Done`.
+>>>
 >>> This allows sorting based on what has & hasn't had world building stuff done for it. There are Dataviews setup on the campaign home page that sort by these progress key words.
-> 
+>
 >> [!metadata|metadataoption]- Info
 >> #### Info
 >>  |
@@ -48,15 +48,15 @@ world: {{@importDataRoot.info.mapName}}
 
 [[{{getCampaignHomeNote @importSettings}}|Campaign Home]] | [[{{getCampaignAtlasNote @importSettings}}|Campaign Atlas]] | State: `=link(this.stateName)`
 
-%% During the import process, much of the data for the Leaflet fields should have been pulled in from the JSON. You will need to update the defaultZoom and (maybe) the coordinates values, but it should be pretty close - good enough to get a start with it. The goal is to cut down on the amount of manual effort you need to go through to pull your data in from the FMG JSON %% 
+%% During the import process, much of the data for the Leaflet fields should have been pulled in from the JSON. You will need to update the defaultZoom and (maybe) the coordinates values, but it should be pretty close - good enough to get a start with it. The goal is to cut down on the amount of manual effort you need to go through to pull your data in from the FMG JSON %%
 
 > [!metadata|map]+ {{name}} - Province World Map
 > ```leaflet
 > id: Province-{{name}}
 > image: [[{{@importDataRoot.info.mapName}} Provinces World Map.svg]]
-> bounds: 
+> bounds:
 > - [0,0]
-> - [{{@importDataRoot.info.mapHeight}},{{@importDataRoot.info.mapWidth}}]
+> - [{{@importDataRoot.info.height}},{{@importDataRoot.info.width}}]
 > coordinates: [{{getCellLeafletXY this.center @importDataRoot.pack.cells @importDataRoot.info}}]
 > height: 600px
 > width: 100%
@@ -69,7 +69,7 @@ world: {{@importDataRoot.info.mapName}}
 > darkMode: false
 > marker: prov_capital,{{getLeafletBurgXY burg @importDataRoot.pack.burgs @importDataRoot.info}},[[{{getBurgName burg @importDataRoot.pack.burgs}}]],{{name}} Provincial Capital
 > ```
->  [Link to {{fullName}} on FMG Map]({{@importDataRoot.info.mapDropboxFMGLink}}&scale=3{{getFMGCellXY this.center @importDataRoot.pack.cells}})
+>  [Link to {{fullName}} on FMG Map]({{@importDataRoot.importInfo.mapDropboxFMGLink}}&scale=3{{getFMGCellXY this.center @importDataRoot.pack.cells}})
 
 
 %% All the info in this 'infobox' will appear in the panel to the right. Most of these values are pulled from the metadata in the properties above. %%
@@ -79,18 +79,18 @@ world: {{@importDataRoot.info.mapName}}
 >
 >  |
 >  --- |
-> 
+>
 >  # **Pronounced:**
 >  # "`=this.pronounced`"
-> 
+>
 >  |
 >  --- |
->  
->> [!note|title-center c-gray] ### Info
 > 
+>> [!note|title-center c-gray] ### Info
+>
 >  |
 >  ---: | --- |
->  
+> 
 > ###### Politics
 >  |
 > ---: | --- |
@@ -102,7 +102,7 @@ world: {{@importDataRoot.info.mapName}}
 >
 > ```dataview
 > TABLE WITHOUT ID file.link as "Burgs", link(provinceName) as "Province Name"
-> FROM #Burg and "{{@importDataRoot.info.thisCampaignPath}}/05-Atlas/States/{{i}}-{{name}}"
+> FROM #Burg and "{{@importDataRoot.importInfo.thisCampaignPath}}/{{@importDataRoot.info.mapName}}/05-Atlas/States/{{i}}-{{name}}"
 > WHERE econtains(provinceId,this.id)
 > SORT file.name ASC
 > ```
@@ -124,7 +124,7 @@ Siginifcant Incidents in `=this.name`'s history:
 
 | Name | Start Year | End Year |
 | ---- | ---------- | -------- |
-{{#each campaigns}} 
+{{#each campaigns}}
 | {{name}} | {{start}} | {{end}} |
 {{/each}}
 
@@ -146,7 +146,7 @@ Siginifcant Incidents in `=this.name`'s history:
 %% Further notes. These 2 callouts will be hidden by default. Change the '-' after the closing square bracket to a '+' to have it be expanded by default. %%
 
 > [!hint]- Plot Hooks
-> 
+>
 
 > [!question]- Hidden Details
 >

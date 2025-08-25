@@ -2,7 +2,7 @@
 aliases: {{name}}
 burgMapLink: https://watabou.github.io{{getBurgMapLink this @importDataRoot.info.seed @importDataRoot.pack.cells @importDataRoot.settings @importDataRoot.grid}}
 burgName: {{name}}
-campaign: {{@importDataRoot.info.thisCampaign}}
+campaign: {{@importDataRoot.importInfo.thisCampaign}}
 capital: {{capital}}
 cell: {{cell}}
 citadel: {{citadel}}
@@ -12,6 +12,7 @@ elevation: {{getHeight cell @importDataRoot.settings @importDataRoot.pack.cells}
 emblem: {{@importDataRoot.info.mapName}} Emblem {{name}}.png
 feature: {{feature}}
 id: {{i}}
+mapName: {{@importDataRoot.info.mapName}}
 plaza: {{plaza}}
 population: {{calcPopulation population @importDataRoot.settings.populationRate}}
 port: {{port}}
@@ -27,15 +28,14 @@ stateName: {{getStateName state @importDataRoot.pack.states}}
 tags:
 - Burg
 - {{@importDataRoot.info.mapName}}
-- {{@importDataRoot.info.thisCampaignShortCode}}
+- {{@importDataRoot.importInfo.thisCampaignShortCode}}
 temple: {{temple}}
 temperature: {{getTemperature this @importDataRoot}}
 temperatureLikeness: {{getTemperatureLikeness this @importDataRoot}}
-templateVersion: 1.0
+templateVersion: 2.0
 type: {{type}}
 walls: {{walls}}
 WBProgress: Imported
-world: {{@importDataRoot.info.mapName}}
 x: {{x}}
 y: {{y}}
 ---
@@ -44,7 +44,7 @@ y: {{y}}
 marker: burg,{{getLeafletBurgXY this.i @importDataRoot.pack.burgs @importDataRoot.info}},[[{{name}}]]
 %%
 
-> [!metadata|metadata]- Metadata 
+> [!metadata|metadata]- Metadata
 >> [!metadata|metadataoption]- System
 >> #### System
 >>  |
@@ -53,10 +53,10 @@ marker: burg,{{getLeafletBurgXY this.i @importDataRoot.pack.burgs @importDataRoo
 >> **Tags** | `INPUT[Tags][inlineListSuggester:tags]` |
 >> **World Building Progress**| `INPUT[WBProgress][inlineSelect:WBProgress]`|
 >>> [!note]- Tracking World Building Progress
->>> Update the World Building Progress property as you update any info on the page. Your choices are `Imported`, `In Progress`, `Game-ready`, `Nearly Complete,` and `Done`. 
->>> 
+>>> Update the World Building Progress property as you update any info on the page. Your choices are `Imported`, `In Progress`, `Game-ready`, `Nearly Complete,` and `Done`.
+>>>
 >>> This allows sorting based on what has & hasn't had world building stuff done for it. There are Dataviews setup on the campaign home page that sort by these progress key words.
-> 
+>
 >> [!metadata|metadataoption]- Info
 >> #### Info
 >>  |
@@ -68,11 +68,11 @@ marker: burg,{{getLeafletBurgXY this.i @importDataRoot.pack.burgs @importDataRoo
 
 [[{{getCampaignHomeNote @importSettings}}|Campaign Home]] | [[{{getCampaignAtlasNote @importSettings}}|Campaign Atlas]] | State: `=link(this.stateName)` | Province: `=link(this.provinceName)`
 
-%% If you want to place the image for the Burg in the Map(Interactive) window below, you can use Fantasy Map Generator's link to Watabou's Fantasy City or Village Generator - see the `infobox` link or the `burgMapLink` URL up in the properties of this note. You can save the map image somewhere in the vault (`01-Campaign/{{@importDataRoot.info.thisCampaign}}/98-{{@importDataRoot.info.thisCampaign}} Assets`, for instance) and it will show up in this window. The name for this image is pre-populated with info from the JSON Import. The filename should be the Burg's id value and the Burg's burgName - both available up in the frontmatter.
+%% If you want to place the image for the Burg in the Map(Interactive) window below, you can use Fantasy Map Generator's link to Watabou's Fantasy City or Village Generator - see the `infobox` link or the `burgMapLink` URL up in the properties of this note. You can save the map image somewhere in the vault (`01-Campaign/{{@importDataRoot.importInfo.thisCampaign}}/98-{{@importDataRoot.importInfo.thisCampaign}} Assets`, for instance) and it will show up in this window. The name for this image is pre-populated with info from the JSON Import. The filename should be the Burg's id value and the Burg's burgName - both available up in the frontmatter.
 
 You may also use the Meta-Bind button at the bottom of the callout to open the burgMapLink in a browser window and save it there. On clicking that button, you will open the Burg's URL (City or Village) and then it will set this Burg's index and name on the clipboard like this: {id}-{burgName} - you can then just paste that in to the file name field of the save file dialog window, once you navigate to the vault folder you want to save them into.
 
-There is an elaborate method (see [[JSON Import How To#Wrangling FMG Burg Maps]]) to save all the maps so you can have them locally and make use of the data that was placed here on import from the JSON.%% 
+There is an elaborate method (see [[JSON Import How To#Wrangling FMG Burg Maps]]) to save all the maps so you can have them locally and make use of the data that was placed here on import from the JSON.%%
 
 %%InteractiveMapTOP%%
 
@@ -91,7 +91,7 @@ There is an elaborate method (see [[JSON Import How To#Wrangling FMG Burg Maps]]
 > darkMode: false
 > ```
 >
-> [Link to {{name}} on FMG Map]({{@importDataRoot.info.mapDropboxFMGLink}}&scale=6{{getFMGCellXY this.cell @importDataRoot.pack.cells}})| Generator Link: `BUTTON[mapLink-to-download]`
+> [Link to {{name}} on FMG Map]({{@importDataRoot.importInfo.mapDropboxFMGLink}}&scale=6{{getFMGCellXY this.cell @importDataRoot.pack.cells}})| Generator Link: `BUTTON[mapLink-to-download]`
 
 ```meta-bind-js-view
 {burgMapLink} as mapLink
@@ -107,7 +107,7 @@ label: Open
 id: mapLink-to-download
 style: primary
 hidden: true
-tooltip: Click this button to open the Burg's map on the generator page to download. The name this note expects to see will be saved to clipboard (ID-Name). Save and place in "01-Campaigns/{{@importDataRoot.info.thisCampaign}}/98-{{@importDataRoot.info.thisCampaign}} Assets" folder
+tooltip: Click this button to open the Burg's map on the generator page to download. The name this note expects to see will be saved to clipboard (ID-Name). Save and place in "01-Campaigns/{{@importDataRoot.importInfo.thisCampaign}}/98-{{@importDataRoot.importInfo.thisCampaign}} Assets" folder
 action:
  type: open
  link: ${url}
@@ -135,15 +135,15 @@ action:
 >
 >  |
 >  --- |
-> 
+>
 >  # **Pronounced**
 >  # "`=this.pronounced`"
-> 
+>
 >  |
 >  --- |
->  
->> [!note|title-center c-gray] ### Info
 > 
+>> [!note|title-center c-gray] ### Info
+>
 >  |
 >  ---: | --- |
 > **Population** | `=this.population` |
@@ -152,7 +152,7 @@ action:
 >  **Elevation** | `=this.elevation`|
 >  **State** |`=link(this.stateName)`|
 >  **Province** |`=link(this.provinceName)`|
->  
+> 
 > ###### Politics
 >  |
 > ---: | --- |
@@ -162,7 +162,7 @@ action:
 >
 
 # **`=this.burgName`**
- 
+
 > [!recite|no-t text-center]+ Introduction
 > *`=this.shortDescription`*
 
@@ -196,7 +196,7 @@ Below are any notable zones or regions within `=this.burgName`
 >
 
 > [!question]- Hidden Details
-> 
+>
 
 ## More Details
 

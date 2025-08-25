@@ -1,19 +1,19 @@
 ---
 alias:
-campaign: {{@importDataRoot.info.thisCampaign}}
+campaign: {{@importDataRoot.importInfo.thisCampaign}}
 created: {{getDateTimestamp @importSettings}}
 cssclass: sixty-pct-width
-tags: 
+mapName: {{@inportDataRoot.info.mapName}}
+tags:
 - linked-atlas
-- {{@importDataRoot.info.thisCampaignShortCode}}
+- {{@importDataRoot.importInfo.thisCampaignShortCode}}
 - {{@importDataRoot.info.mapName}}
-templateVersion: 1.1
+templateVersion: 2.0
 WBProcess: FALSE
-world: {{@importDataRoot.info.mapName}}
 ---
 
 # `=this.campaign` Linked Atlas
-[[{{getCampaignHomeNote @importSettings}}]] | [[{{@importDataRoot.info.thisCampaign}}-Simple Atlas]]
+[[{{getCampaignHomeNote @importSettings}}]] | [[{{@importDataRoot.importInfo.thisCampaign}}-Simple Atlas]]
 
 **(Edit this page in source mode to see comments about some manual edits that you may need to perform after the import is completed.)**
 
@@ -21,14 +21,14 @@ world: {{@importDataRoot.info.mapName}}
 
 %% This Leaflet map block is created out of the elements added to the JSON file before import %%
 
-> [!metadata|map]+ {{name}} World Map
+> [!metadata|map]+ {{name}} Map
 > ```leaflet
 > id: State-{{name}}
 > image: [[{{@importDataRoot.info.mapName}} World Map.svg]]
-> bounds: 
+> bounds:
 > - [0,0]
-> - [{{@importDataRoot.info.mapHeight}},{{@importDataRoot.info.mapWidth}}]
-> coordinates: [{{divide @importDataRoot.info.mapHeight 2}},{{divide @importDataRoot.info.mapWidth 2}}]
+> - [{{@importDataRoot.info.height}},{{@importDataRoot.info.width}}]
+> coordinates: [{{divide @importDataRoot.info.height 2}},{{divide @importDataRoot.info.width 2}}]
 > height: 600px
 > width: 100%
 > minZoom: -3
@@ -39,7 +39,7 @@ world: {{@importDataRoot.info.mapName}}
 > scale: {{@importDataRoot.settings.distanceScale}}
 > darkMode: false
 > ```
-> [Link to {{name}} on FMG Map]({{@importDataRoot.info.mapDropboxFMGLink}})
+> [Link to {{name}} on FMG Map]({{@importDataRoot.importInfo.mapDropboxFMGLink}})
 
 %% If you created a Dropbox Link to your FMG map, you can save that into the Modded JSON file and it will appear in the link above. %%
 
@@ -50,19 +50,19 @@ world: {{@importDataRoot.info.mapName}}
 | ID | State | Capital |
 | -- | ----- | ------- |
 {{#each pack.states}}
-| {{i}} | [[{{../info.thisCampaignPath}}/05-Atlas/States/{{i}}-{{name}}/{{name}}\|{{name}}]] | [[{{getBurgName capital ../pack.burgs}}]] |
+| {{i}} | [[{{../importInfo.thisCampaignPath}}/{{../info.mapName}}/05-Atlas/States/{{i}}-{{name}}/{{name}}\|{{name}}]] | [[{{getBurgName capital ../pack.burgs}}]] |
 {{/each}}
 
 # Provinces
 
-%% The Neutral peoples of this world have no State, hence the empty field. Also, any Capital fields that contain `[[]]` mean that that province does not have a Provincial Capital.
+%% The Neutral peoples of this map have no State, hence the empty field. Also, any Capital fields that contain `[[]]` mean that that province does not have a Provincial Capital.
 
 %%
 
 | ID  | Province | Capital | State |
 | --- | -------- | --------- | ----- |
 {{#each pack.provinces}}
-| {{i}} | [[{{../info.thisCampaignPath}}/05-Atlas/States/{{state}}-{{getStateName state ../pack/states}}/{{i}}-{{fullName}}/{{fullName}}\|{{fullName}}]] | [[{{getBurgName burg ../pack.burgs}}]] | [[{{../info.thisCampaignPath}}/05-Atlas/States/{{state}}-{{getStateName state ../pack/states}}/{{getStateName state ../pack.states}}\|{{getStateName state ../pack.states}}]] |
+| {{i}} | [[{{../importInfo.thisCampaignPath}}/{{../info.mapName}}/05-Atlas/States/{{state}}-{{getStateName state ../pack/states}}/{{i}}-{{fullName}}/{{fullName}}\|{{fullName}}]] | [[{{getBurgName burg ../pack.burgs}}]] | [[{{../importInfo.thisCampaignPath}}/{{../info.mapName}}/05-Atlas/States/{{state}}-{{getStateName state ../pack/states}}/{{getStateName state ../pack.states}}\|{{getStateName state ../pack.states}}]] |
 {{/each}}
 
 # Burgs
@@ -70,12 +70,12 @@ world: {{@importDataRoot.info.mapName}}
 | ID  | Name | Population | State | Province |
 | --- | ---- | ---------- | ----- | -------- |
 {{#each pack.burgs}}
-| {{i}} | [[{{../info.thisCampaignPath}}/05-Atlas/States/{{state}}-{{getStateName state ../pack/states}}/{{getProvinceIdFromCell cell ../pack.cells}}-{{burgProvinceLookup cell ../pack.cells ../pack.provinces}}/{{name}}\|{{name}}]] | {{calcPopulation population ../settings.populationRate}} | [[{{../info.thisCampaignPath}}/05-Atlas/States/{{state}}-{{getStateName state ../pack/states}}/{{getStateName state ../pack.states}}\|{{getStateName state ../pack.states}}]] | [[{{../info.thisCampaignPath}}/05-Atlas/States/{{state}}-{{getStateName state ../pack/states}}/{{getProvinceIdFromCell cell ../pack.cells}}-{{burgProvinceLookup cell ../pack.cells ../pack.provinces}}/{{burgProvinceLookup cell ../pack.cells ../pack.provinces}}\|{{burgProvinceLookup cell ../pack.cells ../pack.provinces}}]] |
+| {{i}} | [[{{../importInfo.thisCampaignPath}}/{{../info.mapName}}/05-Atlas/States/{{state}}-{{getStateName state ../pack/states}}/{{getProvinceIdFromCell cell ../pack.cells}}-{{burgProvinceLookup cell ../pack.cells ../pack.provinces}}/{{name}}\|{{name}}]] | {{calcPopulation population ../settings.populationRate}} | [[{{../importInfo.thisCampaignPath}}/{{../info.mapName}}/05-Atlas/States/{{state}}-{{getStateName state ../pack/states}}/{{getStateName state ../pack.states}}\|{{getStateName state ../pack.states}}]] | [[{{../importInfo.thisCampaignPath}}/{{../info.mapName}}/05-Atlas/States/{{state}}-{{getStateName state ../pack/states}}/{{getProvinceIdFromCell cell ../pack.cells}}-{{burgProvinceLookup cell ../pack.cells ../pack.provinces}}/{{burgProvinceLookup cell ../pack.cells ../pack.provinces}}\|{{burgProvinceLookup cell ../pack.cells ../pack.provinces}}]] |
 {{/each}}
 
 # Diplomacy
 
-%% The entries on the first line of this table are items related to the wars stories of this world. You can extract them and refactor those cells to access those element in a more useful way. Eventually, we'd like to figure out how those elements are used and refactor it in a similar fashion to how it use in a FMG map. %%
+%% The entries on the first line of this table are items related to the wars stories of this map. You can extract them and refactor those cells to access those element in a more useful way. Eventually, we'd like to figure out how those elements are used and refactor it in a similar fashion to how it use in a FMG map. %%
 
 | STATES {{#each pack.states}}| {{name}} {{/each}}|
 | - | - {{#each pack.states}}| - {{/each}}|
@@ -84,22 +84,22 @@ world: {{@importDataRoot.info.mapName}}
 
 # Cultures
 
-%% The Wildlands have no culture because they are not organized into any kind of substantial societal structure. Feel free to construct sub-groups or animal societies on the Wildlands note to flesh out the non-traditional societal aspects of this world. %%
+%% The Wildlands have no culture because they are not organized into any kind of substantial societal structure. Feel free to construct sub-groups or animal societies on the Wildlands note to flesh out the non-traditional societal aspects of this map. %%
 
 | ID  | Name | Code | Type |
 | --- | ---- | -----| ---- |
 {{#each pack.cultures}}
-| {{i}} | [[{{../info.thisCampaignPath}}/05-Atlas/Cultures/{{name}}\|{{name}}]] | {{code}} | {{type}} |
+| {{i}} | [[{{../importInfo.thisCampaignPath}}/{{../info.mapName}}/05-Atlas/Cultures/{{name}}\|{{name}}]] | {{code}} | {{type}} |
 {{/each}}
 
 # Religions
 
-%% The Wildlands have no organized religion but, again feel free to make note of non-traditional spiritual practices that exist in the lands beyond traditional cultures and societies. 
+%% The Wildlands have no organized religion but, again feel free to make note of non-traditional spiritual practices that exist in the lands beyond traditional cultures and societies.
 
 Also, Religions with "Unknown" Cultures are older religions that may not have many adherents or followers but are the parent religions to others.%%
 
 | ID  | Name | Code | Type | Form | Culture | Deity |
 | --- | ---- | -----| ---- | ---- | ------- | ----- |
 {{#each pack.religions}}
-| {{i}} | [[{{../info.thisCampaignPath}}/05-Atlas/Religions/{{name}}\|{{name}}]] | {{code}} | {{type}} | {{form}} | [[{{../info.thisCampaignPath}}/05-Atlas/Cultures/{{getCultureName i ../pack.cultures}}\|{{getCultureName i ../pack.cultures}}]] | {{deity}} |
+| {{i}} | [[{{../importInfo.thisCampaignPath}}/{{../info.mapName}}/05-Atlas/Religions/{{name}}\|{{name}}]] | {{code}} | {{type}} | {{form}} | [[{{../importInfo.thisCampaignPath}}/{{../info.mapName}}/05-Atlas/Cultures/{{getCultureName i ../pack.cultures}}\|{{getCultureName i ../pack.cultures}}]] | {{deity}} |
 {{/each}}

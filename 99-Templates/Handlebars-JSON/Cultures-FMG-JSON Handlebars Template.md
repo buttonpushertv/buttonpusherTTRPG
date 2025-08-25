@@ -1,6 +1,6 @@
 ---
 aliases:
-campaign: "{{@importDataRoot.info.thisCampaign}}"
+campaign: "{{@importDataRoot.importInfo.thisCampaign}}"
 cultureName: "{{name}}"
 code: {{code}}
 color: {{color}}
@@ -9,7 +9,8 @@ created: {{getDateTimestamp @importSettings}}
 cssclass: sixty-pct-width
 expansionism: {{expansionism}}
 id: {{i}}
-leaders: 
+leaders:
+mapName: {{@importDataRoot.info.mapName}}
 namesbase: {{base}}
 origins: {{origins}}
 pronounced:
@@ -17,13 +18,13 @@ shortDescription:
 shield: {{shield}}
 tags:
 - Culture
-templateVersion: 1.0
+- {{@importDataRoot.info.mapName}}
+templateVersion: 2.0
 type: {{type}}
 WBProcess: Imported
-world: {{@importDataRoot.info.mapName}}
 ---
 
-> [!metadata|metadata]- Metadata 
+> [!metadata|metadata]- Metadata
 >> [!metadata|metadataoption]- System
 >> #### System
 >>  |
@@ -31,10 +32,10 @@ world: {{@importDataRoot.info.mapName}}
 >> **Tags** | `INPUT[Tags][inlineListSuggester:tags]` |
 >> **World Building Progress**| `INPUT[WBProgress][inlineSelect:wbprogress]`|
 >>> [!note]- Tracking World Building Progress
->>> Update the World Building Progress property as you update any info on the page. Your choices are `Imported`, `In Progress`, `Game-ready`, `Nearly Complete,` and `Done`. 
->>> 
+>>> Update the World Building Progress property as you update any info on the page. Your choices are `Imported`, `In Progress`, `Game-ready`, `Nearly Complete,` and `Done`.
+>>>
 >>> This allows sorting based on what has & hasn't had world building stuff done for it. There are Dataviews setup on the campaign home page that sort by these progress key words.
-> 
+>
 >> [!metadata|metadataoption]- Info
 >> #### Info
 >>  |
@@ -53,20 +54,20 @@ world: {{@importDataRoot.info.mapName}}
 >
 >  |
 >  --- |
-> 
+>
 >  # **Pronounced:**
 >  # "`=this.pronounced`"
-> 
+>
 >  |
 >  --- |
->  
->> [!note|title-center c-gray] ### Info
 > 
->  
+>> [!note|title-center c-gray] ### Info
+>
+> 
 >
 
 # **`=this.cultureName`**
- 
+
 > [!recite|no-t text-center]+ Introduction
 > *`=this.shortDescription`*
 
@@ -100,13 +101,13 @@ Below are any notable zones or regions within `=this.cultureName`
 >
 
 > [!question]- Hidden Details
-> 
+>
 
 ## More Details
 
 %% The metadata sections below allow you to add some detailed info about NPCs, Groups, Points of Interest, and Shops & Services.
 
-Change the '-' after the closing square bracket of each callout line (starts with open bracket followed by an exclamation point) to a '+' to have it be expanded by default. 
+Change the '-' after the closing square bracket of each callout line (starts with open bracket followed by an exclamation point) to a '+' to have it be expanded by default.
 %%
 
 
