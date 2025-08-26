@@ -13,15 +13,30 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "01-Campaigns/Test Campaign 100/05-Atlas/Braia/Braia-Linked Atlas.md",
+                "file": "Home.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "Braia-Linked Atlas"
+              "title": "Home"
+            }
+          },
+          {
+            "id": "661f06885b89f060",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "01-Campaigns/Test Campaign Ladonia/Test Campaign Ladonia Home.md",
+                "mode": "preview",
+                "source": true
+              },
+              "icon": "lucide-file",
+              "title": "Test Campaign Ladonia Home"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -53,7 +68,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "deli ",
+                "query": "thisCampaignMetaData",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -80,12 +95,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "README.md",
+                "file": "01-Campaigns/Test Campaign Ladonia/05-Atlas/Test Campaign Ladonia-Linked Atlas.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from README"
+              "title": "Outgoing links from Test Campaign Ladonia-Linked Atlas"
             }
           },
           {
@@ -94,7 +109,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "README.md",
+                "file": "01-Campaigns/Test Campaign Ladonia/05-Atlas/Test Campaign Ladonia-Linked Atlas.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +119,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for README"
+              "title": "Backlinks for Test Campaign Ladonia-Linked Atlas"
             }
           },
           {
@@ -114,7 +129,9 @@
               "type": "tag",
               "state": {
                 "sortOrder": "frequency",
-                "useHierarchy": true
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
               },
               "icon": "lucide-tags",
               "title": "Tags"
@@ -126,38 +143,31 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "README.md"
+                "file": "01-Campaigns/Test Campaign Ladonia/05-Atlas/Test Campaign Ladonia-Linked Atlas.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of README"
+              "title": "Outline of Test Campaign Ladonia-Linked Atlas"
             }
           }
         ]
       }
     ],
     "direction": "horizontal",
-    "width": 460.5
+    "width": 428.5
   },
   "right": {
     "id": "93482ffa1a519a97",
     "type": "split",
     "children": [
       {
-        "id": "0939e4ef63eba918",
+        "id": "bb25796325759935",
         "type": "tabs",
         "children": [
           {
-            "id": "341ba8f4b422f18c",
-            "type": "leaf",
-            "state": {
-              "type": "DICE_ROLLER_VIEW",
-              "state": {},
-              "icon": "lucide-file",
-              "title": "Plugin no longer active"
-            }
-          },
-          {
-            "id": "9a7e3320769a42f8",
+            "id": "48df00768e0ee07f",
             "type": "leaf",
             "state": {
               "type": "DICE_ROLLER_VIEW",
@@ -175,6 +185,8 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "obsidian-excalidraw-plugin:New drawing": false,
+      "homepage:Open homepage": false,
       "bases:Create new base": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
@@ -183,60 +195,58 @@
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
       "workspaces:Manage workspace layouts": false,
-      "obsidian-excalidraw-plugin:New drawing": false,
       "obsidian-leaflet-plugin:Open Leaflet Map": false,
       "templater-obsidian:Templater": false,
-      "obsidian-import-json:JSON/CSV Importer": false,
-      "homepage:Open homepage": false
+      "obsidian-import-json:JSON/CSV Importer": false
     }
   },
-  "active": "e7a7b303c61786dc",
+  "active": "661f06885b89f060",
   "lastOpenFiles": [
+    "01-Campaigns/Test Campaign Ladonia/98-Test Campaign Ladonia Assets/Ladonia Full 2024-03-31-10-23.json-MODDED.json",
+    "90-Tools & Helpers/JSON Importing How To Notes/02-The FMG JSON File.md",
+    "01-Campaigns/Test Campaign Ladonia/98-Test Campaign Ladonia Assets/TCL-FMG-JSON-modder.py",
+    "90-Tools & Helpers/JSON Importing How To Notes/01-The First Steps.md",
+    "90-Tools & Helpers/JSON Importing How To Notes/00-JSON Importing How To Guide.md",
+    "01-Campaigns/Test Campaign Ladonia/Test Campaign Ladonia Home.md",
+    "01-Campaigns/Test Campaign Ladonia/98-Test Campaign Ladonia Assets/Village-WEBPs/Zagyhad.webp",
+    "01-Campaigns/Test Campaign Ladonia/98-Test Campaign Ladonia Assets/Village-WEBPs/Yryry.webp",
+    "01-Campaigns/Test Campaign Ladonia/98-Test Campaign Ladonia Assets/Village-WEBPs/Woldenhober.webp",
+    "01-Campaigns/Test Campaign Ladonia/98-Test Campaign Ladonia Assets/Village-WEBPs/Viokos.webp",
+    "01-Campaigns/Test Campaign Ladonia/98-Test Campaign Ladonia Assets/Village-WEBPs/Vilpsase.webp",
+    "01-Campaigns/Test Campaign Ladonia/98-Test Campaign Ladonia Assets/Village-WEBPs/Vehma.webp",
+    "01-Campaigns/Test Campaign Ladonia/98-Test Campaign Ladonia Assets/Village-WEBPs/Varmaholaki.webp",
+    "01-Campaigns/Test Campaign Ladonia/98-Test Campaign Ladonia Assets/Village-WEBPs/Valvice.webp",
+    "01-Campaigns/Test Campaign Ladonia/98-Test Campaign Ladonia Assets/Village-WEBPs/Unajarvinen.webp",
+    "01-Campaigns/Test Campaign Ladonia/98-Test Campaign Ladonia Assets/Village-WEBPs/Vaaksa.webp",
+    "01-Campaigns/Test Campaign Ladonia/98-Test Campaign Ladonia Assets/Village-WEBPs",
+    "01-Campaigns/Test Campaign Ladonia/98-Test Campaign Ladonia Assets/Village-PNGs",
+    "01-Campaigns/Test Campaign Ladonia/98-Test Campaign Ladonia Assets/Ladonia Full 2024-03-31-10-23.json",
+    "01-Campaigns/Test Campaign Ladonia/98-Test Campaign Ladonia Assets/Ladonia Full 2024-03-31-10-23-MODDED.json",
+    "01-Campaigns/Test Campaign Ladonia/98-Test Campaign Ladonia Assets/Ladonia 2024-03-31-10-44.map",
+    "01-Campaigns/Test Campaign Ladonia/98-Test Campaign Ladonia Assets/FMG_emblems",
+    "01-Campaigns/Test Campaign Ladonia/98-Test Campaign Ladonia Assets/City-WEBPs",
+    "01-Campaigns/Test Campaign Ladonia/98-Test Campaign Ladonia Assets/City-PNGs",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/Test Campaign Ladonia-Burg-URLs-Listing.md",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/Test Campaign Ladonia-Simple Atlas.md",
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas",
+    "01-Campaigns/Test Campaign Ladonia/01-Sessions/Test Campaign Ladonia Session Hub.md",
     "Home.md",
-    "01-Campaigns/Test Campaign 100/05-Atlas/Braia/Religions/Kharan Pantheon.md",
-    "01-Campaigns/Test Campaign 100/05-Atlas/Braia/Religions/Dail (Human)ism.md",
-    "01-Campaigns/Test Campaign 100/05-Atlas/Braia/Religions/Oxbreachism.md",
-    "01-Campaigns/Test Campaign 100/05-Atlas/Braia/Religions/Newden Religion.md",
-    "01-Campaigns/Test Campaign 100/05-Atlas/Braia/Religions/Old Dail (Human) Shamanism.md",
-    "01-Campaigns/Test Campaign 100/05-Atlas/Braia/Religions/Rake (Drakonic) Deities.md",
-    "01-Campaigns/Test Campaign 100/05-Atlas/Braia/Religions/Khazadur (Dwarven) Faith.md",
-    "01-Campaigns/Test Campaign 100/05-Atlas/Braia/Religions/Dunirr (Dwarven) Druids.md",
-    "01-Campaigns/Test Campaign 100/05-Atlas/Braia/Religions/No religion.md",
-    "01-Campaigns/Test Campaign 100/05-Atlas/Braia/Religions",
-    "01-Campaigns/Test Campaign 100/05-Atlas/Braia/Cultures/Dail (Human).md",
-    "01-Campaigns/Test Campaign 100/05-Atlas/Braia/Cultures/Rake (Drakonic).md",
-    "01-Campaigns/Test Campaign 100/05-Atlas/Braia/Cultures/Khazadur (Dwarven).md",
-    "01-Campaigns/Test Campaign 100/05-Atlas/Braia/Cultures/Dunirr (Dwarven).md",
-    "01-Campaigns/Test Campaign 100/05-Atlas/Braia/Cultures/Wildlands.md",
-    "01-Campaigns/Test Campaign 100/05-Atlas/Braia/Cultures",
-    "01-Campaigns/Test Campaign 100/05-Atlas/Braia/States/3-Zazilnabu/90-Braz Territory/Shadab.md",
-    "01-Campaigns/Test Campaign 100/05-Atlas/Braia/States/3-Zazilnabu/90-Braz Territory/Durmer.md",
-    "01-Campaigns/Test Campaign 100/05-Atlas/Braia/States/2-Lalaparo/86-Maramantrand Territory/Ringliiv.md",
-    "01-Campaigns/Test Campaign 100/05-Atlas/Braia/States/5-Narag/77-Bundur County/Khanargzar.md",
-    "01-Campaigns/Test Campaign 100/05-Atlas/Braia/States/1-Lavenhelmia/3-Hearthgro Barony/Cloudtown.md",
-    "01-Campaigns/Test Campaign 100/05-Atlas/Braia/States/3-Zazilnabu/91-Scorcross Area/Dramefalls.md",
-    "01-Campaigns/Test Campaign 100/05-Atlas/Braia/States/2-Lalaparo/33-Alrila Margrave/Oreramaloth.md",
-    "01-Campaigns/Test Campaign 100/05-Atlas/Braia/States/1-Lavenhelmia/6-Dogburesia County/Ghosthtown.md",
-    "01-Campaigns/Test Campaign 100/05-Atlas/Braia/States/2-Lalaparo/40-Khakaste County/Galglarauroth.md",
-    "01-Campaigns/Test Campaign 100/05-Atlas/Braia/States/1-Lavenhelmia/83-Zz'ptanartra Area/Moonzegro.md",
-    "01-Campaigns/Test Campaign 100/05-Atlas/Braia/States/2-Lalaparo/85-Craglassar Land/Jarathrylym.md",
-    "01-Campaigns/Test Campaign 100/05-Atlas/Braia/States/undefined-Unknown/undefined-undefined",
-    "01-Campaigns/Test Campaign 100/05-Atlas/Braia/States/undefined-Unknown",
-    "01-Campaigns/Test Campaign 100/05-Atlas/Braia/States/4-Pearlia/94-Irongria Land",
-    "01-Campaigns/Test Campaign 100/05-Atlas/Braia/States/4-Pearlia/93-Smalder Land",
-    "01-Campaigns/Test Campaign 100/05-Atlas/Braia/States/3-Zazilnabu/92-Cleomyardia Island",
-    "01-Campaigns/Test Campaign 100/05-Atlas/Braia/States/3-Zazilnabu/91-Scorcross Area",
-    "01-Campaigns/Test Campaign 100/05-Atlas/Braia/States/3-Zazilnabu/90-Braz Territory",
-    "01-Campaigns/Test Campaign 100/05-Atlas/Braia/States/2-Lalaparo/89-Dunster Island",
-    "01-Campaigns/Test Campaign 100/98-Test Campaign 100 Assets/FMG-emblems-PNG/Braia Emblem Kingdom of Lavenhelmia.png",
-    "01-Campaigns/Test Campaign 100/98-Test Campaign 100 Assets/FMG-emblems-export-PNG/svgexport-0464.png",
-    "01-Campaigns/Test Campaign 100/98-Test Campaign 100 Assets/FMG-emblems-export-PNG/svgexport-0452.png",
-    "01-Campaigns/Test Campaign 100/98-Test Campaign 100 Assets/FMG-emblems-export-PNG/svgexport-0455.png",
-    "01-Campaigns/Test Campaign 100/98-Test Campaign 100 Assets/FMG-emblems-export-PNG/svgexport-0446.png",
-    "01-Campaigns/Test Campaign 100/98-Test Campaign 100 Assets/FMG-emblems-export-PNG/svgexport-0445.png",
-    "01-Campaigns/Test Campaign 100/98-Test Campaign 100 Assets/FMG-emblems-export-PNG/svgexport-0436.png",
-    "01-Campaigns/Test Campaign 100/98-Test Campaign 100 Assets/FMG-emblems-export-PNG/svgexport-0435.png",
-    "01-Campaigns/Test Campaign 100/98-Test Campaign 100 Assets/FMG-emblems-export-PNG/svgexport-0400.png",
-    "01-Campaigns/Test Campaign 100/98-Test Campaign 100 Assets/FMG-emblems-export-PNG/svgexport-0434.png"
+    "01-Campaigns/Test Campaign Ladonia/05-Atlas/Test Campaign Ladonia-Linked Atlas.md",
+    "99-Templates/newCampaignTemplate.md",
+    "ShareMyPlugin.md",
+    "99-Templates/newCampaignBurgListTemplate.md",
+    "99-Templates/Handlebars-JSON/PREVIOUS-FMG-JSON-Handlebars-MASTER-Template.md",
+    "99-Templates/Handlebars-JSON/FMG-JSON-Handlebars-MASTER-Template.md",
+    "99-Templates/Handlebars-JSON/Burgs-FMG-JSON Handlebars Template.md",
+    "90-Tools & Helpers/JSON Importing How To Notes/07-Wrapping Up & Final Thoughts.md",
+    "90-Tools & Helpers/JSON Importing How To Notes/06-Converting Images to WEBP Format.md",
+    "90-Tools & Helpers/JSON Importing How To Notes/05-Wrangling FMG Burg Maps.md",
+    "90-Tools & Helpers/JSON Importing How To Notes/04-Wrangling FMG Emblems.md",
+    "90-Tools & Helpers/JSON Importing How To Notes/03b-Multi-step Importing Process.md",
+    "90-Tools & Helpers/JSON Importing How To Notes/03-Importing the FMG JSON Data.md",
+    "90-Tools & Helpers/JSON Importing How To Notes/02-The FMG JSON File-(v.60).md",
+    "00-INBOX/testpad.md",
+    "01-Campaigns/Test Campaign Ladonia/99-Misc Notes/Misc Notes Placeholder.md",
+    "01-Campaigns/Test Campaign Ladonia/23-Deities/Deities Placeholder.md"
   ]
 }

@@ -1,9 +1,9 @@
 {
-  "jsonName": "@{return `${dataRoot.importInfo.thisCampaign}/05-Atlas/${dataRoot.info.mapName}/Religions/${this.name}`}",
+  "jsonName": "@{return `${dataRoot.importInfo.thisCampaign}/05-Atlas/${dataRoot.info.mapName}/${dataRoot.info.mapName}-Linked Atlas`}",
   "jsonNamePath": true,
   "jsonUrl": "",
   "folderName": "01-Campaigns",
-  "topField": "pack.religions",
+  "topField": "",
   "notePrefix": "",
   "noteSuffix": "",
   "handleExistingNote": 1,
@@ -11,5 +11,5 @@
   "multipleJSON": false,
   "uniqueNames": true,
   "batchFile": {},
-  "batchStep": "Religions"
+  "batchStep": "Atlas"
 }
