@@ -1,6 +1,6 @@
 @echo off
 setlocal
-set output="FMG-JSON-Handlebars-MASTER-Template.md"
+set output="_FMG-JSON-Handlebars-MASTER-Template.md"
 
 :: Remove previous output file if it exists
 if exist %output% (
