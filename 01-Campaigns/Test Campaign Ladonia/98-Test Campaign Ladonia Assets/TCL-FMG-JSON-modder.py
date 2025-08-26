@@ -2,7 +2,7 @@ import json
 
 # New JSON object to be added
 new_data = {
-    "import-info":{
+    "importInfo":{
     "thisCampaign": "Test Campaign Ladonia",
     "thisCampaignPath": "01-Campaigns/Test Campaign Ladonia",
     "thisCampaignShortCode": "TCL",
@@ -27,7 +27,7 @@ input_file_path = 'Ladonia Full 2024-03-31-10-23.json'
 # append '-MODDED' or '-forIMPORT' to file name
 # must end with `.json` extension.
 # KEEP the single quotes around this file name
-output_file_path = 'Ladonia Full 2024-03-31-10-23.json-MODDED.json'
+output_file_path = 'Ladonia Full 2024-03-31-10-23-MODDED.json'
 
 # Read the existing JSON file with UTF-8 encoding
 with open(input_file_path, 'r', encoding='utf-8') as file:
