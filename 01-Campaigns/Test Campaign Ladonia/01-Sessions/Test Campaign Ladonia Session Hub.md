@@ -3,7 +3,7 @@ campaignName: Test Campaign Ladonia
 campaignPath: 01-Campaigns/Test Campaign Ladonia
 campaignShortCode: TCL
 campaignHomeNote: Test Campaign Ladonia Home
-created: 2024-04-23 17:51
+created: 2025-08-26 13:38
 nextSession:
 sessionDate1:
 sessionDate2:
