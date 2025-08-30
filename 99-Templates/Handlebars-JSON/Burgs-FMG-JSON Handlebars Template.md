@@ -1,12 +1,14 @@
 ---
-aliases: {{name}}
+aliases:
+- {{name}}
 burgMapLink: https://watabou.github.io{{getBurgMapLink this @importDataRoot.info.seed @importDataRoot.pack.cells @importDataRoot.settings @importDataRoot.grid}}
 burgName: {{name}}
+burgFile: {{name}}-{{i}}
 campaign: {{@importDataRoot.importInfo.thisCampaign}}
 capital: {{capital}}
 cell: {{cell}}
 citadel: {{citadel}}
-cssclass: sixty-pct-width
+cssclasses: sixty-pct-width
 culture: {{getCultureName culture @importDataRoot.pack.cultures}}
 elevation: {{getHeight cell @importDataRoot.settings @importDataRoot.pack.cells}}
 emblem: {{@importDataRoot.info.mapName}} Emblem {{name}}.png
@@ -18,21 +20,25 @@ population: {{calcPopulation population @importDataRoot.settings.populationRate}
 port: {{port}}
 pronounced:
 provinceId: {{getProvinceIdFromCell cell @importDataRoot.pack.cells}}
-provinceName: {{burgProvinceLookup cell @importDataRoot.pack.cells @importDataRoot.pack.provinces}}
+provinceName: {{burgProvinceNameLookup cell @importDataRoot.pack.cells @importDataRoot.pack.provinces}}
+provinceFile: {{burgProvinceNameLookup cell @importDataRoot.pack.cells @importDataRoot.pack.provinces}}
 religion: {{getReligionName this.cell @importDataRoot.pack.cells @importDataRoot.pack.religions}}
 rulers:
 shanty: {{shanty}}
 shortDescription:
 stateId: {{state}}
 stateName: {{getStateName state @importDataRoot.pack.states}}
+stateFile: _{{getStateNamePlusID state @importDataRoot.pack.states}}
 tags:
 - Burg
 - {{@importDataRoot.info.mapName}}
 - {{@importDataRoot.importInfo.thisCampaignShortCode}}
+- {{burgProvinceNameLookup cell @importDataRoot.pack.cells @importDataRoot.pack.provinces}}
+- {{getStateName state @importDataRoot.pack.states}}
 temple: {{temple}}
 temperature: {{getTemperature this @importDataRoot}}
 temperatureLikeness: {{getTemperatureLikeness this @importDataRoot}}
-templateVersion: 2.0
+templateVersion: 4.0
 type: {{type}}
 walls: {{walls}}
 WBProgress: Imported
@@ -44,7 +50,7 @@ y: {{y}}
 marker: burg,{{getLeafletBurgXY this.i @importDataRoot.pack.burgs @importDataRoot.info}},[[{{name}}]]
 %%
 
-> [!metadata|metadata]- Metadata
+> [!metadata|metadata]- Metadata & Page Controls
 >> [!metadata|metadataoption]- System
 >> #### System
 >>  |
@@ -65,8 +71,17 @@ marker: burg,{{getLeafletBurgXY this.i @importDataRoot.pack.burgs @importDataRoo
 > **Aliases** | `INPUT[list:aliasese]` |
 > **Rulers**|`INPUT[list:rulers]`|
 > **Short Description**|`INPUT[textArea:shortDescription]`
+>
+>> [!metadata|metadataoption]- Controls
+>> These buttons control various portions of this page. They only change things on this page.
+>> 
+>> #### Controls
+>>  |
+>> ---|---|
+>> Leaflet Map| `BUTTON[hide_leaf_map]` - `BUTTON[show_leaf_map]`
+>> Interactive Map | `BUTTON[hide_web_map]` - `BUTTON[show_web_map]`
 
-[[{{getCampaignHomeNote @importSettings}}|Campaign Home]] | [[{{getCampaignAtlasNote @importSettings}}|Campaign Atlas]] | State: `=link(this.stateName)` | Province: `=link(this.provinceName)`
+[[{{@importDataRoot.importInfo.thisCampaignPath}}/{{@importDataRoot.importInfo.thisCampaign}} Home|{{@importDataRoot.importInfo.thisCampaign}} Home]] | [[{{@importDataRoot.importInfo.thisCampaignPath}}/05-Atlas/{{@importDataRoot.info.mapName}}/{{@importDataRoot.info.mapName}}-Linked Atlas|{{@importDataRoot.info.mapName}}-Linked Atlas]] | State: `=link(this.stateName)` | Province: `=link(this.provinceName)`
 
 %% If you want to place the image for the Burg in the Map(Interactive) window below, you can use Fantasy Map Generator's link to Watabou's Fantasy City or Village Generator - see the `infobox` link or the `burgMapLink` URL up in the properties of this note. You can save the map image somewhere in the vault (`01-Campaign/{{@importDataRoot.importInfo.thisCampaign}}/98-{{@importDataRoot.importInfo.thisCampaign}} Assets`, for instance) and it will show up in this window. The name for this image is pre-populated with info from the JSON Import. The filename should be the Burg's id value and the Burg's burgName - both available up in the frontmatter.
 
@@ -74,7 +89,7 @@ You may also use the Meta-Bind button at the bottom of the callout to open the b
 
 There is an elaborate method (see [[JSON Import How To#Wrangling FMG Burg Maps]]) to save all the maps so you can have them locally and make use of the data that was placed here on import from the JSON.%%
 
-%%InteractiveMapTOP%%
+%%LeafletMapTOP%%
 
 > [!metadata|map]- Burg Map (Interactive)
 > ```leaflet
@@ -115,9 +130,11 @@ action:
 `)
 ```
 
-%%InteractiveMapTAIL%%
+%%LeafletMapTAIL%%
 
 %% City Maps may need Scale adjusting - see `unit: feet` line above in Leaflet block (around line 80-81) The `scale` setting of `1` is arbitrary. It seems to work for the Burg maps - City or Village. By default the CityGen maps will likely have the `scale bar` visible. I recommend hiding it. The City Gen uses meters. The Village Gen has no scale defined. Once you hide it in the CityGen Settings, it should stay hidden for several visits to these maps.%%
+
+%%WebMapTOP%%
 
 > [!metadata]- Burg Map (Live from Web)
 > ```custom-frames
@@ -127,6 +144,8 @@ action:
 > ```
 >  `=elink(this.burgMapLink,"Visit Burg Map")`
 >
+
+%%WebMapTAIL%%
 
 %% All the info in this 'infobox' will appear in the panel to the right. Most of these values are pulled from the metadata in the properties above. %%
 
@@ -202,7 +221,4 @@ Below are any notable zones or regions within `=this.burgName`
 
 ---
 
-[[{{getCampaignHomeNote @importSettings}}|Campaign Home]] | [[{{getCampaignAtlasNote @importSettings}}|Campaign Atlas]] | State: `=link(this.stateName)` | Province: `=link(this.provinceName)`
-
-Special controls for this note:
-`BUTTON[hide_int_map]` | `BUTTON[show_int_map]`
+[[{{@importDataRoot.importInfo.thisCampaignPath}}/{{@importDataRoot.importInfo.thisCampaign}} Home|{{@importDataRoot.importInfo.thisCampaign}} Home]] | [[{{@importDataRoot.importInfo.thisCampaignPath}}/05-Atlas/{{@importDataRoot.info.mapName}}/{{@importDataRoot.info.mapName}}-Linked Atlas|{{@importDataRoot.info.mapName}}-Linked Atlas]] | State: `=link(this.stateName)` | Province: `=link(this.provinceName)`

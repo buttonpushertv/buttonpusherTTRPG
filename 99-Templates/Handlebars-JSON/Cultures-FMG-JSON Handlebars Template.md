@@ -6,7 +6,7 @@ code: {{code}}
 color: {{color}}
 center: {{center}}
 created: {{getDateTimestamp @importSettings}}
-cssclass: sixty-pct-width
+cssclasses: sixty-pct-width
 expansionism: {{expansionism}}
 id: {{i}}
 leaders:
@@ -19,7 +19,7 @@ shield: {{shield}}
 tags:
 - Culture
 - {{@importDataRoot.info.mapName}}
-templateVersion: 2.0
+templateVersion: 3.2
 type: {{type}}
 WBProcess: Imported
 ---
@@ -45,7 +45,7 @@ WBProcess: Imported
 > **Leaders**|`INPUT[list:leaders]`|
 > **Short Description**|`INPUT[textArea:shortDescription]`
 
-[[{{getCampaignHomeNote @importSettings}}]] | [[{{getCampaignAtlasNote @importSettings}}]]
+[[{{@importDataRoot.importInfo.thisCampaignPath}}/{{@importDataRoot.importInfo.thisCampaign}} Home|{{@importDataRoot.importInfo.thisCampaign}} Home]] | [[{{@importDataRoot.importInfo.thisCampaignPath}}/05-Atlas/{{@importDataRoot.info.mapName}}/{{@importDataRoot.info.mapName}}-Linked Atlas|{{@importDataRoot.info.mapName}}-Linked Atlas]]
 
 %% All the info in this 'infobox' will appear in the panel to the right. Most of these values are pulled from the metadata in the properties above. %%
 
@@ -113,4 +113,4 @@ Change the '-' after the closing square bracket of each callout line (starts wit
 
 ---
 
-[[{{getCampaignHomeNote @importSettings}}]] | [[{{getCampaignAtlasNote @importSettings}}]]
+[[{{@importDataRoot.importInfo.thisCampaignPath}}/{{@importDataRoot.importInfo.thisCampaign}} Home|{{@importDataRoot.importInfo.thisCampaign}} Home]] | [[{{@importDataRoot.importInfo.thisCampaignPath}}/05-Atlas/{{@importDataRoot.info.mapName}}/{{@importDataRoot.info.mapName}}-Linked Atlas|{{@importDataRoot.info.mapName}}-Linked Atlas]]

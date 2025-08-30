@@ -1,19 +1,19 @@
 ---
-alias:
+aliases:
 campaign: {{@importDataRoot.importInfo.thisCampaign}}
 created: {{getDateTimestamp @importSettings}}
-cssclass: sixty-pct-width
-mapName: {{@inportDataRoot.info.mapName}}
+cssclasses: sixty-pct-width
+mapName: {{@importDataRoot.info.mapName}}
 tags:
 - linked-atlas
 - {{@importDataRoot.importInfo.thisCampaignShortCode}}
 - {{@importDataRoot.info.mapName}}
-templateVersion: 2.0
+templateVersion: 3.5
 WBProcess: FALSE
 ---
 
 # `=this.campaign` Linked Atlas
-[[{{getCampaignHomeNote @importSettings}}]] | [[{{@importDataRoot.importInfo.thisCampaign}}-Simple Atlas]]
+[[{{@importDataRoot.importInfo.thisCampaignPath}}/{{@importDataRoot.importInfo.thisCampaign}} Home|{{@importDataRoot.importInfo.thisCampaign}} Home]] | [[{{@importDataRoot.importInfo.thisCampaign}}-Simple Atlas]]
 
 **(Edit this page in source mode to see comments about some manual edits that you may need to perform after the import is completed.)**
 
@@ -50,19 +50,17 @@ WBProcess: FALSE
 | ID | State | Capital |
 | -- | ----- | ------- |
 {{#each pack.states}}
-| {{i}} | [[{{../importInfo.thisCampaignPath}}/05-Atlas/{{../info.mapName}}/States/{{i}}-{{name}}/{{name}}\|{{name}}]] | [[{{getBurgName capital ../pack.burgs}}]] |
+| {{i}} | [[{{../importInfo.thisCampaignPath}}/05-Atlas/{{../info.mapName}}/States/{{name}}/_{{name}}-{{i}}\|{{name}}]] | [[{{getBurgNamePlusID capital ../pack.burgs}}\|{{getBurgName capital ../pack.burgs}}]] |
 {{/each}}
 
 # Provinces
 
-%% The Neutral peoples of this map have no State, hence the empty field. Also, any Capital fields that contain `[[]]` mean that that province does not have a Provincial Capital.
-
-%%
+%% The Neutral peoples of this map have no State, hence the empty field. Also, any Capital fields that contain `[[]]` mean that that province does not have a Provincial Capital.%%
 
 | ID  | Province | Capital | State |
 | --- | -------- | --------- | ----- |
 {{#each pack.provinces}}
-| {{i}} | [[{{../importInfo.thisCampaignPath}}/05-Atlas/{{../info.mapName}}/States/{{state}}-{{getStateName state ../pack/states}}/{{i}}-{{fullName}}/{{fullName}}\|{{fullName}}]] | [[{{getBurgName burg ../pack.burgs}}]] | [[{{../importInfo.thisCampaignPath}}/05-Atlas/{{../info.mapName}}/States/{{state}}-{{getStateName state ../pack/states}}/{{getStateName state ../pack.states}}\|{{getStateName state ../pack.states}}]] |
+| {{i}} | [[{{../importInfo.thisCampaignPath}}/05-Atlas/{{../info.mapName}}/States/{{getStateName state ../pack.states}}/{{fullName}}/{{fullName}}-{{i}}\|{{fullName}}]] | [[{{getBurgNamePlusID burg ../pack.burgs}}\|{{getBurgName burg ../pack.burgs}}]] | [[{{../importInfo.thisCampaignPath}}/05-Atlas/{{../info.mapName}}/States/{{getStateName state ../pack/states}}/_{{getStateName state ../pack.states}}-{{state}}\|{{getStateName state ../pack.states}}]] |
 {{/each}}
 
 # Burgs
@@ -70,7 +68,7 @@ WBProcess: FALSE
 | ID  | Name | Population | State | Province |
 | --- | ---- | ---------- | ----- | -------- |
 {{#each pack.burgs}}
-| {{i}} | [[{{../importInfo.thisCampaignPath}}/05-Atlas/{{../info.mapName}}/States/{{state}}-{{getStateName state ../pack/states}}/{{getProvinceIdFromCell cell ../pack.cells}}-{{burgProvinceLookup cell ../pack.cells ../pack.provinces}}/{{name}}\|{{name}}]] | {{calcPopulation population ../settings.populationRate}} | [[{{../importInfo.thisCampaignPath}}/05-Atlas/{{../info.mapName}}/States/{{state}}-{{getStateName state ../pack/states}}/{{getStateName state ../pack.states}}\|{{getStateName state ../pack.states}}]] | [[{{../importInfo.thisCampaignPath}}/05-Atlas/{{../info.mapName}}/States/{{state}}-{{getStateName state ../pack/states}}/{{getProvinceIdFromCell cell ../pack.cells}}-{{burgProvinceLookup cell ../pack.cells ../pack.provinces}}/{{burgProvinceLookup cell ../pack.cells ../pack.provinces}}\|{{burgProvinceLookup cell ../pack.cells ../pack.provinces}}]] |
+| {{i}} | [[{{../importInfo.thisCampaignPath}}/05-Atlas/{{../info.mapName}}/States/{{getStateName state ../pack/states}}/{{burgProvinceNameLookup cell ../pack.cells ../pack.provinces}}/Burgs/{{getBurgNamePlusID i ../pack.burgs}}\|{{name}}]] | {{calcPopulation population ../settings.populationRate}} | [[{{../importInfo.thisCampaignPath}}/05-Atlas/{{../info.mapName}}/States/{{getStateName state ../pack/states}}/_{{getStateName state ../pack.states}}-{{state}}\|{{getStateName state ../pack.states}}]] | [[{{../importInfo.thisCampaignPath}}/05-Atlas/{{../info.mapName}}/States/{{getStateName state ../pack/states}}/{{burgProvinceNameLookup cell ../pack.cells ../pack.provinces}}/{{burgProvinceNameLookup cell ../pack.cells ../pack.provinces}}-{{burgProvinceIDLookup cell ../pack.cells ../pack.provinces}}\|{{burgProvinceNameLookup cell ../pack.cells ../pack.provinces}}]] |
 {{/each}}
 
 # Diplomacy

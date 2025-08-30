@@ -66,7 +66,13 @@ for (const folderName of folderNames) {
 
 # The World of {{VALUE:newCampaignName}}
 
-[[{{VALUE:newCampaignSimpleAtlas}}]] | [[{{VALUE:newCampaignLinkedAtlas}}]]
+[[{{VALUE:newCampaignSimpleAtlas}}]]
+
+```dataview
+TABLE WITHOUT ID file.link as "Linked Atlases"
+FROM #linked-atlas and "{{VALUE:newCampaignPath}}/05-Atlas"
+SORT file.name ASC
+```
 
 ## Player Characters
 

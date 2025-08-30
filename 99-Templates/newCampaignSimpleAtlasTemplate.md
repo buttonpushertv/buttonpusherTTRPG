@@ -13,9 +13,15 @@ This Leaflet block is setup to display within a collapsible callout block. This 
 
 To make the Leaflet block below visible on this note, remove the indicated line below the Leaflet block and place a set of double percentage characters here-->
 
-# `this.campaignName` - Simple Atlas
+# `=this.campaignName` - Simple Atlas
 
-[[{{VALUE:newCampaignHomeNote}}]] | [[{{VALUE:newCampaignLinkedAtlas}}]]
+[[{{VALUE:newCampaignHomeNote}}]]
+
+```dataview
+TABLE WITHOUT ID file.link as "Linked Atlases"
+FROM #linked-atlas and "{{VALUE:newCampaignPath}}/05-Atlas"
+SORT file.name ASC
+```
 
 > [!metadata|map]+ World Map
 > ```leaflet
@@ -68,7 +74,7 @@ Remove this entire line and the one before the Leaflet block to make it visible 
 
 ### States
 ```dataview
-TABLE WITHOUT ID file.link as "Full Name", link(provinces) as "Provinces", link(capital) as "Capital"
+TABLE WITHOUT ID file.link as "Full Name", link(provinces) as "Provinces", link(capitalFile, capitalName) as "Capital"
 FROM #State and "{{VALUE:newCampaignPath}}"
 SORT file.name ASC
 ```
@@ -86,7 +92,7 @@ SORT state ASC, province ASC
 
 ### Burgs
 ```dataview
-TABLE WITHOUT ID file.link as "Name", link(province) as "Province", link(state) as "State"
+TABLE WITHOUT ID file.link as "Name", link(provinceName) as "Province", link(stateName) as "State"
 FROM #Burg and "{{VALUE:newCampaignPath}}"
 SORT file.name ASC
 ```

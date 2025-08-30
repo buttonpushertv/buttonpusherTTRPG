@@ -6,7 +6,7 @@ center: {{this.center}}
 code: {{code}}
 color: {{color}}
 created: {{getDateTimestamp @importSettings}}
-cssclass: sixty-pct-width
+cssclasses: sixty-pct-width
 culture: {{getCultureName culture @importDataRoot.pack.cultures}}
 deity: {{deity}}
 expansion: {{expansion}}
@@ -24,7 +24,7 @@ tags:
 - Religion
 - {{@importDataRoot.info.mapName}}
 type: {{type}}
-templateVersion: 2.0
+templateVersion: 3.2
 WBProgress: Imported
 ---
 
@@ -49,7 +49,7 @@ WBProgress: Imported
 > **Leaders**|`INPUT[list:leaders]`|
 > **Short Description**|`INPUT[textArea:shortDescription]`
 
-[[{{getCampaignHomeNote @importSettings}}]] | [[{{getCampaignAtlasNote @importSettings}}]]
+[[{{@importDataRoot.importInfo.thisCampaignPath}}/{{@importDataRoot.importInfo.thisCampaign}} Home|{{@importDataRoot.importInfo.thisCampaign}} Home]] | [[{{@importDataRoot.importInfo.thisCampaignPath}}/05-Atlas/{{@importDataRoot.info.mapName}}/{{@importDataRoot.info.mapName}}-Linked Atlas|{{@importDataRoot.info.mapName}}-Linked Atlas]]
 
 %% During the import process, much of the data for the Leaflet fields should have been pulled in from the JSON. You will need to update the defaultZoom and (maybe) the coordinates values, but it should be pretty close - good enough to get a start with it. The goal is to cut down on the amount of manual effort you need to go through to pull your data in from the FMG JSON %%
 
@@ -142,5 +142,4 @@ Below are any notable zones or regions within `=this.religionName`
 Change the '-' after the closing square bracket of each callout line (starts with open bracket followed by an exclamation point) to a '+' to have it be expanded by default.
 %%
 ---
-
-[[{{getCampaignHomeNote @importSettings}}]] | [[{{getCampaignAtlasNote @importSettings}}]]
+[[{{@importDataRoot.importInfo.thisCampaignPath}}/{{@importDataRoot.importInfo.thisCampaign}} Home|{{@importDataRoot.importInfo.thisCampaign}} Home]] | [[{{@importDataRoot.importInfo.thisCampaignPath}}/05-Atlas/{{@importDataRoot.info.mapName}}/{{@importDataRoot.info.mapName}}-Linked Atlas|{{@importDataRoot.info.mapName}}-Linked Atlas]]

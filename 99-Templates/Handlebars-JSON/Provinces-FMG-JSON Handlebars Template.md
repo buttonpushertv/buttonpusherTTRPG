@@ -1,31 +1,34 @@
----
-aliases: {{name}}
+---{{log "Provinces Frontmatter Start"}}
+aliases:
+- {{name}}
 campaign: {{@importDataRoot.importInfo.thisCampaign}}
 color: {{color}}
 created: {{getDateTimestamp @importSettings}}
-cssclass: sixty-pct-width
+cssclasses: sixty-pct-width
 emblem: {{@importDataRoot.info.mapName}} Emblem {{fullName}}.png
 formName: {{formName}}
-fullName: {{fullName}}
+fullName: {{fullName}}{{ log "PROVINCES - fullName: " fullName }}
 {{setvar "nameToPull" (getProvinceName i @importDataRoot.pack.provinces)}}pulledName: {{"nameToPull"}}
 id: {{i}}
 name: {{name}}
 mapName: {{@importDataRoot.info.mapName}}
 pronounced:
-provincialCapital: {{getBurgName burg @importDataRoot.pack.burgs}}
+{{setvar "currentCapitalName" (getBurgName burg @importDataRoot.pack.burgs)}}provincialCapitalName: {{"currentCapitalName"}}
+{{setvar "currentCapitalFile" (getBurgNamePlusID burg @importDataRoot.pack.burgs)}}provincialCapitalFile: {{"currentCapitalFile"}}{{ log "PROVINCES - currentCapitalName: " currentCapitalName }}
 religion: {{getReligionName this.center @importDataRoot.pack.cells @importDataRoot.pack.religions}}
 rulers:
 shortDescription:
-state: {{getStateName state @importDataRoot.pack.states}}
+stateName: {{getStateName state @importDataRoot.pack.states}}
+stateFile: _{{getStateNamePlusID state @importDataRoot.pack.states}}
 tags:
 - Province
 - {{@importDataRoot.importInfo.thisCampaignShortCode}}
 - {{@importDataRoot.info.mapName}}
-templateVersion: 2.0
+templateVersion: 4.0
 WBProgress: Imported
 ---
-
-> [!metadata|metadata]- Metadata
+{{log "END Provinces Frontmatter"}}
+> [!metadata|metadata]- Metadata & Page Controls
 >> [!metadata|metadataoption]- System
 >> #### System
 >>  |
@@ -45,10 +48,20 @@ WBProgress: Imported
 > **Aliases** | `INPUT[list:aliases]` |
 > **Rulers**|`INPUT[list:rulers]`|
 > **Short Description**|`INPUT[textArea:shortDescription]`
+>
+>> [!metadata|metadataoption]- Controls
+>> These buttons control various portions of this page. They only change things on this page.
+>> 
+>> #### Controls
+>>  |
+>> ---|---|
+>> Leaflet Map| `BUTTON[hide_leaf_map]` - `BUTTON[show_leaf_map]`
 
-[[{{getCampaignHomeNote @importSettings}}|Campaign Home]] | [[{{getCampaignAtlasNote @importSettings}}|Campaign Atlas]] | State: `=link(this.stateName)`
+[[{{@importDataRoot.importInfo.thisCampaignPath}}/{{@importDataRoot.importInfo.thisCampaign}} Home|{{@importDataRoot.importInfo.thisCampaign}} Home]] | [[{{@importDataRoot.importInfo.thisCampaignPath}}/05-Atlas/{{@importDataRoot.info.mapName}}/{{@importDataRoot.info.mapName}}-Linked Atlas|{{@importDataRoot.info.mapName}}-Linked Atlas]] | State: `=link(this.stateName)`
 
 %% During the import process, much of the data for the Leaflet fields should have been pulled in from the JSON. You will need to update the defaultZoom and (maybe) the coordinates values, but it should be pretty close - good enough to get a start with it. The goal is to cut down on the amount of manual effort you need to go through to pull your data in from the FMG JSON %%
+
+%%LeafletMapTOP%%
 
 > [!metadata|map]+ {{name}} - Province World Map
 > ```leaflet
@@ -67,10 +80,11 @@ WBProgress: Imported
 > unit: {{@importDataRoot.settings.distanceUnit}}
 > scale: {{@importDataRoot.settings.distanceScale}}
 > darkMode: false
-> marker: prov_capital,{{getLeafletBurgXY burg @importDataRoot.pack.burgs @importDataRoot.info}},[[{{getBurgName burg @importDataRoot.pack.burgs}}]],{{name}} Provincial Capital
+> marker: prov_capital,{{getLeafletBurgXY burg @importDataRoot.pack.burgs @importDataRoot.info}},[[{{getBurgNamePlusID burg @importDataRoot.pack.burgs}}]],{{name}} Provincial Capital
 > ```
 >  [Link to {{fullName}} on FMG Map]({{@importDataRoot.importInfo.mapDropboxFMGLink}}&scale=3{{getFMGCellXY this.center @importDataRoot.pack.cells}})
 
+%%LeafletMapTAIL%%
 
 %% All the info in this 'infobox' will appear in the panel to the right. Most of these values are pulled from the metadata in the properties above. %%
 
@@ -94,8 +108,8 @@ WBProgress: Imported
 > ###### Politics
 >  |
 > ---: | --- |
-> **State** |`=link(this.state)`|
-> **Provincial Capital** | `=link(this.provincialCapital)` |
+> **State** |`=link(this.stateFile, this.stateName)`|
+> **Provincial Capital** | `=link(this.provincialCapitalFile, this.provincialCapitalName)` |
 > **Ruler(s)** | `=link(this.rulers)` |
 > **Dominant Culture** | `=link(this.culture)` |
 > **Dominant Religion** | `=link(this.religion)` |
@@ -153,4 +167,5 @@ Siginifcant Incidents in `=this.name`'s history:
 
 ---
 
-[[{{getCampaignHomeNote @importSettings}}|Campaign Home]] | [[{{getCampaignAtlasNote @importSettings}}|Campaign Atlas]] | State: `=link(this.stateName)`
+[[{{@importDataRoot.importInfo.thisCampaignPath}}/{{@importDataRoot.importInfo.thisCampaign}} Home|{{@importDataRoot.importInfo.thisCampaign}} Home]] | [[{{@importDataRoot.importInfo.thisCampaignPath}}/05-Atlas/{{@importDataRoot.info.mapName}}/{{@importDataRoot.info.mapName}}-Linked Atlas|{{@importDataRoot.info.mapName}}-Linked Atlas]] | State: `=link(this.stateName)`
+{{ log "End of Provinces Note" fullName }}

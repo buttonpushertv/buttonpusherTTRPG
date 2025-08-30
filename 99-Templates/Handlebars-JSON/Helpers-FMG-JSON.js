@@ -7,8 +7,11 @@
 004* getCampaignCalendar(importSettings)
 005 getDateTimestamp(importSettings)
 006 getBurgName(burgId,allBurgs)
+006b getBurgNamePlusID(burgId,allBurgs)
 007 getStateName(stateId,allStates)
+007b getStateNamePlusID(stateId,allStates)
 008 getProvinceName(provinceId,allProvinces)
+008b getProvinceNamePlusID(provinceId,allProvinces)
 009 getCultureName(cultureId,allCultures)
 010 burgMapUnits(currentBurg, mapSettings)
 011 getBurgMapLink(currentBurg, mapSeed, allCells, mapSettings)
@@ -16,7 +19,9 @@
 013 totalArea(area)
 014 calcPopulation(popValue)
 015 totalPopulation(rural,urban)
-016 burgProvinceLookup(cellId,allCells,allProvinces)
+016 burgProvinceNameLookup(cellId,allCells,allProvinces)
+016b burgProvinceIDLookup(cellId,allCells,allProvinces)
+016c burgProvinceObjectLookup(cellId,allCells,allProvinces)
 017 getReligionName(religionID,allReligions)
 018 AVAILABLE
 019 getLeafletBurgXY(burgId,allBurgs,mapInfo)
@@ -36,13 +41,17 @@ IMPORTANT: All of these helpers rely on the campaigns being stored in the vault 
 // 001 - NEEDS TO BE UPDATED TO USE JSON ELEMENT @ importInfo.thisCampaign & importInfo.thisCampaignPath
 // Custom helper function to extract thisCampaignHomeNote from @importSettings
 handlebars.registerHelper('getCampaignHomeNote', function(importSettings) {
-  // console.log("importSettings: ", importSettings);
+  console.log("importSettings: ", importSettings);
   const folders = importSettings.folderName.split('/');
   const thisCampaignHomeNote = `${folders[1]}` + " Home";
   return thisCampaignHomeNote;
 });
 
-// 002 - AVAILABLE
+// 002 - A function for posting a DEBUG message to the console when debugging
+handlebars.registerHelper('debugTrace', function(flagText) {
+  console.log("##### DEBUG Trace:" + flagText + " - #####");
+  return;
+});
 
 // 003
 // Custom helper function to extract thisCampaignAtlasNote from @importSettings
@@ -82,7 +91,7 @@ handlebars.registerHelper('getDateTimestamp', function(importSettings) {
 handlebars.registerHelper('getBurgName', function(burgId,allBurgs) {
   // console.log("burgId:", burgId);
   // console.log("allBurgs: ", allBurgs);
-  if (burgId === undefined) {
+  if (burgId === undefined || burgId === null) {
     console.log("##### getBurgName - burgId was undefined #####");
     return ''; // skip if the element is undefined
   };
@@ -92,18 +101,46 @@ handlebars.registerHelper('getBurgName', function(burgId,allBurgs) {
   return burgFound ? burgFound.name : 'Unknown';
 });
 
+// 006b
+// Custom helper function to get Burg Name PLus ID - useful for linking to specific Burg notes when multiple Burgs have the same name
+handlebars.registerHelper('getBurgNamePlusID', function(burgId, allBurgs) {
+  if (burgId === undefined || burgId === 0) {
+    console.log("##### getBurgName - burgId was undefined or null #####");
+    return ''; // skip if the element is undefined or null
+  }
+  const burgFound = allBurgs.find(burg => burg.i === burgId);
+  //console.log("getBurgNamePlusID-burgFound:", burgFound);
+  const burgToReturn = burgFound ? burgFound.name + "-" + burgId : 'Unknown';
+  console.log("burgToReturn:", burgToReturn);
+  return burgToReturn ? burgToReturn : 'Unknown';
+});
+
 // 007
 // Custom helper function to get State Name
 handlebars.registerHelper('getStateName', function(stateId,allStates) {
-  // console.log("getStateName - StateId:", stateId);
-  // console.log("allStates: ", allStates);
-  if (stateId === undefined) {
+  if (stateId === undefined|| stateId === null) {
     console.log("##### getStateName - stateId was undefined #####");
     return ''; // skip if the element is undefined or zero
   };
+  const stateToReturn = allStates.find(state => state.i === stateId);
   const stateName = allStates.find(state => state.i === stateId);
   // console.log("stateName found:", stateName);
   return stateName ? stateName.name : 'Unknown';
+});
+
+// 007b
+// Custom helper function to get State Name Plus ID
+handlebars.registerHelper('getStateNamePlusID', function(stateId,allStates) {
+  // console.log("getStateName - StateId:", stateId);
+  // console.log("allStates: ", allStates);
+  if (stateId === undefined || stateId === null) {
+    console.log("##### getStateName - stateId was undefined #####");
+    return ''; // skip if the element is undefined or zero
+  };
+    const stateToReturn = allStates.find(state => state.i === stateId);
+  stateName = stateToReturn.name + "-" + stateId;
+  // console.log("stateName found:", stateName);
+  return stateName ? stateName : 'Unknown';
 });
 
 // 008
@@ -111,7 +148,7 @@ handlebars.registerHelper('getStateName', function(stateId,allStates) {
 handlebars.registerHelper('getProvinceName', function(provinceId,allProvinces) {
   // console.log("provinceId:", provinceId);
   // console.log("allProvinces: ", allProvinces);
-  if (provinceId === undefined || provinceId === 0) {
+  if (provinceId === undefined || provinceId === null) {
     console.log("##### getProvinceName - provinceId was undefined or zero #####");
     return ''; // skip if the element is undefined or zero
   };
@@ -120,12 +157,27 @@ handlebars.registerHelper('getProvinceName', function(provinceId,allProvinces) {
   return provinceName ? provinceName.fullName : 'Unknown';
 });
 
+// 008b
+// Custom helper function to get Province Name
+handlebars.registerHelper('getProvinceNamePlusID', function(provinceId,allProvinces) {
+  // console.log("provinceId:", provinceId);
+  // console.log("allProvinces: ", allProvinces);
+  if (provinceId === undefined || provinceId === null) {
+    console.log("##### getProvinceName - provinceId was undefined or zero #####");
+    return ''; // skip if the element is undefined or zero
+  };
+  const provinceToReturn = allProvinces.find(province => province.i === provinceId);
+  provinceName = provinceToReturn.name + "-" + provinceId;
+  // console.log("provinceName found:", provinceName.fullName);
+  return provinceToReturn ? provinceToReturn : 'Unknown';
+});
+
 // 009
 // Custom helper function to get Culture Name
 handlebars.registerHelper('getCultureName', function(cultureId,allCultures) {
   // console.log("cultureId:", cultureId);
   // console.log("allCultures: ", allCultures);
-  if (cultureId === undefined || cultureId === 0) {
+  if (cultureId === undefined || cultureId === null) {
     console.log("##### getCultureName - cultureId was undefined or zero #####");
     return ''; // skip if the element is undefined
    
@@ -454,10 +506,10 @@ handlebars.registerHelper('totalPopulation', function(rural,urban,populationRate
 
 // 016
 // Custom helper to lookup what Province a Burg resides within
-handlebars.registerHelper('burgProvinceLookup', function(cellId,allCells,allProvinces) {
-  // console.log("burgProvinceLookup for cellId: ", cellId );
+handlebars.registerHelper('burgProvinceNameLookup', function(cellId,allCells,allProvinces) {
+  // console.log("burgProvinceNameLookup for cellId: ", cellId );
   if (cellId === undefined || cellId === 0) {
-    console.log("##### burgProvinceLookup - cellId was undefined or zero #####");
+    console.log("##### burgProvinceNameLookup - cellId was undefined or zero #####");
     return ''; // skip if cellId value is undefined
   };
   const foundCell = allCells.find(cell => cell.i === cellId)
@@ -466,8 +518,44 @@ handlebars.registerHelper('burgProvinceLookup', function(cellId,allCells,allProv
     return ''; // If no Province Defined end here
   };
   const foundProvinceName = allProvinces.find(prov => prov.i === foundCellProvinceId).fullName;
-  // console.log("burgProvinceLookup process - foundProvinceName: ", foundProvinceName);
+  // console.log("burgProvinceNameLookup process - foundProvinceName: ", foundProvinceName);
   return foundProvinceName;
+});
+
+// 016b
+// Custom helper to lookup what Province a Burg resides within and return the Province object
+handlebars.registerHelper('burgProvinceObjectLookup', function(cellId,allCells,allProvinces) {
+  // console.log("burgProvinceObjectLookup for cellId: ", cellId );
+  if (cellId === undefined || cellId === 0) {
+    console.log("##### burgProvinceObjectLookup - cellId was undefined or zero #####");
+    return ''; // skip if cellId value is undefined
+  };
+  const foundCell = allCells.find(cell => cell.i === cellId)
+  const foundCellProvinceId = foundCell.province;
+  if (foundCellProvinceId === 0 ) {
+    return ''; // If no Province Defined end here
+  };
+  const foundProvince = allProvinces.find(prov => prov.i === foundCellProvinceId);
+  // console.log("burgProvinceLookup process - foundProvinceName: ", foundProvinceName);
+  return foundProvince;
+});
+
+// 016c
+// Custom helper to lookup what Province a Burg resides within and return the Province ID
+handlebars.registerHelper('burgProvinceIDLookup', function(cellId,allCells,allProvinces) {
+  // console.log("burgProvinceIDLookup for cellId: ", cellId );
+  if (cellId === undefined || cellId === 0) {
+    console.log("##### burgProvinceIDLookup - cellId was undefined or zero #####");
+    return ''; // skip if cellId value is undefined
+  };
+  const foundCell = allCells.find(cell => cell.i === cellId)
+  const foundCellProvinceId = foundCell.province;
+  if (foundCellProvinceId === 0 ) {
+    return ''; // If no Province Defined end here
+  };
+
+  // console.log("burgProvinceLookup process - foundProvinceName: ", foundProvinceName);
+  return foundCellProvinceId;
 });
 
 // 017
@@ -475,7 +563,7 @@ handlebars.registerHelper('burgProvinceLookup', function(cellId,allCells,allProv
 handlebars.registerHelper('getReligionName', function(cellId,allCells,allReligions) {
   // console.log("cellId:", cellId);
   // console.log("allreligions: ", allreligions);
-  if (cellId === undefined || cellId ===0 ) {
+  if (cellId === undefined || cellId === 0 ) {
     console.log("##### getReligionName - cellId was undefined or zero #####");
     return ''; // skip if the element is undefined
   };
@@ -497,7 +585,7 @@ handlebars.registerHelper('getReligionName', function(cellId,allCells,allReligio
 // 018 -
 // Custom Helper to return a Cell's X & Y value for inclusion in FMG URL
 handlebars.registerHelper('getFMGCellXY', function(cellId, allCells) {
-  if (cellId === undefined || cellId ===0 ) {
+  if (cellId === undefined || cellId === 0 ) {
     console.log("##### getFMGCellXY - cellId was undefined or zero #####");
     return ''; // skip if the element is undefined
   };
@@ -531,7 +619,7 @@ handlebars.registerHelper('getLeafletBurgXY', function(burgId,allBurgs,mapInfo) 
 // 020
 // Custom Helper to derive the Leaflet Compatible X & Y Coords of a Cell
 handlebars.registerHelper('getCellLeafletXY', function(cellId, allCells, mapInfo) {
-  if (cellId === undefined || cellId ===0 ) {
+  if (cellId === undefined || cellId === 0 ) {
     console.log("##### getCellLeafletXY - cellId was undefined or zero #####");
     return ''; // skip if the element is undefined
   };
@@ -550,7 +638,7 @@ handlebars.registerHelper('getCellLeafletXY', function(cellId, allCells, mapInfo
 // the "pole" is the visual center - Concept Decsription: https://blog.mapbox.com/a-new-algorithm-for-finding-a-visual-center-of-a-polygon-7c77e6492fbc
 handlebars.registerHelper('getPoleLeafletXY', function(state, mapInfo) {
   // console.log("getPoleLeafletXY - state: ",state);
-  if (state.pole === undefined || state.pole ===0 ) {
+  if (state.pole === undefined || state.pole === 0 ) {
     console.log("##### getPoleLeafletXY - state.pole  was undefined or zero -");
     console.log("getPoleLeafletXY - state: ", state);
     console.log("#####");
