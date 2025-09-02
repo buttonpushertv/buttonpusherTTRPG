@@ -108,7 +108,7 @@ area: {{totalArea area}}
 burgs: {{burgs}}
 campaign: {{@importDataRoot.importInfo.thisCampaign}}
 {{setvar "currentCapitalName" (getBurgName capital @importDataRoot.pack.burgs)}}capitalName: {{"currentCapitalName"}}
-{{setvar "capitalPath" (getCapitalNotePath capital i @importDataRoot)}}capitalNotePath: {{"capitalPath"}}
+{{setvar "capitalPath" (getCapitalNotePath capital i @importDataRoot)}}capitalFile: {{"capitalPath"}}
 center: {{this.center}}
 color: {{color}}
 created: {{getDateTimestamp @importSettings}}
@@ -143,7 +143,7 @@ tags:
 - State
 - {{@importDataRoot.info.mapName}}
 - {{@importDataRoot.importInfo.thisCampaignShortCode}}
-templateVersion: 4.3
+templateVersion: 4.4
 type: {{type}}
 WBProcess: Imported
 ---
