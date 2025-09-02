@@ -5,6 +5,11 @@ tags:
 - Importing
 ---
 
+> [!ERROR] OLDER PROCESS WARNING
+> These instructions have not been fully updated to reflect all the changes in the process made for Wyrmling-v.0.6, where Batch Importing was added.
+> 
+> I hope to update these instructions at a future date.
+
 # Why do you torture yourself so?
 
 In this note, you will find the step-by-step instructions for importing the FMG JSON to create notes that will represent all the States, Provinces, Burgs, Cultures, and Religions[^1] found in your FMG world map file. The Handlebar Templates will create many links between related locations and it *should* make your life, as worldbuilder, a little easier and more fun.

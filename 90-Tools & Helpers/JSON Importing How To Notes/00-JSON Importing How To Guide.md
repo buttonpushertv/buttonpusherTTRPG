@@ -16,10 +16,9 @@ These instructions are a guide for importing the content from an [Azgaar's Fanta
 
 This is a multi-step process. As the warning above states, this is very complex, but not impossible. Just follow the steps and [[#Where to Ask for Help|ask for help]] if you are stuck.
 
-
 # The Premise
 
-### TBD - {describe the process this import will undertake. The idea that you will create a Campaign and then the info from a given FMG map will be stored within that Campaign's Atas folder, under a subfolder called the name of the map.}
+Essentially, we are going to use this vault to create a folder structure for a campaign, export a Full JSON from FMG, and then import that data into this vault.
 
 # How Big is Your Map?
 
@@ -28,12 +27,6 @@ FMG can create maps that are small or large, meaning that it can create maps tha
 The trade-off tends to be that the larger area your map covers, the smaller the size of geography you are creating for, the more detail & granularity you can achieve.
 
 However, due to some limitations and the way FMG works, it is not easy to create several smaller maps and then combine them into one large, world map.
-
-### TBD - {Working with smaller maps to combine in to a larger "map"}
-
-### TBD - {settings for generating Earth-sized maps} 
-
-### TBD - {Working backwards from a larger map and then using the FMG Submap feature }
 
 # Defining Terms
 

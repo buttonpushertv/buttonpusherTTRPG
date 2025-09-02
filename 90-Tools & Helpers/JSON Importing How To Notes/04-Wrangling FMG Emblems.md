@@ -5,6 +5,11 @@ tags:
 - Importing
 ---
 
+> [!ERROR] OLDER PROCESS WARNING
+> These instructions have not been fully updated to reflect all the changes in the process made for Wyrmling-v.0.6, where Batch Importing was added.
+> 
+> I hope to update these instructions at a future date.
+
 # Cool emblems. I want them.
 
 One the coolest things about FMG, IMHO, are the Emblems. Having them available to stick in your notes, gives your notes much more polish.

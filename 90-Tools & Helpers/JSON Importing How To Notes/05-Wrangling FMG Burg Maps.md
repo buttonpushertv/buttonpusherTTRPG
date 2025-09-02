@@ -1,3 +1,8 @@
+> [!ERROR] OLDER PROCESS WARNING
+> These instructions have not been fully updated to reflect all the changes in the process made for Wyrmling-v.0.6, where Batch Importing was added.
+> 
+> I hope to update these instructions at a future date.
+
 # Wrangling FMG Burg Maps
 FMG includes connections to Watabou's [Medieval Fantasy City Generator](https://watabou.github.io/city-generator/?size=25&seed=981800034&greens=0&citadel=1&urban_castle=1&plaza=1&temple=1&walls=0&shantytown=0&coast=1&river=0&gates=-1&sea=0.2) and [Village Generator](https://watabou.github.io/village-generator/?seed=1714876149&tags=no%20square,highway). The URL links to maps for each of your map's Burgs is available to extract from the JSON, but it does not exist in a JSON field as the URL. It has to be extracted via some HelperJS functions in [[Helpers-FMG-JSON.js]].
 

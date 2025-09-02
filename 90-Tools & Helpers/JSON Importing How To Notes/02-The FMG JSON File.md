@@ -55,7 +55,7 @@ import json
 
 # New JSON object to be added
 new_data = {
-    "import-info":{
+    "importInfo":{
     "thisCampaign": "{thisCampaignName}",
     "thisCampaignPath": "{thisCampaignPath}",
     "thisCampaignShortCode": "{thisCampaignShortCode}",
