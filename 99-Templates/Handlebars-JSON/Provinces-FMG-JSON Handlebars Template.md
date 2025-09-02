@@ -1,4 +1,4 @@
----{{log "Provinces Frontmatter Start"}}
+---
 aliases:
 - {{name}}
 campaign: {{@importDataRoot.importInfo.thisCampaign}}
@@ -11,20 +11,21 @@ fullName: {{fullName}}{{ log "PROVINCES - fullName: " fullName }}
 {{setvar "nameToPull" (getProvinceName i @importDataRoot.pack.provinces)}}pulledName: {{"nameToPull"}}
 id: {{i}}
 name: {{name}}
+nameID: {{name}}-{{i}}
 mapName: {{@importDataRoot.info.mapName}}
 pronounced:
-{{setvar "currentCapitalName" (getBurgName burg @importDataRoot.pack.burgs)}}provincialCapitalName: {{"currentCapitalName"}}
-{{setvar "currentCapitalFile" (getBurgNamePlusID burg @importDataRoot.pack.burgs)}}provincialCapitalFile: {{"currentCapitalFile"}}{{ log "PROVINCES - currentCapitalName: " currentCapitalName }}
+{{setvar "currentCapitalName" (getBurgName burg @importDataRoot.pack.burgs)}}provincialCapital: {{"currentCapitalName"}}
+{{setvar "capitalPath" (getCapitalNotePath burg state @importDataRoot)}}capitalNotePath: {{"capitalPath"}}
 religion: {{getReligionName this.center @importDataRoot.pack.cells @importDataRoot.pack.religions}}
 rulers:
 shortDescription:
-stateName: {{getStateName state @importDataRoot.pack.states}}
-stateFile: _{{getStateNamePlusID state @importDataRoot.pack.states}}
+state: {{getStateName state @importDataRoot.pack.states}}
+stateNotePath: "{{@importDataRoot.importInfo.thisCampaignPath}}/05-Atlas/{{@importDataRoot.info.mapName}}/States/{{getStateName state @importDataRoot.pack.states}}/{{getStateName state @importDataRoot.pack.states}}"
 tags:
 - Province
 - {{@importDataRoot.importInfo.thisCampaignShortCode}}
 - {{@importDataRoot.info.mapName}}
-templateVersion: 4.0
+templateVersion: 4.4
 WBProgress: Imported
 ---
 {{log "END Provinces Frontmatter"}}
@@ -57,7 +58,7 @@ WBProgress: Imported
 >> ---|---|
 >> Leaflet Map| `BUTTON[hide_leaf_map]` - `BUTTON[show_leaf_map]`
 
-[[{{@importDataRoot.importInfo.thisCampaignPath}}/{{@importDataRoot.importInfo.thisCampaign}} Home|{{@importDataRoot.importInfo.thisCampaign}} Home]] | [[{{@importDataRoot.importInfo.thisCampaignPath}}/05-Atlas/{{@importDataRoot.info.mapName}}/{{@importDataRoot.info.mapName}}-Linked Atlas|{{@importDataRoot.info.mapName}}-Linked Atlas]] | State: `=link(this.stateName)`
+[[{{@importDataRoot.importInfo.thisCampaignPath}}/{{@importDataRoot.importInfo.thisCampaign}} Home|{{@importDataRoot.importInfo.thisCampaign}} Home]] | [[{{@importDataRoot.importInfo.thisCampaignPath}}/05-Atlas/{{@importDataRoot.info.mapName}}/{{@importDataRoot.info.mapName}}-Linked Atlas|{{@importDataRoot.info.mapName}}-Linked Atlas]] | State: `=link(this.stateNotePath,this.stateName)`
 
 %% During the import process, much of the data for the Leaflet fields should have been pulled in from the JSON. You will need to update the defaultZoom and (maybe) the coordinates values, but it should be pretty close - good enough to get a start with it. The goal is to cut down on the amount of manual effort you need to go through to pull your data in from the FMG JSON %%
 
@@ -108,16 +109,16 @@ WBProgress: Imported
 > ###### Politics
 >  |
 > ---: | --- |
-> **State** |`=link(this.stateFile, this.stateName)`|
-> **Provincial Capital** | `=link(this.provincialCapitalFile, this.provincialCapitalName)` |
+> **State** |`=link(this.stateNotePath,stateName)`|
+> **Provincial Capital** | `=link(this.provincialCapital)` |
 > **Ruler(s)** | `=link(this.rulers)` |
 > **Dominant Culture** | `=link(this.culture)` |
 > **Dominant Religion** | `=link(this.religion)` |
 >
 > ```dataview
 > TABLE WITHOUT ID file.link as "Burgs", link(provinceName) as "Province Name"
-> FROM #Burg and "{{@importDataRoot.importInfo.thisCampaignPath}}/{{@importDataRoot.info.mapName}}/05-Atlas/States/{{i}}-{{name}}"
-> WHERE econtains(provinceId,this.id)
+> FROM #Burg and "{{@importDataRoot.importInfo.thisCampaignPath}}/{{@importDataRoot.info.mapName}}/05-Atlas"
+> WHERE contains(provinceId,this.id)
 > SORT file.name ASC
 > ```
 
@@ -167,5 +168,4 @@ Siginifcant Incidents in `=this.name`'s history:
 
 ---
 
-[[{{@importDataRoot.importInfo.thisCampaignPath}}/{{@importDataRoot.importInfo.thisCampaign}} Home|{{@importDataRoot.importInfo.thisCampaign}} Home]] | [[{{@importDataRoot.importInfo.thisCampaignPath}}/05-Atlas/{{@importDataRoot.info.mapName}}/{{@importDataRoot.info.mapName}}-Linked Atlas|{{@importDataRoot.info.mapName}}-Linked Atlas]] | State: `=link(this.stateName)`
-{{ log "End of Provinces Note" fullName }}
+[[{{@importDataRoot.importInfo.thisCampaignPath}}/{{@importDataRoot.importInfo.thisCampaign}} Home|{{@importDataRoot.importInfo.thisCampaign}} Home]] | [[{{@importDataRoot.importInfo.thisCampaignPath}}/05-Atlas/{{@importDataRoot.info.mapName}}/{{@importDataRoot.info.mapName}}-Linked Atlas|{{@importDataRoot.info.mapName}}-Linked Atlas]] | State: `=link(this.stateNotePath,this.stateName)`

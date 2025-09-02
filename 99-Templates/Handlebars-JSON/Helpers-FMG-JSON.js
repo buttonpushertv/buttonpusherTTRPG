@@ -23,7 +23,7 @@
 016b burgProvinceIDLookup(cellId,allCells,allProvinces)
 016c burgProvinceObjectLookup(cellId,allCells,allProvinces)
 017 getReligionName(religionID,allReligions)
-018 AVAILABLE
+018 getFMGCellXY(cellId, allCells)
 019 getLeafletBurgXY(burgId,allBurgs,mapInfo)
 020 getCellLeafletXY(cellId, allCells, mapInfo)
 021 getPoleLeafletXY(state, mapInfo)
@@ -31,6 +31,7 @@
 023 getTemperature(burg,allData)
 024 getTemperatureLikeness(burg,allData)
 025 getProvinceIdFromCell(cell,allData)
+026 getCapitalNotePath(capitalID,allData)
 
 * - NEEDS TO BE REWORKED
 
@@ -859,3 +860,32 @@ handlebars.registerHelper('getProvinceIdFromCell', function(cell,allCells) {
   // console.log("foundCellProvinceId: ", foundCellProvinceId);
   return foundCellProvinceId;
 })
+
+// 026
+// Custom Helper to get the path to a State's Capital Burg note
+// 026 stateCapitalPath(capitalID,allData)
+handlebars.registerHelper('getCapitalNotePath', function(capitalID,stateID,allData) {
+  // console.log("getCapitalNotePath process - passed state value: ", state);
+  if (capitalID === undefined || capitalID === 0) {
+    console.log("##### getCapitalNotePath - capitalID was undefined or zero #####");
+    return ''; // skip if state value is zero or undefined
+  };
+  const stateName = allData.pack.states.find(state => state.i === stateID).name;
+  const foundBurg = allData.pack.burgs.find(b => b.i === capitalID);
+  console.log("foundBurg: ",foundBurg);
+  const cellId = foundBurg.cell;
+  if (cellId === undefined || cellId === 0) {
+    console.log("##### getCapitalNotePath - captial burg cellId was undefined or zero #####");
+    return ''; // skip if cellId value is undefined
+  };
+  const foundCell = allData.pack.cells.find(cell => cell.i === cellId);
+  const foundCellProvinceId = foundCell.province;
+  if (foundCellProvinceId === 0 || foundCellProvinceId === undefined) {
+    return ''; // If no Province Defined end here
+  };
+  const foundProvinceName = allData.pack.provinces.find(prov => prov.i === foundCellProvinceId).fullName;
+  console.log("burgProvinceNameLookup process - foundProvinceName: ", foundProvinceName);
+  const foundBurgNotePath = `${allData.importInfo.thisCampaignPath}/05-Atlas/${allData.info.mapName}/States/${stateName}/Provinces/${foundProvinceName}/Burgs/${foundBurg.name}`;
+  console.log("foundBurgNotePath: ", foundBurgNotePath);
+  return foundBurgNotePath;
+});

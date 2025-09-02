@@ -1,10 +1,12 @@
 ---
 alert: {{alert}}
-aliases: {{name}}
+aliases: 
+- {{name}}
 area: {{totalArea area}}
 burgs: {{burgs}}
 campaign: {{@importDataRoot.importInfo.thisCampaign}}
-{{setvar "currentCapital" (getBurgName capital @importDataRoot.pack.burgs)}}capital: {{"currentCapital"}}
+{{setvar "currentCapitalName" (getBurgName capital @importDataRoot.pack.burgs)}}capitalName: {{"currentCapitalName"}}
+{{setvar "capitalPath" (getCapitalNotePath capital i @importDataRoot)}}capitalFile: {{"capitalPath"}}
 center: {{this.center}}
 color: {{color}}
 created: {{getDateTimestamp @importSettings}}
@@ -12,12 +14,14 @@ cssclasses: sixty-pct-width
 culture: {{getCultureName culture @importDataRoot.pack.cultures}}
 emblem: {{@importDataRoot.info.mapName}} Emblem {{fullName}}.png
 expansionism: {{expansionism}}
+fileName: _{{fullName}}-{{i}}
 form: {{form}}
 formName: {{formName}}
 fullName: {{fullName}}
 id: {{i}}
 mapName: {{@importDataRoot.info.mapName}}
 name: {{name}}
+nameID: {{name}}-{{i}}
 neighbors:
 {{#each neighbors}}
 - {{getStateName this @importDataRoot.pack.states}}
@@ -37,12 +41,12 @@ tags:
 - State
 - {{@importDataRoot.info.mapName}}
 - {{@importDataRoot.importInfo.thisCampaignShortCode}}
-templateVersion: 2.0
+templateVersion: 4.4
 type: {{type}}
 WBProcess: Imported
 ---
 
-> [!metadata|metadata]- Metadata
+> [!metadata|metadata]- Metadata & Page Controls
 >> [!metadata|metadataoption]- System
 >> #### System
 >>  |
@@ -62,10 +66,20 @@ WBProcess: Imported
 > **Aliases** | `INPUT[list:aliases]` |
 > **Rulers**|`INPUT[list:rulers]`|
 > **Short Description**|`INPUT[textArea:shortDescription]`
+>
+>> [!metadata|metadataoption]- Controls
+>> These buttons control various portions of this page. They only change things on this page.
+>> 
+>> #### Controls
+>>  |
+>> ---|---|
+>> Leaflet Map| `BUTTON[hide_leaf_map]`  - `BUTTON[show_leaf_map]`
 
-[[{{getCampaignHomeNote @importSettings}}|Campaign Home]] | [[{{getCampaignAtlasNote @importSettings}}|Campaign Atlas]] | Capital: `=link(this.capital)`
+[[{{@importDataRoot.importInfo.thisCampaignPath}}/{{@importDataRoot.importInfo.thisCampaign}} Home|{{@importDataRoot.importInfo.thisCampaign}} Home]] | [[{{@importDataRoot.importInfo.thisCampaignPath}}/05-Atlas/{{@importDataRoot.info.mapName}}/{{@importDataRoot.info.mapName}}-Linked Atlas|{{@importDataRoot.info.mapName}}-Linked Atlas]] | Capital: `=link(this.capitalNotePath,this.capitalName)`
 
 %% During the import process, much of the data for the Leaflet fields should have been pulled in from the JSON. You will need to update the defaultZoom and (maybe) the coordinates values, but it should be pretty close - good enough to get a start with it. The goal is to cut down on the amount of manual effort you need to go through to pull your data in from the FMG JSON %%
+
+%%LeafletMapTOP%%
 
 > [!metadata|map]+ {{name}} Map
 > ```leaflet
@@ -87,6 +101,8 @@ WBProcess: Imported
 > marker: capital,{{getLeafletBurgXY capital @importDataRoot.pack.burgs @importDataRoot.info}},[[{{"currentCapital"}}]],{{name}} Capital
 > ```
 > [Link to {{name}} on FMG Map]({{@importDataRoot.importInfo.mapDropboxFMGLink}}&scale=3{{getFMGCellXY this.center @importDataRoot.pack.cells}})
+
+%%LeafletMapTAIL%%
 
 %% All the info in this 'infobox' will appear in the panel to the right. Most of these values are pulled from the metadata in the properties above. %%
 
@@ -120,7 +136,7 @@ WBProcess: Imported
 >
 >  |
 > ---: | --- |
-> **Capital** | `=link(this.capital)` |
+> **Capital** | `=link(this.capitalNotePath, this.capitalName)` |
 > **Ruler(s)** | `=link(this.rulers)` |
 > **Govt Type** | `=this.form` |
 >**Dominant Culture** | `=link(this.culture)` |
@@ -188,7 +204,7 @@ Significant incidents in `=this.name`'s history:
 > [!note|wmed]- Burgs
 > ```dataview
 > TABLE WITHOUT ID file.link as "Burgs", link(provinceName) as "Province Name"
-> FROM #Burg and "{{@importDataRoot.importInfo.thisCampaignPath}}/{{@importDataRoot.info.mapName}}/05-Atlas/States/{{i}}-{{name}}"
+> FROM #Burg and "{{@importDataRoot.importInfo.thisCampaignPath}}/{{@importDataRoot.info.mapName}}/05-Atlas/States/{{name}}"
 > WHERE econtains(stateId,this.id)
 > SORT file.name ASC
 > ```
@@ -217,7 +233,6 @@ Significant incidents in `=this.name`'s history:
 > | {{icon}} | {{name}} | {{u.infantry}} | {{u.archers}} | {{u.cavalry}} | {{u.artillery}} | {{u.fleet}} | {{a}} |
 > {{/each}}
 
-
 ---
 
-[[{{getCampaignHomeNote @importSettings}}|Campaign Home]] | [[{{getCampaignAtlasNote @importSettings}}|Campaign Atlas]] | Capital: `=link(this.capital)`
+[[{{@importDataRoot.importInfo.thisCampaignPath}}/{{@importDataRoot.importInfo.thisCampaign}} Home|{{@importDataRoot.importInfo.thisCampaign}} Home]] | [[{{@importDataRoot.importInfo.thisCampaignPath}}/05-Atlas/{{@importDataRoot.info.mapName}}/{{@importDataRoot.info.mapName}}-Linked Atlas|{{@importDataRoot.info.mapName}}-Linked Atlas]] | Capital: `=link(this.capitalNotePath,this.capitalName)`

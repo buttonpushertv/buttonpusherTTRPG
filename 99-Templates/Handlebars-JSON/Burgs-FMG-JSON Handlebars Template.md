@@ -3,7 +3,7 @@ aliases:
 - {{name}}
 burgMapLink: https://watabou.github.io{{getBurgMapLink this @importDataRoot.info.seed @importDataRoot.pack.cells @importDataRoot.settings @importDataRoot.grid}}
 burgName: {{name}}
-burgFile: {{name}}-{{i}}
+burgNameID: {{name}}-{{i}}
 campaign: {{@importDataRoot.importInfo.thisCampaign}}
 capital: {{capital}}
 cell: {{cell}}
@@ -21,14 +21,13 @@ port: {{port}}
 pronounced:
 provinceId: {{getProvinceIdFromCell cell @importDataRoot.pack.cells}}
 provinceName: {{burgProvinceNameLookup cell @importDataRoot.pack.cells @importDataRoot.pack.provinces}}
-provinceFile: {{burgProvinceNameLookup cell @importDataRoot.pack.cells @importDataRoot.pack.provinces}}
 religion: {{getReligionName this.cell @importDataRoot.pack.cells @importDataRoot.pack.religions}}
 rulers:
 shanty: {{shanty}}
 shortDescription:
 stateId: {{state}}
 stateName: {{getStateName state @importDataRoot.pack.states}}
-stateFile: _{{getStateNamePlusID state @importDataRoot.pack.states}}
+stateNotePath: "{{@importDataRoot.importInfo.thisCampaignPath}}/05-Atlas/{{@importDataRoot.info.mapName}}/States/{{getStateName state @importDataRoot.pack.states}}/{{getStateName state @importDataRoot.pack.states}}"
 tags:
 - Burg
 - {{@importDataRoot.info.mapName}}
@@ -38,7 +37,7 @@ tags:
 temple: {{temple}}
 temperature: {{getTemperature this @importDataRoot}}
 temperatureLikeness: {{getTemperatureLikeness this @importDataRoot}}
-templateVersion: 4.0
+templateVersion: 4.4
 type: {{type}}
 walls: {{walls}}
 WBProgress: Imported
@@ -81,7 +80,7 @@ marker: burg,{{getLeafletBurgXY this.i @importDataRoot.pack.burgs @importDataRoo
 >> Leaflet Map| `BUTTON[hide_leaf_map]` - `BUTTON[show_leaf_map]`
 >> Interactive Map | `BUTTON[hide_web_map]` - `BUTTON[show_web_map]`
 
-[[{{@importDataRoot.importInfo.thisCampaignPath}}/{{@importDataRoot.importInfo.thisCampaign}} Home|{{@importDataRoot.importInfo.thisCampaign}} Home]] | [[{{@importDataRoot.importInfo.thisCampaignPath}}/05-Atlas/{{@importDataRoot.info.mapName}}/{{@importDataRoot.info.mapName}}-Linked Atlas|{{@importDataRoot.info.mapName}}-Linked Atlas]] | State: `=link(this.stateName)` | Province: `=link(this.provinceName)`
+[[{{@importDataRoot.importInfo.thisCampaignPath}}/{{@importDataRoot.importInfo.thisCampaign}} Home|{{@importDataRoot.importInfo.thisCampaign}} Home]] | [[{{@importDataRoot.importInfo.thisCampaignPath}}/05-Atlas/{{@importDataRoot.info.mapName}}/{{@importDataRoot.info.mapName}}-Linked Atlas|{{@importDataRoot.info.mapName}}-Linked Atlas]] | State: `=link(this.stateNotePath,this.stateName)` | Province: `=link(this.provinceName)`
 
 %% If you want to place the image for the Burg in the Map(Interactive) window below, you can use Fantasy Map Generator's link to Watabou's Fantasy City or Village Generator - see the `infobox` link or the `burgMapLink` URL up in the properties of this note. You can save the map image somewhere in the vault (`01-Campaign/{{@importDataRoot.importInfo.thisCampaign}}/98-{{@importDataRoot.importInfo.thisCampaign}} Assets`, for instance) and it will show up in this window. The name for this image is pre-populated with info from the JSON Import. The filename should be the Burg's id value and the Burg's burgName - both available up in the frontmatter.
 
@@ -94,7 +93,7 @@ There is an elaborate method (see [[JSON Import How To#Wrangling FMG Burg Maps]]
 > [!metadata|map]- Burg Map (Interactive)
 > ```leaflet
 > id: Burg-{{name}}
-> image: [[{{i}}-{{name}}.webp]]
+> image: [[{{name}}-{{i}}.webp]]
 > height: 800px
 > width: 100%
 > minZoom: -3.5
@@ -113,7 +112,7 @@ There is an elaborate method (see [[JSON Import How To#Wrangling FMG Burg Maps]]
 {burgName} as name
 {id} as id
 ---
-let fileName = context.bound.id + "-" + context.bound.name;
+let fileName = context.bound.name + "-" + context.bound.id;
 navigator.clipboard.writeText(fileName);
 let url = context.bound.mapLink;
 return engine.markdown.create(`
@@ -169,7 +168,7 @@ action:
 > **Annual Avg. Temp** | `=this.temperature` |
 > <span style="font-size:x-small">**Temps Like**</span> |<span style="font-size:x-small">`=this.temperatureLikeness`</span>|
 >  **Elevation** | `=this.elevation`|
->  **State** |`=link(this.stateName)`|
+>  **State** |`=link(this.stateNotePath,stateName)`|
 >  **Province** |`=link(this.provinceName)`|
 > 
 > ###### Politics
@@ -221,4 +220,4 @@ Below are any notable zones or regions within `=this.burgName`
 
 ---
 
-[[{{@importDataRoot.importInfo.thisCampaignPath}}/{{@importDataRoot.importInfo.thisCampaign}} Home|{{@importDataRoot.importInfo.thisCampaign}} Home]] | [[{{@importDataRoot.importInfo.thisCampaignPath}}/05-Atlas/{{@importDataRoot.info.mapName}}/{{@importDataRoot.info.mapName}}-Linked Atlas|{{@importDataRoot.info.mapName}}-Linked Atlas]] | State: `=link(this.stateName)` | Province: `=link(this.provinceName)`
+[[{{@importDataRoot.importInfo.thisCampaignPath}}/{{@importDataRoot.importInfo.thisCampaign}} Home|{{@importDataRoot.importInfo.thisCampaign}} Home]] | [[{{@importDataRoot.importInfo.thisCampaignPath}}/05-Atlas/{{@importDataRoot.info.mapName}}/{{@importDataRoot.info.mapName}}-Linked Atlas|{{@importDataRoot.info.mapName}}-Linked Atlas]] | State: `=link(this.stateNotePath,this.stateName)` | Province: `=link(this.provinceName)`

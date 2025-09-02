@@ -1,0 +1,10 @@
+[
+    {
+    "fieldName": "",
+    "noteName": "@{return `${dataRoot.importInfo.thisCampaign}/05-Atlas/${dataRoot.info.mapName}/${dataRoot.info.mapName}-Linked Atlas`}",
+    "folderName": "01-Campaigns",
+    "namePrefix": "",
+    "nameSuffix": "",
+    "batchStep": "Atlas"
+    }
+]
