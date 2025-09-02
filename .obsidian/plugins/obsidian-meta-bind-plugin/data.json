@@ -137,51 +137,120 @@
       ]
     },
     {
-      "label": "Hide Interactive Burg Map",
+      "label": "Hide Live Web Map",
       "icon": "",
       "style": "default",
       "class": "",
       "cssStyle": "",
       "backgroundImage": "",
       "tooltip": "",
-      "id": "hide_int_map",
+      "id": "hide_web_map",
       "hidden": false,
       "actions": [
         {
           "type": "regexpReplaceInNote",
-          "regexp": "%%InteractiveMapTOP%%",
-          "replacement": "%%InteractiveMapTOP-",
+          "regexp": "%%WebMapTOP%%",
+          "replacement": "%%WebMapTOP-",
           "regexpFlags": "g"
         },
         {
           "type": "regexpReplaceInNote",
-          "regexp": "%%InteractiveMapTAIL%%",
-          "replacement": "-InteractiveMapTAIL%%",
+          "regexp": "%%WebMapTAIL%%",
+          "replacement": "-WebMapTAIL%%",
           "regexpFlags": "g"
         }
       ]
     },
     {
-      "label": "Show Interactive Burg Map",
+      "label": "Show Web Map",
       "icon": "",
       "style": "default",
       "class": "",
       "cssStyle": "",
       "backgroundImage": "",
       "tooltip": "",
-      "id": "show_int_map",
+      "id": "show_web_map",
       "hidden": false,
       "actions": [
         {
           "type": "regexpReplaceInNote",
-          "regexp": "%%InteractiveMapTOP-",
-          "replacement": "%%InteractiveMapTOP%%",
+          "regexp": "%%WebMapTOP-",
+          "replacement": "%%WebMapTOP%%",
           "regexpFlags": "g"
         },
         {
           "type": "regexpReplaceInNote",
-          "regexp": "-InteractiveMapTAIL%%",
-          "replacement": "%%InteractiveMapTAIL%%",
+          "regexp": "-WebMapTAIL%%",
+          "replacement": "%%WebMapTAIL%%",
+          "regexpFlags": "g"
+        }
+      ]
+    },
+    {
+      "label": "Hide Leaflet Map",
+      "icon": "",
+      "style": "default",
+      "class": "",
+      "cssStyle": "",
+      "backgroundImage": "",
+      "tooltip": "",
+      "id": "hide_leaf_map",
+      "hidden": false,
+      "actions": [
+        {
+          "type": "regexpReplaceInNote",
+          "regexp": "%%LeafletMapTOP%%",
+          "replacement": "%%LeafletMapTOP-",
+          "regexpFlags": "g"
+        },
+        {
+          "type": "regexpReplaceInNote",
+          "regexp": "%%LeafletMapTAIL%%",
+          "replacement": "-LeafletMapTAIL%%",
+          "regexpFlags": "g"
+        }
+      ]
+    },
+    {
+      "label": "Show Leaflet Map",
+      "icon": "",
+      "style": "default",
+      "class": "",
+      "cssStyle": "",
+      "backgroundImage": "",
+      "tooltip": "",
+      "id": "show_leaf_map",
+      "hidden": false,
+      "actions": [
+        {
+          "type": "regexpReplaceInNote",
+          "regexp": "%%LeafletMapTOP-",
+          "replacement": "%%LeafletMapTOP%%",
+          "regexpFlags": "g"
+        },
+        {
+          "type": "regexpReplaceInNote",
+          "regexp": "-LeafletMapTAIL%%",
+          "replacement": "%%LeafletMapTAIL%%",
+          "regexpFlags": "g"
+        }
+      ]
+    },
+    {
+      "label": "Toggle Interactive Map",
+      "icon": "",
+      "style": "default",
+      "class": "",
+      "cssStyle": "",
+      "backgroundImage": "",
+      "tooltip": "Toggle the callout for the Leaflet map, so that it always show on load.",
+      "id": "tgl_leaf_map",
+      "hidden": false,
+      "actions": [
+        {
+          "type": "regexpReplaceInNote",
+          "regexp": "[!metadata|map]- Burg Map (Interactive)",
+          "replacement": "[!metadata|map]+ Burg Map (Interactive)",
           "regexpFlags": "g"
         }
       ]

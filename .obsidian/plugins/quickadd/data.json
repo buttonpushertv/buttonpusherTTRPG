@@ -280,6 +280,41 @@
         ]
       },
       "runOnStartup": false
+    },
+    {
+      "id": "b8fbb797-2a4d-4669-b9d5-ae404d4f120c",
+      "name": "Css Width Chooser",
+      "type": "Capture",
+      "command": true,
+      "appendLink": false,
+      "captureTo": "",
+      "captureToActiveFile": true,
+      "createFileIfItDoesntExist": {
+        "enabled": false,
+        "createWithTemplate": false,
+        "template": ""
+      },
+      "format": {
+        "enabled": true,
+        "format": "```js quickadd\n//const selection = window.getSelection();\n//const selection = this.quickAddApi.utility.getSelectedText();  \n// QuickAdd 0.4.6\nconst aTexts =   [ \"60% width\", \"70% width\", \"80% width\", \"90% width\", \"Full width\" ];\n\nconst callouts = [ \"sixty-pct-width\", \"seventy-pct-width\", \"eighty-pct-width\", \"ninety-pct-width\", \"full-width\" ];\n\nlet choice = await this.quickAddApi.suggester(aTexts, callouts);\n//console.log(\"choice\", choice);\n\n// String.fromCharCode()\nconst nl = String.fromCharCode(10);\n\nresult = \"cssclasses: \" + choice //+ selection + nl;\n\nreturn result;```\n"
+      },
+      "insertAfter": {
+        "enabled": false,
+        "after": "",
+        "insertAtEnd": false,
+        "considerSubsections": false,
+        "createIfNotFound": false,
+        "createIfNotFoundLocation": "top"
+      },
+      "prepend": false,
+      "task": false,
+      "openFile": false,
+      "fileOpening": {
+        "location": "tab",
+        "direction": "vertical",
+        "mode": "default",
+        "focus": true
+      }
     }
   ],
   "inputPrompt": "single-line",
