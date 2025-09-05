@@ -237,20 +237,39 @@
       ]
     },
     {
-      "label": "Toggle Interactive Map",
+      "label": "Unfold Leaflet Map",
       "icon": "",
       "style": "default",
       "class": "",
       "cssStyle": "",
       "backgroundImage": "",
-      "tooltip": "Toggle the callout for the Leaflet map, so that it always show on load.",
-      "id": "tgl_leaf_map",
+      "tooltip": "Unold the callout for the Leaflet map, so that it loads unfolded up. (Applies to this page only).",
+      "id": "unfold_leaf_map",
       "hidden": false,
       "actions": [
         {
           "type": "regexpReplaceInNote",
-          "regexp": "[!metadata|map]- Burg Map (Interactive)",
-          "replacement": "[!metadata|map]+ Burg Map (Interactive)",
+          "regexp": "\\|map\\]- Burg Map \\(Interactive\\)",
+          "replacement": "|map]+ Burg Map (Interactive)",
+          "regexpFlags": "g"
+        }
+      ]
+    },
+    {
+      "label": "Fold Leaflet Map",
+      "icon": "",
+      "style": "default",
+      "class": "",
+      "cssStyle": "",
+      "backgroundImage": "",
+      "tooltip": "Fold the callout for the Leaflet map, so that it loads folded up. (Applies to this page only).",
+      "id": "fold_leaf_map",
+      "hidden": false,
+      "actions": [
+        {
+          "type": "regexpReplaceInNote",
+          "regexp": "\\|map\\]+ Burg Map \\(Interactive\\)",
+          "replacement": "|map]- Burg Map (Interactive)",
           "regexpFlags": "g"
         }
       ]

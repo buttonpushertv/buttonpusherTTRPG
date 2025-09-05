@@ -13,15 +13,44 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "90-Tools & Helpers/JSON Importing How To Notes/07-Wrapping Up & Final Thoughts.md",
+                "file": "01-Campaigns/Escape from the Eternal Throne/05-Atlas/Torcosia/Torcosia-Linked Atlas.md",
                 "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "07-Wrapping Up & Final Thoughts"
+              "title": "Torcosia-Linked Atlas"
+            }
+          },
+          {
+            "id": "088a87db6172d30c",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "90-Tools & Helpers/JSON Importing How To Notes/04-Wrangling FMG Emblems.md",
+                "mode": "preview",
+                "source": true
+              },
+              "icon": "lucide-file",
+              "title": "04-Wrangling FMG Emblems"
+            }
+          },
+          {
+            "id": "7856f61afc862e43",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Home.md",
+                "mode": "preview",
+                "source": true
+              },
+              "icon": "lucide-file",
+              "title": "Home"
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -53,7 +82,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "thisCampaignMetaData",
+                "query": "Helpers-FMG-JSON.js",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -141,7 +170,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 428.5
+    "width": 497.5
   },
   "right": {
     "id": "93482ffa1a519a97",
@@ -185,53 +214,53 @@
       "obsidian-import-json:JSON/CSV Importer": false
     }
   },
-  "active": "e7a7b303c61786dc",
+  "active": "7856f61afc862e43",
   "lastOpenFiles": [
-    "90-Tools & Helpers/JSON Importing How To Notes/00-JSON Importing How To Guide.md",
-    "90-Tools & Helpers/JSON Importing How To Notes/07-Wrapping Up & Final Thoughts.md",
-    "90-Tools & Helpers/JSON Importing How To Notes/06-Converting Images to WEBP Format.md",
-    "90-Tools & Helpers/JSON Importing How To Notes/05-Wrangling FMG Burg Maps.md",
     "90-Tools & Helpers/JSON Importing How To Notes/04-Wrangling FMG Emblems.md",
     "90-Tools & Helpers/JSON Importing How To Notes/03b-Multi-step Importing Process.md",
     "90-Tools & Helpers/JSON Importing How To Notes/03-Importing the FMG JSON Data.md",
-    "90-Tools & Helpers/JSON Importing How To Notes/02-The FMG JSON File-(v.60).md",
-    "90-Tools & Helpers/JSON Importing How To Notes/02-The FMG JSON File.md",
-    "90-Tools & Helpers/JSON Importing How To Notes/01-The First Steps.md",
-    "01-Campaigns/Test Campaign 99/05-Atlas/Braia/Braia-Linked Atlas.md",
-    "01-Campaigns/Test Campaign 99/05-Atlas/Braia/Religions/Kharan Pantheon.md",
-    "01-Campaigns/Test Campaign 99/05-Atlas/Braia/Religions/Dail (Human)ism.md",
-    "01-Campaigns/Test Campaign 99/05-Atlas/Braia/Religions/Oxbreachism.md",
-    "01-Campaigns/Test Campaign 99/05-Atlas/Braia/Religions/Newden Religion.md",
-    "01-Campaigns/Test Campaign 99/05-Atlas/Braia/Religions/Old Dail (Human) Shamanism.md",
-    "01-Campaigns/Test Campaign 99/05-Atlas/Braia/Religions/Rake (Drakonic) Deities.md",
-    "01-Campaigns/Test Campaign 99/05-Atlas/Braia/Religions/Khazadur (Dwarven) Faith.md",
-    "01-Campaigns/Test Campaign 99/05-Atlas/Braia/Religions/Dunirr (Dwarven) Druids.md",
-    "01-Campaigns/Test Campaign 99/05-Atlas/Braia/Religions/No religion.md",
-    "01-Campaigns/Test Campaign 99/05-Atlas/Braia/Religions",
-    "01-Campaigns/Test Campaign 99/05-Atlas/Braia/Cultures/Dail (Human).md",
-    "01-Campaigns/Test Campaign 99/05-Atlas/Braia/Cultures/Rake (Drakonic).md",
-    "01-Campaigns/Test Campaign 99/05-Atlas/Braia/Cultures/Khazadur (Dwarven).md",
-    "01-Campaigns/Test Campaign 99/05-Atlas/Braia/Cultures/Dunirr (Dwarven).md",
-    "01-Campaigns/Test Campaign 99/05-Atlas/Braia/Cultures/Wildlands.md",
-    "01-Campaigns/Test Campaign 99/05-Atlas/Braia/Cultures",
-    "01-Campaigns/Test Campaign 99/05-Atlas/Braia/States/Zazilnabu/Provinces/Braz Territory/Burgs/Shadab.md",
-    "01-Campaigns/Test Campaign 99/05-Atlas/Braia/States/Lalaparo/Provinces/Eldrimiusmeloa Barony/Burgs",
-    "01-Campaigns/Test Campaign 99/05-Atlas/Braia/States/Zazilnabu/Provinces/Zazin Parish/Burgs",
-    "01-Campaigns/Test Campaign 99/05-Atlas/Braia/States/Lavenhelmia/Provinces/Deadwatch Barony/Burgs",
-    "01-Campaigns/Test Campaign 99/05-Atlas/Braia/States/Lavenhelmia/Provinces/Dercrestia County/Burgs",
-    "01-Campaigns/Test Campaign 99/05-Atlas/Braia/States/Lalaparo/Provinces/Fenptan County/Burgs",
-    "01-Campaigns/Test Campaign 99/05-Atlas/Braia/States/Lalaparo/Provinces/Atherlaksa Margrave/Burgs",
-    "01-Campaigns/Test Campaign 99/05-Atlas/Braia/States/Zazilnabu/Provinces/Scorcross Area/Burgs",
-    "01-Campaigns/Test Campaign 99/05-Atlas/Braia/States/Lavenhelmia/Provinces/Smalhal Land/Burgs",
-    "01-Campaigns/Test Campaign 99/98-Test Campaign 99 Assets/FMG-cities-WEBP/Shimouth-1.webp",
-    "01-Campaigns/Test Campaign 99/98-Test Campaign 99 Assets/FMG-cities-WEBP/Barathos-34.webp",
-    "01-Campaigns/Test Campaign 99/98-Test Campaign 99 Assets/FMG-cities-PNG/_WEBP/Lalaparo-2.webp",
-    "01-Campaigns/Test Campaign 99/98-Test Campaign 99 Assets/FMG-cities-PNG/_WEBP/Barathos-34.webp",
-    "01-Campaigns/Test Campaign 99/98-Test Campaign 99 Assets/FMG-cities-PNG/Barathos-34.png",
-    "01-Campaigns/Test Campaign 99/98-Test Campaign 99 Assets/FMG-cities-PNG/barathos.png",
-    "01-Campaigns/Test Campaign 99/98-Test Campaign 99 Assets/FMG-cities-WEBP/Lalaparo-2.webp",
-    "01-Campaigns/Test Campaign 99/98-Test Campaign 99 Assets/FMG-cities-PNG/Lalaparo-2.png",
-    "01-Campaigns/Test Campaign 99/98-Test Campaign 99 Assets/FMG-cities-PNG/lalaparo.png",
-    "01-Campaigns/Test Campaign 99/98-Test Campaign 99 Assets/FMG-emblems-export-PNG/Braia Emblem Fenptan.png"
+    "Home.md",
+    "01-Campaigns/Escape from the Eternal Throne/05-Atlas/Torcosia/Torcosia-Linked Atlas.md",
+    "99-Templates/Handlebars-JSON/_ATLAS-Import-Batch.JSON",
+    "01-Campaigns/Escape from the Eternal Throne/05-Atlas/Torcosia/Religions/Order of the Three.md",
+    "01-Campaigns/Escape from the Eternal Throne/05-Atlas/Torcosia/Religions/Delilno Cult.md",
+    "01-Campaigns/Escape from the Eternal Throne/05-Atlas/Torcosia/Religions/Toporicos Church.md",
+    "01-Campaigns/Escape from the Eternal Throne/05-Atlas/Torcosia/Religions/Skjerdalism.md",
+    "01-Campaigns/Escape from the Eternal Throne/05-Atlas/Torcosia/Religions/Eschbrinese Deities.md",
+    "01-Campaigns/Escape from the Eternal Throne/05-Atlas/Torcosia/Religions/Romian Druidism.md",
+    "01-Campaigns/Escape from the Eternal Throne/05-Atlas/Torcosia/Religions/Tallian Faith.md",
+    "01-Campaigns/Escape from the Eternal Throne/05-Atlas/Torcosia/Religions/Turchian Beliefs.md",
+    "01-Campaigns/Escape from the Eternal Throne/05-Atlas/Torcosia/Religions/Shwazen Beliefs.md",
+    "01-Campaigns/Escape from the Eternal Throne/05-Atlas/Torcosia/Religions/Slovan Druidism.md",
+    "01-Campaigns/Escape from the Eternal Throne/05-Atlas/Torcosia/Religions/Soumi Beliefs.md",
+    "01-Campaigns/Escape from the Eternal Throne/05-Atlas/Torcosia/Religions/Elladan Deities.md",
+    "01-Campaigns/Escape from the Eternal Throne/05-Atlas/Torcosia/Religions/Angshire Spirits.md",
+    "01-Campaigns/Escape from the Eternal Throne/05-Atlas/Torcosia/Religions/Vengrian Spirits.md",
+    "01-Campaigns/Escape from the Eternal Throne/05-Atlas/Torcosia/Religions/Portuzian Spirits.md",
+    "01-Campaigns/Escape from the Eternal Throne/05-Atlas/Torcosia/Religions/Astellian Shamanism.md",
+    "01-Campaigns/Escape from the Eternal Throne/05-Atlas/Torcosia/Religions/Norse Ancestors.md",
+    "01-Campaigns/Escape from the Eternal Throne/05-Atlas/Torcosia/Religions/No religion.md",
+    "01-Campaigns/Escape from the Eternal Throne/05-Atlas/Torcosia/Religions",
+    "01-Campaigns/Escape from the Eternal Throne/05-Atlas/Torcosia/Cultures/Romian.md",
+    "01-Campaigns/Escape from the Eternal Throne/05-Atlas/Torcosia/Cultures/Tallian.md",
+    "01-Campaigns/Escape from the Eternal Throne/05-Atlas/Torcosia/Cultures/Turchian.md",
+    "01-Campaigns/Escape from the Eternal Throne/05-Atlas/Torcosia/Cultures",
+    "01-Campaigns/Escape from the Eternal Throne/05-Atlas/Torcosia/States/Telyilia/Provinces/Vorod Canton/Burgs",
+    "01-Campaigns/Escape from the Eternal Throne/05-Atlas/Torcosia/States/Lorumia/Provinces/Jaszsolca Territory/Burgs",
+    "01-Campaigns/Escape from the Eternal Throne/05-Atlas/Torcosia/States/Lorumia/Provinces/Parianisia Province/Burgs",
+    "01-Campaigns/Escape from the Eternal Throne/05-Atlas/Torcosia/States/Tydolisia/Provinces/Ablos County/Burgs",
+    "01-Campaigns/Escape from the Eternal Throne/05-Atlas/Torcosia/States/Turk/Provinces/New Dolu Colony/Burgs",
+    "01-Campaigns/Escape from the Eternal Throne/05-Atlas/Torcosia/States/Turk/Provinces/Castte County/Burgs",
+    "01-Campaigns/Escape from the Eternal Throne/05-Atlas/Torcosia/States/Huecavia/Provinces/Dumia Margrave/Burgs",
+    "01-Campaigns/Escape from the Eternal Throne/98-Escape from the Eternal Throne Assets/Torcosia Religions World Map.svg",
+    "01-Campaigns/Escape from the Eternal Throne/98-Escape from the Eternal Throne Assets/Torcosia-FMG-Emblems/export/Torcosia Emblem Zvereres.png",
+    "01-Campaigns/Escape from the Eternal Throne/98-Escape from the Eternal Throne Assets/Torcosia-FMG-Emblems/export/Torcosia Emblem Zubkiza.png",
+    "01-Campaigns/Escape from the Eternal Throne/98-Escape from the Eternal Throne Assets/Torcosia-FMG-Emblems/export/Torcosia Emblem Zubkin.png",
+    "01-Campaigns/Escape from the Eternal Throne/98-Escape from the Eternal Throne Assets/Torcosia-FMG-Emblems/export/Torcosia Emblem Zubechiy.png",
+    "01-Campaigns/Escape from the Eternal Throne/98-Escape from the Eternal Throne Assets/Torcosia-FMG-Emblems/export/Torcosia Emblem Zsampapia Land.png",
+    "01-Campaigns/Escape from the Eternal Throne/98-Escape from the Eternal Throne Assets/Torcosia-FMG-Emblems/export/Torcosia Emblem Zsambeklad.png",
+    "01-Campaigns/Escape from the Eternal Throne/98-Escape from the Eternal Throne Assets/Torcosia-FMG-Emblems/export/Torcosia Emblem Zizhetshon.png",
+    "01-Campaigns/Escape from the Eternal Throne/98-Escape from the Eternal Throne Assets/Torcosia-FMG-Emblems/export/Torcosia Emblem Zircserdorok.png",
+    "01-Campaigns/Escape from the Eternal Throne/98-Escape from the Eternal Throne Assets/Torcosia-FMG-Emblems/export/Torcosia Emblem Zhilov.png"
   ]
 }
