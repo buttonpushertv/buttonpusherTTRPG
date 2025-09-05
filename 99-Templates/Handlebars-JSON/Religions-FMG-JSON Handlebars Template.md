@@ -24,7 +24,7 @@ tags:
 - Religion
 - {{@importDataRoot.info.mapName}}
 type: {{type}}
-templateVersion: 3.2
+templateVersion: 5.0
 WBProgress: Imported
 ---
 
@@ -72,9 +72,8 @@ WBProgress: Imported
 > darkMode: false
 > marker: religion,{{getCellLeafletXY center @importDataRoot.pack.cells @importDataRoot.info}},,Religion's Center
 > ```
-> <div style="width: 250px; height: 50px; background-color: {{color}}; display: flex; justify-content: center; align-items: center; font-size: 24px; color: {{color}};">▮</div>
-> The area shown in the color above is the reach of {{religionName}}
-
+> <div style="width: 500px; height: 20px; background-color: {{color}}; display: flex; justify-content: center; align-items: center; font-size: 24px; color: {{color}};">▮</div>
+> The area shown in the color above is the reach of {{name}}
 
 %% All the info in this 'infobox' will appear in the panel to the right. Most of these values are pulled from the metadata in the properties above. %%
 
@@ -96,6 +95,7 @@ WBProgress: Imported
 > **Form** | `=this.form`|
 > **Culture** | `=this.culture`|
 > **Leaders** | `=this.leaders`|
+> **Followers** | `=this.followers`|
 > 
 
 # **`=this.religionName`**

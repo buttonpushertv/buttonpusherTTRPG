@@ -32,12 +32,13 @@ tags:
 - Burg
 - {{@importDataRoot.info.mapName}}
 - {{@importDataRoot.importInfo.thisCampaignShortCode}}
-- {{burgProvinceNameLookup cell @importDataRoot.pack.cells @importDataRoot.pack.provinces}}
+- {{getBurgType this @importDataRoot.settings}}
+- {{burgProvinceNameLookupTag cell @importDataRoot.pack.cells @importDataRoot.pack.provinces}}
 - {{getStateName state @importDataRoot.pack.states}}
 temple: {{temple}}
 temperature: {{getTemperature this @importDataRoot}}
 temperatureLikeness: {{getTemperatureLikeness this @importDataRoot}}
-templateVersion: 4.4
+templateVersion: 5.0
 type: {{type}}
 walls: {{walls}}
 WBProgress: Imported
@@ -105,29 +106,7 @@ There is an elaborate method (see [[JSON Import How To#Wrangling FMG Burg Maps]]
 > darkMode: false
 > ```
 >
-> [Link to {{name}} on FMG Map]({{@importDataRoot.importInfo.mapDropboxFMGLink}}&scale=6{{getFMGCellXY this.cell @importDataRoot.pack.cells}})| Generator Link: `BUTTON[mapLink-to-download]`
-
-```meta-bind-js-view
-{burgMapLink} as mapLink
-{burgName} as name
-{id} as id
----
-let fileName = context.bound.name + "-" + context.bound.id;
-navigator.clipboard.writeText(fileName);
-let url = context.bound.mapLink;
-return engine.markdown.create(`
-~~~meta-bind-button
-label: Open
-id: mapLink-to-download
-style: primary
-hidden: true
-tooltip: Click this button to open the Burg's map on the generator page to download. The name this note expects to see will be saved to clipboard (ID-Name). Save and place in "01-Campaigns/{{@importDataRoot.importInfo.thisCampaign}}/98-{{@importDataRoot.importInfo.thisCampaign}} Assets" folder
-action:
- type: open
- link: ${url}
-~~~
-`)
-```
+> [Link to {{name}} on FMG Map]({{@importDataRoot.importInfo.mapDropboxFMGLink}}&scale=6{{getFMGCellXY this.cell @importDataRoot.pack.cells}}) | Download Helper Link: `BUTTON[mapLink-to-download]`
 
 %%LeafletMapTAIL%%
 
@@ -141,8 +120,8 @@ action:
 > style: height: 1000px;
 > urlSuffix: {{getBurgMapLink this @importDataRoot.info.seed @importDataRoot.pack.cells @importDataRoot.settings @importDataRoot.grid}}
 > ```
->  `=elink(this.burgMapLink,"Visit Burg Map")`
 >
+>  `=elink(this.burgMapLink,"Visit Burg Map")` | Generator Link: `BUTTON[mapLink-to-download]`
 
 %%WebMapTAIL%%
 
@@ -221,3 +200,25 @@ Below are any notable zones or regions within `=this.burgName`
 ---
 
 [[{{@importDataRoot.importInfo.thisCampaignPath}}/{{@importDataRoot.importInfo.thisCampaign}} Home|{{@importDataRoot.importInfo.thisCampaign}} Home]] | [[{{@importDataRoot.importInfo.thisCampaignPath}}/05-Atlas/{{@importDataRoot.info.mapName}}/{{@importDataRoot.info.mapName}}-Linked Atlas|{{@importDataRoot.info.mapName}}-Linked Atlas]] | State: `=link(this.stateNotePath,this.stateName)` | Province: `=link(this.provinceName)`
+
+```meta-bind-js-view
+{burgMapLink} as mapLink
+{burgName} as name
+{id} as id
+---
+let fileName = context.bound.name + "-" + context.bound.id;
+navigator.clipboard.writeText(fileName);
+let url = context.bound.mapLink;
+return engine.markdown.create(`
+~~~meta-bind-button
+label: Open
+id: mapLink-to-download
+style: primary
+hidden: true
+tooltip: Click this button to open the Burg's map on the generator page to download. The name this note expects to see will be saved to clipboard (ID-Name). Save and place in "01-Campaigns/{{@importDataRoot.importInfo.thisCampaign}}/98-{{@importDataRoot.importInfo.thisCampaign}} Assets" folder
+action:
+ type: open
+ link: ${url}
+~~~
+`)
+```

@@ -8,7 +8,7 @@ tags:
 - linked-atlas
 - {{@importDataRoot.importInfo.thisCampaignShortCode}}
 - {{@importDataRoot.info.mapName}}
-templateVersion: 3.5
+templateVersion: 5.0
 WBProcess: FALSE
 ---
 
@@ -100,7 +100,54 @@ Also, Religions with "Unknown" Cultures are older religions that may not have ma
 | --- | ---- | -----| ---- | ---- | ------- | ----- |
 {{#each pack.religions}}
 | {{i}} | [[{{../importInfo.thisCampaignPath}}/05-Atlas/{{../info.mapName}}/Religions/{{name}}\|{{name}}]] | {{code}} | {{type}} | {{form}} | [[{{../importInfo.thisCampaignPath}}/05-Atlas/{{../info.mapName}}/Cultures/{{getCultureName i ../pack.cultures}}\|{{getCultureName i ../pack.cultures}}]] | {{deity}} |
-{{/each}}{{/if}}{{#if (eq @importSettings.topField "pack.states")}}---
+{{/each}}
+
+> [!EXAMPLE]- {{@importDataRoot.info.mapName}} Settings
+> These are the settings from this FMG map
+>
+> #### Info Section:
+> | Setting | Value |
+> | ------- | ----- |
+> | Version: | {{@importDataRoot.info.version}} |
+> | Description: | {{@importDataRoot.info.description}} |
+> | Exported At: | {{@importDataRoot.info.exportedAt}} |
+> | Map Name: | {{@importDataRoot.info.mapName}} |
+> | Map Width: | {{@importDataRoot.info.width}} |
+> | Map Height: | {{@importDataRoot.info.height}} |
+> | Map Seed: | {{@importDataRoot.info.seed}} |
+> | Map ID: | {{@importDataRoot.info.mapId}} |
+> 
+> #### Settings Section:
+> | Setting | Value |
+> | ------- | ----- |
+> | Distance Unit: | {{@importDataRoot.settings.distanceUnit}} |
+> | Distance Scale: | {{@importDataRoot.settings.distanceScale}} |
+> | Area Unit: | {{@importDataRoot.settings.areaUnit}} |
+> | Height Unit: | {{@importDataRoot.settings.heightUnit}} |
+> | Height Exponent: | {{@importDataRoot.settings.heightExponent}} |
+> | Temperature Scale: | {{@importDataRoot.settings.temperatureScale}} |
+> | Population Rate: | {{@importDataRoot.settings.populationRate}} |
+> | Urbanization: | {{@importDataRoot.settings.urbanization}} |
+> | Map Size: | {{@importDataRoot.settings.mapSize}} |
+> | Latitude: | {{@importDataRoot.settings.latitude}} |
+> | Longitude: | {{@importDataRoot.settings.longitude}} |
+> | Prec: | {{@importDataRoot.settings.prec}} |
+> | Options: | {{@importDataRoot.settings.options}} |
+> | Pin Notes: | {{@importDataRoot.settings.pinNotes}} |
+> | Temperature Equator: | {{@importDataRoot.settings.temperatureEquator}} |
+> | Temperature North Pole: | {{@importDataRoot.settings.temperatureNorthPole}} |
+> | Temperature South Pole: | {{@importDataRoot.settings.temperatureSouthPole}} |
+> | State Labels Mode: | {{@importDataRoot.settings.stateLabelsMode}} |
+> | Show Burg Preview: | {{@importDataRoot.settings.showBurgPreview}} |
+> | Village Max Population: | {{@importDataRoot.settings.villageMaxPopulation}} |
+> | Year: | {{@importDataRoot.settings.year}} |
+> | Era: | {{@importDataRoot.settings.era}} |
+> | Era Short: | {{@importDataRoot.settings.eraShort}} |
+> | Map Name: | {{@importDataRoot.settings.mapName}} |
+> | Hide Labels: | {{@importDataRoot.settings.hideLabels}} |
+> | Style Preset: | {{@importDataRoot.settings.stylePreset}} |
+> | Rescale Labels: | {{@importDataRoot.settings.rescaleLabels}} |
+> | Urban Density: | {{@importDataRoot.settings.urbanDensity}} |{{/if}}{{#if (eq @importSettings.topField "pack.states")}}---
 alert: {{alert}}
 aliases: 
 - {{name}}
@@ -108,7 +155,7 @@ area: {{totalArea area}}
 burgs: {{burgs}}
 campaign: {{@importDataRoot.importInfo.thisCampaign}}
 {{setvar "currentCapitalName" (getBurgName capital @importDataRoot.pack.burgs)}}capitalName: {{"currentCapitalName"}}
-{{setvar "capitalPath" (getCapitalNotePath capital i @importDataRoot)}}capitalFile: {{"capitalPath"}}
+{{setvar "capitalPath" (getcapitalFile capital i @importDataRoot)}}capitalFile: {{"capitalPath"}}
 center: {{this.center}}
 color: {{color}}
 created: {{getDateTimestamp @importSettings}}
@@ -177,7 +224,7 @@ WBProcess: Imported
 >> ---|---|
 >> Leaflet Map| `BUTTON[hide_leaf_map]`  - `BUTTON[show_leaf_map]`
 
-[[{{@importDataRoot.importInfo.thisCampaignPath}}/{{@importDataRoot.importInfo.thisCampaign}} Home|{{@importDataRoot.importInfo.thisCampaign}} Home]] | [[{{@importDataRoot.importInfo.thisCampaignPath}}/05-Atlas/{{@importDataRoot.info.mapName}}/{{@importDataRoot.info.mapName}}-Linked Atlas|{{@importDataRoot.info.mapName}}-Linked Atlas]] | Capital: `=link(this.capitalNotePath,this.capitalName)`
+[[{{@importDataRoot.importInfo.thisCampaignPath}}/{{@importDataRoot.importInfo.thisCampaign}} Home|{{@importDataRoot.importInfo.thisCampaign}} Home]] | [[{{@importDataRoot.importInfo.thisCampaignPath}}/05-Atlas/{{@importDataRoot.info.mapName}}/{{@importDataRoot.info.mapName}}-Linked Atlas|{{@importDataRoot.info.mapName}}-Linked Atlas]] | Capital: `=link(this.capitalFile,this.capitalName)`
 
 %% During the import process, much of the data for the Leaflet fields should have been pulled in from the JSON. You will need to update the defaultZoom and (maybe) the coordinates values, but it should be pretty close - good enough to get a start with it. The goal is to cut down on the amount of manual effort you need to go through to pull your data in from the FMG JSON %%
 
@@ -238,7 +285,7 @@ WBProcess: Imported
 >
 >  |
 > ---: | --- |
-> **Capital** | `=link(this.capitalNotePath, this.capitalName)` |
+> **Capital** | `=link(this.capitalFile, this.capitalName)` |
 > **Ruler(s)** | `=link(this.rulers)` |
 > **Govt Type** | `=this.form` |
 >**Dominant Culture** | `=link(this.culture)` |
@@ -337,7 +384,7 @@ Significant incidents in `=this.name`'s history:
 
 ---
 
-[[{{@importDataRoot.importInfo.thisCampaignPath}}/{{@importDataRoot.importInfo.thisCampaign}} Home|{{@importDataRoot.importInfo.thisCampaign}} Home]] | [[{{@importDataRoot.importInfo.thisCampaignPath}}/05-Atlas/{{@importDataRoot.info.mapName}}/{{@importDataRoot.info.mapName}}-Linked Atlas|{{@importDataRoot.info.mapName}}-Linked Atlas]] | Capital: `=link(this.capitalNotePath,this.capitalName)`{{/if}}{{#if (eq @importSettings.topField "pack.provinces")}}---
+[[{{@importDataRoot.importInfo.thisCampaignPath}}/{{@importDataRoot.importInfo.thisCampaign}} Home|{{@importDataRoot.importInfo.thisCampaign}} Home]] | [[{{@importDataRoot.importInfo.thisCampaignPath}}/05-Atlas/{{@importDataRoot.info.mapName}}/{{@importDataRoot.info.mapName}}-Linked Atlas|{{@importDataRoot.info.mapName}}-Linked Atlas]] | Capital: `=link(this.capitalFile,this.capitalName)`{{/if}}{{#if (eq @importSettings.topField "pack.provinces")}}---
 aliases:
 - {{name}}
 campaign: {{@importDataRoot.importInfo.thisCampaign}}
@@ -354,7 +401,7 @@ nameID: {{name}}-{{i}}
 mapName: {{@importDataRoot.info.mapName}}
 pronounced:
 {{setvar "currentCapitalName" (getBurgName burg @importDataRoot.pack.burgs)}}provincialCapital: {{"currentCapitalName"}}
-{{setvar "capitalPath" (getCapitalNotePath burg state @importDataRoot)}}capitalNotePath: {{"capitalPath"}}
+{{setvar "capitalPath" (getcapitalFile burg state @importDataRoot)}}capitalFile: {{"capitalPath"}}
 religion: {{getReligionName this.center @importDataRoot.pack.cells @importDataRoot.pack.religions}}
 rulers:
 shortDescription:
@@ -367,7 +414,6 @@ tags:
 templateVersion: 4.4
 WBProgress: Imported
 ---
-{{log "END Provinces Frontmatter"}}
 > [!metadata|metadata]- Metadata & Page Controls
 >> [!metadata|metadataoption]- System
 >> #### System
@@ -541,12 +587,13 @@ tags:
 - Burg
 - {{@importDataRoot.info.mapName}}
 - {{@importDataRoot.importInfo.thisCampaignShortCode}}
-- {{burgProvinceNameLookup cell @importDataRoot.pack.cells @importDataRoot.pack.provinces}}
+- {{getBurgType this @importDataRoot.settings}}
+- {{burgProvinceNameLookupTag cell @importDataRoot.pack.cells @importDataRoot.pack.provinces}}
 - {{getStateName state @importDataRoot.pack.states}}
 temple: {{temple}}
 temperature: {{getTemperature this @importDataRoot}}
 temperatureLikeness: {{getTemperatureLikeness this @importDataRoot}}
-templateVersion: 4.4
+templateVersion: 5.0
 type: {{type}}
 walls: {{walls}}
 WBProgress: Imported
@@ -614,29 +661,7 @@ There is an elaborate method (see [[JSON Import How To#Wrangling FMG Burg Maps]]
 > darkMode: false
 > ```
 >
-> [Link to {{name}} on FMG Map]({{@importDataRoot.importInfo.mapDropboxFMGLink}}&scale=6{{getFMGCellXY this.cell @importDataRoot.pack.cells}})| Generator Link: `BUTTON[mapLink-to-download]`
-
-```meta-bind-js-view
-{burgMapLink} as mapLink
-{burgName} as name
-{id} as id
----
-let fileName = context.bound.name + "-" + context.bound.id;
-navigator.clipboard.writeText(fileName);
-let url = context.bound.mapLink;
-return engine.markdown.create(`
-~~~meta-bind-button
-label: Open
-id: mapLink-to-download
-style: primary
-hidden: true
-tooltip: Click this button to open the Burg's map on the generator page to download. The name this note expects to see will be saved to clipboard (ID-Name). Save and place in "01-Campaigns/{{@importDataRoot.importInfo.thisCampaign}}/98-{{@importDataRoot.importInfo.thisCampaign}} Assets" folder
-action:
- type: open
- link: ${url}
-~~~
-`)
-```
+> [Link to {{name}} on FMG Map]({{@importDataRoot.importInfo.mapDropboxFMGLink}}&scale=6{{getFMGCellXY this.cell @importDataRoot.pack.cells}}) | Download Helper Link: `BUTTON[mapLink-to-download]`
 
 %%LeafletMapTAIL%%
 
@@ -650,8 +675,8 @@ action:
 > style: height: 1000px;
 > urlSuffix: {{getBurgMapLink this @importDataRoot.info.seed @importDataRoot.pack.cells @importDataRoot.settings @importDataRoot.grid}}
 > ```
->  `=elink(this.burgMapLink,"Visit Burg Map")`
 >
+>  `=elink(this.burgMapLink,"Visit Burg Map")` | Generator Link: `BUTTON[mapLink-to-download]`
 
 %%WebMapTAIL%%
 
@@ -729,7 +754,29 @@ Below are any notable zones or regions within `=this.burgName`
 
 ---
 
-[[{{@importDataRoot.importInfo.thisCampaignPath}}/{{@importDataRoot.importInfo.thisCampaign}} Home|{{@importDataRoot.importInfo.thisCampaign}} Home]] | [[{{@importDataRoot.importInfo.thisCampaignPath}}/05-Atlas/{{@importDataRoot.info.mapName}}/{{@importDataRoot.info.mapName}}-Linked Atlas|{{@importDataRoot.info.mapName}}-Linked Atlas]] | State: `=link(this.stateNotePath,this.stateName)` | Province: `=link(this.provinceName)`{{/if}}{{#if (eq @importSettings.topField "pack.cultures")}}---
+[[{{@importDataRoot.importInfo.thisCampaignPath}}/{{@importDataRoot.importInfo.thisCampaign}} Home|{{@importDataRoot.importInfo.thisCampaign}} Home]] | [[{{@importDataRoot.importInfo.thisCampaignPath}}/05-Atlas/{{@importDataRoot.info.mapName}}/{{@importDataRoot.info.mapName}}-Linked Atlas|{{@importDataRoot.info.mapName}}-Linked Atlas]] | State: `=link(this.stateNotePath,this.stateName)` | Province: `=link(this.provinceName)`
+
+```meta-bind-js-view
+{burgMapLink} as mapLink
+{burgName} as name
+{id} as id
+---
+let fileName = context.bound.name + "-" + context.bound.id;
+navigator.clipboard.writeText(fileName);
+let url = context.bound.mapLink;
+return engine.markdown.create(`
+~~~meta-bind-button
+label: Open
+id: mapLink-to-download
+style: primary
+hidden: true
+tooltip: Click this button to open the Burg's map on the generator page to download. The name this note expects to see will be saved to clipboard (ID-Name). Save and place in "01-Campaigns/{{@importDataRoot.importInfo.thisCampaign}}/98-{{@importDataRoot.importInfo.thisCampaign}} Assets" folder
+action:
+ type: open
+ link: ${url}
+~~~
+`)
+```{{/if}}{{#if (eq @importSettings.topField "pack.cultures")}}---
 aliases:
 campaign: "{{@importDataRoot.importInfo.thisCampaign}}"
 cultureName: "{{name}}"
@@ -870,7 +917,7 @@ tags:
 - Religion
 - {{@importDataRoot.info.mapName}}
 type: {{type}}
-templateVersion: 3.2
+templateVersion: 5.0
 WBProgress: Imported
 ---
 
@@ -918,9 +965,8 @@ WBProgress: Imported
 > darkMode: false
 > marker: religion,{{getCellLeafletXY center @importDataRoot.pack.cells @importDataRoot.info}},,Religion's Center
 > ```
-> <div style="width: 250px; height: 50px; background-color: {{color}}; display: flex; justify-content: center; align-items: center; font-size: 24px; color: {{color}};">▮</div>
-> The area shown in the color above is the reach of {{religionName}}
-
+> <div style="width: 500px; height: 20px; background-color: {{color}}; display: flex; justify-content: center; align-items: center; font-size: 24px; color: {{color}};">▮</div>
+> The area shown in the color above is the reach of {{name}}
 
 %% All the info in this 'infobox' will appear in the panel to the right. Most of these values are pulled from the metadata in the properties above. %%
 
@@ -942,6 +988,7 @@ WBProgress: Imported
 > **Form** | `=this.form`|
 > **Culture** | `=this.culture`|
 > **Leaders** | `=this.leaders`|
+> **Followers** | `=this.followers`|
 > 
 
 # **`=this.religionName`**

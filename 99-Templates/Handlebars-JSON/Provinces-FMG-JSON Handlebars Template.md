@@ -15,7 +15,7 @@ nameID: {{name}}-{{i}}
 mapName: {{@importDataRoot.info.mapName}}
 pronounced:
 {{setvar "currentCapitalName" (getBurgName burg @importDataRoot.pack.burgs)}}provincialCapital: {{"currentCapitalName"}}
-{{setvar "capitalPath" (getCapitalNotePath burg state @importDataRoot)}}capitalNotePath: {{"capitalPath"}}
+{{setvar "capitalPath" (getcapitalFile burg state @importDataRoot)}}capitalFile: {{"capitalPath"}}
 religion: {{getReligionName this.center @importDataRoot.pack.cells @importDataRoot.pack.religions}}
 rulers:
 shortDescription:
@@ -28,7 +28,6 @@ tags:
 templateVersion: 4.4
 WBProgress: Imported
 ---
-{{log "END Provinces Frontmatter"}}
 > [!metadata|metadata]- Metadata & Page Controls
 >> [!metadata|metadataoption]- System
 >> #### System
