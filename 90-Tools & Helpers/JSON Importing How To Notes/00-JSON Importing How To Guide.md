@@ -46,7 +46,7 @@ Here is a list of the shorthand terms we will use and what they are referring to
 | `{thisCampaignName}` | The name you gave the campaign when you created it. |
 | `{thisCampaignPath`} | The location, within this vault of where the files related to a specific Campaign are located. To be precise, it will be located here: `01-Campaigns/{thisCampaignName}` |
 | `{thisCampaignAtlas}` | The campaign-specific location where the files created by this import process will be stored in the vault. Specifically, `01-Campaigns/{thisCampaignName}/05-Atlas` |
-| `{thisFMGMapName}` | Every `FMGmap` has a name. It can be found on the FMG page itself on the "Options" menu pane - 4th item from the top - "Map Name." That info will be part of the `FMGJSONdata`, so we can make use of it to refer to the full set of data imported from this `FMGmap`. |
+| `{thisFMGMapName}` or `{thisMapName}` | Every `FMGmap` has a name. It can be found on the FMG page itself on the "Options" menu pane - 4th item from the top - "Map Name." That info will be part of the `FMGJSONdata`, so we can make use of it to refer to the full set of data imported from this `FMGmap`. |
 
 
 

@@ -15,12 +15,15 @@ In this note, you will find instructions for importing the FMG JSON to create no
 
 As of, Wyrmling v.0.6, this process can now be done in a batch import thanks to the Batch Import feature of the JSON/CSV Importer Plugin. There is a [[03b-Multi-step Importing Process|multi-step importing process]] that also works, but is much more fiddly and requires a lot of patience. I whole-heartedly recommend using the batch import process.
 
+> [!INFO] Underscores in filenames?
+> Several of the files we'll be using for the Batch Import process have an underscore character at the start of their names. This is just to allow those specific files to bubble to the top of the listings, so they are easy to find.
+
 Using these files, you can set up an import that can all be done in one fell swoop. Here are the files we will use:
 
 #### MASTER Template File
-[[FMG-JSON-Handlebars-MASTER-Template|99-Templates/Handlebars-JSON/_FMG-JSON-Handlebars-MASTER-Template]] - This is the master template to create all the different notes. There are also individual template files for each note type, if you want (or need) to import (or re-import) one particular category of note, you can make use of those individual templates - learn more about that in the [[03b-Multi-step Importing Process|multi-step importing process]] note.
+[[_FMG-JSON-Handlebars-MASTER-Template|99-Templates/Handlebars-JSON/_FMG-JSON-Handlebars-MASTER-Template]] - This is the master template to create all the different notes. There are also individual template files for each note type, if you want (or need) to import (or re-import) one particular category of note, you can make use of those individual templates - learn more about that in the [[03b-Multi-step Importing Process|multi-step importing process]] note.
 
-If *you do make changes* to any of the individual template files, you can easily concatenate them into the master Handlebar template file by running the Python script called `_full-template-maker.py` that lives in the 99-Templates/Handlebars-JSON. It will *delete* the previous version of `_FMG-JSON-Handlebars-MASTER-Template` and create a new one from the Handlebar template files sitting in that folder.
+If *you do make changes* to any of the individual template files, you can easily concatenate them into the master Handlebar template file by running the Python script called `_full-template-maker.py` that lives in the `99-Templates/Handlebars-JSON.` It will *delete* the previous version of `_FMG-JSON-Handlebars-MASTER-Template` and create a new one from the Handlebar template files sitting in that folder.
 
 Here are the individual Handlebar template files and what they deal with:
 
@@ -34,11 +37,11 @@ Here are the individual Handlebar template files and what they deal with:
 | [[Religions-FMG-JSON Handlebars Template]] | Importing & Creating FMG-Religion Notes |
 | [[Atlas-FMG-JSON Handlebars Template]] | Importing & Creating an Atlas Note of all the data that is imported for the FMG map |
 | [[_FMG-JSON-Handlebars-MASTER-Template]] | The master Handlebar template for all of the above note types. Required for the [[#The Batch Import Process]] process described below |
-| [[Helpers-FMG-JSON.js]] | Several helper functions that process all the JSON data for importing and formatting by the Handlebar templates |
+| _Helpers-FMG-JSON.js | Several helper functions that process all the JSON data for importing and formatting by the Handlebar templates |
 
 
 #### Handlebar Helper JavaScript File
-`99-Templates/Handlebars-JSON/Helpers-FMG-JSON.js` - not linkable because it's a JavaScript file. Open it in your favorite text editor if you want to take a look at it. The Handlebar Templates will create many links between related locations and it *should* make your life, as worldbuilder, a little easier and more fun.
+`99-Templates/Handlebars-JSON/_Helpers-FMG-JSON.js` - not linkable because it's a JavaScript file. Open it in your favorite text editor if you want to take a look at it. The Handlebar Templates will create many links between related locations and it *should* make your life, as worldbuilder, a little easier and more fun.
 
 In order to process the data from FMG's JSON file, the data needs to be processed to convert numeric values for things like IDs into human-readable elements. I've reverse engineered a lot of the functions from the FMG code to recreate similar data. The Handlebar Helper for this import is on the larger side and contains many functions
 
@@ -62,7 +65,7 @@ Here are the steps for doing a batch import of the FMG JSON you prepped in the p
 	2. If you placed the to-be-imported version of your FMG map's JSON file in the folder, `99-Templates/Handlebars-JSON`, you will conveniently be placed into that same folder for the next three file chooser steps below.
 	3. Leave "Specify URL to JSON data" & "Data contains multiple JSON objects" *empty* - not even a "space" should be in there.
 	4. Move to section - "Choose TEMPLATE File" - click "Choose File" and select the master template file `_FMG-JSON-Handlebars-MASTER-Template`
-	5. Move to section - "Choose HELPERS File" - click "Choose File" and select the helpers script: `Helpers-FMG-JSON.js`
+	5. Move to section - "Choose HELPERS File" - click "Choose File" and select the helpers script: `_Helpers-FMG-JSON.js`
 	6. Move to section - "Choose BATCH File" - click "Choose File" and select the JSON Batch Import control file: `_FMG-Import-Batch.JSON`
 	7. In the field next to "Field containing the data", make sure to delete any value there (there may be a value left there from the most previous import). Truly delete any value there. Do not leave *a space* in this field - it will mess up the import.
 	8. Uncheck "Each subfield is a separate note"

@@ -2,9 +2,11 @@
 > These instructions have not been fully updated to reflect all the changes in the process made for Wyrmling-v.0.6, where Batch Importing was added.
 > 
 > I hope to update these instructions at a future date.
+> 
+> For now, once imported, each Burg note, contains the code for the Leaflet and a live Web View of the Burg's map from FMG. You can easily save those maps, one-at-a-time, to your campaign's asset folder. Just expand the callout for either map and you will see the link code & a button that will pre-load the correct filename for that Burg's map to your clipboard, to make saving a little easier.
 
 # Wrangling FMG Burg Maps
-FMG includes connections to Watabou's [Medieval Fantasy City Generator](https://watabou.github.io/city-generator/?size=25&seed=981800034&greens=0&citadel=1&urban_castle=1&plaza=1&temple=1&walls=0&shantytown=0&coast=1&river=0&gates=-1&sea=0.2) and [Village Generator](https://watabou.github.io/village-generator/?seed=1714876149&tags=no%20square,highway). The URL links to maps for each of your map's Burgs is available to extract from the JSON, but it does not exist in a JSON field as the URL. It has to be extracted via some HelperJS functions in [[Helpers-FMG-JSON.js]].
+FMG includes connections to Watabou's [Medieval Fantasy City Generator](https://watabou.github.io/city-generator/?size=25&seed=981800034&greens=0&citadel=1&urban_castle=1&plaza=1&temple=1&walls=0&shantytown=0&coast=1&river=0&gates=-1&sea=0.2) and [Village Generator](https://watabou.github.io/village-generator/?seed=1714876149&tags=no%20square,highway). The URL links to maps for each of your map's Burgs is available to extract from the JSON, but it does not exist in a JSON field as the URL. It has to be extracted via some HelperJS functions in `_Helpers-FMG-JSON.js`.
 
 You don't need to do anything to get that info. The URLs that link to the same maps directly out of the FMG map are extracted here as a part of the import process. There will be a link to the map in the info box on each Burg's individual note.
 

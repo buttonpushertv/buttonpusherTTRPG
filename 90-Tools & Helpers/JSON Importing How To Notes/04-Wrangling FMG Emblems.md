@@ -5,11 +5,6 @@ tags:
 - Importing
 ---
 
-> [!ERROR] OLDER PROCESS WARNING
-> These instructions have not been fully updated to reflect all the changes in the process made for Wyrmling-v.0.6, where Batch Importing was added.
-> 
-> I hope to update these instructions at a future date.
-
 # Cool emblems. I want them.
 
 One the coolest things about FMG, IMHO, are the Emblems. Having them available to stick in your notes, gives your notes much more polish.
@@ -56,57 +51,114 @@ Steps undertaken to wrangle the FMG emblems connected to each State, Province, a
 > - (FOR FUTURE LEARNING) [Web Scraping With Javascript and Node.js Guide](https://brightdata.com/blog/how-tos/web-scraping-with-node-js)
 
 9. Once you have created that script, run it in your Python environment and export the output to a file you can find. (i.e.- in Windows WSL, run the script with `python3 your_script.py>output_file.txt` to pipe the output to a file). The output will be a comma-separated list of all the `<figcaption>` tags which will contain the names of all the elements *(the names that appear above each emblem in the HTML file)*
-10. Next, you'll want to rename the `svgexport` files so that they fully sort properly based on their name and numbering. In Windows, because the digits aren't padded, they don't sort correctly. Using the following PowerShell script, you can rename the files so that the digits are padded out to 3 characters (adding zeroes to 1- and 2-digit numbers):
+10. Next, you'll want to rename the `svgexport` files so that they fully sort properly based on their name and numbering. When you save the files from the above export, the digits aren't padded and they don't sort correctly. Using the following Python script, you can rename the files so that the digits are padded out to 3 characters (adding zeroes to 1- and 2-digit numbers). This script will rename files that are sitting in the same directory as the script when run:
 
 > ```
-> # Get the list of files
-> $files = Get-ChildItem -Path "path_to_directory" -Filter "svgexport-*.svg" -Force
+> import os
+> import re
+> 
+> # Get the current working directory
+> directory_path = os.getcwd()
+> 
+> # Get the list of files in the current directory
+> files = [f for f in os.listdir(directory_path) if re.match(r'svgexport-\d+\.svg', f)]
 > 
 > # Output the directory path for debugging
-> Write-Host "Checking directory: .\emblems_export"
+> print(f"Checking directory: {directory_path}")
 > 
 > # Check if any files are found
-> if ($files.Count -eq 0) {
->     Write-Host "No files found matching the pattern."
-> } else {
->     Write-Host "Files found: $($files.Count)"
-> }
+> if not files:
+>     print("No files found matching the pattern.")
+> else:
+>     print(f"Files found: {len(files)}")
 > 
 > # Loop through each file
-> foreach ($file in $files) {
->     # Get the current file name and extract the number
->     $fileName = $file.Name
->     $number = $fileName -replace 'svgexport-(\d+).svg', '$1'
+> for file_name in files:
+>     # Extract the number from the file name
+>     match = re.search(r'svgexport-(\d+)\.svg', file_name)
+>     if match:
+>         number = match.group(1)
 > 
->     # Pad the number with leading zeroes
->     $paddedNumber = $number.PadLeft(3, '0')
+>         # Pad the number with leading zeroes
+>         padded_number = number.zfill(3)
 > 
->     # Construct the new file name
->     $newFileName = "svgexport-$paddedNumber.svg"
+>         # Construct the new file name
+>         new_file_name = f"svgexport-{padded_number}.svg"
 > 
->     # Output the old and new file names for debugging
->     Write-Host "Renaming $fileName to $newFileName"
+>         # Output the old and new file names for debugging
+>         print(f"Renaming {file_name} to {new_file_name}")
 > 
->     # Rename the file
->     Rename-Item -Path $file.FullName -NewName $newFileName
-> }
+>         # Rename the file
+>         old_file_path = os.path.join(directory_path, file_name)
+>         new_file_path = os.path.join(directory_path, new_file_name)
+>         os.rename(old_file_path, new_file_path)
+>    ```
 
-11. Replace `"path_to_directory"` with the actual path to the directory containing your files. This script will rename the files according to your specifications: single-digit numbers will have two leading zeroes added, and double-digit numbers will have one leading zero added, resulting in all files having three digits in the filename tail. Save the file to the folder where the images are and give a `.ps1` extension. Run it by using `.\your_script.ps1` and rename the files.
+11. Save the file to the folder where the images are and give it a `.py` extension. Run it by using `python3 .\your_script.py`, while sitting in the folder where they are saved and rename the files.
 12. Now that you have a document with the `figcaption` values and have renamed the Emblem image files, you are ready to create yet another script to rename the files so that they match up. Due to things being saved in the order they appear in that HTML document, this renaming should be trivial.
-13. Obtain a listing of the `svgexport` image files as a text file. I use [Freecommander](https://freecommander.com/en/summary/) and you can get this by simply selecting all the files in the folder and pressing `alt-c` to copy all the file names to the clipboard.
-14. Paste the file listing into the first column of a spreadsheet (Google Sheets works fine).
-15. Open the `output_file.txt` you created back in step 9 in a text editor. Do a search & replace to remove the `<figcaption>` & `</figcaption>` tag codes. And then do a replace on the pattern `, ` (note the space after the comma) and convert them to newline codes (using Notepad++ for instance, `Ctrl-H`, enable the *Extended* Search Mode option, find `, ` (comma space pattern) and replace with `\n`). NOTE: There will also be an open square bracket as the first character, and a close square bracket as the very last character - remove those as well. 
-16. Once you have done step 12, you should now have a listing of the State, Provinces, and Burgs from FMG with one item per line.
-17. Paste that name data into the same spreadsheet from step 11, in the second column.
-18. In the spreadsheet, create a `CONCATENATE` function in the first cell of the 3rd column. Look at the code below to copy what you need. Here's an explanation of what it should contain: The `CHAR(34)` code will insert double quote marks to wrap the filename that will have spaces. The `campaign_name OR world_name` portion can be whatever you want to use. If you've followed importing steps at the top of this document, the templates are setup to use the `campaignShortCode` you entered when you created a new campaign. The frontmatter field called `emblem` within States, Provinces, and Burgs should pre-populate with an item that is formatted like this: `campaignShortCode-world_name Emblem location_name.png` - where `location_name` will be whatever you're locations are named and `world_name` is the name of the FMG world taken from the JSON element at `info.mapName`. 
+13. Obtain a listing of the `svgexport` image files as a text file. From the Commandline in Windows, you can get this by entering:
+
+ ```
+ dir /b /a-d > emblem_filenames.txt
+ ```
+ 
+ Or, if you're on a Mac, enter this in Terminal:
+
+ ```
+ ls -1F > emblem_filenames.txt
+ ```
+
+14. We are going to assemble our various files into a commandline entry for each location with an emblem. Create a new spreadsheet in your favorite spreadsheet program. (Google Sheets works fine - you may need to tweak the formulas below if you are using another app).
+15. In cell A1, enter `mapName`
+16. In cell B2, enter the `{FMGmapName}` for your map. The `{FMGmapName}` portion can be whatever you want to use. When using the imported FMG notes, the frontmatter field called `emblem` within States, Provinces, and Burgs should pre-populate with an item that is formatted like this: `{FMGmapName} Emblem location_name.png` - where `location_name` will be whatever your locations are named and `{FMGmapName}` is the name of the FMG world taken from the JSON element at `info.mapName`. It's also the name of the folder that got created under `01-Campaigns/05-Atlas` on import.
+17. Starting at cell A2, paste the file listing into the first column of a spreadsheet.
+18. Open the `output_file.txt` you created back in step 9 in a text editor. Do a search & replace to remove the `<figcaption>` & `</figcaption>` tag codes. And then do a replace on the pattern `, ` (note the space after the comma) and convert them to newline codes (using Notepad++ for instance, `Ctrl-H`, enable the *Extended* Search Mode option, find `, ` (comma space pattern) and replace with `\n`). NOTE: There will also be an open square bracket as the first character, and a close square bracket as the very last character - remove those as well. 
+19. Once you have done step 18, you should now have a listing of the State, Provinces, and Burgs from FMG with one item per line. These names should also be in an order that matches the order of the `svgexport` filenames.
+20. Paste that name data into the same spreadsheet from step 4, in the second column, starting at cell B2.
+21. Let's create one last column where we will format the name for each of the new files. In the third column, enter this formula into cell C2 & then fill it down to the end of your list of location - one for each file/location:
 
 ```
-=CONCATENATE("rename ", CHAR(34), A1, CHAR(34)," ", CHAR(34),"cheia Emblem ", B1, ".png", CHAR(34))
+=CONCATENATE($B$1, " Emblem ", B2, ".png",)
 ```
 
-8. Once you have the `CONCATENATE` formula creating the new combined fields correctly, fill every cell in that third column with the formula (click to select the first cell in the column, then scroll to the very end of your list and shift-click, then press Ctrl-D(Cmd-D on Mac) to create all the commands. (Google Sheets may even ask you to auto-populate the column). Once you have them all, select that column and copy it to the clipboard.
-9. Navigate to the folder where you've saved the FMG Emblems, and open a command line window.
-10. Create a new `.bat` file, call it `emblem-rename.bat` and open it for editing and paste the `CONCATENATE` column results into the file and save it.
-11. Running that `.bat` file now will rename all your FMG Emblem files so that they should match the emblem with the State/Province/Burg it goes with. (OPTIONAL - you could add `state`, `province`, and `burg` to the respective file names. )
-12. Dealing with duplicated names - If you had any dupe files with suffix added, the files that would have been renamed to an existing duplicate name are still named `svgexport-???.png` - use the id numbers to find what they should be named - rename to create a unique filname. You could add  `-stateName` to any of the dupes. You will need to correct these manually after import.
-13. (OPTIONAL - converting PNG images of Burg maps to WEBP with ImageMagick - steps to come)
+22. We can also do a check to see if there are any files that may end up with the same name.
+	1. Select all the values in column C - the to-be-renamed filenames.
+	2. Open the `Conditional Formatting` pane and click `+ Add another rule`.
+	3. Make sure `Apply to range` covers the full range of values in column D.
+	4. Under `Format rules`, where it says `Format cells if...`, choose ` Custom formula is` from that pull down menu.
+	5. Enter this formula: 
+	```
+	=COUNTIF(C:C,C2)>1
+	```
+	6. Change the `Formatting style` to something you'll be able to catch - I like a red color.
+	7. Click `Done` to save that rule.
+	8. Any cells that now have a duplicate name will be colored to the color you chose in step 6.
+	9. You could certainly, pre-emptively, "fix" those issues by manually editing the names with issues.
+	10. What I like to do is copy the full "rename" command from column E for the problem name.
+	11. Then, over in Column F (just as a safety), I paste the "values" only. In Google Sheets, you can press `Crtl-Shift-V` to do that, or right-click and choose `Paste Special>Values only`.
+	12. Now, you can edit the command manually to correct the issues.
+	13. Once corrected, you can drag that new value over to the same row of column C and replace the name with your new one.
+	14. You *will* need to edit the notes that point to ay of the files where you've changed the names so that they point to the correct files.
+23. Starting at cell D2, create a `CONCATENATE` function. Look at the code below to copy what you need. Here's an explanation of what it should contain: The `CHAR(34)` code will insert double quote marks to wrap the filename that will have spaces. 
+
+For Windows, use this:
+```
+=CONCATENATE("rename ", CHAR(34), A2, CHAR(34)," ", CHAR(34), C2, CHAR(34))
+```
+
+On a Mac, use this:
+```
+=CONCATENATE("mv ", CHAR(34), A2, CHAR(34)," ", CHAR(34), C2, CHAR(34))
+```
+
+24. Once you have the `CONCATENATE` formula creating the new combined fields correctly, fill them down to the end of your list. 
+25. Once you have them all created, select that column and copy it to the clipboard.
+26. Navigate to the folder where you've saved the FMG Emblems, and open a command line window.
+27. If you're on Windows, create a new `.bat` file, call it `emblem-rename.bat` and open it for editing and paste the `CONCATENATE` column results into the file and save it - use the first example above.
+28. If you're on a Mac, create a new `.sh` file, call it `emblem-rename.sh` and open it for editing and paste the `CONCATENATE` column results into the file and save it - use the second example above. You will need to change the permissions on the script so that it can be run. In the Terminal, enter `chmod +x emblem-rename.sh` for that file and it should now be able to run.
+29. Running that script file now will rename all your FMG Emblem files so that they should match the emblem with the State/Province/Burg it goes with. Again, since the files were exported in order, they should all line up.
+
+> [!INFO] Converting to WEBP
+> You could certainly convert all the files to WEBP from PNG. That would save space. See [[06-Converting Images to WEBP Format]] for more info.
+> 
+> You will need to change the `.png` to `.webp` in all the notes where the Emblems are referenced. It may be easier to just make a change in the Handlebar Templates and redo the import, if you opt to go that route.

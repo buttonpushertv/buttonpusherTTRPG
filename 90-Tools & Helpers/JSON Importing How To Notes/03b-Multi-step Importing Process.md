@@ -65,7 +65,7 @@ To handle duplicates, the JSON/CSV Importer has two features. You can use a comb
 > **THE METHOD ABOVE IS THE CURRENT RECOMMENDED METHOD FOR DUPE HANDLING. SEE EACH SECTION BELOW FOR DETAILED INSTRUCTIONS.**
 >
 >> [!QUESTION]- JSON/CSV Importer Helpers on Import Feature Request
->> A feature request for having Custom Helpers run on fields within the import dialog box was made. The reply was that in an updated version, there is now an ability to run limited JS helpers directly in the field. So, the feature is sort of added in version [0.36.0](https://github.com/farling42/obsidian-import-json/releases/tag/0.36.0) of the JSON/CSV Importer, but the accessing the full `Helpers-FMG-JSON.js` from the import dialog is not likely to be included.
+>> A feature request for having Custom Helpers run on fields within the import dialog box was made. The reply was that in an updated version, there is now an ability to run limited JS helpers directly in the field. So, the feature is sort of added in version [0.36.0](https://github.com/farling42/obsidian-import-json/releases/tag/0.36.0) of the JSON/CSV Importer, but the accessing the full `_Helpers-FMG-JSON.js` from the import dialog is not likely to be included.
 >> 
 >> Issue on Gihub: [Process helpers on fieldname values from import dialog? · Issue #68 · farling42/obsidian-import-json · GitHub](https://github.com/farling42/obsidian-import-json/issues/68)
 
@@ -142,7 +142,7 @@ To import the States Notes, here are the settings for the "Import JSON/CSV dialo
 | Specify URL to JSON data|**_Leave blank_** |
 | Data contains multiple JSON objects|**_Leave blank_** |
 | Choose TEMPLATE file|**_[[States-FMG-JSON Handlebars Template]]_** |
-| Choose HELPERS file|**_Helpers-FMG-JSON.js_** |
+| Choose HELPERS file|**__Helpers-FMG-JSON.js_** |
 | Field containing the data|**_pack.states_** |
 | Each subfield is a separate note|**_unchecked_** |
 | Field to use as Note Name|**_(see code block below - must be copy/pasted *exactly* as is)_** |
@@ -171,7 +171,7 @@ To import the Provinces Notes, here are the settings for the "Import JSON/CSV di
 | Specify URL to JSON data|**_Leave blank_** |
 | Data contains multiple JSON objects|**_Leave blank_** |
 | Choose TEMPLATE file|**_[[Provinces-FMG-JSON Handlebars Template]]_** |
-| Choose HELPERS file|**_Helpers-FMG-JSON.js_** |
+| Choose HELPERS file|**__Helpers-FMG-JSON.js_** |
 | Field containing the data|**_pack.provinces_** |
 | Each subfield is a separate note|**_unchecked_** |
 | Field to use as Note name| **_(see code block below - must be copy/pasted *exactly* as is)_** |
@@ -199,7 +199,7 @@ To import the Burg Notes, here are the settings for the "Import JSON/CSV dialog"
 | Specify URL to JSON data|**_Leave blank_** |
 | Data contains multiple JSON objects|**_Leave blank_** |
 | Choose TEMPLATE file|**_[[Burgs-FMG-JSON Handlerbars Template]]_** |
-| Choose HELPERS file|**_Helpers-FMG-JSON.js_** |
+| Choose HELPERS file|**__Helpers-FMG-JSON.js_** |
 | Field containing the data|**_pack.burgs_** |
 | Each subfield is a separate note|**_unchecked_** |
 | Field to use as Note name|**_(see code block below - must be copy/pasted *exactly* as is)_** |
@@ -227,7 +227,7 @@ To import the Culture Notes, here are the settings for the "Import JSON/CSV dial
 | Specify URL to JSON data|**_Leave blank_** |
 | Data contains multiple JSON objects|**_Leave blank_** |
 | Choose TEMPLATE file|**_[[Cultures-FMG-JSON Handlebars Template]]_** |
-| Choose HELPERS file|**_Helpers-FMG-JSON.js_** |
+| Choose HELPERS file|**__Helpers-FMG-JSON.js_** |
 | Field containing the data|**_pack.cultures_** |
 | Each subfield is a separate note|**_unchecked_** |
 | Field to use as Note name|**_(see code block below - must be copy/pasted *exactly* as is)_** |
@@ -257,7 +257,7 @@ To import the Religion Notes, here are the settings for the "Import JSON/CSV dia
 | Specify URL to JSON data|**_Leave blank_** |
 | Data contains multiple JSON objects|**_Leave blank_** |
 | Choose TEMPLATE file|**_[[Religions-FMG-JSON Handlebars Template]]_** |
-| Choose HELPERS file|**_Helpers-FMG-JSON.js_** |
+| Choose HELPERS file|**__Helpers-FMG-JSON.js_** |
 | Field containing the data|**_pack.reilgions_** |
 | Each subfield is a separate note|**_unchecked_** |
 | Field to use as Note name|**_**_(see code block below - must be copy/pasted *exactly* as is)_**_** |
@@ -290,7 +290,7 @@ To import the Atlas Note, here are the settings for the "Import JSON/CSV dialog"
 | Specify URL to JSON data|**_Leave blank_** |
 | Data contains multiple JSON objects|**_Leave blank_** |
 | Choose TEMPLATE file|**_[[Atlas-FMG-JSON Handlebars Template]]_** |
-| Choose HELPERS file|**_Helpers-FMG-JSON.js_** |
+| Choose HELPERS file|**__Helpers-FMG-JSON.js_** |
 | Field containing the data|**_(leave blank)_** (you will be pulling from the entire JSON file) |
 | Each subfield is a separate note|**_unchecked_** |
 | Field to use as Note name|**_(see code block below - must be copy/pasted *exactly* as is)_** |
