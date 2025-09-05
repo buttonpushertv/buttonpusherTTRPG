@@ -20,8 +20,23 @@
               "icon": "lucide-file",
               "title": "Torcosia-Linked Atlas"
             }
+          },
+          {
+            "id": "ac8dbc7c34489fed",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "ShareMyPlugin.md",
+                "mode": "preview",
+                "source": true
+              },
+              "icon": "lucide-file",
+              "title": "ShareMyPlugin"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -185,10 +200,10 @@
       "obsidian-import-json:JSON/CSV Importer": false
     }
   },
-  "active": "088a87db6172d30c",
+  "active": "ac8dbc7c34489fed",
   "lastOpenFiles": [
-    "01-Campaigns/Escape from the Eternal Throne/05-Atlas/Torcosia/States/Pupunmaa/Pupunmaa.md",
     "01-Campaigns/Escape from the Eternal Throne/05-Atlas/Torcosia/Torcosia-Linked Atlas.md",
+    "01-Campaigns/Escape from the Eternal Throne/05-Atlas/Torcosia/States/Pupunmaa/Pupunmaa.md",
     "01-Campaigns/Escape from the Eternal Throne/05-Atlas/Escape from the Eternal Throne-Simple Atlas.md",
     "90-Tools & Helpers/JSON Importing How To Notes/04-Wrangling FMG Emblems.md",
     "90-Tools & Helpers/Obsidian Formatting Cheat Sheet.md",
