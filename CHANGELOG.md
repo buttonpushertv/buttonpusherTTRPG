@@ -2,7 +2,7 @@
 
 ## Wyrmling Edition
 
-### -v.0.6 - released ????
+### -v.0.6 - released 2025-Sep-05-1730EST
 An update to deal with changes to the FMG JSON data after new features were added and things were reworked (e.g.- v1.99 (Routes rework))
 
 ### -v.0.5 - released 2024-Apr-23-1700EST
