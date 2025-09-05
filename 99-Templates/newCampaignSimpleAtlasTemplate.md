@@ -72,45 +72,51 @@ SORT file.name ASC
 Remove this entire line and the one before the Leaflet block to make it visible --> %%
 (Want to place a map of your world here? View this page in Source Mode to see hidden comments about how to enable it.)
 
-### States
-```dataview
-TABLE WITHOUT ID file.link as "Full Name", link(provinces) as "Provinces", link(capitalFile, capitalName) as "Capital"
-FROM #State and "{{VALUE:newCampaignPath}}"
-SORT file.name ASC
-```
+
+> [!callout]- **States**
+> 
+> ```dataview
+> TABLE WITHOUT ID file.link as "Full Name", link(provinces) as "Provinces", link(capitalFile, capitalName) as "Capital"
+> FROM #State and "{{VALUE:newCampaignPath}}"
+> SORT file.name ASC
+> ```
 
 ---
 
-### Provinces
-```dataview
-TABLE WITHOUT ID file.link as "Name", link(state) as "State"
-FROM #Province and "{{VALUE:newCampaignPath}}"
-SORT state ASC, province ASC
-```
+> [!callout]- **Provinces**
+> 
+> ```dataview
+> TABLE WITHOUT ID file.link as "Name", link(state) as "State"
+> FROM #Province and "{{VALUE:newCampaignPath}}"
+> SORT state ASC, province ASC
+> ```
 
 ---
 
-### Burgs
-```dataview
-TABLE WITHOUT ID file.link as "Name", link(provinceName) as "Province", link(stateName) as "State"
-FROM #Burg and "{{VALUE:newCampaignPath}}"
-SORT file.name ASC
-```
+> [!callout]- **Burgs**
+> 
+> ```dataview
+> TABLE WITHOUT ID file.link as "Name", link(provinceName) as "Province", link(stateName) as "State"
+> FROM #Burg and "{{VALUE:newCampaignPath}}"
+> SORT file.name ASC
+> ```
 
 ---
 
-### Cultures
-```dataview
-TABLE WITHOUT ID file.link as "Name", type as "Type"
-FROM #Culture and "{{VALUE:newCampaignPath}}"
-SORT file.name ASC
-```
+> [!callout]- **Cultures**
+> 
+> ```dataview
+> TABLE WITHOUT ID file.link as "Name", type as "Type"
+> FROM #Culture and "{{VALUE:newCampaignPath}}"
+> SORT file.name ASC
+> ```
 
 ---
 
-### Religions
-```dataview
-TABLE WITHOUT ID file.link as "Name", type as "Type", form as "Form"
-FROM #Religion and "{{VALUE:newCampaignPath}}"
-SORT file.name ASC
-```
+> [!callout]- **Religions**
+> 
+> ```dataview
+> TABLE WITHOUT ID file.link as "Name", type as "Type", form as "Form"
+> FROM #Religion and "{{VALUE:newCampaignPath}}"
+> SORT file.name ASC
+> ```
