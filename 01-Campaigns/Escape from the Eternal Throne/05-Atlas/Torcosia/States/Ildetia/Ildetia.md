@@ -9,7 +9,7 @@ capitalName: Avetera
 capitalFile: 01-Campaigns/Escape from the Eternal Throne/05-Atlas/Torcosia/States/Ildetia/Provinces/Media Deanery/Burgs/Avetera
 center: 357
 color: #b09dd8
-created: 2025-09-05-10:13
+created: 2025-11-07-22:18
 cssclasses: sixty-pct-width
 culture: Astellian
 emblem: Torcosia Emblem Diocese of Ildetia.png

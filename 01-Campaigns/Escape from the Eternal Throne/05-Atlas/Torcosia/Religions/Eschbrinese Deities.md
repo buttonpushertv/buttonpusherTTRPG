@@ -5,7 +5,7 @@ campaign: "Escape from the Eternal Throne"
 center: 3705
 code: ES
 color: #e4e171
-created: 2025-09-05-10:13
+created: 2025-11-07-22:19
 cssclasses: sixty-pct-width
 culture: Shwazen
 deity: Dodeck, The Hungry Maker

@@ -3,7 +3,7 @@ aliases:
 - Crolis
 campaign: Escape from the Eternal Throne
 color: #92ff91
-created: 2025-09-05-10:13
+created: 2025-11-07-22:18
 cssclasses: sixty-pct-width
 emblem: Torcosia Emblem Crolis Shire.png
 formName: Shire
@@ -80,7 +80,7 @@ WBProgress: Imported
 > unit: mi
 > scale: 3
 > darkMode: false
-> marker: prov_capital,873.620,663.360,[[Crolis-351]],Crolis Provincial Capital
+> marker: prov_capital,873.620,663.360,[[01-Campaigns/Escape from the Eternal Throne/05-Atlas/Torcosia/States/Pseikon/Provinces/Crolis Shire/Burgs/Crolis]],Crolis Provincial Capital
 > ```
 >  [Link to Crolis Shire on FMG Map](https://azgaar.github.io/Fantasy-Map-Generator/?maplink=https://dl.dropboxusercontent.com/scl/fi/3c12q0t9xwt4csjxms7gl/Torcosia-2025-09-03-19-29.map?rlkey=1bbb807rrcdrl7pj6p5h9qu93&dl=0&scale=3&x=663.75&y=419.99)
 

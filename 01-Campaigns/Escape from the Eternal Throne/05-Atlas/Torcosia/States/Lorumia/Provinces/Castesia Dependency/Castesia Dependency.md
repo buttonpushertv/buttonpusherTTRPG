@@ -3,7 +3,7 @@ aliases:
 - Castesia
 campaign: Escape from the Eternal Throne
 color: #b2b4bf
-created: 2025-09-05-10:13
+created: 2025-11-07-22:18
 cssclasses: sixty-pct-width
 emblem: Torcosia Emblem Castesia Dependency.png
 formName: Dependency

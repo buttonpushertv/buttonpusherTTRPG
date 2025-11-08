@@ -3,7 +3,7 @@ aliases:
 - Theliuscum
 campaign: Escape from the Eternal Throne
 color: #b79fd2
-created: 2025-09-05-10:13
+created: 2025-11-07-22:18
 cssclasses: sixty-pct-width
 emblem: Torcosia Emblem Theliuscum Province.png
 formName: Province
@@ -80,7 +80,7 @@ WBProgress: Imported
 > unit: mi
 > scale: 3
 > darkMode: false
-> marker: prov_capital,416.630,340.260,[[Theliuscum-267]],Theliuscum Provincial Capital
+> marker: prov_capital,416.630,340.260,[[01-Campaigns/Escape from the Eternal Throne/05-Atlas/Torcosia/States/Lorumia/Provinces/Theliuscum Province/Burgs/Theliuscum]],Theliuscum Provincial Capital
 > ```
 >  [Link to Theliuscum Province on FMG Map](https://azgaar.github.io/Fantasy-Map-Generator/?maplink=https://dl.dropboxusercontent.com/scl/fi/3c12q0t9xwt4csjxms7gl/Torcosia-2025-09-03-19-29.map?rlkey=1bbb807rrcdrl7pj6p5h9qu93&dl=0&scale=3&x=340.83&y=877.94)
 

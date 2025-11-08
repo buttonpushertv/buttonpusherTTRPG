@@ -3,7 +3,7 @@ aliases:
 - Wiganland
 campaign: Escape from the Eternal Throne
 color: #ffb0c9
-created: 2025-09-05-10:13
+created: 2025-11-07-22:18
 cssclasses: sixty-pct-width
 emblem: Torcosia Emblem Wiganland Territory.png
 formName: Territory

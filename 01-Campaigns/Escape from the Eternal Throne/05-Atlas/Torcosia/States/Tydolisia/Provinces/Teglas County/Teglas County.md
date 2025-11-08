@@ -3,7 +3,7 @@ aliases:
 - Teglas
 campaign: Escape from the Eternal Throne
 color: #d8e976
-created: 2025-09-05-10:13
+created: 2025-11-07-22:18
 cssclasses: sixty-pct-width
 emblem: Torcosia Emblem Teglas County.png
 formName: County
@@ -80,7 +80,7 @@ WBProgress: Imported
 > unit: mi
 > scale: 3
 > darkMode: false
-> marker: prov_capital,556.090,417.070,[[Teglas-221]],Teglas Provincial Capital
+> marker: prov_capital,556.090,417.070,[[01-Campaigns/Escape from the Eternal Throne/05-Atlas/Torcosia/States/Tydolisia/Provinces/Teglas County/Burgs/Teglas]],Teglas Provincial Capital
 > ```
 >  [Link to Teglas County on FMG Map](https://azgaar.github.io/Fantasy-Map-Generator/?maplink=https://dl.dropboxusercontent.com/scl/fi/3c12q0t9xwt4csjxms7gl/Torcosia-2025-09-03-19-29.map?rlkey=1bbb807rrcdrl7pj6p5h9qu93&dl=0&scale=3&x=417.07&y=737.91)
 

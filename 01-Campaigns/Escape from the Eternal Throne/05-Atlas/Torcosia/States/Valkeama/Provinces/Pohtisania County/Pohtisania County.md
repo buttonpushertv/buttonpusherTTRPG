@@ -3,7 +3,7 @@ aliases:
 - Pohtisania
 campaign: Escape from the Eternal Throne
 color: #a79aea
-created: 2025-09-05-10:13
+created: 2025-11-07-22:18
 cssclasses: sixty-pct-width
 emblem: Torcosia Emblem Pohtisania County.png
 formName: County
@@ -80,7 +80,7 @@ WBProgress: Imported
 > unit: mi
 > scale: 3
 > darkMode: false
-> marker: prov_capital,928.160,1902.900,[[Benpaa-41]],Pohtisania Provincial Capital
+> marker: prov_capital,928.160,1902.900,[[01-Campaigns/Escape from the Eternal Throne/05-Atlas/Torcosia/States/Valkeama/Provinces/Pohtisania County/Burgs/Benpaa]],Pohtisania Provincial Capital
 > ```
 >  [Link to Pohtisania County on FMG Map](https://azgaar.github.io/Fantasy-Map-Generator/?maplink=https://dl.dropboxusercontent.com/scl/fi/3c12q0t9xwt4csjxms7gl/Torcosia-2025-09-03-19-29.map?rlkey=1bbb807rrcdrl7pj6p5h9qu93&dl=0&scale=3&x=1902.9&y=365.84)
 

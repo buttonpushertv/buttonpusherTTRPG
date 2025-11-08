@@ -3,7 +3,7 @@ aliases:
 - Alfsos
 campaign: Escape from the Eternal Throne
 color: #ffee5b
-created: 2025-09-05-10:13
+created: 2025-11-07-22:18
 cssclasses: sixty-pct-width
 emblem: Torcosia Emblem Alfsos County.png
 formName: County
@@ -80,7 +80,7 @@ WBProgress: Imported
 > unit: mi
 > scale: 3
 > darkMode: false
-> marker: prov_capital,299.100,939.050,[[Hautover-144]],Alfsos Provincial Capital
+> marker: prov_capital,299.100,939.050,[[01-Campaigns/Escape from the Eternal Throne/05-Atlas/Torcosia/States/Rifsosia/Provinces/Alfsos County/Burgs/Hautover]],Alfsos Provincial Capital
 > ```
 >  [Link to Alfsos County on FMG Map](https://azgaar.github.io/Fantasy-Map-Generator/?maplink=https://dl.dropboxusercontent.com/scl/fi/3c12q0t9xwt4csjxms7gl/Torcosia-2025-09-03-19-29.map?rlkey=1bbb807rrcdrl7pj6p5h9qu93&dl=0&scale=3&x=930.47&y=993.07)
 

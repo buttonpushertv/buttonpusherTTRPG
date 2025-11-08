@@ -9,7 +9,7 @@ capitalName: Piba
 capitalFile: 01-Campaigns/Escape from the Eternal Throne/05-Atlas/Torcosia/States/Huecavia/Provinces/Pueblia County/Burgs/Piba
 center: 1168
 color: #ffdd39
-created: 2025-09-05-10:13
+created: 2025-11-07-22:18
 cssclasses: sixty-pct-width
 culture: Astellian
 emblem: Torcosia Emblem Principality of Huecavia.png

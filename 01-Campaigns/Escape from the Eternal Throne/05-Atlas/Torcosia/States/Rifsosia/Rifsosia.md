@@ -9,7 +9,7 @@ capitalName: Lenene
 capitalFile: 01-Campaigns/Escape from the Eternal Throne/05-Atlas/Torcosia/States/Rifsosia/Provinces/Sormelahia Margrave/Burgs/Lenene
 center: 4637
 color: #ffcf51
-created: 2025-09-05-10:13
+created: 2025-11-07-22:18
 cssclasses: sixty-pct-width
 culture: Norse
 emblem: Torcosia Emblem Kingdom of Rifsosia.png

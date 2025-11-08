@@ -9,7 +9,7 @@ capitalName: Loinen
 capitalFile: 01-Campaigns/Escape from the Eternal Throne/05-Atlas/Torcosia/States/Valkeama/Provinces/Loinen Earldom/Burgs/Loinen
 center: 469
 color: #969dda
-created: 2025-09-05-10:13
+created: 2025-11-07-22:18
 cssclasses: sixty-pct-width
 culture: Soumi
 emblem: Torcosia Emblem Duchy of Valkeama.png

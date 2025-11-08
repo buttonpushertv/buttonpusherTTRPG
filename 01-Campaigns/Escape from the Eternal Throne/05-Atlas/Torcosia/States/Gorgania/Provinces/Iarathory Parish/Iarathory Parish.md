@@ -3,7 +3,7 @@ aliases:
 - Iarathory
 campaign: Escape from the Eternal Throne
 color: #ffb2c4
-created: 2025-09-05-10:13
+created: 2025-11-07-22:18
 cssclasses: sixty-pct-width
 emblem: Torcosia Emblem Iarathory Parish.png
 formName: Parish
@@ -80,7 +80,7 @@ WBProgress: Imported
 > unit: mi
 > scale: 3
 > darkMode: false
-> marker: prov_capital,914.440,852.800,[[Iarathory-268]],Iarathory Provincial Capital
+> marker: prov_capital,914.440,852.800,[[01-Campaigns/Escape from the Eternal Throne/05-Atlas/Torcosia/States/Gorgania/Provinces/Iarathory Parish/Burgs/Iarathory]],Iarathory Provincial Capital
 > ```
 >  [Link to Iarathory Parish on FMG Map](https://azgaar.github.io/Fantasy-Map-Generator/?maplink=https://dl.dropboxusercontent.com/scl/fi/3c12q0t9xwt4csjxms7gl/Torcosia-2025-09-03-19-29.map?rlkey=1bbb807rrcdrl7pj6p5h9qu93&dl=0&scale=3&x=852.8&y=379.56)
 

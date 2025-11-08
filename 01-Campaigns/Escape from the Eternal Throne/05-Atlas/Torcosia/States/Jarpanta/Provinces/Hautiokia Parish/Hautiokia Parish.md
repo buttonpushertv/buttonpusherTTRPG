@@ -3,7 +3,7 @@ aliases:
 - Hautiokia
 campaign: Escape from the Eternal Throne
 color: #ee89d6
-created: 2025-09-05-10:13
+created: 2025-11-07-22:18
 cssclasses: sixty-pct-width
 emblem: Torcosia Emblem Hautiokia Parish.png
 formName: Parish
@@ -80,7 +80,7 @@ WBProgress: Imported
 > unit: mi
 > scale: 3
 > darkMode: false
-> marker: prov_capital,683.790,2101.680,[[Huitti-294]],Hautiokia Provincial Capital
+> marker: prov_capital,683.790,2101.680,[[01-Campaigns/Escape from the Eternal Throne/05-Atlas/Torcosia/States/Jarpanta/Provinces/Hautiokia Parish/Burgs/Huitti]],Hautiokia Provincial Capital
 > ```
 >  [Link to Hautiokia Parish on FMG Map](https://azgaar.github.io/Fantasy-Map-Generator/?maplink=https://dl.dropboxusercontent.com/scl/fi/3c12q0t9xwt4csjxms7gl/Torcosia-2025-09-03-19-29.map?rlkey=1bbb807rrcdrl7pj6p5h9qu93&dl=0&scale=3&x=2101.68&y=610.21)
 

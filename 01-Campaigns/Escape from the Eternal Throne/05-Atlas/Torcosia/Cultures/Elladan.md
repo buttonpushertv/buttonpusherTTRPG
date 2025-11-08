@@ -5,7 +5,7 @@ cultureName: "Elladan"
 code: El
 color: #ccebc5
 center: 
-created: 2025-09-05-10:13
+created: 2025-11-07-22:19
 cssclasses: sixty-pct-width
 expansionism: 1.8
 id: 6

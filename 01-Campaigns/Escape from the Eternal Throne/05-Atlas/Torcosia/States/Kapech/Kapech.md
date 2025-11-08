@@ -9,7 +9,7 @@ capitalName: Dorogoga
 capitalFile: 01-Campaigns/Escape from the Eternal Throne/05-Atlas/Torcosia/States/Kapech/Provinces/Dubkia County/Burgs/Dorogoga
 center: 5471
 color: #8cbbb7
-created: 2025-09-05-10:13
+created: 2025-11-07-22:18
 cssclasses: sixty-pct-width
 culture: Slovan
 emblem: Torcosia Emblem Tsardom of Kapech.png

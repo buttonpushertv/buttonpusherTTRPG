@@ -5,7 +5,7 @@ campaign: "Escape from the Eternal Throne"
 center: 1214
 code: TF
 color: #8dd3c7
-created: 2025-09-05-10:13
+created: 2025-11-07-22:19
 cssclasses: sixty-pct-width
 culture: Tallian
 deity: Nestelse, The Lavender Sage

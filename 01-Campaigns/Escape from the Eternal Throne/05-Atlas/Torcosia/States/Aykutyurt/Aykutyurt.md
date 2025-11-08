@@ -9,7 +9,7 @@ capitalName: Aykut
 capitalFile: 01-Campaigns/Escape from the Eternal Throne/05-Atlas/Torcosia/States/Aykutyurt/Provinces/Aykut Earldom/Burgs/Aykut
 center: 1370
 color: #75e3a7
-created: 2025-09-05-10:13
+created: 2025-11-07-22:18
 cssclasses: sixty-pct-width
 culture: Turchian
 emblem: Torcosia Emblem Aykutyurt Horde.png

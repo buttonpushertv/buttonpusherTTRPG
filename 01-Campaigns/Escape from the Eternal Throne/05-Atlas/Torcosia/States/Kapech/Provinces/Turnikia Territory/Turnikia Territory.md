@@ -3,7 +3,7 @@ aliases:
 - Turnikia
 campaign: Escape from the Eternal Throne
 color: #b0b5c6
-created: 2025-09-05-10:13
+created: 2025-11-07-22:18
 cssclasses: sixty-pct-width
 emblem: Torcosia Emblem Turnikia Territory.png
 formName: Territory

@@ -9,7 +9,7 @@ capitalName: Tus
 capitalFile: 01-Campaigns/Escape from the Eternal Throne/05-Atlas/Torcosia/States/Jarpanta/Provinces/Tukvemia Parish/Burgs/Tus
 center: 1416
 color: #e78ac3
-created: 2025-09-05-10:13
+created: 2025-11-07-22:18
 cssclasses: sixty-pct-width
 culture: Soumi
 emblem: Torcosia Emblem Jarpantan Theocracy.png
