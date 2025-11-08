@@ -5,7 +5,7 @@ cultureName: "Portuzian"
 code: Po
 color: #fdb462
 center: 
-created: 2025-09-05-10:13
+created: 2025-11-07-22:19
 cssclasses: sixty-pct-width
 expansionism: 2.8
 id: 3

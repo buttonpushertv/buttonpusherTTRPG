@@ -3,7 +3,7 @@ aliases:
 - Pylisia
 campaign: Escape from the Eternal Throne
 color: #a2d9b7
-created: 2025-09-05-10:13
+created: 2025-11-07-22:18
 cssclasses: sixty-pct-width
 emblem: Torcosia Emblem Pylisia Barony.png
 formName: Barony
@@ -80,7 +80,7 @@ WBProgress: Imported
 > unit: mi
 > scale: 3
 > darkMode: false
-> marker: prov_capital,807.920,913.380,[[Nympsos-7]],Pylisia Provincial Capital
+> marker: prov_capital,807.920,913.380,[[01-Campaigns/Escape from the Eternal Throne/05-Atlas/Torcosia/States/Piniacia/Provinces/Pylisia Barony/Burgs/Nympsos]],Pylisia Provincial Capital
 > ```
 >  [Link to Pylisia Barony on FMG Map](https://azgaar.github.io/Fantasy-Map-Generator/?maplink=https://dl.dropboxusercontent.com/scl/fi/3c12q0t9xwt4csjxms7gl/Torcosia-2025-09-03-19-29.map?rlkey=1bbb807rrcdrl7pj6p5h9qu93&dl=0&scale=3&x=911&y=487.6)
 

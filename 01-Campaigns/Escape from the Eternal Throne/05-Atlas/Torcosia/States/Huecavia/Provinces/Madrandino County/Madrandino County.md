@@ -3,7 +3,7 @@ aliases:
 - Madrandino
 campaign: Escape from the Eternal Throne
 color: #ffe43f
-created: 2025-09-05-10:13
+created: 2025-11-07-22:18
 cssclasses: sixty-pct-width
 emblem: Torcosia Emblem Madrandino County.png
 formName: County
@@ -80,7 +80,7 @@ WBProgress: Imported
 > unit: mi
 > scale: 3
 > darkMode: false
-> marker: prov_capital,881.350,450.930,[[Madrandino-437]],Madrandino Provincial Capital
+> marker: prov_capital,881.350,450.930,[[01-Campaigns/Escape from the Eternal Throne/05-Atlas/Torcosia/States/Huecavia/Provinces/Madrandino County/Burgs/Madrandino]],Madrandino Provincial Capital
 > ```
 >  [Link to Madrandino County on FMG Map](https://azgaar.github.io/Fantasy-Map-Generator/?maplink=https://dl.dropboxusercontent.com/scl/fi/3c12q0t9xwt4csjxms7gl/Torcosia-2025-09-03-19-29.map?rlkey=1bbb807rrcdrl7pj6p5h9qu93&dl=0&scale=3&x=450.93&y=412.65)
 

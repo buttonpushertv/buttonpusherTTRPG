@@ -5,7 +5,7 @@ campaign: "Escape from the Eternal Throne"
 center: 2721
 code: SH
 color: #b3de69
-created: 2025-09-05-10:13
+created: 2025-11-07-22:19
 cssclasses: sixty-pct-width
 culture: Shwazen
 deity: Lauch, The Light Phoenix

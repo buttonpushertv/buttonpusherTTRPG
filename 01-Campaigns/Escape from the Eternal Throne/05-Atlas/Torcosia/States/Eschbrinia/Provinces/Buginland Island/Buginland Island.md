@@ -3,7 +3,7 @@ aliases:
 - Buginland
 campaign: Escape from the Eternal Throne
 color: #ff9782
-created: 2025-09-05-10:13
+created: 2025-11-07-22:18
 cssclasses: sixty-pct-width
 emblem: Torcosia Emblem Buginland Island.png
 formName: Island

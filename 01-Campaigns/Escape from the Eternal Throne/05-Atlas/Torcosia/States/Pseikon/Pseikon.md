@@ -9,7 +9,7 @@ capitalName: Hera
 capitalFile: 01-Campaigns/Escape from the Eternal Throne/05-Atlas/Torcosia/States/Pseikon/Provinces/Bythegia County/Burgs/Hera
 center: 798
 color: #9cf36d
-created: 2025-09-05-10:13
+created: 2025-11-07-22:18
 cssclasses: sixty-pct-width
 culture: Elladan
 emblem: Torcosia Emblem Protectorate of Pseikon.png

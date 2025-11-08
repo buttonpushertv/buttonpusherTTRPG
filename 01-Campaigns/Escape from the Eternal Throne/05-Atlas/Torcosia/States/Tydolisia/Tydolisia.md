@@ -9,7 +9,7 @@ capitalName: Tydolis
 capitalFile: 01-Campaigns/Escape from the Eternal Throne/05-Atlas/Torcosia/States/Tydolisia/Provinces/Phaisosia County/Burgs/Tydolis
 center: 3225
 color: #bbf55d
-created: 2025-09-05-10:13
+created: 2025-11-07-22:18
 cssclasses: sixty-pct-width
 culture: Elladan
 emblem: Torcosia Emblem Kingdom of Tydolisia.png

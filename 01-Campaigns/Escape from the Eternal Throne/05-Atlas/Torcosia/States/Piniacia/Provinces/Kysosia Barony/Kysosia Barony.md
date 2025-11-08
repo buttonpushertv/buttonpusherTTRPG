@@ -3,7 +3,7 @@ aliases:
 - Kysosia
 campaign: Escape from the Eternal Throne
 color: #77f0c4
-created: 2025-09-05-10:13
+created: 2025-11-07-22:18
 cssclasses: sixty-pct-width
 emblem: Torcosia Emblem Kysosia Barony.png
 formName: Barony
@@ -80,7 +80,7 @@ WBProgress: Imported
 > unit: mi
 > scale: 3
 > darkMode: false
-> marker: prov_capital,882.100,888.900,[[Bhrylos-87]],Kysosia Provincial Capital
+> marker: prov_capital,882.100,888.900,[[01-Campaigns/Escape from the Eternal Throne/05-Atlas/Torcosia/States/Piniacia/Provinces/Kysosia Barony/Burgs/Bhrylos]],Kysosia Provincial Capital
 > ```
 >  [Link to Kysosia Barony on FMG Map](https://azgaar.github.io/Fantasy-Map-Generator/?maplink=https://dl.dropboxusercontent.com/scl/fi/3c12q0t9xwt4csjxms7gl/Torcosia-2025-09-03-19-29.map?rlkey=1bbb807rrcdrl7pj6p5h9qu93&dl=0&scale=3&x=888.9&y=411.9)
 

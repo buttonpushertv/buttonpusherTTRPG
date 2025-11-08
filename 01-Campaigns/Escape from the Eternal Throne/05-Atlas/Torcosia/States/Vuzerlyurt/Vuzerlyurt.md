@@ -9,7 +9,7 @@ capitalName: Kut
 capitalFile: 01-Campaigns/Escape from the Eternal Throne/05-Atlas/Torcosia/States/Vuzerlyurt/Provinces/Kut County/Burgs/Kut
 center: 1259
 color: #f88c7e
-created: 2025-09-05-10:13
+created: 2025-11-07-22:18
 cssclasses: sixty-pct-width
 culture: Turchian
 emblem: Torcosia Emblem Beylik of Vuzerlyurt.png

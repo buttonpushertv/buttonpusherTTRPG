@@ -3,7 +3,7 @@ aliases:
 - Durnach
 campaign: Escape from the Eternal Throne
 color: #ff9a79
-created: 2025-09-05-10:13
+created: 2025-11-07-22:18
 cssclasses: sixty-pct-width
 emblem: Torcosia Emblem Durnach Parish.png
 formName: Parish
@@ -80,7 +80,7 @@ WBProgress: Imported
 > unit: mi
 > scale: 3
 > darkMode: false
-> marker: prov_capital,513.880,1584.420,[[Eschbrin-8]],Durnach Provincial Capital
+> marker: prov_capital,513.880,1584.420,[[01-Campaigns/Escape from the Eternal Throne/05-Atlas/Torcosia/States/Eschbrinia/Provinces/Durnach Parish/Burgs/Eschbrin]],Durnach Provincial Capital
 > ```
 >  [Link to Durnach Parish on FMG Map](https://azgaar.github.io/Fantasy-Map-Generator/?maplink=https://dl.dropboxusercontent.com/scl/fi/3c12q0t9xwt4csjxms7gl/Torcosia-2025-09-03-19-29.map?rlkey=1bbb807rrcdrl7pj6p5h9qu93&dl=0&scale=3&x=1592.3&y=782.4)
 

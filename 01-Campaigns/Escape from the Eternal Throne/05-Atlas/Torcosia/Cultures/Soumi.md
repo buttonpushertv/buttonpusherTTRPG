@@ -5,7 +5,7 @@ cultureName: "Soumi"
 code: So
 color: #80b1d3
 center: 
-created: 2025-09-05-10:13
+created: 2025-11-07-22:19
 cssclasses: sixty-pct-width
 expansionism: 3.2
 id: 7

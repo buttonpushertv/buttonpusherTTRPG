@@ -3,7 +3,7 @@ aliases:
 - Dubkia
 campaign: Escape from the Eternal Throne
 color: #8eddba
-created: 2025-09-05-10:13
+created: 2025-11-07-22:18
 cssclasses: sixty-pct-width
 emblem: Torcosia Emblem Dubkia County.png
 formName: County
@@ -80,7 +80,7 @@ WBProgress: Imported
 > unit: mi
 > scale: 3
 > darkMode: false
-> marker: prov_capital,277.530,1908.980,[[Dorogoga-12]],Dubkia Provincial Capital
+> marker: prov_capital,277.530,1908.980,[[01-Campaigns/Escape from the Eternal Throne/05-Atlas/Torcosia/States/Kapech/Provinces/Dubkia County/Burgs/Dorogoga]],Dubkia Provincial Capital
 > ```
 >  [Link to Dubkia County on FMG Map](https://azgaar.github.io/Fantasy-Map-Generator/?maplink=https://dl.dropboxusercontent.com/scl/fi/3c12q0t9xwt4csjxms7gl/Torcosia-2025-09-03-19-29.map?rlkey=1bbb807rrcdrl7pj6p5h9qu93&dl=0&scale=3&x=1907.98&y=1017.47)
 

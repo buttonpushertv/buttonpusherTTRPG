@@ -3,7 +3,7 @@ aliases:
 - Bythegia
 campaign: Escape from the Eternal Throne
 color: #93ff91
-created: 2025-09-05-10:13
+created: 2025-11-07-22:18
 cssclasses: sixty-pct-width
 emblem: Torcosia Emblem Bythegia County.png
 formName: County
@@ -80,7 +80,7 @@ WBProgress: Imported
 > unit: mi
 > scale: 3
 > darkMode: false
-> marker: prov_capital,909.530,747.660,[[Hera-16]],Bythegia Provincial Capital
+> marker: prov_capital,909.530,747.660,[[01-Campaigns/Escape from the Eternal Throne/05-Atlas/Torcosia/States/Pseikon/Provinces/Bythegia County/Burgs/Hera]],Bythegia Provincial Capital
 > ```
 >  [Link to Bythegia County on FMG Map](https://azgaar.github.io/Fantasy-Map-Generator/?maplink=https://dl.dropboxusercontent.com/scl/fi/3c12q0t9xwt4csjxms7gl/Torcosia-2025-09-03-19-29.map?rlkey=1bbb807rrcdrl7pj6p5h9qu93&dl=0&scale=3&x=741.2&y=393.4)
 

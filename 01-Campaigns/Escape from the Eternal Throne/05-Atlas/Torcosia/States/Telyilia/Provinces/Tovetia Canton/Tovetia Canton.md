@@ -3,7 +3,7 @@ aliases:
 - Tovetia
 campaign: Escape from the Eternal Throne
 color: #ffe434
-created: 2025-09-05-10:13
+created: 2025-11-07-22:18
 cssclasses: sixty-pct-width
 emblem: Torcosia Emblem Tovetia Canton.png
 formName: Canton
@@ -80,7 +80,7 @@ WBProgress: Imported
 > unit: mi
 > scale: 3
 > darkMode: false
-> marker: prov_capital,404.910,2183.260,[[Snovsk-6]],Tovetia Provincial Capital
+> marker: prov_capital,404.910,2183.260,[[01-Campaigns/Escape from the Eternal Throne/05-Atlas/Torcosia/States/Telyilia/Provinces/Tovetia Canton/Burgs/Snovsk]],Tovetia Provincial Capital
 > ```
 >  [Link to Tovetia Canton on FMG Map](https://azgaar.github.io/Fantasy-Map-Generator/?maplink=https://dl.dropboxusercontent.com/scl/fi/3c12q0t9xwt4csjxms7gl/Torcosia-2025-09-03-19-29.map?rlkey=1bbb807rrcdrl7pj6p5h9qu93&dl=0&scale=3&x=2178.6&y=890.8)
 

@@ -9,7 +9,7 @@ capitalName: Nigripi
 capitalFile: 01-Campaigns/Escape from the Eternal Throne/05-Atlas/Torcosia/States/Lorumia/Provinces/Nigripi Province/Burgs/Nigripi
 center: 5509
 color: #8da0cb
-created: 2025-09-05-10:13
+created: 2025-11-07-22:18
 cssclasses: sixty-pct-width
 culture: Romian
 emblem: Torcosia Emblem Republic of Lorumia.png

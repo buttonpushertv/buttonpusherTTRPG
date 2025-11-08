@@ -5,7 +5,7 @@ campaign: "Escape from the Eternal Throne"
 center: 1037
 code: AS
 color: #eb8de7
-created: 2025-09-05-10:13
+created: 2025-11-07-22:19
 cssclasses: sixty-pct-width
 culture: Astellian
 deity: Urontunoma, The Divine

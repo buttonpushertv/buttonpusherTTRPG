@@ -3,7 +3,7 @@ aliases:
 - Zsampapia
 campaign: Escape from the Eternal Throne
 color: #9b9cdc
-created: 2025-09-05-10:13
+created: 2025-11-07-22:18
 cssclasses: sixty-pct-width
 emblem: Torcosia Emblem Zsampapia Land.png
 formName: Land

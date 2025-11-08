@@ -9,7 +9,7 @@ capitalName:
 capitalFile: 
 center: 
 color: 
-created: 2025-09-05-10:13
+created: 2025-11-07-22:18
 cssclasses: sixty-pct-width
 culture: 
 emblem: Torcosia Emblem .png

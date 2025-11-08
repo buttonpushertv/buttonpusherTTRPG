@@ -3,7 +3,7 @@ aliases:
 - Sorneske
 campaign: Escape from the Eternal Throne
 color: #eaeb6c
-created: 2025-09-05-10:13
+created: 2025-11-07-22:18
 cssclasses: sixty-pct-width
 emblem: Torcosia Emblem Sorneske Margrave.png
 formName: Margrave
@@ -80,7 +80,7 @@ WBProgress: Imported
 > unit: mi
 > scale: 3
 > darkMode: false
-> marker: prov_capital,578.000,948.230,[[Sorneske-307]],Sorneske Provincial Capital
+> marker: prov_capital,578.000,948.230,[[01-Campaigns/Escape from the Eternal Throne/05-Atlas/Torcosia/States/Rifsosia/Provinces/Sorneske Margrave/Burgs/Sorneske]],Sorneske Provincial Capital
 > ```
 >  [Link to Sorneske Margrave on FMG Map](https://azgaar.github.io/Fantasy-Map-Generator/?maplink=https://dl.dropboxusercontent.com/scl/fi/3c12q0t9xwt4csjxms7gl/Torcosia-2025-09-03-19-29.map?rlkey=1bbb807rrcdrl7pj6p5h9qu93&dl=0&scale=3&x=943.1&y=715.91)
 

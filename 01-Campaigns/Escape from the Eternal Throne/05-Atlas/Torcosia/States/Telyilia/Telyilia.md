@@ -9,7 +9,7 @@ capitalName: Snovsk
 capitalFile: 01-Campaigns/Escape from the Eternal Throne/05-Atlas/Torcosia/States/Telyilia/Provinces/Tovetia Canton/Burgs/Snovsk
 center: 4559
 color: #ffd92f
-created: 2025-09-05-10:13
+created: 2025-11-07-22:18
 cssclasses: sixty-pct-width
 culture: Slovan
 emblem: Torcosia Emblem United Provinces of Telyilia.png

@@ -5,7 +5,7 @@ campaign: "Escape from the Eternal Throne"
 center: 1132
 code: TB
 color: #fccde5
-created: 2025-09-05-10:13
+created: 2025-11-07-22:19
 cssclasses: sixty-pct-width
 culture: Turchian
 deity: Obadaraok, The Selected Chimera of Gates
