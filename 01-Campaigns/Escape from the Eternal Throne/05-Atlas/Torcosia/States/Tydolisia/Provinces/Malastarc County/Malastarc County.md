@@ -3,7 +3,7 @@ aliases:
 - Malastarc
 campaign: Escape from the Eternal Throne
 color: #e0ef69
-created: 2025-09-05-10:13
+created: 2025-11-07-22:18
 cssclasses: sixty-pct-width
 emblem: Torcosia Emblem Malastarc County.png
 formName: County
@@ -80,7 +80,7 @@ WBProgress: Imported
 > unit: mi
 > scale: 3
 > darkMode: false
-> marker: prov_capital,614.520,452.240,[[Szanosteher-487]],Malastarc Provincial Capital
+> marker: prov_capital,614.520,452.240,[[01-Campaigns/Escape from the Eternal Throne/05-Atlas/Torcosia/States/Tydolisia/Provinces/Malastarc County/Burgs/Szanosteher]],Malastarc Provincial Capital
 > ```
 >  [Link to Malastarc County on FMG Map](https://azgaar.github.io/Fantasy-Map-Generator/?maplink=https://dl.dropboxusercontent.com/scl/fi/3c12q0t9xwt4csjxms7gl/Torcosia-2025-09-03-19-29.map?rlkey=1bbb807rrcdrl7pj6p5h9qu93&dl=0&scale=3&x=453.24&y=680.48)
 

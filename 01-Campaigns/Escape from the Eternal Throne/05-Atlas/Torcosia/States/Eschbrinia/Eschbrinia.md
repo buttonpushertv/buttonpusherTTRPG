@@ -9,7 +9,7 @@ capitalName: Eschbrin
 capitalFile: 01-Campaigns/Escape from the Eternal Throne/05-Atlas/Torcosia/States/Eschbrinia/Provinces/Durnach Parish/Burgs/Eschbrin
 center: 3705
 color: #ff9b65
-created: 2025-09-05-10:13
+created: 2025-11-07-22:18
 cssclasses: sixty-pct-width
 culture: Shwazen
 emblem: Torcosia Emblem Eschbrinian Theocracy.png

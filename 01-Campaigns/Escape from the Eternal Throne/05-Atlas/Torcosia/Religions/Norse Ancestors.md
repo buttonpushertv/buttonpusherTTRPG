@@ -5,7 +5,7 @@ campaign: "Escape from the Eternal Throne"
 center: 3111
 code: NA
 color: #fb8072
-created: 2025-09-05-10:13
+created: 2025-11-07-22:19
 cssclasses: sixty-pct-width
 culture: Norse
 deity: Raugarjord, The Bronze Viper

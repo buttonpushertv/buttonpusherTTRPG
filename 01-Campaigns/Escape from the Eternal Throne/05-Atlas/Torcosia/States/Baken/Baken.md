@@ -9,7 +9,7 @@ capitalName: Silkes
 capitalFile: 01-Campaigns/Escape from the Eternal Throne/05-Atlas/Torcosia/States/Baken/Provinces/Silkes County/Burgs/Silkes
 center: 5274
 color: #fc8d62
-created: 2025-09-05-10:13
+created: 2025-11-07-22:18
 cssclasses: sixty-pct-width
 culture: Norse
 emblem: Torcosia Emblem Grand Duchy of Baken.png

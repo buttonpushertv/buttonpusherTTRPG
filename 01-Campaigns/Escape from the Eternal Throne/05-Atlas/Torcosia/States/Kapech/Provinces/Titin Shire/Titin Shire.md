@@ -3,7 +3,7 @@ aliases:
 - Titin
 campaign: Escape from the Eternal Throne
 color: #b2ccae
-created: 2025-09-05-10:13
+created: 2025-11-07-22:18
 cssclasses: sixty-pct-width
 emblem: Torcosia Emblem Titin Shire.png
 formName: Shire
@@ -80,7 +80,7 @@ WBProgress: Imported
 > unit: mi
 > scale: 3
 > darkMode: false
-> marker: prov_capital,276.620,1635.010,[[Titin-347]],Titin Provincial Capital
+> marker: prov_capital,276.620,1635.010,[[01-Campaigns/Escape from the Eternal Throne/05-Atlas/Torcosia/States/Kapech/Provinces/Titin Shire/Burgs/Titin]],Titin Provincial Capital
 > ```
 >  [Link to Titin Shire on FMG Map](https://azgaar.github.io/Fantasy-Map-Generator/?maplink=https://dl.dropboxusercontent.com/scl/fi/3c12q0t9xwt4csjxms7gl/Torcosia-2025-09-03-19-29.map?rlkey=1bbb807rrcdrl7pj6p5h9qu93&dl=0&scale=3&x=1635.01&y=1017.38)
 

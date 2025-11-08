@@ -1,7 +1,7 @@
 ---
 aliases:
 campaign: Escape from the Eternal Throne
-created: 2025-09-05-17:06
+created: 2025-11-07-22:18
 cssclasses: sixty-pct-width
 mapName: Torcosia
 tags:
@@ -899,13 +899,3 @@ WBProcess: FALSE
 > | Style Preset: | default |
 > | Rescale Labels: | true |
 > | Urban Density: | 10 |
-
-
-
-
-
-
-
-
-
-

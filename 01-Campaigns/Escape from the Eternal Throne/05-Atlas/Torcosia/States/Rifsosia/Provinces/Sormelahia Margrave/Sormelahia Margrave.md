@@ -3,7 +3,7 @@ aliases:
 - Sormelahia
 campaign: Escape from the Eternal Throne
 color: #f2d37a
-created: 2025-09-05-10:13
+created: 2025-11-07-22:18
 cssclasses: sixty-pct-width
 emblem: Torcosia Emblem Sormelahia Margrave.png
 formName: Margrave
@@ -80,7 +80,7 @@ WBProgress: Imported
 > unit: mi
 > scale: 3
 > darkMode: false
-> marker: prov_capital,404.200,1037.040,[[Lenene-11]],Sormelahia Provincial Capital
+> marker: prov_capital,404.200,1037.040,[[01-Campaigns/Escape from the Eternal Throne/05-Atlas/Torcosia/States/Rifsosia/Provinces/Sormelahia Margrave/Burgs/Lenene]],Sormelahia Provincial Capital
 > ```
 >  [Link to Sormelahia Margrave on FMG Map](https://azgaar.github.io/Fantasy-Map-Generator/?maplink=https://dl.dropboxusercontent.com/scl/fi/3c12q0t9xwt4csjxms7gl/Torcosia-2025-09-03-19-29.map?rlkey=1bbb807rrcdrl7pj6p5h9qu93&dl=0&scale=3&x=1037.7&y=895.5)
 

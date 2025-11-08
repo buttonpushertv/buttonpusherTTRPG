@@ -3,7 +3,7 @@ aliases:
 - Dubriniumia
 campaign: Escape from the Eternal Throne
 color: #b4b1bf
-created: 2025-09-05-10:13
+created: 2025-11-07-22:18
 cssclasses: sixty-pct-width
 emblem: Torcosia Emblem Dubriniumia Province.png
 formName: Province
@@ -80,7 +80,7 @@ WBProgress: Imported
 > unit: mi
 > scale: 3
 > darkMode: false
-> marker: prov_capital,433.070,696.750,[[Lureticonio-467]],Dubriniumia Provincial Capital
+> marker: prov_capital,433.070,696.750,[[01-Campaigns/Escape from the Eternal Throne/05-Atlas/Torcosia/States/Lorumia/Provinces/Dubriniumia Province/Burgs/Lureticonio]],Dubriniumia Provincial Capital
 > ```
 >  [Link to Dubriniumia Province on FMG Map](https://azgaar.github.io/Fantasy-Map-Generator/?maplink=https://dl.dropboxusercontent.com/scl/fi/3c12q0t9xwt4csjxms7gl/Torcosia-2025-09-03-19-29.map?rlkey=1bbb807rrcdrl7pj6p5h9qu93&dl=0&scale=3&x=696.75&y=860.93)
 

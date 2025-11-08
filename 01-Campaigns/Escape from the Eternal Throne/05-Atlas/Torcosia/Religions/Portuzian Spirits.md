@@ -5,7 +5,7 @@ campaign: "Escape from the Eternal Throne"
 center: 4418
 code: PS
 color: #fdb462
-created: 2025-09-05-10:13
+created: 2025-11-07-22:19
 cssclasses: sixty-pct-width
 culture: Portuzian
 deity: 

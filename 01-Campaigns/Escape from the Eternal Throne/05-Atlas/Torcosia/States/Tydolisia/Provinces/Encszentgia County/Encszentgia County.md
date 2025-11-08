@@ -3,7 +3,7 @@ aliases:
 - Encszentgia
 campaign: Escape from the Eternal Throne
 color: #e0f068
-created: 2025-09-05-10:13
+created: 2025-11-07-22:18
 cssclasses: sixty-pct-width
 emblem: Torcosia Emblem Encszentgia County.png
 formName: County
@@ -80,7 +80,7 @@ WBProgress: Imported
 > unit: mi
 > scale: 3
 > darkMode: false
-> marker: prov_capital,541.820,441.940,[[Vadadi-222]],Encszentgia Provincial Capital
+> marker: prov_capital,541.820,441.940,[[01-Campaigns/Escape from the Eternal Throne/05-Atlas/Torcosia/States/Tydolisia/Provinces/Encszentgia County/Burgs/Vadadi]],Encszentgia Provincial Capital
 > ```
 >  [Link to Encszentgia County on FMG Map](https://azgaar.github.io/Fantasy-Map-Generator/?maplink=https://dl.dropboxusercontent.com/scl/fi/3c12q0t9xwt4csjxms7gl/Torcosia-2025-09-03-19-29.map?rlkey=1bbb807rrcdrl7pj6p5h9qu93&dl=0&scale=3&x=441.94&y=752.18)
 

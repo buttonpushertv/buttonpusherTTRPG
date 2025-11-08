@@ -5,7 +5,7 @@ cultureName: "Tallian"
 code: Ta
 color: #8dd3c7
 center: 
-created: 2025-09-05-10:13
+created: 2025-11-07-22:19
 cssclasses: sixty-pct-width
 expansionism: 2.3
 id: 11

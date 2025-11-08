@@ -9,7 +9,7 @@ capitalName: Gorgan
 capitalFile: 01-Campaigns/Escape from the Eternal Throne/05-Atlas/Torcosia/States/Gorgania/Provinces/Gorgan Deanery/Burgs/Gorgan
 center: 535
 color: #eab2c2
-created: 2025-09-05-10:13
+created: 2025-11-07-22:18
 cssclasses: sixty-pct-width
 culture: Elladan
 emblem: Torcosia Emblem Patriarchate of Gorgania.png

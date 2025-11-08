@@ -3,7 +3,7 @@ aliases:
 - Pespo
 campaign: Escape from the Eternal Throne
 color: #e9e96e
-created: 2025-09-05-10:13
+created: 2025-11-07-22:18
 cssclasses: sixty-pct-width
 emblem: Torcosia Emblem Pespo Margrave.png
 formName: Margrave
@@ -80,7 +80,7 @@ WBProgress: Imported
 > unit: mi
 > scale: 3
 > darkMode: false
-> marker: prov_capital,337.790,1259.320,[[Pespo-245]],Pespo Provincial Capital
+> marker: prov_capital,337.790,1259.320,[[01-Campaigns/Escape from the Eternal Throne/05-Atlas/Torcosia/States/Rifsosia/Provinces/Pespo Margrave/Burgs/Pespo]],Pespo Provincial Capital
 > ```
 >  [Link to Pespo Margrave on FMG Map](https://azgaar.github.io/Fantasy-Map-Generator/?maplink=https://dl.dropboxusercontent.com/scl/fi/3c12q0t9xwt4csjxms7gl/Torcosia-2025-09-03-19-29.map?rlkey=1bbb807rrcdrl7pj6p5h9qu93&dl=0&scale=3&x=1259.08&y=955.97)
 

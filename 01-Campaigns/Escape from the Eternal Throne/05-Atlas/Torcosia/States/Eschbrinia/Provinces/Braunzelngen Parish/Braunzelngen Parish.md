@@ -3,7 +3,7 @@ aliases:
 - Braunzelngen
 campaign: Escape from the Eternal Throne
 color: #ff9b77
-created: 2025-09-05-10:13
+created: 2025-11-07-22:18
 cssclasses: sixty-pct-width
 emblem: Torcosia Emblem Braunzelngen Parish.png
 formName: Parish
@@ -80,7 +80,7 @@ WBProgress: Imported
 > unit: mi
 > scale: 3
 > darkMode: false
-> marker: prov_capital,440.330,1537.140,[[Braunzelngen-378]],Braunzelngen Provincial Capital
+> marker: prov_capital,440.330,1537.140,[[01-Campaigns/Escape from the Eternal Throne/05-Atlas/Torcosia/States/Eschbrinia/Provinces/Braunzelngen Parish/Burgs/Braunzelngen]],Braunzelngen Provincial Capital
 > ```
 >  [Link to Braunzelngen Parish on FMG Map](https://azgaar.github.io/Fantasy-Map-Generator/?maplink=https://dl.dropboxusercontent.com/scl/fi/3c12q0t9xwt4csjxms7gl/Torcosia-2025-09-03-19-29.map?rlkey=1bbb807rrcdrl7pj6p5h9qu93&dl=0&scale=3&x=1537.14&y=853.67)
 

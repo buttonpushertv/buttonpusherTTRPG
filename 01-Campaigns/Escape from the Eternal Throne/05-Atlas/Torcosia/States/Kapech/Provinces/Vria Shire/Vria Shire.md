@@ -3,7 +3,7 @@ aliases:
 - Vria
 campaign: Escape from the Eternal Throne
 color: #94b7cc
-created: 2025-09-05-10:13
+created: 2025-11-07-22:18
 cssclasses: sixty-pct-width
 emblem: Torcosia Emblem Vria Shire.png
 formName: Shire
@@ -80,7 +80,7 @@ WBProgress: Imported
 > unit: mi
 > scale: 3
 > darkMode: false
-> marker: prov_capital,444.770,1953.350,[[Morobesk-140]],Vria Provincial Capital
+> marker: prov_capital,444.770,1953.350,[[01-Campaigns/Escape from the Eternal Throne/05-Atlas/Torcosia/States/Kapech/Provinces/Vria Shire/Burgs/Morobesk]],Vria Provincial Capital
 > ```
 >  [Link to Vria Shire on FMG Map](https://azgaar.github.io/Fantasy-Map-Generator/?maplink=https://dl.dropboxusercontent.com/scl/fi/3c12q0t9xwt4csjxms7gl/Torcosia-2025-09-03-19-29.map?rlkey=1bbb807rrcdrl7pj6p5h9qu93&dl=0&scale=3&x=1952.84&y=849.74)
 

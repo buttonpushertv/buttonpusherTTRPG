@@ -3,7 +3,7 @@ aliases:
 - Donausach
 campaign: Escape from the Eternal Throne
 color: #ff9781
-created: 2025-09-05-10:13
+created: 2025-11-07-22:18
 cssclasses: sixty-pct-width
 emblem: Torcosia Emblem Donausach Parish.png
 formName: Parish
@@ -80,7 +80,7 @@ WBProgress: Imported
 > unit: mi
 > scale: 3
 > darkMode: false
-> marker: prov_capital,312.740,1557.110,[[Donausach-312]],Donausach Provincial Capital
+> marker: prov_capital,312.740,1557.110,[[01-Campaigns/Escape from the Eternal Throne/05-Atlas/Torcosia/States/Eschbrinia/Provinces/Donausach Parish/Burgs/Donausach]],Donausach Provincial Capital
 > ```
 >  [Link to Donausach Parish on FMG Map](https://azgaar.github.io/Fantasy-Map-Generator/?maplink=https://dl.dropboxusercontent.com/scl/fi/3c12q0t9xwt4csjxms7gl/Torcosia-2025-09-03-19-29.map?rlkey=1bbb807rrcdrl7pj6p5h9qu93&dl=0&scale=3&x=1556.11&y=980.26)
 

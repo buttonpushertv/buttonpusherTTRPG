@@ -3,7 +3,7 @@ aliases:
 - Vakia
 campaign: Escape from the Eternal Throne
 color: #d99be0
-created: 2025-09-05-10:13
+created: 2025-11-07-22:18
 cssclasses: sixty-pct-width
 emblem: Torcosia Emblem Vakia Parish.png
 formName: Parish
@@ -80,7 +80,7 @@ WBProgress: Imported
 > unit: mi
 > scale: 3
 > darkMode: false
-> marker: prov_capital,824.840,2084.030,[[Heikemi-293]],Vakia Provincial Capital
+> marker: prov_capital,824.840,2084.030,[[01-Campaigns/Escape from the Eternal Throne/05-Atlas/Torcosia/States/Jarpanta/Provinces/Vakia Parish/Burgs/Heikemi]],Vakia Provincial Capital
 > ```
 >  [Link to Vakia Parish on FMG Map](https://azgaar.github.io/Fantasy-Map-Generator/?maplink=https://dl.dropboxusercontent.com/scl/fi/3c12q0t9xwt4csjxms7gl/Torcosia-2025-09-03-19-29.map?rlkey=1bbb807rrcdrl7pj6p5h9qu93&dl=0&scale=3&x=2084.03&y=469.16)
 

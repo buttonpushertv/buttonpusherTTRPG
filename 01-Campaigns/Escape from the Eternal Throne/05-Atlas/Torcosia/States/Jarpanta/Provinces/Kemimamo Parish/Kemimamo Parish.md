@@ -3,7 +3,7 @@ aliases:
 - Kemimamo
 campaign: Escape from the Eternal Throne
 color: #d3a7d9
-created: 2025-09-05-10:13
+created: 2025-11-07-22:18
 cssclasses: sixty-pct-width
 emblem: Torcosia Emblem Kemimamo Parish.png
 formName: Parish
@@ -80,7 +80,7 @@ WBProgress: Imported
 > unit: mi
 > scale: 3
 > darkMode: false
-> marker: prov_capital,968.900,2018.960,[[Kuriksalu-349]],Kemimamo Provincial Capital
+> marker: prov_capital,968.900,2018.960,[[01-Campaigns/Escape from the Eternal Throne/05-Atlas/Torcosia/States/Jarpanta/Provinces/Kemimamo Parish/Burgs/Kuriksalu]],Kemimamo Provincial Capital
 > ```
 >  [Link to Kemimamo Parish on FMG Map](https://azgaar.github.io/Fantasy-Map-Generator/?maplink=https://dl.dropboxusercontent.com/scl/fi/3c12q0t9xwt4csjxms7gl/Torcosia-2025-09-03-19-29.map?rlkey=1bbb807rrcdrl7pj6p5h9qu93&dl=0&scale=3&x=2018.2&y=336.4)
 

@@ -5,7 +5,7 @@ cultureName: "Vengrian"
 code: Ve
 color: #c6b9c1
 center: 
-created: 2025-09-05-10:13
+created: 2025-11-07-22:19
 cssclasses: sixty-pct-width
 expansionism: 1.2
 id: 4

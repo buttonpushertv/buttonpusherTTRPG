@@ -5,7 +5,7 @@ campaign: "Escape from the Eternal Throne"
 center: 2938
 code: VS
 color: #c6b9c1
-created: 2025-09-05-10:13
+created: 2025-11-07-22:19
 cssclasses: sixty-pct-width
 culture: Vengrian
 deity: 

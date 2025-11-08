@@ -5,7 +5,7 @@ campaign: "Escape from the Eternal Throne"
 center: 4973
 code: DC
 color: #ae9de3
-created: 2025-09-05-10:13
+created: 2025-11-07-22:19
 cssclasses: sixty-pct-width
 culture: Slovan
 deity: Nicha, The Supreme Being

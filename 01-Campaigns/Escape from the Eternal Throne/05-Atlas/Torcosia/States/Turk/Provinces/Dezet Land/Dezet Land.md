@@ -3,7 +3,7 @@ aliases:
 - Dezet
 campaign: Escape from the Eternal Throne
 color: #a0df7d
-created: 2025-09-05-10:13
+created: 2025-11-07-22:18
 cssclasses: sixty-pct-width
 emblem: Torcosia Emblem Dezet Land.png
 formName: Land

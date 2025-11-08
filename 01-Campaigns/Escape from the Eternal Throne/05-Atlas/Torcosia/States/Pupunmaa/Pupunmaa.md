@@ -9,7 +9,7 @@ capitalName: Keujarvi
 capitalFile: 01-Campaigns/Escape from the Eternal Throne/05-Atlas/Torcosia/States/Pupunmaa/Provinces/Silo County/Burgs/Keujarvi
 center: 1673
 color: #66c2a5
-created: 2025-09-05-10:13
+created: 2025-11-07-22:18
 cssclasses: sixty-pct-width
 culture: Soumi
 emblem: Torcosia Emblem Duchy of Pupunmaa.png

@@ -5,7 +5,7 @@ cultureName: "Astellian"
 code: As
 color: #eb8de7
 center: 
-created: 2025-09-05-10:13
+created: 2025-11-07-22:19
 cssclasses: sixty-pct-width
 expansionism: 2.2
 id: 2

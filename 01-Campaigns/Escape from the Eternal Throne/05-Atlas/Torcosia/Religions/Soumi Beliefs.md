@@ -5,7 +5,7 @@ campaign: "Escape from the Eternal Throne"
 center: 1009
 code: SB
 color: #80b1d3
-created: 2025-09-05-10:13
+created: 2025-11-07-22:19
 cssclasses: sixty-pct-width
 culture: Soumi
 deity: Loksasarin, The Distant

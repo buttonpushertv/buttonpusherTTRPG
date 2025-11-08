@@ -9,7 +9,7 @@ capitalName: Nympsos
 capitalFile: 01-Campaigns/Escape from the Eternal Throne/05-Atlas/Torcosia/States/Piniacia/Provinces/Pylisia Barony/Burgs/Nympsos
 center: 1469
 color: #7de3a6
-created: 2025-09-05-10:13
+created: 2025-11-07-22:18
 cssclasses: sixty-pct-width
 culture: Elladan
 emblem: Torcosia Emblem Piniacian Despotate.png

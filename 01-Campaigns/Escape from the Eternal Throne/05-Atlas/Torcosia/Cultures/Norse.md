@@ -5,7 +5,7 @@ cultureName: "Norse"
 code: No
 color: #fb8072
 center: 
-created: 2025-09-05-10:13
+created: 2025-11-07-22:19
 cssclasses: sixty-pct-width
 expansionism: 1.2
 id: 1
