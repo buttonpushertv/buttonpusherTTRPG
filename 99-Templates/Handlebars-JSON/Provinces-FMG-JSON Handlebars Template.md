@@ -80,7 +80,7 @@ WBProgress: Imported
 > unit: {{@importDataRoot.settings.distanceUnit}}
 > scale: {{@importDataRoot.settings.distanceScale}}
 > darkMode: false
-> marker: prov_capital,{{getLeafletBurgXY burg @importDataRoot.pack.burgs @importDataRoot.info}},[[{{getBurgNamePlusID burg @importDataRoot.pack.burgs}}]],{{name}} Provincial Capital
+> marker: prov_capital,{{getLeafletBurgXY burg @importDataRoot.pack.burgs @importDataRoot.info}},[[{{getcapitalFile burg state @importDataRoot}}]],{{name}} Provincial Capital
 > ```
 >  [Link to {{fullName}} on FMG Map]({{@importDataRoot.importInfo.mapDropboxFMGLink}}&scale=3{{getFMGCellXY this.center @importDataRoot.pack.cells}})
 
