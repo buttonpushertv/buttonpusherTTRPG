@@ -8,35 +8,20 @@
         "type": "tabs",
         "children": [
           {
-            "id": "088a87db6172d30c",
+            "id": "e7a7b303c61786dc",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "01-Campaigns/Escape from the Eternal Throne/05-Atlas/Torcosia/Torcosia-Linked Atlas.md",
-                "mode": "preview",
+                "file": "CHANGELOG.md",
+                "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "Torcosia-Linked Atlas"
-            }
-          },
-          {
-            "id": "ac8dbc7c34489fed",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "ShareMyPlugin.md",
-                "mode": "preview",
-                "source": true
-              },
-              "icon": "lucide-file",
-              "title": "ShareMyPlugin"
+              "title": "CHANGELOG"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -200,17 +185,15 @@
       "obsidian-import-json:JSON/CSV Importer": false
     }
   },
-  "active": "ac8dbc7c34489fed",
+  "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
+    "01-Campaigns/Escape from the Eternal Throne/05-Atlas/Escape from the Eternal Throne-Burg-URLs-Listing.md",
+    "VERSION.md",
+    "01-Campaigns/Escape from the Eternal Throne/05-Atlas/Torcosia/States/Pupunmaa/Provinces/Silo County/Burgs/Keujarvi.md",
+    "01-Campaigns/Escape from the Eternal Throne/05-Atlas/Torcosia/States/Pupunmaa/Provinces/Silo County/Silo County.md",
     "01-Campaigns/Escape from the Eternal Throne/05-Atlas/Torcosia/Torcosia-Linked Atlas.md",
-    "01-Campaigns/Escape from the Eternal Throne/05-Atlas/Torcosia/States/Pupunmaa/Pupunmaa.md",
-    "01-Campaigns/Escape from the Eternal Throne/05-Atlas/Escape from the Eternal Throne-Simple Atlas.md",
-    "90-Tools & Helpers/JSON Importing How To Notes/04-Wrangling FMG Emblems.md",
-    "90-Tools & Helpers/Obsidian Formatting Cheat Sheet.md",
     "Home.md",
-    "90-Tools & Helpers/JSON Importing How To Notes/03b-Multi-step Importing Process.md",
     "90-Tools & Helpers/JSON Importing How To Notes/03-Importing the FMG JSON Data.md",
-    "99-Templates/Handlebars-JSON/_ATLAS-Import-Batch.JSON",
     "01-Campaigns/Escape from the Eternal Throne/05-Atlas/Torcosia/Religions/Order of the Three.md",
     "01-Campaigns/Escape from the Eternal Throne/05-Atlas/Torcosia/Religions/Delilno Cult.md",
     "01-Campaigns/Escape from the Eternal Throne/05-Atlas/Torcosia/Religions/Toporicos Church.md",
@@ -230,6 +213,7 @@
     "01-Campaigns/Escape from the Eternal Throne/05-Atlas/Torcosia/Religions/Norse Ancestors.md",
     "01-Campaigns/Escape from the Eternal Throne/05-Atlas/Torcosia/Religions/No religion.md",
     "01-Campaigns/Escape from the Eternal Throne/05-Atlas/Torcosia/Religions",
+    "01-Campaigns/Escape from the Eternal Throne/05-Atlas/Torcosia/Cultures/Romian.md",
     "01-Campaigns/Escape from the Eternal Throne/05-Atlas/Torcosia/Cultures",
     "01-Campaigns/Escape from the Eternal Throne/05-Atlas/Torcosia/States/Telyilia/Provinces/Vorod Canton/Burgs",
     "01-Campaigns/Escape from the Eternal Throne/05-Atlas/Torcosia/States/Lorumia/Provinces/Jaszsolca Territory/Burgs",
@@ -238,6 +222,7 @@
     "01-Campaigns/Escape from the Eternal Throne/05-Atlas/Torcosia/States/Turk/Provinces/New Dolu Colony/Burgs",
     "01-Campaigns/Escape from the Eternal Throne/05-Atlas/Torcosia/States/Turk/Provinces/Castte County/Burgs",
     "01-Campaigns/Escape from the Eternal Throne/05-Atlas/Torcosia/States/Huecavia/Provinces/Dumia Margrave/Burgs",
+    "01-Campaigns/Escape from the Eternal Throne/05-Atlas/Torcosia/States/Tydolisia/Provinces/Theododo County/Burgs",
     "01-Campaigns/Escape from the Eternal Throne/98-Escape from the Eternal Throne Assets/Torcosia Religions World Map.svg",
     "01-Campaigns/Escape from the Eternal Throne/98-Escape from the Eternal Throne Assets/Torcosia-FMG-Emblems/export/Torcosia Emblem Zvereres.png",
     "01-Campaigns/Escape from the Eternal Throne/98-Escape from the Eternal Throne Assets/Torcosia-FMG-Emblems/export/Torcosia Emblem Zubkiza.png",
