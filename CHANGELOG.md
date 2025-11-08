@@ -2,6 +2,9 @@
 
 ## Wyrmling Edition
 
+### -v.0.6.1 - released 2025-11-07-2221EST
+-Fixed an error creating the Leaflet Map Marker to the Provincial Capital Note
+
 ### -v.0.6 - released 2025-Sep-05-1730EST
 An update to deal with changes to the FMG JSON data after new features were added and things were reworked (e.g.- v1.99 (Routes rework))
 
