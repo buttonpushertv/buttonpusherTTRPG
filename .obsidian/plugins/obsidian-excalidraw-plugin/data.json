@@ -131,7 +131,7 @@
   "mdBorderColor": "Black",
   "mdCSS": "",
   "scriptEngineSettings": {},
-  "previousRelease": "2.24.2",
+  "previousRelease": "2.15.3",
   "showReleaseNotes": true,
   "excalidrawMasteryPromoCollapsed": false,
   "compareManifestToPluginVersion": true,
@@ -760,7 +760,7 @@
   "aiDefaultTextModel": "gpt-3.5-turbo-1106",
   "aiDefaultImageGenerationModel": "dall-e-3",
   "aiDefaultMaxOutgoingTokens": 0,
-  "aiDefaultMaxResponseTokens": 4096,
+  "aiDefaultMaxResponseTokens": 0,
   "modifierKeyConfig": {
     "Mac": {
       "LocalFileDragAction": {
@@ -1082,7 +1082,7 @@
     "margin": "normal"
   },
   "disableContextMenu": false,
-  "isDebugMode": false,
   "defaultTrayMode": true,
+  "isDebugMode": false,
   "autosaveInterval": 15000
 }
