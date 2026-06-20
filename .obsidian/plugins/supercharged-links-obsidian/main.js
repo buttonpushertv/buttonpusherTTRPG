@@ -222,13 +222,24 @@ function updateDivExtraAttributes(app, settings, link, destName, linkName, filte
     if (!linkName) {
         linkName = link.textContent;
     }
-    if (!!link.parentElement.getAttribute('data-path')) {
-        // File Browser
-        linkName = link.parentElement.getAttribute('data-path');
-    }
-    else if (link.parentElement.getAttribute("class") == "suggestion-content" && !!link.nextElementSibling) {
-        // Auto complete
-        linkName = link.nextElementSibling.textContent + linkName;
+    // Sometimes textContent refers to the alias, missing the base name/path. Then we need to explicitly get the base name/path from attributes.
+    // Check for file name in various attributes, in order of preference
+    const parent = link.parentElement;
+    const attributeSources = [
+        () => parent === null || parent === void 0 ? void 0 : parent.getAttribute('data-path'), // File Browser
+        () => parent === null || parent === void 0 ? void 0 : parent.getAttribute("data-href"), // Bases
+        () => parent === null || parent === void 0 ? void 0 : parent.getAttribute("href"), // Bases 
+        () => link.getAttribute("data-href"), // Bases (v1.10+)
+        () => link.getAttribute("href"), // Bases
+        () => (parent === null || parent === void 0 ? void 0 : parent.getAttribute("class")) === "suggestion-content" && link.nextElementSibling
+            ? link.nextElementSibling.textContent + linkName : null // Auto complete
+    ];
+    for (const source of attributeSources) {
+        const value = source();
+        if (value) {
+            linkName = value;
+            break;
+        }
     }
     const dest = app.metadataCache.getFirstLinkpathDest(obsidian.getLinkpath(linkName), destName);
     if (dest) {
@@ -248,7 +259,7 @@ function updatePropertiesPane(propertiesEl, file, app, plugin) {
     var _a;
     const frontmatter = (_a = app.metadataCache.getCache(file.path)) === null || _a === void 0 ? void 0 : _a.frontmatter;
     if (!!frontmatter) {
-        const nodes = propertiesEl.querySelectorAll("div.internal-link > .multi-select-pill-content");
+        const nodes = propertiesEl.querySelectorAll("div.multi-select-pill-content");
         for (let i = 0; i < nodes.length; ++i) {
             const el = nodes[i];
             const linkText = el.textContent;
@@ -1279,7 +1290,7 @@ class SuperchargedLinks extends obsidian.Plugin {
             });
             // Initialization
             this.registerEvent(this.app.workspace.on("window-open", (window, win) => this.initModalObservers(this, window.getContainer().doc)));
-            // Update when
+            // Update when 
             // Debounced to prevent lag when writing
             this.registerEvent(this.app.metadataCache.on('changed', obsidian.debounce(updateLinks, 500, true)));
             // Update when layout changes
@@ -1295,7 +1306,7 @@ class SuperchargedLinks extends obsidian.Plugin {
         });
     }
     initViewObservers(plugin) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v, _w, _x, _y;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v, _w, _x, _y, _z, _0, _1;
         // Reset observers
         plugin.observers.forEach(([observer, type]) => {
             observer.disconnect();
@@ -1325,9 +1336,12 @@ class SuperchargedLinks extends obsidian.Plugin {
         // @ts-ignore
         if (((_k = (_j = (_h = (_g = plugin.app) === null || _g === void 0 ? void 0 : _g.internalPlugins) === null || _h === void 0 ? void 0 : _h.plugins) === null || _j === void 0 ? void 0 : _j.bases) === null || _k === void 0 ? void 0 : _k.enabled) && plugin.settings.enableBases) {
             // console.log('Supercharged links: Enabling bases support');
-            plugin.registerViewType('bases', plugin, '.internal-link');
+            plugin.registerViewType('bases', plugin, 'span.internal-link');
+            plugin.registerViewType('bases', plugin, '.multi-select-pill-content');
             // For embedded bases
-            plugin.registerViewType('markdown', plugin, 'div.bases-table-cell  .internal-link');
+            plugin.registerViewType('markdown', plugin, 'div.bases-table-cell > span.internal-link');
+            plugin.registerViewType('markdown', plugin, 'div.bases-table-cell div.multi-select-pill-content');
+            plugin.registerViewType('markdown', plugin, 'div.bases-cards-line');
         }
         if ((_o = (_m = (_l = plugin.app) === null || _l === void 0 ? void 0 : _l.plugins) === null || _m === void 0 ? void 0 : _m.plugins) === null || _o === void 0 ? void 0 : _o['similar-notes']) {
             plugin.registerViewType('markdown', plugin, '.similar-notes-pane .tree-item-inner', true);
@@ -1352,6 +1366,10 @@ class SuperchargedLinks extends obsidian.Plugin {
             // TODO: No proper unloading!
         }
         plugin.registerViewType('file-properties', plugin, 'div.internal-link > .multi-select-pill-content');
+        if ((_1 = (_0 = (_z = plugin.app) === null || _z === void 0 ? void 0 : _z.plugins) === null || _0 === void 0 ? void 0 : _0.plugins) === null || _1 === void 0 ? void 0 : _1['notebook-navigator']) {
+            plugin.registerViewType('notebook-navigator', plugin, 'span.nn-shortcut-label');
+            plugin.registerViewType('notebook-navigator', plugin, 'div.nn-file-name');
+        }
     }
     initModalObservers(plugin, doc) {
         const config = {

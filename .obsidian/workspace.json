@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "92-GM Tools/Campaign Name Generator.md",
+                "file": "Home.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "Campaign Name Generator"
+              "title": "Home"
             }
           }
         ]
@@ -187,10 +187,11 @@
   },
   "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
+    "Home.md",
+    "92-GM Tools/Campaign Name Generator.md",
     "99-Templates/Handlebars-JSON/Torcosia Full 2025-09-03-18-53-MODDED.json",
     "01-Campaigns/Escape from the Eternal Throne/05-Atlas/Torcosia/States/Pupunmaa/Provinces/Tameskog Landgrave/Tameskog Landgrave.md",
     "99-Templates/Handlebars-JSON/_ATLAS-Import-Batch.JSON",
-    "92-GM Tools/Campaign Name Generator.md",
     "92-GM Tools",
     "01-Campaigns/Escape from the Eternal Throne/05-Atlas/Escape from the Eternal Throne-Burg-URLs-Listing.md",
     "01-Campaigns/Escape from the Eternal Throne/05-Atlas/Torcosia/States/Pupunmaa/Provinces/Tameskog Landgrave/Burgs/Tameskog.md",
@@ -220,7 +221,6 @@
     "VERSION.md",
     "01-Campaigns/Escape from the Eternal Throne/05-Atlas/Torcosia/States/Pupunmaa/Provinces/Silo County/Burgs/Keujarvi.md",
     "01-Campaigns/Escape from the Eternal Throne/05-Atlas/Torcosia/States/Pupunmaa/Provinces/Silo County/Silo County.md",
-    "Home.md",
     "90-Tools & Helpers/JSON Importing How To Notes/03-Importing the FMG JSON Data.md",
     "01-Campaigns/Escape from the Eternal Throne/05-Atlas/Torcosia/Religions/Order of the Three.md",
     "01-Campaigns/Escape from the Eternal Throne/05-Atlas/Torcosia/Religions/Delilno Cult.md",

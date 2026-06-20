@@ -479,6 +479,7 @@ var LanguageVoiceModal = class extends import_obsidian2.Modal {
   display() {
     return __async(this, null, function* () {
       const { contentEl } = this;
+      this.setTitle("Configure language specific voice");
       const voices = yield this.plugin.serviceManager.getVoices();
       contentEl.empty();
       const languageNames = new Intl.DisplayNames(["en"], { type: "language" });
@@ -496,7 +497,11 @@ var LanguageVoiceModal = class extends import_obsidian2.Modal {
           this.language = value;
         });
       }));
-      new import_obsidian2.Setting(contentEl).setName("Voice").addDropdown((dropdown) => __async(this, null, function* () {
+      new import_obsidian2.Setting(contentEl).setName("Voice").setDesc(createFragment((el) => {
+        el.createSpan({ text: "See the " });
+        el.createEl("a", { text: "documentation", href: "https://github.com/joethei/obsidian-tts#adding-languages" });
+        el.createSpan({ text: " on how to add more voices" });
+      })).addDropdown((dropdown) => __async(this, null, function* () {
         for (const voice of voices) {
           dropdown.addOption(voice.service + "-" + voice.id, voice.name + " - " + languageNames.of(voice.languages[0]));
         }
@@ -506,6 +511,10 @@ var LanguageVoiceModal = class extends import_obsidian2.Modal {
         }));
       })).addExtraButton((button) => {
         button.setIcon("play-audio-glyph").setTooltip("Test voice").onClick(() => __async(this, null, function* () {
+          if (this.id == null) {
+            new import_obsidian2.Notice("No voice selected");
+            return;
+          }
           const input = new TextInputPrompt(this.app, "What do you want to hear?", "", "Hello world this is Text to speech running in obsidian", "Hello world this is Text to speech running in obsidian");
           yield input.openAndGetValue((value) => __async(this, null, function* () {
             if (value.getValue().length === 0)
@@ -517,14 +526,14 @@ var LanguageVoiceModal = class extends import_obsidian2.Modal {
       const footerEl = contentEl.createDiv();
       const footerButtons = new import_obsidian2.Setting(footerEl);
       footerButtons.addButton((b2) => {
-        b2.setTooltip("Save").setIcon("checkmark").onClick(() => __async(this, null, function* () {
+        b2.setButtonText("Save").setCta().onClick(() => __async(this, null, function* () {
           this.saved = true;
           this.close();
         }));
         return b2;
       });
-      footerButtons.addExtraButton((b2) => {
-        b2.setIcon("cross").setTooltip("Cancel").onClick(() => {
+      footerButtons.addButton((b2) => {
+        b2.setButtonText("Cancel").onClick(() => {
           this.saved = false;
           this.close();
         });
@@ -563,6 +572,7 @@ var DEFAULT_SETTINGS = {
 var TTSSettingsTab = class extends import_obsidian3.PluginSettingTab {
   constructor(plugin) {
     super(plugin.app, plugin);
+    this.icon = "volume-2";
     this.plugin = plugin;
   }
   display() {
@@ -602,8 +612,7 @@ var TTSSettingsTab = class extends import_obsidian3.PluginSettingTab {
           }));
         }));
       });
-      new import_obsidian3.Setting(containerEl).setName("Language specific voices").setHeading();
-      new import_obsidian3.Setting(containerEl).setName("Add new").setDesc("Add a new language specific voice").addButton((button) => {
+      const voicesGroup = new import_obsidian3.SettingGroup(containerEl).setHeading("Language specific voices").addSetting((setting) => setting.setName("Add new").setDesc("Add a new language specific voice").addButton((button) => {
         return button.setTooltip("add new language specific voice").setIcon("plus").onClick(() => __async(this, null, function* () {
           const modal = new LanguageVoiceModal(this.plugin);
           modal.onClose = () => __async(this, null, function* () {
@@ -619,123 +628,133 @@ var TTSSettingsTab = class extends import_obsidian3.PluginSettingTab {
           });
           modal.open();
         }));
-      });
-      const additionalContainer = containerEl.createDiv("tts-languages");
-      const voicesDiv = additionalContainer.createDiv("voices");
+      }));
       for (const languageVoice of this.plugin.settings.languageVoices) {
         const displayNames = new Intl.DisplayNames([languageVoice.language], { type: "language", fallback: "none" });
-        const setting = new import_obsidian3.Setting(voicesDiv);
-        setting.setName(displayNames.of(languageVoice.language) + " -  " + languageVoice.language);
-        setting.setDesc(languageVoice.voice);
-        setting.addExtraButton((b2) => {
-          b2.setIcon("pencil").setTooltip("Edit").onClick(() => {
-            const modal = new LanguageVoiceModal(this.plugin, languageVoice);
-            modal.onClose = () => __async(this, null, function* () {
-              if (modal.saved) {
-                const setting2 = this.plugin.settings.languageVoices.filter((value) => value.language !== modal.language);
-                setting2.push({ id: modal.id, language: modal.language, voice: modal.voice });
-                this.plugin.settings.languageVoices = setting2;
-                yield this.plugin.saveSettings();
-                this.display();
-              }
+        voicesGroup.addSetting((setting) => {
+          setting.setName(displayNames.of(languageVoice.language) + " -  " + languageVoice.language);
+          setting.setDesc(languageVoice.voice);
+          setting.addExtraButton((b2) => {
+            b2.setIcon("pencil").setTooltip("Edit").onClick(() => {
+              const modal = new LanguageVoiceModal(this.plugin, languageVoice);
+              modal.onClose = () => __async(this, null, function* () {
+                if (modal.saved) {
+                  const setting2 = this.plugin.settings.languageVoices.filter((value) => value.language !== modal.language);
+                  setting2.push({ id: modal.id, language: modal.language, voice: modal.voice });
+                  this.plugin.settings.languageVoices = setting2;
+                  yield this.plugin.saveSettings();
+                  this.display();
+                }
+              });
+              modal.open();
             });
-            modal.open();
+          }).addExtraButton((b2) => {
+            b2.setIcon("trash").setTooltip("Delete").onClick(() => __async(this, null, function* () {
+              this.plugin.settings.languageVoices = this.plugin.settings.languageVoices.filter((value) => value.language !== languageVoice.language);
+              yield this.plugin.saveSettings();
+              this.display();
+            }));
           });
-        }).addExtraButton((b2) => {
-          b2.setIcon("trash").setTooltip("Delete").onClick(() => __async(this, null, function* () {
-            this.plugin.settings.languageVoices = this.plugin.settings.languageVoices.filter((value) => value.language !== languageVoice.language);
+        });
+      }
+      new import_obsidian3.SettingGroup(containerEl).setHeading("Audio").addSetting((setting) => {
+        setting.setName("Volume").addSlider((slider) => __async(this, null, function* () {
+          slider.setValue(this.plugin.settings.volume * 100).setDynamicTooltip().setLimits(0, 100, 1).onChange((value) => __async(this, null, function* () {
+            this.plugin.settings.volume = value / 100;
+            yield this.plugin.saveSettings();
+          }));
+        })).addExtraButton((button) => {
+          button.setIcon("reset").setTooltip("restore default").onClick(() => __async(this, null, function* () {
+            this.plugin.settings.volume = DEFAULT_SETTINGS.volume;
             yield this.plugin.saveSettings();
             this.display();
           }));
         });
-      }
-      new import_obsidian3.Setting(containerEl).setName("Audio").setHeading();
-      new import_obsidian3.Setting(containerEl).setName("Volume").addSlider((slider) => __async(this, null, function* () {
-        slider.setValue(this.plugin.settings.volume * 100).setDynamicTooltip().setLimits(0, 100, 1).onChange((value) => __async(this, null, function* () {
-          this.plugin.settings.volume = value / 100;
-          yield this.plugin.saveSettings();
+      }).addSetting((setting) => {
+        setting.setName("Rate").setDesc("how fast the text will be spoken").addSlider((slider) => __async(this, null, function* () {
+          slider.setValue(this.plugin.settings.rate).setDynamicTooltip().setLimits(0.1, 10, 0.1).onChange((value) => __async(this, null, function* () {
+            this.plugin.settings.rate = value;
+            yield this.plugin.saveSettings();
+          }));
+        })).addExtraButton((button) => {
+          button.setIcon("reset").setTooltip("restore default").onClick(() => __async(this, null, function* () {
+            this.plugin.settings.rate = DEFAULT_SETTINGS.rate;
+            yield this.plugin.saveSettings();
+            this.display();
+          }));
+        });
+      }).addSetting((setting) => {
+        setting.setName("Pitch").addSlider((slider) => __async(this, null, function* () {
+          slider.setValue(this.plugin.settings.pitch).setDynamicTooltip().setLimits(0, 2, 0.1).onChange((value) => __async(this, null, function* () {
+            this.plugin.settings.pitch = value;
+            yield this.plugin.saveSettings();
+          }));
+        })).addExtraButton((button) => {
+          button.setIcon("reset").setTooltip("restore default").onClick(() => __async(this, null, function* () {
+            this.plugin.settings.pitch = DEFAULT_SETTINGS.pitch;
+            yield this.plugin.saveSettings();
+            this.display();
+          }));
+        });
+      });
+      new import_obsidian3.SettingGroup(containerEl).setHeading("Speak").addSetting((setting) => {
+        setting.setName("Title").addToggle((toggle) => __async(this, null, function* () {
+          toggle.setValue(this.plugin.settings.speakTitle).onChange((value) => __async(this, null, function* () {
+            this.plugin.settings.speakTitle = value;
+            yield this.plugin.saveSettings();
+          }));
         }));
-      })).addExtraButton((button) => {
-        button.setIcon("reset").setTooltip("restore default").onClick(() => __async(this, null, function* () {
-          this.plugin.settings.volume = DEFAULT_SETTINGS.volume;
-          yield this.plugin.saveSettings();
-          this.display();
+      }).addSetting((setting) => {
+        setting.setName("Frontmatter").addToggle((toggle) => __async(this, null, function* () {
+          toggle.setValue(this.plugin.settings.speakFrontmatter).onChange((value) => __async(this, null, function* () {
+            this.plugin.settings.speakFrontmatter = value;
+            yield this.plugin.saveSettings();
+          }));
+        }));
+      }).addSetting((setting) => {
+        setting.setName("Links").addToggle((toggle) => __async(this, null, function* () {
+          toggle.setValue(this.plugin.settings.speakLinks).onChange((value) => __async(this, null, function* () {
+            this.plugin.settings.speakLinks = value;
+            yield this.plugin.saveSettings();
+          }));
+        }));
+      }).addSetting((setting) => {
+        setting.setName("Codeblocks").addToggle((toggle) => __async(this, null, function* () {
+          toggle.setValue(this.plugin.settings.speakCodeblocks).onChange((value) => __async(this, null, function* () {
+            this.plugin.settings.speakCodeblocks = value;
+            yield this.plugin.saveSettings();
+          }));
+        }));
+      }).addSetting((setting) => {
+        setting.setName("Comments").addToggle((toggle) => __async(this, null, function* () {
+          toggle.setValue(this.plugin.settings.speakComments).onChange((value) => __async(this, null, function* () {
+            this.plugin.settings.speakComments = value;
+            yield this.plugin.saveSettings();
+          }));
+        }));
+      }).addSetting((setting) => {
+        setting.setName("Syntax").addToggle((toggle) => __async(this, null, function* () {
+          toggle.setValue(this.plugin.settings.speakSyntax).onChange((value) => __async(this, null, function* () {
+            this.plugin.settings.speakSyntax = value;
+            yield this.plugin.saveSettings();
+          }));
+        }));
+      }).addSetting((setting) => {
+        setting.setName("Emoji").addToggle((toggle) => __async(this, null, function* () {
+          toggle.setValue(this.plugin.settings.speakEmoji).onChange((value) => __async(this, null, function* () {
+            this.plugin.settings.speakEmoji = value;
+            yield this.plugin.saveSettings();
+          }));
         }));
       });
-      new import_obsidian3.Setting(containerEl).setName("Rate").setDesc("how fast the text will be spoken").addSlider((slider) => __async(this, null, function* () {
-        slider.setValue(this.plugin.settings.rate).setDynamicTooltip().setLimits(0.1, 10, 0.1).onChange((value) => __async(this, null, function* () {
-          this.plugin.settings.rate = value;
-          yield this.plugin.saveSettings();
-        }));
-      })).addExtraButton((button) => {
-        button.setIcon("reset").setTooltip("restore default").onClick(() => __async(this, null, function* () {
-          this.plugin.settings.rate = DEFAULT_SETTINGS.rate;
-          yield this.plugin.saveSettings();
-          this.display();
+      new import_obsidian3.SettingGroup(containerEl).setHeading("Misc").addSetting((setting) => {
+        setting.setName("Stop playback when a note is closed/new note is opened").addToggle((toggle) => __async(this, null, function* () {
+          toggle.setValue(this.plugin.settings.stopPlaybackWhenNoteChanges).onChange((value) => __async(this, null, function* () {
+            this.plugin.settings.stopPlaybackWhenNoteChanges = value;
+            yield this.plugin.saveSettings();
+          }));
         }));
       });
-      new import_obsidian3.Setting(containerEl).setName("Pitch").addSlider((slider) => __async(this, null, function* () {
-        slider.setValue(this.plugin.settings.pitch).setDynamicTooltip().setLimits(0, 2, 0.1).onChange((value) => __async(this, null, function* () {
-          this.plugin.settings.pitch = value;
-          yield this.plugin.saveSettings();
-        }));
-      })).addExtraButton((button) => {
-        button.setIcon("reset").setTooltip("restore default").onClick(() => __async(this, null, function* () {
-          this.plugin.settings.pitch = DEFAULT_SETTINGS.pitch;
-          yield this.plugin.saveSettings();
-          this.display();
-        }));
-      });
-      new import_obsidian3.Setting(containerEl).setName("Speak").setHeading();
-      new import_obsidian3.Setting(containerEl).setName("Title").addToggle((toggle) => __async(this, null, function* () {
-        toggle.setValue(this.plugin.settings.speakTitle).onChange((value) => __async(this, null, function* () {
-          this.plugin.settings.speakTitle = value;
-          yield this.plugin.saveSettings();
-        }));
-      }));
-      new import_obsidian3.Setting(containerEl).setName("Frontmatter").addToggle((toggle) => __async(this, null, function* () {
-        toggle.setValue(this.plugin.settings.speakFrontmatter).onChange((value) => __async(this, null, function* () {
-          this.plugin.settings.speakFrontmatter = value;
-          yield this.plugin.saveSettings();
-        }));
-      }));
-      new import_obsidian3.Setting(containerEl).setName("Links").addToggle((toggle) => __async(this, null, function* () {
-        toggle.setValue(this.plugin.settings.speakLinks).onChange((value) => __async(this, null, function* () {
-          this.plugin.settings.speakLinks = value;
-          yield this.plugin.saveSettings();
-        }));
-      }));
-      new import_obsidian3.Setting(containerEl).setName("Codeblocks").addToggle((toggle) => __async(this, null, function* () {
-        toggle.setValue(this.plugin.settings.speakCodeblocks).onChange((value) => __async(this, null, function* () {
-          this.plugin.settings.speakCodeblocks = value;
-          yield this.plugin.saveSettings();
-        }));
-      }));
-      new import_obsidian3.Setting(containerEl).setName("Comments").addToggle((toggle) => __async(this, null, function* () {
-        toggle.setValue(this.plugin.settings.speakComments).onChange((value) => __async(this, null, function* () {
-          this.plugin.settings.speakComments = value;
-          yield this.plugin.saveSettings();
-        }));
-      }));
-      new import_obsidian3.Setting(containerEl).setName("Syntax").addToggle((toggle) => __async(this, null, function* () {
-        toggle.setValue(this.plugin.settings.speakSyntax).onChange((value) => __async(this, null, function* () {
-          this.plugin.settings.speakSyntax = value;
-          yield this.plugin.saveSettings();
-        }));
-      }));
-      new import_obsidian3.Setting(containerEl).setName("Emoji").addToggle((toggle) => __async(this, null, function* () {
-        toggle.setValue(this.plugin.settings.speakEmoji).onChange((value) => __async(this, null, function* () {
-          this.plugin.settings.speakEmoji = value;
-          yield this.plugin.saveSettings();
-        }));
-      }));
-      new import_obsidian3.Setting(containerEl).setName("Misc").setHeading();
-      new import_obsidian3.Setting(containerEl).setName("Stop playback when a note is closed/new note is opened").addToggle((toggle) => __async(this, null, function* () {
-        toggle.setValue(this.plugin.settings.stopPlaybackWhenNoteChanges).onChange((value) => __async(this, null, function* () {
-          this.plugin.settings.stopPlaybackWhenNoteChanges = value;
-          yield this.plugin.saveSettings();
-        }));
-      }));
     });
   }
 };
@@ -1020,7 +1039,7 @@ var TTSPlugin = class extends import_obsidian6.Plugin {
       (0, import_obsidian6.addIcon)("tts-play-pause", '<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256"><rect x="0" y="0" width="256" height="256" fill="none" stroke="none" /><path fill="currentColor" d="M184 64v128a8 8 0 0 1-16 0V64a8 8 0 0 1 16 0Zm40-8a8 8 0 0 0-8 8v128a8 8 0 0 0 16 0V64a8 8 0 0 0-8-8Zm-80 72a15.76 15.76 0 0 1-7.33 13.34l-88.19 56.15A15.91 15.91 0 0 1 24 184.15V71.85a15.91 15.91 0 0 1 24.48-13.34l88.19 56.15A15.76 15.76 0 0 1 144 128Zm-16.18 0L40 72.08v111.85Z"/></svg>');
       console.log("loading tts plugin");
       if (import_obsidian6.Platform.isAndroidApp) {
-        new import_obsidian6.Notice("TTS: due to a bug in android this plugin does not work on this platform");
+        new import_obsidian6.Notice("TTS: due to a bug in Android this plugin does not work on this platform");
         this.unload();
       }
       yield this.loadSettings();
@@ -1289,3 +1308,5 @@ var TTSPlugin = class extends import_obsidian6.Plugin {
     return (_a = this.app.metadataCache.getFileCache(file).frontmatter) == null ? void 0 : _a.lang;
   }
 };
+
+/* nosourcemap */

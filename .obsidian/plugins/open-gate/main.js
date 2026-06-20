@@ -169,7 +169,7 @@ var ModalEditGate = class extends import_obsidian2.Modal {
 
 // src/fns/getDefaultUserAgent.ts
 function getDefaultUserAgent() {
-  return `Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/117.0/HBpt3US8-18`;
+  return "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36";
 }
 
 // src/fns/createEmptyGateOption.ts
@@ -277,13 +277,9 @@ var createWebviewTag = (params, onReady, parentDoc) => {
   webviewTag.setAttribute("partition", "persist:" + params.profileKey);
   webviewTag.setAttribute("src", (_a = params.url) != null ? _a : DEFAULT_URL);
   webviewTag.setAttribute("httpreferrer", (_b = params.url) != null ? _b : GOOGLE_URL);
-  webviewTag.setAttribute("crossorigin", "anonymous");
   webviewTag.setAttribute("allowpopups", "true");
-  webviewTag.setAttribute("disablewebsecurity", "true");
   webviewTag.addClass(OPEN_GATE_WEBVIEW_CLASS);
-  if (params.userAgent && params.userAgent !== "") {
-    webviewTag.setAttribute("useragent", params.userAgent);
-  }
+  webviewTag.setAttribute("useragent", params.userAgent || getDefaultUserAgent());
   webviewTag.addEventListener("dom-ready", async () => {
     if (params.zoomFactor) {
       webviewTag.setZoomFactor(params.zoomFactor);
@@ -307,8 +303,9 @@ var createIframe = (params, onReady) => {
   var _a;
   const iframe = document.createElement("iframe");
   iframe.setAttribute("allowpopups", "");
-  iframe.setAttribute("credentialless", "true");
-  iframe.setAttribute("crossorigin", "anonymous");
+  if ("credentialless" in iframe) {
+    iframe.setAttribute("credentialless", "true");
+  }
   iframe.setAttribute("src", (_a = params.url) != null ? _a : "about:blank");
   iframe.setAttribute("sandbox", "allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts allow-top-navigation-by-user-activation");
   iframe.setAttribute("allow", "encrypted-media; fullscreen; oversized-images; picture-in-picture; sync-xhr; geolocation");
@@ -6927,6 +6924,7 @@ var OpenGatePlugin = class extends import_obsidian12.Plugin {
   async removeGate(gateId) {
     if (!this.settings.gates[gateId]) {
       new import_obsidian12.Notice("Gate not found");
+      return;
     }
     const gate = this.settings.gates[gateId];
     await unloadView(this.app.workspace, gate);
