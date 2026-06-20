@@ -1,5 +1,5 @@
 > [!TLDR] Version Info
-> Wyrmling Edition - v.0.6.1
+> Wyrmling Edition - v.0.7
 
 > [!INFO]- Version Plans
 >
