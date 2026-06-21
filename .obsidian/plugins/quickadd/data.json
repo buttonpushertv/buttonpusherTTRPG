@@ -118,7 +118,7 @@
               "folder": {
                 "enabled": true,
                 "folders": [
-                  "{{VALUE:newCampaignPath}}/05-Atlas/"
+                  "{{VALUE:newCampaignPath}}/05-Atlas"
                 ],
                 "chooseWhenCreatingNote": false,
                 "createInSameFolderAsActiveFile": false,
