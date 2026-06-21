@@ -191,6 +191,9 @@ religion: {{getReligionName this.center @importDataRoot.pack.cells @importDataRo
 rulers:
 rural: {{calcPopulation rural @importDataRoot.settings.populationRate}}
 shortDescription:
+treasury: {{treasury}}
+salesTax: {{salesTax}}
+pollTax: {{pollTax}}
 urban: {{calcPopulation urban @importDataRoot.settings.populationRate}}
 tags:
 - State
@@ -294,7 +297,10 @@ WBProcess: Imported
 > **Capital** | `=link(this.capitalFile, this.capitalName)` |
 > **Ruler(s)** | `=link(this.rulers)` |
 > **Govt Type** | `=this.form` |
->**Dominant Culture** | `=link(this.culture)` |
+> **Treasury** | `=this.treasury` |
+> **Sales Tax Rate** | `=this.salesTax` |
+> **Poll Tax Rate** | `=this.pollTax` |
+> **Dominant Culture** | `=link(this.culture)` |
 > **Dominant Religion** | `=link(this.religion)` |
 >
 >  |

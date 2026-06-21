@@ -38,7 +38,7 @@ Export an SVG of the map. It will be useful to check the box that says "Show all
 
 Export a second map that shows the Provinces. In FMG Options, choose the Layers Preset called Provinces map. FMG does not currently have labels for the Provinces similar to States or Burgs. There are labels that exist in another place though. Under Options, click on the Tools tab and click to configure the Provinces and open that tool. Click on the letter A icon at the bottom to toggle the Province Labels on. They are a little different than the others, but they'll server our purpose. Rename the SVG file as `{thisCampaignName} Provinces World Map.svg`
 
-Under the Layers Presets, choose Religions and export another map of the world's religions. Name this map `{thisMapName}`
+Under the Layers Presets, choose Religions and export another map of the world's religions. Name this map `{thisCampaignName} Religions World Map.svg`
 
 ### Modifications to FMG Full JSON file
 There are some things that need to be modified in the `FMGJSON` file for the Handlebar Templates and Helpers to work properly. It's a good idea to work from a copy of the raw JSON export from FMG. That will give you a backup of what you get out of FMG and you can revert to the original data, if needed. Make a duplicate of the JSON file and add something like `"-MODDED"` or `"-forIMPORT"` to the filename. Open this copied JSON file in a text editor. **Be very careful to keep the JSON valid for this to work.**
