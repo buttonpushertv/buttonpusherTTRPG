@@ -210,7 +210,7 @@ Significant incidents in `=this.name`'s history:
 > [!note|wmed]- Burgs
 > ```dataview
 > TABLE WITHOUT ID file.link as "Burgs", link(provinceName) as "Province Name"
-> FROM #Burg and "{{@importDataRoot.importInfo.thisCampaignPath}}/{{@importDataRoot.info.mapName}}/05-Atlas/States/{{name}}"
+> FROM #Burg and #{{name}}
 > WHERE econtains(stateId,this.id)
 > SORT file.name ASC
 > ```

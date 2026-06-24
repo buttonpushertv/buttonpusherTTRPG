@@ -145,7 +145,6 @@ WBProcess: FALSE
 > | Temperature South Pole: | {{@importDataRoot.settings.options.temperatureSouthPole}} |
 > | State Labels Mode: | {{@importDataRoot.settings.options.stateLabelsMode}} |
 > | Show Burg Preview: | {{@importDataRoot.settings.options.showBurgPreview}} |
-> | Village Max Population: | {{@importDataRoot.settings.options.villageMaxPopulation}} |
 > | Year: | {{@importDataRoot.settings.options.year}} |
 > | Era: | {{@importDataRoot.settings.options.era}} |
 > | Era Short: | {{@importDataRoot.settings.options.eraShort}} |
@@ -153,7 +152,14 @@ WBProcess: FALSE
 > | Hide Labels: | {{@importDataRoot.settings.hideLabels}} |
 > | Style Preset: | {{@importDataRoot.settings.stylePreset}} |
 > | Rescale Labels: | {{@importDataRoot.settings.rescaleLabels}} |
-> | Urban Density: | {{@importDataRoot.settings.urbanDensity}} |{{/if}}{{#if (eq @importSettings.topField "pack.states")}}---
+> | Urban Density: | {{@importDataRoot.settings.urbanDensity}} |
+>
+> #### Burg Group Options
+> | Group | Active | Order | Preview Gen | Pop Min | Pop Max | Percentile |
+> | ----- | ------ | ----- | ----------- | ------- | ------- | ---------- |
+{{#each @importDataRoot.settings.options.burgs}}
+> | {{name}} | {{active}} | {{order}} | {{showBurgPreview}} | {{preview}} | {{min}} | {{max}} | {{percentile}} |
+{{/each}}{{/if}}{{#if (eq @importSettings.topField "pack.states")}}---
 alert: {{alert}}
 aliases: 
 - {{name}}
@@ -365,7 +371,7 @@ Significant incidents in `=this.name`'s history:
 > [!note|wmed]- Burgs
 > ```dataview
 > TABLE WITHOUT ID file.link as "Burgs", link(provinceName) as "Province Name"
-> FROM #Burg and "{{@importDataRoot.importInfo.thisCampaignPath}}/{{@importDataRoot.info.mapName}}/05-Atlas/States/{{name}}"
+> FROM #Burg and #{{name}}
 > WHERE econtains(stateId,this.id)
 > SORT file.name ASC
 > ```
@@ -405,7 +411,7 @@ created: {{getDateTimestamp @importSettings}}
 cssclasses: sixty-pct-width
 emblem: {{@importDataRoot.info.mapName}} Emblem {{fullName}}.png
 formName: {{formName}}
-fullName: {{fullName}}{{ log "PROVINCES - fullName: " fullName }}
+fullName: {{fullName}}
 {{setvar "nameToPull" (getProvinceName i @importDataRoot.pack.provinces)}}pulledName: {{"nameToPull"}}
 id: {{i}}
 name: {{name}}
@@ -568,7 +574,7 @@ Siginifcant Incidents in `=this.name`'s history:
 [[{{@importDataRoot.importInfo.thisCampaignPath}}/{{@importDataRoot.importInfo.thisCampaign}} Home|{{@importDataRoot.importInfo.thisCampaign}} Home]] | [[{{@importDataRoot.importInfo.thisCampaignPath}}/05-Atlas/{{@importDataRoot.info.mapName}}/{{@importDataRoot.info.mapName}}-Linked Atlas|{{@importDataRoot.info.mapName}}-Linked Atlas]] | State: `=link(this.stateNotePath,this.stateName)`{{/if}}{{#if (eq @importSettings.topField "pack.burgs")}}---
 aliases:
 - {{name}}
-burgMapLink: https://watabou.github.io{{getBurgMapLink this @importDataRoot.info.seed @importDataRoot.pack.cells @importDataRoot.settings @importDataRoot.grid}}
+burgMapLink: {{getBurgMapLink this @importDataRoot.info.seed @importDataRoot.pack.cells @importDataRoot.pack.routes @importDataRoot.settings @importDataRoot.grid}}
 burgName: {{name}}
 burgNameID: {{name}}-{{i}}
 campaign: {{@importDataRoot.importInfo.thisCampaign}}
@@ -579,12 +585,15 @@ cssclasses: sixty-pct-width
 culture: {{getCultureName culture @importDataRoot.pack.cultures}}
 elevation: {{getHeight cell @importDataRoot.settings @importDataRoot.pack.cells}}
 emblem: {{@importDataRoot.info.mapName}} Emblem {{name}}.png
+group: {{group}}
 feature: {{feature}}
 id: {{i}}
 mapName: {{@importDataRoot.info.mapName}}
+market: {{market}}
 plaza: {{plaza}}
 population: {{calcPopulation population @importDataRoot.settings.populationRate}}
 port: {{port}}
+product: {{product}}
 pronounced:
 provinceId: {{getProvinceIdFromCell cell @importDataRoot.pack.cells}}
 provinceName: {{burgProvinceNameLookup cell @importDataRoot.pack.cells @importDataRoot.pack.provinces}}
@@ -599,13 +608,14 @@ tags:
 - Burg
 - {{@importDataRoot.info.mapName}}
 - {{@importDataRoot.importInfo.thisCampaignShortCode}}
-- {{getBurgType this @importDataRoot.settings}}
+- {{group}}
 - {{burgProvinceNameLookupTag cell @importDataRoot.pack.cells @importDataRoot.pack.provinces}}
 - {{getStateName state @importDataRoot.pack.states}}
 temple: {{temple}}
 temperature: {{getTemperature this @importDataRoot}}
 temperatureLikeness: {{getTemperatureLikeness this @importDataRoot}}
-templateVersion: 5.0
+templateVersion: 6.0
+treasury: {{treasury}}
 type: {{type}}
 walls: {{walls}}
 WBProgress: Imported
@@ -685,7 +695,7 @@ There is an elaborate method (see [[JSON Import How To#Wrangling FMG Burg Maps]]
 > ```custom-frames
 > frame: Watabou-Procgen Arcana
 > style: height: 1000px;
-> urlSuffix: {{getBurgMapLink this @importDataRoot.info.seed @importDataRoot.pack.cells @importDataRoot.settings @importDataRoot.grid}}
+> urlSuffix: {{getBurgMapLink this @importDataRoot.info.seed @importDataRoot.pack.cells @importDataRoot.pack.cells @importDataRoot.settings @importDataRoot.grid}}
 > ```
 >
 >  `=elink(this.burgMapLink,"Visit Burg Map")` | Generator Link: `BUTTON[mapLink-to-download]`

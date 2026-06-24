@@ -7,7 +7,7 @@ created: {{getDateTimestamp @importSettings}}
 cssclasses: sixty-pct-width
 emblem: {{@importDataRoot.info.mapName}} Emblem {{fullName}}.png
 formName: {{formName}}
-fullName: {{fullName}}{{ log "PROVINCES - fullName: " fullName }}
+fullName: {{fullName}}
 {{setvar "nameToPull" (getProvinceName i @importDataRoot.pack.provinces)}}pulledName: {{"nameToPull"}}
 id: {{i}}
 name: {{name}}

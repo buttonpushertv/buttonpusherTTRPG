@@ -13,8 +13,8 @@
 008 getProvinceName(provinceId,allProvinces)
 008b getProvinceNamePlusID(provinceId,allProvinces)
 009 getCultureName(cultureId,allCultures)
-010 burgMapUnits(currentBurg, mapSettings)
-011 getBurgMapLink(currentBurg, mapSeed, allCells, mapSettings)
+010x burgMapUnits(currentBurg, mapSettings) - NOT CURRENTLY IN USE
+011 getBurgMapLinkByGroup(currentBurg, mapSeed, allCells, allRoutes, mapSettings, grid)
 012 getHeight(currentCell, mapSettings, allCells)
 013 totalArea(area)
 014 calcPopulation(popValue)
@@ -32,9 +32,11 @@
 023 getTemperature(burg,allData)
 024 getTemperatureLikeness(burg,allData)
 025 getProvinceIdFromCell(cell,allData)
-026 getcapitalFile(capitalID,allData)
+026 getcapitalFile(capitalID,allData)]
+027x getBurgType(burg,allData) - POSSIBLY DEPRECATED - formely used to determine if a burg was a city, town, village, or hamlet - now that is determined by the 'group' property of the burg object
 
 * - NEEDS TO BE REWORKED
+x - DEPRECATED - no longer used in the code
 
 IMPORTANT: All of these helpers rely on the campaigns being stored in the vault in a sub-folder within a sub-solder off of the root of the vault. For example, by default, other scripts in this vault will store any newly created campaigns under: "01-Campaigns" + campiagn name off of the root of the buttonpusherTTRPG vault. All of the helpers below require that method of storing the campaigns. See the common line, in most of the helpers that reads: const (somevariable) = `${folders[1]}` - that is what is extracting the location of the specific campaign that is the target for that process.
 
@@ -43,7 +45,7 @@ IMPORTANT: All of these helpers rely on the campaigns being stored in the vault 
 // 001 - NEEDS TO BE UPDATED TO USE JSON ELEMENT @ importInfo.thisCampaign & importInfo.thisCampaignPath
 // Custom helper function to extract thisCampaignHomeNote from @importSettings
 handlebars.registerHelper('getCampaignHomeNote', function(importSettings) {
-  console.log("importSettings: ", importSettings);
+  // console.log("importSettings: ", importSettings);
   const folders = importSettings.folderName.split('/');
   const thisCampaignHomeNote = `${folders[1]}` + " Home";
   return thisCampaignHomeNote;
@@ -113,7 +115,7 @@ handlebars.registerHelper('getBurgNamePlusID', function(burgId, allBurgs) {
   const burgFound = allBurgs.find(burg => burg.i === burgId);
   //console.log("getBurgNamePlusID-burgFound:", burgFound);
   const burgToReturn = burgFound ? burgFound.name + "-" + burgId : 'Unknown';
-  console.log("burgToReturn:", burgToReturn);
+  // console.log("burgToReturn:", burgToReturn);
   return burgToReturn ? burgToReturn : 'Unknown';
 });
 
@@ -218,10 +220,12 @@ handlebars.registerHelper('burgMapUnits', function(currentBurg, mapSettings) {
 });
 
 // 011
-// Custom helper to construct the Map link for a Burg. If population is over 2,000 it uses https://watabou.github.io/city-generator/. If population is under 2,000 it uses https://watabou.github.io/village-generator/
+// Custom helper to construct the Map link for a Burg. It will the Burg's 'group' property to determine whether to link to the City Generator or the Village Generator.
+// If the 'group' value is 'city' or 'town' or 'capital' then it uses https://watabou.github.io/city-generator/. 
+// If the 'group' value is 'village' or 'hamlet' then it uses https://watabou.github.io/village-generator/
 // based on the data model for Fantasy Map Generator - https://github.com/Azgaar/Fantasy-Map-Generator/wiki/Data-model
 // Portions of this code are adapted from the Fantasy Map Generator Code - https://github.com/Azgaar/Fantasy-Map-Generator
-handlebars.registerHelper('getBurgMapLink', function(currentBurg, mapSeed, allCells, mapSettings, grid) {
+handlebars.registerHelper('getBurgMapLink', function(currentBurg, mapSeed, allCells, allRoutes, mapSettings, grid) {
   if (!currentBurg === undefined || currentBurg.SourceIndex === 0) {
     console.log("##### getBurgMapLink - currentBurg was undefined or zero #####");
     return ''; // skip if currentCell is undefined
@@ -230,45 +234,55 @@ handlebars.registerHelper('getBurgMapLink', function(currentBurg, mapSeed, allCe
   // console.log("allCells: ", allCells);
   // console.log("mapSettings: ", mapSettings);
 
-  // console.log("Processing Burg ID: ", currentBurg.i, " - Name: ", currentBurg.name);
-  // console.log("currentBurg:", currentBurg);
+  console.log("Processing Burg ID: ", currentBurg.i, " - Name: ", currentBurg.name);
+  console.log("currentBurg:", currentBurg);
 
   // console.log("mapSettings: ", mapSettings);
   const {options} = mapSettings;
   // console.log("options: ", options);
 
-  const pop = rn(currentBurg.population * mapSettings.populationRate * mapSettings.urbanization);
-  // console.log("DEBUG - population: ", pop);
-
-  // console.log("POP TEST: population:", pop, "options.villageMaxPopulation: ", options.villageMaxPopulation);
-  // console.log("DEBUG - testing for Village or City");
-  if (!options.villageMaxPopulation){
-    console.log ("## - JSON does not contain options.villageMaxPopulation - ##");
-    return createMfcgLink(currentBurg, mapSeed, allCells, mapSettings, grid);
-  } else if (pop >= options.villageMaxPopulation || currentBurg.citadel || currentBurg.walls || currentBurg.temple || currentBurg.shanty) {
-    // console.log("DEBUG - It's a City - using MFCG");
-    return createMfcgLink(currentBurg, mapSeed, allCells, mapSettings, grid);
-  } else {
-    // console.log("DEBUG - It's a Village - using Village Gen");
-    return createVillageGeneratorLink(currentBurg, mapSeed, allCells, mapSettings, grid);
+  const currentGroup = currentBurg.group;
+  // console.log("currentGroup: ", currentGroup);
+  if (currentGroup === "city" || currentGroup === "town" || currentGroup === "capital") {
+    // console.log("DEBUG - ", currentBurg.name, " is a City/Town/Capital - using MFCG - currentGroup: ", currentGroup);
+    return createMfcgLink(currentBurg, mapSeed, allCells, allRoutes, mapSettings, grid);
+    console.log("******* - DEBUG - ", currentBurg.name, " is a City/Town/Capital - link returned from createMfcgLink-*******");
+  } else if (currentGroup === "village" || currentGroup === "hamlet") {
+    // console.log("DEBUG - ", currentBurg.name, " is a Village/Hamlet - using Village Gen - currentGroup: ", currentGroup);
+    return createVillageGeneratorLink(currentBurg, mapSeed, allCells, allRoutes, mapSettings, grid);
+    console.log("******* - DEBUG - ", currentBurg.name, " is a Village/Hamlet - link returned from createVillageGeneratorLink- *******");
   };
 
-  function createMfcgLink(currentBurg, mapSeed, allCells, mapSettings) {
+  function createMfcgLink(currentBurg, mapSeed, allCells, allRoutes,mapSettings) {
     // console.log("++- ", currentBurg.name, " is a CITY - ++");
-    var seed = `${mapSeed}${String(currentBurg.i).padStart(4, 0)}`;
+    const burgSeed = currentBurg.MFCG || mapSeed + String(currentBurg.i).padStart(4, "0");
     const name = currentBurg.name;
-    // console.log("currentBurg:", currentBurg);
+    const burgID = currentBurg.i;
+    const burgCell = currentBurg.cell;
+    // console.log("+-----+ Inside createMfcgLink - name: ", name, " - burgID: ", burgID, " - burgSeed: ", burgSeed);
     const currentCell = allCells.find(bc => bc.i === currentBurg.cell);
-    const havenCell = allCells.find(hc => hc.i === currentCell.haven);
+    const havenIndex = currentCell.haven;
+    const havenCell = havenIndex ? allCells.find(hc => hc.i === havenIndex) : null;
     // console.log("currentCell: ", currentCell);
     const sizeRaw = 2.13 * Math.pow((currentBurg.population * mapSettings.populationRate) / mapSettings.urbanDensity, 0.385);
     const size = minmax(Math.ceil(sizeRaw), 6, 100);
     const population = rn(currentBurg.population * mapSettings.populationRate * mapSettings.urbanization);
     // console.log("population: ", population);
     const river = currentCell.r ? 1 : 0;
-    const coast = Number(currentBurg.port > 0);
-    const sea = coast && currentCell.haven ? getSeaDirections(currentCell.i) : null;
-    // console.log("river: ", river, "---coast: ", coast,"---sea: ", sea);
+    const coast = Number((currentBurg.port || 0) > 0);
+    //console.log("createMfcgLink - currentBurg.name: ", currentBurg.name, " currentCell: ", currentCell, " havenCell: ", havenCell);
+    const sea = (() => {
+      if (!coast || !havenCell) return null;
+      // calculate see direction: 0 = east, 0.5 = north, 1 = west, 1.5 = south
+      const [x1, y1] = currentCell.p;
+      const [x2, y2] = havenCell.p;
+      const deg = (Math.atan2(y2 - y1, x2 - x1) * 180) / Math.PI;
+
+      if (deg <= 0) return rn(normalize(Math.abs(deg), 0, 180), 2);
+      return rn(2 - normalize(deg, 0, 180), 2);
+    })();
+    // console.log("Post-sea-definition - currentBurg.i: ", currentBurg.i, " - river: ", river, " - coast: ", coast, " - sea: ", sea);
+    // const sea = coast && currentCell.haven ? getSeaDirections(currentCell.i) : null; - OLD SEA DIRECTIONS
     const biome = currentCell.biome;
     const arableBiomes = river ? [1, 2, 3, 4, 5, 6, 7, 8] : [5, 6, 7, 8];
     const farms = +arableBiomes.includes(biome);
@@ -276,50 +290,66 @@ handlebars.registerHelper('getBurgMapLink', function(currentBurg, mapSeed, allCe
     const citadel = +currentBurg.citadel;
     const urban_castle = +(citadel && each(2)(currentBurg.i));
     // console.log("urban_castle: ", urban_castle);
-    const hub = +currentCell.road > 50;
-    // console.log("hub: ", hub);
+    //console.log("#### currentBurg: ", currentBurg, " - currentCell: ", currentCell,);
+    // console.log("!@!@!@!@ - Dropping in to isCrossroad()");
+    const hub = +isCrossroad(burgCell, allCells, allRoutes);
+    // console.log(">>>>>> currentBurg.name: ", currentBurg.name, " - hub: ", hub);
     const walls = +currentBurg.walls;
     const plaza = +currentBurg.plaza;
     const temple = +currentBurg.temple;
     const shantytown = +currentBurg.shanty;
 
-    const parameters = {
-      name,
-      population,
-      size,
-      seed,
-      river,
-      coast,
-      farms,
-      citadel,
-      urban_castle,
-      hub,
-      plaza,
-      temple,
-      walls,
-      shantytown,
-      gates: -1
-      };
+    const style = "natural";
 
     const url = new URL("https://watabou.github.io/city-generator/");
-    url.search = new URLSearchParams(parameters);
-    if (sea) url.searchParams.append("sea", sea);
-    // console.log(currentBurg.name, " - MFCG URL: ", url.toString());
-    const toReturn = url.toString();
-    return toReturn.substring(25);
+    url.search = new URLSearchParams({
+      name: name || "",
+      population: population.toString(),
+      size: size.toString(),
+      seed: burgSeed,
+      river: river.toString(),
+      coast: coast.toString(),
+      farms: farms.toString(),
+      citadel: citadel.toString(),
+      urban_castle: urban_castle.toString(),
+      hub: hub.toString(),
+      plaza: plaza.toString(),
+      temple: temple.toString(),
+      walls: walls.toString(),
+      shantytown: shantytown.toString(),
+      gates: (-1).toString(),
+      style
+    }).toString();
+    if (sea) url.searchParams.append("sea", sea.toString());
+
+    const link = url.toString();
+    //console.log(currentBurg.name, "****** Inside createMfcgLink - MFCG URL: ", link);
+    // this line seems to be causing problems with the preview
+    // return { link, preview: `${link}&preview=1` };
+    return link;
+
+    // const toReturn = url.toString();
+    // return toReturn.substring(25);
  
-    function getSeaDirections(i) {
-      const p1 = currentCell.p;
-      const p2 = havenCell.p;
-      let deg = (Math.atan2(p2[1] - p1[1], p2[0] - p1[0]) * 180) / Math.PI - 90;
-      if (deg < 0) deg += 360;
-      return rn(normalize(deg, 0, 360) * 2, 2); // 0 = south, 0.5 = west, 1 = north, 1.5 = east
-    };
+function isCrossroad(burgCell, allCells, allRoutes) {
+    // console.log("++++++ First step in isCrossroad() - Inside isCrossroad() - currentBurg: ", currentBurg, " - burgCell: ", burgCell);
+    const currentCell = allCells.find(cell => cell.i === burgCell);
+    // console.log("++++++ currentCell defined in isCrossroad() - currentCell: ", currentCell);
+    const connections = currentCell.routes;
+    // console.log("++++++ connections defined in isCrossroad() - connections: ", connections);
+    if (!connections) return false;
+    if (Object.keys(connections).length > 3) return true;
+    const roadConnections = Object.values(connections).filter(routeId => {
+        const route = allRoutes.find(route => route.i === routeId);
+        return route?.group === "roads";
+    });
+    return roadConnections.length > 2;
+    }
   };
 
-  function createVillageGeneratorLink(currentBurg, mapSeed, allCells, mapSettings, grid) {
+  function createVillageGeneratorLink(currentBurg, mapSeed, allCells, allRoutes, mapSettings, grid) {
 
-      var burgSeed = `${mapSeed}${String(currentBurg.i).padStart(4, 0)}`;
+      const burgSeed = currentBurg.MFCG || mapSeed + String(currentBurg.i).padStart(4, "0");
 
       // NAME ON VILLAGE GENERATOR - SIZE ISSUE
       // The image that appears on the village gen for the name of the burg is set to use a seemingly fixed and large font size
@@ -336,8 +366,6 @@ handlebars.registerHelper('getBurgMapLink', function(currentBurg, mapSeed, allCe
       const cellTemp = grid.cells.find(ct => ct.i === currentCell.i);
       const tags = [];
 
-     
-
       if (currentCell.r && currentCell.haven) tags.push("estuary");
       else if (currentCell.haven && currentCell.f === 1) tags.push("island,district");
       else if (currentBurg.port) tags.push("coast");
@@ -348,12 +376,9 @@ handlebars.registerHelper('getBurgMapLink', function(currentBurg, mapSeed, allCe
       if (currentCell.routes) {
         const connections = currentCell.routes[currentCell] || {};
         const roadsAround = Object.values(connections).filter(routeId => {
-          const route = pack.routes[routeId];
+          const route = allRoutes[routeId];
           return route.group === "roads" || route.group === "trails";
         }).length;
-
-        // new process taken from FMG 1.99 code
-        // tags.push(roads > 1 ? "highway" : roads === 1 ? "dead end" : "isolated");
 
         if (roadsAround > 1) {
           tags.push("highway");
@@ -893,7 +918,7 @@ handlebars.registerHelper('getcapitalFile', function(capitalID,stateID,allData) 
   };
   const stateName = allData.pack.states.find(state => state.i === stateID).name;
   const foundBurg = allData.pack.burgs.find(b => b.i === capitalID);
-  console.log("foundBurg: ",foundBurg);
+  // console.log("foundBurg: ",foundBurg);
   const cellId = foundBurg.cell;
   if (cellId === undefined || cellId === 0) {
     console.log("##### getcapitalFile - captial burg cellId was undefined or zero #####");
@@ -905,9 +930,9 @@ handlebars.registerHelper('getcapitalFile', function(capitalID,stateID,allData) 
     return ''; // If no Province Defined end here
   };
   const foundProvinceName = allData.pack.provinces.find(prov => prov.i === foundCellProvinceId).fullName;
-  console.log("burgProvinceNameLookup process - foundProvinceName: ", foundProvinceName);
+  // console.log("burgProvinceNameLookup process - foundProvinceName: ", foundProvinceName);
   const foundBurgNotePath = `${allData.importInfo.thisCampaignPath}/05-Atlas/${allData.info.mapName}/States/${stateName}/Provinces/${foundProvinceName}/Burgs/${foundBurg.name}`;
-  console.log("foundBurgNotePath: ", foundBurgNotePath);
+  // console.log("foundBurgNotePath: ", foundBurgNotePath);
   return foundBurgNotePath;
 });
 

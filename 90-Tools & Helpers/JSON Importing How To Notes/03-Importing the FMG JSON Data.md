@@ -59,7 +59,7 @@ Here are the steps for doing a batch import of the FMG JSON you prepped in the p
 > Ctrl-Shift-I(PC) or Command-Option-I(Mac) opens the console - you can see what's happening with the import process there. You will see any errors there too.
 
 
-1. Open the JSON/CSV Importer
+1. Open the JSON/CSV Importer - `BUTTON[openJSONImporter]`
 2. In the JSON/CSV Importer panel, fill in these fields:
 	1. In the top section - "Choose JSON File" - click "Choose Files" and select your FMG Map JSON file. (see - [[02-The FMG JSON File]])
 	2. If you placed the to-be-imported version of your FMG map's JSON file in the folder, `99-Templates/Handlebars-JSON`, you will conveniently be placed into that same folder for the next three file chooser steps below.

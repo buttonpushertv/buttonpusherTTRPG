@@ -22,7 +22,7 @@ In these steps we will export the JSON file from FMG and export the main map ima
 ## Export Full JSON from FMG
 Export the "Full JSON" File from Fantasy Map Generator.
 
-In case you're curious, here is the JSON schema of an FMG JSON - [[FMG JSON SCHEMA]]. More info can be found in the [Data model · Azgaar/Fantasy-Map-Generator Wiki · GitHub](https://github.com/Azgaar/Fantasy-Map-Generator/wiki/Data-model) page.
+In case you're curious, here is the JSON schema of an FMG JSON - [[FMG-JSON-SCHEMA-v1.125.0]]. More info can be found in the [Data model · Azgaar/Fantasy-Map-Generator Wiki · GitHub](https://github.com/Azgaar/Fantasy-Map-Generator/wiki/Data-model) page.
 
 > [!DANGER]- Read this if you have modified your FMG map *after generation*
 > If you have modified your map after the FMG webapp generated it, in particular, if you have ***removed*** any *States, Provinces, Burgs, Cultures, or Religions* (as in they no longer exist in the world map from FMG), they may cause issues on import.
@@ -32,13 +32,22 @@ In case you're curious, here is the JSON schema of an FMG JSON - [[FMG JSON SCHE
 > You *should* be able to just delete those items, since they are not going to be referred to by anything (or at least they shouldn't be). 
 
 ## Export an SVG of the FMG map itself
-In FMG, under Options, choose the Layers Preset you would like to use. Using the Political Map layer preset works well for the world map. You can enable the Relief layer if you want to give your map a little extra detail. 
+In FMG, under Options, choose the Layers Preset you would like to use. Using the Political Map layer preset works well for the world map. You can enable the Relief layer if you want to give your map a little extra detail.
 
-Export an SVG of the map. It will be useful to check the box that says "Show all labels" - this will show all the names of the States and Burgs on the map. Rename the SVG with the name `{thisCampaignName} World Map.svg` (obviously, you'd use the Campaign Name you chose up above.)
 
-Export a second map that shows the Provinces. In FMG Options, choose the Layers Preset called Provinces map. FMG does not currently have labels for the Provinces similar to States or Burgs. There are labels that exist in another place though. Under Options, click on the Tools tab and click to configure the Provinces and open that tool. Click on the letter A icon at the bottom to toggle the Province Labels on. They are a little different than the others, but they'll server our purpose. Rename the SVG file as `{thisCampaignName} Provinces World Map.svg`
+> [!NOTE] Naming Your Map
+> When naming your map, this vault's scripts, templates, and helpers will use the value of `{mapName}` to pre-populate links to the map SVG files.
+> 
+> The `{mapName}` can be found in FMG, under **Options->Map Name** and exists in the JSON exported from FMG at: `info.mapName`.
+> 
+> You *could* use a different name, but you would then need to update the values that will be used from the templates across the whole set of imported notes.
 
-Under the Layers Presets, choose Religions and export another map of the world's religions. Name this map `{thisCampaignName} Religions World Map.svg`
+
+Export an SVG of the map. It will be useful to check the box that says "Show all labels" - this will show all the names of the States and Burgs on the map. Rename the SVG with the name `{mapName} World Map.svg` (obviously, you'd use the Campaign Name you chose up above.)
+
+Export a second map that shows the Provinces. In FMG Options, choose the Layers Preset called Provinces map. FMG does not currently have labels for the Provinces similar to States or Burgs. There are labels that exist in another place though. Under Options, click on the Tools tab and click to configure the Provinces and open that tool. Click on the letter A icon at the bottom to toggle the Province Labels on. They are a little different than the others, but they'll serve our purpose. Rename the SVG file as `{mapName} Provinces World Map.svg`
+
+Under the Layers Presets, choose Religions and export another map of the world's religions. Name this map `{mapName} Religions World Map.svg`
 
 ### Modifications to FMG Full JSON file
 There are some things that need to be modified in the `FMGJSON` file for the Handlebar Templates and Helpers to work properly. It's a good idea to work from a copy of the raw JSON export from FMG. That will give you a backup of what you get out of FMG and you can revert to the original data, if needed. Make a duplicate of the JSON file and add something like `"-MODDED"` or `"-forIMPORT"` to the filename. Open this copied JSON file in a text editor. **Be very careful to keep the JSON valid for this to work.**
@@ -48,6 +57,16 @@ There are some things that need to be modified in the `FMGJSON` file for the Han
 We need to add some info to the JSON file to allow the JSON/CSV Importer to name and place files in the correct location.
 
 We are going to use a Python script to add a new JSON object with a few child items to the top of the FMG JSON file you've just exported.
+
+
+> [!NOTE] FMG JSON Modder Python Script Shortcut
+> When you created a new campaign & if you used the button in this vault, the text for the script needed for this new campaign already exists, pre-populated with almost all the info needed for the new campaign.
+> 
+> Look in the home note for the new campaign. You will see a section at the bottom, called: `Fantasy Map Generator Helper Script`. Copy the script code from there instead of the script code below in Step 2, to save time and mistyping.
+> 
+> You will just need to update the script with the `{FMGDropboxLink}` to the map file and the input and output JSON file names.
+> 
+> Using this will allow you to skip all the way to step4, sub-step 5 below - pick up and follow the steps from there.
 
 1. Make sure you have Python v3 installed on your system. Check [the python website](https://www.python.org/) to find a version that is compatible with your system.
 2. Copy the base script below to the clipboard:
@@ -98,13 +117,13 @@ with open(output_file_path, 'w', encoding='utf-8') as file:
 print("Merged JSON data saved to a new file successfully.") 
 ```
 
-3. Create a new script file in `{thisCampaignAssets}` folder and name it `{thisCampaignName}-FMG-JSON-modder.py`.
+3. Create a new script file in `{thisCampaignAssets}` folder and name it `{thisCampaignShortCode}-FMG-JSON-modder.py`.
 4. Open the script to edit and change the values around where you see the `# UPDATE THIS INFO:` comments & follow any instructions there:
 	1. Line 6: `{thisCampaignName}` - the name of your Campaign. The one entered when creating the campaign.
 	2. Line 7: `{thisCampaignPath}` - the path to your Campaign's data within the vault. It should start with `01-Campaigns`.
 	3. Line 8: `{thisCampaignShortCode}` - the shortcode you created when you created the Campaign.
 	4. In case you didn't write that info down, all 3 of the above pieces of info can be found in a note called: `"{thisCampaign} Home"`
-	5. Line 9: `{FMGDropboxLink}` - There is a cool feature on the FMG map you've created, where you can choose to save your map to your Dropbox and then FMG will create a link to this file. This allows access directly to your FMG map by anyone show has the link and is code into the templates for this import so you will have location-specific links directly to the places on your FMG map in the notes. [^1]
+	5. Line 9: `{FMGDropboxLink}` - *(pickup here if you used the FMG JSON Helper Script from the new campaign's home page)* There is a cool feature on the FMG map you've created, where you can choose to save your map to your Dropbox and then FMG will create a link to this file. This allows access directly to your FMG map by anyone show has the link and is code into the templates for this import so you will have location-specific links directly to the places on your FMG map in the notes. [^1]
 	6. Line 23: Put the name of your `FMGJSON` file in place of `path_to_your_existing_FMGjson_file.json`
 	7. Line 30: Edit the value of `path_to_your_output_FMGjson_file.json` with the name you wish to use for output. I usually use the exported `FMGJSON` file name and add `-MODDED` or `-forIMPORT` to the end. 
 5. Save these changes _without_ messing up the formatting of those lines.

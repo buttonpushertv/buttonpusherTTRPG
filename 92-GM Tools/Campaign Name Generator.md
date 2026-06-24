@@ -1,10 +1,13 @@
-
+# Main Campaign Result
 Campaign Name Seed: `dice: [[Campaign Name Generator#^cngseed]]`
 
 
 Adjective: `dice: [[Campaign Name Generator#^cngadjectives]]`
 Action/Goal: `dice: [[Campaign Name Generator#^cngactions]]`
 Noun/Subject: `dice: [[Campaign Name Generator#^cngnouns]]`
+
+## Add a new campaign
+`BUTTON[new-campaign]`
 
 
 ### Table 0: 
