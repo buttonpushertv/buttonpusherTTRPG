@@ -145,7 +145,6 @@ WBProcess: FALSE
 > | Temperature South Pole: | {{@importDataRoot.settings.options.temperatureSouthPole}} |
 > | State Labels Mode: | {{@importDataRoot.settings.options.stateLabelsMode}} |
 > | Show Burg Preview: | {{@importDataRoot.settings.options.showBurgPreview}} |
-> | Village Max Population: | {{@importDataRoot.settings.options.villageMaxPopulation}} |
 > | Year: | {{@importDataRoot.settings.options.year}} |
 > | Era: | {{@importDataRoot.settings.options.era}} |
 > | Era Short: | {{@importDataRoot.settings.options.eraShort}} |
@@ -154,6 +153,13 @@ WBProcess: FALSE
 > | Style Preset: | {{@importDataRoot.settings.stylePreset}} |
 > | Rescale Labels: | {{@importDataRoot.settings.rescaleLabels}} |
 > | Urban Density: | {{@importDataRoot.settings.urbanDensity}} |
+>
+> #### Burg Group Options
+> | Group | Active | Order | Preview Gen | Pop Min | Pop Max | Percentile |
+> | ----- | ------ | ----- | ----------- | ------- | ------- | ---------- |
+{{#each @importDataRoot.settings.options.burgs}}
+> | {{name}} | {{active}} | {{order}} | {{showBurgPreview}} | {{preview}} | {{min}} | {{max}} | {{percentile}} |
+{{/each}}
 
 
 
