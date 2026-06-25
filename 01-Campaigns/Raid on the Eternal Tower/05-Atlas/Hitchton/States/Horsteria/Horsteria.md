@@ -1,0 +1,286 @@
+---
+alert: 0.51
+aliases: 
+- Horsteria
+area: 1,716,534
+burgs: 91
+campaign: Raid on the Eternal Tower
+capitalName: Horston
+capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Horsteria/Provinces/Cudland County/Burgs/Horston
+center: 2508
+color: #91bcb3
+created: 2026-06-24-16:26
+cssclasses: sixty-pct-width
+culture: Osbuton
+emblem: Hitchton Emblem Horsterian Empire.png
+expansionism: 3.9
+fileName: _Horsterian Empire-13
+form: Monarchy
+formName: Empire
+fullName: Horsterian Empire
+id: 13
+mapName: Hitchton
+name: Horsteria
+nameID: Horsteria-13
+neighbors:
+- Madeteria
+- Oakhambia
+- Linia
+pronounced:
+provinces:
+- Cudland County
+- Leridgia County
+- Tre Earldom
+- Castford County
+- Brorough Captaincy
+- Perster County
+- Padsinia Earldom
+- Pentefland Landgrave
+- Hinckhampia Landgrave
+- Botford Captaincy
+- Stapia Earldom
+- Tutrinch Captaincy
+- Bridburia County
+- Mal Earldom
+- Whiteston Captaincy
+- Causwestes Earldom
+- Tutburymock Earldom
+- Dunsford County
+- Haytesia County
+- Redcke County
+- Agelton County
+- Chipia Earldom
+- Cliford Earldom
+- Andalces Landgrave
+- Matondon Earldom
+- Mildockneth Earldom
+- Retnester Island
+- Skiple Territory
+- Dudgia Region
+- Redckerton Territory
+- Ashetfordia Island
+totalPopulation: 4,224,797
+religion: Deities of the Prime Horse
+rulers:
+rural: 3,750,696
+shortDescription:
+treasury: 1249.44
+salesTax: 0.15
+pollTax: 0.19
+urban: 474,101
+tags:
+- State
+- Hitchton
+- roet
+templateVersion: 4.4
+type: Generic
+WBProcess: Imported
+---
+
+> [!metadata|metadata]- Metadata & Page Controls
+>> [!metadata|metadataoption]- System
+>> #### System
+>>  |
+>> ---|---|
+>> **Tags** | `INPUT[Tags][inlineListSuggester:tags]` |
+>> **World Building Progress**| `INPUT[WBProgress][inlineSelect:wbprogress]`
+>>> [!note]- Tracking World Building Progress
+>>> Update the World Building Progress property as you update any info on the page. Your choices are `Imported`, `In Progress`, `Game-ready`, `Nearly Complete,` and `Done`.
+>>>
+>>> This allows sorting based on what has & hasn't had world building stuff done for it. There are Dataviews setup on the campaign home page that sort by these progress key words.
+>
+>> [!metadata|metadataoption]- Info
+>> #### Info
+>>  |
+>> ---|---|
+> **Pronounced** |  `INPUT[text:pronounced]`
+> **Aliases** | `INPUT[list:aliases]` |
+> **Rulers**|`INPUT[list:rulers]`|
+> **Short Description**|`INPUT[textArea:shortDescription]`
+>
+>> [!metadata|metadataoption]- Controls
+>> These buttons control various portions of this page. They only change things on this page.
+>> 
+>> #### Controls
+>>  |
+>> ---|---|
+>> Leaflet Map| `BUTTON[hide_leaf_map]`  - `BUTTON[show_leaf_map]`
+
+[[01-Campaigns/Raid on the Eternal Tower/Raid on the Eternal Tower Home|Raid on the Eternal Tower Home]] | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/Hitchton-Linked Atlas|Hitchton-Linked Atlas]] | Capital: `=link(this.capitalFile,this.capitalName)`
+
+%% During the import process, much of the data for the Leaflet fields should have been pulled in from the JSON. You will need to update the defaultZoom and (maybe) the coordinates values, but it should be pretty close - good enough to get a start with it. The goal is to cut down on the amount of manual effort you need to go through to pull your data in from the FMG JSON %%
+
+%%LeafletMapTOP%%
+
+> [!metadata|map]+ Horsteria Map
+> ```leaflet
+> id: State-Horsteria
+> image: [[Hitchton World Map.svg]]
+> bounds:
+> - [0,0]
+> - [1318,2612]
+> coordinates: [636.000,805.000]
+> height: 600px
+> width: 100%
+> minZoom: -3
+> maxZoom: 5
+> defaultZoom: .5
+> zoomDelta: 0.25
+> unit: mi
+> scale: 5
+> darkMode: false
+> marker: capital,699.260,920.410,[[]],Horsteria Capital
+> ```
+> [Link to Horsteria on FMG Map](https://azgaar.github.io/Fantasy-Map-Generator/?maplink=https://dl.dropboxusercontent.com/scl/fi/l7dpjh1fb1v053mc7izmw/Hitchton-2026-06-21-15-36.map?rlkey=zrhhfmejskvk1cpgiizmjbrfl&dl=0&scale=3&x=920.41&y=618.74)
+
+%%LeafletMapTAIL%%
+
+%% All the info in this 'infobox' will appear in the panel to the right. Most of these values are pulled from the metadata in the properties above. %%
+
+> [!infobox]+
+>
+>  |
+>  --- |
+> 
+>> [!note|no-t text-center]
+>> **Emblem of**
+>> **`=this.fullName`**
+>> ![[Hitchton Emblem Horsterian Empire.png]]
+>>
+>
+>  |
+>  --- |
+> 
+> ## <p align="left"><font color="#c00000">Info</font></p>
+>
+>  |
+>  ---: | --- |
+> **Population** | `=this.totalPopulation` |
+>  <span style="font-size:x-small">**Urban**<br>**Rural** </span>| <span style="font-size:x-small">`=this.urban`<br>`=this.rural`</span> |
+> **Area (sq. mi)** | `=this.area` |
+>  **Dominant Geographic Feature** | `=this.type` |
+> 
+>  |
+>  --- |
+> 
+> ## <p align="left"><font color="#c00000">Politics</font></p>
+>
+>  |
+> ---: | --- |
+> **Capital** | `=link(this.capitalFile, this.capitalName)` |
+> **Ruler(s)** | `=link(this.rulers)` |
+> **Govt Type** | `=this.form` |
+> **Treasury** | `=this.treasury` |
+> **Sales Tax Rate** | `=this.salesTax` |
+> **Poll Tax Rate** | `=this.pollTax` |
+> **Dominant Culture** | `=link(this.culture)` |
+> **Dominant Religion** | `=link(this.religion)` |
+>
+>  |
+>  --- |
+> 
+> ```dataview
+> TABLE WITHOUT ID link(neighbors) as "Neighbors"
+> FROM ""
+> WHERE file.name = this.file.name
+> ```
+
+
+# **`=this.fullName`**
+
+**Pronounced:** "`=this.pronounced`"
+
+%% Below is the fancy callout box where you can place some basic info. Precede any new lines with a '>' & space to place them within the box. %%
+
+> [!recite|no-t text-center]+ Introduction
+> *`= this.shortDescription` *
+
+%% GENERAL NOTES GO HERE - free-form text or images %%
+
+## History
+Significant incidents in `=this.name`'s history:
+
+| Name | Start Year | End Year |
+| ---- | ---------- | -------- |
+| Linian War | 1484 | 1487 |
+| Oakhambian Campaign | 1571 | 1582 |
+| Madeterian Invasion | 1577 | 1582 |
+
+> [!note]- Timeline
+> (Edit this doc to update the timeline - and remove this line, too.)
+>
+>> [!timeline|t-l] **`=this.fullname` Founded** _Date of founding._
+>> `=this.fullName` was founded by...
+>
+>> [!timeline|t-r] **Something Happened** *A significant event.*
+>> Something momentous occurred on this day.
+>
+>> [!timeline|t-l t-2] **Another thing happened** *Less significant this time.*
+>> Today was only a moderately important day.
+>
+
+## Notes
+
+%% Further notes. These 2 callouts will be hidden by default. Change the '-' after the closing square bracket to a '+' to have it be expanded by default. %%
+
+> [!hint]- Plot Hooks
+>
+
+> [!question]- Hidden Details
+>
+
+### Zones/Regions
+
+%% Zones & regions are any areas that need to be defined. See Points of Interest below as another place to add specific locations that are noteworthy. You can identify Zones/Regions in the properties above (metadata is searchable/indexable). And you can add specific info about any of them below. Use '[!note]- {Zone/Region name}' to place each one in it's own callout. %%
+
+## Related Links
+
+> [!note|wmed]- Burgs
+> ```dataview
+> TABLE WITHOUT ID file.link as "Burgs", link(provinceName) as "Province Name"
+> FROM #Burg and #Horsteria
+> WHERE econtains(stateId,this.id)
+> SORT file.name ASC
+> ```
+
+> [!NOTE|wmed]- Neighbors
+> ```dataview
+> TABLE WITHOUT ID link(neighbors) as "Neighbors"
+> FROM ""
+> WHERE file.name = this.file.name
+> ```
+
+> [!NOTE|wmed]- Provinces
+> ```dataview
+> TABLE WITHOUT ID link(provinces) as "Provinces"
+> FROM ""
+> WHERE file.name = this.file.name
+> ```
+
+#### Other Information
+
+> [!note]- Military
+> ### Military Units of `=this.name`
+> | Icon | Name | Infantry | Archers | Cavalry | Artillery | Fleet | Total |
+> | -----| ---- | -------- | ------- | ------- | --------- | ----- | ----- |
+> 
+> | 🐴 | 1st (Leridgia) Regiment | 727 | 485 | 755 | 14 |  | 1981 |
+> 
+> | ⚔️ | 2nd (Causwestes) Regiment | 731 | 430 | 640 | 8 |  | 1809 |
+> 
+> | 👑 | 3rd (Cudland) Regiment | 715 | 435 | 552 | 17 |  | 1719 |
+> 
+> | 🐴 | 4th (Pentefland) Regiment | 251 | 240 | 995 | 2 |  | 1488 |
+> 
+> | 🐴 | 5th (Skiple) Regiment | 210 | 205 | 694 | 2 |  | 1111 |
+> 
+> | 🐴 | 6th (Haytesia) Regiment | 201 | 183 | 586 | 5 |  | 975 |
+> 
+> | 🌊 | 1st Fleet |  |  |  |  | 3 | 3 |
+> 
+> | 🌊 | 2nd Fleet |  |  |  |  | 1 | 1 |
+> 
+
+---
+
+[[01-Campaigns/Raid on the Eternal Tower/Raid on the Eternal Tower Home|Raid on the Eternal Tower Home]] | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/Hitchton-Linked Atlas|Hitchton-Linked Atlas]] | Capital: `=link(this.capitalFile,this.capitalName)`
