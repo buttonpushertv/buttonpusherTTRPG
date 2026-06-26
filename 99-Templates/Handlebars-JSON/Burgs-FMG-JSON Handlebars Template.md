@@ -16,12 +16,13 @@ group: {{group}}
 feature: {{feature}}
 id: {{i}}
 mapName: {{@importDataRoot.info.mapName}}
-market: {{market}}
+marketId: {{market}}{{log "burg note - finding " name " market link"}}
+marketName: {{getBurgMarket market @importDataRoot.pack.burgs @importDataRoot.pack.markets}}
 plaza: {{plaza}}
 population: {{calcPopulation population @importDataRoot.settings.populationRate}}
 port: {{port}}
 product: {{product}}
-pronounced:
+pronounced: ""
 provinceId: {{getProvinceIdFromCell cell @importDataRoot.pack.cells}}
 provinceName: {{burgProvinceNameLookup cell @importDataRoot.pack.cells @importDataRoot.pack.provinces}}
 religion: {{getReligionName this.cell @importDataRoot.pack.cells @importDataRoot.pack.religions}}
@@ -41,7 +42,7 @@ tags:
 temple: {{temple}}
 temperature: {{getTemperature this @importDataRoot}}
 temperatureLikeness: {{getTemperatureLikeness this @importDataRoot}}
-templateVersion: 6.0
+templateVersion: 7.0
 treasury: {{treasury}}
 type: {{type}}
 walls: {{walls}}
@@ -55,7 +56,7 @@ marker: burg,{{getLeafletBurgXY this.i @importDataRoot.pack.burgs @importDataRoo
 %%
 
 > [!metadata|metadata]- Metadata & Page Controls
->> [!metadata|metadataoption]- System
+>> [!metadata|metadataoption]+ System
 >> #### System
 >>  |
 >> ---|---|
@@ -67,12 +68,12 @@ marker: burg,{{getLeafletBurgXY this.i @importDataRoot.pack.burgs @importDataRoo
 >>>
 >>> This allows sorting based on what has & hasn't had world building stuff done for it. There are Dataviews setup on the campaign home page that sort by these progress key words.
 >
->> [!metadata|metadataoption]- Info
+>> [!metadata|metadataoption]+ Info
 >> #### Info
 >>  |
 >> ---|---|
 > **Pronounced** |  `INPUT[text:pronounced]`
-> **Aliases** | `INPUT[list:aliasese]` |
+> **Aliases** | `INPUT[list:aliases]` |
 > **Rulers**|`INPUT[list:rulers]`|
 > **Short Description**|`INPUT[textArea:shortDescription]`
 >
@@ -93,7 +94,7 @@ You may also use the Meta-Bind button at the bottom of the callout to open the b
 
 There is an elaborate method (see [[JSON Import How To#Wrangling FMG Burg Maps]]) to save all the maps so you can have them locally and make use of the data that was placed here on import from the JSON.%%
 
-%%LeafletMapTOP%%
+%%LeafletMapTOP-
 
 > [!metadata|map]- Burg Map (Interactive)
 > ```leaflet
@@ -112,20 +113,20 @@ There is an elaborate method (see [[JSON Import How To#Wrangling FMG Burg Maps]]
 >
 > [Link to {{name}} on FMG Map]({{@importDataRoot.importInfo.mapDropboxFMGLink}}&scale=6{{getFMGCellXY this.cell @importDataRoot.pack.cells}}) | Download Helper Link: `BUTTON[mapLink-to-download]`
 
-%%LeafletMapTAIL%%
+-LeafletMapTAIL%%
 
 %% City Maps may need Scale adjusting - see `unit: feet` line above in Leaflet block (around line 80-81) The `scale` setting of `1` is arbitrary. It seems to work for the Burg maps - City or Village. By default the CityGen maps will likely have the `scale bar` visible. I recommend hiding it. The City Gen uses meters. The Village Gen has no scale defined. Once you hide it in the CityGen Settings, it should stay hidden for several visits to these maps.%%
 
 %%WebMapTOP%%
 
-> [!metadata]- Burg Map (Live from Web)
+> [!metadata]+ Burg Map (Live from Web)
 > ```custom-frames
 > frame: Watabou-Procgen Arcana
 > style: height: 1000px;
 > urlSuffix: {{getBurgMapLink this @importDataRoot.info.seed @importDataRoot.pack.cells @importDataRoot.pack.cells @importDataRoot.settings @importDataRoot.grid}}
 > ```
 >
->  `=elink(this.burgMapLink,"Visit Burg Map")` | Generator Link: `BUTTON[mapLink-to-download]`
+>  `=elink(this.burgMapLink,"Visit Burg Map on MCFG")` | [Link to {{name}} on FMG Map]({{@importDataRoot.importInfo.mapDropboxFMGLink}}&scale=6{{getFMGCellXY this.cell @importDataRoot.pack.cells}}) | Download Helper Link: `BUTTON[mapLink-to-download]`
 
 %%WebMapTAIL%%
 

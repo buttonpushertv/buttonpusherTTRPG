@@ -67,10 +67,10 @@ WBProcess: FALSE
 
 > [!callout]- **Burgs**
 > 
-> | ID  | Name | Population | State | Province |
-> | --- | ---- | ---------- | ----- | -------- |
+> | ID  | Name | Population | State | Province | Group |
+> | --- | ---- | ---------- | ----- | -------- | ----- |
 {{#each pack.burgs}}
-> | {{i}} | [[{{../importInfo.thisCampaignPath}}/05-Atlas/{{../info.mapName}}/States/{{getStateName state ../pack/states}}/Provinces/{{burgProvinceNameLookup cell ../pack.cells ../pack.provinces}}/Burgs/{{name}}\|{{name}}]] | {{calcPopulation population ../settings.populationRate}} | [[{{../importInfo.thisCampaignPath}}/05-Atlas/{{../info.mapName}}/States/{{getStateName state ../pack/states}}/{{getStateName state ../pack.states}}\|{{getStateName state ../pack.states}}]] | [[{{../importInfo.thisCampaignPath}}/05-Atlas/{{../info.mapName}}/States/{{getStateName state ../pack/states}}/Provinces/{{burgProvinceNameLookup cell ../pack.cells ../pack.provinces}}/{{burgProvinceNameLookup cell ../pack.cells ../pack.provinces}}\|{{burgProvinceNameLookup cell ../pack.cells ../pack.provinces}}]] |
+> | {{i}} | [[{{../importInfo.thisCampaignPath}}/05-Atlas/{{../info.mapName}}/States/{{getStateName state ../pack/states}}/Provinces/{{burgProvinceNameLookup cell ../pack.cells ../pack.provinces}}/Burgs/{{name}}\|{{name}}]] | {{calcPopulation population ../settings.populationRate}} | [[{{../importInfo.thisCampaignPath}}/05-Atlas/{{../info.mapName}}/States/{{getStateName state ../pack/states}}/{{getStateName state ../pack.states}}\|{{getStateName state ../pack.states}}]] | [[{{../importInfo.thisCampaignPath}}/05-Atlas/{{../info.mapName}}/States/{{getStateName state ../pack/states}}/Provinces/{{burgProvinceNameLookup cell ../pack.cells ../pack.provinces}}/{{burgProvinceNameLookup cell ../pack.cells ../pack.provinces}}\|{{burgProvinceNameLookup cell ../pack.cells ../pack.provinces}}]] | {{group}} |
 {{/each}}
 
 
@@ -187,7 +187,7 @@ neighbors:
 {{#each neighbors}}
 - {{getStateName this @importDataRoot.pack.states}}
 {{/each}}
-pronounced:
+pronounced: ""
 provinces:
 {{#each provinces}}
 - {{getProvinceName this @importDataRoot.pack.provinces}}
@@ -417,7 +417,7 @@ id: {{i}}
 name: {{name}}
 nameID: {{name}}-{{i}}
 mapName: {{@importDataRoot.info.mapName}}
-pronounced:
+pronounced: ""
 {{setvar "currentCapitalName" (getBurgName burg @importDataRoot.pack.burgs)}}provincialCapital: {{"currentCapitalName"}}
 {{setvar "capitalPath" (getcapitalFile burg state @importDataRoot)}}capitalFile: {{"capitalPath"}}
 religion: {{getReligionName this.center @importDataRoot.pack.cells @importDataRoot.pack.religions}}
@@ -589,12 +589,13 @@ group: {{group}}
 feature: {{feature}}
 id: {{i}}
 mapName: {{@importDataRoot.info.mapName}}
-market: {{market}}
+marketId: {{market}}{{log "burg note - finding " name " market link"}}
+marketName: {{getBurgMarket market @importDataRoot.pack.burgs @importDataRoot.pack.markets}}
 plaza: {{plaza}}
 population: {{calcPopulation population @importDataRoot.settings.populationRate}}
 port: {{port}}
 product: {{product}}
-pronounced:
+pronounced: ""
 provinceId: {{getProvinceIdFromCell cell @importDataRoot.pack.cells}}
 provinceName: {{burgProvinceNameLookup cell @importDataRoot.pack.cells @importDataRoot.pack.provinces}}
 religion: {{getReligionName this.cell @importDataRoot.pack.cells @importDataRoot.pack.religions}}
@@ -614,7 +615,7 @@ tags:
 temple: {{temple}}
 temperature: {{getTemperature this @importDataRoot}}
 temperatureLikeness: {{getTemperatureLikeness this @importDataRoot}}
-templateVersion: 6.0
+templateVersion: 7.0
 treasury: {{treasury}}
 type: {{type}}
 walls: {{walls}}
@@ -628,7 +629,7 @@ marker: burg,{{getLeafletBurgXY this.i @importDataRoot.pack.burgs @importDataRoo
 %%
 
 > [!metadata|metadata]- Metadata & Page Controls
->> [!metadata|metadataoption]- System
+>> [!metadata|metadataoption]+ System
 >> #### System
 >>  |
 >> ---|---|
@@ -640,12 +641,12 @@ marker: burg,{{getLeafletBurgXY this.i @importDataRoot.pack.burgs @importDataRoo
 >>>
 >>> This allows sorting based on what has & hasn't had world building stuff done for it. There are Dataviews setup on the campaign home page that sort by these progress key words.
 >
->> [!metadata|metadataoption]- Info
+>> [!metadata|metadataoption]+ Info
 >> #### Info
 >>  |
 >> ---|---|
 > **Pronounced** |  `INPUT[text:pronounced]`
-> **Aliases** | `INPUT[list:aliasese]` |
+> **Aliases** | `INPUT[list:aliases]` |
 > **Rulers**|`INPUT[list:rulers]`|
 > **Short Description**|`INPUT[textArea:shortDescription]`
 >
@@ -666,7 +667,7 @@ You may also use the Meta-Bind button at the bottom of the callout to open the b
 
 There is an elaborate method (see [[JSON Import How To#Wrangling FMG Burg Maps]]) to save all the maps so you can have them locally and make use of the data that was placed here on import from the JSON.%%
 
-%%LeafletMapTOP%%
+%%LeafletMapTOP-
 
 > [!metadata|map]- Burg Map (Interactive)
 > ```leaflet
@@ -685,20 +686,20 @@ There is an elaborate method (see [[JSON Import How To#Wrangling FMG Burg Maps]]
 >
 > [Link to {{name}} on FMG Map]({{@importDataRoot.importInfo.mapDropboxFMGLink}}&scale=6{{getFMGCellXY this.cell @importDataRoot.pack.cells}}) | Download Helper Link: `BUTTON[mapLink-to-download]`
 
-%%LeafletMapTAIL%%
+-LeafletMapTAIL%%
 
 %% City Maps may need Scale adjusting - see `unit: feet` line above in Leaflet block (around line 80-81) The `scale` setting of `1` is arbitrary. It seems to work for the Burg maps - City or Village. By default the CityGen maps will likely have the `scale bar` visible. I recommend hiding it. The City Gen uses meters. The Village Gen has no scale defined. Once you hide it in the CityGen Settings, it should stay hidden for several visits to these maps.%%
 
 %%WebMapTOP%%
 
-> [!metadata]- Burg Map (Live from Web)
+> [!metadata]+ Burg Map (Live from Web)
 > ```custom-frames
 > frame: Watabou-Procgen Arcana
 > style: height: 1000px;
 > urlSuffix: {{getBurgMapLink this @importDataRoot.info.seed @importDataRoot.pack.cells @importDataRoot.pack.cells @importDataRoot.settings @importDataRoot.grid}}
 > ```
 >
->  `=elink(this.burgMapLink,"Visit Burg Map")` | Generator Link: `BUTTON[mapLink-to-download]`
+>  `=elink(this.burgMapLink,"Visit Burg Map on MCFG")` | [Link to {{name}} on FMG Map]({{@importDataRoot.importInfo.mapDropboxFMGLink}}&scale=6{{getFMGCellXY this.cell @importDataRoot.pack.cells}}) | Download Helper Link: `BUTTON[mapLink-to-download]`
 
 %%WebMapTAIL%%
 
@@ -813,7 +814,7 @@ leaders:
 mapName: {{@importDataRoot.info.mapName}}
 namesbase: {{base}}
 origins: {{origins}}
-pronounced:
+pronounced: ""
 shortDescription:
 shield: {{shield}}
 tags:
@@ -932,7 +933,7 @@ id: {{i}}
 leaders:
 mapName: {{@importDataRoot.info.mapName}}
 origins: {{origins}}
-pronounced:
+pronounced: ""
 religionName: "{{name}}"
 shortDescription:
 tags:
@@ -1057,4 +1058,123 @@ Below are any notable zones or regions within `=this.religionName`
 Change the '-' after the closing square bracket of each callout line (starts with open bracket followed by an exclamation point) to a '+' to have it be expanded by default.
 %%
 ---
-[[{{@importDataRoot.importInfo.thisCampaignPath}}/{{@importDataRoot.importInfo.thisCampaign}} Home|{{@importDataRoot.importInfo.thisCampaign}} Home]] | [[{{@importDataRoot.importInfo.thisCampaignPath}}/05-Atlas/{{@importDataRoot.info.mapName}}/{{@importDataRoot.info.mapName}}-Linked Atlas|{{@importDataRoot.info.mapName}}-Linked Atlas]]{{/if}}
+[[{{@importDataRoot.importInfo.thisCampaignPath}}/{{@importDataRoot.importInfo.thisCampaign}} Home|{{@importDataRoot.importInfo.thisCampaign}} Home]] | [[{{@importDataRoot.importInfo.thisCampaignPath}}/05-Atlas/{{@importDataRoot.info.mapName}}/{{@importDataRoot.info.mapName}}-Linked Atlas|{{@importDataRoot.info.mapName}}-Linked Atlas]]{{/if}}{{#if (eq @importSettings.topField "pack.markets")}}---
+aliases:
+- {{getBurgName centerBurgId @importDataRoot.pack.burgs}}
+centerBurgId: {{centerBurgId}}
+{{setvar "currBurgNamePlusID" (getBurgNamePlusID centerBurgId @importDataRoot.pack.burgs)}}centerBurgNamePlusID: {{"currBurgNamePlusID"}}
+{{setvar "centerBurgStateName" (getBurgStateName centerBurgId @importDataRoot.pack.burgs @importDataRoot.pack.states)}}centerBurgStateName: {{"centerBurgStateName"}}
+{{setvar "centerBurgFile" (getBurgFile centerBurgId @importDataRoot)}}centerBurgFilePath: "{{"centerBurgFile"}}"
+id: {{i}}
+{{setvar "currMarketName" (getBurgName centerBurgId @importDataRoot.pack.burgs)}}marketName: {{"currMarketName"}}
+mapName: {{@importDataRoot.info.mapName}}
+colorHex: "{{color}}"
+pronounced: ""
+leaders:
+shortDescription:
+tags:
+- Market
+- {{getBurgName centerBurgId @importDataRoot.pack.burgs}}
+- {{@importDataRoot.info.mapName}}
+- {{@importDataRoot.importInfo.thisCampaignShortCode}}
+templateVersion: 1.0
+WBProgress: Imported
+centerBurgx: {{getBurgX centerBurgId @importDataRoot.pack.burgs}}
+centerBurgy: {{getBurgY centerBurgId @importDataRoot.pack.burgs}}
+---
+
+> [!metadata|metadata]- Metadata & Page Controls
+>> [!metadata|metadataoption]- System
+>> #### System
+>>  |
+>> ---|---|
+>> **cssClass**|`INPUT[cssClass][inlineSelect:cssclass]` |
+>> **Tags** | `INPUT[Tags][inlineListSuggester:tags]` |
+>> **World Building Progress**| `INPUT[WBProgress][inlineSelect:WBProgress]`|
+>>> [!note]- Tracking World Building Progress
+>>> Update the World Building Progress property as you update any info on the page. Your choices are `Imported`, `In Progress`, `Game-ready`, `Nearly Complete,` and `Done`.
+>>>
+>>> This allows sorting based on what has & hasn't had world building stuff done for it. There are Dataviews setup on the campaign home page that sort by these progress key words.
+>
+>> [!metadata|metadataoption]+ Info
+>> #### Info
+>>  |
+>> ---|---|
+> **Pronounced** |  `INPUT[text:pronounced]`
+> **Aliases** | `INPUT[list:aliases]` |
+> **Leaders**|`INPUT[list:leaders]`|
+> **Short Description**|`INPUT[textArea:shortDescription]`
+>
+>> [!metadata|metadataoption]- Controls
+>> These buttons control various portions of this page. They only change things on this page.
+>> 
+>> #### Controls
+>>  |
+>> ---|---|
+>> Leaflet Map| `BUTTON[hide_leaf_map]` - `BUTTON[show_leaf_map]`
+>> Interactive Map | `BUTTON[hide_web_map]` - `BUTTON[show_web_map]`
+
+[[{{@importDataRoot.importInfo.thisCampaignPath}}/{{@importDataRoot.importInfo.thisCampaign}} Home|{{@importDataRoot.importInfo.thisCampaign}} Home]] | [[{{@importDataRoot.importInfo.thisCampaignPath}}/05-Atlas/{{@importDataRoot.info.mapName}}/{{@importDataRoot.info.mapName}}-Linked Atlas|{{@importDataRoot.info.mapName}}-Linked Atlas]] | Center Burg: `=link(this.centerBurgFilePath)` 
+
+%% All the info in this 'infobox' will appear in the panel to the right. Most of these values are pulled from the metadata in the properties above. %%
+
+> [!infobox]
+>
+>  |
+>  --- |
+>
+>  # **Pronounced**
+>  # "`=this.pronounced`"
+>
+>  |
+>  --- |
+> 
+>> [!note|title-center c-gray] ### Info
+>
+>  |
+>  ---: | --- |
+> **Center Burg** | `=link(this.centerBurgFilePath,centerBurgName)` |
+>  **Center Burg State** |`=link(this.centerBurgStateName)`|
+> **Leader(s)** | `=link(this.leaders)` |
+>
+
+# **`=this.marketName`**
+
+> [!recite|no-t text-center]+ Introduction
+> *`=this.shortDescription`*
+
+%% GENERAL NOTES GO HERE - free-form text or images %%
+
+### Zones/Regions/Neighborhoods
+Below are any notable zones or regions within `=this.marketName`
+
+### History
+
+%% You can use the 'Timeline' Callout features of the ITS theme here to create a timeline of any important events. Remove the line below that reads '(delete this line to enable timeline)' and the trailing double percent signs & add a set of double percent signs here ->
+
+> [!timeline|t-l] **`=this.marketName` Founded** _Date of founding._
+> `=this.marketName` was founded by...
+
+> [!timeline|t-l t-2] **Something Happened** *A significant event.*
+> Something momentous occurred on this day.
+
+> [!timeline|t-r t-2] **Another thing happened** *Less significant this time.*
+> Today was only a moderately important day.
+
+(delete this line to enable timeline) %%
+
+## Notes
+
+%% Further notes. These 2 callouts will be hidden by default. Change the '-' after the closing square bracket to a '+' to have it be expanded by default. %%
+
+> [!hint]- Plot Hooks
+>
+
+> [!question]- Hidden Details
+>
+
+## More Details
+
+---
+
+[[{{@importDataRoot.importInfo.thisCampaignPath}}/{{@importDataRoot.importInfo.thisCampaign}} Home|{{@importDataRoot.importInfo.thisCampaign}} Home]] | [[{{@importDataRoot.importInfo.thisCampaignPath}}/05-Atlas/{{@importDataRoot.info.mapName}}/{{@importDataRoot.info.mapName}}-Linked Atlas|{{@importDataRoot.info.mapName}}-Linked Atlas]] | Center Burg: `=link(this.centerBurgFilePath)`{{/if}}

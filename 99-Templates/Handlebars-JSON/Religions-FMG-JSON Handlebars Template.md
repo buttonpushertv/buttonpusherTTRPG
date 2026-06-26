@@ -17,7 +17,7 @@ id: {{i}}
 leaders:
 mapName: {{@importDataRoot.info.mapName}}
 origins: {{origins}}
-pronounced:
+pronounced: ""
 religionName: "{{name}}"
 shortDescription:
 tags:

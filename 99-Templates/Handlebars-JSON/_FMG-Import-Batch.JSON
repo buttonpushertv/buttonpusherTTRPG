@@ -46,5 +46,13 @@
     "namePrefix": "",
     "nameSuffix": "",
     "batchStep": "Religions"
+    },
+    {
+    "fieldName": "pack.markets",
+    "noteName": "@{return `${dataRoot.importInfo.thisCampaign}/05-Atlas/${dataRoot.info.mapName}/Markets/${(this.centerBurgId > 0) && dataRoot.pack.burgs.find(burg => burg.i === this.centerBurgId)?.name || 'Unknown' }`}",
+    "folderName": "01-Campaigns",
+    "namePrefix": "",
+    "nameSuffix": "",
+    "batchStep": "Markets"
     }
 ]

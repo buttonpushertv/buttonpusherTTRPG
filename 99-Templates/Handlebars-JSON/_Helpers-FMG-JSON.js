@@ -1,39 +1,43 @@
 // Here is a list of all the custom helpers in this file with all the data input they expect
 /*
 (indicated by the 3-digit number at head of the line - for easy locating of them)
-001* getCampaignHomeNote(importSettings)
-002 AVAILABLE
-003 getCampaignAtlasNote(importSettings)
-004* getCampaignCalendar(importSettings)
-005 getDateTimestamp(importSettings)
-006 getBurgName(burgId,allBurgs)
-006b getBurgNamePlusID(burgId,allBurgs)
-007 getStateName(stateId,allStates)
-007b getStateNamePlusID(stateId,allStates)
-008 getProvinceName(provinceId,allProvinces)
-008b getProvinceNamePlusID(provinceId,allProvinces)
-009 getCultureName(cultureId,allCultures)
-010x burgMapUnits(currentBurg, mapSettings) - NOT CURRENTLY IN USE
-011 getBurgMapLinkByGroup(currentBurg, mapSeed, allCells, allRoutes, mapSettings, grid)
-012 getHeight(currentCell, mapSettings, allCells)
-013 totalArea(area)
-014 calcPopulation(popValue)
-015 totalPopulation(rural,urban)
-016 burgProvinceNameLookup(cellId,allCells,allProvinces)
-016b burgProvinceIDLookup(cellId,allCells,allProvinces)
-016c burgProvinceObjectLookup(cellId,allCells,allProvinces)
-016d burgProvinceNameLookupTag(cellId,allCells,allProvinces)
-017 getReligionName(religionID,allReligions)
-018 getFMGCellXY(cellId, allCells)
-019 getLeafletBurgXY(burgId,allBurgs,mapInfo)
-020 getCellLeafletXY(cellId, allCells, mapInfo)
-021 getPoleLeafletXY(state, mapInfo)
-022 getReligionFollowers(religion,allCells,allBurgs,mapSettings)
-023 getTemperature(burg,allData)
-024 getTemperatureLikeness(burg,allData)
-025 getProvinceIdFromCell(cell,allData)
-026 getcapitalFile(capitalID,allData)]
-027x getBurgType(burg,allData) - POSSIBLY DEPRECATED - formely used to determine if a burg was a city, town, village, or hamlet - now that is determined by the 'group' property of the burg object
+001*  getCampaignHomeNote(importSettings)
+002   AVAILABLE
+003   getCampaignAtlasNote(importSettings)
+004*  getCampaignCalendar(importSettings)
+005   getDateTimestamp(importSettings)
+006   getBurgName(burgId,allBurgs)
+006b  getBurgNamePlusID(burgId,allBurgs)
+007   getStateName(stateId,allStates)
+007b  getStateNamePlusID(stateId,allStates)
+008   getProvinceName(provinceId,allProvinces)
+008b  getProvinceNamePlusID(provinceId,allProvinces)
+009   getCultureName(cultureId,allCultures)
+010x  burgMapUnits(currentBurg, mapSettings) - NOT CURRENTLY IN USE
+011   getBurgMapLinkByGroup(currentBurg, mapSeed, allCells, allRoutes, mapSettings, grid)
+012   getHeight(currentCell, mapSettings, allCells)
+013   totalArea(area)
+014   calcPopulation(popValue)
+015   totalPopulation(rural,urban)
+016   burgProvinceNameLookup(cellId,allCells,allProvinces)
+016b  burgProvinceIDLookup(cellId,allCells,allProvinces)
+016c  burgProvinceObjectLookup(cellId,allCells,allProvinces)
+016d  burgProvinceNameLookupTag(cellId,allCells,allProvinces)
+017   getReligionName(religionID,allReligions)
+018   getFMGCellXY(cellId, allCells)
+019   getLeafletBurgXY(burgId,allBurgs,mapInfo)
+020   getCellLeafletXY(cellId, allCells, mapInfo)
+021   getPoleLeafletXY(state, mapInfo)
+022   getReligionFollowers(religion,allCells,allBurgs,mapSettings)
+023   getTemperature(burg,allData)
+024   getTemperatureLikeness(burg,allData)
+025   getProvinceIdFromCell(cell,allData)
+026   getcapitalFile(capitalID,allData)
+026b  getBurgFile(burgID,allData)
+027   getStateFromBurg(burgId, allBurgs)
+028   getBurgX(burgId, allBurgs)
+029   getBurgY(burgId, allBurgs)
+030   getBurgMarket(burgId, allBurgs, allMarkets)
 
 * - NEEDS TO BE REWORKED
 x - DEPRECATED - no longer used in the code
@@ -109,13 +113,13 @@ handlebars.registerHelper('getBurgName', function(burgId,allBurgs) {
 // Custom helper function to get Burg Name PLus ID - useful for linking to specific Burg notes when multiple Burgs have the same name
 handlebars.registerHelper('getBurgNamePlusID', function(burgId, allBurgs) {
   if (burgId === undefined || burgId === 0) {
-    console.log("##### getBurgName - burgId was undefined or null #####");
+    console.log("##### getBurgNamePlusID - burgId was undefined or null #####");
     return ''; // skip if the element is undefined or null
   }
   const burgFound = allBurgs.find(burg => burg.i === burgId);
-  //console.log("getBurgNamePlusID-burgFound:", burgFound);
+  // console.log("getBurgNamePlusID-burgFound:", burgFound);
   const burgToReturn = burgFound ? burgFound.name + "-" + burgId : 'Unknown';
-  // console.log("burgToReturn:", burgToReturn);
+  // console.log("getBurgNamePlusID-burgToReturn:", burgToReturn);
   return burgToReturn ? burgToReturn : 'Unknown';
 });
 
@@ -234,8 +238,8 @@ handlebars.registerHelper('getBurgMapLink', function(currentBurg, mapSeed, allCe
   // console.log("allCells: ", allCells);
   // console.log("mapSettings: ", mapSettings);
 
-  console.log("Processing Burg ID: ", currentBurg.i, " - Name: ", currentBurg.name);
-  console.log("currentBurg:", currentBurg);
+  // console.log("Processing Burg ID: ", currentBurg.i, " - Name: ", currentBurg.name);
+  // console.log("currentBurg:", currentBurg);
 
   // console.log("mapSettings: ", mapSettings);
   const {options} = mapSettings;
@@ -246,11 +250,11 @@ handlebars.registerHelper('getBurgMapLink', function(currentBurg, mapSeed, allCe
   if (currentGroup === "city" || currentGroup === "town" || currentGroup === "capital") {
     // console.log("DEBUG - ", currentBurg.name, " is a City/Town/Capital - using MFCG - currentGroup: ", currentGroup);
     return createMfcgLink(currentBurg, mapSeed, allCells, allRoutes, mapSettings, grid);
-    console.log("******* - DEBUG - ", currentBurg.name, " is a City/Town/Capital - link returned from createMfcgLink-*******");
+    // console.log("******* - DEBUG - ", currentBurg.name, " is a City/Town/Capital - link returned from createMfcgLink-*******");
   } else if (currentGroup === "village" || currentGroup === "hamlet") {
     // console.log("DEBUG - ", currentBurg.name, " is a Village/Hamlet - using Village Gen - currentGroup: ", currentGroup);
     return createVillageGeneratorLink(currentBurg, mapSeed, allCells, allRoutes, mapSettings, grid);
-    console.log("******* - DEBUG - ", currentBurg.name, " is a Village/Hamlet - link returned from createVillageGeneratorLink- *******");
+    // console.log("******* - DEBUG - ", currentBurg.name, " is a Village/Hamlet - link returned from createVillageGeneratorLink- *******");
   };
 
   function createMfcgLink(currentBurg, mapSeed, allCells, allRoutes,mapSettings) {
@@ -270,7 +274,7 @@ handlebars.registerHelper('getBurgMapLink', function(currentBurg, mapSeed, allCe
     // console.log("population: ", population);
     const river = currentCell.r ? 1 : 0;
     const coast = Number((currentBurg.port || 0) > 0);
-    //console.log("createMfcgLink - currentBurg.name: ", currentBurg.name, " currentCell: ", currentCell, " havenCell: ", havenCell);
+    // console.log("createMfcgLink - currentBurg.name: ", currentBurg.name, " currentCell: ", currentCell, " havenCell: ", havenCell);
     const sea = (() => {
       if (!coast || !havenCell) return null;
       // calculate see direction: 0 = east, 0.5 = north, 1 = west, 1.5 = south
@@ -290,7 +294,7 @@ handlebars.registerHelper('getBurgMapLink', function(currentBurg, mapSeed, allCe
     const citadel = +currentBurg.citadel;
     const urban_castle = +(citadel && each(2)(currentBurg.i));
     // console.log("urban_castle: ", urban_castle);
-    //console.log("#### currentBurg: ", currentBurg, " - currentCell: ", currentCell,);
+    // console.log("#### currentBurg: ", currentBurg, " - currentCell: ", currentCell,);
     // console.log("!@!@!@!@ - Dropping in to isCrossroad()");
     const hub = +isCrossroad(burgCell, allCells, allRoutes);
     // console.log(">>>>>> currentBurg.name: ", currentBurg.name, " - hub: ", hub);
@@ -317,13 +321,15 @@ handlebars.registerHelper('getBurgMapLink', function(currentBurg, mapSeed, allCe
       temple: temple.toString(),
       walls: walls.toString(),
       shantytown: shantytown.toString(),
-      gates: (-1).toString(),
+      greens: plaza ? "1" : "0",
       style
     }).toString();
     if (sea) url.searchParams.append("sea", sea.toString());
 
+      // gates: (-1).toString(), // removed gates parameter as it was causing issues with the preview and is not needed for the link to work
+
     const link = url.toString();
-    //console.log(currentBurg.name, "****** Inside createMfcgLink - MFCG URL: ", link);
+    // console.log(currentBurg.name, "****** Inside createMfcgLink - MFCG URL: ", link);
     // this line seems to be causing problems with the preview
     // return { link, preview: `${link}&preview=1` };
     return link;
@@ -686,8 +692,8 @@ handlebars.registerHelper('getPoleLeafletXY', function(state, mapInfo) {
   // console.log("getPoleLeafletXY - state: ",state);
   if (state.pole === undefined || state.pole === 0 ) {
     console.log("##### getPoleLeafletXY - state.pole  was undefined or zero -");
-    console.log("getPoleLeafletXY - state: ", state);
-    console.log("#####");
+    // console.log("getPoleLeafletXY - state: ", state);
+    // console.log("#####");
     return ''; // skip if the element is undefined
   };
   const poleX = state.pole[0];
@@ -936,32 +942,92 @@ handlebars.registerHelper('getcapitalFile', function(capitalID,stateID,allData) 
   return foundBurgNotePath;
 });
 
+// 026b
+// Custom Helper to get the path to get the path to a Burg note from the Burg's ID
+handlebars.registerHelper('getBurgFile', function(burgID,allData) {
+  // console.log("getBurgFile process - passed burgID value: ", burgID);
+  if (burgID === undefined || burgID === 0) {
+    console.log("##### getBurgFile - burgID was undefined or zero #####");
+    return ''; // skip if state value is zero or undefined
+  };
+  const foundBurg = allData.pack.burgs.find(b => b.i === burgID);
+  const foundBurgStateID = foundBurg.state;
+  // console.log("foundBurg: ",foundBurg);
+  const stateName = allData.pack.states.find(state => state.i === foundBurgStateID).name;
+  const foundBurgCellId = allData.pack.cells.find(cell => cell.i === foundBurg.cell);
+  if (foundBurgCellId === undefined || foundBurgCellId === 0) {
+    console.log("##### getBurgFile - burg cellId was undefined or zero #####");
+    return ''; // skip if cellId value is undefined
+  };
+  const foundCellProvinceId = foundBurgCellId.province;
+  if (foundCellProvinceId === 0 || foundCellProvinceId === undefined) {
+    return ''; // If no Province Defined end here
+  };
+  const foundProvinceName = allData.pack.provinces.find(prov => prov.i === foundCellProvinceId).fullName;
+  // console.log("burgProvinceNameLookup process - foundProvinceName: ", foundProvinceName);
+  const foundBurgNotePath = `${allData.importInfo.thisCampaignPath}/05-Atlas/${allData.info.mapName}/States/${stateName}/Provinces/${foundProvinceName}/Burgs/${foundBurg.name}`;
+  // console.log("foundBurgNotePath: ", foundBurgNotePath);
+  return foundBurgNotePath;
+});
+
 // 027
-// Custom Helper to return 'city' or 'village' based on population
-handlebars.registerHelper('getBurgType', function(currentBurg, mapSettings) {
-  if (!currentBurg === undefined || currentBurg.SourceIndex === 0) {
-    console.log("##### getBurgMapLink - currentBurg was undefined or zero #####");
-    return ''; // skip if currentCell is undefined
-  };
-  const {options} = mapSettings;
-  const pop = rn(currentBurg.population * mapSettings.populationRate * mapSettings.urbanization);
-  if (!options.villageMaxPopulation){
-    console.log ("## - JSON does not contain options.villageMaxPopulation - ##");
-    return;
-  } else if (pop >= options.villageMaxPopulation || currentBurg.citadel || currentBurg.walls || currentBurg.temple || currentBurg.shanty) {
-    // console.log("DEBUG - It's a City");
-    burgType = 'city';
-    return burgType;
-  } else {
-    // console.log("DEBUG - It's a Village");
-    const burgType = 'village';
-    return burgType;
+// Get the Burg's State Name from the Burg's cell ID
+handlebars.registerHelper('getBurgStateName', function(burgId,allBurgs,allStates) {
+  // console.log("getBurgStateName for burgId: ", burgId );
+  const foundBurg = allBurgs.find(burg => burg.i === burgId);
+  if (foundBurg === undefined) {
+    console.log("##### getBurgStateName - foundBurg was undefined #####");
+    return ''; // skip if foundBurg is undefined
   }
-
-    // round value to d decimals
-  function rn(v, d = 0) {
-    const m = Math.pow(10, d);
-    return Math.round(v * m) / m;
+  const foundState = foundBurg.state;
+  if (foundState === undefined || foundState === 0) {
+    console.log("##### getBurgStateName - foundState was undefined or zero #####");
+    return ''; // skip if foundState value is undefined
   };
+  const foundStateName = allStates.find(state => state.i === foundState).name;
+  if (foundStateName === undefined) {
+    console.log("##### getBurgStateName - foundStateName was undefined #####");
+    return ''; // skip if foundStateName is undefined
+  };
+  return foundStateName;
+  });
 
+
+  // 028
+  // Custom Helper to return the X value of the passed object (usually a burg) in a Leaflet compatible format
+  handlebars.registerHelper('getBurgX', function(burgID, allBurgs) {
+    const burg = allBurgs.find(b => b.i === burgID);
+    if (burg === undefined || burg.SourceIndex === 0) {
+      console.log("##### getBurgX - burg was undefined or zero #####");
+      return ''; // skip if burg is undefined
+    };
+    const coordsX = burg.x;
+    return `${coordsX}`;
+  });
+
+    // 029
+  // Custom Helper to return the Y value of the passed object (usually a burg) in a Leaflet compatible format
+  handlebars.registerHelper('getBurgY', function(burgID, allBurgs) {
+    const burg = allBurgs.find(b => b.i === burgID);
+    if (burg === undefined || burg.SourceIndex === 0) {
+      console.log("##### getBurgY - burg was undefined or zero #####");
+      return ''; // skip if burg is undefined
+    };
+    const coordsY = burg.y;
+    return `${coordsY}`;
+  });
+
+  // 030
+  // Custom Helper to get the link to a Burg's Market Note
+  handlebars.registerHelper('getBurgMarket', function(marketID, allBurgs, allMarkets) {
+    const market = allMarkets.find(m => m.i === marketID);
+    if (!market) {
+      console.log("##### getBurgMarketLink - market was undefined #####");
+      return ''; // skip if market is undefined
+    }
+    console.log("##### getBurgMarket - market: ", market);
+    const marketCenterBurgId = market.centerBurgId;
+    const marketName = allBurgs.find(b => b.i === marketCenterBurgId).name;
+    console.log("getBurgMarket - centerBurg: ", marketCenterBurgId, " - marketName: ", marketName, " alternate market.currMarketName: ", market.currMarketName);
+    return marketName;
   });

@@ -13,7 +13,7 @@ id: {{i}}
 name: {{name}}
 nameID: {{name}}-{{i}}
 mapName: {{@importDataRoot.info.mapName}}
-pronounced:
+pronounced: ""
 {{setvar "currentCapitalName" (getBurgName burg @importDataRoot.pack.burgs)}}provincialCapital: {{"currentCapitalName"}}
 {{setvar "capitalPath" (getcapitalFile burg state @importDataRoot)}}capitalFile: {{"capitalPath"}}
 religion: {{getReligionName this.center @importDataRoot.pack.cells @importDataRoot.pack.religions}}

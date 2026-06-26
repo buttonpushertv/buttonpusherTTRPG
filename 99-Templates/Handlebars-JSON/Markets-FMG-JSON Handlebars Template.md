@@ -1,0 +1,121 @@
+---
+aliases:
+- {{getBurgName centerBurgId @importDataRoot.pack.burgs}}
+centerBurgId: {{centerBurgId}}
+{{setvar "currBurgNamePlusID" (getBurgNamePlusID centerBurgId @importDataRoot.pack.burgs)}}centerBurgNamePlusID: {{"currBurgNamePlusID"}}
+{{setvar "centerBurgStateName" (getBurgStateName centerBurgId @importDataRoot.pack.burgs @importDataRoot.pack.states)}}centerBurgStateName: {{"centerBurgStateName"}}
+{{setvar "centerBurgFile" (getBurgFile centerBurgId @importDataRoot)}}centerBurgFilePath: "{{"centerBurgFile"}}"
+id: {{i}}
+{{setvar "currMarketName" (getBurgName centerBurgId @importDataRoot.pack.burgs)}}marketName: {{"currMarketName"}}
+mapName: {{@importDataRoot.info.mapName}}
+colorHex: "{{color}}"
+pronounced: ""
+leaders:
+shortDescription:
+tags:
+- Market
+- {{getBurgName centerBurgId @importDataRoot.pack.burgs}}
+- {{@importDataRoot.info.mapName}}
+- {{@importDataRoot.importInfo.thisCampaignShortCode}}
+templateVersion: 1.0
+WBProgress: Imported
+centerBurgx: {{getBurgX centerBurgId @importDataRoot.pack.burgs}}
+centerBurgy: {{getBurgY centerBurgId @importDataRoot.pack.burgs}}
+---
+
+> [!metadata|metadata]- Metadata & Page Controls
+>> [!metadata|metadataoption]- System
+>> #### System
+>>  |
+>> ---|---|
+>> **cssClass**|`INPUT[cssClass][inlineSelect:cssclass]` |
+>> **Tags** | `INPUT[Tags][inlineListSuggester:tags]` |
+>> **World Building Progress**| `INPUT[WBProgress][inlineSelect:WBProgress]`|
+>>> [!note]- Tracking World Building Progress
+>>> Update the World Building Progress property as you update any info on the page. Your choices are `Imported`, `In Progress`, `Game-ready`, `Nearly Complete,` and `Done`.
+>>>
+>>> This allows sorting based on what has & hasn't had world building stuff done for it. There are Dataviews setup on the campaign home page that sort by these progress key words.
+>
+>> [!metadata|metadataoption]+ Info
+>> #### Info
+>>  |
+>> ---|---|
+> **Pronounced** |  `INPUT[text:pronounced]`
+> **Aliases** | `INPUT[list:aliases]` |
+> **Leaders**|`INPUT[list:leaders]`|
+> **Short Description**|`INPUT[textArea:shortDescription]`
+>
+>> [!metadata|metadataoption]- Controls
+>> These buttons control various portions of this page. They only change things on this page.
+>> 
+>> #### Controls
+>>  |
+>> ---|---|
+>> Leaflet Map| `BUTTON[hide_leaf_map]` - `BUTTON[show_leaf_map]`
+>> Interactive Map | `BUTTON[hide_web_map]` - `BUTTON[show_web_map]`
+
+[[{{@importDataRoot.importInfo.thisCampaignPath}}/{{@importDataRoot.importInfo.thisCampaign}} Home|{{@importDataRoot.importInfo.thisCampaign}} Home]] | [[{{@importDataRoot.importInfo.thisCampaignPath}}/05-Atlas/{{@importDataRoot.info.mapName}}/{{@importDataRoot.info.mapName}}-Linked Atlas|{{@importDataRoot.info.mapName}}-Linked Atlas]] | Center Burg: `=link(this.centerBurgFilePath)` 
+
+%% All the info in this 'infobox' will appear in the panel to the right. Most of these values are pulled from the metadata in the properties above. %%
+
+> [!infobox]
+>
+>  |
+>  --- |
+>
+>  # **Pronounced**
+>  # "`=this.pronounced`"
+>
+>  |
+>  --- |
+> 
+>> [!note|title-center c-gray] ### Info
+>
+>  |
+>  ---: | --- |
+> **Center Burg** | `=link(this.centerBurgFilePath,centerBurgName)` |
+>  **Center Burg State** |`=link(this.centerBurgStateName)`|
+> **Leader(s)** | `=link(this.leaders)` |
+>
+
+# **`=this.marketName`**
+
+> [!recite|no-t text-center]+ Introduction
+> *`=this.shortDescription`*
+
+%% GENERAL NOTES GO HERE - free-form text or images %%
+
+### Zones/Regions/Neighborhoods
+Below are any notable zones or regions within `=this.marketName`
+
+### History
+
+%% You can use the 'Timeline' Callout features of the ITS theme here to create a timeline of any important events. Remove the line below that reads '(delete this line to enable timeline)' and the trailing double percent signs & add a set of double percent signs here ->
+
+> [!timeline|t-l] **`=this.marketName` Founded** _Date of founding._
+> `=this.marketName` was founded by...
+
+> [!timeline|t-l t-2] **Something Happened** *A significant event.*
+> Something momentous occurred on this day.
+
+> [!timeline|t-r t-2] **Another thing happened** *Less significant this time.*
+> Today was only a moderately important day.
+
+(delete this line to enable timeline) %%
+
+## Notes
+
+%% Further notes. These 2 callouts will be hidden by default. Change the '-' after the closing square bracket to a '+' to have it be expanded by default. %%
+
+> [!hint]- Plot Hooks
+>
+
+> [!question]- Hidden Details
+>
+
+## More Details
+
+---
+
+[[{{@importDataRoot.importInfo.thisCampaignPath}}/{{@importDataRoot.importInfo.thisCampaign}} Home|{{@importDataRoot.importInfo.thisCampaign}} Home]] | [[{{@importDataRoot.importInfo.thisCampaignPath}}/05-Atlas/{{@importDataRoot.info.mapName}}/{{@importDataRoot.info.mapName}}-Linked Atlas|{{@importDataRoot.info.mapName}}-Linked Atlas]] | Center Burg: `=link(this.centerBurgFilePath)` 
+

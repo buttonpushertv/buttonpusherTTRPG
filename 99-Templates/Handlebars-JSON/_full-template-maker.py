@@ -26,6 +26,7 @@ sections = [
     ("pack.burgs", "Burgs-FMG-JSON Handlebars Template.md"),
     ("pack.cultures", "Cultures-FMG-JSON Handlebars Template.md"),
     ("pack.religions", "Religions-FMG-JSON Handlebars Template.md"),
+    ("pack.markets", "Markets-FMG-JSON Handlebars Template.md"),
 ]
 
 # Open the output file in append mode

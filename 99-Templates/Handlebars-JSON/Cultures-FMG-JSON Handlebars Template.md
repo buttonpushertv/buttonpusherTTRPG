@@ -13,7 +13,7 @@ leaders:
 mapName: {{@importDataRoot.info.mapName}}
 namesbase: {{base}}
 origins: {{origins}}
-pronounced:
+pronounced: ""
 shortDescription:
 shield: {{shield}}
 tags:

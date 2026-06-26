@@ -26,7 +26,7 @@ neighbors:
 {{#each neighbors}}
 - {{getStateName this @importDataRoot.pack.states}}
 {{/each}}
-pronounced:
+pronounced: ""
 provinces:
 {{#each provinces}}
 - {{getProvinceName this @importDataRoot.pack.provinces}}
