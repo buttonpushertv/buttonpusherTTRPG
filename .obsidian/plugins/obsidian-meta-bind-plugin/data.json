@@ -150,14 +150,14 @@
         {
           "type": "regexpReplaceInNote",
           "regexp": "%%WebMapTOP%%",
-          "replacement": "%%WebMapTOP-",
-          "regexpFlags": "g"
+          "regexpFlags": "g",
+          "replacement": "%%WebMapTOP-"
         },
         {
           "type": "regexpReplaceInNote",
           "regexp": "%%WebMapTAIL%%",
-          "replacement": "-WebMapTAIL%%",
-          "regexpFlags": "g"
+          "regexpFlags": "g",
+          "replacement": "-WebMapTAIL%%"
         }
       ]
     },
@@ -175,14 +175,14 @@
         {
           "type": "regexpReplaceInNote",
           "regexp": "%%WebMapTOP-",
-          "replacement": "%%WebMapTOP%%",
-          "regexpFlags": "g"
+          "regexpFlags": "g",
+          "replacement": "%%WebMapTOP%%"
         },
         {
           "type": "regexpReplaceInNote",
           "regexp": "-WebMapTAIL%%",
-          "replacement": "%%WebMapTAIL%%",
-          "regexpFlags": "g"
+          "regexpFlags": "g",
+          "replacement": "%%WebMapTAIL%%"
         }
       ]
     },
@@ -200,14 +200,14 @@
         {
           "type": "regexpReplaceInNote",
           "regexp": "%%LeafletMapTOP%%",
-          "replacement": "%%LeafletMapTOP-",
-          "regexpFlags": "g"
+          "regexpFlags": "g",
+          "replacement": "%%LeafletMapTOP-"
         },
         {
           "type": "regexpReplaceInNote",
           "regexp": "%%LeafletMapTAIL%%",
-          "replacement": "-LeafletMapTAIL%%",
-          "regexpFlags": "g"
+          "regexpFlags": "g",
+          "replacement": "-LeafletMapTAIL%%"
         }
       ]
     },
@@ -225,14 +225,14 @@
         {
           "type": "regexpReplaceInNote",
           "regexp": "%%LeafletMapTOP-",
-          "replacement": "%%LeafletMapTOP%%",
-          "regexpFlags": "g"
+          "regexpFlags": "g",
+          "replacement": "%%LeafletMapTOP%%"
         },
         {
           "type": "regexpReplaceInNote",
           "regexp": "-LeafletMapTAIL%%",
-          "replacement": "%%LeafletMapTAIL%%",
-          "regexpFlags": "g"
+          "regexpFlags": "g",
+          "replacement": "%%LeafletMapTAIL%%"
         }
       ]
     },
@@ -250,8 +250,8 @@
         {
           "type": "regexpReplaceInNote",
           "regexp": "\\|map\\]- Burg Map \\(Interactive\\)",
-          "replacement": "|map]+ Burg Map (Interactive)",
-          "regexpFlags": "g"
+          "regexpFlags": "g",
+          "replacement": "|map]+ Burg Map (Interactive)"
         }
       ]
     },
@@ -269,8 +269,25 @@
         {
           "type": "regexpReplaceInNote",
           "regexp": "\\|map\\]+ Burg Map \\(Interactive\\)",
-          "replacement": "|map]- Burg Map (Interactive)",
-          "regexpFlags": "g"
+          "regexpFlags": "g",
+          "replacement": "|map]- Burg Map (Interactive)"
+        }
+      ]
+    },
+    {
+      "label": "Open JSON/CSV Importer",
+      "icon": "",
+      "style": "primary",
+      "class": "",
+      "cssStyle": "",
+      "backgroundImage": "",
+      "tooltip": "Open the JSON/CSV Importer Plugin",
+      "id": "openJSONImporter",
+      "hidden": false,
+      "actions": [
+        {
+          "type": "command",
+          "command": "obsidian-import-json:import-json"
         }
       ]
     }

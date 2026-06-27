@@ -816,6 +816,11 @@ function isEOTinCodeBlock(text2) {
   }
   return inCodeBlock;
 }
+function isInsideInlineCode(lineUntilCursor) {
+  var _a, _b;
+  const backquotes = (_b = (_a = lineUntilCursor.match(/`/g)) == null ? void 0 : _a.length) != null ? _b : 0;
+  return backquotes % 2 === 1;
+}
 
 // src/app-helper.ts
 var AppHelper = class {
@@ -977,6 +982,9 @@ var AppHelper = class {
    */
   inCodeBlock(editor) {
     return isEOTinCodeBlock(this.getContentUntilCursor(editor));
+  }
+  inInlineCode(editor) {
+    return isInsideInlineCode(this.getCurrentLineUntilCursor(editor));
   }
   searchPhantomLinks() {
     return Object.entries(this.unsafeApp.metadataCache.unresolvedLinks).flatMap(
@@ -1369,10 +1377,14 @@ function suggestWords(indexedWords, query, maxNum, option = {}) {
     frontMatter,
     selectionHistoryStorage,
     providerMinChars,
-    globalMinChar
+    globalMinChar,
+    excludeInternalLink
   } = option;
   const queryStartWithUpper = capitalizeFirstLetter(query) === query;
   const shouldIncludeProvider = (providerType) => {
+    if (excludeInternalLink && providerType === "internalLink") {
+      return false;
+    }
     if (!providerMinChars) {
       return true;
     }
@@ -1540,10 +1552,14 @@ function suggestWordsByPartialMatch(indexedWords, query, maxNum, option = {}) {
     frontMatter,
     selectionHistoryStorage,
     providerMinChars,
-    globalMinChar
+    globalMinChar,
+    excludeInternalLink
   } = option;
   const queryStartWithUpper = capitalizeFirstLetter(query) === query;
   const shouldIncludeProvider = (providerType) => {
+    if (excludeInternalLink && providerType === "internalLink") {
+      return false;
+    }
     if (!providerMinChars) {
       return true;
     }
@@ -1801,6 +1817,7 @@ var DEFAULT_SETTINGS = {
   excludeSelfInternalLink: false,
   excludeExistingInActiveFileInternalLinks: false,
   excludeUnresolvedInternalLinks: false,
+  excludeInternalLinksInCode: false,
   updateInternalLinksOnSave: true,
   insertAliasTransformedFromDisplayedInternalLink: {
     enabled: false,
@@ -2719,6 +2736,20 @@ var VariousComplementsSettingTab = class extends import_obsidian3.PluginSettingT
             ).onChange(async (value) => {
               this.plugin.settings.excludeUnresolvedInternalLinks = value;
               await this.plugin.saveSettings({ internalLink: true });
+            });
+          });
+        }
+      );
+      addFilterableSetting(
+        "Exclude internal links in code",
+        "Exclude internal link suggestions when the cursor is inside a code block or inline code. Unlike the 'Disable suggestions in the Code block' option, this targets only internal link suggestions and also applies to inline code.",
+        (setting) => {
+          setting.addToggle((tc) => {
+            tc.setValue(
+              this.plugin.settings.excludeInternalLinksInCode
+            ).onChange(async (value) => {
+              this.plugin.settings.excludeInternalLinksInCode = value;
+              await this.plugin.saveSettings();
             });
           });
         }
@@ -7574,6 +7605,7 @@ var AutoCompleteSuggest = class _AutoCompleteSuggest extends import_obsidian7.Ed
         const matchStrategy = MatchStrategy.fromName(
           parsedQuery.completionMode
         );
+        const excludeInternalLinkInCode = this.settings.excludeInternalLinksInCode && this.completionMode === this.matchStrategy.name && (this.appHelper.inInlineCode(context.editor) || this.appHelper.inCodeBlock(context.editor));
         let words = parsedQuery.queries.filter(
           (x, i, xs) => parsedQuery.currentFrontMatter || this.settings.minNumberOfWordsTriggeredPhrase + i - 1 < xs.length && x.word.length >= this.minNumberTriggered && !x.word.endsWith(" ")
         ).map((q) => {
@@ -7594,7 +7626,8 @@ var AutoCompleteSuggest = class _AutoCompleteSuggest extends import_obsidian7.Ed
                 customDictionary: this.settings.customDictionaryMinNumberOfCharactersForTrigger,
                 internalLink: this.settings.internalLinkMinNumberOfCharactersForTrigger
               },
-              globalMinChar: this.settings.minNumberOfCharactersTriggered || this.tokenizerStrategy.triggerThreshold
+              globalMinChar: this.settings.minNumberOfCharactersTriggered || this.tokenizerStrategy.triggerThreshold,
+              excludeInternalLink: excludeInternalLinkInCode
             }
           ).map((word) => ({ ...word, offset: q.offset }));
         }).flat().sort((a, b) => Number(a.fuzzy) - Number(b.fuzzy));
