@@ -3,7 +3,7 @@ aliases:
 - Wistore
 campaign: Raid on the Eternal Tower
 color: #d1a4f4
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Wistore Dependency.png
 formName: Dependency
@@ -13,7 +13,7 @@ id: 223
 name: Wistore
 nameID: Wistore-223
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Wistore
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Birbotia/Provinces/Wistore Dependency/Burgs/Wistore
 religion: Penkneth Spirits

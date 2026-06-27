@@ -3,7 +3,7 @@ aliases:
 - Prested
 campaign: Raid on the Eternal Tower
 color: #e0f265
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Prested County.png
 formName: County
@@ -13,7 +13,7 @@ id: 115
 name: Prested
 nameID: Prested-115
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Prested
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Oakhambia/Provinces/Prested County/Burgs/Prested
 religion: Religion of the Dead Antelope of Snow

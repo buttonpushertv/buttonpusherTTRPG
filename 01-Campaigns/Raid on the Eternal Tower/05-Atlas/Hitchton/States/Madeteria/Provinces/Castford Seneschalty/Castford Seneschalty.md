@@ -3,7 +3,7 @@ aliases:
 - Castford
 campaign: Raid on the Eternal Tower
 color: #d6ff5d
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Castford Seneschalty.png
 formName: Seneschalty
@@ -13,7 +13,7 @@ id: 176
 name: Castford
 nameID: Castford-176
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Atondongay
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Madeteria/Provinces/Castford Seneschalty/Burgs/Atondongay
 religion: Bivenil Pantheon

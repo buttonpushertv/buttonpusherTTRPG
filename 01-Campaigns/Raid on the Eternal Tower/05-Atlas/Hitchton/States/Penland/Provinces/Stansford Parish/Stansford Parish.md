@@ -3,7 +3,7 @@ aliases:
 - Stansford
 campaign: Raid on the Eternal Tower
 color: #ffcf50
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Stansford Parish.png
 formName: Parish
@@ -13,7 +13,7 @@ id: 76
 name: Stansford
 nameID: Stansford-76
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Stansford
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Penland/Provinces/Stansford Parish/Burgs/Stansford
 religion: Skiple Religion

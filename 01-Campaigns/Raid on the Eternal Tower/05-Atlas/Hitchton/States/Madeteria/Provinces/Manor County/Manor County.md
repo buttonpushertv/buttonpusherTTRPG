@@ -3,7 +3,7 @@ aliases:
 - Manor
 campaign: Raid on the Eternal Tower
 color: #beff68
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Manor County.png
 formName: County
@@ -13,7 +13,7 @@ id: 172
 name: Manor
 nameID: Manor-172
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Batesterley
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Madeteria/Provinces/Manor County/Burgs/Batesterley
 religion: Bivenil Pantheon

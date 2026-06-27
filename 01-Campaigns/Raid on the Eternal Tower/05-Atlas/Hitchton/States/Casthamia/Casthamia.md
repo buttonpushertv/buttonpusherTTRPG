@@ -9,7 +9,7 @@ capitalName: Boston
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Casthamia/Provinces/Boston Seneschalty/Burgs/Boston
 center: 3892
 color: #8da0cb
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 culture: Skiple
 emblem: Hitchton Emblem Casthamian Empire.png
@@ -27,7 +27,7 @@ neighbors:
 - Birbotia
 - Manch
 - Penland
-pronounced:
+pronounced: ""
 provinces:
 - Boston Seneschalty
 - Chilworthia Landgrave

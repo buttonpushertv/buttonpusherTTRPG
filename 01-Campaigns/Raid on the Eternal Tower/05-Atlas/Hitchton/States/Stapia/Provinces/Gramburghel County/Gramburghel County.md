@@ -3,7 +3,7 @@ aliases:
 - Gramburghel
 campaign: Raid on the Eternal Tower
 color: #f2d17a
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Gramburghel County.png
 formName: County
@@ -13,7 +13,7 @@ id: 167
 name: Gramburghel
 nameID: Gramburghel-167
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Gramburghel
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Stapia/Provinces/Gramburghel County/Burgs/Gramburghel
 religion: Perslehamism

@@ -3,7 +3,7 @@ aliases:
 - Bury
 campaign: Raid on the Eternal Tower
 color: #e38dd9
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Bury Deanery.png
 formName: Deanery
@@ -13,7 +13,7 @@ id: 51
 name: Bury
 nameID: Bury-51
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Grampound
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Linia/Provinces/Bury Deanery/Burgs/Grampound
 religion: Conghamism

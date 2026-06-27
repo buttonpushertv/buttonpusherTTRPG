@@ -3,7 +3,7 @@ aliases:
 - Westheton
 campaign: Raid on the Eternal Tower
 color: #cbd384
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Westheton County.png
 formName: County
@@ -13,7 +13,7 @@ id: 116
 name: Westheton
 nameID: Westheton-116
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Westheton
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Oakhambia/Provinces/Westheton County/Burgs/Westheton
 religion: Religion of the Dead Antelope of Snow

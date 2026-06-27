@@ -3,7 +3,7 @@ aliases:
 - Amerstole
 campaign: Raid on the Eternal Tower
 color: #ff9d93
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Amerstole Earldom.png
 formName: Earldom
@@ -13,7 +13,7 @@ id: 97
 name: Amerstole
 nameID: Amerstole-97
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Amerstole
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Wodminia/Provinces/Amerstole Earldom/Burgs/Amerstole
 religion: Bivenil Pantheon

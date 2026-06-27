@@ -3,7 +3,7 @@ aliases:
 - Craftford
 campaign: Raid on the Eternal Tower
 color: #d2c39f
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Craftford County.png
 formName: County
@@ -13,7 +13,7 @@ id: 90
 name: Craftford
 nameID: Craftford-90
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Craftford
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Manch/Provinces/Craftford County/Burgs/Craftford
 religion: Religion of the Mad

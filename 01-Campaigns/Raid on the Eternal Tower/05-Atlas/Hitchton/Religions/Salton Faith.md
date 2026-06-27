@@ -5,7 +5,7 @@ campaign: "Raid on the Eternal Tower"
 center: 1260
 code: SF
 color: #ffdf94
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 culture: Cowey
 deity: Sorough, The Scary Enlightened Being
@@ -17,7 +17,7 @@ id: 12
 leaders:
 mapName: Hitchton
 origins: 1
-pronounced:
+pronounced: ""
 religionName: "Salton Faith"
 shortDescription:
 tags:

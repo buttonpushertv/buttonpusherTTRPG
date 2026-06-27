@@ -3,7 +3,7 @@ aliases:
 - Tre
 campaign: Raid on the Eternal Tower
 color: #b0b5c4
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Tre Earldom.png
 formName: Earldom
@@ -13,7 +13,7 @@ id: 128
 name: Tre
 nameID: Tre-128
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Crexeford
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Horsteria/Provinces/Tre Earldom/Burgs/Crexeford
 religion: Deities of the Prime Horse

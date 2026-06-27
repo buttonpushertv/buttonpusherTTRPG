@@ -5,7 +5,7 @@ cultureName: "Osbuton"
 code: Os
 color: #b3de69
 center: 
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 expansionism: 2.5
 id: 2
@@ -13,7 +13,7 @@ leaders:
 mapName: Hitchton
 namesbase: 1
 origins: 0
-pronounced:
+pronounced: ""
 shortDescription:
 shield: wedged
 tags:

@@ -3,7 +3,7 @@ aliases:
 - Tethe
 campaign: Raid on the Eternal Tower
 color: #9ac7df
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Tethe Earldom.png
 formName: Earldom
@@ -13,7 +13,7 @@ id: 101
 name: Tethe
 nameID: Tethe-101
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Tethe
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Padstedgia/Provinces/Tethe Earldom/Burgs/Tethe
 religion: Religion of the Dead Antelope of Snow

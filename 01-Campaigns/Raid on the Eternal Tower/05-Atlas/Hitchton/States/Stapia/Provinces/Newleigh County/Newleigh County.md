@@ -3,7 +3,7 @@ aliases:
 - Newleigh
 campaign: Raid on the Eternal Tower
 color: #e7f46a
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Newleigh County.png
 formName: County
@@ -13,7 +13,7 @@ id: 157
 name: Newleigh
 nameID: Newleigh-157
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Newleigh
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Stapia/Provinces/Newleigh County/Burgs/Newleigh
 religion: Perslehamism

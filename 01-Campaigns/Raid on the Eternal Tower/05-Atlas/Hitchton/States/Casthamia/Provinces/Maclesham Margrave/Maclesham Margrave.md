@@ -3,7 +3,7 @@ aliases:
 - Maclesham
 campaign: Raid on the Eternal Tower
 color: #90a6e5
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Maclesham Margrave.png
 formName: Margrave
@@ -13,7 +13,7 @@ id: 42
 name: Maclesham
 nameID: Maclesham-42
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Maclesham
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Casthamia/Provinces/Maclesham Margrave/Burgs/Maclesham
 religion: Religion of the Mad

@@ -3,7 +3,7 @@ aliases:
 - Skiplenil
 campaign: Raid on the Eternal Tower
 color: #9cf46d
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Skiplenil County.png
 formName: County
@@ -13,7 +13,7 @@ id: 67
 name: Skiplenil
 nameID: Skiplenil-67
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Leridgewich
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Oakland/Provinces/Skiplenil County/Burgs/Leridgewich
 religion: Salton Faith

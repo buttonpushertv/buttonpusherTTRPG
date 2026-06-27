@@ -3,7 +3,7 @@ aliases:
 - Cliford
 campaign: Raid on the Eternal Tower
 color: #abd9af
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Cliford Earldom.png
 formName: Earldom
@@ -13,7 +13,7 @@ id: 148
 name: Cliford
 nameID: Cliford-148
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Cliford
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Horsteria/Provinces/Cliford Earldom/Burgs/Cliford
 religion: Osbuton Spirits

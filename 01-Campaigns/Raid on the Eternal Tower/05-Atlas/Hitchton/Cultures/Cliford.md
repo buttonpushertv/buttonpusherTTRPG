@@ -5,7 +5,7 @@ cultureName: "Cliford"
 code: Cl
 color: #bc80bd
 center: 
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 expansionism: 2.3
 id: 8
@@ -13,7 +13,7 @@ leaders:
 mapName: Hitchton
 namesbase: 1
 origins: 0
-pronounced:
+pronounced: ""
 shortDescription:
 shield: fantasy5
 tags:

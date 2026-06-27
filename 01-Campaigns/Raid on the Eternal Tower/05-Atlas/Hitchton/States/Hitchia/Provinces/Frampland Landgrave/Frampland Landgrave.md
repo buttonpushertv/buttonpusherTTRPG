@@ -3,7 +3,7 @@ aliases:
 - Frampland
 campaign: Raid on the Eternal Tower
 color: #92bcb2
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Frampland Landgrave.png
 formName: Landgrave
@@ -13,7 +13,7 @@ id: 1
 name: Frampland
 nameID: Frampland-1
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Kiver
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Hitchia/Provinces/Frampland Landgrave/Burgs/Kiver
 religion: Word of Stapton

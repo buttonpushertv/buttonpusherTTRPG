@@ -3,7 +3,7 @@ aliases:
 - Rothburia
 campaign: Raid on the Eternal Tower
 color: #bda4d9
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Rothburia Land.png
 formName: Land
@@ -13,7 +13,7 @@ id: 217
 name: Rothburia
 nameID: Rothburia-217
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Rearasal
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Thaxted/Provinces/Rothburia Land/Burgs/Rearasal
 religion: Perslehamism

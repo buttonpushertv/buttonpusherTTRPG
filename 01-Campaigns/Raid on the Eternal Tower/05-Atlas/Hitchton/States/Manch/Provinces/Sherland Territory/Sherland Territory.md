@@ -3,7 +3,7 @@ aliases:
 - Sherland
 campaign: Raid on the Eternal Tower
 color: #ffb87f
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Sherland Territory.png
 formName: Territory
@@ -13,7 +13,7 @@ id: 209
 name: Sherland
 nameID: Sherland-209
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Bodbury
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Manch/Provinces/Sherland Territory/Burgs/Bodbury
 religion: Religion of the Mad

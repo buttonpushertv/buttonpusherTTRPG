@@ -3,7 +3,7 @@ aliases:
 - Flokleigh
 campaign: Raid on the Eternal Tower
 color: #e9b2c2
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Flokleigh Deanery.png
 formName: Deanery
@@ -13,7 +13,7 @@ id: 54
 name: Flokleigh
 nameID: Flokleigh-54
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Flokleigh
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Linia/Provinces/Flokleigh Deanery/Burgs/Flokleigh
 religion: Conghamism

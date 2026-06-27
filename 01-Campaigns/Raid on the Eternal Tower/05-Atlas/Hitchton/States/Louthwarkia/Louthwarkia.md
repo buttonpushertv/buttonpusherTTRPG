@@ -9,7 +9,7 @@ capitalName: Wacury
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Louthwarkia/Provinces/Castfordia County/Burgs/Wacury
 center: 3246
 color: #ffed35
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 culture: Daling
 emblem: Hitchton Emblem Duchy of Louthwarkia.png
@@ -25,7 +25,7 @@ nameID: Louthwarkia-11
 neighbors:
 - Oakland
 - Hitchia
-pronounced:
+pronounced: ""
 provinces:
 - Castfordia County
 - Boston County

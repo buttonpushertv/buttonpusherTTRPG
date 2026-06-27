@@ -3,7 +3,7 @@ aliases:
 - Kilkburghia
 campaign: Raid on the Eternal Tower
 color: #e0f068
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Kilkburghia Landgrave.png
 formName: Landgrave
@@ -13,7 +13,7 @@ id: 175
 name: Kilkburghia
 nameID: Kilkburghia-175
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Oakhampton
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Madeteria/Provinces/Kilkburghia Landgrave/Burgs/Oakhampton
 religion: Bivenil Pantheon

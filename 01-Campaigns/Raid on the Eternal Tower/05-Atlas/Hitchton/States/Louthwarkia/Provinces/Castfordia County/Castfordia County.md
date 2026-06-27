@@ -3,7 +3,7 @@ aliases:
 - Castfordia
 campaign: Raid on the Eternal Tower
 color: #fff43b
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Castfordia County.png
 formName: County
@@ -13,7 +13,7 @@ id: 122
 name: Castfordia
 nameID: Castfordia-122
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Wacury
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Louthwarkia/Provinces/Castfordia County/Burgs/Wacury
 religion: Word of Stapton

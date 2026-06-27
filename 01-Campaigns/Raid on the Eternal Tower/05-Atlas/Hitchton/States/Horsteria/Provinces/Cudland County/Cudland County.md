@@ -3,7 +3,7 @@ aliases:
 - Cudland
 campaign: Raid on the Eternal Tower
 color: #88cfce
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Cudland County.png
 formName: County
@@ -13,7 +13,7 @@ id: 126
 name: Cudland
 nameID: Cudland-126
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Horston
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Horsteria/Provinces/Cudland County/Burgs/Horston
 religion: Deities of the Prime Horse

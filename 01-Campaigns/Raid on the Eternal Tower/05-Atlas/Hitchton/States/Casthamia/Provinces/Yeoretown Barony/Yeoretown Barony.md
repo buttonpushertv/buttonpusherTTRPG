@@ -3,7 +3,7 @@ aliases:
 - Yeoretown
 campaign: Raid on the Eternal Tower
 color: #83bedb
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Yeoretown Barony.png
 formName: Barony
@@ -13,7 +13,7 @@ id: 30
 name: Yeoretown
 nameID: Yeoretown-30
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Nosterne
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Casthamia/Provinces/Yeoretown Barony/Burgs/Nosterne
 religion: Religion of the Mad

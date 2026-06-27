@@ -3,7 +3,7 @@ aliases:
 - Yeorough
 campaign: Raid on the Eternal Tower
 color: #fff462
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Yeorough Land.png
 formName: Land
@@ -13,7 +13,7 @@ id: 221
 name: Yeorough
 nameID: Yeorough-221
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Unknown
 capitalFile: 
 religion: No religion

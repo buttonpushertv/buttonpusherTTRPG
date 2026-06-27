@@ -3,7 +3,7 @@ aliases:
 - Presfieldia
 campaign: Raid on the Eternal Tower
 color: #ae9aec
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Presfieldia County.png
 formName: County
@@ -13,7 +13,7 @@ id: 154
 name: Presfieldia
 nameID: Presfieldia-154
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Stapton
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Thaxted/Provinces/Presfieldia County/Burgs/Stapton
 religion: Perslehamism

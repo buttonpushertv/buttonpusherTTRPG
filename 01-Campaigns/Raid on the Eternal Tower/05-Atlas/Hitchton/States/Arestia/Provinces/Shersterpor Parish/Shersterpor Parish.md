@@ -3,7 +3,7 @@ aliases:
 - Shersterpor
 campaign: Raid on the Eternal Tower
 color: #ffb36b
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Shersterpor Parish.png
 formName: Parish
@@ -13,7 +13,7 @@ id: 8
 name: Shersterpor
 nameID: Shersterpor-8
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Shersterpor
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Arestia/Provinces/Shersterpor Parish/Burgs/Shersterpor
 religion: Salton Faith

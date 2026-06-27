@@ -3,7 +3,7 @@ aliases:
 - Bridburia
 campaign: Raid on the Eternal Tower
 color: #89cdd0
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Bridburia County.png
 formName: County
@@ -13,7 +13,7 @@ id: 138
 name: Bridburia
 nameID: Bridburia-138
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Swadingle
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Horsteria/Provinces/Bridburia County/Burgs/Swadingle
 religion: Deities of the Prime Horse

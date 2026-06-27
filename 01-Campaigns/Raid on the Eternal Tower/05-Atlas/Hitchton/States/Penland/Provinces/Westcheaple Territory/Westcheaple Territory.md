@@ -3,7 +3,7 @@ aliases:
 - Westcheaple
 campaign: Raid on the Eternal Tower
 color: #ffe934
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Westcheaple Territory.png
 formName: Territory
@@ -13,7 +13,7 @@ id: 208
 name: Westcheaple
 nameID: Westcheaple-208
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Westcheaple
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Penland/Provinces/Westcheaple Territory/Burgs/Westcheaple
 religion: Religion of the Mad

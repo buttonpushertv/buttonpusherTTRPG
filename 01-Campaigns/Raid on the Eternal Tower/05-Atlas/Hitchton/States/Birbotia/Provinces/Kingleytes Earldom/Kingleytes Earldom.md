@@ -3,7 +3,7 @@ aliases:
 - Kingleytes
 campaign: Raid on the Eternal Tower
 color: #d2a2f4
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Kingleytes Earldom.png
 formName: Earldom
@@ -13,7 +13,7 @@ id: 200
 name: Kingleytes
 nameID: Kingleytes-200
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Kingleytes
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Birbotia/Provinces/Kingleytes Earldom/Burgs/Kingleytes
 religion: Religion of the Mad

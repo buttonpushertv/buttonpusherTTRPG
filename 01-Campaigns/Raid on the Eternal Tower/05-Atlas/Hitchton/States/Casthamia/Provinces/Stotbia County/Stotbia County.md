@@ -3,7 +3,7 @@ aliases:
 - Stotbia
 campaign: Raid on the Eternal Tower
 color: #aa9cdb
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Stotbia County.png
 formName: County
@@ -13,7 +13,7 @@ id: 35
 name: Stotbia
 nameID: Stotbia-35
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Congton
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Casthamia/Provinces/Stotbia County/Burgs/Congton
 religion: Religion of the Mad

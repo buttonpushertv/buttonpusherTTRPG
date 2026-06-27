@@ -3,7 +3,7 @@ aliases:
 - Swafordge
 campaign: Raid on the Eternal Tower
 color: #ed9b89
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Swafordge Parish.png
 formName: Parish
@@ -13,7 +13,7 @@ id: 17
 name: Swafordge
 nameID: Swafordge-17
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Swafordge
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Arestia/Provinces/Swafordge Parish/Burgs/Swafordge
 religion: Salton Faith

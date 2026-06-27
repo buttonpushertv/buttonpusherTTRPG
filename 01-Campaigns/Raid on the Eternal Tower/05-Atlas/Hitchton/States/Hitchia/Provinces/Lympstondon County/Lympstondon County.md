@@ -3,7 +3,7 @@ aliases:
 - Lympstondon
 campaign: Raid on the Eternal Tower
 color: #6bc6c4
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Lympstondon County.png
 formName: County
@@ -13,7 +13,7 @@ id: 4
 name: Lympstondon
 nameID: Lympstondon-4
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Lympstondon
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Hitchia/Provinces/Lympstondon County/Burgs/Lympstondon
 religion: Word of Stapton

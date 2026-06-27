@@ -3,7 +3,7 @@ aliases:
 - Titon
 campaign: Raid on the Eternal Tower
 color: #c7d887
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Titon Land.png
 formName: Land
@@ -13,7 +13,7 @@ id: 211
 name: Titon
 nameID: Titon-211
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Unknown
 capitalFile: 
 religion: Religion of the Dead Antelope of Snow

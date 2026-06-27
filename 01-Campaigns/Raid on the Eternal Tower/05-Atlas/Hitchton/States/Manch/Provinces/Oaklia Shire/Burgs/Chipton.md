@@ -1,7 +1,7 @@
 ---
 aliases:
 - Chipton
-burgMapLink: https://watabou.github.io/city-generator/?name=Chipton&population=5620&size=25&seed=5827453500365&river=1&coast=0&farms=1&citadel=0&urban_castle=0&hub=0&plaza=0&temple=0&walls=0&shantytown=0&gates=-1&style=natural
+burgMapLink: https://watabou.github.io/city-generator/?name=Chipton&population=5620&size=25&seed=5827453500365&river=1&coast=0&farms=1&citadel=0&urban_castle=0&hub=0&plaza=0&temple=0&walls=0&shantytown=0&greens=0&style=natural
 burgName: Chipton
 burgNameID: Chipton-365
 campaign: Raid on the Eternal Tower
@@ -10,18 +10,19 @@ cell: 3147
 citadel: 0
 cssclasses: sixty-pct-width
 culture: Congley
-elevation: 2953 ft
+elevation: 3573 ft
 emblem: Hitchton Emblem Chipton.png
 group: town
 feature: 2
 id: 365
 mapName: Hitchton
-market: 4
+marketId: 4
+marketName: Orton
 plaza: 0
 population: 5,620
 port: 
 product: 14.72
-pronounced:
+pronounced: ""
 provinceId: 92
 provinceName: Oaklia Shire
 religion: Religion of the Mad
@@ -41,7 +42,7 @@ tags:
 temple: 0
 temperature: 70°F
 temperatureLikeness: Tuscon (Arizona)
-templateVersion: 6.0
+templateVersion: 7.0
 treasury: 8.7
 type: Generic
 walls: 0
@@ -67,12 +68,12 @@ marker: burg,583.700,1739.420,[[Chipton]]
 >>>
 >>> This allows sorting based on what has & hasn't had world building stuff done for it. There are Dataviews setup on the campaign home page that sort by these progress key words.
 >
->> [!metadata|metadataoption]- Info
+>> [!metadata|metadataoption]+ Info
 >> #### Info
 >>  |
 >> ---|---|
 > **Pronounced** |  `INPUT[text:pronounced]`
-> **Aliases** | `INPUT[list:aliasese]` |
+> **Aliases** | `INPUT[list:aliases]` |
 > **Rulers**|`INPUT[list:rulers]`|
 > **Short Description**|`INPUT[textArea:shortDescription]`
 >
@@ -93,7 +94,7 @@ You may also use the Meta-Bind button at the bottom of the callout to open the b
 
 There is an elaborate method (see [[JSON Import How To#Wrangling FMG Burg Maps]]) to save all the maps so you can have them locally and make use of the data that was placed here on import from the JSON.%%
 
-%%LeafletMapTOP%%
+%%LeafletMapTOP-
 
 > [!metadata|map]- Burg Map (Interactive)
 > ```leaflet
@@ -112,7 +113,7 @@ There is an elaborate method (see [[JSON Import How To#Wrangling FMG Burg Maps]]
 >
 > [Link to Chipton on FMG Map](https://azgaar.github.io/Fantasy-Map-Generator/?maplink=https://dl.dropboxusercontent.com/scl/fi/l7dpjh1fb1v053mc7izmw/Hitchton-2026-06-21-15-36.map?rlkey=zrhhfmejskvk1cpgiizmjbrfl&dl=0&scale=6&x=1739.58&y=734.19) | Download Helper Link: `BUTTON[mapLink-to-download]`
 
-%%LeafletMapTAIL%%
+-LeafletMapTAIL%%
 
 %% City Maps may need Scale adjusting - see `unit: feet` line above in Leaflet block (around line 80-81) The `scale` setting of `1` is arbitrary. It seems to work for the Burg maps - City or Village. By default the CityGen maps will likely have the `scale bar` visible. I recommend hiding it. The City Gen uses meters. The Village Gen has no scale defined. Once you hide it in the CityGen Settings, it should stay hidden for several visits to these maps.%%
 
@@ -122,10 +123,10 @@ There is an elaborate method (see [[JSON Import How To#Wrangling FMG Burg Maps]]
 > ```custom-frames
 > frame: Watabou-Procgen Arcana
 > style: height: 1000px;
-> urlSuffix: https://watabou.github.io/city-generator/?name=Chipton&population=5620&size=25&seed=5827453500365&river=1&coast=0&farms=1&citadel=0&urban_castle=0&hub=0&plaza=0&temple=0&walls=0&shantytown=0&gates=-1&style=natural
+> urlSuffix: https://watabou.github.io/city-generator/?name=Chipton&population=5620&size=25&seed=5827453500365&river=1&coast=0&farms=1&citadel=0&urban_castle=0&hub=0&plaza=0&temple=0&walls=0&shantytown=0&greens=0&style=natural
 > ```
 >
->  `=elink(this.burgMapLink,"Visit Burg Map")` | Generator Link: `BUTTON[mapLink-to-download]`
+>  `=elink(this.burgMapLink,"Visit Burg Map on MCFG")` | [Link to Chipton on FMG Map](https://azgaar.github.io/Fantasy-Map-Generator/?maplink=https://dl.dropboxusercontent.com/scl/fi/l7dpjh1fb1v053mc7izmw/Hitchton-2026-06-21-15-36.map?rlkey=zrhhfmejskvk1cpgiizmjbrfl&dl=0&scale=6&x=1739.58&y=734.19) | Download Helper Link: `BUTTON[mapLink-to-download]`
 
 %%WebMapTAIL%%
 

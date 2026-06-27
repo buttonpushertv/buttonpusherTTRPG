@@ -3,7 +3,7 @@ aliases:
 - Ashetfordia
 campaign: Raid on the Eternal Tower
 color: #a9dcb2
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Ashetfordia Island.png
 formName: Island
@@ -13,7 +13,7 @@ id: 216
 name: Ashetfordia
 nameID: Ashetfordia-216
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Unknown
 capitalFile: 
 religion: No religion

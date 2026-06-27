@@ -3,7 +3,7 @@ aliases:
 - Kiningtia
 campaign: Raid on the Eternal Tower
 color: #c1ce72
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Kiningtia County.png
 formName: County
@@ -13,7 +13,7 @@ id: 66
 name: Kiningtia
 nameID: Kiningtia-66
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Aveterster
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Oakland/Provinces/Kiningtia County/Burgs/Aveterster
 religion: Salton Faith

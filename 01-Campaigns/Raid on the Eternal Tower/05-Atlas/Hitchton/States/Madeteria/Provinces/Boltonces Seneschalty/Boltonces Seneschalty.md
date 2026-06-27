@@ -3,7 +3,7 @@ aliases:
 - Boltonces
 campaign: Raid on the Eternal Tower
 color: #d9e976
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Boltonces Seneschalty.png
 formName: Seneschalty
@@ -13,7 +13,7 @@ id: 178
 name: Boltonces
 nameID: Boltonces-178
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Boltonces
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Madeteria/Provinces/Boltonces Seneschalty/Burgs/Boltonces
 religion: Bivenil Pantheon

@@ -3,7 +3,7 @@ aliases:
 - Craftlia
 campaign: Raid on the Eternal Tower
 color: #92a2e2
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Craftlia County.png
 formName: County
@@ -13,7 +13,7 @@ id: 40
 name: Craftlia
 nameID: Craftlia-40
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Gatham
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Casthamia/Provinces/Craftlia County/Burgs/Gatham
 religion: Religion of the Mad

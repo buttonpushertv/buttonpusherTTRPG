@@ -9,7 +9,7 @@ capitalName: Dalbone
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Buckeria/Provinces/Blechia Earldom/Burgs/Dalbone
 center: 1919
 color: #ffcf4f
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 culture: Chisbute
 emblem: Hitchton Emblem Buckerian Marches.png
@@ -25,7 +25,7 @@ nameID: Buckeria-18
 neighbors:
 - Arestia
 - Oakland
-pronounced:
+pronounced: ""
 provinces:
 - Blechia Earldom
 - Osterming County

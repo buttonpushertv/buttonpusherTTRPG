@@ -3,7 +3,7 @@ aliases:
 - Grantburia
 campaign: Raid on the Eternal Tower
 color: #9ff668
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Grantburia Earldom.png
 formName: Earldom
@@ -13,7 +13,7 @@ id: 71
 name: Grantburia
 nameID: Grantburia-71
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Stotfordbu
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Oakland/Provinces/Grantburia Earldom/Burgs/Stotfordbu
 religion: Word of Stapton

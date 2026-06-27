@@ -3,7 +3,7 @@ aliases:
 - Hentamersia
 campaign: Raid on the Eternal Tower
 color: #94c7e1
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Hentamersia Earldom.png
 formName: Earldom
@@ -13,7 +13,7 @@ id: 106
 name: Hentamersia
 nameID: Hentamersia-106
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Whitford
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Padstedgia/Provinces/Hentamersia Earldom/Burgs/Whitford
 religion: Religion of the Dead Antelope of Snow

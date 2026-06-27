@@ -3,7 +3,7 @@ aliases:
 - Newleighia
 campaign: Raid on the Eternal Tower
 color: #a59ef2
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Newleighia Earldom.png
 formName: Earldom
@@ -13,7 +13,7 @@ id: 103
 name: Newleighia
 nameID: Newleighia-103
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Stothediver
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Padstedgia/Provinces/Newleighia Earldom/Burgs/Stothediver
 religion: Religion of the Dead Antelope of Snow

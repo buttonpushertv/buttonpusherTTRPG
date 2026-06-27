@@ -5,7 +5,7 @@ campaign: "Raid on the Eternal Tower"
 center: 1113
 code: RE
 color: #d1c4e6
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 culture: Moury
 deity: Seareston, The Black Gryphon
@@ -17,7 +17,7 @@ id: 17
 leaders:
 mapName: Hitchton
 origins: 5
-pronounced:
+pronounced: ""
 religionName: "Religion of the Dead Antelope of Snow"
 shortDescription:
 tags:

@@ -3,7 +3,7 @@ aliases:
 - Madetery
 campaign: Raid on the Eternal Tower
 color: #ddfe5d
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Madetery Landgrave.png
 formName: Landgrave
@@ -13,7 +13,7 @@ id: 171
 name: Madetery
 nameID: Madetery-171
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Madetery
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Madeteria/Provinces/Madetery Landgrave/Burgs/Madetery
 religion: Bivenil Pantheon

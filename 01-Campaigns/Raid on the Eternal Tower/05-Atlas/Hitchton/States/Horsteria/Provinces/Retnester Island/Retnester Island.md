@@ -3,7 +3,7 @@ aliases:
 - Retnester
 campaign: Raid on the Eternal Tower
 color: #babeb2
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Retnester Island.png
 formName: Island
@@ -13,7 +13,7 @@ id: 212
 name: Retnester
 nameID: Retnester-212
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Lympstoles
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Horsteria/Provinces/Retnester Island/Burgs/Lympstoles
 religion: Religion of the Dead Antelope of Snow

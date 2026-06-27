@@ -3,7 +3,7 @@ aliases:
 - Berhamia
 campaign: Raid on the Eternal Tower
 color: #a1c4c8
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Berhamia Earldom.png
 formName: Earldom
@@ -13,7 +13,7 @@ id: 31
 name: Berhamia
 nameID: Berhamia-31
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Bosfield
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Casthamia/Provinces/Berhamia Earldom/Burgs/Bosfield
 religion: Religion of the Mad

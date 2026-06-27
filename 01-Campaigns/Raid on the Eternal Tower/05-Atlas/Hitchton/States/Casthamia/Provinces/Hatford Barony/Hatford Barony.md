@@ -3,7 +3,7 @@ aliases:
 - Hatford
 campaign: Raid on the Eternal Tower
 color: #83bcdd
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Hatford Barony.png
 formName: Barony
@@ -13,7 +13,7 @@ id: 24
 name: Hatford
 nameID: Hatford-24
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Hatford
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Casthamia/Provinces/Hatford Barony/Burgs/Hatford
 religion: Religion of the Mad

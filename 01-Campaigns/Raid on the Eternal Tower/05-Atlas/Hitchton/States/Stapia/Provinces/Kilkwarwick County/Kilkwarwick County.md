@@ -3,7 +3,7 @@ aliases:
 - Kilkwarwick
 campaign: Raid on the Eternal Tower
 color: #e6f46c
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Kilkwarwick County.png
 formName: County
@@ -13,7 +13,7 @@ id: 158
 name: Kilkwarwick
 nameID: Kilkwarwick-158
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Kilkwarwick
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Stapia/Provinces/Kilkwarwick County/Burgs/Kilkwarwick
 religion: Perslehamism

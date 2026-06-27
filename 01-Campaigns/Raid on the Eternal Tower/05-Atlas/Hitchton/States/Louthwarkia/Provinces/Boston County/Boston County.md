@@ -3,7 +3,7 @@ aliases:
 - Boston
 campaign: Raid on the Eternal Tower
 color: #ffe944
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Boston County.png
 formName: County
@@ -13,7 +13,7 @@ id: 123
 name: Boston
 nameID: Boston-123
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Boston
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Louthwarkia/Provinces/Boston County/Burgs/Boston
 religion: Word of Stapton

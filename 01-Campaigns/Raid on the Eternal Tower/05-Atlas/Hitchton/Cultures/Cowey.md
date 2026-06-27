@@ -5,7 +5,7 @@ cultureName: "Cowey"
 code: Co
 color: #ffed6f
 center: 
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 expansionism: 1
 id: 1
@@ -13,7 +13,7 @@ leaders:
 mapName: Hitchton
 namesbase: 1
 origins: 0
-pronounced:
+pronounced: ""
 shortDescription:
 shield: heater
 tags:

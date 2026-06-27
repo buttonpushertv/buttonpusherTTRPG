@@ -3,7 +3,7 @@ aliases:
 - Thetry
 campaign: Raid on the Eternal Tower
 color: #e0ec6e
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Thetry Seneschalty.png
 formName: Seneschalty
@@ -13,7 +13,7 @@ id: 186
 name: Thetry
 nameID: Thetry-186
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Castbury
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Madeteria/Provinces/Thetry Seneschalty/Burgs/Castbury
 religion: Bivenil Pantheon

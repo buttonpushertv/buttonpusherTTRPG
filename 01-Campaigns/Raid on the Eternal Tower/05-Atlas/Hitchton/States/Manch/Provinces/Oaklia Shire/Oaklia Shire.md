@@ -3,7 +3,7 @@ aliases:
 - Oaklia
 campaign: Raid on the Eternal Tower
 color: #ffae88
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Oaklia Shire.png
 formName: Shire
@@ -13,7 +13,7 @@ id: 92
 name: Oaklia
 nameID: Oaklia-92
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Sadeham
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Manch/Provinces/Oaklia Shire/Burgs/Sadeham
 religion: Religion of the Mad

@@ -3,7 +3,7 @@ aliases:
 - Harporporia
 campaign: Raid on the Eternal Tower
 color: #b0b7bf
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Harporporia Barony.png
 formName: Barony
@@ -13,7 +13,7 @@ id: 25
 name: Harporporia
 nameID: Harporporia-25
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Pilbor
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Casthamia/Provinces/Harporporia Barony/Burgs/Pilbor
 religion: Religion of the Mad

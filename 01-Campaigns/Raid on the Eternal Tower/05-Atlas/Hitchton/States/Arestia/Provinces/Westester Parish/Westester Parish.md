@@ -3,7 +3,7 @@ aliases:
 - Westester
 campaign: Raid on the Eternal Tower
 color: #ffa162
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Westester Parish.png
 formName: Parish
@@ -13,7 +13,7 @@ id: 12
 name: Westester
 nameID: Westester-12
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Westester
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Arestia/Provinces/Westester Parish/Burgs/Westester
 religion: Salton Faith

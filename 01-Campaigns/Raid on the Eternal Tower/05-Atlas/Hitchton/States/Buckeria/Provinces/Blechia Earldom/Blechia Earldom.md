@@ -3,7 +3,7 @@ aliases:
 - Blechia
 campaign: Raid on the Eternal Tower
 color: #ffe753
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Blechia Earldom.png
 formName: Earldom
@@ -13,7 +13,7 @@ id: 191
 name: Blechia
 nameID: Blechia-191
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Dalbone
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Buckeria/Provinces/Blechia Earldom/Burgs/Dalbone
 religion: Salton Faith

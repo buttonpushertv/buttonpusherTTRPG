@@ -3,7 +3,7 @@ aliases:
 - Chilworthia
 campaign: Raid on the Eternal Tower
 color: #a0c5c8
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Chilworthia Landgrave.png
 formName: Landgrave
@@ -13,7 +13,7 @@ id: 23
 name: Chilworthia
 nameID: Chilworthia-23
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Knutsin
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Casthamia/Provinces/Chilworthia Landgrave/Burgs/Knutsin
 religion: Religion of the Mad

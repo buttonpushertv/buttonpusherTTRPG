@@ -3,7 +3,7 @@ aliases:
 - Helscomia
 campaign: Raid on the Eternal Tower
 color: #ffff49
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Helscomia County.png
 formName: County
@@ -13,7 +13,7 @@ id: 124
 name: Helscomia
 nameID: Helscomia-124
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Louth
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Louthia/Provinces/Helscomia County/Burgs/Louth
 religion: Religion of the Dead Antelope of Snow

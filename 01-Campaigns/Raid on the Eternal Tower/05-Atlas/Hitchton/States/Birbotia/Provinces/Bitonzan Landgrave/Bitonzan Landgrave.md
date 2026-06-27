@@ -3,7 +3,7 @@ aliases:
 - Bitonzan
 campaign: Raid on the Eternal Tower
 color: #f98ce7
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Bitonzan Landgrave.png
 formName: Landgrave
@@ -13,7 +13,7 @@ id: 194
 name: Bitonzan
 nameID: Bitonzan-194
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Marltondo
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Birbotia/Provinces/Bitonzan Landgrave/Burgs/Marltondo
 religion: Salton Faith

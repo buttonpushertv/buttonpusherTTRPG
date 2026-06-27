@@ -3,7 +3,7 @@ aliases:
 - Lympsbury
 campaign: Raid on the Eternal Tower
 color: #b7a2cc
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Lympsbury Earldom.png
 formName: Earldom
@@ -13,7 +13,7 @@ id: 32
 name: Lympsbury
 nameID: Lympsbury-32
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Lympsbury
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Casthamia/Provinces/Lympsbury Earldom/Burgs/Lympsbury
 religion: Religion of the Mad

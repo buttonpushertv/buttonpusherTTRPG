@@ -3,7 +3,7 @@ aliases:
 - Perster
 campaign: Raid on the Eternal Tower
 color: #88dac2
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Perster County.png
 formName: County
@@ -13,7 +13,7 @@ id: 131
 name: Perster
 nameID: Perster-131
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Stanston
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Horsteria/Provinces/Perster County/Burgs/Stanston
 religion: Deities of the Prime Horse

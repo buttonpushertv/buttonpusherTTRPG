@@ -3,7 +3,7 @@ aliases:
 - Botford
 campaign: Raid on the Eternal Tower
 color: #b9c9aa
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Botford Captaincy.png
 formName: Captaincy
@@ -13,7 +13,7 @@ id: 135
 name: Botford
 nameID: Botford-135
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Neford
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Horsteria/Provinces/Botford Captaincy/Burgs/Neford
 religion: Deities of the Prime Horse

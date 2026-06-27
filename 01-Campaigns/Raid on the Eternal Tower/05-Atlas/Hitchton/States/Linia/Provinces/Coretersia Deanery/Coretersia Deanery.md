@@ -3,7 +3,7 @@ aliases:
 - Coretersia
 campaign: Raid on the Eternal Tower
 color: #f089d6
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Coretersia Deanery.png
 formName: Deanery
@@ -13,7 +13,7 @@ id: 50
 name: Coretersia
 nameID: Coretersia-50
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Hatbury
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Linia/Provinces/Coretersia Deanery/Burgs/Hatbury
 religion: Conghamism

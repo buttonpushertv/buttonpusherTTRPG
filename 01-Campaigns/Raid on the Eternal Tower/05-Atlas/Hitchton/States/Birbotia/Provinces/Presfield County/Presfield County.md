@@ -3,7 +3,7 @@ aliases:
 - Presfield
 campaign: Raid on the Eternal Tower
 color: #f9a9ce
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Presfield County.png
 formName: County
@@ -13,7 +13,7 @@ id: 193
 name: Presfield
 nameID: Presfield-193
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Presfield
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Birbotia/Provinces/Presfield County/Burgs/Presfield
 religion: Salton Faith

@@ -3,7 +3,7 @@ aliases:
 - Albrid
 campaign: Raid on the Eternal Tower
 color: #9aee74
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Albrid County.png
 formName: County
@@ -13,7 +13,7 @@ id: 63
 name: Albrid
 nameID: Albrid-63
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Oakley
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Oakland/Provinces/Albrid County/Burgs/Oakley
 religion: Word of Stapton

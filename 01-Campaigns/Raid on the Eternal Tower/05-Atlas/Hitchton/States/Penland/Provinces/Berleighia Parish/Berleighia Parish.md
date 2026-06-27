@@ -3,7 +3,7 @@ aliases:
 - Berleighia
 campaign: Raid on the Eternal Tower
 color: #eef646
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Berleighia Parish.png
 formName: Parish
@@ -13,7 +13,7 @@ id: 81
 name: Berleighia
 nameID: Berleighia-81
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Barporpor
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Penland/Provinces/Berleighia Parish/Burgs/Barporpor
 religion: Skiple Religion

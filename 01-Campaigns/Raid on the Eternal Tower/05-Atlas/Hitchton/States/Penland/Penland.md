@@ -9,7 +9,7 @@ capitalName: Penby
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Penland/Provinces/Penby Parish/Burgs/Penby
 center: 4505
 color: #ffd92f
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 culture: Skiple
 emblem: Hitchton Emblem Penlish Theocracy.png
@@ -26,7 +26,7 @@ neighbors:
 - Casthamia
 - Oakhambia
 - Linia
-pronounced:
+pronounced: ""
 provinces:
 - Penby Parish
 - Wadewesbia Parish

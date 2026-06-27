@@ -3,7 +3,7 @@ aliases:
 - Skiple
 campaign: Raid on the Eternal Tower
 color: #bac2af
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Skiple Territory.png
 formName: Territory
@@ -13,7 +13,7 @@ id: 213
 name: Skiple
 nameID: Skiple-213
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Skiple
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Horsteria/Provinces/Skiple Territory/Burgs/Skiple
 religion: Deities of the Prime Horse

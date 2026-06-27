@@ -3,7 +3,7 @@ aliases:
 - Persmouthia
 campaign: Raid on the Eternal Tower
 color: #dfeb72
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Persmouthia Landgrave.png
 formName: Landgrave
@@ -13,7 +13,7 @@ id: 187
 name: Persmouthia
 nameID: Persmouthia-187
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Chintagel
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Madeteria/Provinces/Persmouthia Landgrave/Burgs/Chintagel
 religion: Bivenil Pantheon

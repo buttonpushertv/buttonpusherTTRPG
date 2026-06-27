@@ -3,7 +3,7 @@ aliases:
 - Axbrigh
 campaign: Raid on the Eternal Tower
 color: #faa8cb
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Axbrigh Region.png
 formName: Region
@@ -13,7 +13,7 @@ id: 219
 name: Axbrigh
 nameID: Axbrigh-219
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Unknown
 capitalFile: 
 religion: No religion

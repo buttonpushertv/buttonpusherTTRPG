@@ -3,7 +3,7 @@ aliases:
 - Mourland
 campaign: Raid on the Eternal Tower
 color: #fccd76
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Mourland County.png
 formName: County
@@ -13,7 +13,7 @@ id: 161
 name: Mourland
 nameID: Mourland-161
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Knasalton
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Stapia/Provinces/Mourland County/Burgs/Knasalton
 religion: Religion of the Dead Antelope of Snow

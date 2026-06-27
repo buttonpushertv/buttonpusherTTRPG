@@ -3,7 +3,7 @@ aliases:
 - Mildockneth
 campaign: Raid on the Eternal Tower
 color: #91ddb9
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Mildockneth Earldom.png
 formName: Earldom
@@ -13,7 +13,7 @@ id: 151
 name: Mildockneth
 nameID: Mildockneth-151
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Mildockneth
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Horsteria/Provinces/Mildockneth Earldom/Burgs/Mildockneth
 religion: Osbuton Spirits

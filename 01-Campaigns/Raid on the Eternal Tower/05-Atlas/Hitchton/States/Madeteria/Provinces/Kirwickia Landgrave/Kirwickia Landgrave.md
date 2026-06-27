@@ -3,7 +3,7 @@ aliases:
 - Kirwickia
 campaign: Raid on the Eternal Tower
 color: #afff74
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Kirwickia Landgrave.png
 formName: Landgrave
@@ -13,7 +13,7 @@ id: 189
 name: Kirwickia
 nameID: Kirwickia-189
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Haringley
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Madeteria/Provinces/Kirwickia Landgrave/Burgs/Haringley
 religion: Bivenil Pantheon

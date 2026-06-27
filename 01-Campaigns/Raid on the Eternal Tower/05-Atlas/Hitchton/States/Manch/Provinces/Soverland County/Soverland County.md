@@ -3,7 +3,7 @@ aliases:
 - Soverland
 campaign: Raid on the Eternal Tower
 color: #f6cc82
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Soverland County.png
 formName: County
@@ -13,7 +13,7 @@ id: 88
 name: Soverland
 nameID: Soverland-88
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Pencestedge
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Manch/Provinces/Soverland County/Burgs/Pencestedge
 religion: Word of Stapton

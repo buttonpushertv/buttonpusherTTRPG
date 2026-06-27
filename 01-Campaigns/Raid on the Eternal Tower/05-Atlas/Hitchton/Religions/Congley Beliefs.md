@@ -5,7 +5,7 @@ campaign: "Raid on the Eternal Tower"
 center: 2226
 code: CB
 color: #c6b9c1
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 culture: Congley
 deity: Ledine, The Marine Victory
@@ -17,7 +17,7 @@ id: 9
 leaders:
 mapName: Hitchton
 origins: 0
-pronounced:
+pronounced: ""
 religionName: "Congley Beliefs"
 shortDescription:
 tags:

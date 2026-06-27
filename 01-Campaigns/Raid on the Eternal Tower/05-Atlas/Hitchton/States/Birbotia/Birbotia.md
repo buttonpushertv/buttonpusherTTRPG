@@ -9,7 +9,7 @@ capitalName: Presfield
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Birbotia/Provinces/Presfield County/Burgs/Presfield
 center: 2559
 color: #e28edb
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 culture: Penkneth
 emblem: Hitchton Emblem Birbotian Empire.png
@@ -32,7 +32,7 @@ neighbors:
 - Oakland
 - Manch
 - Hitchia
-pronounced:
+pronounced: ""
 provinces:
 - Presfield County
 - Bitonzan Landgrave

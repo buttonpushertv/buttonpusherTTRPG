@@ -3,7 +3,7 @@ aliases:
 - Bing
 campaign: Raid on the Eternal Tower
 color: #ebf54b
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Bing Parish.png
 formName: Parish
@@ -13,7 +13,7 @@ id: 80
 name: Bing
 nameID: Bing-80
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Weney
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Penland/Provinces/Bing Parish/Burgs/Weney
 religion: Religion of the Mad

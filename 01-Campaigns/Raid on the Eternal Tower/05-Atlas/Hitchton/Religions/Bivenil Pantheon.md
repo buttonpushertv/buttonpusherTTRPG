@@ -5,19 +5,19 @@ campaign: "Raid on the Eternal Tower"
 center: 903
 code: BP
 color: #ff8190
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 culture: Bivenil
 deity: Wargin, The Old Roc
 expansion: culture
 expansionism: 3.9
-followers: 3,589,090
+followers: 3,589,089
 form: Polytheism
 id: 16
 leaders:
 mapName: Hitchton
 origins: 6
-pronounced:
+pronounced: ""
 religionName: "Bivenil Pantheon"
 shortDescription:
 tags:

@@ -3,7 +3,7 @@ aliases:
 - Balistedia
 campaign: Raid on the Eternal Tower
 color: #f88c7e
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Balistedia Territory.png
 formName: Territory
@@ -13,7 +13,7 @@ id: 203
 name: Balistedia
 nameID: Balistedia-203
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Unknown
 capitalFile: 
 religion: No religion

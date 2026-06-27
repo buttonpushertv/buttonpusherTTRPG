@@ -5,7 +5,7 @@ cultureName: "Moury"
 code: Mo
 color: #dababf
 center: 
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 expansionism: 1.7
 id: 5
@@ -13,7 +13,7 @@ leaders:
 mapName: Hitchton
 namesbase: 1
 origins: 0
-pronounced:
+pronounced: ""
 shortDescription:
 shield: swiss
 tags:

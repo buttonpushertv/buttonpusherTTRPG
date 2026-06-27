@@ -5,19 +5,19 @@ campaign: "Raid on the Eternal Tower"
 center: 1061
 code: PS
 color: #80b1d3
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 culture: Penkneth
 deity: Havewiches, The Six
 expansion: culture
 expansionism: 0
-followers: 325,505
+followers: 325,504
 form: Shamanism
 id: 3
 leaders:
 mapName: Hitchton
 origins: 0
-pronounced:
+pronounced: ""
 religionName: "Penkneth Spirits"
 shortDescription:
 tags:

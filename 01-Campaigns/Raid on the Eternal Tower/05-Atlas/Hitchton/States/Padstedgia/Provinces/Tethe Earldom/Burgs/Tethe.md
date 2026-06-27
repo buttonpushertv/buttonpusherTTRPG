@@ -1,7 +1,7 @@
 ---
 aliases:
 - Tethe
-burgMapLink: https://watabou.github.io/city-generator/?name=Tethe&population=12581&size=34&seed=5827453500009&river=1&coast=1&farms=1&citadel=1&urban_castle=0&hub=0&plaza=0&temple=0&walls=1&shantytown=0&gates=-1&style=natural&sea=1.31
+burgMapLink: https://watabou.github.io/city-generator/?name=Tethe&population=12581&size=34&seed=5827453500009&river=1&coast=1&farms=1&citadel=1&urban_castle=0&hub=0&plaza=0&temple=0&walls=1&shantytown=0&greens=0&style=natural&sea=1.31
 burgName: Tethe
 burgNameID: Tethe-9
 campaign: Raid on the Eternal Tower
@@ -16,12 +16,13 @@ group: capital
 feature: 2
 id: 9
 mapName: Hitchton
-market: 13
+marketId: 13
+marketName: Stothediver
 plaza: 0
 population: 12,581
 port: 1
 product: 47.98
-pronounced:
+pronounced: ""
 provinceId: 101
 provinceName: Tethe Earldom
 religion: Religion of the Dead Antelope of Snow
@@ -41,7 +42,7 @@ tags:
 temple: 0
 temperature: 55°F
 temperatureLikeness: Baltimore (Maryland)
-templateVersion: 6.0
+templateVersion: 7.0
 treasury: 19.42
 type: Naval
 walls: 1
@@ -67,12 +68,12 @@ marker: burg,927.890,993.410,[[Tethe]]
 >>>
 >>> This allows sorting based on what has & hasn't had world building stuff done for it. There are Dataviews setup on the campaign home page that sort by these progress key words.
 >
->> [!metadata|metadataoption]- Info
+>> [!metadata|metadataoption]+ Info
 >> #### Info
 >>  |
 >> ---|---|
 > **Pronounced** |  `INPUT[text:pronounced]`
-> **Aliases** | `INPUT[list:aliasese]` |
+> **Aliases** | `INPUT[list:aliases]` |
 > **Rulers**|`INPUT[list:rulers]`|
 > **Short Description**|`INPUT[textArea:shortDescription]`
 >
@@ -93,7 +94,7 @@ You may also use the Meta-Bind button at the bottom of the callout to open the b
 
 There is an elaborate method (see [[JSON Import How To#Wrangling FMG Burg Maps]]) to save all the maps so you can have them locally and make use of the data that was placed here on import from the JSON.%%
 
-%%LeafletMapTOP%%
+%%LeafletMapTOP-
 
 > [!metadata|map]- Burg Map (Interactive)
 > ```leaflet
@@ -112,7 +113,7 @@ There is an elaborate method (see [[JSON Import How To#Wrangling FMG Burg Maps]]
 >
 > [Link to Tethe on FMG Map](https://azgaar.github.io/Fantasy-Map-Generator/?maplink=https://dl.dropboxusercontent.com/scl/fi/l7dpjh1fb1v053mc7izmw/Hitchton-2026-06-21-15-36.map?rlkey=zrhhfmejskvk1cpgiizmjbrfl&dl=0&scale=6&x=1001.1&y=382.7) | Download Helper Link: `BUTTON[mapLink-to-download]`
 
-%%LeafletMapTAIL%%
+-LeafletMapTAIL%%
 
 %% City Maps may need Scale adjusting - see `unit: feet` line above in Leaflet block (around line 80-81) The `scale` setting of `1` is arbitrary. It seems to work for the Burg maps - City or Village. By default the CityGen maps will likely have the `scale bar` visible. I recommend hiding it. The City Gen uses meters. The Village Gen has no scale defined. Once you hide it in the CityGen Settings, it should stay hidden for several visits to these maps.%%
 
@@ -122,10 +123,10 @@ There is an elaborate method (see [[JSON Import How To#Wrangling FMG Burg Maps]]
 > ```custom-frames
 > frame: Watabou-Procgen Arcana
 > style: height: 1000px;
-> urlSuffix: https://watabou.github.io/city-generator/?name=Tethe&population=12581&size=34&seed=5827453500009&river=1&coast=1&farms=1&citadel=1&urban_castle=0&hub=0&plaza=0&temple=0&walls=1&shantytown=0&gates=-1&style=natural&sea=1.31
+> urlSuffix: https://watabou.github.io/city-generator/?name=Tethe&population=12581&size=34&seed=5827453500009&river=1&coast=1&farms=1&citadel=1&urban_castle=0&hub=0&plaza=0&temple=0&walls=1&shantytown=0&greens=0&style=natural&sea=1.31
 > ```
 >
->  `=elink(this.burgMapLink,"Visit Burg Map")` | Generator Link: `BUTTON[mapLink-to-download]`
+>  `=elink(this.burgMapLink,"Visit Burg Map on MCFG")` | [Link to Tethe on FMG Map](https://azgaar.github.io/Fantasy-Map-Generator/?maplink=https://dl.dropboxusercontent.com/scl/fi/l7dpjh1fb1v053mc7izmw/Hitchton-2026-06-21-15-36.map?rlkey=zrhhfmejskvk1cpgiizmjbrfl&dl=0&scale=6&x=1001.1&y=382.7) | Download Helper Link: `BUTTON[mapLink-to-download]`
 
 %%WebMapTAIL%%
 

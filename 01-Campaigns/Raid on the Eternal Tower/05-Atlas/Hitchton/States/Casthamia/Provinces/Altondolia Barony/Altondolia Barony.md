@@ -3,7 +3,7 @@ aliases:
 - Altondolia
 campaign: Raid on the Eternal Tower
 color: #b7adc2
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Altondolia Barony.png
 formName: Barony
@@ -13,7 +13,7 @@ id: 36
 name: Altondolia
 nameID: Altondolia-36
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Skipleton
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Casthamia/Provinces/Altondolia Barony/Burgs/Skipleton
 religion: Religion of the Mad

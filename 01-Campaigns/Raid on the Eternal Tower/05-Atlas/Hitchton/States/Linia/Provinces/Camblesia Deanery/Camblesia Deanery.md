@@ -3,7 +3,7 @@ aliases:
 - Camblesia
 campaign: Raid on the Eternal Tower
 color: #faaabb
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Camblesia Deanery.png
 formName: Deanery
@@ -13,7 +13,7 @@ id: 52
 name: Camblesia
 nameID: Camblesia-52
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Norhambedi
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Linia/Provinces/Camblesia Deanery/Burgs/Norhambedi
 religion: Conghamism

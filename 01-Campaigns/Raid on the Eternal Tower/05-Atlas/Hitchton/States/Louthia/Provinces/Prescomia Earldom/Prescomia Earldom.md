@@ -3,7 +3,7 @@ aliases:
 - Prescomia
 campaign: Raid on the Eternal Tower
 color: #fffe41
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Prescomia Earldom.png
 formName: Earldom
@@ -13,7 +13,7 @@ id: 125
 name: Prescomia
 nameID: Prescomia-125
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Hinckwary
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Louthia/Provinces/Prescomia Earldom/Burgs/Hinckwary
 religion: Religion of the Dead Antelope of Snow

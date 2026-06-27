@@ -3,7 +3,7 @@ aliases:
 - Skiping
 campaign: Raid on the Eternal Tower
 color: #f097a1
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Skiping Earldom.png
 formName: Earldom
@@ -13,7 +13,7 @@ id: 99
 name: Skiping
 nameID: Skiping-99
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Skiping
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Wodminia/Provinces/Skiping Earldom/Burgs/Skiping
 religion: Bivenil Pantheon

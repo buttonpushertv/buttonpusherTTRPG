@@ -5,7 +5,7 @@ cultureName: "Bivenil"
 code: Bi
 color: #fb8072
 center: 
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 expansionism: 2.6
 id: 6
@@ -13,7 +13,7 @@ leaders:
 mapName: Hitchton
 namesbase: 1
 origins: 0
-pronounced:
+pronounced: ""
 shortDescription:
 shield: spanish
 tags:

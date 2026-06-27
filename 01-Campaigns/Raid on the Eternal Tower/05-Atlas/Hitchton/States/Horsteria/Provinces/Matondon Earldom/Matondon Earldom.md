@@ -3,7 +3,7 @@ aliases:
 - Matondon
 campaign: Raid on the Eternal Tower
 color: #babcb7
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Matondon Earldom.png
 formName: Earldom
@@ -13,7 +13,7 @@ id: 150
 name: Matondon
 nameID: Matondon-150
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Andalney
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Horsteria/Provinces/Matondon Earldom/Burgs/Andalney
 religion: Deities of the Prime Horse

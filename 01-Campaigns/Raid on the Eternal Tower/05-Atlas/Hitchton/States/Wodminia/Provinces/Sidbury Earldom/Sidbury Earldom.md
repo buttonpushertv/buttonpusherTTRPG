@@ -3,7 +3,7 @@ aliases:
 - Sidbury
 campaign: Raid on the Eternal Tower
 color: #fdbd8b
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Sidbury Earldom.png
 formName: Earldom
@@ -13,7 +13,7 @@ id: 95
 name: Sidbury
 nameID: Sidbury-95
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Sidbury
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Wodminia/Provinces/Sidbury Earldom/Burgs/Sidbury
 religion: Bivenil Pantheon

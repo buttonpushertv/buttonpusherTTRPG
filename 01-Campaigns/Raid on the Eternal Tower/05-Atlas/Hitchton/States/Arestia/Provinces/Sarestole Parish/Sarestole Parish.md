@@ -3,7 +3,7 @@ aliases:
 - Sarestole
 campaign: Raid on the Eternal Tower
 color: #f3b46e
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Sarestole Parish.png
 formName: Parish
@@ -13,7 +13,7 @@ id: 9
 name: Sarestole
 nameID: Sarestole-9
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Sarestole
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Arestia/Provinces/Sarestole Parish/Burgs/Sarestole
 religion: Salton Faith

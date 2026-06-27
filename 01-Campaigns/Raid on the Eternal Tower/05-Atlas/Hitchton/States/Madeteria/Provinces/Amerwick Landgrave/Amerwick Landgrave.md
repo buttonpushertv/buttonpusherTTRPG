@@ -3,7 +3,7 @@ aliases:
 - Amerwick
 campaign: Raid on the Eternal Tower
 color: #d0e77a
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Amerwick Landgrave.png
 formName: Landgrave
@@ -13,7 +13,7 @@ id: 182
 name: Amerwick
 nameID: Amerwick-182
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Amerwick
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Madeteria/Provinces/Amerwick Landgrave/Burgs/Amerwick
 religion: Bivenil Pantheon

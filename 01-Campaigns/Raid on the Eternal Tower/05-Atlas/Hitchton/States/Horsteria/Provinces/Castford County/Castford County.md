@@ -3,7 +3,7 @@ aliases:
 - Castford
 campaign: Raid on the Eternal Tower
 color: #89dbc1
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Castford County.png
 formName: County
@@ -13,7 +13,7 @@ id: 129
 name: Castford
 nameID: Castford-129
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Monverton
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Horsteria/Provinces/Castford County/Burgs/Monverton
 religion: Deities of the Prime Horse

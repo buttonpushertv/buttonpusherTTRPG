@@ -3,7 +3,7 @@ aliases:
 - Searesto
 campaign: Raid on the Eternal Tower
 color: #c9d584
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Searesto County.png
 formName: County
@@ -13,7 +13,7 @@ id: 121
 name: Searesto
 nameID: Searesto-121
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Searesto
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Oakhambia/Provinces/Searesto County/Burgs/Searesto
 religion: Religion of the Dead Antelope of Snow

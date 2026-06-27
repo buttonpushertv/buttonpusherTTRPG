@@ -3,7 +3,7 @@ aliases:
 - Seabington
 campaign: Raid on the Eternal Tower
 color: #c6ff66
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Seabington Landgrave.png
 formName: Landgrave
@@ -13,7 +13,7 @@ id: 184
 name: Seabington
 nameID: Seabington-184
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Seabington
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Madeteria/Provinces/Seabington Landgrave/Burgs/Seabington
 religion: Bivenil Pantheon

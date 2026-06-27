@@ -3,7 +3,7 @@ aliases:
 - Maclifton
 campaign: Raid on the Eternal Tower
 color: #f7d759
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Maclifton Parish.png
 formName: Parish
@@ -13,7 +13,7 @@ id: 78
 name: Maclifton
 nameID: Maclifton-78
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Maclifton
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Penland/Provinces/Maclifton Parish/Burgs/Maclifton
 religion: Skiple Religion

@@ -3,7 +3,7 @@ aliases:
 - Midling
 campaign: Raid on the Eternal Tower
 color: #bbaed8
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Midling Shire.png
 formName: Shire
@@ -13,7 +13,7 @@ id: 102
 name: Midling
 nameID: Midling-102
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Penbuton
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Padstedgia/Provinces/Midling Shire/Burgs/Penbuton
 religion: Religion of the Dead Antelope of Snow

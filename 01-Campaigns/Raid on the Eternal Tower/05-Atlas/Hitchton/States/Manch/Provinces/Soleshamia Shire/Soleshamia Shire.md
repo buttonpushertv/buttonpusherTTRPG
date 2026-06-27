@@ -3,7 +3,7 @@ aliases:
 - Soleshamia
 campaign: Raid on the Eternal Tower
 color: #eea69a
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Soleshamia Shire.png
 formName: Shire
@@ -13,7 +13,7 @@ id: 89
 name: Soleshamia
 nameID: Soleshamia-89
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Axbridford
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Manch/Provinces/Soleshamia Shire/Burgs/Axbridford
 religion: Religion of the Mad

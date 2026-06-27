@@ -3,7 +3,7 @@ aliases:
 - Albrighesbu
 campaign: Raid on the Eternal Tower
 color: #f8adbc
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Albrighesbu Deanery.png
 formName: Deanery
@@ -13,7 +13,7 @@ id: 49
 name: Albrighesbu
 nameID: Albrighesbu-49
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Albrighesbu
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Linia/Provinces/Albrighesbu Deanery/Burgs/Albrighesbu
 religion: Conghamism

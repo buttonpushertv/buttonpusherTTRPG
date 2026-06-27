@@ -9,7 +9,7 @@ capitalName: Thaxted
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Thaxted/Provinces/Thaxted County/Burgs/Thaxted
 center: 400
 color: #959edd
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 culture: Cliford
 emblem: Hitchton Emblem Dominion of Thaxted.png
@@ -27,7 +27,7 @@ neighbors:
 - Arestia
 - Neutrals
 - Birbotia
-pronounced:
+pronounced: ""
 provinces:
 - Thaxted County
 - Bundorland Earldom

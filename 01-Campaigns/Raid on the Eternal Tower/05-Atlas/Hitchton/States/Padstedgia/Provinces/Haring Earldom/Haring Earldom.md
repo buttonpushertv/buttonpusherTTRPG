@@ -3,7 +3,7 @@ aliases:
 - Haring
 campaign: Raid on the Eternal Tower
 color: #bba8dd
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Haring Earldom.png
 formName: Earldom
@@ -13,7 +13,7 @@ id: 108
 name: Haring
 nameID: Haring-108
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Haring
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Padstedgia/Provinces/Haring Earldom/Burgs/Haring
 religion: Moury Spirits

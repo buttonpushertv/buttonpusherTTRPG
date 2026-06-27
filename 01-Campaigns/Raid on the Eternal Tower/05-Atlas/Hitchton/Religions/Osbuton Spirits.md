@@ -5,7 +5,7 @@ campaign: "Raid on the Eternal Tower"
 center: 1596
 code: OS
 color: #b3de69
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 culture: Osbuton
 deity: 
@@ -17,7 +17,7 @@ id: 2
 leaders:
 mapName: Hitchton
 origins: 0
-pronounced:
+pronounced: ""
 religionName: "Osbuton Spirits"
 shortDescription:
 tags:

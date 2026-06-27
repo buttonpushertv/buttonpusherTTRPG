@@ -3,7 +3,7 @@ aliases:
 - Bostonton
 campaign: Raid on the Eternal Tower
 color: #d79fdf
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Bostonton Deanery.png
 formName: Deanery
@@ -13,7 +13,7 @@ id: 62
 name: Bostonton
 nameID: Bostonton-62
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Bostonton
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Linia/Provinces/Bostonton Deanery/Burgs/Bostonton
 religion: Conghamism

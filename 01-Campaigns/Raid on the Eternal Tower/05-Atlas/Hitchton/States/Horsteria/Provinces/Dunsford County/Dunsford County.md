@@ -3,7 +3,7 @@ aliases:
 - Dunsford
 campaign: Raid on the Eternal Tower
 color: #bac1b0
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Dunsford County.png
 formName: County
@@ -13,7 +13,7 @@ id: 143
 name: Dunsford
 nameID: Dunsford-143
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Ponton
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Horsteria/Provinces/Dunsford County/Burgs/Ponton
 religion: Deities of the Prime Horse

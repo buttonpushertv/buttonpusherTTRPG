@@ -3,7 +3,7 @@ aliases:
 - Thatckingia
 campaign: Raid on the Eternal Tower
 color: #ff96bd
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Thatckingia Deanery.png
 formName: Deanery
@@ -13,7 +13,7 @@ id: 45
 name: Thatckingia
 nameID: Thatckingia-45
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Apingham
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Linia/Provinces/Thatckingia Deanery/Burgs/Apingham
 religion: Conghamism

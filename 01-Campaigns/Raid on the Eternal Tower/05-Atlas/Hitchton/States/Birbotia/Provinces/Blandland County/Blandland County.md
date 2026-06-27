@@ -3,7 +3,7 @@ aliases:
 - Blandland
 campaign: Raid on the Eternal Tower
 color: #ffa1ce
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Blandland County.png
 formName: County
@@ -13,7 +13,7 @@ id: 199
 name: Blandland
 nameID: Blandland-199
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Witbury
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Birbotia/Provinces/Blandland County/Burgs/Witbury
 religion: Salton Faith

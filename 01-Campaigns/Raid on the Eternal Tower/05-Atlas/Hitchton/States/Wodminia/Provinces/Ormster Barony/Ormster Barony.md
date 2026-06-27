@@ -3,7 +3,7 @@ aliases:
 - Ormster
 campaign: Raid on the Eternal Tower
 color: #ea9da7
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Ormster Barony.png
 formName: Barony
@@ -13,7 +13,7 @@ id: 94
 name: Ormster
 nameID: Ormster-94
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Ormster
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Wodminia/Provinces/Ormster Barony/Burgs/Ormster
 religion: Bivenil Pantheon

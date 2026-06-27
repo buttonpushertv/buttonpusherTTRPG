@@ -3,7 +3,7 @@ aliases:
 - Soreroia
 campaign: Raid on the Eternal Tower
 color: #eb9ba4
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Soreroia Earldom.png
 formName: Earldom
@@ -13,7 +13,7 @@ id: 96
 name: Soreroia
 nameID: Soreroia-96
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Crafton
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Wodminia/Provinces/Soreroia Earldom/Burgs/Crafton
 religion: Bivenil Pantheon

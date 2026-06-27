@@ -3,7 +3,7 @@ aliases:
 - Marsland
 campaign: Raid on the Eternal Tower
 color: #e0f960
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Marsland Dependency.png
 formName: Dependency
@@ -13,7 +13,7 @@ id: 222
 name: Marsland
 nameID: Marsland-222
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Unknown
 capitalFile: 
 religion: Osbuton Spirits

@@ -3,7 +3,7 @@ aliases:
 - Adinland
 campaign: Raid on the Eternal Tower
 color: #d3aad6
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Adinland Deanery.png
 formName: Deanery
@@ -13,7 +13,7 @@ id: 56
 name: Adinland
 nameID: Adinland-56
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Daltonby
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Linia/Provinces/Adinland Deanery/Burgs/Daltonby
 religion: Conghamism

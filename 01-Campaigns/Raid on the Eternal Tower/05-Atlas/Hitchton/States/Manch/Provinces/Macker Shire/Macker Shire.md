@@ -3,7 +3,7 @@ aliases:
 - Macker
 campaign: Raid on the Eternal Tower
 color: #ffad89
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Macker Shire.png
 formName: Shire
@@ -13,7 +13,7 @@ id: 84
 name: Macker
 nameID: Macker-84
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Macker
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Manch/Provinces/Macker Shire/Burgs/Macker
 religion: Word of Stapton

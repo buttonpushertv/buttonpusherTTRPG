@@ -5,7 +5,7 @@ campaign: "Raid on the Eternal Tower"
 center: 2508
 code: De
 color: #adff7d
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 culture: Osbuton
 deity: Rothton, The Brave
@@ -17,7 +17,7 @@ id: 18
 leaders:
 mapName: Hitchton
 origins: 2
-pronounced:
+pronounced: ""
 religionName: "Deities of the Prime Horse"
 shortDescription:
 tags:

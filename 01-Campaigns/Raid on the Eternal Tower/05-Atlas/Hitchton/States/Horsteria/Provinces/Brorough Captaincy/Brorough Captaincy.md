@@ -3,7 +3,7 @@ aliases:
 - Brorough
 campaign: Raid on the Eternal Tower
 color: #a1b5c7
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Brorough Captaincy.png
 formName: Captaincy
@@ -13,7 +13,7 @@ id: 130
 name: Brorough
 nameID: Brorough-130
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Brorough
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Horsteria/Provinces/Brorough Captaincy/Burgs/Brorough
 religion: Osbuton Spirits

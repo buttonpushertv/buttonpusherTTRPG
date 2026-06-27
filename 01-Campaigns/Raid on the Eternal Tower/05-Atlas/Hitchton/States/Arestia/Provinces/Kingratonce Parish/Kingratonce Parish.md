@@ -3,7 +3,7 @@ aliases:
 - Kingratonce
 campaign: Raid on the Eternal Tower
 color: #ffa062
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Kingratonce Parish.png
 formName: Parish
@@ -13,7 +13,7 @@ id: 21
 name: Kingratonce
 nameID: Kingratonce-21
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Kingratonce
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Arestia/Provinces/Kingratonce Parish/Burgs/Kingratonce
 religion: Salton Faith

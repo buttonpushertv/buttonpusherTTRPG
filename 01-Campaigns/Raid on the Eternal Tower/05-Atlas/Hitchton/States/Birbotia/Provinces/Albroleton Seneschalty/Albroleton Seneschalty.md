@@ -3,7 +3,7 @@ aliases:
 - Albroleton
 campaign: Raid on the Eternal Tower
 color: #da96f4
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Albroleton Seneschalty.png
 formName: Seneschalty
@@ -13,7 +13,7 @@ id: 197
 name: Albroleton
 nameID: Albroleton-197
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Albroleton
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Birbotia/Provinces/Albroleton Seneschalty/Burgs/Albroleton
 religion: Salton Faith

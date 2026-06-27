@@ -3,7 +3,7 @@ aliases:
 - Mering
 campaign: Raid on the Eternal Tower
 color: #adc2d9
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Mering County.png
 formName: County
@@ -13,7 +13,7 @@ id: 109
 name: Mering
 nameID: Mering-109
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Mering
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Padstedgia/Provinces/Mering County/Burgs/Mering
 religion: Religion of the Dead Antelope of Snow

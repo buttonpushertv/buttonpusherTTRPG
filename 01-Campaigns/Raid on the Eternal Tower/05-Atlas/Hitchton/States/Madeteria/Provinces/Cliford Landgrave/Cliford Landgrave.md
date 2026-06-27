@@ -3,7 +3,7 @@ aliases:
 - Cliford
 campaign: Raid on the Eternal Tower
 color: #d3ff60
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Cliford Landgrave.png
 formName: Landgrave
@@ -13,7 +13,7 @@ id: 188
 name: Cliford
 nameID: Cliford-188
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Congham
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Madeteria/Provinces/Cliford Landgrave/Burgs/Congham
 religion: Bivenil Pantheon

@@ -9,7 +9,7 @@ capitalName: Louth
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Louthia/Provinces/Helscomia County/Burgs/Louth
 center: 715
 color: #fff53c
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 culture: Moury
 emblem: Hitchton Emblem Duchy of Louthia.png
@@ -24,7 +24,7 @@ name: Louthia
 nameID: Louthia-12
 neighbors:
 - Padstedgia
-pronounced:
+pronounced: ""
 provinces:
 - Helscomia County
 - Prescomia Earldom

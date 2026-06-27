@@ -3,7 +3,7 @@ aliases:
 - Coroughia
 campaign: Raid on the Eternal Tower
 color: #c3f470
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Coroughia Shire.png
 formName: Shire
@@ -13,7 +13,7 @@ id: 120
 name: Coroughia
 nameID: Coroughia-120
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Soliveton
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Oakhambia/Provinces/Coroughia Shire/Burgs/Soliveton
 religion: Penkneth Spirits

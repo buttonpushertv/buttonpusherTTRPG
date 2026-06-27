@@ -9,7 +9,7 @@ capitalName: Kiver
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Hitchia/Provinces/Frampland Landgrave/Burgs/Kiver
 center: 3597
 color: #66c2a5
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 culture: Daling
 emblem: Hitchton Emblem Grand Duchy of Hitchia.png
@@ -27,7 +27,7 @@ neighbors:
 - Birbotia
 - Oakland
 - Louthwarkia
-pronounced:
+pronounced: ""
 provinces:
 - Frampland Landgrave
 - Calney Landgrave

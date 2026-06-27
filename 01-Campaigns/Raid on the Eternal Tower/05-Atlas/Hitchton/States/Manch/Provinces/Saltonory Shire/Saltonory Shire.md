@@ -3,7 +3,7 @@ aliases:
 - Saltonory
 campaign: Raid on the Eternal Tower
 color: #e3a99d
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Saltonory Shire.png
 formName: Shire
@@ -13,7 +13,7 @@ id: 93
 name: Saltonory
 nameID: Saltonory-93
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Saltonory
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Manch/Provinces/Saltonory Shire/Burgs/Saltonory
 religion: Word of Stapton

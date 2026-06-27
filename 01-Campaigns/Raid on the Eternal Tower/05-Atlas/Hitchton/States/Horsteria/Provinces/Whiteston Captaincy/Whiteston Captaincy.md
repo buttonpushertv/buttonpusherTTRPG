@@ -3,7 +3,7 @@ aliases:
 - Whiteston
 campaign: Raid on the Eternal Tower
 color: #afb5c5
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Whiteston Captaincy.png
 formName: Captaincy
@@ -13,7 +13,7 @@ id: 140
 name: Whiteston
 nameID: Whiteston-140
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Whiteston
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Horsteria/Provinces/Whiteston Captaincy/Burgs/Whiteston
 religion: Old Skiple Beliefs

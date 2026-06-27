@@ -3,7 +3,7 @@ aliases:
 - Wodfordley
 campaign: Raid on the Eternal Tower
 color: #a1c6dd
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Wodfordley Earldom.png
 formName: Earldom
@@ -13,7 +13,7 @@ id: 111
 name: Wodfordley
 nameID: Wodfordley-111
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Wodfordley
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Padstedgia/Provinces/Wodfordley Earldom/Burgs/Wodfordley
 religion: Religion of the Dead Antelope of Snow

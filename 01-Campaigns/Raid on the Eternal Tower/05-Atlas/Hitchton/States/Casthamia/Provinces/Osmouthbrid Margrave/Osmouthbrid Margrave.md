@@ -3,7 +3,7 @@ aliases:
 - Osmouthbrid
 campaign: Raid on the Eternal Tower
 color: #8dc5cd
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Osmouthbrid Margrave.png
 formName: Margrave
@@ -13,7 +13,7 @@ id: 41
 name: Osmouthbrid
 nameID: Osmouthbrid-41
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Osmouthbrid
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Casthamia/Provinces/Osmouthbrid Margrave/Burgs/Osmouthbrid
 religion: Religion of the Mad

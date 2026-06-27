@@ -3,7 +3,7 @@ aliases:
 - Launces
 campaign: Raid on the Eternal Tower
 color: #e2cf88
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Launces Shire.png
 formName: Shire
@@ -13,7 +13,7 @@ id: 87
 name: Launces
 nameID: Launces-87
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Gaton
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Manch/Provinces/Launces Shire/Burgs/Gaton
 religion: Religion of the Mad

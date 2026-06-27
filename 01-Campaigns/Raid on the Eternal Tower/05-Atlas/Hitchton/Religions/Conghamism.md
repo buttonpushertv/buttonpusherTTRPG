@@ -5,7 +5,7 @@ campaign: "Raid on the Eternal Tower"
 center: 3957
 code: Co
 color: #e3e4ff
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 culture: Skiple
 deity: Bington, The Honest
@@ -17,7 +17,7 @@ id: 14
 leaders:
 mapName: Hitchton
 origins: 13
-pronounced:
+pronounced: ""
 religionName: "Conghamism"
 shortDescription:
 tags:

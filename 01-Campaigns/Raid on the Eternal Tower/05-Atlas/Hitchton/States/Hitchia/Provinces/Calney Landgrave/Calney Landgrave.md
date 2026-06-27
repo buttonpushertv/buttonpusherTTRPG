@@ -3,7 +3,7 @@ aliases:
 - Calney
 campaign: Raid on the Eternal Tower
 color: #66e2af
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Calney Landgrave.png
 formName: Landgrave
@@ -13,7 +13,7 @@ id: 2
 name: Calney
 nameID: Calney-2
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Calney
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Hitchia/Provinces/Calney Landgrave/Burgs/Calney
 religion: Word of Stapton

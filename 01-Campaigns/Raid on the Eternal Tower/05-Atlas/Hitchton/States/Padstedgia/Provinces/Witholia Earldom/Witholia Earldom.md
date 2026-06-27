@@ -3,7 +3,7 @@ aliases:
 - Witholia
 campaign: Raid on the Eternal Tower
 color: #88bcf6
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Witholia Earldom.png
 formName: Earldom
@@ -13,7 +13,7 @@ id: 107
 name: Witholia
 nameID: Witholia-107
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Winchboury
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Padstedgia/Provinces/Witholia Earldom/Burgs/Winchboury
 religion: Religion of the Dead Antelope of Snow

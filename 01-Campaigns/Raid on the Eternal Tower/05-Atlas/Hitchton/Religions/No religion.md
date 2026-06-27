@@ -5,7 +5,7 @@ campaign: "Raid on the Eternal Tower"
 center: 
 code: 
 color: 
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 culture: 
 deity: 
@@ -17,7 +17,7 @@ id: 0
 leaders:
 mapName: Hitchton
 origins: 
-pronounced:
+pronounced: ""
 religionName: "No religion"
 shortDescription:
 tags:

@@ -3,7 +3,7 @@ aliases:
 - Treridbia
 campaign: Raid on the Eternal Tower
 color: #ff8acf
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Treridbia Deanery.png
 formName: Deanery
@@ -13,7 +13,7 @@ id: 46
 name: Treridbia
 nameID: Treridbia-46
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Hitchwel
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Linia/Provinces/Treridbia Deanery/Burgs/Hitchwel
 religion: Conghamism

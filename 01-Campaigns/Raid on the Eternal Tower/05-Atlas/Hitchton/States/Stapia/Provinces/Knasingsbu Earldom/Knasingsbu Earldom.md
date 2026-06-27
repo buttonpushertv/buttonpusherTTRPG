@@ -3,7 +3,7 @@ aliases:
 - Knasingsbu
 campaign: Raid on the Eternal Tower
 color: #ffcd70
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Knasingsbu Earldom.png
 formName: Earldom
@@ -13,7 +13,7 @@ id: 170
 name: Knasingsbu
 nameID: Knasingsbu-170
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Knasingsbu
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Stapia/Provinces/Knasingsbu Earldom/Burgs/Knasingsbu
 religion: Perslehamism

@@ -3,7 +3,7 @@ aliases:
 - Dudgia
 campaign: Raid on the Eternal Tower
 color: #b0b5c5
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Dudgia Region.png
 formName: Region
@@ -13,7 +13,7 @@ id: 214
 name: Dudgia
 nameID: Dudgia-214
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Torkwar
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Horsteria/Provinces/Dudgia Region/Burgs/Torkwar
 religion: Deities of the Prime Horse

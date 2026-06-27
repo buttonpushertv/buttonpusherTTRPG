@@ -3,7 +3,7 @@ aliases:
 - Winklia
 campaign: Raid on the Eternal Tower
 color: #c2e979
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Winklia Seneschalty.png
 formName: Seneschalty
@@ -13,7 +13,7 @@ id: 181
 name: Winklia
 nameID: Winklia-181
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Retfordford
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Madeteria/Provinces/Winklia Seneschalty/Burgs/Retfordford
 religion: Bivenil Pantheon

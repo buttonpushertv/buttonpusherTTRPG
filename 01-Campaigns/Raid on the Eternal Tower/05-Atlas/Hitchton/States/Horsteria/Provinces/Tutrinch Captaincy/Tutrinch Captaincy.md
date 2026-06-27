@@ -3,7 +3,7 @@ aliases:
 - Tutrinch
 campaign: Raid on the Eternal Tower
 color: #b3b5c3
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Tutrinch Captaincy.png
 formName: Captaincy
@@ -13,7 +13,7 @@ id: 137
 name: Tutrinch
 nameID: Tutrinch-137
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Anmouthwark
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Horsteria/Provinces/Tutrinch Captaincy/Burgs/Anmouthwark
 religion: Deities of the Prime Horse

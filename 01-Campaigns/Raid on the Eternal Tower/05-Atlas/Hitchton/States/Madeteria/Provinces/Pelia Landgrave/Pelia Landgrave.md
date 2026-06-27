@@ -3,7 +3,7 @@ aliases:
 - Pelia
 campaign: Raid on the Eternal Tower
 color: #bdeb7d
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Pelia Landgrave.png
 formName: Landgrave
@@ -13,7 +13,7 @@ id: 185
 name: Pelia
 nameID: Pelia-185
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Rothambe
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Madeteria/Provinces/Pelia Landgrave/Burgs/Rothambe
 religion: Bivenil Pantheon

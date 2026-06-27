@@ -9,7 +9,7 @@ capitalName: Newleigh
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Stapia/Provinces/Newleigh County/Burgs/Newleigh
 center: 757
 color: #f7d658
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 culture: Cliford
 emblem: Hitchton Emblem Kingdom of Stapia.png
@@ -29,7 +29,7 @@ neighbors:
 - Oakhambia
 - Neutrals
 - Birbotia
-pronounced:
+pronounced: ""
 provinces:
 - Newleigh County
 - Kilkwarwick County

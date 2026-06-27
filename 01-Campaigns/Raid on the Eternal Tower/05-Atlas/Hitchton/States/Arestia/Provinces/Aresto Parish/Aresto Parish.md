@@ -3,7 +3,7 @@ aliases:
 - Aresto
 campaign: Raid on the Eternal Tower
 color: #ff9170
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Aresto Parish.png
 formName: Parish
@@ -13,7 +13,7 @@ id: 7
 name: Aresto
 nameID: Aresto-7
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Aresto
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Arestia/Provinces/Aresto Parish/Burgs/Aresto
 religion: Salton Faith

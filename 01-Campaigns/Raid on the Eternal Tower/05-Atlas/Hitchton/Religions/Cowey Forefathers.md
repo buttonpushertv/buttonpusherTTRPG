@@ -5,7 +5,7 @@ campaign: "Raid on the Eternal Tower"
 center: 1260
 code: CF
 color: #ffed6f
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 culture: Cowey
 deity: Balton, The Red Creator
@@ -17,7 +17,7 @@ id: 1
 leaders:
 mapName: Hitchton
 origins: 0
-pronounced:
+pronounced: ""
 religionName: "Cowey Forefathers"
 shortDescription:
 tags:

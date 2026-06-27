@@ -5,7 +5,7 @@ campaign: "Raid on the Eternal Tower"
 center: 3597
 code: DS
 color: #ccebc5
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 culture: Daling
 deity: 
@@ -17,7 +17,7 @@ id: 10
 leaders:
 mapName: Hitchton
 origins: 0
-pronounced:
+pronounced: ""
 religionName: "Daling Spirits"
 shortDescription:
 tags:

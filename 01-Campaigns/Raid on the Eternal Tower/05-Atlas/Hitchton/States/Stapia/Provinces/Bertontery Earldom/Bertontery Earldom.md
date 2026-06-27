@@ -3,7 +3,7 @@ aliases:
 - Bertontery
 campaign: Raid on the Eternal Tower
 color: #eff565
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Bertontery Earldom.png
 formName: Earldom
@@ -13,7 +13,7 @@ id: 166
 name: Bertontery
 nameID: Bertontery-166
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Bertontery
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Stapia/Provinces/Bertontery Earldom/Burgs/Bertontery
 religion: Perslehamism

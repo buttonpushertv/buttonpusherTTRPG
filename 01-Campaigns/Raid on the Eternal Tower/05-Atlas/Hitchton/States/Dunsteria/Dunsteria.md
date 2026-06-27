@@ -9,7 +9,7 @@ capitalName: Dunster
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Dunsteria/Provinces/Dunster Barony/Burgs/Dunster
 center: 380
 color: #e58bd7
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 culture: Cliford
 emblem: Hitchton Emblem Duchy of Dunsteria.png
@@ -25,7 +25,7 @@ nameID: Dunsteria-15
 neighbors:
 - Padstedgia
 - Stapia
-pronounced:
+pronounced: ""
 provinces:
 - Dunster Barony
 - Seaveters Seneschalty

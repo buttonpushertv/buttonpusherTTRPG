@@ -3,7 +3,7 @@ aliases:
 - Sidburia
 campaign: Raid on the Eternal Tower
 color: #9aee75
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Sidburia Territory.png
 formName: Territory
@@ -13,7 +13,7 @@ id: 207
 name: Sidburia
 nameID: Sidburia-207
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Trereton
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Oakland/Provinces/Sidburia Territory/Burgs/Trereton
 religion: Word of Stapton

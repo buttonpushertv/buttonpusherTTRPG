@@ -3,7 +3,7 @@ aliases:
 - Wadewesbia
 campaign: Raid on the Eternal Tower
 color: #ffd247
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Wadewesbia Parish.png
 formName: Parish
@@ -13,7 +13,7 @@ id: 73
 name: Wadewesbia
 nameID: Wadewesbia-73
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Thetford
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Penland/Provinces/Wadewesbia Parish/Burgs/Thetford
 religion: Skiple Religion

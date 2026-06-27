@@ -5,7 +5,7 @@ campaign: "Raid on the Eternal Tower"
 center: 4505
 code: SR
 color: #ebd8ff
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 culture: Skiple
 deity: Stanswest, The Worried Narwhal
@@ -17,7 +17,7 @@ id: 15
 leaders:
 mapName: Hitchton
 origins: 13,14
-pronounced:
+pronounced: ""
 religionName: "Skiple Religion"
 shortDescription:
 tags:

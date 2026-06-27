@@ -3,7 +3,7 @@ aliases:
 - Seaveters
 campaign: Raid on the Eternal Tower
 color: #d2ade5
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Seaveters Seneschalty.png
 formName: Seneschalty
@@ -13,7 +13,7 @@ id: 156
 name: Seaveters
 nameID: Seaveters-156
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Seaveters
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Dunsteria/Provinces/Seaveters Seneschalty/Burgs/Seaveters
 religion: Perslehamism

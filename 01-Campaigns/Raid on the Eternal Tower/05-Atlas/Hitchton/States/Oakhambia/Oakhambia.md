@@ -9,7 +9,7 @@ capitalName: Exted
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Oakhambia/Provinces/Seamersia County/Burgs/Exted
 center: 1636
 color: #cdd660
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 culture: Cliford
 emblem: Hitchton Emblem Kingdom of Oakhambia.png
@@ -30,7 +30,7 @@ neighbors:
 - Casthamia
 - Linia
 - Penland
-pronounced:
+pronounced: ""
 provinces:
 - Seamersia County
 - Prested County

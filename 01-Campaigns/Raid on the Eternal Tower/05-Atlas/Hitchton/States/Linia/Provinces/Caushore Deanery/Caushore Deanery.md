@@ -3,7 +3,7 @@ aliases:
 - Caushore
 campaign: Raid on the Eternal Tower
 color: #ffa2b8
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Caushore Deanery.png
 formName: Deanery
@@ -13,7 +13,7 @@ id: 58
 name: Caushore
 nameID: Caushore-58
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Petonden
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Linia/Provinces/Caushore Deanery/Burgs/Petonden
 religion: Conghamism

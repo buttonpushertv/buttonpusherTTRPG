@@ -9,7 +9,7 @@ capitalName: Orton
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Manch/Provinces/Framping County/Burgs/Orton
 center: 3989
 color: #e6ab80
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 culture: Daling
 emblem: Hitchton Emblem Dominion of Manch.png
@@ -26,7 +26,7 @@ neighbors:
 - Casthamia
 - Birbotia
 - Hitchia
-pronounced:
+pronounced: ""
 provinces:
 - Framping County
 - Macker Shire

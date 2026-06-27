@@ -3,7 +3,7 @@ aliases:
 - Bundorland
 campaign: Raid on the Eternal Tower
 color: #bda0dd
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Bundorland Earldom.png
 formName: Earldom
@@ -13,7 +13,7 @@ id: 153
 name: Bundorland
 nameID: Bundorland-153
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Albrid
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Thaxted/Provinces/Bundorland Earldom/Burgs/Albrid
 religion: Perslehamism

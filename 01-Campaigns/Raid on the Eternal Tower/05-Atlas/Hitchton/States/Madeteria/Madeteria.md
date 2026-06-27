@@ -9,7 +9,7 @@ capitalName: Madetery
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Madeteria/Provinces/Madetery Landgrave/Burgs/Madetery
 center: 1470
 color: #bbf55d
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 culture: Bivenil
 emblem: Hitchton Emblem Kingdom of Madeteria.png
@@ -25,7 +25,7 @@ nameID: Madeteria-17
 neighbors:
 - Wodminia
 - Horsteria
-pronounced:
+pronounced: ""
 provinces:
 - Madetery Landgrave
 - Manor County

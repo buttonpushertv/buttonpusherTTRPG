@@ -5,7 +5,7 @@ campaign: "Raid on the Eternal Tower"
 center: 400
 code: Pe
 color: #bb8ce1
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 culture: Cliford
 deity: Noster, The Giver
@@ -17,7 +17,7 @@ id: 19
 leaders:
 mapName: Hitchton
 origins: 8
-pronounced:
+pronounced: ""
 religionName: "Perslehamism"
 shortDescription:
 tags:

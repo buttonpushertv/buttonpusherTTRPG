@@ -9,7 +9,7 @@ capitalName: Tethe
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Padstedgia/Provinces/Tethe Earldom/Burgs/Tethe
 center: 1113
 color: #92a2e3
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 culture: Moury
 emblem: Hitchton Emblem Principality of Padstedgia.png
@@ -27,7 +27,7 @@ neighbors:
 - Stapia
 - Louthia
 - Oakhambia
-pronounced:
+pronounced: ""
 provinces:
 - Tethe Earldom
 - Midling Shire

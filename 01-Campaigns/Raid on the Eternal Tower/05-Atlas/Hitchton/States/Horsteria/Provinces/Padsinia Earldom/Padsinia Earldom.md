@@ -3,7 +3,7 @@ aliases:
 - Padsinia
 campaign: Raid on the Eternal Tower
 color: #add8ae
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Padsinia Earldom.png
 formName: Earldom
@@ -13,7 +13,7 @@ id: 132
 name: Padsinia
 nameID: Padsinia-132
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Clifnalton
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Horsteria/Provinces/Padsinia Earldom/Burgs/Clifnalton
 religion: Deities of the Prime Horse

@@ -3,7 +3,7 @@ aliases:
 - Westhamia
 campaign: Raid on the Eternal Tower
 color: #bba6df
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Westhamia County.png
 formName: County
@@ -13,7 +13,7 @@ id: 110
 name: Westhamia
 nameID: Westhamia-110
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Salton
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Padstedgia/Provinces/Westhamia County/Burgs/Salton
 religion: Religion of the Dead Antelope of Snow

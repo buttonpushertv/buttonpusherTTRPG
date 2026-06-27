@@ -3,7 +3,7 @@ aliases:
 - Rothwarkia
 campaign: Raid on the Eternal Tower
 color: #94beae
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Rothwarkia County.png
 formName: County
@@ -13,7 +13,7 @@ id: 3
 name: Rothwarkia
 nameID: Rothwarkia-3
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Bosdonmouth
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Hitchia/Provinces/Rothwarkia County/Burgs/Bosdonmouth
 religion: Word of Stapton

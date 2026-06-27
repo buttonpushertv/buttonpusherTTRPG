@@ -3,7 +3,7 @@ aliases:
 - Cambro
 campaign: Raid on the Eternal Tower
 color: #c1ef58
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Cambro Earldom.png
 formName: Earldom
@@ -13,7 +13,7 @@ id: 64
 name: Cambro
 nameID: Cambro-64
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Marshwark
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Oakland/Provinces/Cambro Earldom/Burgs/Marshwark
 religion: Salton Faith

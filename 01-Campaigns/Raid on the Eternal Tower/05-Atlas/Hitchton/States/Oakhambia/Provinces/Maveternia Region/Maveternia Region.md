@@ -3,7 +3,7 @@ aliases:
 - Maveternia
 campaign: Raid on the Eternal Tower
 color: #d8cc7e
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Maveternia Region.png
 formName: Region
@@ -13,7 +13,7 @@ id: 210
 name: Maveternia
 nameID: Maveternia-210
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Pilter
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Oakhambia/Provinces/Maveternia Region/Burgs/Pilter
 religion: Religion of the Dead Antelope of Snow

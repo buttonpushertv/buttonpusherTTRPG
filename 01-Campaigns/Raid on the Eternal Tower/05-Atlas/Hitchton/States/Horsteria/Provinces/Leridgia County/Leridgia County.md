@@ -3,7 +3,7 @@ aliases:
 - Leridgia
 campaign: Raid on the Eternal Tower
 color: #9fddb3
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Leridgia County.png
 formName: County
@@ -13,7 +13,7 @@ id: 127
 name: Leridgia
 nameID: Leridgia-127
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Braskirk
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Horsteria/Provinces/Leridgia County/Burgs/Braskirk
 religion: Deities of the Prime Horse

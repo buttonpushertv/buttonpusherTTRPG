@@ -3,7 +3,7 @@ aliases:
 - Thetfordia
 campaign: Raid on the Eternal Tower
 color: #a2c4c8
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Thetfordia County.png
 formName: County
@@ -13,7 +13,7 @@ id: 37
 name: Thetfordia
 nameID: Thetfordia-37
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Altherley
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Casthamia/Provinces/Thetfordia County/Burgs/Altherley
 religion: Religion of the Mad

@@ -3,7 +3,7 @@ aliases:
 - King
 campaign: Raid on the Eternal Tower
 color: #e6ab81
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem King Territory.png
 formName: Territory
@@ -13,7 +13,7 @@ id: 202
 name: King
 nameID: King-202
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Unknown
 capitalFile: 
 religion: Salton Faith

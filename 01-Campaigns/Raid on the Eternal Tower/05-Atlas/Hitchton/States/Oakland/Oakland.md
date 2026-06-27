@@ -9,7 +9,7 @@ capitalName: Oakley
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Oakland/Provinces/Albrid County/Burgs/Oakley
 center: 2770
 color: #a6d854
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 culture: Chisbute
 emblem: Hitchton Emblem Principality of Oakland.png
@@ -28,7 +28,7 @@ neighbors:
 - Birbotia
 - Louthwarkia
 - Hitchia
-pronounced:
+pronounced: ""
 provinces:
 - Albrid County
 - Cambro Earldom

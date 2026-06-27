@@ -1,7 +1,7 @@
 ---
 aliases:
 - Carmouth
-burgMapLink: https://watabou.github.io/city-generator/?name=Carmouth&population=5182&size=24&seed=5827453500469&river=1&coast=0&farms=1&citadel=0&urban_castle=0&hub=0&plaza=0&temple=0&walls=0&shantytown=0&gates=-1&style=natural
+burgMapLink: https://watabou.github.io/city-generator/?name=Carmouth&population=5182&size=24&seed=5827453500469&river=1&coast=0&farms=1&citadel=0&urban_castle=0&hub=0&plaza=0&temple=0&walls=0&shantytown=0&greens=0&style=natural
 burgName: Carmouth
 burgNameID: Carmouth-469
 campaign: Raid on the Eternal Tower
@@ -10,18 +10,19 @@ cell: 2304
 citadel: 0
 cssclasses: sixty-pct-width
 culture: Osbuton
-elevation: 2759 ft
+elevation: 2953 ft
 emblem: Hitchton Emblem Carmouth.png
 group: town
 feature: 2
 id: 469
 mapName: Hitchton
-market: 6
+marketId: 6
+marketName: Horston
 plaza: 0
 population: 5,182
 port: 
 product: 12.75
-pronounced:
+pronounced: ""
 provinceId: 135
 provinceName: Botford Captaincy
 religion: Deities of the Prime Horse
@@ -41,7 +42,7 @@ tags:
 temple: 0
 temperature: 72°F
 temperatureLikeness: Tampa (Florida)
-templateVersion: 6.0
+templateVersion: 7.0
 treasury: 8.1
 type: Generic
 walls: 0
@@ -67,12 +68,12 @@ marker: burg,725.790,900.710,[[Carmouth]]
 >>>
 >>> This allows sorting based on what has & hasn't had world building stuff done for it. There are Dataviews setup on the campaign home page that sort by these progress key words.
 >
->> [!metadata|metadataoption]- Info
+>> [!metadata|metadataoption]+ Info
 >> #### Info
 >>  |
 >> ---|---|
 > **Pronounced** |  `INPUT[text:pronounced]`
-> **Aliases** | `INPUT[list:aliasese]` |
+> **Aliases** | `INPUT[list:aliases]` |
 > **Rulers**|`INPUT[list:rulers]`|
 > **Short Description**|`INPUT[textArea:shortDescription]`
 >
@@ -93,7 +94,7 @@ You may also use the Meta-Bind button at the bottom of the callout to open the b
 
 There is an elaborate method (see [[JSON Import How To#Wrangling FMG Burg Maps]]) to save all the maps so you can have them locally and make use of the data that was placed here on import from the JSON.%%
 
-%%LeafletMapTOP%%
+%%LeafletMapTOP-
 
 > [!metadata|map]- Burg Map (Interactive)
 > ```leaflet
@@ -112,7 +113,7 @@ There is an elaborate method (see [[JSON Import How To#Wrangling FMG Burg Maps]]
 >
 > [Link to Carmouth on FMG Map](https://azgaar.github.io/Fantasy-Map-Generator/?maplink=https://dl.dropboxusercontent.com/scl/fi/l7dpjh1fb1v053mc7izmw/Hitchton-2026-06-21-15-36.map?rlkey=zrhhfmejskvk1cpgiizmjbrfl&dl=0&scale=6&x=900.89&y=592.23) | Download Helper Link: `BUTTON[mapLink-to-download]`
 
-%%LeafletMapTAIL%%
+-LeafletMapTAIL%%
 
 %% City Maps may need Scale adjusting - see `unit: feet` line above in Leaflet block (around line 80-81) The `scale` setting of `1` is arbitrary. It seems to work for the Burg maps - City or Village. By default the CityGen maps will likely have the `scale bar` visible. I recommend hiding it. The City Gen uses meters. The Village Gen has no scale defined. Once you hide it in the CityGen Settings, it should stay hidden for several visits to these maps.%%
 
@@ -122,10 +123,10 @@ There is an elaborate method (see [[JSON Import How To#Wrangling FMG Burg Maps]]
 > ```custom-frames
 > frame: Watabou-Procgen Arcana
 > style: height: 1000px;
-> urlSuffix: https://watabou.github.io/city-generator/?name=Carmouth&population=5182&size=24&seed=5827453500469&river=1&coast=0&farms=1&citadel=0&urban_castle=0&hub=0&plaza=0&temple=0&walls=0&shantytown=0&gates=-1&style=natural
+> urlSuffix: https://watabou.github.io/city-generator/?name=Carmouth&population=5182&size=24&seed=5827453500469&river=1&coast=0&farms=1&citadel=0&urban_castle=0&hub=0&plaza=0&temple=0&walls=0&shantytown=0&greens=0&style=natural
 > ```
 >
->  `=elink(this.burgMapLink,"Visit Burg Map")` | Generator Link: `BUTTON[mapLink-to-download]`
+>  `=elink(this.burgMapLink,"Visit Burg Map on MCFG")` | [Link to Carmouth on FMG Map](https://azgaar.github.io/Fantasy-Map-Generator/?maplink=https://dl.dropboxusercontent.com/scl/fi/l7dpjh1fb1v053mc7izmw/Hitchton-2026-06-21-15-36.map?rlkey=zrhhfmejskvk1cpgiizmjbrfl&dl=0&scale=6&x=900.89&y=592.23) | Download Helper Link: `BUTTON[mapLink-to-download]`
 
 %%WebMapTAIL%%
 

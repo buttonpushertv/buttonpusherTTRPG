@@ -3,7 +3,7 @@ aliases:
 - Loutland
 campaign: Raid on the Eternal Tower
 color: #91a5e4
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Loutland County.png
 formName: County
@@ -13,7 +13,7 @@ id: 27
 name: Loutland
 nameID: Loutland-27
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Thetle
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Casthamia/Provinces/Loutland County/Burgs/Thetle
 religion: Religion of the Mad

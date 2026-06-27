@@ -3,7 +3,7 @@ aliases:
 - Hatbury
 campaign: Raid on the Eternal Tower
 color: #ffbf7d
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Hatbury County.png
 formName: County
@@ -13,7 +13,7 @@ id: 91
 name: Hatbury
 nameID: Hatbury-91
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Skipton
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Manch/Provinces/Hatbury County/Burgs/Skipton
 religion: Religion of the Mad

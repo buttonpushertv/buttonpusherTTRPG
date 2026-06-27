@@ -5,7 +5,7 @@ campaign: "Raid on the Eternal Tower"
 center: 82
 code: MS
 color: #dababf
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 culture: Moury
 deity: Watesbute, The Lark of Lightning
@@ -17,7 +17,7 @@ id: 5
 leaders:
 mapName: Hitchton
 origins: 0
-pronounced:
+pronounced: ""
 religionName: "Moury Spirits"
 shortDescription:
 tags:

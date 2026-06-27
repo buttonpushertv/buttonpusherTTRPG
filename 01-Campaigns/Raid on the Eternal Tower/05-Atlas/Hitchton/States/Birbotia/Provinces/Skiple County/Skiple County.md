@@ -3,7 +3,7 @@ aliases:
 - Skiple
 campaign: Raid on the Eternal Tower
 color: #f2b2d5
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Skiple County.png
 formName: County
@@ -13,7 +13,7 @@ id: 196
 name: Skiple
 nameID: Skiple-196
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Skiple
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Birbotia/Provinces/Skiple County/Burgs/Skiple
 religion: Word of Stapton

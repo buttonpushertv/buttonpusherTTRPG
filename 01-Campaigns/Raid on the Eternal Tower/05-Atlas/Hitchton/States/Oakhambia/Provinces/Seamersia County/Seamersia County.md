@@ -3,7 +3,7 @@ aliases:
 - Seamersia
 campaign: Raid on the Eternal Tower
 color: #efd072
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Seamersia County.png
 formName: County
@@ -13,7 +13,7 @@ id: 114
 name: Seamersia
 nameID: Seamersia-114
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Exted
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Oakhambia/Provinces/Seamersia County/Burgs/Exted
 religion: Religion of the Dead Antelope of Snow

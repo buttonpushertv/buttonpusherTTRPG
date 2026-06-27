@@ -3,7 +3,7 @@ aliases:
 - Hinckhampia
 campaign: Raid on the Eternal Tower
 color: #96bacc
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Hinckhampia Landgrave.png
 formName: Landgrave
@@ -13,7 +13,7 @@ id: 134
 name: Hinckhampia
 nameID: Hinckhampia-134
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Horsdon
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Horsteria/Provinces/Hinckhampia Landgrave/Burgs/Horsdon
 religion: Deities of the Prime Horse

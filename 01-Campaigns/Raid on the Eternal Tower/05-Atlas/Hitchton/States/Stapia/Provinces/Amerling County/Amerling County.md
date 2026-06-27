@@ -3,7 +3,7 @@ aliases:
 - Amerling
 campaign: Raid on the Eternal Tower
 color: #ffcc76
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Amerling County.png
 formName: County
@@ -13,7 +13,7 @@ id: 162
 name: Amerling
 nameID: Amerling-162
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Amerling
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Stapia/Provinces/Amerling County/Burgs/Amerling
 religion: Religion of the Dead Antelope of Snow

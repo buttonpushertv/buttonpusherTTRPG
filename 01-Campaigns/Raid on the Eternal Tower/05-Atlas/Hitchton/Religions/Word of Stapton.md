@@ -5,7 +5,7 @@ campaign: "Raid on the Eternal Tower"
 center: 3597
 code: Wo
 color: #fae2d0
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 culture: Daling
 deity: Stapton, The Emerald Unicorn
@@ -17,7 +17,7 @@ id: 11
 leaders:
 mapName: Hitchton
 origins: 10
-pronounced:
+pronounced: ""
 religionName: "Word of Stapton"
 shortDescription:
 tags:

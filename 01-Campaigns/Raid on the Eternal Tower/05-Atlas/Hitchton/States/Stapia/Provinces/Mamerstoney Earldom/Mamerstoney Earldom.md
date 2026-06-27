@@ -3,7 +3,7 @@ aliases:
 - Mamerstoney
 campaign: Raid on the Eternal Tower
 color: #ffd85f
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Mamerstoney Earldom.png
 formName: Earldom
@@ -13,7 +13,7 @@ id: 159
 name: Mamerstoney
 nameID: Mamerstoney-159
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Mamerstoney
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Stapia/Provinces/Mamerstoney Earldom/Burgs/Mamerstoney
 religion: Religion of the Dead Antelope of Snow

@@ -9,7 +9,7 @@ capitalName: Horston
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Horsteria/Provinces/Cudland County/Burgs/Horston
 center: 2508
 color: #91bcb3
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 culture: Osbuton
 emblem: Hitchton Emblem Horsterian Empire.png
@@ -26,7 +26,7 @@ neighbors:
 - Madeteria
 - Oakhambia
 - Linia
-pronounced:
+pronounced: ""
 provinces:
 - Cudland County
 - Leridgia County

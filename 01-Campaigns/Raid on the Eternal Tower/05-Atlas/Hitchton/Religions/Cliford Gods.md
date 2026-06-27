@@ -5,7 +5,7 @@ campaign: "Raid on the Eternal Tower"
 center: 146
 code: CG
 color: #bc80bd
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 culture: Cliford
 deity: Tarporming, The Magenta Justice
@@ -17,7 +17,7 @@ id: 8
 leaders:
 mapName: Hitchton
 origins: 0
-pronounced:
+pronounced: ""
 religionName: "Cliford Gods"
 shortDescription:
 tags:

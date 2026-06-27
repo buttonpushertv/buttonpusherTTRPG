@@ -3,7 +3,7 @@ aliases:
 - Bomyardford
 campaign: Raid on the Eternal Tower
 color: #b59fec
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Bomyardford Earldom.png
 formName: Earldom
@@ -13,7 +13,7 @@ id: 112
 name: Bomyardford
 nameID: Bomyardford-112
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Bomyardford
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Padstedgia/Provinces/Bomyardford Earldom/Burgs/Bomyardford
 religion: Religion of the Dead Antelope of Snow

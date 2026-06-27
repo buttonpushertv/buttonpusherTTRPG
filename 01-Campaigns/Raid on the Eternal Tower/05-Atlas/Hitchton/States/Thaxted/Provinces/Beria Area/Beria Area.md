@@ -3,7 +3,7 @@ aliases:
 - Beria
 campaign: Raid on the Eternal Tower
 color: #b3bad1
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Beria Area.png
 formName: Area
@@ -13,7 +13,7 @@ id: 218
 name: Beria
 nameID: Beria-218
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Unknown
 capitalFile: 
 religion: Penkneth Spirits

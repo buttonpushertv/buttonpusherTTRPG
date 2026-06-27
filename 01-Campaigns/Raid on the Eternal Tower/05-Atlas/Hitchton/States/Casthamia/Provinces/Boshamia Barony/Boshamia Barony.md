@@ -3,7 +3,7 @@ aliases:
 - Boshamia
 campaign: Raid on the Eternal Tower
 color: #b19dd7
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Boshamia Barony.png
 formName: Barony
@@ -13,7 +13,7 @@ id: 38
 name: Boshamia
 nameID: Boshamia-38
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Totford
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Casthamia/Provinces/Boshamia Barony/Burgs/Totford
 religion: Religion of the Mad

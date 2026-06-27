@@ -3,7 +3,7 @@ aliases:
 - Kinehamia
 campaign: Raid on the Eternal Tower
 color: #f5b46d
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Kinehamia Parish.png
 formName: Parish
@@ -13,7 +13,7 @@ id: 13
 name: Kinehamia
 nameID: Kinehamia-13
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Axbrorough
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Arestia/Provinces/Kinehamia Parish/Burgs/Axbrorough
 religion: Salton Faith

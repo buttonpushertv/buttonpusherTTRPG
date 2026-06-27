@@ -5,7 +5,7 @@ cultureName: "Congley"
 code: CO
 color: #c6b9c1
 center: 
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 expansionism: 2.3
 id: 9
@@ -13,7 +13,7 @@ leaders:
 mapName: Hitchton
 namesbase: 1
 origins: 0
-pronounced:
+pronounced: ""
 shortDescription:
 shield: fantasy4
 tags:

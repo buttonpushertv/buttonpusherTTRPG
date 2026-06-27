@@ -9,7 +9,7 @@ capitalName: Ormster
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Wodminia/Provinces/Ormster Barony/Burgs/Ormster
 center: 903
 color: #ee9b89
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 culture: Bivenil
 emblem: Hitchton Emblem Grand Duchy of Wodminia.png
@@ -24,7 +24,7 @@ name: Wodminia
 nameID: Wodminia-8
 neighbors:
 - Madeteria
-pronounced:
+pronounced: ""
 provinces:
 - Ormster Barony
 - Sidbury Earldom

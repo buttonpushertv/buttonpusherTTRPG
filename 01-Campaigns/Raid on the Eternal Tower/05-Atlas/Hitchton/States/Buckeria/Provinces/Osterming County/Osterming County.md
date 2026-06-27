@@ -3,7 +3,7 @@ aliases:
 - Osterming
 campaign: Raid on the Eternal Tower
 color: #ebeb69
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Osterming County.png
 formName: County
@@ -13,7 +13,7 @@ id: 192
 name: Osterming
 nameID: Osterming-192
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Osterming
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Buckeria/Provinces/Osterming County/Burgs/Osterming
 religion: Salton Faith

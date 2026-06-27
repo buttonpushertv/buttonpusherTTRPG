@@ -3,7 +3,7 @@ aliases:
 - Wargmia
 campaign: Raid on the Eternal Tower
 color: #ece55b
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Wargmia Parish.png
 formName: Parish
@@ -13,7 +13,7 @@ id: 82
 name: Wargmia
 nameID: Wargmia-82
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Thatcking
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Penland/Provinces/Wargmia Parish/Burgs/Thatcking
 religion: Skiple Religion

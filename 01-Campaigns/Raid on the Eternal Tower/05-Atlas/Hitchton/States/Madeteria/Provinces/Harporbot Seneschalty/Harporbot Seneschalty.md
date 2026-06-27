@@ -3,7 +3,7 @@ aliases:
 - Harporbot
 campaign: Raid on the Eternal Tower
 color: #bdec7e
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Harporbot Seneschalty.png
 formName: Seneschalty
@@ -13,7 +13,7 @@ id: 180
 name: Harporbot
 nameID: Harporbot-180
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Harporbot
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Madeteria/Provinces/Harporbot Seneschalty/Burgs/Harporbot
 religion: Bivenil Pantheon

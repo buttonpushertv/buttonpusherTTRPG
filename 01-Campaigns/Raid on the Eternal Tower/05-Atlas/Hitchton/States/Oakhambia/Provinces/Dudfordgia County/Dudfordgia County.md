@@ -3,7 +3,7 @@ aliases:
 - Dudfordgia
 campaign: Raid on the Eternal Tower
 color: #cfcd7c
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Dudfordgia County.png
 formName: County
@@ -13,7 +13,7 @@ id: 119
 name: Dudfordgia
 nameID: Dudfordgia-119
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Pilworth
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Oakhambia/Provinces/Dudfordgia County/Burgs/Pilworth
 religion: Religion of the Dead Antelope of Snow

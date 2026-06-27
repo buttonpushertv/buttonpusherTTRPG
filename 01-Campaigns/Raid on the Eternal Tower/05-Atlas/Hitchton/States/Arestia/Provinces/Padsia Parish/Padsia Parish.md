@@ -3,7 +3,7 @@ aliases:
 - Padsia
 campaign: Raid on the Eternal Tower
 color: #e6af7d
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Padsia Parish.png
 formName: Parish
@@ -13,7 +13,7 @@ id: 19
 name: Padsia
 nameID: Padsia-19
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Kewester
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Arestia/Provinces/Padsia Parish/Burgs/Kewester
 religion: Salton Faith

@@ -3,7 +3,7 @@ aliases:
 - Craft
 campaign: Raid on the Eternal Tower
 color: #adff7d
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Craft Landgrave.png
 formName: Landgrave
@@ -13,7 +13,7 @@ id: 177
 name: Craft
 nameID: Craft-177
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Hatham
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Madeteria/Provinces/Craft Landgrave/Burgs/Hatham
 religion: Bivenil Pantheon

@@ -3,7 +3,7 @@ aliases:
 - Aringley
 campaign: Raid on the Eternal Tower
 color: #f9d356
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Aringley Parish.png
 formName: Parish
@@ -13,7 +13,7 @@ id: 77
 name: Aringley
 nameID: Aringley-77
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Oakburghing
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Penland/Provinces/Aringley Parish/Burgs/Oakburghing
 religion: Religion of the Mad

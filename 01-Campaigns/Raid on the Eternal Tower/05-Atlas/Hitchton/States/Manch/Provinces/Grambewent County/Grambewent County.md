@@ -3,7 +3,7 @@ aliases:
 - Grambewent
 campaign: Raid on the Eternal Tower
 color: #e0afa1
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Grambewent County.png
 formName: County
@@ -13,7 +13,7 @@ id: 85
 name: Grambewent
 nameID: Grambewent-85
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Grambewent
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Manch/Provinces/Grambewent County/Burgs/Grambewent
 religion: Word of Stapton

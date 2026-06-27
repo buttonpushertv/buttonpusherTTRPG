@@ -3,7 +3,7 @@ aliases:
 - Weningt
 campaign: Raid on the Eternal Tower
 color: #b8f65f
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Weningt Earldom.png
 formName: Earldom
@@ -13,7 +13,7 @@ id: 70
 name: Weningt
 nameID: Weningt-70
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Weningt
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Oakland/Provinces/Weningt Earldom/Burgs/Weningt
 religion: Salton Faith

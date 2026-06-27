@@ -3,7 +3,7 @@ aliases:
 - Whitfordge
 campaign: Raid on the Eternal Tower
 color: #ddfd5d
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Whitfordge Landgrave.png
 formName: Landgrave
@@ -13,7 +13,7 @@ id: 179
 name: Whitfordge
 nameID: Whitfordge-179
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Whitfordge
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Madeteria/Provinces/Whitfordge Landgrave/Burgs/Whitfordge
 religion: Bivenil Pantheon

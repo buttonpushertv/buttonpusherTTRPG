@@ -3,7 +3,7 @@ aliases:
 - Bridge
 campaign: Raid on the Eternal Tower
 color: #fdc47d
-created: 2026-06-24-16:26
+created: 2026-06-26-18:02
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Bridge Shire.png
 formName: Shire
@@ -13,7 +13,7 @@ id: 86
 name: Bridge
 nameID: Bridge-86
 mapName: Hitchton
-pronounced:
+pronounced: ""
 provincialCapital: Bridge
 capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Manch/Provinces/Bridge Shire/Burgs/Bridge
 religion: Word of Stapton
