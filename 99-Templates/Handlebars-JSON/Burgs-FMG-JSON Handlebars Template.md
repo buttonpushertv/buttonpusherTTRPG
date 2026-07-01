@@ -42,7 +42,7 @@ tags:
 temple: {{temple}}
 temperature: {{getTemperature this @importDataRoot}}
 temperatureLikeness: {{getTemperatureLikeness this @importDataRoot}}
-templateVersion: 7.0
+templateVersion: 7.1
 treasury: {{treasury}}
 type: {{type}}
 walls: {{walls}}
@@ -79,6 +79,10 @@ marker: burg,{{getLeafletBurgXY this.i @importDataRoot.pack.burgs @importDataRoo
 >
 >> [!metadata|metadataoption]- Controls
 >> These buttons control various portions of this page. They only change things on this page.
+>>
+>> Currently, the Burg Map from Watabou's Medieval Fanstasy City Generator and Village Generator are the default map options for Burgs. The Leaflet map display code is in the note, but it is hidden by default because the burg maps haven't been downloaded.
+>>
+>> Eventually, the Leaflet plugin is going to be replaced with the TTRPG Tools - Maps plugin.
 >> 
 >> #### Controls
 >>  |
@@ -95,6 +99,8 @@ You may also use the Meta-Bind button at the bottom of the callout to open the b
 There is an elaborate method (see [[JSON Import How To#Wrangling FMG Burg Maps]]) to save all the maps so you can have them locally and make use of the data that was placed here on import from the JSON.%%
 
 %%LeafletMapTOP-
+
+%% Leaflet Code Block is hidden by default. To unhide, you can use the button in the Metadata section to show it.%%
 
 > [!metadata|map]- Burg Map (Interactive)
 > ```leaflet
