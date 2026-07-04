@@ -5,7 +5,7 @@ campaign: "Raid on the Eternal Tower"
 center: 3957
 code: Co
 color: #e3e4ff
-created: 2026-06-26-18:02
+created: 2026-07-04-08:22
 cssclasses: sixty-pct-width
 culture: Skiple
 deity: Bington, The Honest

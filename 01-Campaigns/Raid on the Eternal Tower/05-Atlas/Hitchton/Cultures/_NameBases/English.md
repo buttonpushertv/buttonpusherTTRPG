@@ -1,0 +1,263 @@
+---
+name: English
+min: 6
+max: 11
+d: 
+m: 0.1
+campaign: "Raid on the Eternal Tower"
+created: 2026-07-04-08:22
+cssclasses: sixty-pct-width
+mapName: Hitchton
+tags:
+- namebase
+- English
+- Hitchton
+templateVersion: 7.0
+---
+# `=this.name` Namebase
+These words & names are used to create locations on the map for Cultures that are based on this language.  The names are used to create the names of towns, villages, and other locations on the map.
+
+## `=this.name` Base Names
+
+Random Name: `dice: [[English#^nmebse-English]]`
+
+| dice: 1d237 | Name |
+| --------- | ----------------------- |
+| 1 | Abingdon |
+| 2 | Albrighton |
+| 3 | Alcester |
+| 4 | Almondbury |
+| 5 | Altrincham |
+| 6 | Amersham |
+| 7 | Andover |
+| 8 | Appleby |
+| 9 | Ashboume |
+| 10 | Atherstone |
+| 11 | Aveton |
+| 12 | Axbridge |
+| 13 | Aylesbury |
+| 14 | Baldock |
+| 15 | Bamburgh |
+| 16 | Barton |
+| 17 | Basingstoke |
+| 18 | Berden |
+| 19 | Bere |
+| 20 | Berkeley |
+| 21 | Berwick |
+| 22 | Betley |
+| 23 | Bideford |
+| 24 | Bingley |
+| 25 | Birmingham |
+| 26 | Blandford |
+| 27 | Blechingley |
+| 28 | Bodmin |
+| 29 | Bolton |
+| 30 | Bootham |
+| 31 | Boroughbridge |
+| 32 | Boscastle |
+| 33 | Bossinney |
+| 34 | Bramber |
+| 35 | Brampton |
+| 36 | Brasted |
+| 37 | Bretford |
+| 38 | Bridgetown |
+| 39 | Bridlington |
+| 40 | Bromyard |
+| 41 | Bruton |
+| 42 | Buckingham |
+| 43 | Bungay |
+| 44 | Burton |
+| 45 | Calne |
+| 46 | Cambridge |
+| 47 | Canterbury |
+| 48 | Carlisle |
+| 49 | Castleton |
+| 50 | Caus |
+| 51 | Charmouth |
+| 52 | Chawleigh |
+| 53 | Chichester |
+| 54 | Chillington |
+| 55 | Chinnor |
+| 56 | Chipping |
+| 57 | Chisbury |
+| 58 | Cleobury |
+| 59 | Clifford |
+| 60 | Clifton |
+| 61 | Clitheroe |
+| 62 | Cockermouth |
+| 63 | Coleshill |
+| 64 | Combe |
+| 65 | Congleton |
+| 66 | Crafthole |
+| 67 | Crediton |
+| 68 | Cuddenbeck |
+| 69 | Dalton |
+| 70 | Darlington |
+| 71 | Dodbrooke |
+| 72 | Drax |
+| 73 | Dudley |
+| 74 | Dunstable |
+| 75 | Dunster |
+| 76 | Dunwich |
+| 77 | Durham |
+| 78 | Dymock |
+| 79 | Exeter |
+| 80 | Exning |
+| 81 | Faringdon |
+| 82 | Felton |
+| 83 | Fenny |
+| 84 | Finedon |
+| 85 | Flookburgh |
+| 86 | Fowey |
+| 87 | Frampton |
+| 88 | Gateshead |
+| 89 | Gatton |
+| 90 | Godmanchester |
+| 91 | Grampound |
+| 92 | Grantham |
+| 93 | Guildford |
+| 94 | Halesowen |
+| 95 | Halton |
+| 96 | Harbottle |
+| 97 | Harlow |
+| 98 | Hatfield |
+| 99 | Hatherleigh |
+| 100 | Haydon |
+| 101 | Helston |
+| 102 | Henley |
+| 103 | Hertford |
+| 104 | Heytesbury |
+| 105 | Hinckley |
+| 106 | Hitchin |
+| 107 | Holme |
+| 108 | Hornby |
+| 109 | Horsham |
+| 110 | Kendal |
+| 111 | Kenilworth |
+| 112 | Kilkhampton |
+| 113 | Kineton |
+| 114 | Kington |
+| 115 | Kinver |
+| 116 | Kirby |
+| 117 | Knaresborough |
+| 118 | Knutsford |
+| 119 | Launceston |
+| 120 | Leighton |
+| 121 | Lewes |
+| 122 | Linton |
+| 123 | Louth |
+| 124 | Luton |
+| 125 | Lyme |
+| 126 | Lympstone |
+| 127 | Macclesfield |
+| 128 | Madeley |
+| 129 | Malborough |
+| 130 | Maldon |
+| 131 | Manchester |
+| 132 | Manningtree |
+| 133 | Marazion |
+| 134 | Marlborough |
+| 135 | Marshfield |
+| 136 | Mere |
+| 137 | Merryfield |
+| 138 | Middlewich |
+| 139 | Midhurst |
+| 140 | Milborne |
+| 141 | Mitford |
+| 142 | Modbury |
+| 143 | Montacute |
+| 144 | Mousehole |
+| 145 | Newbiggin |
+| 146 | Newborough |
+| 147 | Newbury |
+| 148 | Newenden |
+| 149 | Newent |
+| 150 | Norham |
+| 151 | Northleach |
+| 152 | Noss |
+| 153 | Oakham |
+| 154 | Olney |
+| 155 | Orford |
+| 156 | Ormskirk |
+| 157 | Oswestry |
+| 158 | Padstow |
+| 159 | Paignton |
+| 160 | Penkneth |
+| 161 | Penrith |
+| 162 | Penzance |
+| 163 | Pershore |
+| 164 | Petersfield |
+| 165 | Pevensey |
+| 166 | Pickering |
+| 167 | Pilton |
+| 168 | Pontefract |
+| 169 | Portsmouth |
+| 170 | Preston |
+| 171 | Quatford |
+| 172 | Reading |
+| 173 | Redcliff |
+| 174 | Retford |
+| 175 | Rockingham |
+| 176 | Romney |
+| 177 | Rothbury |
+| 178 | Rothwell |
+| 179 | Salisbury |
+| 180 | Saltash |
+| 181 | Seaford |
+| 182 | Seasalter |
+| 183 | Sherston |
+| 184 | Shifnal |
+| 185 | Shoreham |
+| 186 | Sidmouth |
+| 187 | Skipsea |
+| 188 | Skipton |
+| 189 | Solihull |
+| 190 | Somerton |
+| 191 | Southam |
+| 192 | Southwark |
+| 193 | Standon |
+| 194 | Stansted |
+| 195 | Stapleton |
+| 196 | Stottesdon |
+| 197 | Sudbury |
+| 198 | Swavesey |
+| 199 | Tamerton |
+| 200 | Tarporley |
+| 201 | Tetbury |
+| 202 | Thatcham |
+| 203 | Thaxted |
+| 204 | Thetford |
+| 205 | Thornbury |
+| 206 | Tintagel |
+| 207 | Tiverton |
+| 208 | Torksey |
+| 209 | Totnes |
+| 210 | Towcester |
+| 211 | Tregoney |
+| 212 | Trematon |
+| 213 | Tutbury |
+| 214 | Uxbridge |
+| 215 | Wallingford |
+| 216 | Wareham |
+| 217 | Warenmouth |
+| 218 | Wargrave |
+| 219 | Warton |
+| 220 | Watchet |
+| 221 | Watford |
+| 222 | Wendover |
+| 223 | Westbury |
+| 224 | Westcheap |
+| 225 | Weymouth |
+| 226 | Whitford |
+| 227 | Wickwar |
+| 228 | Wigan |
+| 229 | Wigmore |
+| 230 | Winchelsea |
+| 231 | Winkleigh |
+| 232 | Wiscombe |
+| 233 | Witham |
+| 234 | Witheridge |
+| 235 | Wiveliscombe |
+| 236 | Woodbury |
+| 237 | Yeovil |
+^nmebse-English

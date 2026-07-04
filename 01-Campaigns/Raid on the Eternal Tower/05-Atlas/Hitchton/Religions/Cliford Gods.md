@@ -5,7 +5,7 @@ campaign: "Raid on the Eternal Tower"
 center: 146
 code: CG
 color: #bc80bd
-created: 2026-06-26-18:02
+created: 2026-07-04-08:22
 cssclasses: sixty-pct-width
 culture: Cliford
 deity: Tarporming, The Magenta Justice

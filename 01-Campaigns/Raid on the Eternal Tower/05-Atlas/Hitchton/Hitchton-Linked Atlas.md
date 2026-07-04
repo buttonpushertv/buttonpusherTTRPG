@@ -1,14 +1,14 @@
 ---
 aliases:
 campaign: Raid on the Eternal Tower
-created: 2026-06-26-18:02
+created: 2026-07-04-08:22
 cssclasses: sixty-pct-width
 mapName: Hitchton
 tags:
 - linked-atlas
 - roet
 - Hitchton
-templateVersion: 5.1
+templateVersion: 7.0
 WBProcess: FALSE
 ---
 
@@ -19,7 +19,7 @@ WBProcess: FALSE
 
  %% Feel free to delete or comment the line above if you wish. See comments below for editing instructions. Use `find` to search for double percentage characters to find each of the comment sections. %%
 
-%% This Leaflet map block is created out of the elements added to the JSON file before import
+%% This Leaflet map block is created out of the elements added to the JSON file before import %%
 
 > [!metadata|map]+  Map
 > ```leaflet
@@ -41,39 +41,10 @@ WBProcess: FALSE
 > ```
 > [Link to  on FMG Map](https://azgaar.github.io/Fantasy-Map-Generator/?maplink=https://dl.dropboxusercontent.com/scl/fi/l7dpjh1fb1v053mc7izmw/Hitchton-2026-06-21-15-36.map?rlkey=zrhhfmejskvk1cpgiizmjbrfl&dl=0)
 
-If you created a Dropbox Link to your FMG map, you can save that into the Modded JSON file and it will appear in the link above. %%
-
-```zoommap
-image: 01-Campaigns/Raid on the Eternal Tower/98-Raid on the Eternal Tower Assets/Hitchton World Map.svg
-# markers is optional; defaults to <image>.markers.json
-# markers: Assets/Map.jpg.markers.json
-
-# Map view limits
-minZoom: 0.3
-maxZoom: 8
-
-# Size & interactivity
-height: 600px
-width: 100%
-resizable: true
-resizeHandle: native     # left | right | both | native
-render: dom           # or: dom
-
-# Responsive display (fit into width, no wheel/pinch/dblclick pan/zoom)
-responsive: false        # true → always fit; disables pan/zoom gestures
-
-# Storage (optional)
-# storage: note          # default is json; use "note" to store markers inline
-# id: roet-atlas              # optional stable id for inline storage (per code block)
-
-# Alignment / wrapping (optional)
-align: center            # left | center | right
-wrap: true               # wrap text; useful with left/right alignment
-```
+%% If you created a Dropbox Link to your FMG map, you can save that into the Modded JSON file and it will appear in the link above. %%
 
 
-
-> [!callout]- **States**
+> [!callout]+ **States**
 > 
 > %% The "Neutral" item doesn't have a Capital because it is an unorganized territory. If there is a significant Burg or location in the Neutral territory, you can link to its note where the empty square brackets are.%%
 >
@@ -309,8 +280,8 @@ wrap: true               # wrap text; useful with left/right alignment
 >| 199 | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Birbotia/Provinces/Blandland County/Blandland County\|Blandland County]] | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Birbotia/Provinces/Blandland County/Burgs/Witbury\|Witbury]] | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Birbotia/Birbotia\|Birbotia]] |
 >| 200 | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Birbotia/Provinces/Kingleytes Earldom/Kingleytes Earldom\|Kingleytes Earldom]] | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Birbotia/Provinces/Kingleytes Earldom/Burgs/Kingleytes\|Kingleytes]] | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Birbotia/Birbotia\|Birbotia]] |
 >| 201 | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Arestia/Provinces/Brampsearen Territory/Brampsearen Territory\|Brampsearen Territory]] | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Arestia/Provinces/Brampsearen Territory/Burgs/Brampsearen\|Brampsearen]] | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Arestia/Arestia\|Arestia]] |
->| 202 | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Arestia/Provinces/King Territory/King Territory\|King Territory]] | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Arestia/Provinces/King Territory/Burgs/Unknown\|Unknown]] | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Arestia/Arestia\|Arestia]] |
->| 203 | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Arestia/Provinces/Balistedia Territory/Balistedia Territory\|Balistedia Territory]] | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Arestia/Provinces/Balistedia Territory/Burgs/Unknown\|Unknown]] | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Arestia/Arestia\|Arestia]] |
+>| 202 | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Arestia/Provinces/King Territory/King Territory\|King Territory]] | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Arestia/Provinces/King Territory/Burgs/Unspecified\|Unspecified]] | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Arestia/Arestia\|Arestia]] |
+>| 203 | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Arestia/Provinces/Balistedia Territory/Balistedia Territory\|Balistedia Territory]] | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Arestia/Provinces/Balistedia Territory/Burgs/Unspecified\|Unspecified]] | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Arestia/Arestia\|Arestia]] |
 >| 204 | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Casthamia/Provinces/Bostedmouth Area/Bostedmouth Area\|Bostedmouth Area]] | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Casthamia/Provinces/Bostedmouth Area/Burgs/Bostedmouth\|Bostedmouth]] | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Casthamia/Casthamia\|Casthamia]] |
 >| 205 | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Casthamia/Provinces/Tigandalces Tribe/Tigandalces Tribe\|Tigandalces Tribe]] | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Casthamia/Provinces/Tigandalces Tribe/Burgs/Tigandalces\|Tigandalces]] | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Casthamia/Casthamia\|Casthamia]] |
 >| 206 | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Linia/Provinces/Bertonley Territory/Bertonley Territory\|Bertonley Territory]] | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Linia/Provinces/Bertonley Territory/Burgs/Bertonley\|Bertonley]] | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Linia/Linia\|Linia]] |
@@ -318,18 +289,18 @@ wrap: true               # wrap text; useful with left/right alignment
 >| 208 | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Penland/Provinces/Westcheaple Territory/Westcheaple Territory\|Westcheaple Territory]] | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Penland/Provinces/Westcheaple Territory/Burgs/Westcheaple\|Westcheaple]] | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Penland/Penland\|Penland]] |
 >| 209 | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Manch/Provinces/Sherland Territory/Sherland Territory\|Sherland Territory]] | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Manch/Provinces/Sherland Territory/Burgs/Bodbury\|Bodbury]] | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Manch/Manch\|Manch]] |
 >| 210 | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Oakhambia/Provinces/Maveternia Region/Maveternia Region\|Maveternia Region]] | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Oakhambia/Provinces/Maveternia Region/Burgs/Pilter\|Pilter]] | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Oakhambia/Oakhambia\|Oakhambia]] |
->| 211 | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Oakhambia/Provinces/Titon Land/Titon Land\|Titon Land]] | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Oakhambia/Provinces/Titon Land/Burgs/Unknown\|Unknown]] | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Oakhambia/Oakhambia\|Oakhambia]] |
+>| 211 | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Oakhambia/Provinces/Titon Land/Titon Land\|Titon Land]] | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Oakhambia/Provinces/Titon Land/Burgs/Unspecified\|Unspecified]] | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Oakhambia/Oakhambia\|Oakhambia]] |
 >| 212 | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Horsteria/Provinces/Retnester Island/Retnester Island\|Retnester Island]] | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Horsteria/Provinces/Retnester Island/Burgs/Lympstoles\|Lympstoles]] | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Horsteria/Horsteria\|Horsteria]] |
 >| 213 | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Horsteria/Provinces/Skiple Territory/Skiple Territory\|Skiple Territory]] | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Horsteria/Provinces/Skiple Territory/Burgs/Skiple\|Skiple]] | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Horsteria/Horsteria\|Horsteria]] |
 >| 214 | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Horsteria/Provinces/Dudgia Region/Dudgia Region\|Dudgia Region]] | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Horsteria/Provinces/Dudgia Region/Burgs/Torkwar\|Torkwar]] | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Horsteria/Horsteria\|Horsteria]] |
 >| 215 | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Horsteria/Provinces/Redckerton Territory/Redckerton Territory\|Redckerton Territory]] | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Horsteria/Provinces/Redckerton Territory/Burgs/Redckerton\|Redckerton]] | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Horsteria/Horsteria\|Horsteria]] |
->| 216 | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Horsteria/Provinces/Ashetfordia Island/Ashetfordia Island\|Ashetfordia Island]] | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Horsteria/Provinces/Ashetfordia Island/Burgs/Unknown\|Unknown]] | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Horsteria/Horsteria\|Horsteria]] |
+>| 216 | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Horsteria/Provinces/Ashetfordia Island/Ashetfordia Island\|Ashetfordia Island]] | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Horsteria/Provinces/Ashetfordia Island/Burgs/Unspecified\|Unspecified]] | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Horsteria/Horsteria\|Horsteria]] |
 >| 217 | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Thaxted/Provinces/Rothburia Land/Rothburia Land\|Rothburia Land]] | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Thaxted/Provinces/Rothburia Land/Burgs/Rearasal\|Rearasal]] | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Thaxted/Thaxted\|Thaxted]] |
->| 218 | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Thaxted/Provinces/Beria Area/Beria Area\|Beria Area]] | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Thaxted/Provinces/Beria Area/Burgs/Unknown\|Unknown]] | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Thaxted/Thaxted\|Thaxted]] |
->| 219 | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Dunsteria/Provinces/Axbrigh Region/Axbrigh Region\|Axbrigh Region]] | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Dunsteria/Provinces/Axbrigh Region/Burgs/Unknown\|Unknown]] | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Dunsteria/Dunsteria\|Dunsteria]] |
+>| 218 | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Thaxted/Provinces/Beria Area/Beria Area\|Beria Area]] | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Thaxted/Provinces/Beria Area/Burgs/Unspecified\|Unspecified]] | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Thaxted/Thaxted\|Thaxted]] |
+>| 219 | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Dunsteria/Provinces/Axbrigh Region/Axbrigh Region\|Axbrigh Region]] | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Dunsteria/Provinces/Axbrigh Region/Burgs/Unspecified\|Unspecified]] | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Dunsteria/Dunsteria\|Dunsteria]] |
 >| 220 | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Stapia/Provinces/Sidgewes Territory/Sidgewes Territory\|Sidgewes Territory]] | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Stapia/Provinces/Sidgewes Territory/Burgs/Tivegoke\|Tivegoke]] | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Stapia/Stapia\|Stapia]] |
->| 221 | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Stapia/Provinces/Yeorough Land/Yeorough Land\|Yeorough Land]] | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Stapia/Provinces/Yeorough Land/Burgs/Unknown\|Unknown]] | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Stapia/Stapia\|Stapia]] |
->| 222 | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Madeteria/Provinces/Marsland Dependency/Marsland Dependency\|Marsland Dependency]] | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Madeteria/Provinces/Marsland Dependency/Burgs/Unknown\|Unknown]] | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Madeteria/Madeteria\|Madeteria]] |
+>| 221 | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Stapia/Provinces/Yeorough Land/Yeorough Land\|Yeorough Land]] | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Stapia/Provinces/Yeorough Land/Burgs/Unspecified\|Unspecified]] | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Stapia/Stapia\|Stapia]] |
+>| 222 | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Madeteria/Provinces/Marsland Dependency/Marsland Dependency\|Marsland Dependency]] | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Madeteria/Provinces/Marsland Dependency/Burgs/Unspecified\|Unspecified]] | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Madeteria/Madeteria\|Madeteria]] |
 >| 223 | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Birbotia/Provinces/Wistore Dependency/Wistore Dependency\|Wistore Dependency]] | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Birbotia/Provinces/Wistore Dependency/Burgs/Wistore\|Wistore]] | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Birbotia/Birbotia\|Birbotia]] |
 >| 224 | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Birbotia/Provinces/Stapingle Dependency/Stapingle Dependency\|Stapingle Dependency]] | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Birbotia/Provinces/Stapingle Dependency/Burgs/Stapingle\|Stapingle]] | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Birbotia/Birbotia\|Birbotia]] |
 
@@ -1097,6 +1068,38 @@ wrap: true               # wrap text; useful with left/right alignment
 > | 17 | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/Religions/Religion of the Dead Antelope of Snow\|Religion of the Dead Antelope of Snow]] | RE | Organized | Dualism | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/Cultures/Unknown\|Unknown]] | Seareston, The Black Gryphon |
 > | 18 | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/Religions/Deities of the Prime Horse\|Deities of the Prime Horse]] | De | Organized | Polytheism | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/Cultures/Unknown\|Unknown]] | Rothton, The Brave |
 > | 19 | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/Religions/Perslehamism\|Perslehamism]] | Pe | Organized | Dualism | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/Cultures/Unknown\|Unknown]] | Noster, The Giver |
+
+> [!callout]- Markets
+>
+> The Markets of {@importDataRoot.info.mapName}}
+>
+> | ID  | Market Name | Central Burg |
+> | --- | ----------- | ------------ |
+> | 1 | [[Aresto-market]] | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Arestia/Provinces/Aresto Parish/Burgs/Aresto\|Aresto]] |
+> | 2 | [[Penby-market]] | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Penland/Provinces/Penby Parish/Burgs/Penby\|Penby]] |
+> | 3 | [[Ormster-market]] | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Wodminia/Provinces/Ormster Barony/Burgs/Ormster\|Ormster]] |
+> | 4 | [[Orton-market]] | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Manch/Provinces/Framping County/Burgs/Orton\|Orton]] |
+> | 5 | [[Newleigh-market]] | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Stapia/Provinces/Newleigh County/Burgs/Newleigh\|Newleigh]] |
+> | 6 | [[Horston-market]] | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Horsteria/Provinces/Cudland County/Burgs/Horston\|Horston]] |
+> | 7 | [[Kiver-market]] | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Hitchia/Provinces/Frampland Landgrave/Burgs/Kiver\|Kiver]] |
+> | 8 | [[Exted-market]] | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Oakhambia/Provinces/Seamersia County/Burgs/Exted\|Exted]] |
+> | 9 | [[Oakley-market]] | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Oakland/Provinces/Albrid County/Burgs/Oakley\|Oakley]] |
+> | 10 | [[Thaxted-market]] | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Thaxted/Provinces/Thaxted County/Burgs/Thaxted\|Thaxted]] |
+> | 11 | [[Louth-market]] | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Louthia/Provinces/Helscomia County/Burgs/Louth\|Louth]] |
+> | 12 | [[Congham-market]] | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Linia/Provinces/Congham Deanery/Burgs/Congham\|Congham]] |
+> | 13 | [[Stothediver-market]] | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Padstedgia/Provinces/Newleighia Earldom/Burgs/Stothediver\|Stothediver]] |
+> | 14 | [[Brorough-market]] | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Horsteria/Provinces/Brorough Captaincy/Burgs/Brorough\|Brorough]] |
+> | 15 | [[Chipseaford-market]] | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Casthamia/Provinces/Chipseaford Barony/Burgs/Chipseaford\|Chipseaford]] |
+> | 16 | [[Atbury-market]] | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Casthamia/Provinces/Berhamia Earldom/Burgs/Atbury\|Atbury]] |
+> | 17 | [[Retfordford-market]] | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Madeteria/Provinces/Winklia Seneschalty/Burgs/Retfordford\|Retfordford]] |
+> | 18 | [[Cambrover-market]] | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Casthamia/Provinces/Cambrover County/Burgs/Cambrover\|Cambrover]] |
+> | 19 | [[Ostowcesin-market]] | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Arestia/Provinces/Padsia Parish/Burgs/Ostowcesin\|Ostowcesin]] |
+> | 20 | [[Cliford-market]] | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Horsteria/Provinces/Cliford Earldom/Burgs/Cliford\|Cliford]] |
+> | 21 | [[Agelton-market]] | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Horsteria/Provinces/Agelton County/Burgs/Agelton\|Agelton]] |
+> | 22 | [[Soliveton-market]] | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Oakhambia/Provinces/Coroughia Shire/Burgs/Soliveton\|Soliveton]] |
+> | 23 | [[Fenmouthet-market]] | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Linia/Provinces/Penksia Deanery/Burgs/Fenmouthet\|Fenmouthet]] |
+> | 24 | [[Tiverhambe-market]] | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Linia/Provinces/Bertonley Territory/Burgs/Tiverhambe\|Tiverhambe]] |
+> | 25 | [[Mouton-market]] | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Hitchia/Provinces/Skipton County/Burgs/Mouton\|Mouton]] |
 
 > [!EXAMPLE]- Hitchton Settings
 > These are the settings from this FMG map

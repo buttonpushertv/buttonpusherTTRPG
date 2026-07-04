@@ -5,21 +5,21 @@ cultureName: "Cowey"
 code: Co
 color: #ffed6f
 center: 
-created: 2026-06-26-18:02
+created: 2026-07-04-08:22
 cssclasses: sixty-pct-width
 expansionism: 1
 id: 1
 leaders:
 mapName: Hitchton
 namesbase: 1
+namesbaselang: English
 origins: 0
 pronounced: ""
 shortDescription:
-shield: heater
 tags:
 - Culture
 - Hitchton
-templateVersion: 3.2
+templateVersion: 7.0
 type: River
 WBProcess: Imported
 ---
@@ -101,6 +101,12 @@ Below are any notable zones or regions within `=this.cultureName`
 >
 
 > [!question]- Hidden Details
+>
+
+> [!Note]- NameBase
+> The names listed below are the base names this Culture uses to derive names. They are based on `=this.namesbaselang`.
+>
+> ![[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/Cultures/_NameBases/English|English no-t]]
 >
 
 ## More Details

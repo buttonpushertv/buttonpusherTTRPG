@@ -5,7 +5,7 @@ campaign: "Raid on the Eternal Tower"
 center: 2226
 code: CB
 color: #c6b9c1
-created: 2026-06-26-18:02
+created: 2026-07-04-08:22
 cssclasses: sixty-pct-width
 culture: Congley
 deity: Ledine, The Marine Victory

@@ -5,7 +5,7 @@ campaign: "Raid on the Eternal Tower"
 center: 3892
 code: Re
 color: #ffe2d4
-created: 2026-06-26-18:02
+created: 2026-07-04-08:22
 cssclasses: sixty-pct-width
 culture: Skiple
 deity: Darleigh, The Unfathomable Badger

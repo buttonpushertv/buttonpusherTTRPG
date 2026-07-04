@@ -5,7 +5,7 @@ campaign: "Raid on the Eternal Tower"
 center: 1596
 code: OS
 color: #b3de69
-created: 2026-06-26-18:02
+created: 2026-07-04-08:22
 cssclasses: sixty-pct-width
 culture: Osbuton
 deity: 
