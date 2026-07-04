@@ -49,10 +49,18 @@
     },
     {
     "fieldName": "pack.markets",
-    "noteName": "@{return `${dataRoot.importInfo.thisCampaign}/05-Atlas/${dataRoot.info.mapName}/Markets/${(this.centerBurgId > 0) && dataRoot.pack.burgs.find(burg => burg.i === this.centerBurgId)?.name || 'Unknown' }`}",
+    "noteName": "@{return `${dataRoot.importInfo.thisCampaign}/05-Atlas/${dataRoot.info.mapName}/Markets/${(this.centerBurgId > 0) && dataRoot.pack.burgs.find(burg => burg.i === this.centerBurgId)?.name || 'Unknown' }-market`}",
     "folderName": "01-Campaigns",
     "namePrefix": "",
     "nameSuffix": "",
     "batchStep": "Markets"
+    },
+    {
+    "fieldName": "nameBases",
+    "noteName": "@{return `${dataRoot.importInfo.thisCampaign}/05-Atlas/${dataRoot.info.mapName}/Cultures/_NameBases/${this.name}`}",
+    "folderName": "01-Campaigns",
+    "namePrefix": "",
+    "nameSuffix": "",
+    "batchStep": "NameBases"
     }
 ]

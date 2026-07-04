@@ -12,14 +12,14 @@ id: {{i}}
 leaders:
 mapName: {{@importDataRoot.info.mapName}}
 namesbase: {{base}}
+namesbaselang: {{getCultureBaseName base @importDataRoot.nameBases}}
 origins: {{origins}}
 pronounced: ""
 shortDescription:
-shield: {{shield}}
 tags:
 - Culture
 - {{@importDataRoot.info.mapName}}
-templateVersion: 3.2
+templateVersion: 7.0
 type: {{type}}
 WBProcess: Imported
 ---
@@ -101,6 +101,12 @@ Below are any notable zones or regions within `=this.cultureName`
 >
 
 > [!question]- Hidden Details
+>
+
+> [!Note]- NameBase
+> The names listed below are the base names this Culture uses to derive names. They are based on `=this.namesbaselang`.
+>
+> ![[{{@importDataRoot.importInfo.thisCampaignPath}}/05-Atlas/{{@importDataRoot.info.mapName}}/Cultures/_NameBases/{{getCultureBaseName base @importDataRoot.nameBases}}|{{getCultureBaseName base @importDataRoot.nameBases}} no-t]]
 >
 
 ## More Details

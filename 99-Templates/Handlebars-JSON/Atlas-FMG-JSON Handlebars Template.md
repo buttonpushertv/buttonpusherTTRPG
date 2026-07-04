@@ -8,7 +8,7 @@ tags:
 - linked-atlas
 - {{@importDataRoot.importInfo.thisCampaignShortCode}}
 - {{@importDataRoot.info.mapName}}
-templateVersion: 5.1
+templateVersion: 7.0
 WBProcess: FALSE
 ---
 
@@ -44,7 +44,7 @@ WBProcess: FALSE
 %% If you created a Dropbox Link to your FMG map, you can save that into the Modded JSON file and it will appear in the link above. %%
 
 
-> [!callout]- **States**
+> [!callout]+ **States**
 > 
 > %% The "Neutral" item doesn't have a Capital because it is an unorganized territory. If there is a significant Burg or location in the Neutral territory, you can link to its note where the empty square brackets are.%%
 >
@@ -106,6 +106,16 @@ WBProcess: FALSE
 > | --- | ---- | -----| ---- | ---- | ------- | ----- |
 {{#each pack.religions}}
 > | {{i}} | [[{{../importInfo.thisCampaignPath}}/05-Atlas/{{../info.mapName}}/Religions/{{name}}\|{{name}}]] | {{code}} | {{type}} | {{form}} | [[{{../importInfo.thisCampaignPath}}/05-Atlas/{{../info.mapName}}/Cultures/{{getCultureName i ../pack.cultures}}\|{{getCultureName i ../pack.cultures}}]] | {{deity}} |
+{{/each}}
+
+> [!callout]- Markets
+>
+> The Markets of {@importDataRoot.info.mapName}}
+>
+> | ID  | Market Name | Central Burg |
+> | --- | ----------- | ------------ |
+{{#each pack.markets}}
+> | {{i}} | [[{{getBurgName centerBurgId ../pack.burgs}}-market]] | [[{{getBurgFile centerBurgId ..}}\|{{getBurgName centerBurgId ../pack.burgs}}]] |
 {{/each}}
 
 > [!EXAMPLE]- {{@importDataRoot.info.mapName}} Settings

@@ -38,6 +38,13 @@
 028   getBurgX(burgId, allBurgs)
 029   getBurgY(burgId, allBurgs)
 030   getBurgMarket(burgId, allBurgs, allMarkets)
+031   getCultureBaseName(cultureBaseId, allNameBases)
+032   getCultureBaseSampleNamesString(cultureBaseId, allNameBases)
+033   listToRollTable(inputString)
+034   removeSpaces(inputString)
+035   getMarketGoodsTable(marketId, allMarkets, allGoods)
+036   getMarketGoodsTableByBurg(burgId, allBurgs, allMarkets, allGoods)
+037   buildTimelineFromStateCampaigns(stateObject)
 
 * - NEEDS TO BE REWORKED
 x - DEPRECATED - no longer used in the code
@@ -106,7 +113,7 @@ handlebars.registerHelper('getBurgName', function(burgId,allBurgs) {
   // console.log("burgId wasn't 0 or undefined");
   const burgFound = allBurgs.find(burg => burg.i === burgId);
   // console.log("burgFound:", burgFound.name);
-  return burgFound ? burgFound.name : 'Unknown';
+  return burgFound ? burgFound.name : 'Unspecified';
 });
 
 // 006b
@@ -1025,9 +1032,142 @@ handlebars.registerHelper('getBurgStateName', function(burgId,allBurgs,allStates
       console.log("##### getBurgMarketLink - market was undefined #####");
       return ''; // skip if market is undefined
     }
-    console.log("##### getBurgMarket - market: ", market);
+    // console.log("##### getBurgMarket - market: ", market);
     const marketCenterBurgId = market.centerBurgId;
     const marketName = allBurgs.find(b => b.i === marketCenterBurgId).name;
-    console.log("getBurgMarket - centerBurg: ", marketCenterBurgId, " - marketName: ", marketName, " alternate market.currMarketName: ", market.currMarketName);
+    // console.log("getBurgMarket - centerBurg: ", marketCenterBurgId, " - marketName: ", marketName, " alternate market.currMarketName: ", market.currMarketName);
     return marketName;
   });
+
+  // 031
+  // Custom Helper to retrieve the name of the NameBase used for a Culture's names
+  handlebars.registerHelper('getCultureBaseName', function(cultureBaseId, allNameBases) {
+    if (cultureBaseId === undefined || cultureBaseId === null || cultureBaseId === '') {
+      console.log("##### getCultureBaseName - cultureBaseId was undefined #####");
+      return ''; // skip if cultureBaseId is undefined
+    }
+    const nameBase = allNameBases[cultureBaseId];
+    if (!nameBase) {
+      console.log("##### getCultureNameBase - nameBase was undefined #####");
+      return ''; // skip if nameBase is undefined
+    }
+    // console.log("getCultureBaseName - nameBase: ", nameBase);
+    return nameBase.name;
+  });
+
+// 032 - Helper to get sample names string for a given NameBase
+handlebars.registerHelper('getCultureBaseSampleNamesString', function(cultureBaseId, allNameBases) {
+  if (cultureBaseId === undefined || cultureBaseId === null || cultureBaseId === '') {
+    console.log("##### getCultureBaseSampleNamesString - cultureBaseId was undefined #####");
+    return '';
+  }
+  const nameBase = allNameBases[cultureBaseId];
+  if (!nameBase) {
+    console.log("##### getCultureBaseSampleNamesString - nameBase was undefined #####");
+    return '';
+  }
+  // Return the sample names string directly (already comma-separated)
+  return nameBase.b || '';
+});
+
+// 033
+// Custom Helper to convert a comma-separated list of items into a Markdown table
+// Input: A single-line, comma-separated string (e.g., "Apple, Banana, Cherry")
+// Output: Markdown table with header showing <count>d<count> notation and indexed rows
+handlebars.registerHelper('listToRollTable', function(inputString) {
+  if (!inputString || typeof inputString !== 'string') {
+    console.log("##### listToRollTable - input was undefined or not a string #####");
+    return ''; // skip if no valid input
+  };
+
+  // Split by comma, trim each item, filter out empty entries
+  const items = inputString
+    .split(',')
+    .map(item => item.trim())
+    .filter(item => item.length > 0);
+
+  // If no valid items found, return empty string
+  if (items.length === 0) {
+    console.log("##### listToRollTable - no valid items found #####");
+    return '';
+  };
+
+  const count = items.length;
+
+  // Build the table header with <count>d<count> notation
+  let table = `| dice: 1d${count} | Name |\n`;
+  table += `| --------- | ----------------------- |\n`;
+
+  // Add each item as a row with 1-based index
+  items.forEach((item, index) => {
+    const rowIndex = index + 1;
+    table += `| ${rowIndex} | ${item} |\n`;
+  });
+
+  return table.trim();
+});
+
+
+// 034
+// Custom Helper removeSpaces
+// Removes all whitespace from a string
+// Usage: {{removeSpaces "Hello World"}} → "HelloWorld"
+// ============================================
+handlebars.registerHelper('removeSpaces', function(inputString) {
+  if (typeof inputString !== 'string') return '';
+  return inputString.replace(/\s/g, '');
+});
+
+// 035
+// Custom Helper to retrieve the Goods of a Market and return them as a Markdown table
+handlebars.registerHelper('getMarketGoodsTable', function(marketId, allMarkets, allGoods) {
+  const currMarket = allMarkets.find(m => m.i === marketId);
+  if (!currMarket) {
+    console.log("##### getMarketGoodsTable - marketObject or goods array was undefined #####");
+    return ''; // skip if no valid goods array
+  }
+  // `goods` is an object keyed by goodId (e.g. { "1": { stock, price }, "2": {...} }),
+  // NOT an array. So we can't use .length or .forEach on it directly.
+  const goods = currMarket.goods || {};
+  const goodEntries = Object.entries(goods);
+  if (goodEntries.length === 0) {
+    console.log("##### getMarketGoodsTable - no goods found for market #####");
+    return ''; // skip if no goods found
+  } else {
+    // Build the Markdown table header
+    let table = `| Good | Stock | Price |\n`;
+    table += `| ---- | ----- | ----- |\n`;
+
+    // Add each good as a row in the table.
+    // The key of each entry is the goodId (as a string) that maps to allGoods[].i
+    goodEntries.forEach(([goodIdStr, good]) => {
+      const goodId = Number(goodIdStr);
+      const goodName = allGoods.find(g => g.i === goodId)?.name || 'Unknown';
+      // Use ?? so a legitimate 0 stock/price isn't replaced with 'Unknown'
+      const stock = good.stock ?? 'Unknown';
+      const price = good.price ?? 'Unknown';
+      table += `| ${goodName} | ${stock} | ${price} |\n`;
+    });
+
+    return table.trim();
+  }
+});
+
+// 036
+// Custom Helper to retrieve the Products of a Burg and return them as a Markdown table
+
+// 037
+// Custom Helper to build the Timeline for the given State's Campaigns
+// Alternates between right-aligned (|t-r) and left-aligned (|t-l) timeline callouts.
+handlebars.registerHelper('buildStateCampaignTimeline', function(stateObject) {
+  if (!stateObject || !stateObject.campaigns || stateObject.campaigns.length === 0) {
+    console.log("##### buildStateCampaignTimeline - stateObject or campaigns array was undefined or empty #####");
+    return ''; // skip if no valid campaigns array
+  }
+  let timeline = '';
+  stateObject.campaigns.forEach((campaign, index) => {
+    const alignment = index % 2 === 0 ? 't-r' : 't-l';
+    timeline += `>> [!timeline|${alignment}] **${campaign.name}** *${campaign.start}-${campaign.end}*\n>> (info about this campaign)\n>\n`;
+  });
+  return timeline.trim();
+});
