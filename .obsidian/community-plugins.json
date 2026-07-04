@@ -19,7 +19,8 @@
   "obsidian-linter",
   "obsidian-table-to-csv-exporter",
   "js-engine",
-  "open-gate",
   "share-my-plugin-list",
-  "zoom-map"
+  "maps",
+  "zoom-map",
+  "open-gate"
 ]

@@ -1,9 +1,9 @@
 {
-  "jsonName": "@{return `${dataRoot.importInfo.thisCampaign}/05-Atlas/${dataRoot.info.mapName}/Markets/${(this.centerBurgId > 0) && dataRoot.pack.burgs.find(burg => burg.i === this.centerBurgId)?.name || 'Unknown' }`}",
+  "jsonName": "@{return `${dataRoot.importInfo.thisCampaign}/05-Atlas/${dataRoot.info.mapName}/Cultures/_NameBases/${this.name}`}",
   "jsonNamePath": true,
   "jsonUrl": "",
   "folderName": "01-Campaigns",
-  "topField": "pack.markets",
+  "topField": "nameBases",
   "notePrefix": "",
   "noteSuffix": "",
   "handleExistingNote": 1,
@@ -11,5 +11,5 @@
   "multipleJSON": false,
   "uniqueNames": true,
   "batchFile": {},
-  "batchStep": "Markets"
+  "batchStep": "NameBases"
 }

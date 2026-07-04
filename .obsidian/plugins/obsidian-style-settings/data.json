@@ -1,5 +1,5 @@
 {
-  "ITS@@select": "dnd",
+  "ITS@@select": "wotc-beyond",
   "ITS@@radius-s": 4,
   "ITS@@slrvb-b": false,
   "ITS@@s-d": false,
@@ -10,5 +10,9 @@
   "ITS@@its-d": false,
   "ITS@@writing-document": false,
   "ITS@@paper": false,
-  "ITS@@file-line-width": 700
+  "ITS@@file-line-width": 700,
+  "ITS@@ITS-Table-Alt-Colors": "tables-alt-original",
+  "ITS@@ITS-Table-Styling": "tables-borders",
+  "ITS@@tables-center": true,
+  "ITS@@heading-indicator": false
 }

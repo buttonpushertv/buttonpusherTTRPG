@@ -1,4 +1,16 @@
 {
   "uuid": "mpmezeond7eptixyvth9p",
-  "gates": {}
+  "gates": {
+    "aHR0cHM6Ly9hemdhYXIuZ2l0aHViLmlvL0ZhbnRhc3ktTWFwLUdlbmVyYXRvcg==": {
+      "id": "aHR0cHM6Ly9hemdhYXIuZ2l0aHViLmlvL0ZhbnRhc3ktTWFwLUdlbmVyYXRvcg==",
+      "title": "FMG",
+      "icon": "<svg viewBox=\"0 0 100 100\"><image href=\"https://icon.horse/icon/azgaar.github.io\" height=\"100\" width=\"100\" /></svg>",
+      "hasRibbon": true,
+      "position": "right",
+      "profileKey": "open-gate",
+      "url": "https://azgaar.github.io/Fantasy-Map-Generator",
+      "zoomFactor": 1,
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+    }
+  }
 }
