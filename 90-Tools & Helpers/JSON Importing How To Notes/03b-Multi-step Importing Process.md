@@ -155,7 +155,7 @@ To import the States Notes, here are the settings for the "Import JSON/CSV dialo
 ##### States Note Name Code
 Copy/paste _exactly_ as is:
 ```js
-@{return `${dataRoot.importInfo.thisCampaign}/05-Atlas/${dataRoot.info.mapName}/States/${this.i}-${this.name}/${this.name}`}
+@{return `${dataRoot.importInfo.thisCampaign}/05-Atlas/${dataRoot.info.mapName}/States/${this.name}/${this.name}`}
 ```
 
 
@@ -182,11 +182,10 @@ To import the Provinces Notes, here are the settings for the "Import JSON/CSV di
 | Name of Destination Folder in Vault|**_01-Campaigns/_** (sub-folders for each State's Provinces will be created as `id-fullProvinceName` within the respective State subfolder)|
 
 ##### Provinces Note Name Code
-Copy/paste *exactly* as is:
+Copy/paste *exactly* as is
 ```js
-@{return `${dataRoot.importInfo.thisCampaign}/05-Atlas/${dataRoot.info.mapName}/States/${this.state}-${(this.state > 0) && dataRoot.pack.states.find(state => state.i === this.state)?.name || "Unknown" }/${this.i}-${(this.i > 0) && this.fullName || "Unknown"}/${this.fullName}`}
+@{return `${dataRoot.importInfo.thisCampaign}/05-Atlas/${dataRoot.info.mapName}/States/${(this.state > 0) && dataRoot.pack.states.find(state => state.i === this.state)?.name || 'Unknown' }/Provinces/${(this.i > 0) && this.fullName || 'Unknown'}/${this.fullName}`}
 ```
-
 ### Burgs
 The Burgs Notes pass will create individual notes for each Burg in the JSON file. 
 
@@ -198,7 +197,7 @@ To import the Burg Notes, here are the settings for the "Import JSON/CSV dialog"
 | Choose JSON/CSV file|**_(FMG Full JSON file)_** |
 | Specify URL to JSON data|**_Leave blank_** |
 | Data contains multiple JSON objects|**_Leave blank_** |
-| Choose TEMPLATE file|**_[[Burgs-FMG-JSON Handlerbars Template]]_** |
+| Choose TEMPLATE file|**_[[Burgs-FMG-JSON Handlebars Template]]_** |
 | Choose HELPERS file|**__Helpers-FMG-JSON.js_** |
 | Field containing the data|**_pack.burgs_** |
 | Each subfield is a separate note|**_unchecked_** |
@@ -212,9 +211,8 @@ To import the Burg Notes, here are the settings for the "Import JSON/CSV dialog"
 ##### Burgs Note Name Code
 Copy/paste *exactly* as is:
 ```js
-@{return `${dataRoot.importInfo.thisCampaign}/05-Atlas/${dataRoot.info.mapName}/States/${this.state}-${(this.state > 0) && dataRoot.pack.states.find(state => state.i === this.state)?.name || "Unknown" }/${dataRoot.pack.cells.find(c => c.i === this.cell)?.province}-${dataRoot.pack.provinces.find(p => p.i === dataRoot.pack.cells.find(c => c.i === this.cell)?.province)?.fullName}/${this.name}`}
+@{return `${dataRoot.importInfo.thisCampaign}/05-Atlas/${dataRoot.info.mapName}/States/${(this.state > 0) && dataRoot.pack.states.find(state => state.i === this.state)?.name || 'Unknown' }/Provinces/${dataRoot.pack.provinces.find(p => p.i === dataRoot.pack.cells.find(c => c.i === this.cell)?.province)?.fullName}/Burgs/${this.name}`}
 ```
-
 ### Cultures 
 The Cultures Notes pass will create individual notes for each Culture in the JSON file. 
 
@@ -258,7 +256,7 @@ To import the Religion Notes, here are the settings for the "Import JSON/CSV dia
 | Data contains multiple JSON objects|**_Leave blank_** |
 | Choose TEMPLATE file|**_[[Religions-FMG-JSON Handlebars Template]]_** |
 | Choose HELPERS file|**__Helpers-FMG-JSON.js_** |
-| Field containing the data|**_pack.reilgions_** |
+| Field containing the data|**_pack.religions_** |
 | Each subfield is a separate note|**_unchecked_** |
 | Field to use as Note name|**_**_(see code block below - must be copy/pasted *exactly* as is)_**_** |
 | Add suffix on duplicate note names|**_checked_** |
@@ -273,6 +271,36 @@ Copy/paste _exactly_ as is:
 ```js
 @{return `${dataRoot.importInfo.thisCampaign}/05-Atlas/${dataRoot.info.mapName}/Religions/${this.name}`}
 ```
+
+### Markets 
+The Markets Notes pass will create individual notes for each Market in the JSON file, along with a table of the goods each specific market has (stock & price).
+
+To import the Market Notes, here are the settings for the "Import JSON/CSV dialog":
+
+| Setting | Option to Choose |
+| ------- | ---------------- |
+|         |                  |
+| Choose JSON/CSV file|**_(FMG Full JSON file)_** |
+| Specify URL to JSON data|**_Leave blank_** |
+| Data contains multiple JSON objects|**_Leave blank_** |
+| Choose TEMPLATE file|**_[[Markets-FMG-JSON Handlebars Template]]_** |
+| Choose HELPERS file|**__Helpers-FMG-JSON.js_** |
+| Field containing the data|**_pack.markets_** |
+| Each subfield is a separate note|**_unchecked_** |
+| Field to use as Note name|**_**_(see code block below - must be copy/pasted *exactly* as is)_**_** |
+| Add suffix on duplicate note names|**_checked_** |
+| Note name prefix/suffix|**_leave both blank_** |
+| Allow paths in Note name|**_unchecked_**
+| How to Handle Existing Notes|**_REPLACE_** (see note above) |
+| Name of Destination Folder in Vault|**_01-Campaigns/** (sub-folder will be created)|
+
+##### Markets Note Name Code
+
+Copy/paste _exactly_ as is:
+```js
+@{return `${dataRoot.importInfo.thisCampaign}/05-Atlas/${dataRoot.info.mapName}/Markets/${(this.centerBurgId > 0) && dataRoot.pack.burgs.find(burg => burg.i === this.centerBurgId)?.name || 'Unknown' }`}
+```
+
 
 ### Atlas
 The Atlas Note pass will create a single note from multiple elements in the JSON file. This will contain tables of the States, Provinces, Burgs, Cultures, and Religions from the JSON data. They will be grouped by category and sorted, within their respective tables, by ID (the `{i}` element from each grouping within FMG JSON data).
@@ -305,4 +333,33 @@ To import the Atlas Note, here are the settings for the "Import JSON/CSV dialog"
 Copy/paste _exactly_ as is:
 ```js
 @{return `${dataRoot.importInfo.thisCampaign}/05-Atlas/${dataRoot.info.mapName}/${dataRoot.info.mapName}-Linked Atlas`}
+```
+
+### NameBases 
+These are the names used to create locations on the map. They are based on real world & fantasy languages. This import step will create a series of notes that convert the comma-separated text string into a roll table of the names, so you can make use of them throughout the vault. 
+
+To import the NameBase Notes, here are the settings for the "Import JSON/CSV dialog":
+
+| Setting                             | Option to Choose                                                   |
+| ----------------------------------- | ------------------------------------------------------------------ |
+|                                     |                                                                    |
+| Choose JSON/CSV file                | **_(FMG Full JSON file)_**                                         |
+| Specify URL to JSON data            | **_Leave blank_**                                                  |
+| Data contains multiple JSON objects | **_Leave blank_**                                                  |
+| Choose TEMPLATE file                | **_[[NameBase-FMG-JSON Handlebars Template]]_**                    |
+| Choose HELPERS file                 | **__Helpers-FMG-JSON.js_**                                         |
+| Field containing the data           | **_nameBases_**                                                    |
+| Each subfield is a separate note    | **_unchecked_**                                                    |
+| Field to use as Note name           | **_(see code block below - must be copy/pasted *exactly* as is)_** |
+| Add suffix on duplicate note names  | **_checked_**                                                      |
+| Note name prefix/suffix             | **_leave both blank_**                                             |
+| Allow paths in Note name            | **_unchecked_**                                                    |
+| How to Handle Existing Notes        | **_REPLACE_** (see note above)                                     |
+| Name of Destination Folder in Vault | **_01-Campaigns/_** (sub-folder will be created)                   |
+
+##### NameBases Note Name Code
+
+Copy/paste _exactly_ as is:
+```js
+@{return `${dataRoot.importInfo.thisCampaign}/05-Atlas/${dataRoot.info.mapName}/Cultures/_NameBases/${this.name}`}
 ```
