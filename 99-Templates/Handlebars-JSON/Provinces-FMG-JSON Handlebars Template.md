@@ -26,7 +26,7 @@ tags:
 - Province
 - {{@importDataRoot.importInfo.thisCampaignShortCode}}
 - {{@importDataRoot.info.mapName}}
-templateVersion: 7.0
+templateVersion: 7.3
 WBProgress: Imported
 ---
 
@@ -60,11 +60,11 @@ WBProgress: Imported
 
 %% During the import process, much of the data for the Leaflet fields should have been pulled in from the JSON. You will need to update the defaultZoom and (maybe) the coordinates values, but it should be pretty close - good enough to get a start with it. The goal is to cut down on the amount of manual effort you need to go through to pull your data in from the FMG JSON %%
 
-%%LeafletMapTOP%%
+%%LeafletMapTOP-
 
-> [!metadata|map]+ {{name}} - Province World Map
+> [!metadata|map]+ {{fullName}} - Province World Map
 > ```leaflet
-> id: Province-{{name}}
+> id: Province-{{name}}-{{i}}
 > image: [[{{@importDataRoot.info.mapName}} Provinces World Map.svg]]
 > bounds:
 > - [0,0]
@@ -83,7 +83,96 @@ WBProgress: Imported
 > ```
 >  [Link to {{fullName}} on FMG Map]({{@importDataRoot.importInfo.mapDropboxFMGLink}}&scale=3{{getFMGCellXY this.center @importDataRoot.pack.cells}})
 
-%%LeafletMapTAIL%%
+-LeafletMapTAIL%%
+
+%%TTRPGMapTOP%%
+
+> [!metadata|map]+ {{fullName}} Province Map
+> ```zoommap
+> imageBases:
+>   - path: {{@importDataRoot.importInfo.thisCampaignPath}}/98-{{@importDataRoot.importInfo.thisCampaign}} Assets/{{@importDataRoot.info.mapName}} Provinces World Map.svg
+> markerLayers:
+>   - Default
+>   - Capital
+> minZoom: 0.50
+> maxZoom: 8
+> wrap: false
+> responsive: false
+> width: 100%
+> height: 600px
+> resizable: false
+> resizeHandle: native
+> render: dom
+> align: center
+> id: map-{{name}}-{{i}}
+> view:
+>   zoom: 1.5
+>   centerX: {{getZoomMapPoleX this @importDataRoot.info}}
+>   centerY: {{getZoomMapPoleY this @importDataRoot.info}}
+> ```
+> [Link to {{name}} on FMG Map]({{@importDataRoot.importInfo.mapDropboxFMGLink}}&scale=3{{getFMGCellXY this.center @importDataRoot.pack.cells}})
+
+%%TTRPGMapTAIL%%
+
+%%
+ZOOMMAP-DATA id=map-{{name}}-{{i}}
+{
+  "size": {
+    "w": {{@importDataRoot.info.width}},
+    "h": {{@importDataRoot.info.height}}
+  },
+  "layers": [
+    {
+      "id": "default",
+      "name": "Default",
+      "visible": true,
+      "locked": false
+    },
+    {
+      "id": "capital",
+      "name": "Capital",
+      "visible": true,
+      "locked": true
+    }
+  ],
+  "markers": [
+    {
+      "type": "pin",
+      "id": "marker_{{"currentCapitalName"}}_{{burg}}",
+      "x": {{getZoomMapBurgX burg @importDataRoot.pack.burgs @importDataRoot.info}},
+      "y": {{getZoomMapBurgY burg @importDataRoot.pack.burgs @importDataRoot.info}},
+      "layer": "default",
+      "link": "{{"capitalPath"}}",
+      "iconKey": "pinRed",
+      "tooltip": "{{fullName}} Capital - {{"currentCapitalName"}}"
+    }
+  ],
+  "bases": [
+    {
+      "path": "{{@importDataRoot.importInfo.thisCampaignPath}}/98-{{@importDataRoot.importInfo.thisCampaign}} Assets/{{@importDataRoot.info.mapName}} Provinces World Map.svg"
+    }
+  ],
+  "overlays": [],
+  "activeBase": "{{@importDataRoot.importInfo.thisCampaignPath}}/98-{{@importDataRoot.importInfo.thisCampaign}} Assets/{{@importDataRoot.info.mapName}} Provinces World Map.svg",
+  "measurement": {
+    "displayUnit": "mi",
+    "scales": {},
+    "customUnitPxPerUnit": {},
+    "travelTimePresetIds": [],
+    "travelDaysEnabled": false
+  },
+  "pinSizeOverrides": {},
+  "grids": [],
+  "panClamp": false,
+  "drawLayers": [],
+  "drawings": [],
+  "textLayers": [],
+  "secondScreen": {
+    "showGrids": true
+  }
+}
+/ZOOMMAP-DATA
+%%
 
 ### Zones/Regions
 

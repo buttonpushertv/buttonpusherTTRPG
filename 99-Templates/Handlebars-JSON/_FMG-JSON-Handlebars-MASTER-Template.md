@@ -1,29 +1,28 @@
 {{#if (eq @importSettings.topField "")}}---
 aliases:
+- {{@importDataRoot.info.mapName}}
 campaign: {{@importDataRoot.importInfo.thisCampaign}}
 created: {{getDateTimestamp @importSettings}}
 cssclasses: sixty-pct-width
 mapName: {{@importDataRoot.info.mapName}}
+pronounced:
+shortDescription:
 tags:
 - linked-atlas
 - {{@importDataRoot.importInfo.thisCampaignShortCode}}
 - {{@importDataRoot.info.mapName}}
-templateVersion: 7.0
+templateVersion: 7.6
 WBProcess: FALSE
 ---
 
 # `=this.campaign` Linked Atlas
 [[{{@importDataRoot.importInfo.thisCampaignPath}}/{{@importDataRoot.importInfo.thisCampaign}} Home|{{@importDataRoot.importInfo.thisCampaign}} Home]] | [[{{@importDataRoot.importInfo.thisCampaign}}-Simple Atlas]]
 
-**(Edit this page in source mode to see comments about some manual edits that you may need to perform after the import is completed.)**
-
- %% Feel free to delete or comment the line above if you wish. See comments below for editing instructions. Use `find` to search for double percentage characters to find each of the comment sections. %%
-
-%% This Leaflet map block is created out of the elements added to the JSON file before import %%
-
-> [!metadata|map]+ {{name}} Map
+%%LeafletMapTOP-
+{{log "leaflet map section"}}
+> [!metadata|map]- {{@importDataRoot.info.mapName}} Map
 > ```leaflet
-> id: State-{{name}}
+> id: {{@importDataRoot.info.mapName}}-Atlas
 > image: [[{{@importDataRoot.info.mapName}} World Map.svg]]
 > bounds:
 > - [0,0]
@@ -38,15 +37,141 @@ WBProcess: FALSE
 > unit: {{@importDataRoot.settings.distanceUnit}}
 > scale: {{@importDataRoot.settings.distanceScale}}
 > darkMode: false
+> marker:
+{{#withAfter pack.states 1}}
+> - state,{{getPoleLeafletXY this @importDataRoot.info}},[[{{../importInfo.thisCampaignPath}}/05-Atlas/{{../info.mapName}}/States/{{name}}/{{name}}|{{name}}]], {{fullName}}
+> - capital,{{getLeafletBurgXY capital ../pack.burgs ../info}},[[{{getBurgFile capital ..}}|{{getBurgName capital ../pack.burgs}}]],{{name}} Capital
+{{/withAfter}}
 > ```
 > [Link to {{name}} on FMG Map]({{@importDataRoot.importInfo.mapDropboxFMGLink}})
 
+-LeafletMapTAIL%%
+
 %% If you created a Dropbox Link to your FMG map, you can save that into the Modded JSON file and it will appear in the link above. %%
 
+%%TTRPGMapTOP%%
+{{log "zoommap section"}}
+> [!metadata|map]+ {{@importDataRoot.info.mapName}} Map
+> ```zoommap
+> imageBases:
+>   - path: {{@importDataRoot.importInfo.thisCampaignPath}}/98-{{@importDataRoot.importInfo.thisCampaign}} Assets/{{@importDataRoot.info.mapName}} World Map.svg
+> markerLayers:
+>   - Default
+>   - Capital
+> minZoom: 0.50
+> maxZoom: 8
+> wrap: false
+> responsive: false
+> width: 100%
+> height: 800px
+> resizable: false
+> resizeHandle: native
+> render: dom
+> align: center
+> id: map-{{@importDataRoot.info.mapName}}-Atlas
+> view:
+>   zoom: 0.5
+>   centerX: 0.5
+>   centerY: 0.5
+> viewportFrame: 91-Assets/Frames/Paper Frame.webP
+> viewportFrameInsets:
+>   unit: framePx
+>   top: 15
+>   right: 15
+>   bottom: 15
+>   left: 15
+> ```
+> [Link to {{name}} on FMG Map]({{@importDataRoot.importInfo.mapDropboxFMGLink}})
 
-> [!callout]+ **States**
+%%TTRPGMapTAIL%%
+{{log "zoommap data section"}}
+%%
+ZOOMMAP-DATA id=map-{{@importDataRoot.info.mapName}}-Atlas
+{
+  "size": {
+    "w": {{@importDataRoot.info.width}},
+    "h": {{@importDataRoot.info.height}}
+  },
+  "layers": [
+    {
+      "id": "default",
+      "name": "Default",
+      "visible": true,
+      "locked": true
+    },
+    {
+      "id": "capital",
+      "name": "Capital",
+      "visible": true,
+      "locked": true
+    }
+  ],
+  "markers": [
+{{#withAfter pack.states 1}}   {
+      "type": "pin",
+      "id": "marker_{{getBurgNamePlusID capital @importDataRoot.pack.burgs}}",
+      "x": {{getZoomMapBurgX capital @importDataRoot.pack.burgs @importDataRoot.info}},
+      "y": {{getZoomMapBurgY capital @importDataRoot.pack.burgs @importDataRoot.info}},
+      "layer": "capital",
+      "link": "{{getcapitalFile capital i @importDataRoot}}",
+      "iconKey": "capital",
+      "minZoom": 0.75,
+      "tooltip": "{{name}} Capital - {{getBurgName capital @importDataRoot.pack.burgs}}"
+    },
+    {
+      "type": "pin",
+      "id": "marker_{{name}}_{{i}}",
+      "x": {{getZoomMapPoleX this @importDataRoot.info}},
+      "y": {{getZoomMapPoleY this @importDataRoot.info}},
+      "layer": "default",
+      "link": "{{getStateFile this @importDataRoot.info.mapName @importDataRoot.importInfo.thisCampaignPath}}",
+      "iconKey": "pinBlue",
+      "tooltip": "{{name}}"
+    },
+{{/withAfter}}   {
+      "type": "pin",
+      "id": "marker_l4135m",
+      "x": 0.9402756508422665,
+      "y": 0.9729111342943855,
+      "layer": "default",
+      "link": "",
+      "iconKey": "pinRed",
+      "tooltip": "",
+      "minZoom": 8,
+      "iconColor": "#8db2e2"
+    }
+  ],
+  "bases": [
+    {
+      "path": "{{@importDataRoot.importInfo.thisCampaignPath}}/98-{{@importDataRoot.importInfo.thisCampaign}} Assets/{{@importDataRoot.info.mapName}} World Map.svg"
+    }
+  ],
+  "overlays": [],
+  "activeBase": "{{@importDataRoot.importInfo.thisCampaignPath}}/98-{{@importDataRoot.importInfo.thisCampaign}} Assets/{{@importDataRoot.info.mapName}} World Map.svg",
+  "measurement": {
+    "displayUnit": "mi",
+    "scales": {},
+    "customUnitPxPerUnit": {},
+    "travelTimePresetIds": [],
+    "travelDaysEnabled": false
+  },
+  "pinSizeOverrides": {},
+  "grids": [],
+  "panClamp": false,
+  "drawLayers": [],
+  "drawings": [],
+  "textLayers": [],
+  "secondScreen": {
+    "showGrids": true
+  }
+}
+/ZOOMMAP-DATA
+%%
+
+> [!callout]- **States**
 > 
-> %% The "Neutral" item doesn't have a Capital because it is an unorganized territory. If there is a significant Burg or location in the Neutral territory, you can link to its note where the empty square brackets are.%%
+> > [!Warning]- Neutral State
+> > The "Neutral" item doesn't have a Capital because it is an unorganized territory. If there is a significant Burg or location in the Neutral territory, you can link to another note in that empty space, or you can delete the Neutral line item.
 >
 > | ID | State | Capital |
 > | -- | ----- | ------- |
@@ -54,29 +179,31 @@ WBProcess: FALSE
 > | {{i}} | [[{{../importInfo.thisCampaignPath}}/05-Atlas/{{../info.mapName}}/States/{{name}}/{{name}}\|{{name}}]] | [[{{getBurgName capital ../pack.burgs}}\|{{getBurgName capital ../pack.burgs}}]] |
 {{/each}}
 
-
+{{log "provinces section"}}
 > [!callout]- **Provinces**
-> 
->%% The Neutral peoples of this map have no State, hence the empty field. Also, any Capital fields that contain `[[]]` mean that that province does not have a Provincial Capital.%%
 >
->| ID  | Province | Capital | State |
+> > [!Warning]- Neutrals & Unspecified Provincial Capitals
+> > The Neutral peoples of this map have no State, hence there are no Provinces. Also, any Provincial Capital fields that contain `Unspecified` means that that province does not have a Provincial Capital.
+>
+>| ID  | Province | Prov. Capital | State |
 >| --- | -------- | --------- | ----- |
-{{#each pack.provinces}}
+{{#withAfter pack.provinces 1}}
 >| {{i}} | [[{{../importInfo.thisCampaignPath}}/05-Atlas/{{../info.mapName}}/States/{{getStateName state ../pack.states}}/Provinces/{{fullName}}/{{fullName}}\|{{fullName}}]] | [[{{../importInfo.thisCampaignPath}}/05-Atlas/{{../info.mapName}}/States/{{getStateName state ../pack.states}}/Provinces/{{fullName}}/Burgs/{{getBurgName burg ../pack.burgs}}\|{{getBurgName burg ../pack.burgs}}]] | [[{{../importInfo.thisCampaignPath}}/05-Atlas/{{../info.mapName}}/States/{{getStateName state ../pack/states}}/{{getStateName state ../pack.states}}\|{{getStateName state ../pack.states}}]] |
-{{/each}}
+{{/withAfter}}
 
 > [!callout]- **Burgs**
 > 
 > | ID  | Name | Population | State | Province | Group |
 > | --- | ---- | ---------- | ----- | -------- | ----- |
-{{#each pack.burgs}}
+{{#withAfter pack.burgs 1}}
 > | {{i}} | [[{{../importInfo.thisCampaignPath}}/05-Atlas/{{../info.mapName}}/States/{{getStateName state ../pack/states}}/Provinces/{{burgProvinceNameLookup cell ../pack.cells ../pack.provinces}}/Burgs/{{name}}\|{{name}}]] | {{calcPopulation population ../settings.populationRate}} | [[{{../importInfo.thisCampaignPath}}/05-Atlas/{{../info.mapName}}/States/{{getStateName state ../pack/states}}/{{getStateName state ../pack.states}}\|{{getStateName state ../pack.states}}]] | [[{{../importInfo.thisCampaignPath}}/05-Atlas/{{../info.mapName}}/States/{{getStateName state ../pack/states}}/Provinces/{{burgProvinceNameLookup cell ../pack.cells ../pack.provinces}}/{{burgProvinceNameLookup cell ../pack.cells ../pack.provinces}}\|{{burgProvinceNameLookup cell ../pack.cells ../pack.provinces}}]] | {{group}} |
-{{/each}}
+{{/withAfter}}
 
 
 > [!callout]- **Diplomacy**
 > 
-> %% The entries on the first line of this table are items related to the wars stories of this map. You can extract them and refactor those cells to access those element in a more useful way. Eventually, we'd like to figure out how those elements are used and refactor it in a similar fashion to how it use in a FMG map. %%
+> > [!Warning]- First Line Values
+> > The entries on the first line of this table are items related to the wars stories of this map. You can extract them and refactor those cells to access those elements in a more useful way. Eventually, we'd like to figure out how those elements are used and refactor it in a similar fashion to how it use in a FMG map.
 > 
 > | STATES {{#each pack.states}}| {{name}} {{/each}}|
 > | - | - {{#each pack.states}}| - {{/each}}|
@@ -87,7 +214,8 @@ WBProcess: FALSE
 
 > [!callout]- **Cultures**
 > 
-> %% The Wildlands have no culture because they are not organized into any kind of substantial societal structure. Feel free to construct sub-groups or animal societies on the Wildlands note to flesh out the non-traditional societal aspects of this map. %%
+> > [!Warning]- No Culture in Wildlands
+> > The Wildlands have no culture because they are not organized into any kind of substantial societal structure. Feel free to construct sub-groups or animal societies on the Wildlands note to flesh out the non-traditional societal aspects of this map.
 >
 > | ID  | Name | Code | Type |
 > | --- | ---- | -----| ---- |
@@ -98,9 +226,10 @@ WBProcess: FALSE
 
 > [!callout]- **Religions**
 > 
-> %% The Wildlands have no organized religion but, again feel free to make note of non-traditional spiritual practices that exist in the lands beyond traditional cultures and societies.
+> > [!Warning]- No Religion in Wildlands
+> > The Wildlands have no organized religion but, again feel free to make note of non-traditional spiritual practices that exist in the lands beyond traditional cultures and societies.
 > 
-> Also, Religions with "Unknown" Cultures are older religions that may not have many adherents or followers but are the parent religions to others.%%
+> Also, Religions with "Unknown" Cultures are older religions that may not have many adherents or followers but are possibly the parent religions to others.
 >
 > | ID  | Name | Code | Type | Form | Culture | Deity |
 > | --- | ---- | -----| ---- | ---- | ------- | ----- |
@@ -110,7 +239,7 @@ WBProcess: FALSE
 
 > [!callout]- Markets
 >
-> The Markets of {@importDataRoot.info.mapName}}
+> The Markets of {{@importDataRoot.info.mapName}}
 >
 > | ID  | Market Name | Central Burg |
 > | --- | ----------- | ------------ |
@@ -169,7 +298,37 @@ WBProcess: FALSE
 > | ----- | ------ | ----- | ----------- | ------- | ------- | ---------- |
 {{#each @importDataRoot.settings.options.burgs}}
 > | {{name}} | {{active}} | {{order}} | {{showBurgPreview}} | {{preview}} | {{min}} | {{max}} | {{percentile}} |
-{{/each}}{{/if}}{{#if (eq @importSettings.topField "pack.states")}}---
+{{/each}}
+
+> [!metadata|metadata]- Metadata & Page Controls
+>> [!metadata|metadataoption]- System
+>> #### System
+>>  |
+>> ---|---|
+>> **Tags** | `INPUT[Tags][inlineListSuggester:tags]` |
+>> **World Building Progress**| `INPUT[WBProgress][inlineSelect:wbprogress]`
+>>> [!note]- Tracking World Building Progress
+>>> Update the World Building Progress property as you update any info on the page. Your choices are `Imported`, `In Progress`, `Game-ready`, `Nearly Complete,` and `Done`.
+>>>
+>>> This allows sorting based on what has & hasn't had world building stuff done for it. There are Dataviews setup on the campaign home page that sort by these progress key words.
+>
+>> [!metadata|metadataoption]- Info
+>> #### Info
+>>  |
+>> ---|---|
+> **Pronounced** |  `INPUT[text:pronounced]`
+> **Aliases** | `INPUT[list:aliases]` |
+> **Short Description**|`INPUT[textArea:shortDescription]`
+>
+>> [!metadata|metadataoption]- Controls
+>> These buttons control various portions of this page. They only change things on this page.
+>> 
+>> #### Controls
+>>  |
+>> ---|---|
+>> **cssClass**|`INPUT[cssClass][inlineSelect:cssclasses]` |
+>> **Leaflet Map**| `BUTTON[hide_leaf_map]` - `BUTTON[show_leaf_map]`
+>> **TTRPG Tools Map**| `BUTTON[hide_ttrpg_map]` - `BUTTON[show_ttrpg_map]`{{/if}}{{#if (eq @importSettings.topField "pack.states")}}---
 alert: {{alert}}
 aliases: 
 - {{name}}
@@ -216,7 +375,7 @@ tags:
 - State
 - {{@importDataRoot.info.mapName}}
 - {{@importDataRoot.importInfo.thisCampaignShortCode}}
-templateVersion: 7.0
+templateVersion: 7.6
 type: {{type}}
 WBProcess: Imported
 ---
@@ -238,12 +397,6 @@ WBProcess: Imported
 >> **Area:** `=this.area` sq. miles
 >> **Dominant Geographic Feature:** `=this.type`
 >> **Capital:** `=link(this.capitalFile, this.capitalName)`
->> 
->> ```dataview
->> TABLE WITHOUT ID link(provinces) as "Provinces"
->> FROM ""
->> WHERE file.name = this.file.name
->> ```
 >
 >> ### Politics
 >> **Ruler(s):** `=link(this.rulers)`
@@ -260,9 +413,9 @@ WBProcess: Imported
 
 %% During the import process, much of the data for the Leaflet fields should have been pulled in from the JSON. You will need to update the defaultZoom and (maybe) the coordinates values, but it should be pretty close - good enough to get a start with it. The goal is to cut down on the amount of manual effort you need to go through to pull your data in from the FMG JSON %%
 
-%%LeafletMapTOP%%
+%%LeafletMapTOP-
 
-> [!metadata|map]+ {{name}} Map
+> [!metadata|map]- {{name}} Map
 > ```leaflet
 > id: State-{{name}}
 > image: [[{{@importDataRoot.info.mapName}} World Map.svg]]
@@ -278,12 +431,95 @@ WBProcess: Imported
 > zoomDelta: 0.25
 > unit: {{@importDataRoot.settings.distanceUnit}}
 > scale: {{@importDataRoot.settings.distanceScale}}
+> marker:
+> - capital,{{getLeafletBurgXY capital @importDataRoot.pack.burgs @importDataRoot.info}},[[{{"capitalPath"}}|{{currentCapitalName}}]],{{name}} Capital
 > darkMode: false
-> marker: capital,{{getLeafletBurgXY capital @importDataRoot.pack.burgs @importDataRoot.info}},[[{{"capitalPath"}}|{{currentCapitalName}}]],{{name}} Capital
 > ```
 > [Link to {{name}} on FMG Map]({{@importDataRoot.importInfo.mapDropboxFMGLink}}&scale=3{{getFMGCellXY this.center @importDataRoot.pack.cells}})
 
-%%LeafletMapTAIL%%
+-LeafletMapTAIL%%
+
+%%TTRPGMapTOP%%
+
+> [!metadata|map]+ {{name}} Map
+> ```zoommap
+> imageBases:
+>   - path: {{@importDataRoot.importInfo.thisCampaignPath}}/98-{{@importDataRoot.importInfo.thisCampaign}} Assets/{{@importDataRoot.info.mapName}} World Map.svg
+> markerLayers:
+>   - Default
+> minZoom: 0.50
+> maxZoom: 8
+> wrap: false
+> responsive: false
+> width: 100%
+> height: 600px
+> resizable: false
+> resizeHandle: native
+> render: dom
+> align: center
+> id: map-{{name}}-{{i}}
+> view:
+>   zoom: {{computeStateZoomLevel cells}}
+>   centerX: {{getZoomMapPoleX this @importDataRoot.info}}
+>   centerY: {{getZoomMapPoleY this @importDataRoot.info}}
+> ```
+> [Link to {{name}} on FMG Map]({{@importDataRoot.importInfo.mapDropboxFMGLink}}&scale=3{{getFMGCellXY this.center @importDataRoot.pack.cells}})
+
+%%TTRPGMapTAIL%%
+
+%%
+ZOOMMAP-DATA id=map-{{name}}-{{i}}
+{
+  "size": {
+    "w": {{@importDataRoot.info.width}},
+    "h": {{@importDataRoot.info.height}}
+  },
+  "layers": [
+    {
+      "id": "default",
+      "name": "Default",
+      "visible": true,
+      "locked": false
+    }
+  ],
+  "markers": [
+    {
+      "type": "pin",
+      "id": "marker_{{"currentCapitalName"}}_{{capital}}",
+      "x": {{getZoomMapBurgX capital @importDataRoot.pack.burgs @importDataRoot.info}},
+      "y": {{getZoomMapBurgY capital @importDataRoot.pack.burgs @importDataRoot.info}},
+      "layer": "default",
+      "link": "{{"capitalPath"}}",
+      "iconKey": "pinRed",
+      "tooltip": "{{name}} Capital - {{"currentCapitalName"}}"
+    }
+  ],
+  "bases": [
+    {
+      "path": "{{@importDataRoot.importInfo.thisCampaignPath}}/98-{{@importDataRoot.importInfo.thisCampaign}} Assets/{{@importDataRoot.info.mapName}} World Map.svg"
+    }
+  ],
+  "overlays": [],
+  "activeBase": "{{@importDataRoot.importInfo.thisCampaignPath}}/98-{{@importDataRoot.importInfo.thisCampaign}} Assets/{{@importDataRoot.info.mapName}} World Map.svg",
+  "measurement": {
+    "displayUnit": "mi",
+    "scales": {},
+    "customUnitPxPerUnit": {},
+    "travelTimePresetIds": [],
+    "travelDaysEnabled": false
+  },
+  "pinSizeOverrides": {},
+  "grids": [],
+  "panClamp": false,
+  "drawLayers": [],
+  "drawings": [],
+  "textLayers": [],
+  "secondScreen": {
+    "showGrids": true
+  }
+}
+/ZOOMMAP-DATA
+%%
 
 %% GENERAL NOTES GO HERE - free-form text or images %%
 ### Zones/Regions
@@ -388,7 +624,8 @@ Significant incidents in `=this.name`'s history:
 >>  |
 >> ---|---|
 >> **cssClass**|`INPUT[cssClass][inlineSelect:cssclasses]` |
->> **Leaflet Map**| `BUTTON[hide_leaf_map]` - `BUTTON[show_leaf_map]`{{/if}}{{#if (eq @importSettings.topField "pack.provinces")}}---
+>> **Leaflet Map**| `BUTTON[hide_leaf_map]` - `BUTTON[show_leaf_map]`
+>> **TTRPG Tools Map**| `BUTTON[hide_ttrpg_map]` - `BUTTON[show_ttrpg_map]`{{/if}}{{#if (eq @importSettings.topField "pack.provinces")}}---
 aliases:
 - {{name}}
 burg: {{burg}}
@@ -416,7 +653,7 @@ tags:
 - Province
 - {{@importDataRoot.importInfo.thisCampaignShortCode}}
 - {{@importDataRoot.info.mapName}}
-templateVersion: 7.0
+templateVersion: 7.3
 WBProgress: Imported
 ---
 
@@ -450,11 +687,11 @@ WBProgress: Imported
 
 %% During the import process, much of the data for the Leaflet fields should have been pulled in from the JSON. You will need to update the defaultZoom and (maybe) the coordinates values, but it should be pretty close - good enough to get a start with it. The goal is to cut down on the amount of manual effort you need to go through to pull your data in from the FMG JSON %%
 
-%%LeafletMapTOP%%
+%%LeafletMapTOP-
 
-> [!metadata|map]+ {{name}} - Province World Map
+> [!metadata|map]+ {{fullName}} - Province World Map
 > ```leaflet
-> id: Province-{{name}}
+> id: Province-{{name}}-{{i}}
 > image: [[{{@importDataRoot.info.mapName}} Provinces World Map.svg]]
 > bounds:
 > - [0,0]
@@ -473,7 +710,96 @@ WBProgress: Imported
 > ```
 >  [Link to {{fullName}} on FMG Map]({{@importDataRoot.importInfo.mapDropboxFMGLink}}&scale=3{{getFMGCellXY this.center @importDataRoot.pack.cells}})
 
-%%LeafletMapTAIL%%
+-LeafletMapTAIL%%
+
+%%TTRPGMapTOP%%
+
+> [!metadata|map]+ {{fullName}} Province Map
+> ```zoommap
+> imageBases:
+>   - path: {{@importDataRoot.importInfo.thisCampaignPath}}/98-{{@importDataRoot.importInfo.thisCampaign}} Assets/{{@importDataRoot.info.mapName}} Provinces World Map.svg
+> markerLayers:
+>   - Default
+>   - Capital
+> minZoom: 0.50
+> maxZoom: 8
+> wrap: false
+> responsive: false
+> width: 100%
+> height: 600px
+> resizable: false
+> resizeHandle: native
+> render: dom
+> align: center
+> id: map-{{name}}-{{i}}
+> view:
+>   zoom: 1.5
+>   centerX: {{getZoomMapPoleX this @importDataRoot.info}}
+>   centerY: {{getZoomMapPoleY this @importDataRoot.info}}
+> ```
+> [Link to {{name}} on FMG Map]({{@importDataRoot.importInfo.mapDropboxFMGLink}}&scale=3{{getFMGCellXY this.center @importDataRoot.pack.cells}})
+
+%%TTRPGMapTAIL%%
+
+%%
+ZOOMMAP-DATA id=map-{{name}}-{{i}}
+{
+  "size": {
+    "w": {{@importDataRoot.info.width}},
+    "h": {{@importDataRoot.info.height}}
+  },
+  "layers": [
+    {
+      "id": "default",
+      "name": "Default",
+      "visible": true,
+      "locked": false
+    },
+    {
+      "id": "capital",
+      "name": "Capital",
+      "visible": true,
+      "locked": true
+    }
+  ],
+  "markers": [
+    {
+      "type": "pin",
+      "id": "marker_{{"currentCapitalName"}}_{{burg}}",
+      "x": {{getZoomMapBurgX burg @importDataRoot.pack.burgs @importDataRoot.info}},
+      "y": {{getZoomMapBurgY burg @importDataRoot.pack.burgs @importDataRoot.info}},
+      "layer": "default",
+      "link": "{{"capitalPath"}}",
+      "iconKey": "pinRed",
+      "tooltip": "{{fullName}} Capital - {{"currentCapitalName"}}"
+    }
+  ],
+  "bases": [
+    {
+      "path": "{{@importDataRoot.importInfo.thisCampaignPath}}/98-{{@importDataRoot.importInfo.thisCampaign}} Assets/{{@importDataRoot.info.mapName}} Provinces World Map.svg"
+    }
+  ],
+  "overlays": [],
+  "activeBase": "{{@importDataRoot.importInfo.thisCampaignPath}}/98-{{@importDataRoot.importInfo.thisCampaign}} Assets/{{@importDataRoot.info.mapName}} Provinces World Map.svg",
+  "measurement": {
+    "displayUnit": "mi",
+    "scales": {},
+    "customUnitPxPerUnit": {},
+    "travelTimePresetIds": [],
+    "travelDaysEnabled": false
+  },
+  "pinSizeOverrides": {},
+  "grids": [],
+  "panClamp": false,
+  "drawLayers": [],
+  "drawings": [],
+  "textLayers": [],
+  "secondScreen": {
+    "showGrids": true
+  }
+}
+/ZOOMMAP-DATA
+%%
 
 ### Zones/Regions
 
@@ -543,6 +869,7 @@ WBProgress: Imported
 >> **Leaflet Map**| `BUTTON[hide_leaf_map]` - `BUTTON[show_leaf_map]`{{/if}}{{#if (eq @importSettings.topField "pack.burgs")}}---
 aliases:
 - {{name}}
+- {{name}}-{{i}}
 burgMapLink: {{getBurgMapLink this @importDataRoot.info.seed @importDataRoot.pack.cells @importDataRoot.pack.routes @importDataRoot.settings @importDataRoot.grid}}
 burgName: {{name}}
 burgNameID: {{name}}-{{i}}
@@ -584,7 +911,7 @@ tags:
 temple: {{temple}}
 temperature: {{getTemperature this @importDataRoot}}
 temperatureLikeness: {{getTemperatureLikeness this @importDataRoot}}
-templateVersion: 7.2
+templateVersion: 7.4
 treasury: {{treasury}}
 type: {{type}}
 walls: {{walls}}
@@ -626,6 +953,19 @@ marker: burg,{{getLeafletBurgXY this.i @importDataRoot.pack.burgs @importDataRoo
 
 ---
 
+%%WebMapTOP%%
+
+> [!metadata]+ Burg Map (Live from Web)
+> ```custom-frames
+> frame: Watabou-Procgen Arcana
+> style: height: 1000px;
+> urlSuffix: {{getBurgMapLink this @importDataRoot.info.seed @importDataRoot.pack.cells @importDataRoot.pack.cells @importDataRoot.settings @importDataRoot.grid}}
+> ```
+>
+>  `=elink(this.burgMapLink,"Visit Burg Map on MCFG")` | [Link to {{name}} on FMG Map]({{@importDataRoot.importInfo.mapDropboxFMGLink}}&scale=6{{getFMGCellXY this.cell @importDataRoot.pack.cells}}) | Download Helper Link: `BUTTON[mapLink-to-download]`
+
+%%WebMapTAIL%%
+
 %% If you want to place the image for the Burg in the Map(Interactive) window below, you can use Fantasy Map Generator's link to Watabou's Fantasy City or Village Generator - see the `infobox` link or the `burgMapLink` URL up in the properties of this note. You can save the map image somewhere in the vault (`01-Campaign/{{@importDataRoot.importInfo.thisCampaign}}/98-{{@importDataRoot.importInfo.thisCampaign}} Assets`, for instance) and it will show up in this window. The name for this image is pre-populated with info from the JSON Import. The filename should be the Burg's id value and the Burg's burgName - both available up in the frontmatter.
 
 You may also use the Meta-Bind button at the bottom of the callout to open the burgMapLink in a browser window and save it there. On clicking that button, you will open the Burg's URL (City or Village) and then it will set this Burg's index and name on the clipboard like this: {id}-{burgName} - you can then just paste that in to the file name field of the save file dialog window, once you navigate to the vault folder you want to save them into.
@@ -657,18 +997,75 @@ There is an elaborate method (see [[JSON Import How To#Wrangling FMG Burg Maps]]
 
 %% City Maps may need Scale adjusting - see `unit: feet` line above in Leaflet block (around line 80-81) The `scale` setting of `1` is arbitrary. It seems to work for the Burg maps - City or Village. By default the CityGen maps will likely have the `scale bar` visible. I recommend hiding it. The City Gen uses meters. The Village Gen has no scale defined. Once you hide it in the CityGen Settings, it should stay hidden for several visits to these maps.%%
 
-%%WebMapTOP%%
+%%TTRPGMapTOP%%
 
-> [!metadata]+ Burg Map (Live from Web)
-> ```custom-frames
-> frame: Watabou-Procgen Arcana
-> style: height: 1000px;
-> urlSuffix: {{getBurgMapLink this @importDataRoot.info.seed @importDataRoot.pack.cells @importDataRoot.pack.cells @importDataRoot.settings @importDataRoot.grid}}
+> [!metadata|map]+ {{name}} Burg Map
+> ```zoommap
+> imageBases:
+>   - path: {{@importDataRoot.importInfo.thisCampaignPath}}/98-{{@importDataRoot.importInfo.thisCampaign}} Assets/burg-maps/{{name}}-{{i}}.png
+> markerLayers:
+>   - Default
+> minZoom: 0.50
+> maxZoom: 8
+> wrap: false
+> responsive: false
+> width: 100%
+> height: 600px
+> resizable: false
+> resizeHandle: native
+> render: dom
+> align: center
+> id: map-{{name}}-{{i}}
+> view:
+>   zoom: .5
+>   centerX: .5
+>   centerY: .5
 > ```
->
->  `=elink(this.burgMapLink,"Visit Burg Map on MCFG")` | [Link to {{name}} on FMG Map]({{@importDataRoot.importInfo.mapDropboxFMGLink}}&scale=6{{getFMGCellXY this.cell @importDataRoot.pack.cells}}) | Download Helper Link: `BUTTON[mapLink-to-download]`
+> [Link to {{name}} on FMG Map]({{@importDataRoot.importInfo.mapDropboxFMGLink}}&scale=3{{getFMGCellXY this.center @importDataRoot.pack.cells}})
 
-%%WebMapTAIL%%
+%%TTRPGMapTAIL%%
+
+%%
+ZOOMMAP-DATA id=map-{{name}}-{{i}}
+{
+  "layers": [
+    {
+      "id": "default",
+      "name": "Default",
+      "visible": true,
+      "locked": false
+    }
+  ],
+  "markers": [
+    {
+    }
+  ],
+  "bases": [
+    {
+      "path": "{{@importDataRoot.importInfo.thisCampaignPath}}/98-{{@importDataRoot.importInfo.thisCampaign}} Assets/burg-maps/{{name}}-{{i}}.png"
+    }
+  ],
+  "overlays": [],
+  "activeBase": "{{@importDataRoot.importInfo.thisCampaignPath}}/98-{{@importDataRoot.importInfo.thisCampaign}} Assets/burg-maps/{{name}}-{{i}}.png",
+  "measurement": {
+    "displayUnit": "m",
+    "scales": {},
+    "customUnitPxPerUnit": {},
+    "travelTimePresetIds": [],
+    "travelDaysEnabled": false
+  },
+  "pinSizeOverrides": {},
+  "grids": [],
+  "panClamp": false,
+  "drawLayers": [],
+  "drawings": [],
+  "textLayers": [],
+  "secondScreen": {
+    "showGrids": true
+  }
+}
+/ZOOMMAP-DATA
+%%
 
 ### Zones/Regions/Neighborhoods
 Below are any notable zones or regions within `=this.burgName`
@@ -759,9 +1156,10 @@ action:
 >> #### Controls
 >>  |
 >> ---|---|
->> **cssClass**|`INPUT[cssClass][inlineSelect:cssclasses]` |
->> Leaflet Map| `BUTTON[hide_leaf_map]` - `BUTTON[show_leaf_map]`
->> Interactive Map | `BUTTON[hide_web_map]` - `BUTTON[show_web_map]`{{/if}}{{#if (eq @importSettings.topField "pack.cultures")}}---
+>> **cssClass** |`INPUT[cssClass][inlineSelect:cssclasses]` |
+>> **Leaflet Map** | `BUTTON[hide_leaf_map]` - `BUTTON[show_leaf_map]`
+>> **TTRPG Tools Map** | `BUTTON[hide_ttrpg_map]` - `BUTTON[show_ttrpg_map]`
+>> **Interactive Map** | `BUTTON[hide_web_map]` - `BUTTON[show_web_map]`{{/if}}{{#if (eq @importSettings.topField "pack.cultures")}}---
 aliases:
 campaign: "{{@importDataRoot.importInfo.thisCampaign}}"
 cultureName: "{{name}}"

@@ -45,7 +45,7 @@ tags:
 - State
 - {{@importDataRoot.info.mapName}}
 - {{@importDataRoot.importInfo.thisCampaignShortCode}}
-templateVersion: 7.0
+templateVersion: 7.6
 type: {{type}}
 WBProcess: Imported
 ---
@@ -67,12 +67,6 @@ WBProcess: Imported
 >> **Area:** `=this.area` sq. miles
 >> **Dominant Geographic Feature:** `=this.type`
 >> **Capital:** `=link(this.capitalFile, this.capitalName)`
->> 
->> ```dataview
->> TABLE WITHOUT ID link(provinces) as "Provinces"
->> FROM ""
->> WHERE file.name = this.file.name
->> ```
 >
 >> ### Politics
 >> **Ruler(s):** `=link(this.rulers)`
@@ -89,9 +83,9 @@ WBProcess: Imported
 
 %% During the import process, much of the data for the Leaflet fields should have been pulled in from the JSON. You will need to update the defaultZoom and (maybe) the coordinates values, but it should be pretty close - good enough to get a start with it. The goal is to cut down on the amount of manual effort you need to go through to pull your data in from the FMG JSON %%
 
-%%LeafletMapTOP%%
+%%LeafletMapTOP-
 
-> [!metadata|map]+ {{name}} Map
+> [!metadata|map]- {{name}} Map
 > ```leaflet
 > id: State-{{name}}
 > image: [[{{@importDataRoot.info.mapName}} World Map.svg]]
@@ -107,12 +101,95 @@ WBProcess: Imported
 > zoomDelta: 0.25
 > unit: {{@importDataRoot.settings.distanceUnit}}
 > scale: {{@importDataRoot.settings.distanceScale}}
+> marker:
+> - capital,{{getLeafletBurgXY capital @importDataRoot.pack.burgs @importDataRoot.info}},[[{{"capitalPath"}}|{{currentCapitalName}}]],{{name}} Capital
 > darkMode: false
-> marker: capital,{{getLeafletBurgXY capital @importDataRoot.pack.burgs @importDataRoot.info}},[[{{"capitalPath"}}|{{currentCapitalName}}]],{{name}} Capital
 > ```
 > [Link to {{name}} on FMG Map]({{@importDataRoot.importInfo.mapDropboxFMGLink}}&scale=3{{getFMGCellXY this.center @importDataRoot.pack.cells}})
 
-%%LeafletMapTAIL%%
+-LeafletMapTAIL%%
+
+%%TTRPGMapTOP%%
+
+> [!metadata|map]+ {{name}} Map
+> ```zoommap
+> imageBases:
+>   - path: {{@importDataRoot.importInfo.thisCampaignPath}}/98-{{@importDataRoot.importInfo.thisCampaign}} Assets/{{@importDataRoot.info.mapName}} World Map.svg
+> markerLayers:
+>   - Default
+> minZoom: 0.50
+> maxZoom: 8
+> wrap: false
+> responsive: false
+> width: 100%
+> height: 600px
+> resizable: false
+> resizeHandle: native
+> render: dom
+> align: center
+> id: map-{{name}}-{{i}}
+> view:
+>   zoom: {{computeStateZoomLevel cells}}
+>   centerX: {{getZoomMapPoleX this @importDataRoot.info}}
+>   centerY: {{getZoomMapPoleY this @importDataRoot.info}}
+> ```
+> [Link to {{name}} on FMG Map]({{@importDataRoot.importInfo.mapDropboxFMGLink}}&scale=3{{getFMGCellXY this.center @importDataRoot.pack.cells}})
+
+%%TTRPGMapTAIL%%
+
+%%
+ZOOMMAP-DATA id=map-{{name}}-{{i}}
+{
+  "size": {
+    "w": {{@importDataRoot.info.width}},
+    "h": {{@importDataRoot.info.height}}
+  },
+  "layers": [
+    {
+      "id": "default",
+      "name": "Default",
+      "visible": true,
+      "locked": false
+    }
+  ],
+  "markers": [
+    {
+      "type": "pin",
+      "id": "marker_{{"currentCapitalName"}}_{{capital}}",
+      "x": {{getZoomMapBurgX capital @importDataRoot.pack.burgs @importDataRoot.info}},
+      "y": {{getZoomMapBurgY capital @importDataRoot.pack.burgs @importDataRoot.info}},
+      "layer": "default",
+      "link": "{{"capitalPath"}}",
+      "iconKey": "pinRed",
+      "tooltip": "{{name}} Capital - {{"currentCapitalName"}}"
+    }
+  ],
+  "bases": [
+    {
+      "path": "{{@importDataRoot.importInfo.thisCampaignPath}}/98-{{@importDataRoot.importInfo.thisCampaign}} Assets/{{@importDataRoot.info.mapName}} World Map.svg"
+    }
+  ],
+  "overlays": [],
+  "activeBase": "{{@importDataRoot.importInfo.thisCampaignPath}}/98-{{@importDataRoot.importInfo.thisCampaign}} Assets/{{@importDataRoot.info.mapName}} World Map.svg",
+  "measurement": {
+    "displayUnit": "mi",
+    "scales": {},
+    "customUnitPxPerUnit": {},
+    "travelTimePresetIds": [],
+    "travelDaysEnabled": false
+  },
+  "pinSizeOverrides": {},
+  "grids": [],
+  "panClamp": false,
+  "drawLayers": [],
+  "drawings": [],
+  "textLayers": [],
+  "secondScreen": {
+    "showGrids": true
+  }
+}
+/ZOOMMAP-DATA
+%%
 
 %% GENERAL NOTES GO HERE - free-form text or images %%
 ### Zones/Regions
@@ -218,3 +295,5 @@ Significant incidents in `=this.name`'s history:
 >> ---|---|
 >> **cssClass**|`INPUT[cssClass][inlineSelect:cssclasses]` |
 >> **Leaflet Map**| `BUTTON[hide_leaf_map]` - `BUTTON[show_leaf_map]`
+>> **TTRPG Tools Map**| `BUTTON[hide_ttrpg_map]` - `BUTTON[show_ttrpg_map]`
+

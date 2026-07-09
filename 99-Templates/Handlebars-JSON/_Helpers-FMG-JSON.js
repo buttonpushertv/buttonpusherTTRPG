@@ -2,7 +2,7 @@
 /*
 (indicated by the 3-digit number at head of the line - for easy locating of them)
 001*  getCampaignHomeNote(importSettings)
-002   AVAILABLE
+002   debugTrace(flagText)
 003   getCampaignAtlasNote(importSettings)
 004*  getCampaignCalendar(importSettings)
 005   getDateTimestamp(importSettings)
@@ -26,14 +26,20 @@
 017   getReligionName(religionID,allReligions)
 018   getFMGCellXY(cellId, allCells)
 019   getLeafletBurgXY(burgId,allBurgs,mapInfo)
+019b  getZoomMapBurgXY(burgId,allBurgs,mapInfo)
 020   getCellLeafletXY(cellId, allCells, mapInfo)
 021   getPoleLeafletXY(state, mapInfo)
+021b  getPoleX(state, mapInfo)
+021c  getPoleY(state, mapInfo)
+021d  getZoomMapPoleX(state, mapInfo)
+021e  getZoomMapPoleY(state, mapInfo)
 022   getReligionFollowers(religion,allCells,allBurgs,mapSettings)
 023   getTemperature(burg,allData)
 024   getTemperatureLikeness(burg,allData)
 025   getProvinceIdFromCell(cell,allData)
 026   getcapitalFile(capitalID,allData)
 026b  getBurgFile(burgID,allData)
+026c  getStateFile(state,mapInfo)
 027   getStateFromBurg(burgId, allBurgs)
 028   getBurgX(burgId, allBurgs)
 029   getBurgY(burgId, allBurgs)
@@ -45,6 +51,7 @@
 035   getMarketGoodsTable(marketId, allMarkets, allGoods)
 036   getMarketGoodsTableByBurg(burgId, allBurgs, allMarkets, allGoods)
 037   buildTimelineFromStateCampaigns(stateObject)
+038   computeStateZoomLevel(stateCells)
 
 * - NEEDS TO BE REWORKED
 x - DEPRECATED - no longer used in the code
@@ -430,7 +437,7 @@ function isCrossroad(burgCell, allCells, allRoutes) {
       const Vurl = new URL("https://watabou.github.io/village-generator/");
       Vurl.search = new URLSearchParams({pop, name, seed: burgSeed, width, height, tags});
       const toReturn = Vurl.toString();
-      return toReturn.substring(25);
+      return toReturn;
     };
 
       // DEBUG SECTION - these are for debugging the VillageGeneratorLink function.
@@ -675,6 +682,41 @@ handlebars.registerHelper('getLeafletBurgXY', function(burgId,allBurgs,mapInfo) 
   return `${leafletValidYValue},${leafletValidXValue}`;
 });
 
+// 019b
+// Custom helper function to get ZoomMap Compatible Burg X Position
+// This is specifically coded to account for the differnce between Azgaar's FMG & TTRPG Maps (ZoomMap)
+handlebars.registerHelper('getZoomMapBurgX', function(burgId,allBurgs,mapInfo) {
+  // console.log("burgId:", burgId);
+  // console.log("allBurgs: ", allBurgs);
+  if (burgId === undefined || burgId === 0 ) {
+    console.log("##### getZoomMapBurgX - burgId was undefined or zero #####");
+    return ''; // skip if the element is undefined or zero
+  };
+  const burgFound = allBurgs.find(burg => burg.i === burgId);
+  // console.log("X-burgFound:", burgFound.name, "- mapInfo:", mapInfo);
+  const foundXValue = burgFound.x;
+  const zoomMapXValue = foundXValue / mapInfo.width;
+  return `${zoomMapXValue}`;
+});
+
+// 019c
+// Custom helper function to get Leaflet Compatible Burg X & Y Position
+// This is specifically coded to account for the differnce between Azgaar's FMG & TTRPG Maps (ZoomMap)
+handlebars.registerHelper('getZoomMapBurgY', function(burgId,allBurgs,mapInfo) {
+  // console.log("burgId:", burgId);
+  // console.log("allBurgs: ", allBurgs);
+  if (burgId === undefined || burgId === 0 ) {
+    console.log("##### getZoomMapBurgY - burgId was undefined or zero #####");
+    return ''; // skip if the element is undefined or zero
+  };
+  const burgFound = allBurgs.find(burg => burg.i === burgId);
+  // console.log("X-burgFound:", burgFound.name, "- mapInfo:", mapInfo);
+  const foundYValue = burgFound.y;
+  const zoomMapYValue = foundYValue / mapInfo.height;
+  // console.log(burgFound.name, "- leaflet X value: ", leafletValidXValue, " - Leaflet Y value:", leafletValidYValue);
+  return `${zoomMapYValue}`;
+});
+
 // 020
 // Custom Helper to derive the Leaflet Compatible X & Y Coords of a Cell
 handlebars.registerHelper('getCellLeafletXY', function(cellId, allCells, mapInfo) {
@@ -709,6 +751,66 @@ handlebars.registerHelper('getPoleLeafletXY', function(state, mapInfo) {
   const leafletH = (mapInfo.height - poleY).toFixed(3);
   // console.log(state.name,"-POLE- leafletH: ", leafletH, " -- leafletW: ", leafletW);
   return `${leafletH},${leafletW}`;
+});
+
+// 021b
+// Custom Helper to derive the Leaflet Compatible X & Y Coords of the "pole" of a State
+// the "pole" is the visual center - Concept Decsription: https://blog.mapbox.com/a-new-algorithm-for-finding-a-visual-center-of-a-polygon-7c77e6492fbc
+handlebars.registerHelper('getPoleX', function(state, mapInfo) {
+  // console.log("getPoleX - state: ",state);
+  if (state.pole === undefined || state.pole === 0 ) {
+    console.log("##### getPoleX - state.pole  was undefined or zero -");
+    // console.log("getPoleX - state: ", state);
+    // console.log("#####");
+    return ''; // skip if the element is undefined
+  };
+  const poleX = state.pole[0];
+  return `${poleX}`;
+});
+
+// 021c
+// Custom Helper to derive the Leaflet Compatible X & Y Coords of the "pole" of a State
+// the "pole" is the visual center - Concept Decsription: https://blog.mapbox.com/a-new-algorithm-for-finding-a-visual-center-of-a-polygon-7c77e6492fbc
+handlebars.registerHelper('getPoleY', function(state, mapInfo) {
+  // console.log("getPoleLeafletXY - state: ",state);
+  if (state.pole === undefined || state.pole === 0 ) {
+    console.log("##### getPoleLeafletXY - state.pole  was undefined or zero -");
+    // console.log("getPoleLeafletXY - state: ", state);
+    // console.log("#####");
+    return ''; // skip if the element is undefined
+  };
+  const poleY = state.pole[1];
+  return `${poleY}`;
+});
+
+// 021d
+// Custom Helper to derive the Leaflet Compatible X & Y Coords of the "pole" of a State
+// the "pole" is the visual center - Concept Decsription: https://blog.mapbox.com/a-new-algorithm-for-finding-a-visual-center-of-a-polygon-7c77e6492fbc
+handlebars.registerHelper('getZoomMapPoleX', function(state, mapInfo) {
+  // console.log("getPoleX - state: ",state);
+  if (state.pole === undefined || state.pole === 0 ) {
+    console.log("##### getPoleX - state.pole  was undefined or zero -");
+    // console.log("getPoleX - state: ", state);
+    // console.log("#####");
+    return ''; // skip if the element is undefined
+  };
+  const poleX = (state.pole[0] / mapInfo.width);
+  return poleX;
+});
+
+// 021e
+// Custom Helper to derive the Leaflet Compatible X & Y Coords of the "pole" of a State
+// the "pole" is the visual center - Concept Decsription: https://blog.mapbox.com/a-new-algorithm-for-finding-a-visual-center-of-a-polygon-7c77e6492fbc
+handlebars.registerHelper('getZoomMapPoleY', function(state, mapInfo) {
+  // console.log("getPoleLeafletXY - state: ",state);
+  if (state.pole === undefined || state.pole === 0 ) {
+    console.log("##### getPoleLeafletXY - state.pole  was undefined or zero -");
+    // console.log("getPoleLeafletXY - state: ", state);
+    // console.log("#####");
+    return ''; // skip if the element is undefined
+  };
+  const poleY = (state.pole[1] / mapInfo.height);
+  return poleY;
 });
 
 // 022
@@ -977,6 +1079,20 @@ handlebars.registerHelper('getBurgFile', function(burgID,allData) {
   return foundBurgNotePath;
 });
 
+// 026c
+// Custom Helper to get the path to get the path to a Burg note from the Burg's ID
+handlebars.registerHelper('getStateFile', function(stateObject,mapName,campaignPath) {
+  if (stateObject === undefined) {
+    console.log("##### getStateFile - stateObject was undefined or zero #####");
+    return ''; // skip if state value is zero or undefined
+  };
+  const stateName = stateObject.name;
+  // console.log("foundStateName: ", stateName);
+  const stateFilePath = `${campaignPath}/05-Atlas/${mapName}/States/${stateName}/${stateName}.md`;
+  // console.log("stateFilePath: ", stateFilePath);
+  return stateFilePath;
+});
+
 // 027
 // Get the Burg's State Name from the Burg's cell ID
 handlebars.registerHelper('getBurgStateName', function(burgId,allBurgs,allStates) {
@@ -1170,4 +1286,16 @@ handlebars.registerHelper('buildStateCampaignTimeline', function(stateObject) {
     timeline += `>> [!timeline|${alignment}] **${campaign.name}** *${campaign.start}-${campaign.end}*\n>> (info about this campaign)\n>\n`;
   });
   return timeline.trim();
+});
+
+// 038
+// Custom Helper to adjust the Zoom level for the ZoomMap view
+handlebars.registerHelper('computeStateZoomLevel', function(stateCells) {
+  if (!stateCells || stateCells.length === 0) {
+    console.log("##### computeStateZoomLevel - stateCells array was undefined or empty #####");
+    return ''; // skip if no valid stateCells array
+  };
+    const z = 15 / Math.sqrt(stateCells);
+    const adjustedZoomLevel = Math.round(Math.max(1.175, Math.min(4.0, z)) * 10000) / 10000;
+    return adjustedZoomLevel;
 });

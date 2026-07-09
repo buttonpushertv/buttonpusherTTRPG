@@ -1,6 +1,7 @@
 ---
 aliases:
 - {{name}}
+- {{name}}-{{i}}
 burgMapLink: {{getBurgMapLink this @importDataRoot.info.seed @importDataRoot.pack.cells @importDataRoot.pack.routes @importDataRoot.settings @importDataRoot.grid}}
 burgName: {{name}}
 burgNameID: {{name}}-{{i}}
@@ -42,7 +43,7 @@ tags:
 temple: {{temple}}
 temperature: {{getTemperature this @importDataRoot}}
 temperatureLikeness: {{getTemperatureLikeness this @importDataRoot}}
-templateVersion: 7.2
+templateVersion: 7.4
 treasury: {{treasury}}
 type: {{type}}
 walls: {{walls}}
@@ -84,6 +85,19 @@ marker: burg,{{getLeafletBurgXY this.i @importDataRoot.pack.burgs @importDataRoo
 
 ---
 
+%%WebMapTOP%%
+
+> [!metadata]+ Burg Map (Live from Web)
+> ```custom-frames
+> frame: Watabou-Procgen Arcana
+> style: height: 1000px;
+> urlSuffix: {{getBurgMapLink this @importDataRoot.info.seed @importDataRoot.pack.cells @importDataRoot.pack.cells @importDataRoot.settings @importDataRoot.grid}}
+> ```
+>
+>  `=elink(this.burgMapLink,"Visit Burg Map on MCFG")` | [Link to {{name}} on FMG Map]({{@importDataRoot.importInfo.mapDropboxFMGLink}}&scale=6{{getFMGCellXY this.cell @importDataRoot.pack.cells}}) | Download Helper Link: `BUTTON[mapLink-to-download]`
+
+%%WebMapTAIL%%
+
 %% If you want to place the image for the Burg in the Map(Interactive) window below, you can use Fantasy Map Generator's link to Watabou's Fantasy City or Village Generator - see the `infobox` link or the `burgMapLink` URL up in the properties of this note. You can save the map image somewhere in the vault (`01-Campaign/{{@importDataRoot.importInfo.thisCampaign}}/98-{{@importDataRoot.importInfo.thisCampaign}} Assets`, for instance) and it will show up in this window. The name for this image is pre-populated with info from the JSON Import. The filename should be the Burg's id value and the Burg's burgName - both available up in the frontmatter.
 
 You may also use the Meta-Bind button at the bottom of the callout to open the burgMapLink in a browser window and save it there. On clicking that button, you will open the Burg's URL (City or Village) and then it will set this Burg's index and name on the clipboard like this: {id}-{burgName} - you can then just paste that in to the file name field of the save file dialog window, once you navigate to the vault folder you want to save them into.
@@ -115,18 +129,75 @@ There is an elaborate method (see [[JSON Import How To#Wrangling FMG Burg Maps]]
 
 %% City Maps may need Scale adjusting - see `unit: feet` line above in Leaflet block (around line 80-81) The `scale` setting of `1` is arbitrary. It seems to work for the Burg maps - City or Village. By default the CityGen maps will likely have the `scale bar` visible. I recommend hiding it. The City Gen uses meters. The Village Gen has no scale defined. Once you hide it in the CityGen Settings, it should stay hidden for several visits to these maps.%%
 
-%%WebMapTOP%%
+%%TTRPGMapTOP%%
 
-> [!metadata]+ Burg Map (Live from Web)
-> ```custom-frames
-> frame: Watabou-Procgen Arcana
-> style: height: 1000px;
-> urlSuffix: {{getBurgMapLink this @importDataRoot.info.seed @importDataRoot.pack.cells @importDataRoot.pack.cells @importDataRoot.settings @importDataRoot.grid}}
+> [!metadata|map]+ {{name}} Burg Map
+> ```zoommap
+> imageBases:
+>   - path: {{@importDataRoot.importInfo.thisCampaignPath}}/98-{{@importDataRoot.importInfo.thisCampaign}} Assets/burg-maps/{{name}}-{{i}}.png
+> markerLayers:
+>   - Default
+> minZoom: 0.50
+> maxZoom: 8
+> wrap: false
+> responsive: false
+> width: 100%
+> height: 600px
+> resizable: false
+> resizeHandle: native
+> render: dom
+> align: center
+> id: map-{{name}}-{{i}}
+> view:
+>   zoom: .5
+>   centerX: .5
+>   centerY: .5
 > ```
->
->  `=elink(this.burgMapLink,"Visit Burg Map on MCFG")` | [Link to {{name}} on FMG Map]({{@importDataRoot.importInfo.mapDropboxFMGLink}}&scale=6{{getFMGCellXY this.cell @importDataRoot.pack.cells}}) | Download Helper Link: `BUTTON[mapLink-to-download]`
+> [Link to {{name}} on FMG Map]({{@importDataRoot.importInfo.mapDropboxFMGLink}}&scale=3{{getFMGCellXY this.center @importDataRoot.pack.cells}})
 
-%%WebMapTAIL%%
+%%TTRPGMapTAIL%%
+
+%%
+ZOOMMAP-DATA id=map-{{name}}-{{i}}
+{
+  "layers": [
+    {
+      "id": "default",
+      "name": "Default",
+      "visible": true,
+      "locked": false
+    }
+  ],
+  "markers": [
+    {
+    }
+  ],
+  "bases": [
+    {
+      "path": "{{@importDataRoot.importInfo.thisCampaignPath}}/98-{{@importDataRoot.importInfo.thisCampaign}} Assets/burg-maps/{{name}}-{{i}}.png"
+    }
+  ],
+  "overlays": [],
+  "activeBase": "{{@importDataRoot.importInfo.thisCampaignPath}}/98-{{@importDataRoot.importInfo.thisCampaign}} Assets/burg-maps/{{name}}-{{i}}.png",
+  "measurement": {
+    "displayUnit": "m",
+    "scales": {},
+    "customUnitPxPerUnit": {},
+    "travelTimePresetIds": [],
+    "travelDaysEnabled": false
+  },
+  "pinSizeOverrides": {},
+  "grids": [],
+  "panClamp": false,
+  "drawLayers": [],
+  "drawings": [],
+  "textLayers": [],
+  "secondScreen": {
+    "showGrids": true
+  }
+}
+/ZOOMMAP-DATA
+%%
 
 ### Zones/Regions/Neighborhoods
 Below are any notable zones or regions within `=this.burgName`
@@ -217,6 +288,7 @@ action:
 >> #### Controls
 >>  |
 >> ---|---|
->> **cssClass**|`INPUT[cssClass][inlineSelect:cssclasses]` |
->> Leaflet Map| `BUTTON[hide_leaf_map]` - `BUTTON[show_leaf_map]`
->> Interactive Map | `BUTTON[hide_web_map]` - `BUTTON[show_web_map]`
+>> **cssClass** |`INPUT[cssClass][inlineSelect:cssclasses]` |
+>> **Leaflet Map** | `BUTTON[hide_leaf_map]` - `BUTTON[show_leaf_map]`
+>> **TTRPG Tools Map** | `BUTTON[hide_ttrpg_map]` - `BUTTON[show_ttrpg_map]`
+>> **Interactive Map** | `BUTTON[hide_web_map]` - `BUTTON[show_web_map]`
