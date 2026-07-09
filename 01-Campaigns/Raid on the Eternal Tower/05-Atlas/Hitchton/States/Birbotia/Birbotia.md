@@ -10,7 +10,7 @@ capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Bir
 cells: 285
 center: 2559
 color: #e28edb
-created: 2026-07-04-08:22
+created: 2026-07-08-18:14
 cssclasses: sixty-pct-width
 culture: Penkneth
 emblem: Hitchton Emblem Birbotian Empire.png
@@ -58,7 +58,7 @@ tags:
 - State
 - Hitchton
 - roet
-templateVersion: 7.0
+templateVersion: 7.6
 type: Highland
 WBProcess: Imported
 ---
@@ -80,12 +80,6 @@ WBProcess: Imported
 >> **Area:** `=this.area` sq. miles
 >> **Dominant Geographic Feature:** `=this.type`
 >> **Capital:** `=link(this.capitalFile, this.capitalName)`
->> 
->> ```dataview
->> TABLE WITHOUT ID link(provinces) as "Provinces"
->> FROM ""
->> WHERE file.name = this.file.name
->> ```
 >
 >> ### Politics
 >> **Ruler(s):** `=link(this.rulers)`
@@ -102,9 +96,9 @@ WBProcess: Imported
 
 %% During the import process, much of the data for the Leaflet fields should have been pulled in from the JSON. You will need to update the defaultZoom and (maybe) the coordinates values, but it should be pretty close - good enough to get a start with it. The goal is to cut down on the amount of manual effort you need to go through to pull your data in from the FMG JSON %%
 
-%%LeafletMapTOP%%
+%%LeafletMapTOP-
 
-> [!metadata|map]+ Birbotia Map
+> [!metadata|map]- Birbotia Map
 > ```leaflet
 > id: State-Birbotia
 > image: [[Hitchton World Map.svg]]
@@ -120,12 +114,95 @@ WBProcess: Imported
 > zoomDelta: 0.25
 > unit: mi
 > scale: 5
+> marker:
+> - capital,693.500,1820.510,[[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Birbotia/Provinces/Presfield County/Burgs/Presfield|Presfield]],Birbotia Capital
 > darkMode: false
-> marker: capital,693.500,1820.510,[[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Birbotia/Provinces/Presfield County/Burgs/Presfield|Presfield]],Birbotia Capital
 > ```
 > [Link to Birbotia on FMG Map](https://azgaar.github.io/Fantasy-Map-Generator/?maplink=https://dl.dropboxusercontent.com/scl/fi/l7dpjh1fb1v053mc7izmw/Hitchton-2026-06-21-15-36.map?rlkey=zrhhfmejskvk1cpgiizmjbrfl&dl=0&scale=3&x=1820.51&y=624.5)
 
-%%LeafletMapTAIL%%
+-LeafletMapTAIL%%
+
+%%TTRPGMapTOP%%
+
+> [!metadata|map]+ Birbotia Map
+> ```zoommap
+> imageBases:
+>   - path: 01-Campaigns/Raid on the Eternal Tower/98-Raid on the Eternal Tower Assets/Hitchton World Map.svg
+> markerLayers:
+>   - Default
+> minZoom: 0.50
+> maxZoom: 8
+> wrap: false
+> responsive: false
+> width: 100%
+> height: 600px
+> resizable: false
+> resizeHandle: native
+> render: dom
+> align: center
+> id: map-Birbotia-19
+> view:
+>   zoom: 1.175
+>   centerX: 0.6711332312404288
+>   centerY: 0.44840667678300455
+> ```
+> [Link to Birbotia on FMG Map](https://azgaar.github.io/Fantasy-Map-Generator/?maplink=https://dl.dropboxusercontent.com/scl/fi/l7dpjh1fb1v053mc7izmw/Hitchton-2026-06-21-15-36.map?rlkey=zrhhfmejskvk1cpgiizmjbrfl&dl=0&scale=3&x=1820.51&y=624.5)
+
+%%TTRPGMapTAIL%%
+
+%%
+ZOOMMAP-DATA id=map-Birbotia-19
+{
+  "size": {
+    "w": 2612,
+    "h": 1318
+  },
+  "layers": [
+    {
+      "id": "default",
+      "name": "Default",
+      "visible": true,
+      "locked": false
+    }
+  ],
+  "markers": [
+    {
+      "type": "pin",
+      "id": "marker_Presfield_19",
+      "x": 0.69697932618683,
+      "y": 0.47382397572078905,
+      "layer": "default",
+      "link": "01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Birbotia/Provinces/Presfield County/Burgs/Presfield",
+      "iconKey": "pinRed",
+      "tooltip": "Birbotia Capital - Presfield"
+    }
+  ],
+  "bases": [
+    {
+      "path": "01-Campaigns/Raid on the Eternal Tower/98-Raid on the Eternal Tower Assets/Hitchton World Map.svg"
+    }
+  ],
+  "overlays": [],
+  "activeBase": "01-Campaigns/Raid on the Eternal Tower/98-Raid on the Eternal Tower Assets/Hitchton World Map.svg",
+  "measurement": {
+    "displayUnit": "mi",
+    "scales": {},
+    "customUnitPxPerUnit": {},
+    "travelTimePresetIds": [],
+    "travelDaysEnabled": false
+  },
+  "pinSizeOverrides": {},
+  "grids": [],
+  "panClamp": false,
+  "drawLayers": [],
+  "drawings": [],
+  "textLayers": [],
+  "secondScreen": {
+    "showGrids": true
+  }
+}
+/ZOOMMAP-DATA
+%%
 
 %% GENERAL NOTES GO HERE - free-form text or images %%
 ### Zones/Regions
@@ -264,3 +341,4 @@ Significant incidents in `=this.name`'s history:
 >> ---|---|
 >> **cssClass**|`INPUT[cssClass][inlineSelect:cssclasses]` |
 >> **Leaflet Map**| `BUTTON[hide_leaf_map]` - `BUTTON[show_leaf_map]`
+>> **TTRPG Tools Map**| `BUTTON[hide_ttrpg_map]` - `BUTTON[show_ttrpg_map]`

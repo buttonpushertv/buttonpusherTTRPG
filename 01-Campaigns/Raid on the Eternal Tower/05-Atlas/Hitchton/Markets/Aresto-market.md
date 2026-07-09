@@ -13,7 +13,7 @@ mapName: Hitchton
 colorHex: "#8af557"
 pronounced: 
 leaders:
-shortDescription: A short description of thie market.
+shortDescription: A short description of this market.
 tags:
 - Market
 - Aresto

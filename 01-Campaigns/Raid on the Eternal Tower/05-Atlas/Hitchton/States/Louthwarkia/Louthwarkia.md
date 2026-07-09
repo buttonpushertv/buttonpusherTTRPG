@@ -10,7 +10,7 @@ capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Lou
 cells: 20
 center: 3246
 color: #ffed35
-created: 2026-07-04-08:22
+created: 2026-07-08-18:14
 cssclasses: sixty-pct-width
 culture: Daling
 emblem: Hitchton Emblem Duchy of Louthwarkia.png
@@ -43,7 +43,7 @@ tags:
 - State
 - Hitchton
 - roet
-templateVersion: 7.0
+templateVersion: 7.6
 type: Naval
 WBProcess: Imported
 ---
@@ -65,12 +65,6 @@ WBProcess: Imported
 >> **Area:** `=this.area` sq. miles
 >> **Dominant Geographic Feature:** `=this.type`
 >> **Capital:** `=link(this.capitalFile, this.capitalName)`
->> 
->> ```dataview
->> TABLE WITHOUT ID link(provinces) as "Provinces"
->> FROM ""
->> WHERE file.name = this.file.name
->> ```
 >
 >> ### Politics
 >> **Ruler(s):** `=link(this.rulers)`
@@ -87,9 +81,9 @@ WBProcess: Imported
 
 %% During the import process, much of the data for the Leaflet fields should have been pulled in from the JSON. You will need to update the defaultZoom and (maybe) the coordinates values, but it should be pretty close - good enough to get a start with it. The goal is to cut down on the amount of manual effort you need to go through to pull your data in from the FMG JSON %%
 
-%%LeafletMapTOP%%
+%%LeafletMapTOP-
 
-> [!metadata|map]+ Louthwarkia Map
+> [!metadata|map]- Louthwarkia Map
 > ```leaflet
 > id: State-Louthwarkia
 > image: [[Hitchton World Map.svg]]
@@ -105,12 +99,95 @@ WBProcess: Imported
 > zoomDelta: 0.25
 > unit: mi
 > scale: 5
+> marker:
+> - capital,571.450,1886.680,[[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Louthwarkia/Provinces/Castfordia County/Burgs/Wacury|Wacury]],Louthwarkia Capital
 > darkMode: false
-> marker: capital,571.450,1886.680,[[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Louthwarkia/Provinces/Castfordia County/Burgs/Wacury|Wacury]],Louthwarkia Capital
 > ```
 > [Link to Louthwarkia on FMG Map](https://azgaar.github.io/Fantasy-Map-Generator/?maplink=https://dl.dropboxusercontent.com/scl/fi/l7dpjh1fb1v053mc7izmw/Hitchton-2026-06-21-15-36.map?rlkey=zrhhfmejskvk1cpgiizmjbrfl&dl=0&scale=3&x=1886.3&y=747.01)
 
-%%LeafletMapTAIL%%
+-LeafletMapTAIL%%
+
+%%TTRPGMapTOP%%
+
+> [!metadata|map]+ Louthwarkia Map
+> ```zoommap
+> imageBases:
+>   - path: 01-Campaigns/Raid on the Eternal Tower/98-Raid on the Eternal Tower Assets/Hitchton World Map.svg
+> markerLayers:
+>   - Default
+> minZoom: 0.50
+> maxZoom: 8
+> wrap: false
+> responsive: false
+> width: 100%
+> height: 600px
+> resizable: false
+> resizeHandle: native
+> render: dom
+> align: center
+> id: map-Louthwarkia-11
+> view:
+>   zoom: 3.3541
+>   centerX: 0.7078866768759571
+>   centerY: 0.5606980273141123
+> ```
+> [Link to Louthwarkia on FMG Map](https://azgaar.github.io/Fantasy-Map-Generator/?maplink=https://dl.dropboxusercontent.com/scl/fi/l7dpjh1fb1v053mc7izmw/Hitchton-2026-06-21-15-36.map?rlkey=zrhhfmejskvk1cpgiizmjbrfl&dl=0&scale=3&x=1886.3&y=747.01)
+
+%%TTRPGMapTAIL%%
+
+%%
+ZOOMMAP-DATA id=map-Louthwarkia-11
+{
+  "size": {
+    "w": 2612,
+    "h": 1318
+  },
+  "layers": [
+    {
+      "id": "default",
+      "name": "Default",
+      "visible": true,
+      "locked": false
+    }
+  ],
+  "markers": [
+    {
+      "type": "pin",
+      "id": "marker_Wacury_11",
+      "x": 0.722312404287902,
+      "y": 0.5664264036418816,
+      "layer": "default",
+      "link": "01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Louthwarkia/Provinces/Castfordia County/Burgs/Wacury",
+      "iconKey": "pinRed",
+      "tooltip": "Louthwarkia Capital - Wacury"
+    }
+  ],
+  "bases": [
+    {
+      "path": "01-Campaigns/Raid on the Eternal Tower/98-Raid on the Eternal Tower Assets/Hitchton World Map.svg"
+    }
+  ],
+  "overlays": [],
+  "activeBase": "01-Campaigns/Raid on the Eternal Tower/98-Raid on the Eternal Tower Assets/Hitchton World Map.svg",
+  "measurement": {
+    "displayUnit": "mi",
+    "scales": {},
+    "customUnitPxPerUnit": {},
+    "travelTimePresetIds": [],
+    "travelDaysEnabled": false
+  },
+  "pinSizeOverrides": {},
+  "grids": [],
+  "panClamp": false,
+  "drawLayers": [],
+  "drawings": [],
+  "textLayers": [],
+  "secondScreen": {
+    "showGrids": true
+  }
+}
+/ZOOMMAP-DATA
+%%
 
 %% GENERAL NOTES GO HERE - free-form text or images %%
 ### Zones/Regions
@@ -218,3 +295,4 @@ Significant incidents in `=this.name`'s history:
 >> ---|---|
 >> **cssClass**|`INPUT[cssClass][inlineSelect:cssclasses]` |
 >> **Leaflet Map**| `BUTTON[hide_leaf_map]` - `BUTTON[show_leaf_map]`
+>> **TTRPG Tools Map**| `BUTTON[hide_ttrpg_map]` - `BUTTON[show_ttrpg_map]`

@@ -5,7 +5,7 @@ campaign: "Raid on the Eternal Tower"
 center: 2972
 code: CS
 color: #fdb462
-created: 2026-07-04-08:22
+created: 2026-07-08-18:14
 cssclasses: sixty-pct-width
 culture: Chisbute
 deity: Draxteden, The Dark Wyvern

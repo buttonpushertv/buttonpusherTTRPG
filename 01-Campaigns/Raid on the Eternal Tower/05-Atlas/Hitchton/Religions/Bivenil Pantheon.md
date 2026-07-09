@@ -5,7 +5,7 @@ campaign: "Raid on the Eternal Tower"
 center: 903
 code: BP
 color: #ff8190
-created: 2026-07-04-08:22
+created: 2026-07-08-18:14
 cssclasses: sixty-pct-width
 culture: Bivenil
 deity: Wargin, The Old Roc

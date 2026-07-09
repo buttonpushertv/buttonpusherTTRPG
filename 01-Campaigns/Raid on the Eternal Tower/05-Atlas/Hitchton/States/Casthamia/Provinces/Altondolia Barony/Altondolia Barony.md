@@ -5,7 +5,7 @@ burg: 267
 campaign: Raid on the Eternal Tower
 center: 
 color: #b7adc2
-created: 2026-07-04-08:22
+created: 2026-07-08-18:14
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Altondolia Barony.png
 formName: Barony
@@ -26,7 +26,7 @@ tags:
 - Province
 - roet
 - Hitchton
-templateVersion: 7.0
+templateVersion: 7.3
 WBProgress: Imported
 ---
 
@@ -60,11 +60,11 @@ WBProgress: Imported
 
 %% During the import process, much of the data for the Leaflet fields should have been pulled in from the JSON. You will need to update the defaultZoom and (maybe) the coordinates values, but it should be pretty close - good enough to get a start with it. The goal is to cut down on the amount of manual effort you need to go through to pull your data in from the FMG JSON %%
 
-%%LeafletMapTOP%%
+%%LeafletMapTOP-
 
-> [!metadata|map]+ Altondolia - Province World Map
+> [!metadata|map]+ Altondolia Barony - Province World Map
 > ```leaflet
-> id: Province-Altondolia
+> id: Province-Altondolia-36
 > image: [[Hitchton Provinces World Map.svg]]
 > bounds:
 > - [0,0]
@@ -83,7 +83,96 @@ WBProgress: Imported
 > ```
 >  [Link to Altondolia Barony on FMG Map](https://azgaar.github.io/Fantasy-Map-Generator/?maplink=https://dl.dropboxusercontent.com/scl/fi/l7dpjh1fb1v053mc7izmw/Hitchton-2026-06-21-15-36.map?rlkey=zrhhfmejskvk1cpgiizmjbrfl&dl=0&scale=3&x=1532.75&y=642.68)
 
-%%LeafletMapTAIL%%
+-LeafletMapTAIL%%
+
+%%TTRPGMapTOP%%
+
+> [!metadata|map]+ Altondolia Barony Province Map
+> ```zoommap
+> imageBases:
+>   - path: 01-Campaigns/Raid on the Eternal Tower/98-Raid on the Eternal Tower Assets/Hitchton Provinces World Map.svg
+> markerLayers:
+>   - Default
+>   - Capital
+> minZoom: 0.50
+> maxZoom: 8
+> wrap: false
+> responsive: false
+> width: 100%
+> height: 600px
+> resizable: false
+> resizeHandle: native
+> render: dom
+> align: center
+> id: map-Altondolia-36
+> view:
+>   zoom: 1.5
+>   centerX: 0.5830781010719756
+>   centerY: 0.45220030349013657
+> ```
+> [Link to Altondolia on FMG Map](https://azgaar.github.io/Fantasy-Map-Generator/?maplink=https://dl.dropboxusercontent.com/scl/fi/l7dpjh1fb1v053mc7izmw/Hitchton-2026-06-21-15-36.map?rlkey=zrhhfmejskvk1cpgiizmjbrfl&dl=0&scale=3&x=1532.75&y=642.68)
+
+%%TTRPGMapTAIL%%
+
+%%
+ZOOMMAP-DATA id=map-Altondolia-36
+{
+  "size": {
+    "w": 2612,
+    "h": 1318
+  },
+  "layers": [
+    {
+      "id": "default",
+      "name": "Default",
+      "visible": true,
+      "locked": false
+    },
+    {
+      "id": "capital",
+      "name": "Capital",
+      "visible": true,
+      "locked": true
+    }
+  ],
+  "markers": [
+    {
+      "type": "pin",
+      "id": "marker_Skipleton_267",
+      "x": 0.5867534456355283,
+      "y": 0.4880576631259484,
+      "layer": "default",
+      "link": "01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Casthamia/Provinces/Altondolia Barony/Burgs/Skipleton",
+      "iconKey": "pinRed",
+      "tooltip": "Altondolia Barony Capital - Skipleton"
+    }
+  ],
+  "bases": [
+    {
+      "path": "01-Campaigns/Raid on the Eternal Tower/98-Raid on the Eternal Tower Assets/Hitchton Provinces World Map.svg"
+    }
+  ],
+  "overlays": [],
+  "activeBase": "01-Campaigns/Raid on the Eternal Tower/98-Raid on the Eternal Tower Assets/Hitchton Provinces World Map.svg",
+  "measurement": {
+    "displayUnit": "mi",
+    "scales": {},
+    "customUnitPxPerUnit": {},
+    "travelTimePresetIds": [],
+    "travelDaysEnabled": false
+  },
+  "pinSizeOverrides": {},
+  "grids": [],
+  "panClamp": false,
+  "drawLayers": [],
+  "drawings": [],
+  "textLayers": [],
+  "secondScreen": {
+    "showGrids": true
+  }
+}
+/ZOOMMAP-DATA
+%%
 
 ### Zones/Regions
 

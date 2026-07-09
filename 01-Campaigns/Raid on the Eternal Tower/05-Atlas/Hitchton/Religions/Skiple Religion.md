@@ -5,7 +5,7 @@ campaign: "Raid on the Eternal Tower"
 center: 4505
 code: SR
 color: #ebd8ff
-created: 2026-07-04-08:22
+created: 2026-07-08-18:14
 cssclasses: sixty-pct-width
 culture: Skiple
 deity: Stanswest, The Worried Narwhal

@@ -5,7 +5,7 @@ burg: 108
 campaign: Raid on the Eternal Tower
 center: 
 color: #8cc8d1
-created: 2026-07-04-08:22
+created: 2026-07-08-18:14
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Agelton County.png
 formName: County
@@ -26,7 +26,7 @@ tags:
 - Province
 - roet
 - Hitchton
-templateVersion: 7.0
+templateVersion: 7.3
 WBProgress: Imported
 ---
 
@@ -60,11 +60,11 @@ WBProgress: Imported
 
 %% During the import process, much of the data for the Leaflet fields should have been pulled in from the JSON. You will need to update the defaultZoom and (maybe) the coordinates values, but it should be pretty close - good enough to get a start with it. The goal is to cut down on the amount of manual effort you need to go through to pull your data in from the FMG JSON %%
 
-%%LeafletMapTOP%%
+%%LeafletMapTOP-
 
-> [!metadata|map]+ Agelton - Province World Map
+> [!metadata|map]+ Agelton County - Province World Map
 > ```leaflet
-> id: Province-Agelton
+> id: Province-Agelton-146
 > image: [[Hitchton Provinces World Map.svg]]
 > bounds:
 > - [0,0]
@@ -83,7 +83,96 @@ WBProgress: Imported
 > ```
 >  [Link to Agelton County on FMG Map](https://azgaar.github.io/Fantasy-Map-Generator/?maplink=https://dl.dropboxusercontent.com/scl/fi/l7dpjh1fb1v053mc7izmw/Hitchton-2026-06-21-15-36.map?rlkey=zrhhfmejskvk1cpgiizmjbrfl&dl=0&scale=3&x=551.3&y=759)
 
-%%LeafletMapTAIL%%
+-LeafletMapTAIL%%
+
+%%TTRPGMapTOP%%
+
+> [!metadata|map]+ Agelton County Province Map
+> ```zoommap
+> imageBases:
+>   - path: 01-Campaigns/Raid on the Eternal Tower/98-Raid on the Eternal Tower Assets/Hitchton Provinces World Map.svg
+> markerLayers:
+>   - Default
+>   - Capital
+> minZoom: 0.50
+> maxZoom: 8
+> wrap: false
+> responsive: false
+> width: 100%
+> height: 600px
+> resizable: false
+> resizeHandle: native
+> render: dom
+> align: center
+> id: map-Agelton-146
+> view:
+>   zoom: 1.5
+>   centerX: 0.22166921898928024
+>   centerY: 0.547040971168437
+> ```
+> [Link to Agelton on FMG Map](https://azgaar.github.io/Fantasy-Map-Generator/?maplink=https://dl.dropboxusercontent.com/scl/fi/l7dpjh1fb1v053mc7izmw/Hitchton-2026-06-21-15-36.map?rlkey=zrhhfmejskvk1cpgiizmjbrfl&dl=0&scale=3&x=551.3&y=759)
+
+%%TTRPGMapTAIL%%
+
+%%
+ZOOMMAP-DATA id=map-Agelton-146
+{
+  "size": {
+    "w": 2612,
+    "h": 1318
+  },
+  "layers": [
+    {
+      "id": "default",
+      "name": "Default",
+      "visible": true,
+      "locked": false
+    },
+    {
+      "id": "capital",
+      "name": "Capital",
+      "visible": true,
+      "locked": true
+    }
+  ],
+  "markers": [
+    {
+      "type": "pin",
+      "id": "marker_Agelton_108",
+      "x": 0.21112940275650843,
+      "y": 0.5759711684370258,
+      "layer": "default",
+      "link": "01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Horsteria/Provinces/Agelton County/Burgs/Agelton",
+      "iconKey": "pinRed",
+      "tooltip": "Agelton County Capital - Agelton"
+    }
+  ],
+  "bases": [
+    {
+      "path": "01-Campaigns/Raid on the Eternal Tower/98-Raid on the Eternal Tower Assets/Hitchton Provinces World Map.svg"
+    }
+  ],
+  "overlays": [],
+  "activeBase": "01-Campaigns/Raid on the Eternal Tower/98-Raid on the Eternal Tower Assets/Hitchton Provinces World Map.svg",
+  "measurement": {
+    "displayUnit": "mi",
+    "scales": {},
+    "customUnitPxPerUnit": {},
+    "travelTimePresetIds": [],
+    "travelDaysEnabled": false
+  },
+  "pinSizeOverrides": {},
+  "grids": [],
+  "panClamp": false,
+  "drawLayers": [],
+  "drawings": [],
+  "textLayers": [],
+  "secondScreen": {
+    "showGrids": true
+  }
+}
+/ZOOMMAP-DATA
+%%
 
 ### Zones/Regions
 

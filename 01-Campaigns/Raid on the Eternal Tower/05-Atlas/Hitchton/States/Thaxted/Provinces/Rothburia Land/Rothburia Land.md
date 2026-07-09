@@ -5,7 +5,7 @@ burg: 615
 campaign: Raid on the Eternal Tower
 center: 
 color: #bda4d9
-created: 2026-07-04-08:22
+created: 2026-07-08-18:14
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Rothburia Land.png
 formName: Land
@@ -26,7 +26,7 @@ tags:
 - Province
 - roet
 - Hitchton
-templateVersion: 7.0
+templateVersion: 7.3
 WBProgress: Imported
 ---
 
@@ -60,11 +60,11 @@ WBProgress: Imported
 
 %% During the import process, much of the data for the Leaflet fields should have been pulled in from the JSON. You will need to update the defaultZoom and (maybe) the coordinates values, but it should be pretty close - good enough to get a start with it. The goal is to cut down on the amount of manual effort you need to go through to pull your data in from the FMG JSON %%
 
-%%LeafletMapTOP%%
+%%LeafletMapTOP-
 
-> [!metadata|map]+ Rothburia - Province World Map
+> [!metadata|map]+ Rothburia Land - Province World Map
 > ```leaflet
-> id: Province-Rothburia
+> id: Province-Rothburia-217
 > image: [[Hitchton Provinces World Map.svg]]
 > bounds:
 > - [0,0]
@@ -83,7 +83,96 @@ WBProgress: Imported
 > ```
 >  [Link to Rothburia Land on FMG Map](https://azgaar.github.io/Fantasy-Map-Generator/?maplink=https://dl.dropboxusercontent.com/scl/fi/l7dpjh1fb1v053mc7izmw/Hitchton-2026-06-21-15-36.map?rlkey=zrhhfmejskvk1cpgiizmjbrfl&dl=0&scale=3&x=1809.22&y=178.51)
 
-%%LeafletMapTAIL%%
+-LeafletMapTAIL%%
+
+%%TTRPGMapTOP%%
+
+> [!metadata|map]+ Rothburia Land Province Map
+> ```zoommap
+> imageBases:
+>   - path: 01-Campaigns/Raid on the Eternal Tower/98-Raid on the Eternal Tower Assets/Hitchton Provinces World Map.svg
+> markerLayers:
+>   - Default
+>   - Capital
+> minZoom: 0.50
+> maxZoom: 8
+> wrap: false
+> responsive: false
+> width: 100%
+> height: 600px
+> resizable: false
+> resizeHandle: native
+> render: dom
+> align: center
+> id: map-Rothburia-217
+> view:
+>   zoom: 1.5
+>   centerX: 0.7036753445635529
+>   centerY: 0.13808801213960548
+> ```
+> [Link to Rothburia on FMG Map](https://azgaar.github.io/Fantasy-Map-Generator/?maplink=https://dl.dropboxusercontent.com/scl/fi/l7dpjh1fb1v053mc7izmw/Hitchton-2026-06-21-15-36.map?rlkey=zrhhfmejskvk1cpgiizmjbrfl&dl=0&scale=3&x=1809.22&y=178.51)
+
+%%TTRPGMapTAIL%%
+
+%%
+ZOOMMAP-DATA id=map-Rothburia-217
+{
+  "size": {
+    "w": 2612,
+    "h": 1318
+  },
+  "layers": [
+    {
+      "id": "default",
+      "name": "Default",
+      "visible": true,
+      "locked": false
+    },
+    {
+      "id": "capital",
+      "name": "Capital",
+      "visible": true,
+      "locked": true
+    }
+  ],
+  "markers": [
+    {
+      "type": "pin",
+      "id": "marker_Rearasal_615",
+      "x": 0.692656967840735,
+      "y": 0.1354400606980273,
+      "layer": "default",
+      "link": "01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Thaxted/Provinces/Rothburia Land/Burgs/Rearasal",
+      "iconKey": "pinRed",
+      "tooltip": "Rothburia Land Capital - Rearasal"
+    }
+  ],
+  "bases": [
+    {
+      "path": "01-Campaigns/Raid on the Eternal Tower/98-Raid on the Eternal Tower Assets/Hitchton Provinces World Map.svg"
+    }
+  ],
+  "overlays": [],
+  "activeBase": "01-Campaigns/Raid on the Eternal Tower/98-Raid on the Eternal Tower Assets/Hitchton Provinces World Map.svg",
+  "measurement": {
+    "displayUnit": "mi",
+    "scales": {},
+    "customUnitPxPerUnit": {},
+    "travelTimePresetIds": [],
+    "travelDaysEnabled": false
+  },
+  "pinSizeOverrides": {},
+  "grids": [],
+  "panClamp": false,
+  "drawLayers": [],
+  "drawings": [],
+  "textLayers": [],
+  "secondScreen": {
+    "showGrids": true
+  }
+}
+/ZOOMMAP-DATA
+%%
 
 ### Zones/Regions
 

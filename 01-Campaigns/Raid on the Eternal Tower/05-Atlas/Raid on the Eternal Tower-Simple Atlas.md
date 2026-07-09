@@ -11,7 +11,7 @@ tags:
 
 This Leaflet block is setup to display within a collapsible callout block. This allows the map to be set to be collapsed or expanded by default.
 
-To make the Leaflet block below visible on this note, remove the indicated line below the Leaflet block and place a set of double percentage characters here-->
+To make the Leaflet block below visible on this note, remove the indicated line below the Leaflet block and place a set of double percentage characters here-->%%
 
 # `=this.campaignName` - Simple Atlas
 

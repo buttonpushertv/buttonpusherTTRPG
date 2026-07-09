@@ -5,7 +5,7 @@ campaign: "Raid on the Eternal Tower"
 center: 1369
 code: OB
 color: #fb8072
-created: 2026-07-04-08:22
+created: 2026-07-08-18:14
 cssclasses: sixty-pct-width
 culture: Bivenil
 deity: Dunsbury, The Ruby Ancient

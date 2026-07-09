@@ -1,29 +1,28 @@
 ---
 aliases:
+  - Hitchton
 campaign: Raid on the Eternal Tower
-created: 2026-07-04-08:22
-cssclasses: sixty-pct-width
+created: 2026-07-08-18:14
+cssclasses: eighty-pct-width
 mapName: Hitchton
+pronounced:
+shortDescription:
 tags:
-- linked-atlas
-- roet
-- Hitchton
-templateVersion: 7.0
-WBProcess: FALSE
+  - linked-atlas
+  - roet
+  - Hitchton
+templateVersion: 7.6
+WBProcess: false
 ---
 
 # `=this.campaign` Linked Atlas
 [[01-Campaigns/Raid on the Eternal Tower/Raid on the Eternal Tower Home|Raid on the Eternal Tower Home]] | [[Raid on the Eternal Tower-Simple Atlas]]
 
-**(Edit this page in source mode to see comments about some manual edits that you may need to perform after the import is completed.)**
+%%LeafletMapTOP-
 
- %% Feel free to delete or comment the line above if you wish. See comments below for editing instructions. Use `find` to search for double percentage characters to find each of the comment sections. %%
-
-%% This Leaflet map block is created out of the elements added to the JSON file before import %%
-
-> [!metadata|map]+  Map
+> [!metadata|map]- Hitchton Map
 > ```leaflet
-> id: State-
+> id: Hitchton-Atlas
 > image: [[Hitchton World Map.svg]]
 > bounds:
 > - [0,0]
@@ -38,15 +37,553 @@ WBProcess: FALSE
 > unit: mi
 > scale: 5
 > darkMode: false
+> marker:
+> - state,465.000,1902.000,[[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Hitchia/Hitchia|Hitchia]], Grand Duchy of Hitchia
+> - capital,473.820,1952.830,[[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Hitchia/Provinces/Frampland Landgrave/Burgs/Kiver|Kiver]],Hitchia Capital
+> - state,923.000,1908.000,[[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Arestia/Arestia|Arestia]], See of Arestia
+> - capital,914.190,2048.890,[[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Arestia/Provinces/Aresto Parish/Burgs/Aresto|Aresto]],Arestia Capital
+> - state,553.000,1508.000,[[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Casthamia/Casthamia|Casthamia]], Casthamian Empire
+> - capital,410.750,1511.840,[[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Casthamia/Provinces/Boston Seneschalty/Burgs/Boston|Boston]],Casthamia Capital
+> - state,468.000,1111.000,[[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Linia/Linia|Linia]], Linian Theocracy
+> - capital,396.550,1176.970,[[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Linia/Provinces/Congham Deanery/Burgs/Congham|Congham]],Linia Capital
+> - state,667.000,1980.000,[[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Oakland/Oakland|Oakland]], Principality of Oakland
+> - capital,656.480,1994.340,[[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Oakland/Provinces/Albrid County/Burgs/Oakley|Oakley]],Oakland Capital
+> - state,271.000,1412.000,[[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Penland/Penland|Penland]], Penlish Theocracy
+> - capital,226.110,1368.950,[[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Penland/Provinces/Penby Parish/Burgs/Penby|Penby]],Penland Capital
+> - state,397.000,1781.000,[[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Manch/Manch|Manch]], Dominion of Manch
+> - capital,399.080,1771.380,[[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Manch/Provinces/Framping County/Burgs/Orton|Orton]],Manch Capital
+> - state,972.000,512.000,[[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Wodminia/Wodminia|Wodminia]], Grand Duchy of Wodminia
+> - capital,966.760,502.460,[[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Wodminia/Provinces/Ormster Barony/Burgs/Ormster|Ormster]],Wodminia Capital
+> - state,957.000,1064.000,[[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Padstedgia/Padstedgia|Padstedgia]], Principality of Padstedgia
+> - capital,927.890,993.410,[[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Padstedgia/Provinces/Tethe Earldom/Burgs/Tethe|Tethe]],Padstedgia Capital
+> - state,780.000,1253.000,[[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Oakhambia/Oakhambia|Oakhambia]], Kingdom of Oakhambia
+> - capital,832.400,1123.210,[[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Oakhambia/Provinces/Seamersia County/Burgs/Exted|Exted]],Oakhambia Capital
+> - state,579.000,1849.000,[[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Louthwarkia/Louthwarkia|Louthwarkia]], Duchy of Louthwarkia
+> - capital,571.450,1886.680,[[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Louthwarkia/Provinces/Castfordia County/Burgs/Wacury|Wacury]],Louthwarkia Capital
+> - state,1004.000,894.000,[[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Louthia/Louthia|Louthia]], Duchy of Louthia
+> - capital,1006.380,869.410,[[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Louthia/Provinces/Helscomia County/Burgs/Louth|Louth]],Louthia Capital
+> - state,636.000,805.000,[[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Horsteria/Horsteria|Horsteria]], Horsterian Empire
+> - capital,699.260,920.410,[[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Horsteria/Provinces/Cudland County/Burgs/Horston|Horston]],Horsteria Capital
+> - state,1061.000,1746.000,[[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Thaxted/Thaxted|Thaxted]], Dominion of Thaxted
+> - capital,1083.670,1701.700,[[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Thaxted/Provinces/Thaxted County/Burgs/Thaxted|Thaxted]],Thaxted Capital
+> - state,1077.000,1347.000,[[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Dunsteria/Dunsteria|Dunsteria]], Duchy of Dunsteria
+> - capital,1088.650,1364.720,[[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Dunsteria/Provinces/Dunster Barony/Burgs/Dunster|Dunster]],Dunsteria Capital
+> - state,1022.000,1547.000,[[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Stapia/Stapia|Stapia]], Kingdom of Stapia
+> - capital,1012.420,1473.330,[[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Stapia/Provinces/Newleigh County/Burgs/Newleigh|Newleigh]],Stapia Capital
+> - state,805.000,475.000,[[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Madeteria/Madeteria|Madeteria]], Kingdom of Madeteria
+> - capital,858.470,430.240,[[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Madeteria/Provinces/Madetery Landgrave/Burgs/Madetery|Madetery]],Madeteria Capital
+> - state,794.000,2076.000,[[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Buckeria/Buckeria|Buckeria]], Buckerian Marches
+> - capital,805.260,2072.530,[[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Buckeria/Provinces/Blechia Earldom/Burgs/Dalbone|Dalbone]],Buckeria Capital
+> - state,727.000,1753.000,[[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Birbotia/Birbotia|Birbotia]], Birbotian Empire
+> - capital,693.500,1820.510,[[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Birbotia/Provinces/Presfield County/Burgs/Presfield|Presfield]],Birbotia Capital
 > ```
 > [Link to  on FMG Map](https://azgaar.github.io/Fantasy-Map-Generator/?maplink=https://dl.dropboxusercontent.com/scl/fi/l7dpjh1fb1v053mc7izmw/Hitchton-2026-06-21-15-36.map?rlkey=zrhhfmejskvk1cpgiizmjbrfl&dl=0)
 
+-LeafletMapTAIL%%
+
 %% If you created a Dropbox Link to your FMG map, you can save that into the Modded JSON file and it will appear in the link above. %%
 
+%%TTRPGMapTOP%%
 
-> [!callout]+ **States**
+> [!metadata|map]+ Hitchton Map
+> ```zoommap
+> imageBases:
+>   - path: 01-Campaigns/Raid on the Eternal Tower/98-Raid on the Eternal Tower Assets/Hitchton World Map.svg
+> markerLayers:
+>   - Default
+>   - Capital
+> minZoom: 0.50
+> maxZoom: 8
+> wrap: false
+> responsive: false
+> width: 100%
+> height: 800px
+> resizable: false
+> resizeHandle: native
+> render: dom
+> align: center
+> id: map-Hitchton-Atlas
+> view:
+>   zoom: 0.5
+>   centerX: 0.5
+>   centerY: 0.5
+> viewportFrame: 91-Assets/Frames/Paper Frame.webP
+> viewportFrameInsets:
+>   unit: framePx
+>   top: 15
+>   right: 15
+>   bottom: 15
+>   left: 15
+> ```
+> [Link to  on FMG Map](https://azgaar.github.io/Fantasy-Map-Generator/?maplink=https://dl.dropboxusercontent.com/scl/fi/l7dpjh1fb1v053mc7izmw/Hitchton-2026-06-21-15-36.map?rlkey=zrhhfmejskvk1cpgiizmjbrfl&dl=0)
+
+%%TTRPGMapTAIL%%
+
+%%
+ZOOMMAP-DATA id=map-Hitchton-Atlas
+{
+  "size": {
+    "w": 2612,
+    "h": 1318
+  },
+  "layers": [
+    {
+      "id": "default",
+      "name": "Default",
+      "visible": true,
+      "locked": true
+    },
+    {
+      "id": "capital",
+      "name": "Capital",
+      "visible": true,
+      "locked": true
+    }
+  ],
+  "markers": [
+   {
+      "type": "pin",
+      "id": "marker_Kiver-1",
+      "x": 0.7476378254211332,
+      "y": 0.6405007587253414,
+      "layer": "capital",
+      "link": "01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Hitchia/Provinces/Frampland Landgrave/Burgs/Kiver",
+      "iconKey": "capital",
+      "minZoom": 0.75,
+      "tooltip": "Hitchia Capital - Kiver"
+    },
+    {
+      "type": "pin",
+      "id": "marker_Hitchia_1",
+      "x": 0.7281776416539051,
+      "y": 0.6471927162367223,
+      "layer": "default",
+      "link": "01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Hitchia/Hitchia.md",
+      "iconKey": "pinBlue",
+      "tooltip": "Hitchia"
+    },
+   {
+      "type": "pin",
+      "id": "marker_Aresto-2",
+      "x": 0.7844142419601837,
+      "y": 0.3063808801213961,
+      "layer": "capital",
+      "link": "01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Arestia/Provinces/Aresto Parish/Burgs/Aresto",
+      "iconKey": "capital",
+      "minZoom": 0.75,
+      "tooltip": "Arestia Capital - Aresto"
+    },
+    {
+      "type": "pin",
+      "id": "marker_Arestia_2",
+      "x": 0.7304747320061256,
+      "y": 0.29969650986342944,
+      "layer": "default",
+      "link": "01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Arestia/Arestia.md",
+      "iconKey": "pinBlue",
+      "tooltip": "Arestia"
+    },
+   {
+      "type": "pin",
+      "id": "marker_Boston-3",
+      "x": 0.5788055130168454,
+      "y": 0.6883535660091047,
+      "layer": "capital",
+      "link": "01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Casthamia/Provinces/Boston Seneschalty/Burgs/Boston",
+      "iconKey": "capital",
+      "minZoom": 0.75,
+      "tooltip": "Casthamia Capital - Boston"
+    },
+    {
+      "type": "pin",
+      "id": "marker_Casthamia_3",
+      "x": 0.5773353751914242,
+      "y": 0.5804248861911988,
+      "layer": "default",
+      "link": "01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Casthamia/Casthamia.md",
+      "iconKey": "pinBlue",
+      "tooltip": "Casthamia"
+    },
+   {
+      "type": "pin",
+      "id": "marker_Congham-4",
+      "x": 0.4506010719754977,
+      "y": 0.6991274658573596,
+      "layer": "capital",
+      "link": "01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Linia/Provinces/Congham Deanery/Burgs/Congham",
+      "iconKey": "capital",
+      "minZoom": 0.75,
+      "tooltip": "Linia Capital - Congham"
+    },
+    {
+      "type": "pin",
+      "id": "marker_Linia_4",
+      "x": 0.42534456355283307,
+      "y": 0.644916540212443,
+      "layer": "default",
+      "link": "01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Linia/Linia.md",
+      "iconKey": "pinBlue",
+      "tooltip": "Linia"
+    },
+   {
+      "type": "pin",
+      "id": "marker_Oakley-5",
+      "x": 0.7635298621745789,
+      "y": 0.5019119878603945,
+      "layer": "capital",
+      "link": "01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Oakland/Provinces/Albrid County/Burgs/Oakley",
+      "iconKey": "capital",
+      "minZoom": 0.75,
+      "tooltip": "Oakland Capital - Oakley"
+    },
+    {
+      "type": "pin",
+      "id": "marker_Oakland_5",
+      "x": 0.7580398162327718,
+      "y": 0.4939301972685888,
+      "layer": "default",
+      "link": "01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Oakland/Oakland.md",
+      "iconKey": "pinBlue",
+      "tooltip": "Oakland"
+    },
+   {
+      "type": "pin",
+      "id": "marker_Penby-6",
+      "x": 0.5241003062787136,
+      "y": 0.828444613050076,
+      "layer": "capital",
+      "link": "01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Penland/Provinces/Penby Parish/Burgs/Penby",
+      "iconKey": "capital",
+      "minZoom": 0.75,
+      "tooltip": "Penland Capital - Penby"
+    },
+    {
+      "type": "pin",
+      "id": "marker_Penland_6",
+      "x": 0.5405819295558959,
+      "y": 0.7943854324734446,
+      "layer": "default",
+      "link": "01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Penland/Penland.md",
+      "iconKey": "pinBlue",
+      "tooltip": "Penland"
+    },
+   {
+      "type": "pin",
+      "id": "marker_Orton-7",
+      "x": 0.6781699846860644,
+      "y": 0.6972078907435508,
+      "layer": "capital",
+      "link": "01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Manch/Provinces/Framping County/Burgs/Orton",
+      "iconKey": "capital",
+      "minZoom": 0.75,
+      "tooltip": "Manch Capital - Orton"
+    },
+    {
+      "type": "pin",
+      "id": "marker_Manch_7",
+      "x": 0.6818529862174579,
+      "y": 0.6987860394537178,
+      "layer": "default",
+      "link": "01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Manch/Manch.md",
+      "iconKey": "pinBlue",
+      "tooltip": "Manch"
+    },
+   {
+      "type": "pin",
+      "id": "marker_Ormster-8",
+      "x": 0.19236600306278712,
+      "y": 0.26649468892261,
+      "layer": "capital",
+      "link": "01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Wodminia/Provinces/Ormster Barony/Burgs/Ormster",
+      "iconKey": "capital",
+      "minZoom": 0.75,
+      "tooltip": "Wodminia Capital - Ormster"
+    },
+    {
+      "type": "pin",
+      "id": "marker_Wodminia_8",
+      "x": 0.19601837672281777,
+      "y": 0.26251896813353565,
+      "layer": "default",
+      "link": "01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Wodminia/Wodminia.md",
+      "iconKey": "pinBlue",
+      "tooltip": "Wodminia"
+    },
+   {
+      "type": "pin",
+      "id": "marker_Tethe-9",
+      "x": 0.3803254211332312,
+      "y": 0.29598634294385434,
+      "layer": "capital",
+      "link": "01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Padstedgia/Provinces/Tethe Earldom/Burgs/Tethe",
+      "iconKey": "capital",
+      "minZoom": 0.75,
+      "tooltip": "Padstedgia Capital - Tethe"
+    },
+    {
+      "type": "pin",
+      "id": "marker_Padstedgia_9",
+      "x": 0.40735068912710565,
+      "y": 0.2738998482549317,
+      "layer": "default",
+      "link": "01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Padstedgia/Padstedgia.md",
+      "iconKey": "pinBlue",
+      "tooltip": "Padstedgia"
+    },
+   {
+      "type": "pin",
+      "id": "marker_Exted-10",
+      "x": 0.4300191424196019,
+      "y": 0.3684370257966616,
+      "layer": "capital",
+      "link": "01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Oakhambia/Provinces/Seamersia County/Burgs/Exted",
+      "iconKey": "capital",
+      "minZoom": 0.75,
+      "tooltip": "Oakhambia Capital - Exted"
+    },
+    {
+      "type": "pin",
+      "id": "marker_Oakhambia_10",
+      "x": 0.47970903522205205,
+      "y": 0.40819423368740515,
+      "layer": "default",
+      "link": "01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Oakhambia/Oakhambia.md",
+      "iconKey": "pinBlue",
+      "tooltip": "Oakhambia"
+    },
+   {
+      "type": "pin",
+      "id": "marker_Wacury-11",
+      "x": 0.722312404287902,
+      "y": 0.5664264036418816,
+      "layer": "capital",
+      "link": "01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Louthwarkia/Provinces/Castfordia County/Burgs/Wacury",
+      "iconKey": "capital",
+      "minZoom": 0.75,
+      "tooltip": "Louthwarkia Capital - Wacury"
+    },
+    {
+      "type": "pin",
+      "id": "marker_Louthwarkia_11",
+      "x": 0.7078866768759571,
+      "y": 0.5606980273141123,
+      "layer": "default",
+      "link": "01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Louthwarkia/Louthwarkia.md",
+      "iconKey": "pinBlue",
+      "tooltip": "Louthwarkia"
+    },
+   {
+      "type": "pin",
+      "id": "marker_Louth-12",
+      "x": 0.3328522205206738,
+      "y": 0.2364339908952959,
+      "layer": "capital",
+      "link": "01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Louthia/Provinces/Helscomia County/Burgs/Louth",
+      "iconKey": "capital",
+      "minZoom": 0.75,
+      "tooltip": "Louthia Capital - Louth"
+    },
+    {
+      "type": "pin",
+      "id": "marker_Louthia_12",
+      "x": 0.34226646248085757,
+      "y": 0.23823975720789076,
+      "layer": "default",
+      "link": "01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Louthia/Louthia.md",
+      "iconKey": "pinBlue",
+      "tooltip": "Louthia"
+    },
+   {
+      "type": "pin",
+      "id": "marker_Horston-13",
+      "x": 0.35237748851454825,
+      "y": 0.469453717754173,
+      "layer": "capital",
+      "link": "01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Horsteria/Provinces/Cudland County/Burgs/Horston",
+      "iconKey": "capital",
+      "minZoom": 0.75,
+      "tooltip": "Horsteria Capital - Horston"
+    },
+    {
+      "type": "pin",
+      "id": "marker_Horsteria_13",
+      "x": 0.30819295558958654,
+      "y": 0.5174506828528073,
+      "layer": "default",
+      "link": "01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Horsteria/Horsteria.md",
+      "iconKey": "pinBlue",
+      "tooltip": "Horsteria"
+    },
+   {
+      "type": "pin",
+      "id": "marker_Thaxted-14",
+      "x": 0.6514931087289434,
+      "y": 0.17779210925644917,
+      "layer": "capital",
+      "link": "01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Thaxted/Provinces/Thaxted County/Burgs/Thaxted",
+      "iconKey": "capital",
+      "minZoom": 0.75,
+      "tooltip": "Thaxted Capital - Thaxted"
+    },
+    {
+      "type": "pin",
+      "id": "marker_Thaxted_14",
+      "x": 0.6684532924961715,
+      "y": 0.19499241274658574,
+      "layer": "default",
+      "link": "01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Thaxted/Thaxted.md",
+      "iconKey": "pinBlue",
+      "tooltip": "Thaxted"
+    },
+   {
+      "type": "pin",
+      "id": "marker_Dunster-15",
+      "x": 0.5224808575803982,
+      "y": 0.17401365705614566,
+      "layer": "capital",
+      "link": "01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Dunsteria/Provinces/Dunster Barony/Burgs/Dunster",
+      "iconKey": "capital",
+      "minZoom": 0.75,
+      "tooltip": "Dunsteria Capital - Dunster"
+    },
+    {
+      "type": "pin",
+      "id": "marker_Dunsteria_15",
+      "x": 0.5156967840735069,
+      "y": 0.18285280728376327,
+      "layer": "default",
+      "link": "01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Dunsteria/Dunsteria.md",
+      "iconKey": "pinBlue",
+      "tooltip": "Dunsteria"
+    },
+   {
+      "type": "pin",
+      "id": "marker_Newleigh-16",
+      "x": 0.5640620214395099,
+      "y": 0.23185128983308043,
+      "layer": "capital",
+      "link": "01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Stapia/Provinces/Newleigh County/Burgs/Newleigh",
+      "iconKey": "capital",
+      "minZoom": 0.75,
+      "tooltip": "Stapia Capital - Newleigh"
+    },
+    {
+      "type": "pin",
+      "id": "marker_Stapia_16",
+      "x": 0.5922664624808576,
+      "y": 0.22458270106221548,
+      "layer": "default",
+      "link": "01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Stapia/Stapia.md",
+      "iconKey": "pinBlue",
+      "tooltip": "Stapia"
+    },
+   {
+      "type": "pin",
+      "id": "marker_Madetery-17",
+      "x": 0.1647166921898928,
+      "y": 0.34865705614567527,
+      "layer": "capital",
+      "link": "01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Madeteria/Provinces/Madetery Landgrave/Burgs/Madetery",
+      "iconKey": "capital",
+      "minZoom": 0.75,
+      "tooltip": "Madeteria Capital - Madetery"
+    },
+    {
+      "type": "pin",
+      "id": "marker_Madeteria_17",
+      "x": 0.18185298621745788,
+      "y": 0.3892261001517451,
+      "layer": "default",
+      "link": "01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Madeteria/Madeteria.md",
+      "iconKey": "pinBlue",
+      "tooltip": "Madeteria"
+    },
+   {
+      "type": "pin",
+      "id": "marker_Dalbone-18",
+      "x": 0.7934647779479327,
+      "y": 0.3890288315629742,
+      "layer": "capital",
+      "link": "01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Buckeria/Provinces/Blechia Earldom/Burgs/Dalbone",
+      "iconKey": "capital",
+      "minZoom": 0.75,
+      "tooltip": "Buckeria Capital - Dalbone"
+    },
+    {
+      "type": "pin",
+      "id": "marker_Buckeria_18",
+      "x": 0.7947932618683001,
+      "y": 0.3975720789074355,
+      "layer": "default",
+      "link": "01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Buckeria/Buckeria.md",
+      "iconKey": "pinBlue",
+      "tooltip": "Buckeria"
+    },
+   {
+      "type": "pin",
+      "id": "marker_Presfield-19",
+      "x": 0.69697932618683,
+      "y": 0.47382397572078905,
+      "layer": "capital",
+      "link": "01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Birbotia/Provinces/Presfield County/Burgs/Presfield",
+      "iconKey": "capital",
+      "minZoom": 0.75,
+      "tooltip": "Birbotia Capital - Presfield"
+    },
+    {
+      "type": "pin",
+      "id": "marker_Birbotia_19",
+      "x": 0.6711332312404288,
+      "y": 0.44840667678300455,
+      "layer": "default",
+      "link": "01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Birbotia/Birbotia.md",
+      "iconKey": "pinBlue",
+      "tooltip": "Birbotia"
+    },
+   {
+      "type": "pin",
+      "id": "marker_l4135m",
+      "x": 0.9402756508422665,
+      "y": 0.9729111342943855,
+      "layer": "default",
+      "link": "",
+      "iconKey": "pinRed",
+      "tooltip": "",
+      "minZoom": 8,
+      "iconColor": "#8db2e2"
+    }
+  ],
+  "bases": [
+    {
+      "path": "01-Campaigns/Raid on the Eternal Tower/98-Raid on the Eternal Tower Assets/Hitchton World Map.svg"
+    }
+  ],
+  "overlays": [],
+  "activeBase": "01-Campaigns/Raid on the Eternal Tower/98-Raid on the Eternal Tower Assets/Hitchton World Map.svg",
+  "measurement": {
+    "displayUnit": "mi",
+    "scales": {},
+    "customUnitPxPerUnit": {},
+    "travelTimePresetIds": [],
+    "travelDaysEnabled": false
+  },
+  "pinSizeOverrides": {},
+  "grids": [],
+  "panClamp": false,
+  "drawLayers": [],
+  "drawings": [],
+  "textLayers": [],
+  "secondScreen": {
+    "showGrids": true
+  }
+}
+/ZOOMMAP-DATA
+%%
+
+> [!callout]- **States**
 > 
-> %% The "Neutral" item doesn't have a Capital because it is an unorganized territory. If there is a significant Burg or location in the Neutral territory, you can link to its note where the empty square brackets are.%%
+> > [!Warning]- Neutral State
+> > The "Neutral" item doesn't have a Capital because it is an unorganized territory. If there is a significant Burg or location in the Neutral territory, you can link to another note in that empty space, or you can delete the Neutral line item.
 >
 > | ID | State | Capital |
 > | -- | ----- | ------- |
@@ -73,12 +610,12 @@ WBProcess: FALSE
 
 
 > [!callout]- **Provinces**
-> 
->%% The Neutral peoples of this map have no State, hence the empty field. Also, any Capital fields that contain `[[]]` mean that that province does not have a Provincial Capital.%%
 >
->| ID  | Province | Capital | State |
+> > [!Warning]- Neutrals & Unspecified Provincial Capitals
+> > The Neutral peoples of this map have no State, hence there are no Provinces. Also, any Provincial Capital fields that contain `Unspecified` means that that province does not have a Provincial Capital.
+>
+>| ID  | Province | Prov. Capital | State |
 >| --- | -------- | --------- | ----- |
->|  | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States//Provinces//\|]] | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States//Provinces//Burgs/\|]] | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States//\|]] |
 >| 1 | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Hitchia/Provinces/Frampland Landgrave/Frampland Landgrave\|Frampland Landgrave]] | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Hitchia/Provinces/Frampland Landgrave/Burgs/Kiver\|Kiver]] | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Hitchia/Hitchia\|Hitchia]] |
 >| 2 | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Hitchia/Provinces/Calney Landgrave/Calney Landgrave\|Calney Landgrave]] | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Hitchia/Provinces/Calney Landgrave/Burgs/Calney\|Calney]] | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Hitchia/Hitchia\|Hitchia]] |
 >| 3 | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Hitchia/Provinces/Rothwarkia County/Rothwarkia County\|Rothwarkia County]] | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Hitchia/Provinces/Rothwarkia County/Burgs/Bosdonmouth\|Bosdonmouth]] | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Hitchia/Hitchia\|Hitchia]] |
@@ -308,7 +845,6 @@ WBProcess: FALSE
 > 
 > | ID  | Name | Population | State | Province | Group |
 > | --- | ---- | ---------- | ----- | -------- | ----- |
-> |  | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States//Provinces//Burgs/\|]] |  | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States//\|]] | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States//Provinces//\|]] |  |
 > | 1 | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Hitchia/Provinces/Frampland Landgrave/Burgs/Kiver\|Kiver]] | 13,197 | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Hitchia/Hitchia\|Hitchia]] | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Hitchia/Provinces/Frampland Landgrave/Frampland Landgrave\|Frampland Landgrave]] | capital |
 > | 2 | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Arestia/Provinces/Aresto Parish/Burgs/Aresto\|Aresto]] | 142,803 | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Arestia/Arestia\|Arestia]] | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Arestia/Provinces/Aresto Parish/Aresto Parish\|Aresto Parish]] | capital |
 > | 3 | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Casthamia/Provinces/Boston Seneschalty/Burgs/Boston\|Boston]] | 8,522 | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Casthamia/Casthamia\|Casthamia]] | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Casthamia/Provinces/Boston Seneschalty/Boston Seneschalty\|Boston Seneschalty]] | capital |
@@ -995,7 +1531,8 @@ WBProcess: FALSE
 
 > [!callout]- **Diplomacy**
 > 
-> %% The entries on the first line of this table are items related to the wars stories of this map. You can extract them and refactor those cells to access those element in a more useful way. Eventually, we'd like to figure out how those elements are used and refactor it in a similar fashion to how it use in a FMG map. %%
+> > [!Warning]- First Line Values
+> > The entries on the first line of this table are items related to the wars stories of this map. You can extract them and refactor those cells to access those elements in a more useful way. Eventually, we'd like to figure out how those elements are used and refactor it in a similar fashion to how it use in a FMG map.
 > 
 > | STATES | Neutrals | Hitchia | Arestia | Casthamia | Linia | Oakland | Penland | Manch | Wodminia | Padstedgia | Oakhambia | Louthwarkia | Louthia | Horsteria | Thaxted | Dunsteria | Stapia | Madeteria | Buckeria | Birbotia |
 > | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
@@ -1023,7 +1560,8 @@ WBProcess: FALSE
 
 > [!callout]- **Cultures**
 > 
-> %% The Wildlands have no culture because they are not organized into any kind of substantial societal structure. Feel free to construct sub-groups or animal societies on the Wildlands note to flesh out the non-traditional societal aspects of this map. %%
+> > [!Warning]- No Culture in Wildlands
+> > The Wildlands have no culture because they are not organized into any kind of substantial societal structure. Feel free to construct sub-groups or animal societies on the Wildlands note to flesh out the non-traditional societal aspects of this map.
 >
 > | ID  | Name | Code | Type |
 > | --- | ---- | -----| ---- |
@@ -1042,9 +1580,10 @@ WBProcess: FALSE
 
 > [!callout]- **Religions**
 > 
-> %% The Wildlands have no organized religion but, again feel free to make note of non-traditional spiritual practices that exist in the lands beyond traditional cultures and societies.
+> > [!Warning]- No Religion in Wildlands
+> > The Wildlands have no organized religion but, again feel free to make note of non-traditional spiritual practices that exist in the lands beyond traditional cultures and societies.
 > 
-> Also, Religions with "Unknown" Cultures are older religions that may not have many adherents or followers but are the parent religions to others.%%
+> Also, Religions with "Unknown" Cultures are older religions that may not have many adherents or followers but are possibly the parent religions to others.
 >
 > | ID  | Name | Code | Type | Form | Culture | Deity |
 > | --- | ---- | -----| ---- | ---- | ------- | ----- |
@@ -1071,7 +1610,7 @@ WBProcess: FALSE
 
 > [!callout]- Markets
 >
-> The Markets of {@importDataRoot.info.mapName}}
+> The Markets of Hitchton
 >
 > | ID  | Market Name | Central Burg |
 > | --- | ----------- | ------------ |
@@ -1151,3 +1690,33 @@ WBProcess: FALSE
 > | Group | Active | Order | Preview Gen | Pop Min | Pop Max | Percentile |
 > | ----- | ------ | ----- | ----------- | ------- | ------- | ---------- |
 > |  |  |  |  |  |  |  |  |
+
+> [!metadata|metadata]- Metadata & Page Controls
+>> [!metadata|metadataoption]- System
+>> #### System
+>>  |
+>> ---|---|
+>> **Tags** | `INPUT[Tags][inlineListSuggester:tags]` |
+>> **World Building Progress**| `INPUT[WBProgress][inlineSelect:wbprogress]`
+>>> [!note]- Tracking World Building Progress
+>>> Update the World Building Progress property as you update any info on the page. Your choices are `Imported`, `In Progress`, `Game-ready`, `Nearly Complete,` and `Done`.
+>>>
+>>> This allows sorting based on what has & hasn't had world building stuff done for it. There are Dataviews setup on the campaign home page that sort by these progress key words.
+>
+>> [!metadata|metadataoption]- Info
+>> #### Info
+>>  |
+>> ---|---|
+> **Pronounced** |  `INPUT[text:pronounced]`
+> **Aliases** | `INPUT[list:aliases]` |
+> **Short Description**|`INPUT[textArea:shortDescription]`
+>
+>> [!metadata|metadataoption]- Controls
+>> These buttons control various portions of this page. They only change things on this page.
+>> 
+>> #### Controls
+>>  |
+>> ---|---|
+>> **cssClass**|`INPUT[cssClass][inlineSelect:cssclasses]` |
+>> **Leaflet Map**| `BUTTON[hide_leaf_map]` - `BUTTON[show_leaf_map]`
+>> **TTRPG Tools Map**| `BUTTON[hide_ttrpg_map]` - `BUTTON[show_ttrpg_map]`

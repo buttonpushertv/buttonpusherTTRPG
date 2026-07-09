@@ -13,7 +13,7 @@ mapName: Hitchton
 colorHex: "#80b1d3"
 pronounced: 
 leaders:
-shortDescription: A short description of thie market.
+shortDescription: A short description of this market.
 tags:
 - Market
 - Thaxted
@@ -126,8 +126,8 @@ centerBurgy: 234.33
 
 %% The Timeline below can be edited and expanded. Each entry should start with a line like this: '>> [!timeline]'. To place items to the left, add '|t-l' to the code above. Use '|t-r' to show item on right. And then you can add 't-1' up to 't-10' to add spacing between successive entries. The Timeline lives within a callout. Each Timeline item should appear after double greater than signs (>>) and then single greater than lines (>) will divide the items. Make sure there are no blank lines to keep the callout working properly. More info about ITS+Theme's Timeline Callout: [Callout - Timeline - SlRvb's Documentation - Obsidian Publish](https://publish.obsidian.md/slrvb-docs/ITS+Theme/Callouts/Callout+-+Timeline) To hide the Timeline on this page, follow instructions on the line below that starts '(double percents) <- To hide...' & remove the double percent signs here -> %%
 
-> [!timeline|t-l] **`=this.burgName` Founded** _Date of founding._
-> `=this.burgName` was founded by...
+> [!timeline|t-l] **`=this.marketName` Founded** _Date of founding._
+> `=this.marketName` was founded in `=link(this.centerBurgFilePath,this.marketName)` in the state of `=link(this.centerBurgStateName)`...
 
 > [!timeline|t-r] **Something Happened** *A significant event.*
 > Something momentous occurred on this day.

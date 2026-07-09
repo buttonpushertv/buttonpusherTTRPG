@@ -5,7 +5,7 @@ cultureName: "Daling"
 code: Da
 color: #ccebc5
 center: 
-created: 2026-07-04-08:22
+created: 2026-07-08-18:14
 cssclasses: sixty-pct-width
 expansionism: 2.8
 id: 10

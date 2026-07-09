@@ -1,6 +1,7 @@
 ---
 aliases:
 - Redcke
+- Redcke-142
 burgMapLink: https://watabou.github.io/city-generator/?name=Redcke&population=14903&size=36&seed=5827453500142&river=1&coast=1&farms=1&citadel=1&urban_castle=1&hub=0&plaza=0&temple=0&walls=1&shantytown=0&greens=0&style=natural&sea=0.27
 burgName: Redcke
 burgNameID: Redcke-142
@@ -42,7 +43,7 @@ tags:
 temple: 0
 temperature: 81°F
 temperatureLikeness: San Juan (Puerto Rico)
-templateVersion: 7.2
+templateVersion: 7.4
 treasury: 24.01
 type: Naval
 walls: 1
@@ -84,6 +85,19 @@ marker: burg,765.880,965.280,[[Redcke]]
 
 ---
 
+%%WebMapTOP%%
+
+> [!metadata]+ Burg Map (Live from Web)
+> ```custom-frames
+> frame: Watabou-Procgen Arcana
+> style: height: 1000px;
+> urlSuffix: https://watabou.github.io/city-generator/?name=Redcke&population=14903&size=36&seed=5827453500142&river=1&coast=1&farms=1&citadel=1&urban_castle=1&hub=0&plaza=0&temple=0&walls=1&shantytown=0&greens=0&style=natural&sea=0.27
+> ```
+>
+>  `=elink(this.burgMapLink,"Visit Burg Map on MCFG")` | [Link to Redcke on FMG Map](https://azgaar.github.io/Fantasy-Map-Generator/?maplink=https://dl.dropboxusercontent.com/scl/fi/l7dpjh1fb1v053mc7izmw/Hitchton-2026-06-21-15-36.map?rlkey=zrhhfmejskvk1cpgiizmjbrfl&dl=0&scale=6&x=961.1&y=563.9) | Download Helper Link: `BUTTON[mapLink-to-download]`
+
+%%WebMapTAIL%%
+
 %% If you want to place the image for the Burg in the Map(Interactive) window below, you can use Fantasy Map Generator's link to Watabou's Fantasy City or Village Generator - see the `infobox` link or the `burgMapLink` URL up in the properties of this note. You can save the map image somewhere in the vault (`01-Campaign/Raid on the Eternal Tower/98-Raid on the Eternal Tower Assets`, for instance) and it will show up in this window. The name for this image is pre-populated with info from the JSON Import. The filename should be the Burg's id value and the Burg's burgName - both available up in the frontmatter.
 
 You may also use the Meta-Bind button at the bottom of the callout to open the burgMapLink in a browser window and save it there. On clicking that button, you will open the Burg's URL (City or Village) and then it will set this Burg's index and name on the clipboard like this: {id}-{burgName} - you can then just paste that in to the file name field of the save file dialog window, once you navigate to the vault folder you want to save them into.
@@ -115,18 +129,75 @@ There is an elaborate method (see [[JSON Import How To#Wrangling FMG Burg Maps]]
 
 %% City Maps may need Scale adjusting - see `unit: feet` line above in Leaflet block (around line 80-81) The `scale` setting of `1` is arbitrary. It seems to work for the Burg maps - City or Village. By default the CityGen maps will likely have the `scale bar` visible. I recommend hiding it. The City Gen uses meters. The Village Gen has no scale defined. Once you hide it in the CityGen Settings, it should stay hidden for several visits to these maps.%%
 
-%%WebMapTOP%%
+%%TTRPGMapTOP%%
 
-> [!metadata]+ Burg Map (Live from Web)
-> ```custom-frames
-> frame: Watabou-Procgen Arcana
-> style: height: 1000px;
-> urlSuffix: https://watabou.github.io/city-generator/?name=Redcke&population=14903&size=36&seed=5827453500142&river=1&coast=1&farms=1&citadel=1&urban_castle=1&hub=0&plaza=0&temple=0&walls=1&shantytown=0&greens=0&style=natural&sea=0.27
+> [!metadata|map]+ Redcke Burg Map
+> ```zoommap
+> imageBases:
+>   - path: 01-Campaigns/Raid on the Eternal Tower/98-Raid on the Eternal Tower Assets/burg-maps/Redcke-142.png
+> markerLayers:
+>   - Default
+> minZoom: 0.50
+> maxZoom: 8
+> wrap: false
+> responsive: false
+> width: 100%
+> height: 600px
+> resizable: false
+> resizeHandle: native
+> render: dom
+> align: center
+> id: map-Redcke-142
+> view:
+>   zoom: .5
+>   centerX: .5
+>   centerY: .5
 > ```
->
->  `=elink(this.burgMapLink,"Visit Burg Map on MCFG")` | [Link to Redcke on FMG Map](https://azgaar.github.io/Fantasy-Map-Generator/?maplink=https://dl.dropboxusercontent.com/scl/fi/l7dpjh1fb1v053mc7izmw/Hitchton-2026-06-21-15-36.map?rlkey=zrhhfmejskvk1cpgiizmjbrfl&dl=0&scale=6&x=961.1&y=563.9) | Download Helper Link: `BUTTON[mapLink-to-download]`
+> [Link to Redcke on FMG Map](https://azgaar.github.io/Fantasy-Map-Generator/?maplink=https://dl.dropboxusercontent.com/scl/fi/l7dpjh1fb1v053mc7izmw/Hitchton-2026-06-21-15-36.map?rlkey=zrhhfmejskvk1cpgiizmjbrfl&dl=0&scale=3)
 
-%%WebMapTAIL%%
+%%TTRPGMapTAIL%%
+
+%%
+ZOOMMAP-DATA id=map-Redcke-142
+{
+  "layers": [
+    {
+      "id": "default",
+      "name": "Default",
+      "visible": true,
+      "locked": false
+    }
+  ],
+  "markers": [
+    {
+    }
+  ],
+  "bases": [
+    {
+      "path": "01-Campaigns/Raid on the Eternal Tower/98-Raid on the Eternal Tower Assets/burg-maps/Redcke-142.png"
+    }
+  ],
+  "overlays": [],
+  "activeBase": "01-Campaigns/Raid on the Eternal Tower/98-Raid on the Eternal Tower Assets/burg-maps/Redcke-142.png",
+  "measurement": {
+    "displayUnit": "m",
+    "scales": {},
+    "customUnitPxPerUnit": {},
+    "travelTimePresetIds": [],
+    "travelDaysEnabled": false
+  },
+  "pinSizeOverrides": {},
+  "grids": [],
+  "panClamp": false,
+  "drawLayers": [],
+  "drawings": [],
+  "textLayers": [],
+  "secondScreen": {
+    "showGrids": true
+  }
+}
+/ZOOMMAP-DATA
+%%
 
 ### Zones/Regions/Neighborhoods
 Below are any notable zones or regions within `=this.burgName`
@@ -217,6 +288,7 @@ action:
 >> #### Controls
 >>  |
 >> ---|---|
->> **cssClass**|`INPUT[cssClass][inlineSelect:cssclasses]` |
->> Leaflet Map| `BUTTON[hide_leaf_map]` - `BUTTON[show_leaf_map]`
->> Interactive Map | `BUTTON[hide_web_map]` - `BUTTON[show_web_map]`
+>> **cssClass** |`INPUT[cssClass][inlineSelect:cssclasses]` |
+>> **Leaflet Map** | `BUTTON[hide_leaf_map]` - `BUTTON[show_leaf_map]`
+>> **TTRPG Tools Map** | `BUTTON[hide_ttrpg_map]` - `BUTTON[show_ttrpg_map]`
+>> **Interactive Map** | `BUTTON[hide_web_map]` - `BUTTON[show_web_map]`

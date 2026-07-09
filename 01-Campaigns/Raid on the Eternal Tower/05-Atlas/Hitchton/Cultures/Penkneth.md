@@ -5,7 +5,7 @@ cultureName: "Penkneth"
 code: Pe
 color: #80b1d3
 center: 
-created: 2026-07-04-08:22
+created: 2026-07-08-18:14
 cssclasses: sixty-pct-width
 expansionism: 2.5
 id: 3

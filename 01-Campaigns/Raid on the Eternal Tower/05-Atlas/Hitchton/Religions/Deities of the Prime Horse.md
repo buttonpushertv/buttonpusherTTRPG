@@ -5,7 +5,7 @@ campaign: "Raid on the Eternal Tower"
 center: 2508
 code: De
 color: #adff7d
-created: 2026-07-04-08:22
+created: 2026-07-08-18:14
 cssclasses: sixty-pct-width
 culture: Osbuton
 deity: Rothton, The Brave

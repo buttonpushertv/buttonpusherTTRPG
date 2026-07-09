@@ -5,7 +5,7 @@ cultureName: "Bivenil"
 code: Bi
 color: #fb8072
 center: 
-created: 2026-07-04-08:22
+created: 2026-07-08-18:14
 cssclasses: sixty-pct-width
 expansionism: 2.6
 id: 6

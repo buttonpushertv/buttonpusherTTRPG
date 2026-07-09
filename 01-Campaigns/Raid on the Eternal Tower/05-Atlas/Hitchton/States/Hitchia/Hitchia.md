@@ -10,7 +10,7 @@ capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Hit
 cells: 85
 center: 3597
 color: #66c2a5
-created: 2026-07-04-08:22
+created: 2026-07-08-18:14
 cssclasses: sixty-pct-width
 culture: Daling
 emblem: Hitchton Emblem Grand Duchy of Hitchia.png
@@ -49,7 +49,7 @@ tags:
 - State
 - Hitchton
 - roet
-templateVersion: 7.0
+templateVersion: 7.6
 type: Naval
 WBProcess: Imported
 ---
@@ -71,12 +71,6 @@ WBProcess: Imported
 >> **Area:** `=this.area` sq. miles
 >> **Dominant Geographic Feature:** `=this.type`
 >> **Capital:** `=link(this.capitalFile, this.capitalName)`
->> 
->> ```dataview
->> TABLE WITHOUT ID link(provinces) as "Provinces"
->> FROM ""
->> WHERE file.name = this.file.name
->> ```
 >
 >> ### Politics
 >> **Ruler(s):** `=link(this.rulers)`
@@ -93,9 +87,9 @@ WBProcess: Imported
 
 %% During the import process, much of the data for the Leaflet fields should have been pulled in from the JSON. You will need to update the defaultZoom and (maybe) the coordinates values, but it should be pretty close - good enough to get a start with it. The goal is to cut down on the amount of manual effort you need to go through to pull your data in from the FMG JSON %%
 
-%%LeafletMapTOP%%
+%%LeafletMapTOP-
 
-> [!metadata|map]+ Hitchia Map
+> [!metadata|map]- Hitchia Map
 > ```leaflet
 > id: State-Hitchia
 > image: [[Hitchton World Map.svg]]
@@ -111,12 +105,95 @@ WBProcess: Imported
 > zoomDelta: 0.25
 > unit: mi
 > scale: 5
+> marker:
+> - capital,473.820,1952.830,[[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Hitchia/Provinces/Frampland Landgrave/Burgs/Kiver|Kiver]],Hitchia Capital
 > darkMode: false
-> marker: capital,473.820,1952.830,[[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Hitchia/Provinces/Frampland Landgrave/Burgs/Kiver|Kiver]],Hitchia Capital
 > ```
 > [Link to Hitchia on FMG Map](https://azgaar.github.io/Fantasy-Map-Generator/?maplink=https://dl.dropboxusercontent.com/scl/fi/l7dpjh1fb1v053mc7izmw/Hitchton-2026-06-21-15-36.map?rlkey=zrhhfmejskvk1cpgiizmjbrfl&dl=0&scale=3&x=1949.5&y=838.1)
 
-%%LeafletMapTAIL%%
+-LeafletMapTAIL%%
+
+%%TTRPGMapTOP%%
+
+> [!metadata|map]+ Hitchia Map
+> ```zoommap
+> imageBases:
+>   - path: 01-Campaigns/Raid on the Eternal Tower/98-Raid on the Eternal Tower Assets/Hitchton World Map.svg
+> markerLayers:
+>   - Default
+> minZoom: 0.50
+> maxZoom: 8
+> wrap: false
+> responsive: false
+> width: 100%
+> height: 600px
+> resizable: false
+> resizeHandle: native
+> render: dom
+> align: center
+> id: map-Hitchia-1
+> view:
+>   zoom: 1.627
+>   centerX: 0.7281776416539051
+>   centerY: 0.6471927162367223
+> ```
+> [Link to Hitchia on FMG Map](https://azgaar.github.io/Fantasy-Map-Generator/?maplink=https://dl.dropboxusercontent.com/scl/fi/l7dpjh1fb1v053mc7izmw/Hitchton-2026-06-21-15-36.map?rlkey=zrhhfmejskvk1cpgiizmjbrfl&dl=0&scale=3&x=1949.5&y=838.1)
+
+%%TTRPGMapTAIL%%
+
+%%
+ZOOMMAP-DATA id=map-Hitchia-1
+{
+  "size": {
+    "w": 2612,
+    "h": 1318
+  },
+  "layers": [
+    {
+      "id": "default",
+      "name": "Default",
+      "visible": true,
+      "locked": false
+    }
+  ],
+  "markers": [
+    {
+      "type": "pin",
+      "id": "marker_Kiver_1",
+      "x": 0.7476378254211332,
+      "y": 0.6405007587253414,
+      "layer": "default",
+      "link": "01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Hitchia/Provinces/Frampland Landgrave/Burgs/Kiver",
+      "iconKey": "pinRed",
+      "tooltip": "Hitchia Capital - Kiver"
+    }
+  ],
+  "bases": [
+    {
+      "path": "01-Campaigns/Raid on the Eternal Tower/98-Raid on the Eternal Tower Assets/Hitchton World Map.svg"
+    }
+  ],
+  "overlays": [],
+  "activeBase": "01-Campaigns/Raid on the Eternal Tower/98-Raid on the Eternal Tower Assets/Hitchton World Map.svg",
+  "measurement": {
+    "displayUnit": "mi",
+    "scales": {},
+    "customUnitPxPerUnit": {},
+    "travelTimePresetIds": [],
+    "travelDaysEnabled": false
+  },
+  "pinSizeOverrides": {},
+  "grids": [],
+  "panClamp": false,
+  "drawLayers": [],
+  "drawings": [],
+  "textLayers": [],
+  "secondScreen": {
+    "showGrids": true
+  }
+}
+/ZOOMMAP-DATA
+%%
 
 %% GENERAL NOTES GO HERE - free-form text or images %%
 ### Zones/Regions
@@ -235,3 +312,4 @@ Significant incidents in `=this.name`'s history:
 >> ---|---|
 >> **cssClass**|`INPUT[cssClass][inlineSelect:cssclasses]` |
 >> **Leaflet Map**| `BUTTON[hide_leaf_map]` - `BUTTON[show_leaf_map]`
+>> **TTRPG Tools Map**| `BUTTON[hide_ttrpg_map]` - `BUTTON[show_ttrpg_map]`
