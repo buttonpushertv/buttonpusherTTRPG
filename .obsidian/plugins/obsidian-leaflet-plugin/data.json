@@ -74,6 +74,22 @@
       "tags": [],
       "minZoom": null,
       "maxZoom": null
+    },
+    {
+      "type": "state",
+      "iconName": "flag",
+      "color": "#3c97be",
+      "alpha": 1,
+      "layer": true,
+      "transform": {
+        "size": 6,
+        "x": 0,
+        "y": -2
+      },
+      "isImage": false,
+      "tags": [],
+      "minZoom": null,
+      "maxZoom": null
     }
   ],
   "color": "#dddddd",

@@ -290,6 +290,56 @@
           "command": "obsidian-import-json:import-json"
         }
       ]
+    },
+    {
+      "label": "Hide TTRPG Map",
+      "icon": "",
+      "style": "default",
+      "class": "",
+      "cssStyle": "",
+      "backgroundImage": "",
+      "tooltip": "",
+      "id": "hide_ttrpg_map",
+      "hidden": false,
+      "actions": [
+        {
+          "type": "regexpReplaceInNote",
+          "regexp": "%%TTRPGMapTOP%%",
+          "regexpFlags": "g",
+          "replacement": "%%TTRPGMapTOP-"
+        },
+        {
+          "type": "regexpReplaceInNote",
+          "regexp": "%%TTRPGMapTAIL%%",
+          "regexpFlags": "g",
+          "replacement": "-TTRPGMapTAIL%%"
+        }
+      ]
+    },
+    {
+      "label": "Show TTRPG Map",
+      "icon": "",
+      "style": "default",
+      "class": "",
+      "cssStyle": "",
+      "backgroundImage": "",
+      "tooltip": "",
+      "id": "show_ttrpg_map",
+      "hidden": false,
+      "actions": [
+        {
+          "type": "regexpReplaceInNote",
+          "regexp": "%%TTRPGMapTOP-",
+          "regexpFlags": "g",
+          "replacement": "%%TTRPGMapTOP%%"
+        },
+        {
+          "type": "regexpReplaceInNote",
+          "regexp": "-TTRPGMapTAIL%%",
+          "regexpFlags": "g",
+          "replacement": "%%TTRPGMapTAIL%%"
+        }
+      ]
     }
   ],
   "excludedFolders": [
