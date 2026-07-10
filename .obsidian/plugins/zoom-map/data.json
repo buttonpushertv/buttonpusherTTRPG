@@ -55,8 +55,8 @@
   "defaultWidthWrapped": "50%",
   "baseCollections": [],
   "pinPlaceOpensEditor": false,
-  "libraryFilePath": "ZoomMap/library.json",
-  "faFolderPath": "ZoomMap/SVGs",
+  "libraryFilePath": "91-Assets/ZoomMap/library.json",
+  "faFolderPath": "91-Assets/ZoomMap/SVGs",
   "customUnits": [],
   "travelTimePresets": [],
   "travelPerDay": {
