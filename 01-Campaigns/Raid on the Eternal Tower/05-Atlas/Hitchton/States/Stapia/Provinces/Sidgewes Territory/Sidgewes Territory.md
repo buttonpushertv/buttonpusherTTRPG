@@ -5,7 +5,7 @@ burg: 657
 campaign: Raid on the Eternal Tower
 center: 
 color: #e4e47f
-created: 2026-07-08-18:14
+created: 2026-07-09-21:36
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Sidgewes Territory.png
 formName: Territory

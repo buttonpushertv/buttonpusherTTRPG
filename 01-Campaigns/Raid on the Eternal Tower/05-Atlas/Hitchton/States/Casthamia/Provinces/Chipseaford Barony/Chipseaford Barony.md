@@ -5,7 +5,7 @@ burg: 628
 campaign: Raid on the Eternal Tower
 center: 
 color: #84b7e3
-created: 2026-07-08-18:14
+created: 2026-07-09-21:36
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Chipseaford Barony.png
 formName: Barony

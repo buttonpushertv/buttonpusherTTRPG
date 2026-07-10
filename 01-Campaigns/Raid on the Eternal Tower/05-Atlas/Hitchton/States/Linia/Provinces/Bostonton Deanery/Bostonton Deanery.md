@@ -5,7 +5,7 @@ burg: 176
 campaign: Raid on the Eternal Tower
 center: 
 color: #d79fdf
-created: 2026-07-08-18:14
+created: 2026-07-09-21:36
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Bostonton Deanery.png
 formName: Deanery

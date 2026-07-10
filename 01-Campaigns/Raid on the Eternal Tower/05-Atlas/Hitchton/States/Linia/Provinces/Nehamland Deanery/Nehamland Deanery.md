@@ -5,7 +5,7 @@ burg: 611
 campaign: Raid on the Eternal Tower
 center: 
 color: #ff8acf
-created: 2026-07-08-18:14
+created: 2026-07-09-21:36
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Nehamland Deanery.png
 formName: Deanery

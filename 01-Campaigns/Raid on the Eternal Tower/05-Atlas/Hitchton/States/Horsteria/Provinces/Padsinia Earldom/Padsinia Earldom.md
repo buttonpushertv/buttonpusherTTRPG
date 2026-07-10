@@ -5,7 +5,7 @@ burg: 44
 campaign: Raid on the Eternal Tower
 center: 
 color: #add8ae
-created: 2026-07-08-18:14
+created: 2026-07-09-21:36
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Padsinia Earldom.png
 formName: Earldom

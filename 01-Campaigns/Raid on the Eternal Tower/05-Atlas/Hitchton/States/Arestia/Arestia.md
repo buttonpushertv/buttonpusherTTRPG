@@ -10,7 +10,7 @@ capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Are
 cells: 244
 center: 1260
 color: #fc8d62
-created: 2026-07-08-18:14
+created: 2026-07-09-21:36
 cssclasses: sixty-pct-width
 culture: Cowey
 emblem: Hitchton Emblem See of Arestia.png

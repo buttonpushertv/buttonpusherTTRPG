@@ -5,7 +5,7 @@ cultureName: "Cliford"
 code: Cl
 color: #bc80bd
 center: 
-created: 2026-07-08-18:14
+created: 2026-07-09-21:36
 cssclasses: sixty-pct-width
 expansionism: 2.3
 id: 8

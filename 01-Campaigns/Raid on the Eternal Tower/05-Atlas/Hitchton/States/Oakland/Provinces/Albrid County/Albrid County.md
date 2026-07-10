@@ -5,7 +5,7 @@ burg: 5
 campaign: Raid on the Eternal Tower
 center: 
 color: #9aee74
-created: 2026-07-08-18:14
+created: 2026-07-09-21:36
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Albrid County.png
 formName: County

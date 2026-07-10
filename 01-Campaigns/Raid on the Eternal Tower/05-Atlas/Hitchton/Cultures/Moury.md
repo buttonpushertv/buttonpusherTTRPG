@@ -5,7 +5,7 @@ cultureName: "Moury"
 code: Mo
 color: #dababf
 center: 
-created: 2026-07-08-18:14
+created: 2026-07-09-21:36
 cssclasses: sixty-pct-width
 expansionism: 1.7
 id: 5

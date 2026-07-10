@@ -10,7 +10,7 @@ capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Hit
 cells: 85
 center: 3597
 color: #66c2a5
-created: 2026-07-08-18:14
+created: 2026-07-09-21:36
 cssclasses: sixty-pct-width
 culture: Daling
 emblem: Hitchton Emblem Grand Duchy of Hitchia.png

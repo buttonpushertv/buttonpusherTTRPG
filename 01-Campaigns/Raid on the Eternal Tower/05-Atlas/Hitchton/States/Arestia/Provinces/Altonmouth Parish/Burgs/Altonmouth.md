@@ -43,7 +43,7 @@ tags:
 temple: 0
 temperature: 45°F
 temperatureLikeness: Minneapolis (Minnesota)
-templateVersion: 7.4
+templateVersion: 7.5
 treasury: 10.09
 type: Generic
 walls: 1
@@ -129,9 +129,9 @@ There is an elaborate method (see [[JSON Import How To#Wrangling FMG Burg Maps]]
 
 %% City Maps may need Scale adjusting - see `unit: feet` line above in Leaflet block (around line 80-81) The `scale` setting of `1` is arbitrary. It seems to work for the Burg maps - City or Village. By default the CityGen maps will likely have the `scale bar` visible. I recommend hiding it. The City Gen uses meters. The Village Gen has no scale defined. Once you hide it in the CityGen Settings, it should stay hidden for several visits to these maps.%%
 
-%%TTRPGMapTOP%%
+%%TTRPGMapTOP-
 
-> [!metadata|map]+ Altonmouth Burg Map
+> [!metadata|map]- Altonmouth Burg Map
 > ```zoommap
 > imageBases:
 >   - path: 01-Campaigns/Raid on the Eternal Tower/98-Raid on the Eternal Tower Assets/burg-maps/Altonmouth-265.png
@@ -155,7 +155,7 @@ There is an elaborate method (see [[JSON Import How To#Wrangling FMG Burg Maps]]
 > ```
 > [Link to Altonmouth on FMG Map](https://azgaar.github.io/Fantasy-Map-Generator/?maplink=https://dl.dropboxusercontent.com/scl/fi/l7dpjh1fb1v053mc7izmw/Hitchton-2026-06-21-15-36.map?rlkey=zrhhfmejskvk1cpgiizmjbrfl&dl=0&scale=3)
 
-%%TTRPGMapTAIL%%
+-TTRPGMapTAIL%%
 
 %%
 ZOOMMAP-DATA id=map-Altonmouth-265

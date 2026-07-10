@@ -5,7 +5,7 @@ max: 12
 d: l
 m: 0
 campaign: "Raid on the Eternal Tower"
-created: 2026-07-08-18:14
+created: 2026-07-09-21:36
 cssclasses: sixty-pct-width
 mapName: Hitchton
 tags:

@@ -5,7 +5,7 @@ campaign: "Raid on the Eternal Tower"
 center: 903
 code: BP
 color: #ff8190
-created: 2026-07-08-18:14
+created: 2026-07-09-22:58
 cssclasses: sixty-pct-width
 culture: Bivenil
 deity: Wargin, The Old Roc
@@ -16,7 +16,7 @@ form: Polytheism
 id: 16
 leaders:
 mapName: Hitchton
-origins: 6
+origins: 
 pronounced: ""
 religionName: "Bivenil Pantheon"
 shortDescription:
@@ -24,34 +24,34 @@ tags:
 - Religion
 - Hitchton
 type: Organized
-templateVersion: 5.0
+templateVersion: 7.0
 WBProgress: Imported
 ---
 
-> [!metadata|metadata]- Metadata
->> [!metadata|metadataoption]- System
->> #### System
->>  |
->> ---|---|
->> **Tags** | `INPUT[Tags][inlineListSuggester:tags]` |
->> **World Building Progress**| `INPUT[WBProgress][inlineSelect:WBProgress]`|
->>> [!note]- Tracking World Building Progress
->>> Update the World Building Progress property as you update any info on the page. Your choices are `Imported`, `In Progress`, `Game-ready`, `Nearly Complete,` and `Done`.
->>>
->>> This allows sorting based on what has & hasn't had world building stuff done for it. There are Dataviews setup on the campaign home page that sort by these progress key words.
->
->> [!metadata|metadataoption]- Info
->> #### Info
->>  |
->> ---|---|
-> **Pronounced** |  `INPUT[text:pronounced]`
-> **Aliases** | `INPUT[list:aliases]` |
-> **Leaders**|`INPUT[list:leaders]`|
-> **Short Description**|`INPUT[textArea:shortDescription]`
-
 [[01-Campaigns/Raid on the Eternal Tower/Raid on the Eternal Tower Home|Raid on the Eternal Tower Home]] | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/Hitchton-Linked Atlas|Hitchton-Linked Atlas]]
 
-%% During the import process, much of the data for the Leaflet fields should have been pulled in from the JSON. You will need to update the defaultZoom and (maybe) the coordinates values, but it should be pretty close - good enough to get a start with it. The goal is to cut down on the amount of manual effort you need to go through to pull your data in from the FMG JSON %%
+# **`=this.religionName`**
+*`=this.shortDescription`*
+
+---
+
+> [!column|3 no-t] `=this.religonName` Information
+>> ### Symbols of `=this.religonName`
+>> <span style="font-size:x-small">This section is where you could place imagry, icons, or symbols of this faith.</span>
+>
+>> ### Information
+>> **Pronounced:** "`=this.pronounced`"
+>> **Deity:** `=this.deity`
+>> **Leaders:** `=this.leaders`
+>> **Followers:** `=this.followers`
+>> **Form:** `=this.form`
+>
+>> ### Additional Info
+>> **Culture:** `=this.culture`
+>> **Expands via:** `=this.expansion`
+>> **Origins:** `=link(this.origins)`
+
+%%LeafletMapTOP-
 
 > [!metadata|map]- Bivenil Pantheon Religions Map
 > ```leaflet
@@ -74,36 +74,95 @@ WBProgress: Imported
 > ```
 > <div style="width: 500px; height: 20px; background-color: #ff8190; display: flex; justify-content: center; align-items: center; font-size: 24px; color: #ff8190;">▮</div>
 > The area shown in the color above is the reach of Bivenil Pantheon
-
-%% All the info in this 'infobox' will appear in the panel to the right. Most of these values are pulled from the metadata in the properties above. %%
-
-> [!infobox]
->  |
->  --- |
 >
->  # **Pronounced:**
->  # "`=this.pronounced`"
+> [Link to Bivenil Pantheon on FMG Map](https://azgaar.github.io/Fantasy-Map-Generator/?maplink=https://dl.dropboxusercontent.com/scl/fi/l7dpjh1fb1v053mc7izmw/Hitchton-2026-06-21-15-36.map?rlkey=zrhhfmejskvk1cpgiizmjbrfl&dl=0&scale=3&x=502.04&y=350.81)
+
+-LeafletMapTAIL%%
+
+%%TTRPGMapTOP%%
+
+> [!metadata|map]+ Bivenil Pantheon Map
+> ```zoommap
+> imageBases:
+>   - path: 01-Campaigns/Raid on the Eternal Tower/98-Raid on the Eternal Tower Assets/Hitchton Religions World Map.svg
+> markerLayers:
+>   - Default
+> minZoom: 0.50
+> maxZoom: 8
+> wrap: false
+> responsive: false
+> width: 100%
+> height: 600px
+> resizable: false
+> resizeHandle: native
+> render: dom
+> align: center
+> id: map-religion-BivenilPantheon-16
+> view:
+>   zoom: .5
+>   centerX: 0.1922052067381317
+>   centerY: 0.2661684370257967
+> ```
+> <div style="width: 500px; height: 20px; background-color: #ff8190; display: flex; justify-content: center; align-items: center; font-size: 24px; color: #ff8190;">▮</div>
+> The area shown in the color above is the reach of Bivenil Pantheon
 >
->  |
->  --- |
-> 
->> [!note|title-center c-gray] ### Info
->
->  |
->  ---: | --- |
-> **Deity** | `=this.deity` |
-> **Form** | `=this.form`|
-> **Culture** | `=this.culture`|
-> **Leaders** | `=this.leaders`|
-> **Followers** | `=this.followers`|
-> 
+> [Link to Bivenil Pantheon on FMG Map](https://azgaar.github.io/Fantasy-Map-Generator/?maplink=https://dl.dropboxusercontent.com/scl/fi/l7dpjh1fb1v053mc7izmw/Hitchton-2026-06-21-15-36.map?rlkey=zrhhfmejskvk1cpgiizmjbrfl&dl=0&scale=3&x=502.04&y=350.81)
 
-# **`=this.religionName`**
+%%TTRPGMapTAIL%%
 
-> [!recite|no-t text-center]+ Introduction
-> *`=this.shortDescription`*
-
-%% GENERAL NOTES GO HERE - free-form text or images %%
+%%
+ZOOMMAP-DATA map-religion-BivenilPantheon-16
+{
+  "size": {
+    "w": 2612,
+    "h": 1318
+  },
+  "layers": [
+    {
+      "id": "default",
+      "name": "Default",
+      "visible": true,
+      "locked": false
+    }
+  ],
+  "markers": [
+    {
+      "type": "pin",
+      "id": "marker_BivenilPantheon_center",
+      "x": 0.1922052067381317,
+      "y": 0.2661684370257967,
+      "layer": "default",
+      "link": "",
+      "iconKey": "pinRed",
+      "tooltip": "Bivenil Pantheon Center"
+    }
+  ],
+  "bases": [
+    {
+      "path": "01-Campaigns/Raid on the Eternal Tower/98-Raid on the Eternal Tower Assets/Hitchton Religions World Map.svg"
+    }
+  ],
+  "overlays": [],
+  "activeBase": "01-Campaigns/Raid on the Eternal Tower/98-Raid on the Eternal Tower Assets/Hitchton Religions World Map.svg",
+  "measurement": {
+    "displayUnit": "mi",
+    "scales": {},
+    "customUnitPxPerUnit": {},
+    "travelTimePresetIds": [],
+    "travelDaysEnabled": false
+  },
+  "pinSizeOverrides": {},
+  "grids": [],
+  "panClamp": false,
+  "drawLayers": [],
+  "drawings": [],
+  "textLayers": [],
+  "secondScreen": {
+    "showGrids": true
+  }
+}
+/ZOOMMAP-DATA
+%%
 
 ### Zones/Regions/Neighborhoods
 Below are any notable zones or regions within `=this.religionName`
@@ -112,34 +171,67 @@ Below are any notable zones or regions within `=this.religionName`
 
 ### History
 
-%% You can use the 'Timeline' Callout features of the ITS theme here to create a timeline of any important events. Remove the line below that reads '(delete this line to enable timeline)' and the trailing double percent signs & add a set of double percent signs here ->
+%% The Timeline below can be edited and expanded. Each entry should start with a line like this: '>> [!timeline]'. To place items to the left, add '|t-l' to the code above. Use '|t-r' to show item on right. And then you can add 't-1' up to 't-10' to add spacing between successive entries. The Timeline lives within a callout. Each Timeline item should appear after double greater than signs (>>) and then single greater than lines (>) will divide the items. Make sure there are no blank lines to keep the callout working properly. More info about ITS+Theme's Timeline Callout: [Callout - Timeline - SlRvb's Documentation - Obsidian Publish](https://publish.obsidian.md/slrvb-docs/ITS+Theme/Callouts/Callout+-+Timeline) To hide the Timeline on this page, use the buttons in the MetaData>System callout at the bottom of this note. %%
+
+%% TimelineTOP %%
 
 > [!timeline|t-l] **`=this.religionName` Founded** _Date of founding._
 > `=this.religionName` was founded by...
 
-> [!timeline|t-l t-2] **Something Happened** *A significant event.*
+> [!timeline|t-r] **Something Happened** *A significant event.*
 > Something momentous occurred on this day.
 
-> [!timeline|t-r t-2] **Another thing happened** *Less significant this time.*
+> [!timeline|t-l] **Another thing happened** *Less significant this time.*
 > Today was only a moderately important day.
 
-(delete this line to enable timeline) %%
+%% TimelineTAIL %%
 
 ## Notes
 
 %% Further notes. These 2 callouts will be hidden by default. Change the '-' after the closing square bracket to a '+' to have it be expanded by default. %%
 
 > [!hint]- Plot Hooks
->
+> Plot Hooks go here...
 
 > [!question]- Hidden Details
->
+> Hidden Details go here...
 
 ## More Details
 
-%% The metadata sections below allow you to add some detailed info about NPCs, Groups, Points of Interest, and Shops & Services.
+%% GENERAL NOTES GO HERE - free-form text or images %%
 
-Change the '-' after the closing square bracket of each callout line (starts with open bracket followed by an exclamation point) to a '+' to have it be expanded by default.
-%%
 ---
 [[01-Campaigns/Raid on the Eternal Tower/Raid on the Eternal Tower Home|Raid on the Eternal Tower Home]] | [[01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/Hitchton-Linked Atlas|Hitchton-Linked Atlas]]
+
+> [!metadata|metadata]- Metadata & Page Controls
+>> [!metadata|metadataoption]+ System
+>> #### System
+>>  |
+>> ---|---|
+>> **Tags** | `INPUT[Tags][inlineListSuggester:tags]` |
+>> **World Building Progress**| `INPUT[WBProgress][inlineSelect:WBProgress]`|
+>>> [!note]- Tracking World Building Progress
+>>> Update the World Building Progress property as you update any info on the page. Your choices are `Imported`, `In Progress`, `Game-ready`, `Nearly Complete,` and `Done`.
+>>>
+>>> This allows sorting based on what has & hasn't had world building stuff done for it. There are Dataviews setup on the campaign home page that sort by these progress key words.
+>
+>> [!metadata|metadataoption]+ Info
+>> #### Info
+>>  |
+>> ---|---|
+> **Pronounced** |  `INPUT[text:pronounced]`
+> **Aliases** | `INPUT[list:aliases]` |
+> **Rulers**|`INPUT[list:rulers]`|
+> **Short Description**|`INPUT[textArea:shortDescription]`
+>
+>> [!metadata|metadataoption]+ Controls
+>> These buttons control various portions of this page. They only change things on this page.
+>> 
+>> #### Controls
+>>  |
+>> ---|---|
+>> **cssClass** |`INPUT[cssClass][inlineSelect:cssclasses]` |
+>> **Leaflet Map** | `BUTTON[hide_leaf_map]` - `BUTTON[show_leaf_map]`
+>> **TTRPG Tools Map** | `BUTTON[hide_ttrpg_map]` - `BUTTON[show_ttrpg_map]`
+
+

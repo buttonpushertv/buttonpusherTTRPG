@@ -5,7 +5,7 @@ burg: 388
 campaign: Raid on the Eternal Tower
 center: 
 color: #d6ff5d
-created: 2026-07-08-18:14
+created: 2026-07-09-21:36
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Castford Seneschalty.png
 formName: Seneschalty

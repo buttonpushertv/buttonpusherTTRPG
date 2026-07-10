@@ -5,7 +5,7 @@ burg: 267
 campaign: Raid on the Eternal Tower
 center: 
 color: #b7adc2
-created: 2026-07-08-18:14
+created: 2026-07-09-21:36
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Altondolia Barony.png
 formName: Barony

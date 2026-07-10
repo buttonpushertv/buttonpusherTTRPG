@@ -5,7 +5,7 @@ burg: 219
 campaign: Raid on the Eternal Tower
 center: 
 color: #b9b2d6
-created: 2026-07-08-18:14
+created: 2026-07-09-21:36
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Winkwaria Earldom.png
 formName: Earldom

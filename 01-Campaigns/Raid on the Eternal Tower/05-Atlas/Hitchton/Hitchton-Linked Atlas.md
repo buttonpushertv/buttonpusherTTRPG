@@ -1,18 +1,18 @@
 ---
 aliases:
-  - Hitchton
+- Hitchton
 campaign: Raid on the Eternal Tower
-created: 2026-07-08-18:14
-cssclasses: eighty-pct-width
+created: 2026-07-09-21:36
+cssclasses: sixty-pct-width
 mapName: Hitchton
 pronounced:
 shortDescription:
 tags:
-  - linked-atlas
-  - roet
-  - Hitchton
+- linked-atlas
+- roet
+- Hitchton
 templateVersion: 7.6
-WBProcess: false
+WBProcess: FALSE
 ---
 
 # `=this.campaign` Linked Atlas

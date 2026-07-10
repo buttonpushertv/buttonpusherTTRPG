@@ -10,7 +10,7 @@ capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Oak
 cells: 123
 center: 2770
 color: #a6d854
-created: 2026-07-08-18:14
+created: 2026-07-09-21:36
 cssclasses: sixty-pct-width
 culture: Chisbute
 emblem: Hitchton Emblem Principality of Oakland.png

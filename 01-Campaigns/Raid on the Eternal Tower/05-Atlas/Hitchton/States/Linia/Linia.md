@@ -10,7 +10,7 @@ capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Lin
 cells: 279
 center: 3957
 color: #e78ac3
-created: 2026-07-08-18:14
+created: 2026-07-09-21:36
 cssclasses: sixty-pct-width
 culture: Skiple
 emblem: Hitchton Emblem Linian Theocracy.png

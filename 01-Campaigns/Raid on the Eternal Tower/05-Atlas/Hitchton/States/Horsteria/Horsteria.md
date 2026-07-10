@@ -10,7 +10,7 @@ capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Hor
 cells: 597
 center: 2508
 color: #91bcb3
-created: 2026-07-08-18:14
+created: 2026-07-09-21:36
 cssclasses: sixty-pct-width
 culture: Osbuton
 emblem: Hitchton Emblem Horsterian Empire.png

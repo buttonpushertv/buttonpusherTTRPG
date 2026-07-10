@@ -5,7 +5,7 @@ burg: 340
 campaign: Raid on the Eternal Tower
 center: 
 color: #f2b2d5
-created: 2026-07-08-18:14
+created: 2026-07-09-21:36
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Skiple County.png
 formName: County

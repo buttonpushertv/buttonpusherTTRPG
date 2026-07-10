@@ -43,7 +43,7 @@ tags:
 temple: 0
 temperature: 68°F
 temperatureLikeness: Las Vegas (Nevada)
-templateVersion: 7.4
+templateVersion: 7.5
 treasury: 6.44
 type: Naval
 walls: 0
@@ -90,7 +90,7 @@ marker: burg,799.920,1144.940,[[Albridbury]]
 > [!metadata]+ Burg Map (Live from Web)
 > ```custom-frames
 > frame: Watabou-Procgen Arcana
-> style: height: 500px;
+> style: height: 1000px;
 > urlSuffix: https://watabou.github.io/village-generator/?pop=917&name=Albridbury&seed=5827453500385&width=1000&height=455&tags=coast%2Cisolated%2Cuncultivated%2Cno+square%2Cdense
 > ```
 >
@@ -131,7 +131,7 @@ There is an elaborate method (see [[JSON Import How To#Wrangling FMG Burg Maps]]
 
 %%TTRPGMapTOP-
 
-> [!metadata|map]+ Albridbury Burg Map
+> [!metadata|map]- Albridbury Burg Map
 > ```zoommap
 > imageBases:
 >   - path: 01-Campaigns/Raid on the Eternal Tower/98-Raid on the Eternal Tower Assets/burg-maps/Albridbury-385.png

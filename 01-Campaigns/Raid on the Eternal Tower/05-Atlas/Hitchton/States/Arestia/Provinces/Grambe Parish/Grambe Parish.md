@@ -5,7 +5,7 @@ burg: 645
 campaign: Raid on the Eternal Tower
 center: 
 color: #ec9d89
-created: 2026-07-08-18:14
+created: 2026-07-09-21:36
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Grambe Parish.png
 formName: Parish

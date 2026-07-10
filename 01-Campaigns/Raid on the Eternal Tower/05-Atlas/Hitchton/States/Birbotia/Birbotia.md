@@ -10,7 +10,7 @@ capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Bir
 cells: 285
 center: 2559
 color: #e28edb
-created: 2026-07-08-18:14
+created: 2026-07-09-21:36
 cssclasses: sixty-pct-width
 culture: Penkneth
 emblem: Hitchton Emblem Birbotian Empire.png

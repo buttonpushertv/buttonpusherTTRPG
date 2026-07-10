@@ -10,7 +10,7 @@ capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Tha
 cells: 130
 center: 400
 color: #959edd
-created: 2026-07-08-18:14
+created: 2026-07-09-21:36
 cssclasses: sixty-pct-width
 culture: Cliford
 emblem: Hitchton Emblem Dominion of Thaxted.png

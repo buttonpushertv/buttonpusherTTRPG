@@ -5,7 +5,7 @@ burg: 42
 campaign: Raid on the Eternal Tower
 center: 
 color: #eb9ba4
-created: 2026-07-08-18:14
+created: 2026-07-09-21:36
 cssclasses: sixty-pct-width
 emblem: Hitchton Emblem Soreroia Earldom.png
 formName: Earldom

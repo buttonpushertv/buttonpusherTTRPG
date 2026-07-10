@@ -10,7 +10,7 @@ capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Man
 cells: 124
 center: 3989
 color: #e6ab80
-created: 2026-07-08-18:14
+created: 2026-07-09-21:36
 cssclasses: sixty-pct-width
 culture: Daling
 emblem: Hitchton Emblem Dominion of Manch.png

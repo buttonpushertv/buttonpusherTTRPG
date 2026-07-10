@@ -1,7 +1,7 @@
 ---
 aliases:
-- Kiver
-- Kiver-1
+  - Kiver
+  - Kiver-1
 burgMapLink: https://watabou.github.io/city-generator/?name=Kiver&population=13197&size=34&seed=5827453500001&river=1&coast=1&farms=1&citadel=1&urban_castle=0&hub=0&plaza=1&temple=0&walls=1&shantytown=0&greens=1&style=natural&sea=1.8
 burgName: Kiver
 burgNameID: Kiver-1
@@ -9,7 +9,7 @@ campaign: Raid on the Eternal Tower
 capital: 1
 cell: 3597
 citadel: 1
-cssclasses: sixty-pct-width
+cssclasses: seventy-pct-width
 culture: Daling
 elevation: 52 ft
 emblem: Hitchton Emblem Kiver.png
@@ -32,18 +32,18 @@ shanty: 0
 shortDescription: A short description of the burg.
 stateId: 1
 stateName: Hitchia
-stateNotePath: "01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Hitchia/Hitchia"
+stateNotePath: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Hitchia/Hitchia
 tags:
-- Burg
-- Hitchton
-- roet
-- capital
-- Frampland-Landgrave
-- Hitchia
+  - Burg
+  - Hitchton
+  - roet
+  - capital
+  - Frampland-Landgrave
+  - Hitchia
 temple: 0
 temperature: 79°F
 temperatureLikeness: Atlanta (Georgia - Summer)
-templateVersion: 7.4
+templateVersion: 7.5
 treasury: 47.31
 type: Naval
 walls: 1
@@ -129,15 +129,15 @@ There is an elaborate method (see [[JSON Import How To#Wrangling FMG Burg Maps]]
 
 %% City Maps may need Scale adjusting - see `unit: feet` line above in Leaflet block (around line 80-81) The `scale` setting of `1` is arbitrary. It seems to work for the Burg maps - City or Village. By default the CityGen maps will likely have the `scale bar` visible. I recommend hiding it. The City Gen uses meters. The Village Gen has no scale defined. Once you hide it in the CityGen Settings, it should stay hidden for several visits to these maps.%%
 
-%%TTRPGMapTOP%%
+%%TTRPGMapTOP-
 
-> [!metadata|map]+ Kiver Burg Map
+> [!metadata|map]- Kiver Burg Map
 > ```zoommap
 > imageBases:
 >   - path: 01-Campaigns/Raid on the Eternal Tower/98-Raid on the Eternal Tower Assets/burg-maps/Kiver-1.png
 > markerLayers:
 >   - Default
-> minZoom: 0.25
+> minZoom: 0.50
 > maxZoom: 8
 > wrap: false
 > responsive: false
@@ -149,13 +149,13 @@ There is an elaborate method (see [[JSON Import How To#Wrangling FMG Burg Maps]]
 > align: center
 > id: map-Kiver-1
 > view:
->   zoom: 0.25
+>   zoom: .5
 >   centerX: .5
 >   centerY: .5
 > ```
 > [Link to Kiver on FMG Map](https://azgaar.github.io/Fantasy-Map-Generator/?maplink=https://dl.dropboxusercontent.com/scl/fi/l7dpjh1fb1v053mc7izmw/Hitchton-2026-06-21-15-36.map?rlkey=zrhhfmejskvk1cpgiizmjbrfl&dl=0&scale=3)
 
-%%TTRPGMapTAIL%%
+-TTRPGMapTAIL%%
 
 %%
 ZOOMMAP-DATA id=map-Kiver-1
@@ -169,7 +169,8 @@ ZOOMMAP-DATA id=map-Kiver-1
     }
   ],
   "markers": [
-    {}
+    {
+    }
   ],
   "bases": [
     {
@@ -193,10 +194,6 @@ ZOOMMAP-DATA id=map-Kiver-1
   "textLayers": [],
   "secondScreen": {
     "showGrids": true
-  },
-  "size": {
-    "w": 3639,
-    "h": 4610
   }
 }
 /ZOOMMAP-DATA

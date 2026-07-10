@@ -10,7 +10,7 @@ capitalFile: 01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Lou
 cells: 14
 center: 715
 color: #fff53c
-created: 2026-07-08-18:14
+created: 2026-07-09-21:36
 cssclasses: sixty-pct-width
 culture: Moury
 emblem: Hitchton Emblem Duchy of Louthia.png
