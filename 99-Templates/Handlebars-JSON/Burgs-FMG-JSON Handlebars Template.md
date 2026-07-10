@@ -43,7 +43,7 @@ tags:
 temple: {{temple}}
 temperature: {{getTemperature this @importDataRoot}}
 temperatureLikeness: {{getTemperatureLikeness this @importDataRoot}}
-templateVersion: 7.4
+templateVersion: 7.5
 treasury: {{treasury}}
 type: {{type}}
 walls: {{walls}}
@@ -69,7 +69,7 @@ marker: burg,{{getLeafletBurgXY this.i @importDataRoot.pack.burgs @importDataRoo
 >> ![[{{@importDataRoot.info.mapName}} Emblem {{name}}.png]]
 >
 >> ### Information
->> **Pronounced:**: "`=this.pronounced`"
+>> **Pronounced:** "`=this.pronounced`"
 >> **Population:**  `=this.population` 
 >> **State:** `=link(this.stateNotePath,stateName)`
 >> **Province:** `=link(this.provinceName)`
@@ -129,9 +129,9 @@ There is an elaborate method (see [[JSON Import How To#Wrangling FMG Burg Maps]]
 
 %% City Maps may need Scale adjusting - see `unit: feet` line above in Leaflet block (around line 80-81) The `scale` setting of `1` is arbitrary. It seems to work for the Burg maps - City or Village. By default the CityGen maps will likely have the `scale bar` visible. I recommend hiding it. The City Gen uses meters. The Village Gen has no scale defined. Once you hide it in the CityGen Settings, it should stay hidden for several visits to these maps.%%
 
-%%TTRPGMapTOP%%
+%%TTRPGMapTOP-
 
-> [!metadata|map]+ {{name}} Burg Map
+> [!metadata|map]- {{name}} Burg Map
 > ```zoommap
 > imageBases:
 >   - path: {{@importDataRoot.importInfo.thisCampaignPath}}/98-{{@importDataRoot.importInfo.thisCampaign}} Assets/burg-maps/{{name}}-{{i}}.png
@@ -155,7 +155,7 @@ There is an elaborate method (see [[JSON Import How To#Wrangling FMG Burg Maps]]
 > ```
 > [Link to {{name}} on FMG Map]({{@importDataRoot.importInfo.mapDropboxFMGLink}}&scale=3{{getFMGCellXY this.center @importDataRoot.pack.cells}})
 
-%%TTRPGMapTAIL%%
+-TTRPGMapTAIL%%
 
 %%
 ZOOMMAP-DATA id=map-{{name}}-{{i}}

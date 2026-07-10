@@ -52,6 +52,7 @@
 036   getMarketGoodsTableByBurg(burgId, allBurgs, allMarkets, allGoods)
 037   buildTimelineFromStateCampaigns(stateObject)
 038   computeStateZoomLevel(stateCells)
+039   getReligionOrigin(religionId, allReligions)
 
 * - NEEDS TO BE REWORKED
 x - DEPRECATED - no longer used in the code
@@ -734,6 +735,37 @@ handlebars.registerHelper('getCellLeafletXY', function(cellId, allCells, mapInfo
   return `${leafletH},${leafletW}`;
 });
 
+// 020b
+// Custom Helper to derive the ZoomMap Compatible X Coords of a Cell
+handlebars.registerHelper('getCellZoomMapX', function(cellId, allCells, mapInfo) {
+  if (cellId === undefined || cellId === 0 ) {
+    console.log("##### getCellZoomMapX - cellId was undefined or zero #####");
+    return ''; // skip if the element is undefined
+  };
+  const foundCell = allCells.find(cell => cell.i === cellId);
+  console.log("getCellZoomMapX - cellId: ", cellId, " -- foundCell: ", foundCell);
+  const foundCellX = foundCell.p[0];
+  const zoomMapX = (foundCellX / mapInfo.width);
+  console.log("zoomMapX: ", zoomMapX);
+  return `${zoomMapX}`;
+});
+
+// 020c
+// Custom Helper to derive the ZoomMap Compatible Y Coords of a Cell
+handlebars.registerHelper('getCellZoomMapY', function(cellId, allCells, mapInfo) {
+  if (cellId === undefined || cellId === 0 ) {
+    console.log("##### getCellZoomMapY - cellId was undefined or zero #####");
+    return ''; // skip if the element is undefined
+  };
+  const foundCell = allCells.find(cell => cell.i === cellId);
+  // console.log("cellId: ", cellId, " -- foundCell: ", foundCell);
+  const foundCellY = foundCell.p[1];
+  const zoomMapY = (foundCellY / mapInfo.height);
+  // console.log("zoomMapY: ", zoomMapY);
+  return `${zoomMapY}`;
+});
+
+
 // 021
 // Custom Helper to derive the Leaflet Compatible X & Y Coords of the "pole" of a State
 // the "pole" is the visual center - Concept Decsription: https://blog.mapbox.com/a-new-algorithm-for-finding-a-visual-center-of-a-polygon-7c77e6492fbc
@@ -1298,4 +1330,19 @@ handlebars.registerHelper('computeStateZoomLevel', function(stateCells) {
     const z = 15 / Math.sqrt(stateCells);
     const adjustedZoomLevel = Math.round(Math.max(1.175, Math.min(4.0, z)) * 10000) / 10000;
     return adjustedZoomLevel;
+});
+
+// 039
+// Custom Helper to derive the origin religion for a given religion - which religion begat the current religion
+handlebars.registerHelper('getOriginReligion', function(religionOriginId, allReligions) {
+  if (religionOriginId === undefined || religionOriginId === 0) {
+    console.log("##### getOriginReligion - religionOriginId was undefined or zero #####");
+    return ''; // skip if religionOriginId is undefined or zero
+  }
+  const originReligion = allReligions.find(religion => religion.i === religionOriginId);
+  if (!originReligion) {
+    console.log("##### getOriginReligion - originReligion was undefined #####");
+    return ''; // skip if originReligion is undefined
+  }
+  return originReligion.name || 'Unknown';
 });
