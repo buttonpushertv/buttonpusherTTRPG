@@ -1,0 +1,4 @@
+ul.dataview.list-view-ul {
+    margin-block-start: -0.5em; /* Obsidian default is usually 1em */
+    list-style-type: none;
+}
