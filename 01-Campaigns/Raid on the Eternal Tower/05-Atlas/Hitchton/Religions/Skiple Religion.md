@@ -5,26 +5,29 @@ campaign: "Raid on the Eternal Tower"
 center: 4505
 code: SR
 color: #ebd8ff
-created: 2026-07-09-22:58
-cssclasses: sixty-pct-width
+created: 2026-07-10-17:46
+cssclasses: seventy-pct-width
 culture: Skiple
 deity: Stanswest, The Worried Narwhal
 expansion: culture
 expansionism: 1.8
+extinct: false
 followers: 886,347
 form: Dualism
 id: 15
 leaders:
 mapName: Hitchton
 origins: 
+- Religion of the Mad
+- Conghamism
 pronounced: ""
 religionName: "Skiple Religion"
-shortDescription:
+shortDescription: A short description of this religion.
 tags:
 - Religion
 - Hitchton
 type: Organized
-templateVersion: 7.0
+templateVersion: 7.4
 WBProgress: Imported
 ---
 
@@ -36,7 +39,7 @@ WBProgress: Imported
 ---
 
 > [!column|3 no-t] `=this.religonName` Information
->> ### Symbols of `=this.religonName`
+>> ### Symbols of `=this.religionName`
 >> <span style="font-size:x-small">This section is where you could place imagry, icons, or symbols of this faith.</span>
 >
 >> ### Information
@@ -49,7 +52,13 @@ WBProgress: Imported
 >> ### Additional Info
 >> **Culture:** `=this.culture`
 >> **Expands via:** `=this.expansion`
->> **Origins:** `=link(this.origins)`
+>> **Origins:**
+>> ```dataview
+>> LIST WITHOUT ID
+>> link(origins)
+>> FLATTEN origins
+>> WHERE file.name = this.file.name
+>> ```
 
 %%LeafletMapTOP-
 
@@ -76,6 +85,7 @@ WBProgress: Imported
 > The area shown in the color above is the reach of Skiple Religion
 >
 > [Link to Skiple Religion on FMG Map](https://azgaar.github.io/Fantasy-Map-Generator/?maplink=https://dl.dropboxusercontent.com/scl/fi/l7dpjh1fb1v053mc7izmw/Hitchton-2026-06-21-15-36.map?rlkey=zrhhfmejskvk1cpgiizmjbrfl&dl=0&scale=3&x=1377.4&y=1089.8)
+> 
 
 -LeafletMapTAIL%%
 
@@ -99,7 +109,7 @@ WBProgress: Imported
 > align: center
 > id: map-religion-SkipleReligion-15
 > view:
->   zoom: .5
+>   zoom: 1
 >   centerX: 0.5273353751914243
 >   centerY: 0.8268588770864946
 > ```
@@ -111,7 +121,7 @@ WBProgress: Imported
 %%TTRPGMapTAIL%%
 
 %%
-ZOOMMAP-DATA map-religion-SkipleReligion-15
+ZOOMMAP-DATA id=map-religion-SkipleReligion-15
 {
   "size": {
     "w": 2612,

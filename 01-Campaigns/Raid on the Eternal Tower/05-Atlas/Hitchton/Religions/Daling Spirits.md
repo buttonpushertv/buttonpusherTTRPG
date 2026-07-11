@@ -5,26 +5,28 @@ campaign: "Raid on the Eternal Tower"
 center: 3597
 code: DS
 color: #ccebc5
-created: 2026-07-09-22:58
-cssclasses: sixty-pct-width
+created: 2026-07-10-17:46
+cssclasses: seventy-pct-width
 culture: Daling
 deity: 
 expansion: culture
 expansionism: 0
+extinct: true
 followers: 0
 form: Animism
 id: 10
 leaders:
 mapName: Hitchton
 origins: 
+- Foundational Faith
 pronounced: ""
 religionName: "Daling Spirits"
-shortDescription:
+shortDescription: A short description of this religion.
 tags:
 - Religion
 - Hitchton
 type: Folk
-templateVersion: 7.0
+templateVersion: 7.4
 WBProgress: Imported
 ---
 
@@ -36,7 +38,7 @@ WBProgress: Imported
 ---
 
 > [!column|3 no-t] `=this.religonName` Information
->> ### Symbols of `=this.religonName`
+>> ### Symbols of `=this.religionName`
 >> <span style="font-size:x-small">This section is where you could place imagry, icons, or symbols of this faith.</span>
 >
 >> ### Information
@@ -49,7 +51,8 @@ WBProgress: Imported
 >> ### Additional Info
 >> **Culture:** `=this.culture`
 >> **Expands via:** `=this.expansion`
->> **Origins:** `=link(this.origins)`
+>> **Origins:**
+>> _Religion is extinct_
 
 %%LeafletMapTOP-
 
@@ -76,6 +79,7 @@ WBProgress: Imported
 > The area shown in the color above is the reach of Daling Spirits
 >
 > [Link to Daling Spirits on FMG Map](https://azgaar.github.io/Fantasy-Map-Generator/?maplink=https://dl.dropboxusercontent.com/scl/fi/l7dpjh1fb1v053mc7izmw/Hitchton-2026-06-21-15-36.map?rlkey=zrhhfmejskvk1cpgiizmjbrfl&dl=0&scale=3&x=1949.5&y=838.1)
+> 
 
 -LeafletMapTAIL%%
 
@@ -107,54 +111,11 @@ WBProgress: Imported
 > The area shown in the color above is the reach of Daling Spirits
 >
 > [Link to Daling Spirits on FMG Map](https://azgaar.github.io/Fantasy-Map-Generator/?maplink=https://dl.dropboxusercontent.com/scl/fi/l7dpjh1fb1v053mc7izmw/Hitchton-2026-06-21-15-36.map?rlkey=zrhhfmejskvk1cpgiizmjbrfl&dl=0&scale=3&x=1949.5&y=838.1)
-%%
-ZOOMMAP-DATA id=map-religion-DalingSpirits-10
-{
-  "size": {
-    "w": 2612,
-    "h": 1318
-  },
-  "layers": [
-    {
-      "id": "default",
-      "name": "Default",
-      "visible": true,
-      "locked": false
-    }
-  ],
-  "markers": [],
-  "bases": [
-    {
-      "path": "01-Campaigns/Raid on the Eternal Tower/98-Raid on the Eternal Tower Assets/Hitchton Religions World Map.svg"
-    }
-  ],
-  "overlays": [],
-  "activeBase": "01-Campaigns/Raid on the Eternal Tower/98-Raid on the Eternal Tower Assets/Hitchton Religions World Map.svg",
-  "measurement": {
-    "displayUnit": "km",
-    "scales": {},
-    "customUnitPxPerUnit": {},
-    "travelTimePresetIds": [],
-    "travelDaysEnabled": false
-  },
-  "pinSizeOverrides": {},
-  "grids": [],
-  "panClamp": true,
-  "drawLayers": [],
-  "drawings": [],
-  "textLayers": [],
-  "secondScreen": {
-    "showGrids": true
-  }
-}
-/ZOOMMAP-DATA
-%%
-
 
 %%TTRPGMapTAIL%%
 
 %%
-ZOOMMAP-DATA map-religion-DalingSpirits-10
+ZOOMMAP-DATA id=map-religion-DalingSpirits-10
 {
   "size": {
     "w": 2612,

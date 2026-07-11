@@ -5,26 +5,28 @@ campaign: "Raid on the Eternal Tower"
 center: 400
 code: Pe
 color: #bb8ce1
-created: 2026-07-09-22:58
-cssclasses: sixty-pct-width
+created: 2026-07-10-17:46
+cssclasses: seventy-pct-width
 culture: Cliford
 deity: Noster, The Giver
 expansion: global
 expansionism: 3
+extinct: false
 followers: 2,404,789
 form: Dualism
 id: 19
 leaders:
 mapName: Hitchton
 origins: 
+- Cliford Gods
 pronounced: ""
 religionName: "Perslehamism"
-shortDescription:
+shortDescription: A short description of this religion.
 tags:
 - Religion
 - Hitchton
 type: Organized
-templateVersion: 7.0
+templateVersion: 7.4
 WBProgress: Imported
 ---
 
@@ -36,7 +38,7 @@ WBProgress: Imported
 ---
 
 > [!column|3 no-t] `=this.religonName` Information
->> ### Symbols of `=this.religonName`
+>> ### Symbols of `=this.religionName`
 >> <span style="font-size:x-small">This section is where you could place imagry, icons, or symbols of this faith.</span>
 >
 >> ### Information
@@ -49,7 +51,13 @@ WBProgress: Imported
 >> ### Additional Info
 >> **Culture:** `=this.culture`
 >> **Expands via:** `=this.expansion`
->> **Origins:** `=link(this.origins)`
+>> **Origins:**
+>> ```dataview
+>> LIST WITHOUT ID 
+>> link(origins)
+>> FLATTEN origins
+>> WHERE file.name = this.file.name
+>> ```
 
 %%LeafletMapTOP-
 
@@ -76,6 +84,7 @@ WBProgress: Imported
 > The area shown in the color above is the reach of Perslehamism
 >
 > [Link to Perslehamism on FMG Map](https://azgaar.github.io/Fantasy-Map-Generator/?maplink=https://dl.dropboxusercontent.com/scl/fi/l7dpjh1fb1v053mc7izmw/Hitchton-2026-06-21-15-36.map?rlkey=zrhhfmejskvk1cpgiizmjbrfl&dl=0&scale=3&x=1702.3&y=234.4)
+> 
 
 -LeafletMapTAIL%%
 
@@ -99,7 +108,7 @@ WBProgress: Imported
 > align: center
 > id: map-religion-Perslehamism-19
 > view:
->   zoom: .5
+>   zoom: 1
 >   centerX: 0.6517228177641654
 >   centerY: 0.17784522003034903
 > ```
@@ -111,7 +120,7 @@ WBProgress: Imported
 %%TTRPGMapTAIL%%
 
 %%
-ZOOMMAP-DATA map-religion-Perslehamism-19
+ZOOMMAP-DATA id=map-religion-Perslehamism-19
 {
   "size": {
     "w": 2612,

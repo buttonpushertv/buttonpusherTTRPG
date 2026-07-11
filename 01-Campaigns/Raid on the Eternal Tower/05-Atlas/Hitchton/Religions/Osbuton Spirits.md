@@ -5,26 +5,28 @@ campaign: "Raid on the Eternal Tower"
 center: 1596
 code: OS
 color: #b3de69
-created: 2026-07-09-22:58
-cssclasses: sixty-pct-width
+created: 2026-07-10-17:46
+cssclasses: seventy-pct-width
 culture: Osbuton
 deity: 
 expansion: culture
 expansionism: 0
+extinct: false
 followers: 1,428,023
 form: Animism
 id: 2
 leaders:
 mapName: Hitchton
 origins: 
+- Foundational Faith
 pronounced: ""
 religionName: "Osbuton Spirits"
-shortDescription:
+shortDescription: A short description of this religion.
 tags:
 - Religion
 - Hitchton
 type: Folk
-templateVersion: 7.0
+templateVersion: 7.4
 WBProgress: Imported
 ---
 
@@ -36,7 +38,7 @@ WBProgress: Imported
 ---
 
 > [!column|3 no-t] `=this.religonName` Information
->> ### Symbols of `=this.religonName`
+>> ### Symbols of `=this.religionName`
 >> <span style="font-size:x-small">This section is where you could place imagry, icons, or symbols of this faith.</span>
 >
 >> ### Information
@@ -49,7 +51,13 @@ WBProgress: Imported
 >> ### Additional Info
 >> **Culture:** `=this.culture`
 >> **Expands via:** `=this.expansion`
->> **Origins:** `=link(this.origins)`
+>> **Origins:**
+>> ```dataview
+>> LIST WITHOUT ID 
+>> link(origins)
+>> FLATTEN origins
+>> WHERE file.name = this.file.name
+>> ```
 
 %%LeafletMapTOP-
 
@@ -76,6 +84,7 @@ WBProgress: Imported
 > The area shown in the color above is the reach of Osbuton Spirits
 >
 > [Link to Osbuton Spirits on FMG Map](https://azgaar.github.io/Fantasy-Map-Generator/?maplink=https://dl.dropboxusercontent.com/scl/fi/l7dpjh1fb1v053mc7izmw/Hitchton-2026-06-21-15-36.map?rlkey=zrhhfmejskvk1cpgiizmjbrfl&dl=0&scale=3&x=629.7&y=474)
+> 
 
 -LeafletMapTAIL%%
 
@@ -99,7 +108,7 @@ WBProgress: Imported
 > align: center
 > id: map-religion-OsbutonSpirits-2
 > view:
->   zoom: .5
+>   zoom: 1
 >   centerX: 0.24107963246554368
 >   centerY: 0.3596358118361153
 > ```
@@ -111,7 +120,7 @@ WBProgress: Imported
 %%TTRPGMapTAIL%%
 
 %%
-ZOOMMAP-DATA map-religion-OsbutonSpirits-2
+ZOOMMAP-DATA id=map-religion-OsbutonSpirits-2
 {
   "size": {
     "w": 2612,

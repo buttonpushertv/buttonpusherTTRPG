@@ -5,26 +5,28 @@ campaign: "Raid on the Eternal Tower"
 center: 1260
 code: CF
 color: #ffed6f
-created: 2026-07-09-22:58
-cssclasses: sixty-pct-width
+created: 2026-07-10-17:46
+cssclasses: seventy-pct-width
 culture: Cowey
 deity: Balton, The Red Creator
 expansion: culture
 expansionism: 0
+extinct: true
 followers: 0
 form: Ancestor Worship
 id: 1
 leaders:
 mapName: Hitchton
 origins: 
+- Foundational Faith
 pronounced: ""
 religionName: "Cowey Forefathers"
-shortDescription:
+shortDescription: A short description of this religion.
 tags:
 - Religion
 - Hitchton
 type: Folk
-templateVersion: 7.0
+templateVersion: 7.4
 WBProgress: Imported
 ---
 
@@ -36,7 +38,7 @@ WBProgress: Imported
 ---
 
 > [!column|3 no-t] `=this.religonName` Information
->> ### Symbols of `=this.religonName`
+>> ### Symbols of `=this.religionName`
 >> <span style="font-size:x-small">This section is where you could place imagry, icons, or symbols of this faith.</span>
 >
 >> ### Information
@@ -49,7 +51,8 @@ WBProgress: Imported
 >> ### Additional Info
 >> **Culture:** `=this.culture`
 >> **Expands via:** `=this.expansion`
->> **Origins:** `=link(this.origins)`
+>> **Origins:**
+>> _Religion is extinct_
 
 %%LeafletMapTOP-
 
@@ -76,6 +79,7 @@ WBProgress: Imported
 > The area shown in the color above is the reach of Cowey Forefathers
 >
 > [Link to Cowey Forefathers on FMG Map](https://azgaar.github.io/Fantasy-Map-Generator/?maplink=https://dl.dropboxusercontent.com/scl/fi/l7dpjh1fb1v053mc7izmw/Hitchton-2026-06-21-15-36.map?rlkey=zrhhfmejskvk1cpgiizmjbrfl&dl=0&scale=3&x=2046.8&y=409.6)
+> 
 
 -LeafletMapTAIL%%
 
@@ -99,7 +103,7 @@ WBProgress: Imported
 > align: center
 > id: map-religion-CoweyForefathers-1
 > view:
->   zoom: .5
+>   zoom: 1
 >   centerX: 0.783614088820827
 >   centerY: 0.31077389984825493
 > ```
@@ -111,7 +115,7 @@ WBProgress: Imported
 %%TTRPGMapTAIL%%
 
 %%
-ZOOMMAP-DATA map-religion-CoweyForefathers-1
+ZOOMMAP-DATA id=map-religion-CoweyForefathers-1
 {
   "size": {
     "w": 2612,

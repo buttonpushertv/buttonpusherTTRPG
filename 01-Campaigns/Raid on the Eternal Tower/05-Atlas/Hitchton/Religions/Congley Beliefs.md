@@ -5,26 +5,28 @@ campaign: "Raid on the Eternal Tower"
 center: 2226
 code: CB
 color: #c6b9c1
-created: 2026-07-09-22:58
-cssclasses: sixty-pct-width
+created: 2026-07-10-17:46
+cssclasses: seventy-pct-width
 culture: Congley
 deity: Ledine, The Marine Victory
 expansion: culture
 expansionism: 0
+extinct: false
 followers: 495
 form: Shamanism
 id: 9
 leaders:
 mapName: Hitchton
 origins: 
+- Foundational Faith
 pronounced: ""
 religionName: "Congley Beliefs"
-shortDescription:
+shortDescription: A short description of this religion.
 tags:
 - Religion
 - Hitchton
 type: Folk
-templateVersion: 7.0
+templateVersion: 7.4
 WBProgress: Imported
 ---
 
@@ -36,7 +38,7 @@ WBProgress: Imported
 ---
 
 > [!column|3 no-t] `=this.religonName` Information
->> ### Symbols of `=this.religonName`
+>> ### Symbols of `=this.religionName`
 >> <span style="font-size:x-small">This section is where you could place imagry, icons, or symbols of this faith.</span>
 >
 >> ### Information
@@ -49,7 +51,13 @@ WBProgress: Imported
 >> ### Additional Info
 >> **Culture:** `=this.culture`
 >> **Expands via:** `=this.expansion`
->> **Origins:** `=link(this.origins)`
+>> **Origins:**
+>> ```dataview
+>> LIST WITHOUT ID 
+>> link(origins)
+>> FLATTEN origins
+>> WHERE file.name = this.file.name
+>> ```
 
 %%LeafletMapTOP-
 
@@ -76,6 +84,7 @@ WBProgress: Imported
 > The area shown in the color above is the reach of Congley Beliefs
 >
 > [Link to Congley Beliefs on FMG Map](https://azgaar.github.io/Fantasy-Map-Generator/?maplink=https://dl.dropboxusercontent.com/scl/fi/l7dpjh1fb1v053mc7izmw/Hitchton-2026-06-21-15-36.map?rlkey=zrhhfmejskvk1cpgiizmjbrfl&dl=0&scale=3&x=1375.32&y=557.78)
+> 
 
 -LeafletMapTAIL%%
 
@@ -107,6 +116,9 @@ WBProgress: Imported
 > The area shown in the color above is the reach of Congley Beliefs
 >
 > [Link to Congley Beliefs on FMG Map](https://azgaar.github.io/Fantasy-Map-Generator/?maplink=https://dl.dropboxusercontent.com/scl/fi/l7dpjh1fb1v053mc7izmw/Hitchton-2026-06-21-15-36.map?rlkey=zrhhfmejskvk1cpgiizmjbrfl&dl=0&scale=3&x=1375.32&y=557.78)
+
+%%TTRPGMapTAIL%%
+
 %%
 ZOOMMAP-DATA id=map-religion-CongleyBeliefs-9
 {
@@ -120,63 +132,6 @@ ZOOMMAP-DATA id=map-religion-CongleyBeliefs-9
       "name": "Default",
       "visible": true,
       "locked": false
-    }
-  ],
-  "markers": [
-    {
-      "type": "pin",
-      "id": "marker_CongleyBeliefs_center",
-      "x": 0.5265390505359877,
-      "y": 0.42320182094081943,
-      "layer": "default",
-      "link": "",
-      "iconKey": "pinRed",
-      "tooltip": "Congley Beliefs Center"
-    }
-  ],
-  "bases": [
-    {
-      "path": "01-Campaigns/Raid on the Eternal Tower/98-Raid on the Eternal Tower Assets/Hitchton Religions World Map.svg"
-    }
-  ],
-  "overlays": [],
-  "activeBase": "01-Campaigns/Raid on the Eternal Tower/98-Raid on the Eternal Tower Assets/Hitchton Religions World Map.svg",
-  "measurement": {
-    "displayUnit": "km",
-    "scales": {},
-    "customUnitPxPerUnit": {},
-    "travelTimePresetIds": [],
-    "travelDaysEnabled": false
-  },
-  "pinSizeOverrides": {},
-  "grids": [],
-  "panClamp": true,
-  "drawLayers": [],
-  "drawings": [],
-  "textLayers": [],
-  "secondScreen": {
-    "showGrids": true
-  }
-}
-/ZOOMMAP-DATA
-%%
-
-
-%%TTRPGMapTAIL%%
-
-%%
-ZOOMMAP-DATA map-religion-CongleyBeliefs-9
-{
-  "size": {
-    "w": 2612,
-    "h": 1318
-  },
-  "layers": [
-    {
-      "id": "default",
-      "name": "Default",
-      "visible": true,
-      "locked": true
     }
   ],
   "markers": [

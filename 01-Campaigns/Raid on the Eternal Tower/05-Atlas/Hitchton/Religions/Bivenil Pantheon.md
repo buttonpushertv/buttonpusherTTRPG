@@ -5,26 +5,28 @@ campaign: "Raid on the Eternal Tower"
 center: 903
 code: BP
 color: #ff8190
-created: 2026-07-09-22:58
-cssclasses: sixty-pct-width
+created: 2026-07-10-17:46
+cssclasses: seventy-pct-width
 culture: Bivenil
 deity: Wargin, The Old Roc
 expansion: culture
 expansionism: 3.9
+extinct: false
 followers: 3,589,089
 form: Polytheism
 id: 16
 leaders:
 mapName: Hitchton
 origins: 
+- Old Bivenil Forefathers
 pronounced: ""
 religionName: "Bivenil Pantheon"
-shortDescription:
+shortDescription: A short description of this religion.
 tags:
 - Religion
 - Hitchton
 type: Organized
-templateVersion: 7.0
+templateVersion: 7.4
 WBProgress: Imported
 ---
 
@@ -36,7 +38,7 @@ WBProgress: Imported
 ---
 
 > [!column|3 no-t] `=this.religonName` Information
->> ### Symbols of `=this.religonName`
+>> ### Symbols of `=this.religionName`
 >> <span style="font-size:x-small">This section is where you could place imagry, icons, or symbols of this faith.</span>
 >
 >> ### Information
@@ -49,7 +51,13 @@ WBProgress: Imported
 >> ### Additional Info
 >> **Culture:** `=this.culture`
 >> **Expands via:** `=this.expansion`
->> **Origins:** `=link(this.origins)`
+>> **Origins:**
+>> ```dataview
+>> LIST WITHOUT ID 
+>> link(origins)
+>> FLATTEN origins
+>> WHERE file.name = this.file.name
+>> ```
 
 %%LeafletMapTOP-
 
@@ -76,6 +84,7 @@ WBProgress: Imported
 > The area shown in the color above is the reach of Bivenil Pantheon
 >
 > [Link to Bivenil Pantheon on FMG Map](https://azgaar.github.io/Fantasy-Map-Generator/?maplink=https://dl.dropboxusercontent.com/scl/fi/l7dpjh1fb1v053mc7izmw/Hitchton-2026-06-21-15-36.map?rlkey=zrhhfmejskvk1cpgiizmjbrfl&dl=0&scale=3&x=502.04&y=350.81)
+> 
 
 -LeafletMapTAIL%%
 
@@ -99,7 +108,7 @@ WBProgress: Imported
 > align: center
 > id: map-religion-BivenilPantheon-16
 > view:
->   zoom: .5
+>   zoom: 1
 >   centerX: 0.1922052067381317
 >   centerY: 0.2661684370257967
 > ```
@@ -111,7 +120,7 @@ WBProgress: Imported
 %%TTRPGMapTAIL%%
 
 %%
-ZOOMMAP-DATA map-religion-BivenilPantheon-16
+ZOOMMAP-DATA id=map-religion-BivenilPantheon-16
 {
   "size": {
     "w": 2612,

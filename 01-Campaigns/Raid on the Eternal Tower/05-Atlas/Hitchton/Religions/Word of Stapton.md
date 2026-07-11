@@ -5,26 +5,28 @@ campaign: "Raid on the Eternal Tower"
 center: 3597
 code: Wo
 color: #fae2d0
-created: 2026-07-09-22:58
-cssclasses: sixty-pct-width
+created: 2026-07-10-17:46
+cssclasses: seventy-pct-width
 culture: Daling
 deity: Stapton, The Emerald Unicorn
 expansion: global
 expansionism: 2.4
+extinct: false
 followers: 2,604,101
 form: Monotheism
 id: 11
 leaders:
 mapName: Hitchton
 origins: 
+- Daling Spirits
 pronounced: ""
 religionName: "Word of Stapton"
-shortDescription:
+shortDescription: A short description of this religion.
 tags:
 - Religion
 - Hitchton
 type: Organized
-templateVersion: 7.0
+templateVersion: 7.4
 WBProgress: Imported
 ---
 
@@ -36,7 +38,7 @@ WBProgress: Imported
 ---
 
 > [!column|3 no-t] `=this.religonName` Information
->> ### Symbols of `=this.religonName`
+>> ### Symbols of `=this.religionName`
 >> <span style="font-size:x-small">This section is where you could place imagry, icons, or symbols of this faith.</span>
 >
 >> ### Information
@@ -49,7 +51,13 @@ WBProgress: Imported
 >> ### Additional Info
 >> **Culture:** `=this.culture`
 >> **Expands via:** `=this.expansion`
->> **Origins:** `=link(this.origins)`
+>> **Origins:**
+>> ```dataview
+>> LIST WITHOUT ID 
+>> link(origins)
+>> FLATTEN origins
+>> WHERE file.name = this.file.name
+>> ```
 
 %%LeafletMapTOP-
 
@@ -76,6 +84,7 @@ WBProgress: Imported
 > The area shown in the color above is the reach of Word of Stapton
 >
 > [Link to Word of Stapton on FMG Map](https://azgaar.github.io/Fantasy-Map-Generator/?maplink=https://dl.dropboxusercontent.com/scl/fi/l7dpjh1fb1v053mc7izmw/Hitchton-2026-06-21-15-36.map?rlkey=zrhhfmejskvk1cpgiizmjbrfl&dl=0&scale=3&x=1949.5&y=838.1)
+> 
 
 -LeafletMapTAIL%%
 
@@ -99,7 +108,7 @@ WBProgress: Imported
 > align: center
 > id: map-religion-WordofStapton-11
 > view:
->   zoom: .5
+>   zoom: 1
 >   centerX: 0.7463629402756509
 >   centerY: 0.6358877086494689
 > ```
@@ -111,7 +120,7 @@ WBProgress: Imported
 %%TTRPGMapTAIL%%
 
 %%
-ZOOMMAP-DATA map-religion-WordofStapton-11
+ZOOMMAP-DATA id=map-religion-WordofStapton-11
 {
   "size": {
     "w": 2612,
