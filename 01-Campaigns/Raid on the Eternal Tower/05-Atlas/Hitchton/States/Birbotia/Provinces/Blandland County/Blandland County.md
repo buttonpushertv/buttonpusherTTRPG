@@ -6,7 +6,7 @@ campaign: Raid on the Eternal Tower
 center: 
 color: #ffa1ce
 created: 2026-07-09-21:36
-cssclasses: sixty-pct-width
+cssclasses: seventy-pct-width
 emblem: Hitchton Emblem Blandland County.png
 formName: County
 fullName: Blandland County

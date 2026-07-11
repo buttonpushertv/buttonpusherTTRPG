@@ -6,6 +6,7 @@ new_data = {
     "thisCampaign": "Raid on the Eternal Tower",
     "thisCampaignPath": "01-Campaigns/Raid on the Eternal Tower",
     "thisCampaignShortCode": "roet",
+    "thisMapType": "Planet",
     "mapDropboxFMGLink": "https://azgaar.github.io/Fantasy-Map-Generator/?maplink=https://dl.dropboxusercontent.com/scl/fi/l7dpjh1fb1v053mc7izmw/Hitchton-2026-06-21-15-36.map?rlkey=zrhhfmejskvk1cpgiizmjbrfl&dl=0"
     }
 }

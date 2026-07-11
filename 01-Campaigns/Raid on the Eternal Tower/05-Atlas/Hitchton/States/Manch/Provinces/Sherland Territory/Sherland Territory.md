@@ -6,7 +6,7 @@ campaign: Raid on the Eternal Tower
 center: 
 color: #ffb87f
 created: 2026-07-09-21:36
-cssclasses: sixty-pct-width
+cssclasses: seventy-pct-width
 emblem: Hitchton Emblem Sherland Territory.png
 formName: Territory
 fullName: Sherland Territory

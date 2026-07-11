@@ -6,7 +6,7 @@ campaign: Raid on the Eternal Tower
 center: 
 color: #a1b5c7
 created: 2026-07-09-21:36
-cssclasses: sixty-pct-width
+cssclasses: seventy-pct-width
 emblem: Hitchton Emblem Brorough Captaincy.png
 formName: Captaincy
 fullName: Brorough Captaincy

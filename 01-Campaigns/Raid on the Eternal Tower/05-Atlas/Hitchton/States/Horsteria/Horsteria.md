@@ -11,7 +11,7 @@ cells: 597
 center: 2508
 color: #91bcb3
 created: 2026-07-09-21:36
-cssclasses: sixty-pct-width
+cssclasses: seventy-pct-width
 culture: Osbuton
 emblem: Hitchton Emblem Horsterian Empire.png
 expansionism: 3.9

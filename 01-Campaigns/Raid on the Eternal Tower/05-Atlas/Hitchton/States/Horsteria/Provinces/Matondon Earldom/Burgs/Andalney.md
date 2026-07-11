@@ -9,7 +9,7 @@ campaign: Raid on the Eternal Tower
 capital: 0
 cell: 3447
 citadel: 0
-cssclasses: sixty-pct-width
+cssclasses: seventy-pct-width
 culture: Osbuton
 elevation: 840 ft
 emblem: Hitchton Emblem Andalney.png

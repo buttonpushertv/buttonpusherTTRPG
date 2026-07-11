@@ -9,7 +9,7 @@ campaign: Raid on the Eternal Tower
 capital: 0
 cell: 2723
 citadel: 0
-cssclasses: sixty-pct-width
+cssclasses: seventy-pct-width
 culture: Osbuton
 elevation: 7248 ft
 emblem: Hitchton Emblem Torkwar.png

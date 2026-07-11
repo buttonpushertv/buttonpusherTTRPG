@@ -6,7 +6,7 @@ campaign: Raid on the Eternal Tower
 center: 
 color: #fdbd8b
 created: 2026-07-09-21:36
-cssclasses: sixty-pct-width
+cssclasses: seventy-pct-width
 emblem: Hitchton Emblem Sidbury Earldom.png
 formName: Earldom
 fullName: Sidbury Earldom

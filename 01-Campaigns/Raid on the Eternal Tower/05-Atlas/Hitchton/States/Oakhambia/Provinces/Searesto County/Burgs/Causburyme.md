@@ -9,7 +9,7 @@ campaign: Raid on the Eternal Tower
 capital: 0
 cell: 1408
 citadel: 0
-cssclasses: sixty-pct-width
+cssclasses: seventy-pct-width
 culture: Cliford
 elevation: 4990 ft
 emblem: Hitchton Emblem Causburyme.png

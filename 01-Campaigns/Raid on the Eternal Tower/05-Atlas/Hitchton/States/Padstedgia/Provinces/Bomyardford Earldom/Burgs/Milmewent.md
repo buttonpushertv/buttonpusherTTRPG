@@ -9,7 +9,7 @@ campaign: Raid on the Eternal Tower
 capital: 0
 cell: 372
 citadel: 0
-cssclasses: sixty-pct-width
+cssclasses: seventy-pct-width
 culture: Moury
 elevation: 118 ft
 emblem: Hitchton Emblem Milmewent.png

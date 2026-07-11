@@ -6,7 +6,7 @@ campaign: Raid on the Eternal Tower
 center: 
 color: #c9d584
 created: 2026-07-09-21:36
-cssclasses: sixty-pct-width
+cssclasses: seventy-pct-width
 emblem: Hitchton Emblem Searesto County.png
 formName: County
 fullName: Searesto County

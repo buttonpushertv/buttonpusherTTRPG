@@ -9,7 +9,7 @@ campaign: Raid on the Eternal Tower
 capital: 0
 cell: 2647
 citadel: 0
-cssclasses: sixty-pct-width
+cssclasses: seventy-pct-width
 culture: Congley
 elevation: 210 ft
 emblem: Hitchton Emblem Bihulne.png

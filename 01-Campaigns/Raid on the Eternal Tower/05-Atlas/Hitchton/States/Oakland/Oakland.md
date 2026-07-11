@@ -11,7 +11,7 @@ cells: 123
 center: 2770
 color: #a6d854
 created: 2026-07-09-21:36
-cssclasses: sixty-pct-width
+cssclasses: seventy-pct-width
 culture: Chisbute
 emblem: Hitchton Emblem Principality of Oakland.png
 expansionism: 4.3

@@ -6,7 +6,7 @@ campaign: Raid on the Eternal Tower
 center: 
 color: #e0f068
 created: 2026-07-09-21:36
-cssclasses: sixty-pct-width
+cssclasses: seventy-pct-width
 emblem: Hitchton Emblem Kilkburghia Landgrave.png
 formName: Landgrave
 fullName: Kilkburghia Landgrave

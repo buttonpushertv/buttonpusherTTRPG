@@ -6,7 +6,7 @@ code: Ch
 color: #fdb462
 center: 
 created: 2026-07-09-21:36
-cssclasses: sixty-pct-width
+cssclasses: seventy-pct-width
 expansionism: 1.5
 id: 4
 leaders:

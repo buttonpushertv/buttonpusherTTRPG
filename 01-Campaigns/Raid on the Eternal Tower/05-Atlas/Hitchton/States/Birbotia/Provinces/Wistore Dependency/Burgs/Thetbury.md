@@ -9,7 +9,7 @@ campaign: Raid on the Eternal Tower
 capital: 0
 cell: 1549
 citadel: 1
-cssclasses: sixty-pct-width
+cssclasses: seventy-pct-width
 culture: Penkneth
 elevation: 12612 ft
 emblem: Hitchton Emblem Thetbury.png

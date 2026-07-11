@@ -9,7 +9,7 @@ campaign: Raid on the Eternal Tower
 capital: 0
 cell: 1626
 citadel: 0
-cssclasses: sixty-pct-width
+cssclasses: seventy-pct-width
 culture: Osbuton
 elevation: 52 ft
 emblem: Hitchton Emblem Lympstoles.png

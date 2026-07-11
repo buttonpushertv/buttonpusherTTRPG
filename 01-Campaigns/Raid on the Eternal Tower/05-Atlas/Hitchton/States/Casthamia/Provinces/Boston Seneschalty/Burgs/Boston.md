@@ -9,7 +9,7 @@ campaign: Raid on the Eternal Tower
 capital: 1
 cell: 3892
 citadel: 1
-cssclasses: sixty-pct-width
+cssclasses: seventy-pct-width
 culture: Skiple
 elevation: 554 ft
 emblem: Hitchton Emblem Boston.png

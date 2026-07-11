@@ -6,7 +6,7 @@ centerBurgId: 8
 centerBurgNamePlusID: Ormster-8
 centerBurgStateName: Wodminia
 centerBurgFilePath: "01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Wodminia/Provinces/Ormster Barony/Burgs/Ormster"
-cssclasses: sixty-pct-width
+cssclasses: seventy-pct-width
 id: 3
 marketName: Ormster
 mapName: Hitchton

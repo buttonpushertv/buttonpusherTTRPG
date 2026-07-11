@@ -9,7 +9,7 @@ campaign: Raid on the Eternal Tower
 capital: 1
 cell: 3246
 citadel: 1
-cssclasses: sixty-pct-width
+cssclasses: seventy-pct-width
 culture: Daling
 elevation: 643 ft
 emblem: Hitchton Emblem Wacury.png

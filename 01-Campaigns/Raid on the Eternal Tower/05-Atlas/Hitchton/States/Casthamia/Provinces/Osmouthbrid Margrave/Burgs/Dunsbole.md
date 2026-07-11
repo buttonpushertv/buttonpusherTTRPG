@@ -9,7 +9,7 @@ campaign: Raid on the Eternal Tower
 capital: 0
 cell: 2743
 citadel: 0
-cssclasses: sixty-pct-width
+cssclasses: seventy-pct-width
 culture: Congley
 elevation: 1890 ft
 emblem: Hitchton Emblem Dunsbole.png

@@ -6,7 +6,7 @@ campaign: Raid on the Eternal Tower
 center: 
 color: #aa9cdb
 created: 2026-07-09-21:36
-cssclasses: sixty-pct-width
+cssclasses: seventy-pct-width
 emblem: Hitchton Emblem Stotbia County.png
 formName: County
 fullName: Stotbia County

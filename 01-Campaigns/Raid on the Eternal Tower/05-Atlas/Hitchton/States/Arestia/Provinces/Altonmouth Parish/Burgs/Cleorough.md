@@ -9,7 +9,7 @@ campaign: Raid on the Eternal Tower
 capital: 0
 cell: 880
 citadel: 1
-cssclasses: sixty-pct-width
+cssclasses: seventy-pct-width
 culture: Cowey
 elevation: 30 ft
 emblem: Hitchton Emblem Cleorough.png

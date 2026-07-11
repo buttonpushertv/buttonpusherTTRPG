@@ -6,7 +6,7 @@ campaign: Raid on the Eternal Tower
 center: 
 color: #88c3d2
 created: 2026-07-09-21:36
-cssclasses: sixty-pct-width
+cssclasses: seventy-pct-width
 emblem: Hitchton Emblem Boston Seneschalty.png
 formName: Seneschalty
 fullName: Boston Seneschalty

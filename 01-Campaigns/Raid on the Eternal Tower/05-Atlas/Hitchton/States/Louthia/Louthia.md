@@ -11,7 +11,7 @@ cells: 14
 center: 715
 color: #fff53c
 created: 2026-07-09-21:36
-cssclasses: sixty-pct-width
+cssclasses: seventy-pct-width
 culture: Moury
 emblem: Hitchton Emblem Duchy of Louthia.png
 expansionism: 2.8

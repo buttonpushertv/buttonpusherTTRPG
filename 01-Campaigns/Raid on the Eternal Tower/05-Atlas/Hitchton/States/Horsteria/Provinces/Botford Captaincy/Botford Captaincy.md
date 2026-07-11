@@ -6,7 +6,7 @@ campaign: Raid on the Eternal Tower
 center: 
 color: #b9c9aa
 created: 2026-07-09-21:36
-cssclasses: sixty-pct-width
+cssclasses: seventy-pct-width
 emblem: Hitchton Emblem Botford Captaincy.png
 formName: Captaincy
 fullName: Botford Captaincy

@@ -6,7 +6,7 @@ centerBurgId: 1
 centerBurgNamePlusID: Kiver-1
 centerBurgStateName: Hitchia
 centerBurgFilePath: "01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Hitchia/Provinces/Frampland Landgrave/Burgs/Kiver"
-cssclasses: sixty-pct-width
+cssclasses: seventy-pct-width
 id: 7
 marketName: Kiver
 mapName: Hitchton

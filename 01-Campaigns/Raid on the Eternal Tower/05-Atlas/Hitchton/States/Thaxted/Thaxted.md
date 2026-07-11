@@ -11,7 +11,7 @@ cells: 130
 center: 400
 color: #959edd
 created: 2026-07-09-21:36
-cssclasses: sixty-pct-width
+cssclasses: seventy-pct-width
 culture: Cliford
 emblem: Hitchton Emblem Dominion of Thaxted.png
 expansionism: 4.6

@@ -11,7 +11,7 @@ cells: 78
 center: 903
 color: #ee9b89
 created: 2026-07-09-21:36
-cssclasses: sixty-pct-width
+cssclasses: seventy-pct-width
 culture: Bivenil
 emblem: Hitchton Emblem Grand Duchy of Wodminia.png
 expansionism: 2.4

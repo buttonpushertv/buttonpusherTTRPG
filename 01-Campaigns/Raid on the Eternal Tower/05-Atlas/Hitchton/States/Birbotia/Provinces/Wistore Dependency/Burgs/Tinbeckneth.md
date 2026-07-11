@@ -9,7 +9,7 @@ campaign: Raid on the Eternal Tower
 capital: 0
 cell: 1776
 citadel: 0
-cssclasses: sixty-pct-width
+cssclasses: seventy-pct-width
 culture: Penkneth
 elevation: 7248 ft
 emblem: Hitchton Emblem Tinbeckneth.png

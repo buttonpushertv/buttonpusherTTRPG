@@ -6,7 +6,7 @@ campaign: Raid on the Eternal Tower
 center: 
 color: #91a5e4
 created: 2026-07-09-21:36
-cssclasses: sixty-pct-width
+cssclasses: seventy-pct-width
 emblem: Hitchton Emblem Loutland County.png
 formName: County
 fullName: Loutland County

@@ -6,7 +6,7 @@ campaign: Raid on the Eternal Tower
 center: 
 color: #8dc5cd
 created: 2026-07-09-21:36
-cssclasses: sixty-pct-width
+cssclasses: seventy-pct-width
 emblem: Hitchton Emblem Osmouthbrid Margrave.png
 formName: Margrave
 fullName: Osmouthbrid Margrave

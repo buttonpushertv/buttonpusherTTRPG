@@ -9,7 +9,7 @@ campaign: Raid on the Eternal Tower
 capital: 1
 cell: 1470
 citadel: 1
-cssclasses: sixty-pct-width
+cssclasses: seventy-pct-width
 culture: Bivenil
 elevation: 328 ft
 emblem: Hitchton Emblem Madetery.png

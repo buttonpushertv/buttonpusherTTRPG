@@ -9,7 +9,7 @@ campaign: Raid on the Eternal Tower
 capital: 0
 cell: 1284
 citadel: 0
-cssclasses: sixty-pct-width
+cssclasses: seventy-pct-width
 culture: Bivenil
 elevation: 82 ft
 emblem: Hitchton Emblem Oakhampton.png

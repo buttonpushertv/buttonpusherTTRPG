@@ -6,7 +6,7 @@ centerBurgId: 4
 centerBurgNamePlusID: Congham-4
 centerBurgStateName: Linia
 centerBurgFilePath: "01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Linia/Provinces/Congham Deanery/Burgs/Congham"
-cssclasses: sixty-pct-width
+cssclasses: seventy-pct-width
 id: 12
 marketName: Congham
 mapName: Hitchton

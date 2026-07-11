@@ -9,7 +9,7 @@ campaign: Raid on the Eternal Tower
 capital: 1
 cell: 2508
 citadel: 1
-cssclasses: sixty-pct-width
+cssclasses: seventy-pct-width
 culture: Osbuton
 elevation: 6352 ft
 emblem: Hitchton Emblem Horston.png

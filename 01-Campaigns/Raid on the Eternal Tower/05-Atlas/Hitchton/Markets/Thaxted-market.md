@@ -6,7 +6,7 @@ centerBurgId: 14
 centerBurgNamePlusID: Thaxted-14
 centerBurgStateName: Thaxted
 centerBurgFilePath: "01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Thaxted/Provinces/Thaxted County/Burgs/Thaxted"
-cssclasses: sixty-pct-width
+cssclasses: seventy-pct-width
 id: 10
 marketName: Thaxted
 mapName: Hitchton

@@ -6,7 +6,7 @@ centerBurgId: 533
 centerBurgNamePlusID: Cambrover-533
 centerBurgStateName: Casthamia
 centerBurgFilePath: "01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Casthamia/Provinces/Cambrover County/Burgs/Cambrover"
-cssclasses: sixty-pct-width
+cssclasses: seventy-pct-width
 id: 18
 marketName: Cambrover
 mapName: Hitchton

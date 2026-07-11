@@ -6,7 +6,7 @@ centerBurgId: 6
 centerBurgNamePlusID: Penby-6
 centerBurgStateName: Penland
 centerBurgFilePath: "01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Penland/Provinces/Penby Parish/Burgs/Penby"
-cssclasses: sixty-pct-width
+cssclasses: seventy-pct-width
 id: 2
 marketName: Penby
 mapName: Hitchton

@@ -6,7 +6,7 @@ campaign: Raid on the Eternal Tower
 center: 
 color: #b2f75f
 created: 2026-07-09-21:36
-cssclasses: sixty-pct-width
+cssclasses: seventy-pct-width
 emblem: Hitchton Emblem Lympstobu Earldom.png
 formName: Earldom
 fullName: Lympstobu Earldom

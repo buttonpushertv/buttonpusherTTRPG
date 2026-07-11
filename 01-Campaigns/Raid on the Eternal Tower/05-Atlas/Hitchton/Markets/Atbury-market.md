@@ -6,7 +6,7 @@ centerBurgId: 169
 centerBurgNamePlusID: Atbury-169
 centerBurgStateName: Casthamia
 centerBurgFilePath: "01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Casthamia/Provinces/Berhamia Earldom/Burgs/Atbury"
-cssclasses: sixty-pct-width
+cssclasses: seventy-pct-width
 id: 16
 marketName: Atbury
 mapName: Hitchton

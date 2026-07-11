@@ -6,7 +6,7 @@ centerBurgId: 612
 centerBurgNamePlusID: Soliveton-612
 centerBurgStateName: Oakhambia
 centerBurgFilePath: "01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Oakhambia/Provinces/Coroughia Shire/Burgs/Soliveton"
-cssclasses: sixty-pct-width
+cssclasses: seventy-pct-width
 id: 22
 marketName: Soliveton
 mapName: Hitchton

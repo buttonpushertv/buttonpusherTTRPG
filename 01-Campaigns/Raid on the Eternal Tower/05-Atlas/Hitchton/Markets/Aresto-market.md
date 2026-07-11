@@ -6,7 +6,7 @@ centerBurgId: 2
 centerBurgNamePlusID: Aresto-2
 centerBurgStateName: Arestia
 centerBurgFilePath: "01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Arestia/Provinces/Aresto Parish/Burgs/Aresto"
-cssclasses: sixty-pct-width
+cssclasses: seventy-pct-width
 id: 1
 marketName: Aresto
 mapName: Hitchton

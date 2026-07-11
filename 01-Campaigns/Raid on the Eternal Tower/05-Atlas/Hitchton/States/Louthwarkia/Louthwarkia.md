@@ -11,7 +11,7 @@ cells: 20
 center: 3246
 color: #ffed35
 created: 2026-07-09-21:36
-cssclasses: sixty-pct-width
+cssclasses: seventy-pct-width
 culture: Daling
 emblem: Hitchton Emblem Duchy of Louthwarkia.png
 expansionism: 1.5

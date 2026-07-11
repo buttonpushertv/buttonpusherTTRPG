@@ -6,7 +6,7 @@ campaign: Raid on the Eternal Tower
 center: 
 color: #e3a99d
 created: 2026-07-09-21:36
-cssclasses: sixty-pct-width
+cssclasses: seventy-pct-width
 emblem: Hitchton Emblem Saltonory Shire.png
 formName: Shire
 fullName: Saltonory Shire

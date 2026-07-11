@@ -6,7 +6,7 @@ centerBurgId: 7
 centerBurgNamePlusID: Orton-7
 centerBurgStateName: Manch
 centerBurgFilePath: "01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Manch/Provinces/Framping County/Burgs/Orton"
-cssclasses: sixty-pct-width
+cssclasses: seventy-pct-width
 id: 4
 marketName: Orton
 mapName: Hitchton

@@ -6,7 +6,7 @@ centerBurgId: 86
 centerBurgNamePlusID: Stothediver-86
 centerBurgStateName: Padstedgia
 centerBurgFilePath: "01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Padstedgia/Provinces/Newleighia Earldom/Burgs/Stothediver"
-cssclasses: sixty-pct-width
+cssclasses: seventy-pct-width
 id: 13
 marketName: Stothediver
 mapName: Hitchton

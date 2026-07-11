@@ -6,7 +6,7 @@ campaign: Raid on the Eternal Tower
 center: 
 color: #fca9ba
 created: 2026-07-09-21:36
-cssclasses: sixty-pct-width
+cssclasses: seventy-pct-width
 emblem: Hitchton Emblem Extedland Deanery.png
 formName: Deanery
 fullName: Extedland Deanery

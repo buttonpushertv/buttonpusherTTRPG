@@ -6,7 +6,7 @@ campaign: Raid on the Eternal Tower
 center: 
 color: #e38dd9
 created: 2026-07-09-21:36
-cssclasses: sixty-pct-width
+cssclasses: seventy-pct-width
 emblem: Hitchton Emblem Bury Deanery.png
 formName: Deanery
 fullName: Bury Deanery

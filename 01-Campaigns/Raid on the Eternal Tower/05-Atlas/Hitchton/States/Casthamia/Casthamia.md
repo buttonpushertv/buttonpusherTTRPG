@@ -11,7 +11,7 @@ cells: 413
 center: 3892
 color: #8da0cb
 created: 2026-07-09-21:36
-cssclasses: sixty-pct-width
+cssclasses: seventy-pct-width
 culture: Skiple
 emblem: Hitchton Emblem Casthamian Empire.png
 expansionism: 2.5

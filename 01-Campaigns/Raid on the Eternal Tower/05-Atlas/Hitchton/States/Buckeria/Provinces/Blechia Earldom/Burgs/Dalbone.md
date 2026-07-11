@@ -9,7 +9,7 @@ campaign: Raid on the Eternal Tower
 capital: 1
 cell: 1919
 citadel: 1
-cssclasses: sixty-pct-width
+cssclasses: seventy-pct-width
 culture: Chisbute
 elevation: 210 ft
 emblem: Hitchton Emblem Dalbone.png

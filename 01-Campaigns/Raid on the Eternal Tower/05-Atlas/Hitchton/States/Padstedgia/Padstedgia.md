@@ -11,7 +11,7 @@ cells: 167
 center: 1113
 color: #92a2e3
 created: 2026-07-09-21:36
-cssclasses: sixty-pct-width
+cssclasses: seventy-pct-width
 culture: Moury
 emblem: Hitchton Emblem Principality of Padstedgia.png
 expansionism: 3.1

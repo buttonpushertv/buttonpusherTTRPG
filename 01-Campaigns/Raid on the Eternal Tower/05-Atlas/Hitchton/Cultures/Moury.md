@@ -6,7 +6,7 @@ code: Mo
 color: #dababf
 center: 
 created: 2026-07-09-21:36
-cssclasses: sixty-pct-width
+cssclasses: seventy-pct-width
 expansionism: 1.7
 id: 5
 leaders:

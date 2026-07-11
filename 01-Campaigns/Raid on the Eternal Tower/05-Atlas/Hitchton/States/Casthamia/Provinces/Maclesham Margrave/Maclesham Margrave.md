@@ -6,7 +6,7 @@ campaign: Raid on the Eternal Tower
 center: 
 color: #90a6e5
 created: 2026-07-09-21:36
-cssclasses: sixty-pct-width
+cssclasses: seventy-pct-width
 emblem: Hitchton Emblem Maclesham Margrave.png
 formName: Margrave
 fullName: Maclesham Margrave

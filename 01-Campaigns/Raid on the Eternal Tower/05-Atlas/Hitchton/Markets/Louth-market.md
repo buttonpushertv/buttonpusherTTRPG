@@ -6,7 +6,7 @@ centerBurgId: 12
 centerBurgNamePlusID: Louth-12
 centerBurgStateName: Louthia
 centerBurgFilePath: "01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Louthia/Provinces/Helscomia County/Burgs/Louth"
-cssclasses: sixty-pct-width
+cssclasses: seventy-pct-width
 id: 11
 marketName: Louth
 mapName: Hitchton

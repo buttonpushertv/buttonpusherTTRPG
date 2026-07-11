@@ -11,7 +11,7 @@ cells: 286
 center: 1470
 color: #bbf55d
 created: 2026-07-09-21:36
-cssclasses: sixty-pct-width
+cssclasses: seventy-pct-width
 culture: Bivenil
 emblem: Hitchton Emblem Kingdom of Madeteria.png
 expansionism: 3.1

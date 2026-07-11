@@ -6,7 +6,7 @@ centerBurgId: 213
 centerBurgNamePlusID: Retfordford-213
 centerBurgStateName: Madeteria
 centerBurgFilePath: "01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Madeteria/Provinces/Winklia Seneschalty/Burgs/Retfordford"
-cssclasses: sixty-pct-width
+cssclasses: seventy-pct-width
 id: 17
 marketName: Retfordford
 mapName: Hitchton

@@ -11,7 +11,7 @@ cells: 285
 center: 2559
 color: #e28edb
 created: 2026-07-09-21:36
-cssclasses: sixty-pct-width
+cssclasses: seventy-pct-width
 culture: Penkneth
 emblem: Hitchton Emblem Birbotian Empire.png
 expansionism: 3.7

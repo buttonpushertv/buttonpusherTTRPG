@@ -11,7 +11,7 @@ cells: 194
 center: 1636
 color: #cdd660
 created: 2026-07-09-21:36
-cssclasses: sixty-pct-width
+cssclasses: seventy-pct-width
 culture: Cliford
 emblem: Hitchton Emblem Kingdom of Oakhambia.png
 expansionism: 4.4

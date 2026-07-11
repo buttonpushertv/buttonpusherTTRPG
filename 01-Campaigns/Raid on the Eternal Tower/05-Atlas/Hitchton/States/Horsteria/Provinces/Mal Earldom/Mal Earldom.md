@@ -6,7 +6,7 @@ campaign: Raid on the Eternal Tower
 center: 
 color: #9cb5c6
 created: 2026-07-09-21:36
-cssclasses: sixty-pct-width
+cssclasses: seventy-pct-width
 emblem: Hitchton Emblem Mal Earldom.png
 formName: Earldom
 fullName: Mal Earldom

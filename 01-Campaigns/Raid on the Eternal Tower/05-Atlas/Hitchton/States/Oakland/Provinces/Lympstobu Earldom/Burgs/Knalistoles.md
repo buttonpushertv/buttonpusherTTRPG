@@ -9,7 +9,7 @@ campaign: Raid on the Eternal Tower
 capital: 0
 cell: 2465
 citadel: 0
-cssclasses: sixty-pct-width
+cssclasses: seventy-pct-width
 culture: Chisbute
 elevation: 1063 ft
 emblem: Hitchton Emblem Knalistoles.png

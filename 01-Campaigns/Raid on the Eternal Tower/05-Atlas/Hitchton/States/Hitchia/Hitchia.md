@@ -11,7 +11,7 @@ cells: 85
 center: 3597
 color: #66c2a5
 created: 2026-07-09-21:36
-cssclasses: sixty-pct-width
+cssclasses: seventy-pct-width
 culture: Daling
 emblem: Hitchton Emblem Grand Duchy of Hitchia.png
 expansionism: 3

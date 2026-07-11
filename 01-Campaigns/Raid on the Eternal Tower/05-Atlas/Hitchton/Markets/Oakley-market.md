@@ -6,7 +6,7 @@ centerBurgId: 5
 centerBurgNamePlusID: Oakley-5
 centerBurgStateName: Oakland
 centerBurgFilePath: "01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Oakland/Provinces/Albrid County/Burgs/Oakley"
-cssclasses: sixty-pct-width
+cssclasses: seventy-pct-width
 id: 9
 marketName: Oakley
 mapName: Hitchton

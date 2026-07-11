@@ -11,7 +11,7 @@ cells: 29
 center: 1919
 color: #ffcf4f
 created: 2026-07-09-21:36
-cssclasses: sixty-pct-width
+cssclasses: seventy-pct-width
 culture: Chisbute
 emblem: Hitchton Emblem Buckerian Marches.png
 expansionism: 1.6

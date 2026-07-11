@@ -6,7 +6,7 @@ campaign: Raid on the Eternal Tower
 center: 
 color: #f3cf78
 created: 2026-07-09-21:36
-cssclasses: sixty-pct-width
+cssclasses: seventy-pct-width
 emblem: Hitchton Emblem Flokhampia Earldom.png
 formName: Earldom
 fullName: Flokhampia Earldom

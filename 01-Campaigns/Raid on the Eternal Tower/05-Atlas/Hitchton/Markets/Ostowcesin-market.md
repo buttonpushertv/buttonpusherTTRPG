@@ -6,7 +6,7 @@ centerBurgId: 25
 centerBurgNamePlusID: Ostowcesin-25
 centerBurgStateName: Arestia
 centerBurgFilePath: "01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Arestia/Provinces/Padsia Parish/Burgs/Ostowcesin"
-cssclasses: sixty-pct-width
+cssclasses: seventy-pct-width
 id: 19
 marketName: Ostowcesin
 mapName: Hitchton

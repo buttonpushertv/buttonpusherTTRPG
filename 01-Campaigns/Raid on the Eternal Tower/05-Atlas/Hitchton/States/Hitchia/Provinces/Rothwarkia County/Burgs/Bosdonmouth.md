@@ -9,7 +9,7 @@ campaign: Raid on the Eternal Tower
 capital: 0
 cell: 3753
 citadel: 1
-cssclasses: sixty-pct-width
+cssclasses: seventy-pct-width
 culture: Daling
 elevation: 266 ft
 emblem: Hitchton Emblem Bosdonmouth.png

@@ -6,7 +6,7 @@ centerBurgId: 678
 centerBurgNamePlusID: Tiverhambe-678
 centerBurgStateName: Linia
 centerBurgFilePath: "01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Linia/Provinces/Bertonley Territory/Burgs/Tiverhambe"
-cssclasses: sixty-pct-width
+cssclasses: seventy-pct-width
 id: 24
 marketName: Tiverhambe
 mapName: Hitchton

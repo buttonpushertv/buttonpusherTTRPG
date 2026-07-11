@@ -6,7 +6,7 @@ centerBurgId: 13
 centerBurgNamePlusID: Horston-13
 centerBurgStateName: Horsteria
 centerBurgFilePath: "01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Horsteria/Provinces/Cudland County/Burgs/Horston"
-cssclasses: sixty-pct-width
+cssclasses: seventy-pct-width
 id: 6
 marketName: Horston
 mapName: Hitchton

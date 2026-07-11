@@ -6,7 +6,7 @@ centerBurgId: 426
 centerBurgNamePlusID: Mouton-426
 centerBurgStateName: Hitchia
 centerBurgFilePath: "01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Hitchia/Provinces/Skipton County/Burgs/Mouton"
-cssclasses: sixty-pct-width
+cssclasses: seventy-pct-width
 id: 25
 marketName: Mouton
 mapName: Hitchton

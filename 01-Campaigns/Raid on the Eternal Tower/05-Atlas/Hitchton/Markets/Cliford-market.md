@@ -6,7 +6,7 @@ centerBurgId: 158
 centerBurgNamePlusID: Cliford-158
 centerBurgStateName: Horsteria
 centerBurgFilePath: "01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Horsteria/Provinces/Cliford Earldom/Burgs/Cliford"
-cssclasses: sixty-pct-width
+cssclasses: seventy-pct-width
 id: 20
 marketName: Cliford
 mapName: Hitchton

@@ -6,7 +6,7 @@ campaign: Raid on the Eternal Tower
 center: 
 color: #f9a9ce
 created: 2026-07-09-21:36
-cssclasses: sixty-pct-width
+cssclasses: seventy-pct-width
 emblem: Hitchton Emblem Presfield County.png
 formName: County
 fullName: Presfield County

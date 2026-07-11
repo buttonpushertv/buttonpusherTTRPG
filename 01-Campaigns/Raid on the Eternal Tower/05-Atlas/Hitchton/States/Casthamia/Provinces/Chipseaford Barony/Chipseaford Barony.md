@@ -6,7 +6,7 @@ campaign: Raid on the Eternal Tower
 center: 
 color: #84b7e3
 created: 2026-07-09-21:36
-cssclasses: sixty-pct-width
+cssclasses: seventy-pct-width
 emblem: Hitchton Emblem Chipseaford Barony.png
 formName: Barony
 fullName: Chipseaford Barony

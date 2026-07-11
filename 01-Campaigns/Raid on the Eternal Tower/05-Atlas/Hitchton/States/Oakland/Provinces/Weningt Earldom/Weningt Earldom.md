@@ -6,7 +6,7 @@ campaign: Raid on the Eternal Tower
 center: 
 color: #b8f65f
 created: 2026-07-09-21:36
-cssclasses: sixty-pct-width
+cssclasses: seventy-pct-width
 emblem: Hitchton Emblem Weningt Earldom.png
 formName: Earldom
 fullName: Weningt Earldom

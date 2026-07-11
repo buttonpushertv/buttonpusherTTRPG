@@ -6,7 +6,7 @@ centerBurgId: 628
 centerBurgNamePlusID: Chipseaford-628
 centerBurgStateName: Casthamia
 centerBurgFilePath: "01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Casthamia/Provinces/Chipseaford Barony/Burgs/Chipseaford"
-cssclasses: sixty-pct-width
+cssclasses: seventy-pct-width
 id: 15
 marketName: Chipseaford
 mapName: Hitchton

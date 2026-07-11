@@ -6,7 +6,7 @@ centerBurgId: 363
 centerBurgNamePlusID: Brorough-363
 centerBurgStateName: Horsteria
 centerBurgFilePath: "01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Horsteria/Provinces/Brorough Captaincy/Burgs/Brorough"
-cssclasses: sixty-pct-width
+cssclasses: seventy-pct-width
 id: 14
 marketName: Brorough
 mapName: Hitchton

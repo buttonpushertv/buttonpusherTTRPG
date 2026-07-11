@@ -6,7 +6,7 @@ campaign: Raid on the Eternal Tower
 center: 
 color: #9bdfb3
 created: 2026-07-09-21:36
-cssclasses: sixty-pct-width
+cssclasses: seventy-pct-width
 emblem: Hitchton Emblem Pentefland Landgrave.png
 formName: Landgrave
 fullName: Pentefland Landgrave

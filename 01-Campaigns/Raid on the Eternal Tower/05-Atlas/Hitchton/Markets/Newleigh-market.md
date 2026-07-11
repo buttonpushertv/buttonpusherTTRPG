@@ -6,7 +6,7 @@ centerBurgId: 16
 centerBurgNamePlusID: Newleigh-16
 centerBurgStateName: Stapia
 centerBurgFilePath: "01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Stapia/Provinces/Newleigh County/Burgs/Newleigh"
-cssclasses: sixty-pct-width
+cssclasses: seventy-pct-width
 id: 5
 marketName: Newleigh
 mapName: Hitchton

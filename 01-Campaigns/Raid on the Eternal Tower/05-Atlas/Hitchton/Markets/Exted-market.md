@@ -6,7 +6,7 @@ centerBurgId: 10
 centerBurgNamePlusID: Exted-10
 centerBurgStateName: Oakhambia
 centerBurgFilePath: "01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Oakhambia/Provinces/Seamersia County/Burgs/Exted"
-cssclasses: sixty-pct-width
+cssclasses: seventy-pct-width
 id: 8
 marketName: Exted
 mapName: Hitchton

@@ -6,7 +6,7 @@ code: Bi
 color: #fb8072
 center: 
 created: 2026-07-09-21:36
-cssclasses: sixty-pct-width
+cssclasses: seventy-pct-width
 expansionism: 2.6
 id: 6
 leaders:

@@ -6,7 +6,7 @@ campaign: Raid on the Eternal Tower
 center: 
 color: #e2eb7a
 created: 2026-07-09-21:36
-cssclasses: sixty-pct-width
+cssclasses: seventy-pct-width
 emblem: Hitchton Emblem Witonmouth Margrave.png
 formName: Margrave
 fullName: Witonmouth Margrave

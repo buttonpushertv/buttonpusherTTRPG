@@ -6,7 +6,7 @@ campaign: Raid on the Eternal Tower
 center: 
 color: #b9b2d6
 created: 2026-07-09-21:36
-cssclasses: sixty-pct-width
+cssclasses: seventy-pct-width
 emblem: Hitchton Emblem Winkwaria Earldom.png
 formName: Earldom
 fullName: Winkwaria Earldom

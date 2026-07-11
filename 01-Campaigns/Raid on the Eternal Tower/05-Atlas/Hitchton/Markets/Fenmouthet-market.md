@@ -6,7 +6,7 @@ centerBurgId: 429
 centerBurgNamePlusID: Fenmouthet-429
 centerBurgStateName: Linia
 centerBurgFilePath: "01-Campaigns/Raid on the Eternal Tower/05-Atlas/Hitchton/States/Linia/Provinces/Penksia Deanery/Burgs/Fenmouthet"
-cssclasses: sixty-pct-width
+cssclasses: seventy-pct-width
 id: 23
 marketName: Fenmouthet
 mapName: Hitchton

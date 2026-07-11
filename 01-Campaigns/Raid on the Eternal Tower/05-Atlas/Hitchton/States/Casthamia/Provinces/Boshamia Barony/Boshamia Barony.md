@@ -6,7 +6,7 @@ campaign: Raid on the Eternal Tower
 center: 
 color: #b19dd7
 created: 2026-07-09-21:36
-cssclasses: sixty-pct-width
+cssclasses: seventy-pct-width
 emblem: Hitchton Emblem Boshamia Barony.png
 formName: Barony
 fullName: Boshamia Barony

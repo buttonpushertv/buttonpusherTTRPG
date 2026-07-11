@@ -11,7 +11,7 @@ cells: 40
 center: 380
 color: #e58bd7
 created: 2026-07-09-21:36
-cssclasses: sixty-pct-width
+cssclasses: seventy-pct-width
 culture: Cliford
 emblem: Hitchton Emblem Duchy of Dunsteria.png
 expansionism: 3.1

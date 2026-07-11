@@ -11,7 +11,7 @@ cells: 279
 center: 3957
 color: #e78ac3
 created: 2026-07-09-21:36
-cssclasses: sixty-pct-width
+cssclasses: seventy-pct-width
 culture: Skiple
 emblem: Hitchton Emblem Linian Theocracy.png
 expansionism: 2.2

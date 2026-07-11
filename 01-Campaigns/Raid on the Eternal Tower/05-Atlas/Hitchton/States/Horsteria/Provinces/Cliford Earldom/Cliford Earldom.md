@@ -6,7 +6,7 @@ campaign: Raid on the Eternal Tower
 center: 
 color: #abd9af
 created: 2026-07-09-21:36
-cssclasses: sixty-pct-width
+cssclasses: seventy-pct-width
 emblem: Hitchton Emblem Cliford Earldom.png
 formName: Earldom
 fullName: Cliford Earldom

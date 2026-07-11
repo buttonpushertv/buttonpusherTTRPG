@@ -6,7 +6,7 @@ campaign: Raid on the Eternal Tower
 center: 
 color: #89cdd0
 created: 2026-07-09-21:36
-cssclasses: sixty-pct-width
+cssclasses: seventy-pct-width
 emblem: Hitchton Emblem Bridburia County.png
 formName: County
 fullName: Bridburia County

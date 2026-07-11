@@ -6,7 +6,7 @@ campaign: Raid on the Eternal Tower
 center: 
 color: #a2c4c8
 created: 2026-07-09-21:36
-cssclasses: sixty-pct-width
+cssclasses: seventy-pct-width
 emblem: Hitchton Emblem Thetfordia County.png
 formName: County
 fullName: Thetfordia County

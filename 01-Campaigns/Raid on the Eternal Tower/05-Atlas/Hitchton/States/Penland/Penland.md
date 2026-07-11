@@ -11,7 +11,7 @@ cells: 158
 center: 4505
 color: #ffd92f
 created: 2026-07-09-21:36
-cssclasses: sixty-pct-width
+cssclasses: seventy-pct-width
 culture: Skiple
 emblem: Hitchton Emblem Penlish Theocracy.png
 expansionism: 4.9

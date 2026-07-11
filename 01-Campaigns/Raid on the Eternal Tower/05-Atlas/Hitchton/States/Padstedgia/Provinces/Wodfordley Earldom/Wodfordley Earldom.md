@@ -6,7 +6,7 @@ campaign: Raid on the Eternal Tower
 center: 
 color: #a1c6dd
 created: 2026-07-09-21:36
-cssclasses: sixty-pct-width
+cssclasses: seventy-pct-width
 emblem: Hitchton Emblem Wodfordley Earldom.png
 formName: Earldom
 fullName: Wodfordley Earldom

@@ -6,7 +6,7 @@ code: CO
 color: #c6b9c1
 center: 
 created: 2026-07-09-21:36
-cssclasses: sixty-pct-width
+cssclasses: seventy-pct-width
 expansionism: 2.3
 id: 9
 leaders:

@@ -11,7 +11,7 @@ cells: 244
 center: 1260
 color: #fc8d62
 created: 2026-07-09-21:36
-cssclasses: sixty-pct-width
+cssclasses: seventy-pct-width
 culture: Cowey
 emblem: Hitchton Emblem See of Arestia.png
 expansionism: 4.6
