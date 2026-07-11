@@ -106,9 +106,10 @@ SORT file.name ASC
 > The text below is a campaign-specific Python script that you will need to use to modify the FMG JSON file so that you can use it with the importing of the data from an FMG map.
 >
 > The pieces you will need to update are:
-> 1. The `mapDropboxFMGLink` value. Replace `{FMGDropboxLink}` with the link to your map once you've saved it to your Dropbox account.
-> 2. The value for `path_to_your_existing_FMGjson_file.json`. Put the name for your map's JSON file here.
-> 3. THe value for `path_to_your_output_FMGjson_file.json`. Replace this value with a name for the new JSON file. I recommend tacking "-MODDED" onto the end of the filename, so you can keept track of where it came from and which one is the modded one.
+> 1. Update the field for `thisMapType` - Use one of these map types: "Planet", "Continent", "Island"
+> 2. The `mapDropboxFMGLink` value. Replace `{FMGDropboxLink}` with the link to your map once you've saved it to your Dropbox account.
+> 3. The value for `path_to_your_existing_FMGjson_file.json`. Put the name for your map's JSON file here.
+> 4. The value for `path_to_your_output_FMGjson_file.json`. Replace this value with a name for the new JSON file. I recommend tacking "-MODDED" onto the end of the filename, so you can keept track of where it came from and which one is the modded one.
 >
 > When you are ready, copy this text block and save it as a Python script to the folder where you've stored the FMG JSON file from your map. We will run that script to add this info to the top of your JSON file before import.
 >
@@ -121,6 +122,7 @@ SORT file.name ASC
 >     "thisCampaign": "{{VALUE:newCampaignName}}",
 >     "thisCampaignPath": "{{VALUE:newCampaignPath}}",
 >     "thisCampaignShortCode": "{{VALUE:newCampaignShortCode}}",
+>     "thisMapType": "*enter_map_type_here*",
 >     "mapDropboxFMGLink": "{FMGDropboxLink}"
 >     }
 > }
