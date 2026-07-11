@@ -58,7 +58,6 @@ We need to add some info to the JSON file to allow the JSON/CSV Importer to name
 
 We are going to use a Python script to add a new JSON object with a few child items to the top of the FMG JSON file you've just exported.
 
-
 > [!NOTE] FMG JSON Modder Python Script Shortcut
 > When you created a new campaign & if you used the button in this vault, the text for the script needed for this new campaign already exists, pre-populated with almost all the info needed for the new campaign.
 > 
@@ -80,6 +79,7 @@ new_data = {
     "thisCampaign": "{thisCampaignName}",
     "thisCampaignPath": "{thisCampaignPath}",
     "thisCampaignShortCode": "{thisCampaignShortCode}",
+    "thisMapType": "{mapType}",
     "mapDropboxFMGLink": "{FMGDropboxLink}"
     }
 }
@@ -123,9 +123,14 @@ print("Merged JSON data saved to a new file successfully.")
 	2. Line 7: `{thisCampaignPath}` - the path to your Campaign's data within the vault. It should start with `01-Campaigns`.
 	3. Line 8: `{thisCampaignShortCode}` - the shortcode you created when you created the Campaign.
 	4. In case you didn't write that info down, all 3 of the above pieces of info can be found in a note called: `"{thisCampaign} Home"`
-	5. Line 9: `{FMGDropboxLink}` - *(pickup here if you used the FMG JSON Helper Script from the new campaign's home page)* There is a cool feature on the FMG map you've created, where you can choose to save your map to your Dropbox and then FMG will create a link to this file. This allows access directly to your FMG map by anyone show has the link and is code into the templates for this import so you will have location-specific links directly to the places on your FMG map in the notes. [^1]
-	6. Line 23: Put the name of your `FMGJSON` file in place of `path_to_your_existing_FMGjson_file.json`
-	7. Line 30: Edit the value of `path_to_your_output_FMGjson_file.json` with the name you wish to use for output. I usually use the exported `FMGJSON` file name and add `-MODDED` or `-forIMPORT` to the end. 
+	5. Update the value for `thisMapType`. This is used to help define the nature of the map you are importing. While you _can_ enter any text in this field, here are the valid values that have been coded into this vault:
+		   - "Planet"
+		   - "Continent"
+		   - "Island"
+	Because FMG can't really combine maps, `thisMapType` will allow you to merge the info from more than one map here in your vault. It's not a perfect solution, but if you are creating multiple maps, this will allow you to be able to work with more than one map's information.
+	6. Line 9: `{FMGDropboxLink}` - *(pickup here if you used the FMG JSON Helper Script from the new campaign's home page)* There is a cool feature on the FMG map you've created, where you can choose to save your map to your Dropbox and then FMG will create a link to this file. This allows access directly to your FMG map by anyone show has the link and is code into the templates for this import so you will have location-specific links directly to the places on your FMG map in the notes. [^1]
+	7. Line 23: Put the name of your `FMGJSON` file in place of `path_to_your_existing_FMGjson_file.json`
+	8. Line 30: Edit the value of `path_to_your_output_FMGjson_file.json` with the name you wish to use for output. I usually use the exported `FMGJSON` file name and add `-MODDED` or `-forIMPORT` to the end. 
 5. Save these changes _without_ messing up the formatting of those lines.
 6. Run the script (using Python) and it will create the output file in the same folder.[^2]
 7. The MODDED JSON file will now be the file you use for the import process in the next step.
@@ -141,7 +146,7 @@ Previous Step: [[01-The First Steps]] | Next Step: [[03-Importing the FMG JSON D
 
 [^1]: This access will be read-only. Only the owner of the Dropbox will be able to save changes back to the Dropbox, *however* those saved changes will result in a new Dropbox link being created, so if you must make changes, you will need to use a tool to 'find & replace' the old link with the new link. Therefore, its a good idea to *not* change your FMG map _after_ the import to Obsidian is done.
 
-[^2]: To run a Python script, generally you type `python3 your_script_name_here` on to a commandline or terminal. For this script, you *need* to be sitting in the folder where the script and the JSON files are located.
+[^2]: To run a Python script, generally you type `python OR python3 your_script_name_here` on to a commandline or terminal. For this script, you *need* to be sitting in the folder where the script and the JSON files are located.
 
 [^3]: The reason for copying it into that templates folder is because the JSON/CSV Importer does not retain the paths you load into the top fields (Source File, Handlebar Template, and Helper JS File), so you need to re-select those on each pass. I have found it's easiest to just store the MODDED JSON in this folder, as well, so you don't need to keep navigating to different locations for these items each time you do an import pass.
 	

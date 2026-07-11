@@ -3,7 +3,7 @@ aliases:
 - {{@importDataRoot.info.mapName}}
 campaign: {{@importDataRoot.importInfo.thisCampaign}}
 created: {{getDateTimestamp @importSettings}}
-cssclasses: sixty-pct-width
+cssclasses: seventy-pct-width
 mapName: {{@importDataRoot.info.mapName}}
 pronounced:
 shortDescription:
@@ -341,7 +341,7 @@ cells: {{cells}}
 center: {{this.center}}
 color: {{color}}
 created: {{getDateTimestamp @importSettings}}
-cssclasses: sixty-pct-width
+cssclasses: seventy-pct-width
 culture: {{getCultureName culture @importDataRoot.pack.cultures}}
 emblem: {{@importDataRoot.info.mapName}} Emblem {{fullName}}.png
 expansionism: {{expansionism}}
@@ -633,7 +633,7 @@ campaign: {{@importDataRoot.importInfo.thisCampaign}}
 center: {{center}}
 color: {{color}}
 created: {{getDateTimestamp @importSettings}}
-cssclasses: sixty-pct-width
+cssclasses: seventy-pct-width
 emblem: {{@importDataRoot.info.mapName}} Emblem {{fullName}}.png
 formName: {{formName}}
 fullName: {{fullName}}
@@ -877,7 +877,7 @@ campaign: {{@importDataRoot.importInfo.thisCampaign}}
 capital: {{capital}}
 cell: {{cell}}
 citadel: {{citadel}}
-cssclasses: sixty-pct-width
+cssclasses: seventy-pct-width
 culture: {{getCultureName culture @importDataRoot.pack.cultures}}
 elevation: {{getHeight cell @importDataRoot.settings @importDataRoot.pack.cells}}
 emblem: {{@importDataRoot.info.mapName}} Emblem {{name}}.png
@@ -1167,7 +1167,7 @@ code: {{code}}
 color: {{color}}
 center: {{center}}
 created: {{getDateTimestamp @importSettings}}
-cssclasses: sixty-pct-width
+cssclasses: seventy-pct-width
 expansionism: {{expansionism}}
 id: {{i}}
 leaders:
@@ -1288,25 +1288,29 @@ center: {{this.center}}
 code: {{code}}
 color: {{color}}
 created: {{getDateTimestamp @importSettings}}
-cssclasses: sixty-pct-width
+cssclasses: seventy-pct-width
 culture: {{getCultureName culture @importDataRoot.pack.cultures}}
 deity: {{deity}}
 expansion: {{expansion}}
 expansionism: {{expansionism}}
+{{setvar "isRextinct" (isReligionExtinct i @importDataRoot.pack.religions @importDataRoot.pack.cells @importDataRoot.pack.burgs @importDataRoot.settings)}}extinct: {{"isRextinct"}}
 followers: {{getReligionFollowers this @importDataRoot.pack.cells @importDataRoot.pack.burgs @importDataRoot.settings}}
 form: {{form}}
 id: {{i}}
 leaders:
 mapName: {{@importDataRoot.info.mapName}}
-origins: {{getOriginReligion origins @importDataRoot.pack.religions}}
+origins: 
+{{#each origins}}
+- {{getOriginReligion this @importDataRoot.pack.religions}}
+{{/each}}
 pronounced: ""
 religionName: "{{name}}"
-shortDescription:
+shortDescription: A short description of this religion.
 tags:
 - Religion
 - {{@importDataRoot.info.mapName}}
 type: {{type}}
-templateVersion: 7.0
+templateVersion: 7.4
 WBProgress: Imported
 ---
 
@@ -1318,7 +1322,7 @@ WBProgress: Imported
 ---
 
 > [!column|3 no-t] `=this.religonName` Information
->> ### Symbols of `=this.religonName`
+>> ### Symbols of `=this.religionName`
 >> <span style="font-size:x-small">This section is where you could place imagry, icons, or symbols of this faith.</span>
 >
 >> ### Information
@@ -1331,7 +1335,17 @@ WBProgress: Imported
 >> ### Additional Info
 >> **Culture:** `=this.culture`
 >> **Expands via:** `=this.expansion`
->> **Origins:** `=link(this.origins)`
+>> **Origins:**
+{{#if isRextinct}}
+>> _Religion is extinct_
+{{else}}
+>> ```dataview
+>> LIST WITHOUT ID 
+>> link(origins)
+>> FLATTEN origins
+>> WHERE file.name = this.file.name
+>> ```
+{{/if}}
 
 %%LeafletMapTOP-
 
@@ -1358,6 +1372,7 @@ WBProgress: Imported
 > The area shown in the color above is the reach of {{name}}
 >
 > [Link to {{name}} on FMG Map]({{@importDataRoot.importInfo.mapDropboxFMGLink}}&scale=3{{getFMGCellXY center @importDataRoot.pack.cells}})
+> 
 
 -LeafletMapTAIL%%
 
@@ -1379,9 +1394,9 @@ WBProgress: Imported
 > resizeHandle: native
 > render: dom
 > align: center
-> id: map-religion-{{name}}-{{i}}
+> id: map-religion-{{removeSpaces name}}-{{i}}
 > view:
->   zoom: .5
+>   zoom: 1
 >   centerX: {{getCellZoomMapX center @importDataRoot.pack.cells @importDataRoot.info}}
 >   centerY: {{getCellZoomMapY center @importDataRoot.pack.cells @importDataRoot.info}}
 > ```
@@ -1393,7 +1408,7 @@ WBProgress: Imported
 %%TTRPGMapTAIL%%
 
 %%
-ZOOMMAP-DATA map-religion-{{name}}-{{i}}
+ZOOMMAP-DATA id=map-religion-{{removeSpaces name}}-{{i}}
 {
   "size": {
     "w": {{@importDataRoot.info.width}},
@@ -1410,7 +1425,7 @@ ZOOMMAP-DATA map-religion-{{name}}-{{i}}
   "markers": [
     {
       "type": "pin",
-      "id": "marker_{{name}}_{{center}}",
+      "id": "marker_{{removeSpaces name}}_center",
       "x": {{getCellZoomMapX center @importDataRoot.pack.cells @importDataRoot.info}},
       "y": {{getCellZoomMapY center @importDataRoot.pack.cells @importDataRoot.info}},
       "layer": "default",
@@ -1522,7 +1537,7 @@ centerBurgId: {{centerBurgId}}
 {{setvar "currBurgNamePlusID" (getBurgNamePlusID centerBurgId @importDataRoot.pack.burgs)}}centerBurgNamePlusID: {{"currBurgNamePlusID"}}
 {{setvar "centerBurgStateName" (getBurgStateName centerBurgId @importDataRoot.pack.burgs @importDataRoot.pack.states)}}centerBurgStateName: {{"centerBurgStateName"}}
 {{setvar "centerBurgFile" (getBurgFile centerBurgId @importDataRoot)}}centerBurgFilePath: "{{"centerBurgFile"}}"
-cssclasses: sixty-pct-width
+cssclasses: seventy-pct-width
 id: {{i}}
 {{setvar "currMarketName" (getBurgName centerBurgId @importDataRoot.pack.burgs)}}marketName: {{"currMarketName"}}
 mapName: {{@importDataRoot.info.mapName}}
@@ -1636,7 +1651,7 @@ d: {{d}}
 m: {{m}}
 campaign: "{{@importDataRoot.importInfo.thisCampaign}}"
 created: {{getDateTimestamp @importSettings}}
-cssclasses: sixty-pct-width
+cssclasses: seventy-pct-width
 mapName: {{@importDataRoot.info.mapName}}
 tags:
 - namebase

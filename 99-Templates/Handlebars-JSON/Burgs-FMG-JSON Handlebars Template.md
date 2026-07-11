@@ -9,7 +9,7 @@ campaign: {{@importDataRoot.importInfo.thisCampaign}}
 capital: {{capital}}
 cell: {{cell}}
 citadel: {{citadel}}
-cssclasses: sixty-pct-width
+cssclasses: seventy-pct-width
 culture: {{getCultureName culture @importDataRoot.pack.cultures}}
 elevation: {{getHeight cell @importDataRoot.settings @importDataRoot.pack.cells}}
 emblem: {{@importDataRoot.info.mapName}} Emblem {{name}}.png

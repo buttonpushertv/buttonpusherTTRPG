@@ -6,7 +6,7 @@ code: {{code}}
 color: {{color}}
 center: {{center}}
 created: {{getDateTimestamp @importSettings}}
-cssclasses: sixty-pct-width
+cssclasses: seventy-pct-width
 expansionism: {{expansionism}}
 id: {{i}}
 leaders:

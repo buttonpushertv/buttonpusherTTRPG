@@ -6,7 +6,7 @@ campaign: {{@importDataRoot.importInfo.thisCampaign}}
 center: {{center}}
 color: {{color}}
 created: {{getDateTimestamp @importSettings}}
-cssclasses: sixty-pct-width
+cssclasses: seventy-pct-width
 emblem: {{@importDataRoot.info.mapName}} Emblem {{fullName}}.png
 formName: {{formName}}
 fullName: {{fullName}}

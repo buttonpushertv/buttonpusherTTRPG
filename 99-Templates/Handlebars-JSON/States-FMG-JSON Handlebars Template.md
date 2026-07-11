@@ -11,7 +11,7 @@ cells: {{cells}}
 center: {{this.center}}
 color: {{color}}
 created: {{getDateTimestamp @importSettings}}
-cssclasses: sixty-pct-width
+cssclasses: seventy-pct-width
 culture: {{getCultureName culture @importDataRoot.pack.cultures}}
 emblem: {{@importDataRoot.info.mapName}} Emblem {{fullName}}.png
 expansionism: {{expansionism}}

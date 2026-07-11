@@ -6,7 +6,7 @@ d: {{d}}
 m: {{m}}
 campaign: "{{@importDataRoot.importInfo.thisCampaign}}"
 created: {{getDateTimestamp @importSettings}}
-cssclasses: sixty-pct-width
+cssclasses: seventy-pct-width
 mapName: {{@importDataRoot.info.mapName}}
 tags:
 - namebase
