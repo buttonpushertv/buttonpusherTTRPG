@@ -14,5 +14,6 @@
   "ITS@@ITS-Table-Alt-Colors": "tables-alt-original",
   "ITS@@ITS-Table-Styling": "tables-borders",
   "ITS@@tables-center": true,
-  "ITS@@heading-indicator": false
+  "ITS@@heading-indicator": false,
+  "ITS@@dataview-table-auto": false
 }
