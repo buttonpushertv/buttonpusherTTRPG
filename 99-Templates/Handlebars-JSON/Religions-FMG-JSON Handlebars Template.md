@@ -6,25 +6,29 @@ center: {{this.center}}
 code: {{code}}
 color: {{color}}
 created: {{getDateTimestamp @importSettings}}
-cssclasses: sixty-pct-width
+cssclasses: seventy-pct-width
 culture: {{getCultureName culture @importDataRoot.pack.cultures}}
 deity: {{deity}}
 expansion: {{expansion}}
 expansionism: {{expansionism}}
+{{setvar "isRextinct" (isReligionExtinct i @importDataRoot.pack.religions @importDataRoot.pack.cells @importDataRoot.pack.burgs @importDataRoot.settings)}}extinct: {{"isRextinct"}}
 followers: {{getReligionFollowers this @importDataRoot.pack.cells @importDataRoot.pack.burgs @importDataRoot.settings}}
 form: {{form}}
 id: {{i}}
 leaders:
 mapName: {{@importDataRoot.info.mapName}}
-origins: {{getOriginReligion origins @importDataRoot.pack.religions}}
+origins: 
+{{#each origins}}
+- {{getOriginReligion this @importDataRoot.pack.religions}}
+{{/each}}
 pronounced: ""
 religionName: "{{name}}"
-shortDescription:
+shortDescription: A short description of this religion.
 tags:
 - Religion
 - {{@importDataRoot.info.mapName}}
 type: {{type}}
-templateVersion: 7.0
+templateVersion: 7.4
 WBProgress: Imported
 ---
 
@@ -36,7 +40,7 @@ WBProgress: Imported
 ---
 
 > [!column|3 no-t] `=this.religonName` Information
->> ### Symbols of `=this.religonName`
+>> ### Symbols of `=this.religionName`
 >> <span style="font-size:x-small">This section is where you could place imagry, icons, or symbols of this faith.</span>
 >
 >> ### Information
@@ -49,7 +53,17 @@ WBProgress: Imported
 >> ### Additional Info
 >> **Culture:** `=this.culture`
 >> **Expands via:** `=this.expansion`
->> **Origins:** `=link(this.origins)`
+>> **Origins:**
+{{#if isRextinct}}
+>> _Religion is extinct_
+{{else}}
+>> ```dataview
+>> LIST WITHOUT ID 
+>> link(origins)
+>> FLATTEN origins
+>> WHERE file.name = this.file.name
+>> ```
+{{/if}}
 
 %%LeafletMapTOP-
 
@@ -76,6 +90,7 @@ WBProgress: Imported
 > The area shown in the color above is the reach of {{name}}
 >
 > [Link to {{name}} on FMG Map]({{@importDataRoot.importInfo.mapDropboxFMGLink}}&scale=3{{getFMGCellXY center @importDataRoot.pack.cells}})
+> 
 
 -LeafletMapTAIL%%
 
@@ -99,7 +114,7 @@ WBProgress: Imported
 > align: center
 > id: map-religion-{{removeSpaces name}}-{{i}}
 > view:
->   zoom: .5
+>   zoom: 1
 >   centerX: {{getCellZoomMapX center @importDataRoot.pack.cells @importDataRoot.info}}
 >   centerY: {{getCellZoomMapY center @importDataRoot.pack.cells @importDataRoot.info}}
 > ```
@@ -111,7 +126,7 @@ WBProgress: Imported
 %%TTRPGMapTAIL%%
 
 %%
-ZOOMMAP-DATA map-religion-{{removeSpaces name}}-{{i}}
+ZOOMMAP-DATA id=map-religion-{{removeSpaces name}}-{{i}}
 {
   "size": {
     "w": {{@importDataRoot.info.width}},

@@ -53,6 +53,8 @@
 037   buildTimelineFromStateCampaigns(stateObject)
 038   computeStateZoomLevel(stateCells)
 039   getReligionOrigin(religionId, allReligions)
+040   isReligionExtinct(religionId, allReligions, allCells, allBurgs, mapSettings)
+041   getReligionArea(religionId, allCells)
 
 * - NEEDS TO BE REWORKED
 x - DEPRECATED - no longer used in the code
@@ -743,10 +745,10 @@ handlebars.registerHelper('getCellZoomMapX', function(cellId, allCells, mapInfo)
     return ''; // skip if the element is undefined
   };
   const foundCell = allCells.find(cell => cell.i === cellId);
-  console.log("getCellZoomMapX - cellId: ", cellId, " -- foundCell: ", foundCell);
+  // console.log("getCellZoomMapX - cellId: ", cellId, " -- foundCell: ", foundCell);
   const foundCellX = foundCell.p[0];
   const zoomMapX = (foundCellX / mapInfo.width);
-  console.log("zoomMapX: ", zoomMapX);
+  // console.log("zoomMapX: ", zoomMapX);
   return `${zoomMapX}`;
 });
 
@@ -1335,14 +1337,57 @@ handlebars.registerHelper('computeStateZoomLevel', function(stateCells) {
 // 039
 // Custom Helper to derive the origin religion for a given religion - which religion begat the current religion
 handlebars.registerHelper('getOriginReligion', function(religionOriginId, allReligions) {
-  if (religionOriginId === undefined || religionOriginId === 0) {
-    console.log("##### getOriginReligion - religionOriginId was undefined or zero #####");
-    return ''; // skip if religionOriginId is undefined or zero
+  if (religionOriginId === undefined) {
+    console.log("##### getOriginReligion - SENT religionOriginId was undefined #####");
+    return ''; // skip if religionOriginId is undefined
+  }
+  if (religionOriginId === 0) {
+    // A religionOriginId of 0 indicates this religion has no prior origin religion -
+    // it is a foundational/originating faith of its own.
+    return 'Foundational Faith';
   }
   const originReligion = allReligions.find(religion => religion.i === religionOriginId);
   if (!originReligion) {
-    console.log("##### getOriginReligion - originReligion was undefined #####");
+    console.log(`##### getOriginReligion - FOUND originReligion was undefined - religionOriginId: ${religionOriginId} #####`);
     return ''; // skip if originReligion is undefined
   }
-  return originReligion.name || 'Unknown';
+  
+  const originReligionName = originReligion.name || 'Unknown';
+  console.log(`getOriginReligion - FOUND originReligion.name: ${originReligionName}`);
+  return originReligionName;
+});
+
+// 040
+// Custom Helper to derive if a religion is extinct or not based on haivng zero followers
+handlebars.registerHelper('isReligionExtinct', function(religionId, allReligions, allCells, allBurgs, mapSettings) {
+  if (religionId === undefined || religionId === 0) {
+    console.log(`##### isReligionExtinct - SENT religionId was undefined or zero - religionId: ${religionId} #####`);
+    return ''; // skip if religionId is undefined or zero
+  }
+  const religion = allReligions.find(religion => religion.i === religionId);
+  if (!religion) {
+    console.log(`##### isReligionExtinct - FOUND religion was undefined - religionId: ${religionId} #####`);
+    return ''; // skip if religion is undefined
+  }
+  const followers = handlebars.helpers.getReligionFollowers(religion, allCells, allBurgs, mapSettings);
+  const isExtinct = followers === 0 || followers === "0";
+  console.log(`isReligionExtinct - Religion: ${religion.name}, Followers: ${followers}, Is Extinct: ${isExtinct}`);
+  return isExtinct;
+});
+
+// 041
+// Custom Helper to derive the total area of a religion's influence based on the cells it occupies
+handlebars.registerHelper('getReligionArea', function(religionId, allCells) {
+  if (religionId === undefined || religionId === 0) {
+    console.log(`##### getReligionArea - SENT religionId was undefined or zero - religionId: ${religionId} #####`);
+    return ''; // skip if religionId is undefined or zero
+  }
+  const religionCells = allCells.filter(cell => cell.religion === religionId);
+  if (!religionCells || religionCells.length === 0) {
+    console.log(`##### getReligionArea - FOUND no cells for religionId: ${religionId} #####`);
+    return 0; // no area if no cells found
+  }
+  const totalArea = religionCells.reduce((sum, cell) => sum + (cell.area || 0), 0);
+  console.log(`getReligionArea - ReligionId: ${religionId}, Total Area: ${totalArea}`);
+  return totalArea;
 });
