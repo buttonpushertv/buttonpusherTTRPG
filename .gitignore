@@ -1,18 +1,12 @@
 .DS_Store
 *.code-workspace
-/01-Campaigns/Braia
-/01-Campaigns/Test Campaign Cheia
-/01-Campaigns/Test Campaign 100
-/01-Campaigns/Test Campaign 99
-/01-Campaigns/Test Campaign Ladonia
-/01-Campaigns/Test 96
+/01-Campaigns/Test *
 /00-INBOX
-/01-Campaigns/Test Campaign Ladonia
 /00-INBOX
+/99-SCRATCH-FLDR
+/99-Archives
 99-Templates/Handlebars-JSON/Braia Full 2025-08-24-12-20-MODDED.json
 99-Templates/Handlebars-JSON/Ladonia Full 2024-03-31-10-23-MODDED.json
 .obsidian/workspace.json
-/99-SCRATCH-FLDR
 90-Tools & Helpers/gitkeep.bat
 90-Tools & Helpers/rem_gitkeep.bat
-/99-Archives
