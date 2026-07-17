@@ -1,6 +1,7 @@
 ---
 cssclasses: seventy-pct-width
 ---
+
 ## Forms of Religion
 
 This page is the main page for the descriptions of different forms of religion that are used by Fantasy Map Generator for the forms of religion.
