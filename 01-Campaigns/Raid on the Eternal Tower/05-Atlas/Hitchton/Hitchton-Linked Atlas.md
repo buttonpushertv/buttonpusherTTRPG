@@ -97,7 +97,7 @@ WBProcess: FALSE
 > wrap: false
 > responsive: false
 > width: 100%
-> height: 800px
+> height: 600px
 > resizable: false
 > resizeHandle: native
 > render: dom

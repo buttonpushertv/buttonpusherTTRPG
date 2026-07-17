@@ -1,11 +1,11 @@
 ---
 aliases:
-area:
+area: 17,619
 campaign: "Raid on the Eternal Tower"
 center: 4505
 code: SR
 color: #ebd8ff
-created: 2026-07-10-17:46
+created: 2026-07-12-11:49
 cssclasses: seventy-pct-width
 culture: Skiple
 deity: Stanswest, The Worried Narwhal
@@ -20,6 +20,8 @@ mapName: Hitchton
 origins: 
 - Religion of the Mad
 - Conghamism
+descendants:
+- None have emerged
 pronounced: ""
 religionName: "Skiple Religion"
 shortDescription: A short description of this religion.
@@ -27,7 +29,7 @@ tags:
 - Religion
 - Hitchton
 type: Organized
-templateVersion: 7.4
+templateVersion: 7.5
 WBProgress: Imported
 ---
 
@@ -41,24 +43,20 @@ WBProgress: Imported
 > [!column|3 no-t] `=this.religonName` Information
 >> ### Symbols of `=this.religionName`
 >> <span style="font-size:x-small">This section is where you could place imagry, icons, or symbols of this faith.</span>
+>> **Prime Deity:** `=this.deity`
+>> **Form:** `=link(this.form)`
 >
 >> ### Information
 >> **Pronounced:** "`=this.pronounced`"
->> **Deity:** `=this.deity`
 >> **Leaders:** `=this.leaders`
 >> **Followers:** `=this.followers`
->> **Form:** `=this.form`
+>> **Area:** `=this.area` sq. mi.
 >
 >> ### Additional Info
 >> **Culture:** `=this.culture`
 >> **Expands via:** `=this.expansion`
->> **Origins:**
->> ```dataview
->> LIST WITHOUT ID
->> link(origins)
->> FLATTEN origins
->> WHERE file.name = this.file.name
->> ```
+>> **Origins:** `=link(this.origins)`
+>> **Descendants:** `=link(this.descendants)`
 
 %%LeafletMapTOP-
 

@@ -1,11 +1,11 @@
 ---
 aliases:
-area:
+area: 0
 campaign: "Raid on the Eternal Tower"
 center: 2972
 code: CS
 color: #fdb462
-created: 2026-07-10-17:46
+created: 2026-07-12-11:49
 cssclasses: seventy-pct-width
 culture: Chisbute
 deity: Draxteden, The Dark Wyvern
@@ -19,6 +19,8 @@ leaders:
 mapName: Hitchton
 origins: 
 - Foundational Faith
+descendants:
+- None have emerged
 pronounced: ""
 religionName: "Chisbute Spirits"
 shortDescription: A short description of this religion.
@@ -26,7 +28,7 @@ tags:
 - Religion
 - Hitchton
 type: Folk
-templateVersion: 7.4
+templateVersion: 7.5
 WBProgress: Imported
 ---
 
@@ -40,19 +42,20 @@ WBProgress: Imported
 > [!column|3 no-t] `=this.religonName` Information
 >> ### Symbols of `=this.religionName`
 >> <span style="font-size:x-small">This section is where you could place imagry, icons, or symbols of this faith.</span>
+>> **Prime Deity:** `=this.deity`
+>> **Form:** `=link(this.form)`
 >
 >> ### Information
 >> **Pronounced:** "`=this.pronounced`"
->> **Deity:** `=this.deity`
 >> **Leaders:** `=this.leaders`
->> **Followers:** `=this.followers`
->> **Form:** `=this.form`
+>> **Followers:** _Religion is extinct_
+>> **Area:** `=this.area` sq. mi.
 >
 >> ### Additional Info
 >> **Culture:** `=this.culture`
 >> **Expands via:** `=this.expansion`
->> **Origins:**
->> _Religion is extinct_
+>> **Origins:** `=link(this.origins)`
+>> **Descendants:** `=link(this.descendants)`
 
 %%LeafletMapTOP-
 
