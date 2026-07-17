@@ -7,12 +7,6 @@ tags:
 - {{VALUE:newCampaignShortCode}}
 ---
 
-%% The map section below will need to be customized to use with your world map. The following block is taken from [Josh Plunkett's Tutorial](https://youtu.be/54EyMzJP5DU) and [Bag Of Tips' v2.0 Vault](https://ko-fi.com/s/37dd17499a) and adapted for the FMG Import process. Follow `###` commented instruction lines and it should work. If you have imported an FMG map, you can pull the Leaflet block from the Linked Atlas that is created in that import process. 
-
-This Leaflet block is setup to display within a collapsible callout block. This allows the map to be set to be collapsed or expanded by default.
-
-To make the Leaflet block below visible on this note, remove the indicated line below the Leaflet block and place a set of double percentage characters here-->
-
 # `=this.campaignName` - Simple Atlas
 
 [[{{VALUE:newCampaignHomeNote}}]]
@@ -25,16 +19,9 @@ SORT file.name ASC
 
 > [!metadata|map]+ World Map
 > ```leaflet
-> ### Remove lines commented with single octothorpes to activate the feature
-> ### Watch Josh Plunkett's Tutorial: https://youtu.be/54EyMzJP5DU
-> ### FMG Import will provide you with a 'world' mapName that can be used for the id.
-> ### Look in the properties field 'world:' in any Burg, Province, or State.
-> ### The FMG Atlas import will populate this field with this form, 'world-mapName' as id.
-> ### id must be unique to any other maps 
 > id: map_id
 > height: 600px
 > width: 100%
-> ### FMG can export an SVG map file that will allow for zooming without losing as much resolution as a raster image (like PNG or JPG)
 > image: [[your_map_name_here]]
 > ### To set the bounds of your map, you need to figure out the values you need to use
 > ### FMG Import will provide you with these values if you have added them to the JSON file from FMG. You can find the values in the Leaflet block from any State or the Atlas import, look for the `bounds:` property.

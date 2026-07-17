@@ -1,6 +1,6 @@
 ---
 aliases:
-area:
+area: {{getReligionArea i @importDataRoot.pack.cells}}
 campaign: "{{@importDataRoot.importInfo.thisCampaign}}"
 center: {{this.center}}
 code: {{code}}
@@ -21,6 +21,8 @@ origins:
 {{#each origins}}
 - {{getOriginReligion this @importDataRoot.pack.religions}}
 {{/each}}
+descendants:
+{{getDescendantReligions i @importDataRoot.pack.religions}}
 pronounced: ""
 religionName: "{{name}}"
 shortDescription: A short description of this religion.
@@ -28,7 +30,7 @@ tags:
 - Religion
 - {{@importDataRoot.info.mapName}}
 type: {{type}}
-templateVersion: 7.4
+templateVersion: 7.5
 WBProgress: Imported
 ---
 
@@ -42,28 +44,20 @@ WBProgress: Imported
 > [!column|3 no-t] `=this.religonName` Information
 >> ### Symbols of `=this.religionName`
 >> <span style="font-size:x-small">This section is where you could place imagry, icons, or symbols of this faith.</span>
+>> **Prime Deity:** `=this.deity`
+>> **Form:** `=link(this.form)`
 >
 >> ### Information
 >> **Pronounced:** "`=this.pronounced`"
->> **Deity:** `=this.deity`
 >> **Leaders:** `=this.leaders`
->> **Followers:** `=this.followers`
->> **Form:** `=this.form`
+>> **Followers:** {{#if isRextinct}}_Religion is extinct_{{else}}`=this.followers`{{/if}}
+>> **Area:** `=this.area` sq. mi.
 >
 >> ### Additional Info
 >> **Culture:** `=this.culture`
 >> **Expands via:** `=this.expansion`
->> **Origins:**
-{{#if isRextinct}}
->> _Religion is extinct_
-{{else}}
->> ```dataview
->> LIST WITHOUT ID 
->> link(origins)
->> FLATTEN origins
->> WHERE file.name = this.file.name
->> ```
-{{/if}}
+>> **Origins:** `=link(this.origins)`
+>> **Descendants:** `=link(this.descendants)`
 
 %%LeafletMapTOP-
 

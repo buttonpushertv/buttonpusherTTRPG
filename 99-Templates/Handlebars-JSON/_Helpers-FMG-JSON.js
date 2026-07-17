@@ -1357,6 +1357,50 @@ handlebars.registerHelper('getOriginReligion', function(religionOriginId, allRel
   return originReligionName;
 });
 
+// 039b
+// Custom Helper to derive the descendant religions for a given religion - which religions were begat by the current religion
+// Reverse search: each religion stores its own `origins` (an array of ancestor religion IDs, per FMG's data model),
+// but not which religions descended from it. So we scan all religions and find any whose `origins` array includes
+// the passed-in religionId. Also tolerates older data where `origin` may be a single numeric ID.
+handlebars.registerHelper('getDescendantReligions', function(religionId, allReligions) {
+  if (religionId === undefined || religionId === null) {
+    console.log("##### getDescendantReligions - SENT religionId was undefined or null #####");
+    return ''; // skip if religionId is undefined
+  }
+  if (Number(religionId) === 0) {
+    console.log("##### getDescendantReligions - SENT religionId was 0 - skipping #####");
+    return ''; // skip the "No religion" sentinel (id 0)
+  }
+  if (!Array.isArray(allReligions)) {
+    console.log("##### getDescendantReligions - allReligions was not an array #####");
+    return '';
+  }
+
+  const targetId = Number(religionId);
+
+  const descendantReligions = allReligions.filter(religion => {
+    if (!religion || religion.i === targetId) return false; // skip self and invalid entries
+    // Preferred: FMG stores ancestry as an array on `origins`
+    if (Array.isArray(religion.origins)) {
+      return religion.origins.some(o => Number(o) === targetId);
+    }
+    // Fallback: legacy/simplified data with a single numeric `origin`
+    if (religion.origin !== undefined && religion.origin !== null) {
+      return Number(religion.origin) === targetId;
+    }
+    return false;
+  });
+
+  if (!descendantReligions || descendantReligions.length === 0) {
+    console.log(`##### getDescendantReligions - FOUND no descendant religions for religionId: ${religionId} #####`);
+    return '- None have emerged'; // no descendants yet
+  }
+
+  const descendantReligionNames = descendantReligions.map(religion => religion.name || 'Unknown');
+  console.log(`getDescendantReligions - FOUND descendant religions: ${descendantReligionNames.join(', ')}`);
+  return descendantReligionNames.map((name) => `- ${name}`).join('\n');
+});
+
 // 040
 // Custom Helper to derive if a religion is extinct or not based on haivng zero followers
 handlebars.registerHelper('isReligionExtinct', function(religionId, allReligions, allCells, allBurgs, mapSettings) {
@@ -1389,5 +1433,5 @@ handlebars.registerHelper('getReligionArea', function(religionId, allCells) {
   }
   const totalArea = religionCells.reduce((sum, cell) => sum + (cell.area || 0), 0);
   console.log(`getReligionArea - ReligionId: ${religionId}, Total Area: ${totalArea}`);
-  return totalArea;
+  return totalArea.toLocaleString();
 });
