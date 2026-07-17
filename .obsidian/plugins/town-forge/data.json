@@ -1,0 +1,405 @@
+{
+  "scaleMultiplier": 1,
+  "distanceUnit": "miles",
+  "exportFolder": "Maps",
+  "templateFolder": "Templates/TownForge",
+  "pinTypes": [
+    {
+      "id": "castle",
+      "noteType": "Castle",
+      "enabled": true,
+      "icon": "castle",
+      "layerName": "Civic",
+      "placement": "anchored",
+      "anchor": "castle",
+      "countMin": 1,
+      "countMax": 1,
+      "countMode": "fixed",
+      "nameMode": "builtin",
+      "nameLists": {
+        "surnames": [],
+        "adjectives": [],
+        "nouns": [],
+        "proper": [
+          "The Keep",
+          "Castle Greymark",
+          "Castle Thorn",
+          "The Citadel",
+          "Highhold Keep",
+          "Castle Vance",
+          "The Old Castle",
+          "Ravenshold"
+        ]
+      }
+    },
+    {
+      "id": "cathedral",
+      "noteType": "Temple",
+      "enabled": true,
+      "icon": "place-of-worship",
+      "layerName": "Religious",
+      "placement": "anchored",
+      "anchor": "cathedral",
+      "countMin": 1,
+      "countMax": 1,
+      "countMode": "fixed",
+      "nameMode": "builtin",
+      "nameLists": {
+        "surnames": [],
+        "adjectives": [],
+        "nouns": [],
+        "proper": [
+          "The Temple of Light",
+          "Shrine of Saint Aldric",
+          "The Grand Cathedral",
+          "Chapel of Saint Mirelle",
+          "The High Sanctuary",
+          "Temple of the Dawn"
+        ]
+      }
+    },
+    {
+      "id": "market",
+      "noteType": "Market",
+      "enabled": true,
+      "icon": "circle_black_city",
+      "layerName": "Civic",
+      "placement": "anchored",
+      "anchor": "market",
+      "countMin": 1,
+      "countMax": 1,
+      "countMode": "fixed",
+      "nameMode": "builtin",
+      "nameLists": {
+        "surnames": [],
+        "adjectives": [],
+        "nouns": [],
+        "proper": [
+          "Market Square",
+          "The Old Market",
+          "The Grand Exchange",
+          "Market Cross",
+          "The Trade Square"
+        ]
+      }
+    },
+    {
+      "id": "barracks",
+      "noteType": "Barracks",
+      "enabled": true,
+      "icon": "shield",
+      "layerName": "Civic",
+      "placement": "anchored",
+      "anchor": "barracks",
+      "countMin": 1,
+      "countMax": 1,
+      "countMode": "fixed",
+      "nameMode": "builtin",
+      "nameLists": {
+        "surnames": [],
+        "adjectives": [],
+        "nouns": [],
+        "proper": [
+          "The Garrison",
+          "The Watch House",
+          "Town Barracks",
+          "The Old Garrison",
+          "The Guardhouse"
+        ]
+      }
+    },
+    {
+      "id": "tower",
+      "noteType": "Tower",
+      "enabled": true,
+      "icon": "pinRed",
+      "layerName": "Landmarks",
+      "placement": "anchored",
+      "anchor": "tower",
+      "countMin": 1,
+      "countMax": 1,
+      "countMode": "fixed",
+      "nameMode": "builtin",
+      "nameLists": {
+        "surnames": [],
+        "adjectives": [],
+        "nouns": [],
+        "proper": [
+          "The Lonely Tower",
+          "Blackspire",
+          "Ravenspire",
+          "The Mage's Tower",
+          "The Old Tower",
+          "Greywatch Tower",
+          "The Spire",
+          "Thornwatch"
+        ]
+      }
+    },
+    {
+      "id": "dock",
+      "noteType": "Dock",
+      "enabled": true,
+      "icon": "anchor",
+      "layerName": "Infrastructure",
+      "placement": "anchored",
+      "anchor": "dock",
+      "countMin": 1,
+      "countMax": 1,
+      "countMode": "fixed",
+      "nameMode": "builtin",
+      "nameLists": {
+        "surnames": [],
+        "adjectives": [],
+        "nouns": [],
+        "proper": [
+          "The Docks",
+          "The Wharf",
+          "The Quay",
+          "North Wharf",
+          "The Harbour",
+          "The Riverside Docks"
+        ]
+      }
+    },
+    {
+      "id": "mill",
+      "noteType": "Mill",
+      "enabled": true,
+      "icon": "wheat",
+      "layerName": "Infrastructure",
+      "placement": "anchored",
+      "anchor": "mill",
+      "countMin": 1,
+      "countMax": 2,
+      "countMode": "fixed",
+      "nameMode": "builtin",
+      "nameLists": {
+        "surnames": [
+          "Oakhart",
+          "Welk",
+          "Garrow",
+          "Pike"
+        ],
+        "adjectives": [
+          "Old",
+          "River",
+          "Lower",
+          "Upper"
+        ],
+        "nouns": [
+          "Mill",
+          "Watermill",
+          "Millhouse"
+        ],
+        "proper": [
+          "The Old Mill",
+          "Riverside Mill",
+          "Lower Watermill"
+        ]
+      }
+    },
+    {
+      "id": "stable",
+      "noteType": "Stable",
+      "enabled": true,
+      "icon": "horseshoe",
+      "layerName": "Infrastructure",
+      "placement": "anchored",
+      "anchor": "stable",
+      "countMin": 1,
+      "countMax": 2,
+      "countMode": "fixed",
+      "nameMode": "builtin",
+      "nameLists": {
+        "surnames": [
+          "Hart",
+          "Stagg",
+          "Crane",
+          "Marlow"
+        ],
+        "adjectives": [
+          "Old",
+          "Town",
+          "North"
+        ],
+        "nouns": [
+          "Stables",
+          "Livery",
+          "Mews"
+        ]
+      }
+    },
+    {
+      "id": "farm",
+      "noteType": "Farm",
+      "enabled": true,
+      "icon": "wheat",
+      "layerName": "Rural",
+      "placement": "anchored",
+      "anchor": "farm",
+      "countMin": 1,
+      "countMax": 4,
+      "countMode": "scaled",
+      "nameMode": "builtin",
+      "nameLists": {
+        "surnames": [
+          "Oakhart",
+          "Welk",
+          "Garrow",
+          "Fenwick",
+          "Brightwater",
+          "Dunmore"
+        ],
+        "adjectives": [
+          "Old",
+          "North",
+          "South",
+          "Hill",
+          "River",
+          "Green"
+        ],
+        "nouns": [
+          "Farm",
+          "Steading",
+          "Holding",
+          "Grange"
+        ]
+      }
+    },
+    {
+      "id": "shop",
+      "noteType": "Shop",
+      "enabled": true,
+      "icon": "shop",
+      "layerName": "Shops",
+      "placement": "sampled",
+      "countMin": 8,
+      "countMax": 14,
+      "countMode": "scaled",
+      "nameMode": "builtin",
+      "nameLists": {
+        "surnames": [
+          "Oakhart",
+          "Vance",
+          "Hollick",
+          "Jessop",
+          "Pemberton",
+          "Ironhand",
+          "Foxglove",
+          "Thornwood",
+          "Ashby",
+          "Crane",
+          "Marlow",
+          "Pike",
+          "Quill",
+          "Rooke",
+          "Sallow",
+          "Tanner",
+          "Underhill",
+          "Welk",
+          "Brightwater",
+          "Dunmore",
+          "Fenwick",
+          "Garrow"
+        ],
+        "adjectives": [
+          "Sleeping",
+          "Crooked",
+          "Salty",
+          "Drunken",
+          "Rusty",
+          "Silver",
+          "Broken",
+          "Weeping",
+          "Faithful",
+          "Singing",
+          "One-Eyed",
+          "Gilded",
+          "Whistling",
+          "Hollow"
+        ],
+        "nouns": [
+          "Forge",
+          "Smithy",
+          "Apothecary",
+          "Herbalist",
+          "Mercantile",
+          "General Goods",
+          "Tannery",
+          "Bakery",
+          "Curiosities",
+          "Provisioner",
+          "Cooperage",
+          "Chandlery"
+        ]
+      },
+      "subtypes": [
+        "general",
+        "weapon",
+        "armor",
+        "alchemy",
+        "magic"
+      ]
+    },
+    {
+      "id": "inn",
+      "noteType": "Inn",
+      "enabled": true,
+      "icon": "beer-stein",
+      "layerName": "Taverns & Inns",
+      "placement": "both",
+      "anchor": "inn",
+      "countMin": 3,
+      "countMax": 7,
+      "countMode": "scaled",
+      "nameMode": "builtin",
+      "nameLists": {
+        "surnames": [
+          "Bramble",
+          "Hart",
+          "Crow",
+          "Stagg",
+          "Mead",
+          "Barrow",
+          "Finch",
+          "Hale"
+        ],
+        "adjectives": [
+          "Weeping",
+          "Broken",
+          "Salty",
+          "Rusty",
+          "Crooked",
+          "Faithful",
+          "Singing",
+          "One-Eyed",
+          "Silver",
+          "Drunken",
+          "Sleeping",
+          "Laughing",
+          "Prancing",
+          "Gilded"
+        ],
+        "nouns": [
+          "Anchor",
+          "Lantern",
+          "Tower",
+          "Bell",
+          "Hare",
+          "Fox",
+          "Eagle",
+          "Stag",
+          "Tankard",
+          "Crown",
+          "Barrel",
+          "Hound"
+        ]
+      }
+    }
+  ],
+  "openAfterExport": true,
+  "groupNotesByType": true,
+  "enableZoomMapExport": false,
+  "showTroubleshoot": false
+}
