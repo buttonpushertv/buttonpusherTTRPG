@@ -5,7 +5,6 @@
 >
 > [[README]] <-- **START HERE FOR LINK TO GUIDE**
 > 
-> [[CHANGELOG]] 
 
 ---
 

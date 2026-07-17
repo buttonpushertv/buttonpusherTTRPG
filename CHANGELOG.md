@@ -2,6 +2,17 @@
 
 ## Wyrmling Edition
 
+### -.0.7.0 - released
+- Updated FMG import process to include some of the new Economy & Markets data introduced int FMG
+- Large refactor of the FMG Handlebar Templates to use for importing FMG maps
+- Added TTRPG Tools - Maps (ZoomMaps) plugin to start replacing Leaflet - (Leaflet is also in the Vault, so you can choose)
+- Replaced Javalent's Dice Tools with TTRPG Tools - Randomness plugin - assets for the plugin also installed
+- import of FMG's `nameBases` now implemented - The FMG nameBases are imported and stored now as tables, which should also be available as rollable tables of those names. The `nameBase` notes appear under a FMG map's imported notes, in the `_NameBases` folder under `05-Atlas/{mapName}/Cultures`. Each Culture should also have the related namebase embedded on its page as well. You can add any of the `nameBase` rolltables by simply adding a block like this: 
+  ```text
+  `rdm:[[English#^nmebse-English]]`
+  ```
+The `rdm:` part is what gets the Randomness plugin to see it as a rolltable. Then you use double brackets (`[[]]`) and then the name of the namebase note, followed by `#^` and then the rolltable's code. They should all follow a similar pattern: `nmebse-` first, followed by the name of the note. Here is what that will look like, embedded in your note: `rdm:[[English#^nmebse-English]]`
+
 ### -v.0.6.1 - released 2025-11-07-2221EST
 -Fixed an error creating the Leaflet Map Marker to the Provincial Capital Note
 
@@ -36,7 +47,7 @@ Unchecked are elements that would be nice to import.
 - [ ] pack.rivers (includes names - find links to locations where they run?)
 - [ ] pack.markers
 - [ ] notes (unordered array with notes for various elements)
-- [ ] nameBases (referenced by cultures to generate names - reverse engineer that name gen function?)
+- [x] nameBases (referenced by cultures to generate names - reverse engineer that name gen function?)
 
 
 ## TO DO

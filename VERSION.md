@@ -1,5 +1,6 @@
 > [!TLDR] Version Info
-> Wyrmling Edition - v.0.7
+> Wyrmling Edition - v.0.7.0
+> [[CHANGELOG]]
 
 > [!INFO]- Version Plans
 >
