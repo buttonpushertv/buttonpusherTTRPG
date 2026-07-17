@@ -1,0 +1,13 @@
+{
+  "generatorRoot": "92-GM Tools/rdm-generators",
+  "defaultFormatting": "html",
+  "stableCodeblockSeeds": false,
+  "browserExpandedPaths": [],
+  "pinnedTables": [],
+  "portraitPackPath": "92-GM Tools/rdm-generators/fantasy_ink_parts_pack",
+  "portraitPackUrl": "",
+  "diceFormulas": {},
+  "graphicalDice": true,
+  "showDiceBreakdown": false,
+  "collapsedDecks": []
+}

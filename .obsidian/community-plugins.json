@@ -3,7 +3,6 @@
   "obsidian-file-link",
   "obsidian-custom-frames",
   "dataview",
-  "obsidian-dice-roller",
   "editing-toolbar",
   "obsidian-excalidraw-plugin",
   "obsidian-leaflet-plugin",
@@ -22,5 +21,7 @@
   "share-my-plugin-list",
   "maps",
   "zoom-map",
-  "open-gate"
+  "open-gate",
+  "randomness",
+  "town-forge"
 ]

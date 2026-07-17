@@ -1,0 +1,10 @@
+{
+	"id": "town-forge",
+	"name": "Town Forge",
+	"version": "1.1.1",
+	"minAppVersion": "1.4.0",
+	"description": "Procedurally generate fantasy landscape and settlement maps for tabletop RPGs, with a live preview panel and optional pinned-map export.",
+	"author": "Obsidian TTRPG Community",
+	"authorUrl": "https://github.com/Obsidian-TTRPG-Community",
+	"isDesktopOnly": false
+}

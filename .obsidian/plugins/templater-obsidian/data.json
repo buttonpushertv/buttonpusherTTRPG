@@ -19,6 +19,13 @@
       "template": ""
     }
   ],
+  "enable_file_templates": false,
+  "file_templates": [
+    {
+      "regex": ".*",
+      "template": ""
+    }
+  ],
   "syntax_highlighting": true,
   "syntax_highlighting_mobile": true,
   "enabled_templates_hotkeys": [
@@ -26,6 +33,15 @@
   ],
   "startup_templates": [
     ""
+  ],
+  "intellisense_render": 1,
+  "ignore_folders_on_creation": [
+    {
+      "folder": ""
+    },
+    {
+      "folder": "99-Templates/Fantasy Hub"
+    }
   ],
   "enable_ribbon_icon": true
 }
