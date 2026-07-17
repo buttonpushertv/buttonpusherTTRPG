@@ -1,3 +1,8 @@
+---
+cssclasses: seventy-pct-width
+---
+
+
 # Main Campaign Result
 Campaign Name Seed: `dice: [[Campaign Name Generator#^cngseed]]`
 
@@ -11,7 +16,7 @@ Noun/Subject: `dice: [[Campaign Name Generator#^cngnouns]]`
 
 
 ### Table 0: 
-| dice: 1d2 | Campaign Name Seed |
+| dice:1d2 | Campaign Name Seed |
 | --------- | ----------------------- |
 | 1         | `dice: [[Campaign Name Generator#^cngadjectives]]`&#8203`dice: [[Campaign Name Generator#^cngactions]]`&#8203`dice: [[Campaign Name Generator#^cngnouns]]` |
 | 2.        | `dice: [[Campaign Name Generator#^cngadjectives]]`&#8203`dice: [[Campaign Name Generator#^cngactions]]`&#8203`dice: [[Campaign Name Generator#^cngnouns]]` |
@@ -55,7 +60,7 @@ Noun/Subject: `dice: [[Campaign Name Generator#^cngnouns]]`
 
 ### Table 2: Actions/Goals
 
-| Roll | Action/Goal |
+| dice: 1d30 | Action/Goal |
 |------|-------------|
 | 1    | Quest |
 | 2    | Hunt |
@@ -91,7 +96,7 @@ Noun/Subject: `dice: [[Campaign Name Generator#^cngnouns]]`
 
 ### Table 3: Nouns/Subjects
 
-| Roll | Noun/Subject |
+| dice: 1d30 | Noun/Subject |
 |------|--------------|
 | 1    | Dragon |
 | 2    | Kingdom |
