@@ -1,0 +1,85 @@
+// PF2e Martial Weapons
+// =====================================================================
+// Real Pathfinder 2e items with official prices, generated from the
+// Foundry VTT pf2e system data (github.com/foundryvtt/pf2e).
+//
+// PF2e game content is published by Paizo under the ORC License and
+// the Open Game License (OGL); item names, prices, and statistics are
+// open content reused here with attribution. This file is generated,
+// not hand-authored. See ATTRIBUTION in the bundle.
+//
+// Entry table: [@PF2eMartialWeapon]  — rolls one item as "Name .......... price"
+
+Title: PF2e Martial Weapons
+
+Table: PF2eMartialWeapon
+Adze .......... 1 gp
+Arbalest .......... 8 gp
+Bastard Sword .......... 4 gp
+Battle Axe .......... 1 gp
+Battle Saddle .......... 6 gp
+Bayonet .......... 2 sp
+Bec de Corbin .......... 4 gp
+Bo Staff .......... 2 sp
+Bola .......... 5 sp
+Chakram .......... 5 sp
+Cruuk .......... 4 sp
+Dancer's Spear .......... 3 gp
+Earthbreaker .......... 4 gp
+Exquisite Sword Cane Sheath .......... free
+Falchion .......... 3 gp
+Fauchard .......... 14 sp
+Flail .......... 8 sp
+Flyssa .......... 1 gp
+Gaff .......... 1 gp
+Gakgung .......... 2 gp
+Gauntlet Bow .......... 9 gp
+Glaive .......... 1 gp
+Greataxe .......... 2 gp
+Greatclub .......... 1 gp
+Greatpick .......... 1 gp
+Greatsword .......... 2 gp
+Griffon Cane .......... 1 gp
+Guisarme .......... 2 gp
+Halberd .......... 2 gp
+Hand Adze .......... 5 sp
+Harpoon .......... 1 gp
+Hatchet .......... 4 sp
+Kris .......... 7 sp
+Lance .......... 1 gp
+Light Hammer .......... 3 sp
+Light Pick .......... 4 sp
+Liuyedao .......... 3 gp
+Long Hammer .......... 5 gp
+Longbow .......... 6 gp
+Longsword .......... 1 gp
+Machete .......... 7 sp
+Main-Gauche .......... 5 sp
+Maul .......... 3 gp
+Meteor Hammer .......... 3 gp
+Monkey's Fist .......... 1 sp
+Panabas .......... 1 gp
+Pick .......... 7 sp
+Probing Cane .......... 5 sp
+Ranseur .......... 2 gp
+Rapier .......... 2 gp
+Reinforced Stock .......... 2 sp
+Rotary Bow .......... 8 gp
+Sap .......... 1 sp
+Scimitar .......... 1 gp
+Scizore .......... 9 sp
+Scourge .......... 1 sp
+Scythe .......... 2 gp
+Shield Boss .......... 5 sp
+Shield Bow .......... 5 gp
+Shield Spikes .......... 5 sp
+Shortbow .......... 3 gp
+Shortsword .......... 9 sp
+Starknife .......... 2 gp
+Sword Cane .......... 5 gp
+Talwar .......... 2 gp
+Trident .......... 1 gp
+War Flail .......... 2 gp
+War Razor .......... 3 sp
+Warhammer .......... 1 gp
+Whip .......... 1 sp

@@ -1,0 +1,40 @@
+// place-counts.rdm
+// =====================================================================
+// Settlement-size-aware counts for the non-shop "place" generators that
+// describe a COUNTABLE collection: a market's stalls, a barracks'
+// garrison, a guild's membership. Mirrors the philosophy of
+// stock-count.rdm (shops) but with curves appropriate to each place
+// type — a garrison scales far more steeply than a shop's shelf.
+//
+// Entry tables (each takes a Town Forge size tier as its one param):
+//   [@MarketStallCount with <size>]   - number of market stalls
+//   [@GarrisonCount with <size>]      - number of soldiers in a barracks
+//   [@GuildMemberCount with <size>]   - number of guild members
+//
+// <size>: hamlet | village | small_town | town | large_town |
+//   small_city | city | large_city | metropolis  (thorpe = hamlet).
+// Unknown/blank falls back to the 'town' band, so a note is never empty.
+//
+// Result is a NUMBER, used as a repetition/quantity by the caller:
+//   {!n=={[@MarketStallCount with {$prompt4}]}}[@{$n} StallEntry]
+
+Title: Place Counts
+
+// Shared size normaliser: capture the param first (a [when] against the
+// raw {$1} param doesn't match; against a captured var it does), echo
+// known tiers, empty for unknown.
+Table: PCSizeWord
+{!s=={$1}}[when]{$s}=hamlet[do]hamlet[end][when]{$s}=thorpe[do]hamlet[end][when]{$s}=village[do]village[end][when]{$s}=small_town[do]small_town[end][when]{$s}=town[do]town[end][when]{$s}=large_town[do]large_town[end][when]{$s}=small_city[do]small_city[end][when]{$s}=city[do]city[end][when]{$s}=large_city[do]large_city[end][when]{$s}=metropolis[do]metropolis[end]
+
+// Market stalls: a handful at a hamlet, a sprawling bazaar at a metropolis.
+Table: MarketStallCount
+{!sz=={$1}}{!w==[@PCSizeWord with {$sz}]}[when]{$w}=hamlet[do]{1+1d2}[end][when]{$w}=village[do]{2+1d2}[end][when]{$w}=small_town[do]{2+1d3}[end][when]{$w}=town[do]{3+1d3}[end][when]{$w}=large_town[do]{4+1d3}[end][when]{$w}=small_city[do]{5+1d4}[end][when]{$w}=city[do]{7+1d5}[end][when]{$w}=large_city[do]{9+1d5}[end][when]{$w}=metropolis[do]{11+1d7}[end][when]{$w}=[do]{3+1d3}[end]
+
+// Garrison: scales STEEPLY. A hamlet has a watch-post of a few; a
+// metropolis fields a standing garrison in the hundreds.
+Table: GarrisonCount
+{!sz=={$1}}{!w==[@PCSizeWord with {$sz}]}[when]{$w}=hamlet[do]{2+1d3}[end][when]{$w}=village[do]{4+1d4}[end][when]{$w}=small_town[do]{8+2d6}[end][when]{$w}=town[do]{15+3d10}[end][when]{$w}=large_town[do]{25+4d10}[end][when]{$w}=small_city[do]{40+5d12}[end][when]{$w}=city[do]{60+6d15}[end][when]{$w}=large_city[do]{100+8d20}[end][when]{$w}=metropolis[do]{160+10d25}[end][when]{$w}=[do]{15+3d10}[end]
+
+// Guild membership: a few hands at a hamlet, a powerful chapter at a city.
+Table: GuildMemberCount
+{!sz=={$1}}{!w==[@PCSizeWord with {$sz}]}[when]{$w}=hamlet[do]{3+1d4}[end][when]{$w}=village[do]{4+1d6}[end][when]{$w}=small_town[do]{6+2d6}[end][when]{$w}=town[do]{10+2d10}[end][when]{$w}=large_town[do]{14+2d12}[end][when]{$w}=small_city[do]{20+3d12}[end][when]{$w}=city[do]{28+3d15}[end][when]{$w}=large_city[do]{36+4d15}[end][when]{$w}=metropolis[do]{45+5d15}[end][when]{$w}=[do]{10+2d10}[end]

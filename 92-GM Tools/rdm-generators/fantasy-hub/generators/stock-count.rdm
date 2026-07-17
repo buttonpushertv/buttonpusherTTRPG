@@ -1,0 +1,38 @@
+// stock-count.rdm
+// =====================================================================
+// Settlement-size-aware stock counts. A shop's inventory length should
+// scale with the settlement: a hamlet barely stocks anything, a
+// metropolis has a deep rack. Two entry tables:
+//
+//   [@StockCount with <size>]      - normal goods (weapon/armor/general)
+//   [@StockCountScarce with <size>] - scarcer goods (magic), ~half as many
+//
+// <size> is a Town Forge tier: hamlet | village | small_town | town |
+// large_town | small_city | city | large_city | metropolis.
+// Unknown/blank falls back to the 'town' count.
+//
+// The result is a NUMBER, used as a repetition count by the caller:
+//   {!n=={[@StockCount with {$prompt4}]}}[@{$n} WeaponItemLine]
+//
+// NOTE ON DUPLICATES: IPP3 has no de-duplication primitive — each stock
+// line is an independent roll WITH replacement, so a large rack from a
+// modest pool can occasionally list the same item twice. Counts are
+// tuned to keep this rare at typical settlement sizes; the largest
+// settlements (deep racks) will show the odd repeat. This is a known
+// engine limitation, not a generator bug.
+
+Title: Stock Count
+
+// Normalize the size word (echo known, empty for unknown -> town).
+// Capture the param into {s} first: a [when] comparison against the raw
+// {$1} param does not match, but against a captured variable it does.
+Table: SizeWord
+{!s=={$1}}[when]{$s}=hamlet[do]hamlet[end][when]{$s}=thorpe[do]hamlet[end][when]{$s}=village[do]village[end][when]{$s}=small_town[do]small_town[end][when]{$s}=town[do]town[end][when]{$s}=large_town[do]large_town[end][when]{$s}=small_city[do]small_city[end][when]{$s}=city[do]city[end][when]{$s}=large_city[do]large_city[end][when]{$s}=metropolis[do]metropolis[end]
+
+// Standard goods: 2-3 (hamlet) up to 8-13 (metropolis).
+Table: StockCount
+{!sz=={$1}}{!w==[@SizeWord with {$sz}]}[when]{$w}=hamlet[do]{1+1d2}[end][when]{$w}=village[do]{2+1d2}[end][when]{$w}=small_town[do]{2+1d3}[end][when]{$w}=town[do]{3+1d3}[end][when]{$w}=large_town[do]{4+1d3}[end][when]{$w}=small_city[do]{4+1d4}[end][when]{$w}=city[do]{5+1d4}[end][when]{$w}=large_city[do]{6+1d5}[end][when]{$w}=metropolis[do]{7+1d6}[end][when]{$w}=[do]{3+1d3}[end]
+
+// Scarce goods (magic): roughly half. 1-2 (hamlet) up to 4-7 (metropolis).
+Table: StockCountScarce
+{!sz=={$1}}{!w==[@SizeWord with {$sz}]}[when]{$w}=hamlet[do]{1d2}[end][when]{$w}=village[do]{1+1d2}[end][when]{$w}=small_town[do]{1+1d2}[end][when]{$w}=town[do]{2+1d2}[end][when]{$w}=large_town[do]{2+1d3}[end][when]{$w}=small_city[do]{2+1d3}[end][when]{$w}=city[do]{3+1d3}[end][when]{$w}=large_city[do]{3+1d4}[end][when]{$w}=metropolis[do]{4+1d4}[end][when]{$w}=[do]{2+1d2}[end]

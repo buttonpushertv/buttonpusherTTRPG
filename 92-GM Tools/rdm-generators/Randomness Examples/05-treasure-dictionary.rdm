@@ -1,0 +1,58 @@
+// 05-treasure-dictionary.rdm
+// =================================================================
+// Dictionary tables and the [#key Table] pick syntax.
+//
+// Dictionary tables map non-numeric KEYS to values. They aren't
+// rolled randomly — you pick a specific entry by name. This is
+// great for "give me the X version of Y" patterns: stats by class,
+// loot by tier, dialogue by faction.
+//
+// This file generates treasure scaled to a "tier" you pick at runtime
+// or one that's rolled from a separate lookup.
+//
+// Try it:  [@TreasureHoard]
+// =================================================================
+
+Prompt: Tier {Roll|Low|Mid|High|Legendary} Roll
+
+Table: TreasureHoard
+// If the user picked "Roll", roll for a tier; otherwise use what
+// they picked. This is the canonical bracket-wrapped conditional
+// pattern.
+Set: tier=[[when]{$Prompt1}=Roll[do][@TierRoll][else]{$Prompt1}[end]]
+// The & joins each line into ONE multi-line item. Without &, the
+// main table would pick one of these lines randomly.
+Tier: {$tier}&
+\nCoins: [#{$tier} Coins]&
+\nGems: [#{$tier} Gems]&
+\nMagic items: [#{$tier} Magic]
+
+Table: TierRoll
+Type: Lookup
+01-50: Low
+51-85: Mid
+86-98: High
+99-100: Legendary
+
+// Dictionary tables. The "Type: Dictionary" directive marks this
+// as keyed; each item's "key:value" form maps directly.
+Table: Coins
+Type: Dictionary
+Low: {3d6} silver
+Mid: {2d6}x10 silver
+High: {2d6}x100 silver
+Legendary: {1d6}x1000 gold
+
+Table: Gems
+Type: Dictionary
+Low: {1d4-1} (avg. 10gp each)
+Mid: {1d6} (avg. 50gp each)
+High: {1d4+1} (avg. 500gp each)
+Legendary: {2d6} (avg. 5000gp each)
+
+Table: Magic
+Type: Dictionary
+Low: usually none
+Mid: 1 minor (potion or scroll)
+High: 1 major + 1 minor
+Legendary: 2 major + 1 artifact (subject to GM approval)

@@ -1,0 +1,27 @@
+// 01-greetings.rdm
+// =================================================================
+// The simplest possible generator: one table, a handful of items.
+// Roll this file and you'll get one of the listed greetings.
+//
+// Try it:  add a randomness codeblock to any note with the line
+//          [@Greeting]  and click to roll it.
+// =================================================================
+
+// "Table:" declares a named table. Every line after it (until the
+// next Table: or end of file) is an item that can be picked.
+// By default all items are equally weighted.
+Table: Greeting
+Hello there!
+Well met, traveller.
+What news?
+Mind yourself.
+A fine day to you.
+
+// You can add a second table in the same file. The FIRST table
+// in a file is the "main table" — the one rolled by default if
+// you call the file with no specific table name.
+Table: Farewell
+Safe travels.
+Until next we meet.
+Don't be a stranger.
+May the wind be at your back.

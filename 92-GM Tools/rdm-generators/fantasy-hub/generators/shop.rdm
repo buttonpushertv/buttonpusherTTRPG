@@ -1,0 +1,110 @@
+// shop.rdm
+// =====================================================================
+// Top-level entry point. Roll [@FantasyShop] for a random shop of any type,
+// or call a specific type directly. Imports all five shop files (which
+// in turn import people, customers, and prices).
+//
+// Entry tables:
+//   [@FantasyShop]          - a random shop (one of the five types)
+//   [@GeneralShop]   - general goods (via shop-general.rdm)
+//   [@WeaponShop]    - weapons
+//   [@ArmorShop]     - armor
+//   [@AlchemyShop]   - alchemy
+//   [@MagicShop]     - magic
+//
+// USAGE
+//   API / Templater:   await api.rollUnscoped("FantasyShop")
+//   In-note codeblock: ```randomness
+//                      Use: shop.rdm
+//                      [@FantasyShop]
+//                      ```
+//   Inline (needs a codeblock importing shop.rdm in the same note):
+//                      `rdm:[@FantasyShop]`
+
+Title: Shop
+Use: shop-general.rdm
+Use: shop-weapon.rdm
+Use: shop-armor.rdm
+Use: shop-alchemy.rdm
+Use: shop-magic.rdm
+
+// Declare the same prompts as the individual shops so that when the
+// picker is the entry file, prompt positions 1-3 (town / shopType /
+// shopName) are populated and propagate into whichever sub-shop is
+// chosen. Without these, {$prompt1..3} would be empty in this file's
+// scope and the town/name would be lost. Defaults keep standalone use
+// working.
+Prompt: town {} an unnamed town
+Prompt: shopType {} shop
+Prompt: shopName {}
+Prompt: size {} town
+Prompt: keeperName {}
+Prompt: keeperRace {}
+Prompt: keeperGender {}
+Prompt: keeperAge {}
+Prompt: keeperDesc {}
+Prompt: custName {}
+Prompt: custRace {}
+Prompt: custDesc {}
+
+// Random shop of any type. Equal weight across the five.
+Table: TF-Shop
+[@TF-GeneralShop]
+[@TF-WeaponShop]
+[@TF-ArmorShop]
+[@TF-AlchemyShop]
+[@TF-MagicShop]
+
+// === Name + subtype picker for the Town Forge naming hook ===
+// Rolls ONE shop type and a name FROM THAT TYPE, then emits both as
+// machine-parsable data: "subtype|name" (pipe-separated, no markup).
+// The hook splits on "|" to get { subtype, name } — guaranteed
+// correlated because the name is drawn from the chosen subtype's pool.
+// Then the body template rolls TF-ShopByType with that same subtype +
+// name, so name, subtype, and stock all agree.
+//
+// Example outputs:
+//   alchemy|The Smoking Alembic
+//   weapon|Hilt & Pommel
+Table: TF-ShopPick
+[@PickGeneral]
+[@PickWeapon]
+[@PickArmor]
+[@PickAlchemy]
+[@PickMagic]
+
+Table: PickGeneral
+general|[@GeneralShopName]
+
+Table: PickWeapon
+weapon|[@WeaponShopName]
+
+Table: PickArmor
+armor|[@ArmorShopName]
+
+Table: PickAlchemy
+alchemy|[@AlchemyShopName]
+
+Table: PickMagic
+magic|[@MagicShopName]
+
+// Type-locked shop: rolls the shop type named by the shopType prompt
+// (prompt2), so a note that already knows it's an "alchemy" shop gets
+// an alchemy body — name and stock guaranteed coherent.
+//
+// Accepted type words: general, weapon, armor, alchemy, magic.
+// ANYTHING else (including "shop", a blank, or a typo) falls back to a
+// random shop, so the note is never left empty.
+//
+// How it works: ValidatedType returns the matching known type word, or
+// an EMPTY string for anything unrecognised (incl. "shop"/blank/typo).
+// Dispatch is a flat [when] chain on that word; the empty-match branch
+// is the random-shop fallback, so the note is never left empty.
+Table: TF-ShopByType
+{!stype==[@ValidatedType]}[when]{$stype}=general[do][@TF-GeneralShop][end][when]{$stype}=weapon[do][@TF-WeaponShop][end][when]{$stype}=armor[do][@TF-ArmorShop][end][when]{$stype}=alchemy[do][@TF-AlchemyShop][end][when]{$stype}=magic[do][@TF-MagicShop][end][when]{$stype}=[do][@TF-Shop][end]
+
+// Returns the matching known type word, or an empty string if prompt2
+// is not one of the five specific types (the empty result triggers the
+// random-shop fallback in TF-ShopByType).
+Table: ValidatedType
+[when]{$prompt2}=general[do]general[end][when]{$prompt2}=weapon[do]weapon[end][when]{$prompt2}=armor[do]armor[end][when]{$prompt2}=alchemy[do]alchemy[end][when]{$prompt2}=magic[do]magic[end]

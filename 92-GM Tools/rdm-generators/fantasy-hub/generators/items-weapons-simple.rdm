@@ -1,0 +1,42 @@
+// PF2e Simple Weapons
+// =====================================================================
+// Real Pathfinder 2e items with official prices, generated from the
+// Foundry VTT pf2e system data (github.com/foundryvtt/pf2e).
+//
+// PF2e game content is published by Paizo under the ORC License and
+// the Open Game License (OGL); item names, prices, and statistics are
+// open content reused here with attribution. This file is generated,
+// not hand-authored. See ATTRIBUTION in the bundle.
+//
+// Entry table: [@PF2eSimpleWeapon]  — rolls one item as "Name .......... price"
+
+Title: PF2e Simple Weapons
+
+Table: PF2eSimpleWeapon
+Atlatl .......... 2 sp
+Blowgun .......... 1 sp
+Club .......... free
+Corset Knife .......... 3 sp
+Crossbow .......... 3 gp
+Dagger .......... 2 sp
+Dart .......... 1 cp
+Forked Bipod .......... 3 sp
+Frying Pan .......... 1 sp
+Gauntlet .......... 2 sp
+Hand Crossbow .......... 3 gp
+Heavy Crossbow .......... 4 gp
+Javelin .......... 1 sp
+Knuckle Duster .......... 3 sp
+Light Mace .......... 4 sp
+Longspear .......... 5 sp
+Mace .......... 1 gp
+Morningstar .......... 1 gp
+Reinforced Wheels .......... 5 sp
+Sickle .......... 2 sp
+Sling .......... free
+Spear .......... 1 sp
+Spiked Gauntlet .......... 3 sp
+Staff .......... free
+Throwing Knife .......... 3 sp
+Wheel Blades .......... 5 sp
+Wheel Spikes .......... 5 sp

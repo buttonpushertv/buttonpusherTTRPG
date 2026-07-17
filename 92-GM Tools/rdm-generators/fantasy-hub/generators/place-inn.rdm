@@ -1,0 +1,174 @@
+// place-inn.rdm
+// =====================================================================
+// A PF2e inn / tavern. Reuses people.rdm (innkeeper + patron) and
+// prices.rdm (coin math + markup). Built to give a GM something to
+// run with: the innkeeper, lodging/food/drink with PF2e prices, the
+// atmosphere of the common room, a patron present, and a rumour or
+// bit of trouble hanging in the air.
+//
+// Entry table: [@Inn]
+//
+// Inputs (optional, via API promptValues — same scheme as the shops):
+//   prompt1 town      - the town this inn sits in
+//   prompt2 shopType  - caller's type word (display only)
+//   prompt3 shopName  - a name to use instead of rolling one ("" = roll)
+//
+// PF2e prices are in COPPER (1 gp = 100 cp). Lodging/meal values are
+// from the Core Rulebook Services table where I'm confident; drink
+// prices and a few others are reasonable approximations, marked (~).
+// VERIFY against your sources if exact prices matter at your table.
+
+Title: Inn
+Use: people.rdm
+Use: prices.rdm
+
+Prompt: town {} an unnamed town
+Prompt: shopType {} inn
+Prompt: shopName {}
+Prompt: keeperName {}
+Prompt: keeperRace {}
+Prompt: keeperGender {}
+Prompt: keeperAge {}
+Prompt: keeperDesc {}
+
+Table: TF-Inn
+Set: town={$prompt1}
+Set: passedName={$prompt3}
+Set: m=[@Markup]
+Set: keeper=[when]{$keeperName}=[do][@PersonName][else]{$keeperName}[end]
+Set: kanc=[when]{$keeperRace}=[do][@Ancestry][else]{$keeperRace}[end]
+Set: keeperdsc=[when]{$keeperDesc}=[do][@PersonDesc][else]{$keeperDesc}[end]
+**[@InnTitle]** *(inn in {$town})*\n&
+**[@InnQuality], [@InnAtmosphere]**\n&
+**Host:** {$keeper}, a {$keeperdsc} {$kanc} who is [@Personality].\n&
+**Lodging & board** ({$markupReason}):\n&
+[@InnPriceList]\n&
+**The common room:** [@CommonRoom]\n&
+**A patron:** [@InnPatron]\n&
+**{$keeper} says:** "[@InnQuote]"\n&
+**Hanging in the air:** [@InnHook]
+
+Table: InnTitle
+[when]{$passedName}=[do][@InnName][else]{$passedName}[end]
+
+// Two-part inn names: "The <adjective> <noun>".
+Table: InnName
+The [@InnNameAdj] [@InnNameNoun]
+
+Table: InnNameAdj
+Prancing
+Gilded
+Rusty
+Weary
+Laughing
+Crooked
+Salty
+Sleeping
+Drunken
+Silver
+Broken
+Wandering
+Hearty
+Last
+Brazen
+Copper
+
+Table: InnNameNoun
+Pony
+Tankard
+Crown
+Stag
+Lantern
+Anchor
+Griffon
+Boar
+Maiden
+Goose
+Hammer
+Barrel
+Kettle
+Dragon
+Sailor
+Hearth
+
+// Quality tier — sets the feel and roughly the price band. Flavour
+// only; the price list below is fixed PF2e values, but the quality
+// line tells the GM (and players) what to expect.
+Table: InnQuality
+A rough, cheap roadhouse
+A clean, honest common inn
+A comfortable, well-kept establishment
+A fine inn favoured by merchants and minor gentry
+A no-frills bunkhouse for working folk
+A characterful old place with a long reputation
+
+Table: InnAtmosphere
+warm and loud with song
+quiet but for a crackling fire
+crowded shoulder-to-shoulder tonight
+hazy with pipe-smoke and low talk
+nearly empty, the host glad of company
+tense, with two tables eyeing each other
+festive — someone's celebrating something
+
+// PF2e Core Services prices (copper). (~) = approximate, verify.
+Table: InnPriceList
+- Room for the night (poor) ... [@PricedAs with 10]\n&
+- Room for the night (common) . [@PricedAs with 40]\n&
+- Room for the night (fine) ... [@PricedAs with 200]\n&
+- Hot meal (common) ........... [@PricedAs with 20]\n&
+- Bowl of stew & bread ........ (~) [@PricedAs with 3]\n&
+- Mug of ale .................. (~) [@PricedAs with 2]\n&
+- Cup of wine (house) ......... (~) [@PricedAs with 4]\n&
+- Stabling for a mount/night .. (~) [@PricedAs with 5]
+
+// What the common room is actually doing right now.
+Table: CommonRoom
+a bard is butchering a popular ballad to good-natured heckling
+a dice game in the corner has just turned sour
+travellers trade road news over a shared pot of stew
+a hooded figure nurses one drink and watches the door
+two regulars argue politics loudly enough for everyone to hear
+a merchant is loudly toasting a deal closed that afternoon
+the fire's gone low and the talk with it; people are turning in
+a dog moves table to table, working the room for scraps
+
+// A patron worth noticing. Reuses the NPC generator.
+Table: InnPatron
+{!pat==[@PersonName]}{!panc==[@Ancestry]}{$pat}, a [@PersonDesc] {$panc}, [@PatronDoing]
+
+Table: PatronDoing
+drinking alone and clearly wants it to stay that way
+holding court with a circle of listeners
+asking everyone if they've seen a particular face
+deep in their cups and growing maudlin
+playing cards and winning more than seems natural
+writing intently in a small leather journal
+trying to hire muscle, discreetly, for "a small job"
+fast asleep with their head on the table
+
+Table: InnQuote
+First round's the only thing on the house, and only because you look thirsty.
+Rooms upstairs, trouble outside — keep them in that order.
+We don't ask names here, but we remember faces.
+The stew's yesterday's, the ale's today's, and the gossip's free.
+Pay up front if you're the sort that leaves at dawn.
+Mind the third stair, it's claimed an ankle or two.
+You'll sleep fine if the fellow in room four stops his snoring.
+Coin on the bar, blades at the door. House rule.
+
+// A hook — the bit of trouble or opportunity the GM can hang a thread
+// on. This is the "interesting" part for a TTRPG table.
+Table: InnHook
+word of a caravan that left a week ago and never reached the next town
+a reward notice freshly nailed by the door, ink still wet
+the host's daughter hasn't come down from her room in two days
+a stranger paid for a week in advance, then never came back down
+talk of lights seen moving in the old ruin past the treeline
+a drunk swearing he saw someone who's been dead three years
+a sealed letter left behind by a guest, addressed to no one
+the cellar's been making sounds the host would rather ignore
+
+// Standalone name roll (collision-proof, for note titles etc.).
+Table: TF-InnName
+[@InnName]

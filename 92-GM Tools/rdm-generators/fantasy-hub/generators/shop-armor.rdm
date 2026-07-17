@@ -1,0 +1,131 @@
+// shop-armor.rdm
+// =====================================================================
+// A PF2e armorer. Reuses people, customers, prices.
+// Entry table: [@ArmorShop]
+// Prices in COPPER (1 gp = 100 cp), PF2e Core armor tables; (~) approx.
+
+Title: Armor Shop
+Use: people.rdm
+Use: customers.rdm
+Use: prices.rdm
+Use: stock-count.rdm
+Use: items-armor.rdm
+
+// Optional inputs from a caller (e.g. Town Forge via the API's
+// promptValues). Defaults keep the file working standalone.
+//   prompt1 town  /  prompt2 shopType (display)  /  prompt3 shopName
+Prompt: town {} an unnamed town
+Prompt: shopType {} armor
+Prompt: shopName {}
+Prompt: size {} town
+Prompt: keeperName {}
+Prompt: keeperRace {}
+Prompt: keeperGender {}
+Prompt: keeperAge {}
+Prompt: keeperDesc {}
+Prompt: custName {}
+Prompt: custRace {}
+Prompt: custDesc {}
+
+Table: TF-ArmorShop
+Set: town={$prompt1}
+Set: passedName={$prompt3}
+Set: m=[@Markup]
+Set: owner=[when]{$prompt5}=[do][@PersonName][else]{$prompt5}[end]
+Set: oanc=[when]{$prompt6}=[do][@Ancestry][else]{$prompt6}[end]
+Set: odesc=[when]{$prompt9}=[do][@PersonDesc][else]{$prompt9}[end]
+**[@ArmorTitle]** *(armor in {$town})*\n&
+**Proprietor:** {$owner}, a {$odesc} {$oanc} who is [@Personality].\n&
+**Prices:** {$markupReason}.\n&
+**Fitted stock:**\n&
+[@ArmorStock]\n&
+**{$owner} says:** "[@ArmorQuote]"\n&
+**Also here:** [@Customer]
+
+// Caller-supplied name if given, else roll. Prefixed to avoid collision.
+Table: ArmorTitle
+[when]{$passedName}=[do][@ArmorShopName][else]{$passedName}[end]
+
+Table: ArmorShopName
+The [@ArmAdj] [@ArmNoun]
+The [@ArmAdj] [@ArmNoun]
+[@ArmNoun] & [@ArmNoun]
+[@FamilyName]'s [@ArmNoun]
+[@FamilyName]'s [@ArmNoun]
+The [@ArmNoun] & [@ArmNoun]
+[@ArmNoun] and [@ArmNoun]
+The [@ArmFixed]
+
+Table: ArmAdj
+Sure
+Standing
+Iron
+Steadfast
+Ironhide
+Dented
+Burnished
+Sturdy
+Trusty
+Stalwart
+Riveted
+Plated
+Guarded
+Tempered
+Hardy
+Bulwark
+Proven
+Solid
+Stout
+Warded
+
+Table: ArmNoun
+Shield
+Pauldron
+Bulwark
+Buckler
+Brace
+Plate
+Mail
+Vambrace
+Greave
+Helm
+Gorget
+Aegis
+Wall
+Bastion
+Cuirass
+Hauberk
+Rampart
+Breastplate
+Gauntlet
+Barrier
+
+Table: ArmFixed
+Dented Pauldron
+Standing Wall
+Sure Shield
+Ironhide Armoury
+Second Skin
+Plate & Mail
+Turtle's Shell
+Buckler & Brace
+
+Table: ArmorStock
+{!n=={[@StockCount with {$prompt4}]}}[@{$n} ArmorItemLine]
+
+// PF2e Core armor prices (copper).
+Table: ArmorItemLine
+[@ArmorItem]\n
+
+Table: ArmorItem
+[@PF2eArmor with {$prompt4}]
+
+Table: ArmorQuote
+A good fit saves your life. A bad one ends it.
+Let me see your shoulders — armour's no good if you can't swing.
+This plate turned three blades for its last owner.
+I'll adjust the straps free if it pinches.
+Padding underneath, always. I'll not sell you a bruise.
+Heavier isn't safer. Smarter is safer.
+You'll thank me when something tries to open you up.
+Try it on. Walk a circle. Then we'll talk price.

@@ -1,0 +1,87 @@
+// location.rdm
+// =====================================================================
+// Umbrella picker for ALL settlement locations. Roll [@TF-Location]
+// for a random location of any kind (a shop, an inn, a temple, a
+// castle, a working site...), or call any specific type directly.
+//
+// This imports every place + shop file, so it's the single entry
+// point Town Forge can use when it just wants "something here" and
+// doesn't care what. For a specific building, call that type's table
+// directly (e.g. TF-Inn) — you don't need this picker for those.
+//
+// Entry tables:
+//   [@TF-Location]  - a random location of ANY type
+//   [@TF-Place]     - a random NON-shop location (inn/temple/etc.)
+//   ...plus every specific type: TF-Inn, TF-Temple, TF-Castle, etc.
+//
+// USAGE
+//   API / Templater:   await api.rollUnscoped("TF-Location", {promptValues:{...}})
+//   In-note codeblock: ```randomness
+//                      Use: location.rdm
+//                      [@TF-Location]
+//                      ```
+//
+// Prompts are declared here too so town/shopType/shopName propagate
+// into whichever location is chosen (positions must line up with the
+// individual files: 1=town, 2=shopType, 3=shopName).
+
+Title: Location
+Use: shop.rdm
+Use: place-inn.rdm
+Use: place-stable.rdm
+Use: place-market.rdm
+Use: place-temple.rdm
+Use: place-castle.rdm
+Use: place-barracks.rdm
+Use: place-dock.rdm
+Use: place-mill.rdm
+Use: place-farm.rdm
+Use: place-guild.rdm
+Use: place-tavern.rdm
+Use: place-tower.rdm
+Use: place-undertaker.rdm
+Use: place-manor.rdm
+
+Prompt: town {} an unnamed town
+Prompt: shopType {} location
+Prompt: shopName {} 
+
+// Any location at all. Shops are folded in via TF-Shop (which itself
+// picks one of the five shop types), so a single [@TF-Location] roll
+// can land on anything in a settlement. Weighting: TF-Shop appears
+// once, so "a shop (of some kind)" is one option among ten — adjust
+// the weighting by duplicating lines if you want shops more common.
+Table: TF-Location
+[@TF-Shop]
+[@TF-Inn]
+[@TF-Stable]
+[@TF-Market]
+[@TF-Temple]
+[@TF-Castle]
+[@TF-Barracks]
+[@TF-Dock]
+[@TF-Mill]
+[@TF-Farm]
+[@TF-Guild]
+[@TF-Tavern]
+[@TF-Tower]
+[@TF-Undertaker]
+[@TF-Manor]
+
+// Non-shop locations only, for when Town Forge handles shops
+// separately and just wants a "civic/other" building here.
+Table: TF-Place
+[@TF-Inn]
+[@TF-Stable]
+[@TF-Market]
+[@TF-Temple]
+[@TF-Castle]
+[@TF-Barracks]
+[@TF-Dock]
+[@TF-Mill]
+[@TF-Farm]
+[@TF-Guild]
+[@TF-Tavern]
+[@TF-Tower]
+[@TF-Undertaker]
+[@TF-Manor]

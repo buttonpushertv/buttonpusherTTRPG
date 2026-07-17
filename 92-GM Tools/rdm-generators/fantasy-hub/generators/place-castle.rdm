@@ -1,0 +1,179 @@
+// place-castle.rdm
+// =====================================================================
+// A castle / keep / fortified seat of power. Purely institutional —
+// NO commerce, no priced stock. A GM gets: the ruler and their
+// disposition, the castle's type and condition, the garrison, notable
+// features and defences, another power at court, and a current
+// situation to drive intrigue.
+//
+// Entry table: [@TF-Castle]
+//
+// Inputs (optional, via API promptValues):
+//   prompt1 town  /  prompt2 shopType (display)  /  prompt3 shopName
+//
+// Reuses people.rdm for the ruler and court figures. No prices.rdm —
+// you don't shop at a castle.
+
+Title: Castle
+Use: people.rdm
+
+Prompt: town {} an unnamed town
+Prompt: shopType {} castle
+Prompt: shopName {}
+Prompt: keeperName {}
+Prompt: keeperRace {}
+Prompt: keeperGender {}
+Prompt: keeperAge {}
+Prompt: keeperDesc {}
+
+Table: TF-Castle
+Set: town={$prompt1}
+Set: passedName={$prompt3}
+Set: ruler=[when]{$keeperName}=[do][@PersonName][else]{$keeperName}[end]
+Set: ranc=[when]{$keeperRace}=[do][@Ancestry][else]{$keeperRace}[end]
+Set: rulerdsc=[when]{$keeperDesc}=[do][@PersonDesc][else]{$keeperDesc}[end]
+Set: title=[@RulerTitle]
+**[@CastleTitle]** *(seat of power above {$town})*\n&
+**[@CastleType], [@CastleCondition]**\n&
+**Ruler:** {$title} {$ruler}, a {$rulerdsc} {$ranc} who is [@RulerDisposition].\n&
+**Garrison:** [@Garrison]\n&
+**Defences & features:** [@CastleFeature]; [@CastleFeature]\n&
+**Power behind the throne:** [@CourtFigure]\n&
+**Right now:** [@CastleSituation]
+
+Table: CastleTitle
+[when]{$passedName}=[do][@CastleName][else]{$passedName}[end]
+
+// Castle name: by feature, by founder, or by the town.
+Table: CastleName
+[@CastleNameWord] [@CastleNameSuffix]
+[@FamilyName] [@CastleNameSuffix]
+The [@CastleNameAdj] [@CastleNameSuffix]
+
+Table: CastleNameWord
+Raven
+Storm
+Grey
+Iron
+High
+Black
+Wolf
+Thorn
+Wind
+Dragon
+
+Table: CastleNameAdj
+Old
+Broken
+Crooked
+Last
+Silent
+Bright
+Frozen
+
+Table: CastleNameSuffix
+Keep
+Hold
+Castle
+Tower
+Watch
+Spire
+Garrison
+Bastion
+
+Table: RulerTitle
+Lord
+Lady
+Baron
+Baroness
+Count
+Countess
+Castellan
+Knight-Commander
+the Dowager
+Warden
+
+Table: CastleType
+A squat, thick-walled border keep built for war
+A sprawling noble castle with gardens and a great hall
+A lonely watchtower-and-wall guarding a mountain pass
+An old motte-and-bailey of timber and earthworks
+A grand fortress-palace, seat of a powerful house
+A converted monastery, now garrisoned and gated
+
+Table: CastleCondition
+in fine repair, banners snapping in the wind
+showing its age, with scaffolding on one tower
+recently besieged — the scars are still raw
+half-ruined, with only the keep still held
+freshly fortified, new stone bright against the old
+quietly crumbling while its lord pretends otherwise
+
+Table: RulerDisposition
+just but cold, and utterly inflexible about the law
+generous to friends and merciless to enemies
+distracted by debts and pretending all is well
+ambitious, with eyes on a larger seat than this
+beloved by the smallfolk and resented by peers
+old, tired, and clinging to a fraying grip on power
+paranoid, seeing plots in every shadow (perhaps rightly)
+charming in public and ruthless behind closed doors
+
+Table: Garrison
+{!g=={20+2d20}}roughly {$g} soldiers under [@PersonName], [@GarrisonState]
+
+Table: GarrisonState
+a grizzled, competent captain who runs a tight watch
+a green officer out of their depth and knowing it
+a captain whose loyalty is quietly for sale
+a fanatically loyal commander devoted to the ruler
+a captain feuding openly with the castellan
+veterans bored stiff by years of uneventful peace
+
+Table: CastleFeature
+a deep dry moat crossed by a single drawbridge
+a portcullis that hasn't been raised in living memory
+murder-holes and arrow-slits covering every approach
+a hidden sally-port known only to the garrison
+a crumbling section of wall the lord can't afford to fix
+a tall signal-beacon kept laid and ready
+dungeons rumoured to hold more than common criminals
+a deep well and stores enough for a long siege
+a great hall hung with the trophies of past wars
+a rookery of messenger birds, constantly coming and going
+
+Table: CourtFigure
+{!c==[@PersonName]}{!canc==[@Ancestry]}{$c}, a [@PersonDesc] {$canc} — [@CourtRole], [@CourtMotive]
+
+Table: CourtRole
+the steward who truly runs the place
+the ruler's spymaster, officially "an advisor"
+a visiting envoy who has overstayed their welcome
+the heir, impatient for a seat not yet vacant
+the court mage, indispensable and unsettling
+the ruler's confessor and closest confidant
+a hostage-guest of noble birth, watched closely
+
+Table: CourtMotive
+loyal, but with a price everyone forgets they have
+quietly working against the ruler's interests
+honestly devoted and increasingly worried
+playing two factions against each other for profit
+hiding a secret that could topple the household
+simply trying to keep the whole place from collapsing
+
+Table: CastleSituation
+a raven arrived this morning and the ruler has been grim since
+the garrison is on quiet alert, though no one will say why
+an honoured guest is expected within the day, and nerves are high
+a servant has gone missing and the household is being searched
+two factions at court are one insult away from open conflict
+the ruler is ill, and the question of succession hangs unspoken
+a prisoner in the dungeon has asked, specifically, for adventurers
+envoys from a rival house are at the gate, uninvited
+the lord is hiring discreet swords for a matter not spoken of openly
+old debts have come due and a creditor's agent waits in the hall
+
+// Standalone name roll (collision-proof, for note titles etc.).
+Table: TF-CastleName
+[@CastleName]

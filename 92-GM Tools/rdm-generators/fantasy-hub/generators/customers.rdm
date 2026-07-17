@@ -1,0 +1,31 @@
+// customers.rdm
+// =====================================================================
+// "Someone currently shopping." Reuses people.rdm for the person,
+// then wraps them in a shopping-specific activity. Imported by the
+// shop files.
+//
+// Entry table:
+//   [@Customer]  - "<Person> is here, <activity>."
+
+Title: Customers
+Use: people.rdm
+
+Table: Customer
+Set: cust=[when]{$custName}=[do][@PersonName][else]{$custName}[end]
+Set: canc=[when]{$custRace}=[do][@Ancestry][else]{$custRace}[end]
+Set: cdsc=[when]{$custDesc}=[do][@PersonDesc][else]{$custDesc}[end]
+{$cust}, a {$cdsc} {$canc}, is here [@CustomerActivity]
+
+Table: CustomerActivity
+haggling loudly over a price
+counting coins with a furrowed brow
+inspecting the stock with obvious expertise
+asking the shopkeeper a stream of questions
+quietly comparing two items, unable to decide
+waiting impatiently for an order to be filled
+admiring something well out of their budget
+trying to return a clearly-used item
+chatting with the shopkeeper like an old friend
+browsing with no apparent intent to buy
+loading purchases into a bulging pack
+arguing that the price was lower last week

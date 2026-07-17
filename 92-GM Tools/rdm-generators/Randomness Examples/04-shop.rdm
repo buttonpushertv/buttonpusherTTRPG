@@ -1,0 +1,84 @@
+// 04-shop.rdm
+// =================================================================
+// Lookup tables, conditionals, and repetitions.
+//
+// Lookup tables roll dice and pick the item whose range covers the
+// result. This is the d% (percentile) table idiom — much more
+// natural than weighted lists for rarity-based picks.
+//
+// This file generates a shop's stock with rarity bias and a name
+// that depends on the shop type.
+//
+// Try it:  [@Shop]
+// =================================================================
+
+Table: Shop
+// The & at the end of each line joins it with the next, so the
+// whole shop description is ONE item — not four separate items.
+// Without &, the main table would pick just one of these lines.
+[@ShopName]&
+\nStock:&
+\n  [@ShopItem]&
+\n  [@ShopItem]&
+\n  [@ShopItem]&
+\n  [@ShopItem]
+
+// \n is a newline escape — without it, items would run together.
+
+Table: ShopName
+The [@ShopAdjective] [@ShopNoun]
+
+Table: ShopAdjective
+Dusty
+Bronze
+Crooked
+Silver
+Forgotten
+
+Table: ShopNoun
+Lantern
+Anvil
+Pouch
+Quill
+Crown
+
+Table: ShopItem
+// Lookup tables roll dice (Roll: directive, or inferred from the
+// max range) and pick the item whose lookupRange contains the roll.
+Type: Lookup
+Roll: 1d100
+01-50: a [@CommonItem]
+51-85: a [@UncommonItem]
+86-98: a [@RareItem]
+99-100: a [@LegendaryItem]
+
+Table: CommonItem
+candle
+rope (50ft)
+torch
+flint and steel
+waterskin
+sack
+chalk
+ration
+
+Table: UncommonItem
+lantern
+spyglass
+grappling hook
+silvered dagger
+crowbar
+healing potion
+caltrops
+
+Table: RareItem
++1 weapon
+ring of protection
+elven cloak
+boots of striding
+wand with 1d6+1 charges
+
+Table: LegendaryItem
+artifact-grade weapon (DM choice)
+ring of three wishes (1 wish remaining)
+deck of many things

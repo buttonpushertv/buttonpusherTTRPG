@@ -1,0 +1,123 @@
+// place-mill.rdm
+// =====================================================================
+// A mill — water, wind, or beast-driven. The miller, what's milled,
+// the works and its condition, the hands, current activity, and a
+// hook. Mills sit at the heart of rural disputes (water rights, debt,
+// who controls the grain), which makes them quietly hook-rich.
+//
+// Entry table: [@TF-Mill]
+//
+// Inputs (optional, via API promptValues):
+//   prompt1 town  /  prompt2 shopType (display)  /  prompt3 shopName
+//
+// Reuses people.rdm. No prices.
+
+Title: Mill
+Use: people.rdm
+
+Prompt: town {} an unnamed town
+Prompt: shopType {} mill
+Prompt: shopName {}
+Prompt: keeperName {}
+Prompt: keeperRace {}
+Prompt: keeperGender {}
+Prompt: keeperAge {}
+Prompt: keeperDesc {}
+
+Table: TF-Mill
+Set: town={$prompt1}
+Set: passedName={$prompt3}
+Set: miller=[when]{$keeperName}=[do][@PersonName][else]{$keeperName}[end]
+Set: manc=[when]{$keeperRace}=[do][@Ancestry][else]{$keeperRace}[end]
+Set: millerdsc=[when]{$keeperDesc}=[do][@PersonDesc][else]{$keeperDesc}[end]
+**[@MillTitle]** *(mill near {$town})*\n&
+**[@MillType], [@MillCondition]**\n&
+**Miller:** {$miller}, a {$millerdsc} {$manc} who is [@Personality].\n&
+**Milling:** [@MillProduce]\n&
+**The works:** [@MillWorks]\n&
+**The hands:** [@MillHands]\n&
+**Right now:** [@MillActivity]\n&
+**Worth noting:** [@MillHook]
+
+Table: MillTitle
+[when]{$passedName}=[do][@MillName][else]{$passedName}[end]
+
+Table: MillName
+The [@MillNameWord] Mill
+[@FamilyName]'s Mill
+[@MillNameWord] Millhouse
+
+Table: MillNameWord
+Old
+Stone
+River
+Low
+Mossy
+Wheelwright's
+Brook
+Far
+
+Table: MillType
+A water-mill on a fast millrace
+A windmill on a low rise above the fields
+An old tide-mill working with the river's flow
+A horse-driven mill in a converted barn
+The district's only mill, and it knows it
+A lumber-mill turning logs into planks
+
+Table: MillCondition
+prosperous, the wheel turning steadily
+in disrepair, the mechanism groaning and slipping
+freshly rebuilt after a fire or flood
+overworked, a queue of carts waiting to be served
+idle, the race dammed and the wheel still
+grand for its purpose, the pride of the valley
+
+Table: MillProduce
+wheat into flour for the whole district
+barley and oats for ale and feed
+logs into planks and beams
+pressing oil from seeds and nuts
+fulling cloth for the weavers downstream
+grinding pigments and ores for the town's craftsmen
+
+Table: MillWorks
+a great oaken wheel and well-kept gears
+a patched mechanism the miller nurses along
+fine stones imported at great expense
+a clever arrangement the miller invented and guards jealously
+worn gears that throw a spark of complaint now and then
+a second wheel, recently added, doubling the output
+
+Table: MillHands
+{!n=={2+1d4}}the miller and {$n} hands, [@MillHandTrait]
+
+Table: MillHandTrait
+family, working the mill across generations
+hired labour, paid by the sack
+strong backs the miller trusts with little else
+a single clever apprentice and some seasonal help
+indentured to work off a debt to the miller
+locals who resent how much the mill charges
+
+Table: MillActivity
+carts of grain are queued up the lane, tempers fraying
+the great stone is being dressed, the mill briefly silent
+flour-dust hangs thick in the air as the wheel turns
+the miller is arguing with a farmer over short weight
+a broken gear has halted everything and the miller is cursing
+sacks are being loaded out under the miller's sharp eye
+
+Table: MillHook
+the miller is quietly buying up debts across the district
+the millrace was sabotaged, and the miller blames a neighbour
+grain stored here has been going missing, sack by sack
+the mill sits on a water right two villages are ready to fight over
+something was found jammed in the wheel that the miller hid fast
+the miller charges far more than the work warrants, and is hated for it
+a body was found in the millpond and the verdict came too quickly
+the old miller died suddenly and the new one asks too many questions
+
+// Standalone name roll (collision-proof, for note titles etc.).
+Table: TF-MillName
+[@MillName]

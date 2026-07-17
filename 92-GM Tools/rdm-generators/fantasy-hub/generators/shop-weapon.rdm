@@ -1,0 +1,133 @@
+// shop-weapon.rdm
+// =====================================================================
+// A PF2e weaponsmith / arms dealer. Reuses people, customers, prices.
+// Entry table: [@WeaponShop]
+//
+// Prices in COPPER (1 gp = 100 cp), from PF2e Core weapon tables
+// where confident; (~) marks approximations to verify.
+
+Title: Weapon Shop
+Use: people.rdm
+Use: customers.rdm
+Use: prices.rdm
+Use: stock-count.rdm
+Use: items-weapons.rdm
+
+// Optional inputs from a caller (e.g. Town Forge via the API's
+// promptValues). Defaults keep the file working standalone.
+//   prompt1 town  /  prompt2 shopType (display)  /  prompt3 shopName
+Prompt: town {} an unnamed town
+Prompt: shopType {} weapons
+Prompt: shopName {}
+Prompt: size {} town
+Prompt: keeperName {}
+Prompt: keeperRace {}
+Prompt: keeperGender {}
+Prompt: keeperAge {}
+Prompt: keeperDesc {}
+Prompt: custName {}
+Prompt: custRace {}
+Prompt: custDesc {}
+
+Table: TF-WeaponShop
+Set: town={$prompt1}
+Set: passedName={$prompt3}
+Set: m=[@Markup]
+Set: owner=[when]{$prompt5}=[do][@PersonName][else]{$prompt5}[end]
+Set: oanc=[when]{$prompt6}=[do][@Ancestry][else]{$prompt6}[end]
+Set: odesc=[when]{$prompt9}=[do][@PersonDesc][else]{$prompt9}[end]
+**[@WeaponTitle]** *(weapons in {$town})*\n&
+**Proprietor:** {$owner}, a {$odesc} {$oanc} who is [@Personality].\n&
+**Prices:** {$markupReason}.\n&
+**Rack:**\n&
+[@WeaponStock]\n&
+**{$owner} says:** "[@WeaponQuote]"\n&
+**Also here:** [@Customer]
+
+// Caller-supplied name if given, else roll. Prefixed to avoid collision.
+Table: WeaponTitle
+[when]{$passedName}=[do][@WeaponShopName][else]{$passedName}[end]
+
+Table: WeaponShopName
+The [@WpnAdj] [@WpnNoun]
+The [@WpnAdj] [@WpnNoun]
+[@WpnNoun] & [@WpnNoun]
+[@FamilyName]'s [@WpnNoun]
+[@FamilyName]'s [@WpnNoun]
+The [@WpnNoun] & [@WpnNoun]
+[@WpnNoun] and [@WpnNoun]
+The [@WpnFixed]
+
+Table: WpnAdj
+Keen
+Bloodied
+Sharp
+Iron
+Steel
+Tempered
+Notched
+Whetted
+Honed
+Brazen
+Last
+Bright
+Grim
+Battle-Worn
+Trusty
+Forged
+Red
+Cold
+Sure
+Proven
+
+Table: WpnNoun
+Edge
+Whetstone
+Anvil
+Blade
+Hilt
+Pommel
+Quillon
+Forge
+Armoury
+Steel
+Point
+Cut
+Hammer
+Spear
+Axe
+Bowstring
+Quiver
+Scabbard
+Crucible
+War-Hall
+
+Table: WpnFixed
+Keen Edge
+Bloodied Anvil
+Last Word
+Two-Handed Tom's
+Sharp Bargain
+Edge & Haft
+Whetstone
+Soldier's Friend
+
+Table: WeaponStock
+{!n=={[@StockCount with {$prompt4}]}}[@{$n} WeaponItemLine]
+
+// PF2e Core weapon prices (copper).
+Table: WeaponItemLine
+[@WeaponItem]\n
+
+Table: WeaponItem
+[@PF2eWeapon with {$prompt4}]
+
+Table: WeaponQuote
+Balance is everything. Heft it before you buy it.
+A dull blade's just a heavy stick, friend.
+That one's seen blood. Priced to reflect it.
+I sharpen free for a week after purchase.
+Don't point it at me unless you mean to pay for it.
+Steel doesn't lie, and neither do I.
+You want pretty, go to the jeweller. You want deadly, stay here.
+Every weapon here will outlive the fool who underestimates it.

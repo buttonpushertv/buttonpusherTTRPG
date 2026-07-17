@@ -1,0 +1,89 @@
+// prices.rdm
+// =====================================================================
+// PF2e price helper. Centralises coin formatting and the
+// markup/discount flavour so every shop file prices items the same
+// way. Imported (Use:) by the shop files.
+//
+// PF2e coinage: 10 cp = 1 sp, 10 sp = 1 gp, 10 gp = 1 pp.
+// We work internally in COPPER (the smallest unit) so the math is
+// integer-friendly, then format up to gp/sp for display. (Platinum
+// is rarely used for shop pricing, so the formatter tops out at gp
+// with sp/cp remainder, which matches how PF2e price tags read.)
+//
+// Entry tables:
+//   [@Coins with {copperValue}]   - format a copper amount as PF2e coins
+//   [@Markup]                      - a price multiplier (as a percentage
+//                                    integer, e.g. 100 = list price) plus
+//                                    a short reason, available afterward in
+//                                    {markupPct} and {markupReason}
+//   [@PricedAs with {baseCopper}]  - apply the current {markupPct} to a
+//                                    base copper price and format the result
+//
+// USAGE PATTERN in a shop file:
+//   {!m=[@Markup]}            <- sets {markupPct} + {markupReason} once per shop
+//   ... then per item ...
+//   [@PricedAs with {baseCopperForThisItem}]
+
+Title: Prices
+Formatting: html
+
+// ---------------------------------------------------------------
+// Format a copper amount as PF2e coins. Input is {$1} in copper.
+// Outputs gp / sp / cp, each shown only when nonzero. Uses flat
+// (non-nested) conditionals so the content parser stays happy.
+// A leading space is emitted before sp and cp; the whole result is
+// trimmed by the caller's context, and in practice the gp portion
+// comes first so the spacing reads cleanly. Examples:
+//   100 -> "1 gp"; 155 -> "1 gp 5 sp 5 cp"; 7 -> "7 cp"; 0 -> "free".
+// ---------------------------------------------------------------
+Table: Coins
+Set: total={! floor({$1}) }
+Set: gp={! floor({$total}/100) }
+Set: remAfterGp={! {$total}-({$gp}*100) }
+Set: sp={! floor({$remAfterGp}/10) }
+Set: cp={! {$remAfterGp}-({$sp}*10) }
+[@CoinsGp][@CoinsSp][@CoinsCp][@CoinsFree]
+
+// Each denomination is its own table with a single flat [when], so
+// there's no nested-conditional parsing. They concatenate; spacing
+// is handled with a trailing space after each present chunk and the
+// caller trims.
+Table: CoinsGp
+[when]{$gp}>0[do]{$gp} gp [end]
+
+Table: CoinsSp
+[when]{$sp}>0[do]{$sp} sp [end]
+
+Table: CoinsCp
+[when]{$cp}>0[do]{$cp} cp[end]
+
+Table: CoinsFree
+[when]{$total}=0[do]free[end]
+
+// ---------------------------------------------------------------
+// Markup / discount. Sets {markupPct} (an integer percentage) and
+// {markupReason}. List price is 100. A frontier town marks up; a
+// shop clearing old stock discounts. Most rolls land near 100 so
+// prices stay recognisably PF2e.
+// ---------------------------------------------------------------
+Table: Markup
+[@MarkupRoll]
+
+Table: MarkupRoll
+Set: markupPct=100
+Set: markupReason=standard list prices
+list prices
+list prices
+list prices
+{!markupPct==115}{!markupReason=='a modest frontier markup'}prices run a little high here
+{!markupPct==125}{!markupReason=='steep prices in a seller market'}prices are steep
+{!markupPct==90}{!markupReason=='a small discount, eager to sell'}prices run a little low
+{!markupPct==80}{!markupReason=='clearing old stock, everything discounted'}prices are cut to move stock
+
+// ---------------------------------------------------------------
+// Apply {markupPct} to a base copper price ({$1}) and format.
+// Falls back to 100% if no markup was rolled.
+// ---------------------------------------------------------------
+Table: PricedAs
+Set: pct={! {$markupPct} }
+[when not]{$pct}>0[do]{!pct==100}[end][@Coins with {! floor( ({$1}*{$pct})/100 ) }]

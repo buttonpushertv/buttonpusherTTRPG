@@ -1,0 +1,139 @@
+// place-dock.rdm
+// =====================================================================
+// A dock / harbour / wharf — a working waterfront. Overseer
+// (harbourmaster), the ships and cargo moving through, the dockhands,
+// current activity, and a hook. Works for sea ports and river docks.
+//
+// Entry table: [@TF-Dock]
+//
+// Inputs (optional, via API promptValues):
+//   prompt1 town  /  prompt2 shopType (display)  /  prompt3 shopName
+//
+// Reuses people.rdm. No priced stock (it's a working dock, not a
+// market), though cargo is described.
+
+Title: Dock
+Use: people.rdm
+
+Prompt: town {} an unnamed town
+Prompt: shopType {} dock
+Prompt: shopName {}
+Prompt: keeperName {}
+Prompt: keeperRace {}
+Prompt: keeperGender {}
+Prompt: keeperAge {}
+Prompt: keeperDesc {}
+
+Table: TF-Dock
+Set: town={$prompt1}
+Set: passedName={$prompt3}
+Set: master=[when]{$keeperName}=[do][@PersonName][else]{$keeperName}[end]
+Set: manc=[when]{$keeperRace}=[do][@Ancestry][else]{$keeperRace}[end]
+Set: masterdsc=[when]{$keeperDesc}=[do][@PersonDesc][else]{$keeperDesc}[end]
+**[@DockTitle]** *(docks at {$town})*\n&
+**[@DockType], [@DockMood]**\n&
+**Harbourmaster:** {$master}, a {$masterdsc} {$manc} who is [@Personality].\n&
+**At the wharves:** [@DockShips]\n&
+**Moving through:** [@DockCargo], [@DockCargo], and [@DockCargo]\n&
+**The dockhands:** [@Dockhands]\n&
+**Right now:** [@DockActivity]\n&
+**Worth watching:** [@DockHook]
+
+Table: DockTitle
+[when]{$passedName}=[do][@DockName][else]{$passedName}[end]
+
+Table: DockName
+The [@DockNameWord] Wharf
+[@DockNameWord] Docks
+The [@DockNameWord] Quay
+
+Table: DockNameWord
+Old
+Salt
+Low
+Merchant's
+Fisher's
+North
+Crooked
+Tidegate
+
+Table: DockType
+A busy sea harbour thick with masts
+A modest river dock for barges and ferries
+A rough fishing wharf reeking of the day's catch
+A trade port where foreign flags fly
+A half-derelict dock the trade has mostly left
+A fortified harbour with a chain across its mouth
+
+Table: DockMood
+bustling, every berth taken
+quiet between tides, gulls and idle hands
+tense, with a customs dispute underway
+festive, a ship just in from a long voyage
+grim, after a vessel failed to make port
+wary, since something washed up that shouldn't have
+
+Table: DockShips
+{!n=={2+1d3}}[@{$n} ShipLine]
+
+Table: ShipLine
+a [@ShipKind] [@ShipDoing]\n&
+
+Table: ShipKind
+fat-bellied merchant cog
+sleek coastal cutter
+weather-beaten fishing smack
+river barge low with cargo
+foreign vessel of unfamiliar lines
+naval patrol ship, lean and armed
+
+Table: ShipDoing
+unloading crates under a watchful tally-clerk
+taking on supplies for departure
+sitting under quarantine flag, no one allowed aboard
+being repaired, half its crew ashore and drinking
+loading in suspicious haste
+abandoned at its mooring, fees mounting
+
+Table: DockCargo
+salt fish and barrels of oil
+bales of wool and bolts of cloth
+timber and pitch
+sacks of grain and dried beans
+crates stamped with a foreign mark
+livestock, loud and unhappy
+wine and spirits under careful guard
+"general goods" no one looks at too closely
+
+Table: Dockhands
+{!d=={10+2d10}}some {$d} stevedores and porters, [@DockhandTrait]
+
+Table: DockhandTrait
+organised into a guild that runs the waterfront
+quick with their hands in more ways than one
+loyal to the harbourmaster and suspicious of strangers
+underpaid, overworked, and one bad day from a strike
+a rough lot who settle disputes their own way
+mostly honest, with a few who'll move anything for a price
+
+Table: DockActivity
+a shouting match over a manifest that doesn't add up
+a press-gang eyeing idle men a little too keenly
+cargo being unloaded fast and carried off faster
+a customs officer making a slow, pointed inspection
+a brawl spilling out of a dockside tavern
+nets being mended and the day's catch haggled over
+
+Table: DockHook
+a ship sits under quarantine and the crew aren't talking
+crates are being unloaded at night, off the books
+a sailor is asking around for passage and looking over their shoulder
+the harbourmaster's tallies don't match what's actually moving
+a vessel arrived with no crew aboard and no sign of struggle
+smuggled goods turned up in a shipment, and blame is flying
+a body was pulled from the water this morning, quietly
+a merchant is hiring guards for a cargo they won't describe
+
+// Standalone name roll (collision-proof, for note titles etc.).
+Table: TF-DockName
+[@DockName]

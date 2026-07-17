@@ -1,0 +1,141 @@
+// place-barracks.rdm
+// =====================================================================
+// A barracks / guardhouse — the town's armed force at home. A working
+// site, not a shop: commander, the unit and its strength, readiness
+// and morale, what they're currently dealing with, and a hook.
+//
+// Entry table: [@TF-Barracks]
+//
+// Inputs (optional, via API promptValues):
+//   prompt1 town  /  prompt2 shopType (display)  /  prompt3 shopName
+//
+// Reuses people.rdm. No prices.
+
+Title: Barracks
+Use: people.rdm
+Use: place-counts.rdm
+
+Prompt: town {} an unnamed town
+Prompt: shopType {} barracks
+Prompt: shopName {}
+Prompt: size {} town
+Prompt: keeperName {}
+Prompt: keeperRace {}
+Prompt: keeperGender {}
+Prompt: keeperAge {}
+Prompt: keeperDesc {}
+
+Table: TF-Barracks
+Set: town={$prompt1}
+Set: passedName={$prompt3}
+Set: cmdr=[when]{$keeperName}=[do][@PersonName][else]{$keeperName}[end]
+Set: canc=[when]{$keeperRace}=[do][@Ancestry][else]{$keeperRace}[end]
+Set: cmdrdsc=[when]{$keeperDesc}=[do][@PersonDesc][else]{$keeperDesc}[end]
+**[@BarracksTitle]** *(barracks in {$town})*\n&
+**[@BarracksType], [@BarracksCondition]**\n&
+**Commander:** [@CommanderRank] {$cmdr}, a {$cmdrdsc} {$canc} who is [@CommanderStyle].\n&
+**The unit:** [@Unit]\n&
+**Readiness:** [@Readiness]\n&
+**On duty now:** [@BarracksActivity]\n&
+**Trouble brewing:** [@BarracksHook]
+
+Table: BarracksTitle
+[when]{$passedName}=[do][@BarracksName][else]{$passedName}[end]
+
+Table: BarracksName
+The [@BarracksNameWord] Barracks
+[@BarracksNameWord] Guardhouse
+The [@BarracksNameWord] Watch-house
+
+Table: BarracksNameWord
+Old
+North
+Gate
+River
+High
+Garrison
+Wall
+Iron
+
+Table: BarracksType
+The seat of the town watch
+A garrison of the local lord's soldiers
+A militia muster-hall, half its racks empty between call-ups
+A mercenary company's rented quarters
+A border fort's barracks, hard-used and serious
+A small guardhouse with cells and a duty-desk
+
+Table: BarracksCondition
+well-drilled and orderly
+stretched thin and short-handed
+freshly reinforced after recent trouble
+slack and comfortable in a quiet posting
+tense, on alert for something unspecified
+demoralised, with pay weeks overdue
+
+Table: CommanderRank
+Captain
+Sergeant
+Watch-Commander
+Lieutenant
+Sergeant-at-Arms
+Marshal
+
+Table: CommanderStyle
+fair, sharp, and respected by the ranks
+a martinet who drills the watch to exhaustion
+competent but cynical after too many years
+ambitious, treating the post as a stepping stone
+genuinely brave and loved, if a poor administrator
+corrupt in small, deniable ways
+new to command and overcompensating
+
+Table: Unit
+{!n=={[@GarrisonCount with {$prompt4}]}}roughly {$n} {!sg==[@SoldierType]}{$sg}, [@UnitTrait]
+
+Table: SoldierType
+town guards
+militia volunteers
+seasoned soldiers
+green recruits
+mercenaries on contract
+mounted patrol-riders
+
+Table: UnitTrait
+loyal to the commander before the town
+more interested in dice than drills
+recently bloodied and a little jumpy
+well-equipped but poorly led
+locals who know every face in town
+outsiders the townsfolk don't fully trust
+
+Table: Readiness
+arms racked and ready, a patrol out at all hours
+nominally on watch, in practice half-asleep
+on high alert — leave is cancelled
+under-equipped; the armoury is suspiciously bare
+drilling hard for something the commander won't name
+stood down, with most of the unit off-duty in the taverns
+
+Table: BarracksActivity
+a prisoner is being questioned in a back room, not gently
+new recruits are being put through their paces in the yard
+the duty officer is buried in paperwork and bad temper
+a patrol just came in with someone in irons
+dice and complaints around the guardroom stove
+an inspection has everyone scrubbing and polishing
+the watch is mustering for something, fast and quiet
+
+Table: BarracksHook
+weapons have gone missing from the armoury and it's being hushed up
+the commander is quietly recruiting outsiders for an off-the-books job
+a prisoner in the cells is not who the charge-sheet says they are
+half the unit's loyalty has been bought; the commander suspects but can't prove it
+patrols keep being sent away from one particular district
+a soldier deserted last night, taking something they shouldn't have
+the watch has been ordered to ignore a crime everyone can see
+pay-chests arrived light, and someone in the chain is skimming
+
+// Standalone name roll (collision-proof, for note titles etc.).
+Table: TF-BarracksName
+[@BarracksName]

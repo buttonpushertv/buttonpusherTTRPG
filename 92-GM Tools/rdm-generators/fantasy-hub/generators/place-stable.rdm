@@ -1,0 +1,163 @@
+// place-stable.rdm
+// =====================================================================
+// A PF2e stable / livery. Reuses people.rdm (stablemaster + customer)
+// and prices.rdm. Gives a GM: the stablemaster, the mounts and tack
+// for sale or hire with PF2e prices, the state of the yard, a customer,
+// and a hook.
+//
+// Entry table: [@Stable]
+//
+// Inputs (optional, via API promptValues):
+//   prompt1 town  /  prompt2 shopType (display)  /  prompt3 shopName
+//
+// PF2e prices in COPPER (1 gp = 100 cp). Animal/tack prices from the
+// Core Rulebook where confident; (~) marks approximations to verify.
+
+Title: Stable
+Use: people.rdm
+Use: prices.rdm
+
+Prompt: town {} an unnamed town
+Prompt: shopType {} stable
+Prompt: shopName {}
+Prompt: keeperName {}
+Prompt: keeperRace {}
+Prompt: keeperGender {}
+Prompt: keeperAge {}
+Prompt: keeperDesc {}
+
+Table: TF-Stable
+Set: town={$prompt1}
+Set: passedName={$prompt3}
+Set: m=[@Markup]
+Set: keeper=[when]{$keeperName}=[do][@PersonName][else]{$keeperName}[end]
+Set: kanc=[when]{$keeperRace}=[do][@Ancestry][else]{$keeperRace}[end]
+Set: keeperdsc=[when]{$keeperDesc}=[do][@PersonDesc][else]{$keeperDesc}[end]
+**[@StableTitle]** *(stable in {$town})*\n&
+**[@StableState]**\n&
+**Stablemaster:** {$keeper}, a {$keeperdsc} {$kanc} who is [@Personality].\n&
+**For sale & hire** ({$markupReason}):\n&
+[@StablePriceList]\n&
+**In the stalls:** [@StableMounts]\n&
+**A customer:** [@StableCustomer]\n&
+**{$keeper} says:** "[@StableQuote]"\n&
+**Worth noting:** [@StableHook]
+
+Table: StableTitle
+[when]{$passedName}=[do][@StableName][else]{$passedName}[end]
+
+Table: StableName
+The [@StableNameAdj] [@StableNameNoun]
+[@StableKeeperStyle]
+
+// "The Iron Horseshoe" style.
+Table: StableNameAdj
+Iron
+Old
+Galloping
+Red
+Honest
+Broad
+Dust
+Greenfield
+Riverside
+Crossroads
+
+Table: StableNameNoun
+Horseshoe
+Stable
+Livery
+Paddock
+Bridle
+Mews
+Yard
+Post
+
+// "Garret's Livery" style — uses a rolled surname for variety.
+Table: StableKeeperStyle
+[@FamilyName]'s Livery
+[@FamilyName]'s Stables
+
+Table: StableState
+A tidy yard, tack oiled and stalls mucked
+A busy yard, every hand occupied
+A run-down place, but the animals look well cared for
+A large coaching stable serving the trade road
+A modest stable behind the owner's home
+The yard's quiet; most mounts are out with their riders
+
+// PF2e Core prices (copper). (~) = approximate, verify.
+Table: StablePriceList
+- Riding horse ................ [@PricedAs with 2000]\n&
+- Warhorse .................... (~) [@PricedAs with 20000]\n&
+- Pony ........................ (~) [@PricedAs with 800]\n&
+- Mule / donkey ............... [@PricedAs with 600]\n&
+- Riding saddle & bridle ...... [@PricedAs with 1000]\n&
+- Feed (per day) .............. [@PricedAs with 5]\n&
+- Stabling (per night) ........ (~) [@PricedAs with 5]\n&
+- Hire a mount (per day) ...... (~) [@PricedAs with 200]
+
+// What's actually in the stalls right now — gives the GM specifics.
+Table: StableMounts
+{!n=={2+1d3}}[@{$n} StallLine]
+
+Table: StallLine
+a [@MountColour] [@MountKind], [@MountTemperament]\n&
+
+Table: MountColour
+bay
+chestnut
+grey
+black
+dappled
+roan
+piebald
+white
+
+Table: MountKind
+riding horse
+sturdy pony
+heavy draft horse
+nervous warhorse
+patient mule
+spirited courser
+
+Table: MountTemperament
+calm and well-trained
+skittish around strangers
+old but utterly reliable
+barely green-broke and a handful
+clearly someone's beloved mount, not for sale
+favouring one leg — the master swears it's nothing
+
+Table: StableCustomer
+{!cust==[@PersonName]}{!canc==[@Ancestry]}{$cust}, a [@PersonDesc] {$canc}, [@StableCustomerDoing]
+
+Table: StableCustomerDoing
+haggling hard over the price of a mule
+saying a long goodbye to a horse they're selling
+demanding to know why their mount isn't ready
+inspecting a horse's teeth with the air of an expert
+trying to stable a mount they clearly can't afford to keep
+asking after a rider who boarded a horse here and vanished
+
+Table: StableQuote
+A horse is a partner, not a tool. Treat mine accordingly.
+I'll hire you a mount, but I'll want a deposit and a name.
+That one's not for sale at any price. Don't ask again.
+Feed's extra. Everything's extra. That's how I keep the lights on.
+Bring it back in the state you took it, or we'll have words.
+I know every horse in this town and most of their riders.
+You ride out at dawn? Then you pay tonight.
+
+Table: StableHook
+one stall stands conspicuously empty, swept clean and locked
+a fine horse was left here a month ago and never collected
+the stablemaster is quietly buying mounts faster than they sell
+fresh mud and hard-ridden horses suggest someone arrived in a hurry
+a brand on one horse matches no local stable or noble house
+the master keeps glancing at a sealed letter tucked in the tack
+
+// Standalone name roll (collision-proof, for note titles etc.).
+Table: TF-StableName
+[@StableName]

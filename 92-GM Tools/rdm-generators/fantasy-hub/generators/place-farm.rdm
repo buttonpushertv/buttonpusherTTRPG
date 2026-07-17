@@ -1,0 +1,114 @@
+// place-farm.rdm
+// =====================================================================
+// A farm / homestead. The farmer, what's grown or raised, the land
+// and its state, the household and hands, current activity, and a
+// hook. Farms are where the mundane meets the strange — failed crops,
+// things in the fields, missing livestock.
+//
+// Entry table: [@TF-Farm]
+//
+// Inputs (optional, via API promptValues):
+//   prompt1 town  /  prompt2 shopType (display)  /  prompt3 shopName
+//
+// Reuses people.rdm. No prices.
+
+Title: Farm
+Use: people.rdm
+
+Prompt: town {} an unnamed town
+Prompt: shopType {} farm
+Prompt: shopName {}
+Prompt: keeperName {}
+Prompt: keeperRace {}
+Prompt: keeperGender {}
+Prompt: keeperAge {}
+Prompt: keeperDesc {}
+
+Table: TF-Farm
+Set: town={$prompt1}
+Set: passedName={$prompt3}
+Set: farmer=[when]{$keeperName}=[do][@PersonName][else]{$keeperName}[end]
+Set: fanc=[when]{$keeperRace}=[do][@Ancestry][else]{$keeperRace}[end]
+Set: farmerdsc=[when]{$keeperDesc}=[do][@PersonDesc][else]{$keeperDesc}[end]
+**[@FarmTitle]** *(farmland near {$town})*\n&
+**[@FarmType], [@FarmState]**\n&
+**Farmer:** {$farmer}, a {$farmerdsc} {$fanc} who is [@Personality].\n&
+**Working the land:** [@FarmProduce]\n&
+**The household:** [@FarmHousehold]\n&
+**Right now:** [@FarmActivity]\n&
+**Worth noting:** [@FarmHook]
+
+Table: FarmTitle
+[when]{$passedName}=[do][@FarmName][else]{$passedName}[end]
+
+Table: FarmName
+[@FamilyName] Farm
+[@FamilyName]'s Holding
+The [@FarmNameWord] Farmstead
+
+Table: FarmNameWord
+Hollow
+Green
+Far
+Old
+Stone
+Brook
+Hill
+Long
+
+Table: FarmType
+A prosperous freehold with fat fields and full barns
+A hardscrabble tenant farm scraping by on poor soil
+A sprawling estate farm worked by many hands
+A modest family homestead, just enough and no more
+A specialist farm known across the district for one thing
+A struggling holding one bad harvest from ruin
+
+Table: FarmState
+the crops coming in well and spirits high
+the fields parched and the farmer watching the sky
+freshly recovered from a blight or pest
+worked to exhaustion to meet the lord's tithe
+half-fallow, with more land than hands to work it
+oddly bountiful this year, more than the soil should give
+
+Table: FarmProduce
+fields of wheat and rye, and a kitchen garden
+a dairy herd and good cheese
+sheep on the hill pastures, wool and mutton
+pigs, geese, and a famously bad-tempered goat
+orchards heavy with fruit and a cider press
+root crops, and bees in a row of white hives
+
+Table: FarmHousehold
+{!n=={3+1d4}}the farmer, {$n} family, and [@FarmHelp]
+
+Table: FarmHelp
+a couple of hired hands at harvest time
+an old dog and a sharp-eyed grandmother who misses nothing
+seasonal labourers who come and go with the work
+a half-grown brood of children underfoot everywhere
+a quiet drifter taken on for room and board
+no help at all — they do it all themselves, and it shows
+
+Table: FarmActivity
+the whole household is in the fields, racing the weather
+a beast has got loose and everyone's chasing it
+the farmer is mending a fence and grumbling about neighbours
+bread is baking and the smell carries down the lane
+a cart is being loaded for market at dawn
+the family is at a tense supper, an argument paused for the stranger
+
+Table: FarmHook
+livestock has been going missing, and the tracks aren't a wolf's
+the farmer ploughed up something old and is afraid to say what
+a field refuses to grow anything, in a perfect circle
+the household is hiding someone in the hayloft
+the harvest is impossibly early, and the farmer won't meet your eye
+strangers have offered to buy the land, and won't take no
+something comes out of the treeline at night to take the animals
+the well water has turned foul and the family is quietly sickening
+
+// Standalone name roll (collision-proof, for note titles etc.).
+Table: TF-FarmName
+[@FarmName]

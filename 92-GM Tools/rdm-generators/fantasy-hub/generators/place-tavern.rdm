@@ -1,0 +1,160 @@
+// place-tavern.rdm
+// =====================================================================
+// A tavern / alehouse — a drinking and social hub, distinct from the
+// inn. Where the inn is about lodging and a night's stay, the tavern
+// is about the drink, the regulars, the games, and what the place is
+// the heart of. No rooms; this is where the neighbourhood gathers,
+// gossips, gambles, and occasionally brawls.
+//
+// Entry table: [@TF-Tavern]
+//
+// Inputs (optional, via API promptValues):
+//   prompt1 town  /  prompt2 shopType (display)  /  prompt3 shopName
+//
+// Reuses people.rdm + prices.rdm. Drink prices in COPPER
+// (1 gp = 100 cp); mostly approximations (~), verify to taste.
+
+Title: Tavern
+Use: people.rdm
+Use: prices.rdm
+
+Prompt: town {} an unnamed town
+Prompt: shopType {} tavern
+Prompt: shopName {}
+Prompt: keeperName {}
+Prompt: keeperRace {}
+Prompt: keeperGender {}
+Prompt: keeperAge {}
+Prompt: keeperDesc {}
+
+Table: TF-Tavern
+Set: town={$prompt1}
+Set: passedName={$prompt3}
+Set: m=[@Markup]
+Set: keep=[when]{$keeperName}=[do][@PersonName][else]{$keeperName}[end]
+Set: kanc=[when]{$keeperRace}=[do][@Ancestry][else]{$keeperRace}[end]
+Set: keepdsc=[when]{$keeperDesc}=[do][@PersonDesc][else]{$keeperDesc}[end]
+**[@TavernTitle]** *(tavern in {$town})*\n&
+**[@TavernKind], [@TavernCrowd]**\n&
+**Behind the bar:** {$keep}, a {$keepdsc} {$kanc} who is [@Personality].\n&
+**House specialty:** [@HouseSpecialty]\n&
+**On tap & on offer** ({$markupReason}):\n&
+[@DrinkList]\n&
+**The entertainment:** [@TavernEntertainment]\n&
+**The regulars:** [@TavernRegular]\n&
+**{$keep} says:** "[@TavernQuote]"\n&
+**Trouble at the bar:** [@TavernHook]
+
+Table: TavernTitle
+[when]{$passedName}=[do][@TavernName][else]{$passedName}[end]
+
+Table: TavernName
+The [@TavernNameAdj] [@TavernNameNoun]
+The [@TavernNameNoun] and [@TavernNameNoun]
+
+Table: TavernNameAdj
+Thirsty
+Drunken
+Rowdy
+Singing
+Bottomless
+Old
+Merry
+Sly
+Three-Legged
+Roaring
+
+Table: TavernNameNoun
+Cask
+Flagon
+Crow
+Fiddle
+Boar
+Wench
+Cellar
+Stoat
+Whistle
+Barrel
+Cup
+Dog
+
+Table: TavernKind
+A cramped, smoky alehouse where everyone knows everyone
+A big, raucous drinking-hall that fills every night
+A dockside dive where the drink is cheap and the company rough
+A respectable public house favoured by tradesfolk
+A cellar bar reached by a flight of worn steps
+A faded old tavern coasting on its better days
+A tavern that doubles as the neighbourhood's unofficial moot-hall
+
+Table: TavernCrowd
+packed and loud tonight
+half-full, with the serious drinkers settled in
+quiet, just a few regulars nursing their cups
+rowdy, one song away from a sing-along or a scuffle
+tense, with two groups keeping a careful distance
+oddly subdued, as if waiting for something
+
+Table: HouseSpecialty
+a dark, near-black stout the regulars swear by
+a fierce spiced spirit that the keeper distils out back
+honeyed mead by the jug, sweet enough to be dangerous
+a sour country cider that grows on you
+a foreign wine no one can pronounce and everyone orders
+"the usual" — a murky house ale of mysterious composition
+a hot mulled drink that's the only reason to brave winter here
+
+Table: DrinkList
+- Mug of house ale ........... (~) [@PricedAs with 2]\n&
+- The house specialty ........ (~) [@PricedAs with 5]\n&
+- Cup of wine ................ (~) [@PricedAs with 4]\n&
+- A strong measure of spirits  (~) [@PricedAs with 8]\n&
+- Bread, cheese, and pickles . (~) [@PricedAs with 3]\n&
+- A whole jug, to share ...... (~) [@PricedAs with 12]
+
+Table: TavernEntertainment
+a fiddler and a drummer working the crowd toward dancing
+a storyteller holding a rapt table with tall tales
+dice and cards at every other table, coin changing hands fast
+a darts contest that's getting more competitive than friendly
+a singer whose sad songs have half the room misty-eyed
+arm-wrestling matches with side bets piling up
+nothing organised — just the roar of a hundred conversations
+a travelling performer trying out new material, with mixed results
+
+Table: TavernRegular
+{!reg==[@PersonName]}{!ranc==[@Ancestry]}{$reg}, a [@PersonDesc] {$ranc}, [@RegularDoing]
+
+Table: RegularDoing
+holds the same stool every night and knows everyone's business
+is three drinks past wise and looking for an argument
+quietly buys a round whenever the talk turns to a certain subject
+nurses one drink for hours and watches the door
+is winning at cards and making no friends doing it
+will tell their war stories to anyone who'll sit still
+came in looking for someone and is running out of patience
+is the keeper's eyes and ears, paid in free ale
+
+Table: TavernQuote
+First one's poured, the rest you earn. What'll it be?
+No fighting in my house. Take it to the alley like civilised folk.
+You drink, you pay, you behave. Two of three and we'll get along.
+Everyone's welcome 'til they're not. Don't be the one who's not.
+The specialty'll put hair on your chest and holes in your memory.
+Coin on the bar or stories in my ear — I'll take either.
+I've heard every excuse for a free drink. Surprise me.
+
+Table: TavernHook
+a brawl is brewing over something that happened a week ago
+someone's been buying drinks for strangers and asking pointed questions
+a regular hasn't shown in days and the keeper is worried
+a fight last night ended badly and the watch hasn't been told
+the keeper is being leaned on to host meetings they want no part of
+a stranger drank themselves senseless muttering about a treasure
+two patrons are quietly arranging something illegal in the corner
+a tab has run impossibly high and the debtor has stopped coming in
+someone slipped something into a drink, and it wasn't meant for who got it
+
+// Standalone name roll (collision-proof, for note titles etc.).
+Table: TF-TavernName
+[@TavernName]

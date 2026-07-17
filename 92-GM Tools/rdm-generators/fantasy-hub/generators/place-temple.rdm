@@ -1,0 +1,162 @@
+// place-temple.rdm
+// =====================================================================
+// A PF2e temple / shrine. Institutional, not commercial: the framing
+// is devotion, not trade. Gives a GM: the deity worshipped (PF2e
+// pantheon), the temple's character, the head priest, the clergy and
+// congregation, services offered (some with a suggested donation,
+// some free), a worshipper present, and a hook.
+//
+// Entry table: [@TF-Temple]
+//
+// Inputs (optional, via API promptValues — same scheme as the shops):
+//   prompt1 town  /  prompt2 shopType (display)  /  prompt3 shopName
+//
+// PF2e note: deities are drawn from the Core Rulebook pantheon. Each
+// carries its real edicts/portfolio flavour so the temple's tone fits
+// the god. Donation amounts are suggestions in COPPER (1 gp = 100 cp),
+// not official PF2e prices — temples don't "sell" — marked (~).
+
+Title: Temple
+Use: people.rdm
+Use: prices.rdm
+
+Prompt: town {} an unnamed town
+Prompt: shopType {} temple
+Prompt: shopName {}
+Prompt: keeperName {}
+Prompt: keeperRace {}
+Prompt: keeperGender {}
+Prompt: keeperAge {}
+Prompt: keeperDesc {}
+
+Table: TF-Temple
+Set: town={$prompt1}
+Set: passedName={$prompt3}
+Set: deity=[@Deity]
+Set: priest=[when]{$keeperName}=[do][@PersonName][else]{$keeperName}[end]
+Set: panc=[when]{$keeperRace}=[do][@Ancestry][else]{$keeperRace}[end]
+Set: priestdsc=[when]{$keeperDesc}=[do][@PersonDesc][else]{$keeperDesc}[end]
+**[@TempleTitle]** *(temple in {$town})*\n&
+**Dedicated to {$deity}** — [@DeityOf].\n&
+**[@TempleCharacter]**\n&
+**High priest:** {$priest}, a {$priestdsc} {$panc} who is [@Personality].\n&
+**The faithful:** [@Clergy]\n&
+**Services offered:**\n&
+[@ServiceList]\n&
+**At prayer:** [@Worshipper]\n&
+**{$priest} says:** "[@TempleQuote]"\n&
+**Stirring beneath the incense:** [@TempleHook]
+
+Table: TempleTitle
+[when]{$passedName}=[do][@TempleName][else]{$passedName}[end]
+
+// If no name passed, build one from the deity + a temple-word. Always
+// uses the actual {$deity} so the title can't contradict the
+// dedication. (An epithet-based form was dropped because the epithet
+// rolled independently and could name a different god than the one the
+// temple is dedicated to.)
+Table: TempleName
+The [@TempleWord] of {$deity}
+[@TempleWord] of {$deity}
+{$deity}'s [@TempleWord]
+
+Table: TempleWord
+Temple
+Shrine
+Sanctuary
+Chapel
+Hall
+House
+Cathedral
+
+// --- PF2e Core deities, each set with its matching portfolio. ---
+// Set a deity AND its descriptor together so they always agree.
+Table: Deity
+{!deityOf=='justice, truth, and the rule of law'}Abadar
+{!deityOf=='the sun, honesty, and redemption'}Sarenrae
+{!deityOf=='nature, the hunt, and the wild'}Gozreh
+{!deityOf=='valor, honor, and just warfare'}Iomedae
+{!deityOf=='family, the harvest, and community'}Erastil
+{!deityOf=='cities, wealth, and commerce'}Abadar
+{!deityOf=='freedom, luck, and travel'}Desna
+{!deityOf=='magic, invention, and the arcane'}Nethys
+{!deityOf=='strength, battle, and the glory of war'}Gorum
+{!deityOf=='the dead, fate, and the natural order'}Pharasma
+{!deityOf=='love, beauty, and artistry'}Shelyn
+{!deityOf=='secrets, ambition, and forbidden lore'}Norgorber
+
+// Read back the flavour set above.
+Table: DeityOf
+{$deityOf}
+
+Table: TempleCharacter
+A grand temple of stone and stained glass, the town's spiritual heart
+A modest neighbourhood chapel, well-loved and well-worn
+A roadside shrine tended by a single devoted priest
+An old temple whose congregation has dwindled to a faithful few
+A newly raised hall, the paint and gilding still bright
+A fortified temple that has clearly weathered hard times
+
+// Clergy / congregation — uses the NPC generator for an acolyte.
+Table: Clergy
+[@ClergySize], led under the high priest by {!acolyte==[@PersonName]}{$acolyte}, a devoted acolyte
+
+Table: ClergySize
+a full chapter of priests and acolytes
+a handful of clergy and a loyal congregation
+just two priests and a rotating cast of volunteers
+a silent order who speak only in ritual
+a lively congregation that doubles as the town's social hub
+
+// Services — some carry a suggested donation, some are freely given.
+// Donations in copper, (~) suggestions only.
+Table: ServiceList
+- Blessing for travellers ..... freely given\n&
+- Tending the sick ............ freely given\n&
+- Suggested donation, candle .. (~) [@PricedAs with 5]\n&
+- Suggested donation, ceremony  (~) [@PricedAs with 200]\n&
+- Funeral rites ............... (~) [@PricedAs with 100]\n&
+- [@SpecialService]
+
+Table: SpecialService
+Minor healing, by the priest's judgment and the god's grace .. freely given
+Sanctuary offered to those in genuine need ................... freely given
+Consecration of a weapon or tool ............................ (~) [@PricedAs with 300]
+Reading of omens and fate ................................... (~) [@PricedAs with 50]
+Holy water, blessed on the altar ............................ (~) [@PricedAs with 300]
+
+Table: Worshipper
+{!w==[@PersonName]}{!wanc==[@Ancestry]}{$w}, a [@PersonDesc] {$wanc}, [@WorshipperDoing]
+
+Table: WorshipperDoing
+kneeling in silent, intense prayer
+lighting a candle with trembling hands
+arguing quietly but heatedly with an acolyte
+leaving an offering far too generous for their clothes
+weeping at the foot of the altar
+asking the priest a question they clearly fear the answer to
+waiting, hooded, for the temple to empty
+giving thanks loudly and at great length
+
+Table: TempleQuote
+The god's door is open to all. The donation box is merely... nearby.
+We tend the sick and bury the dead. Coin changes neither.
+Faith is free. Candles, regrettably, are not.
+Speak your trouble. The god listens even when I cannot help.
+Sanctuary is sacred here. Even your enemies know it.
+Pray as you like, but do not pray for what you will not work for.
+The dead are Pharasma's. The living are my concern.
+
+Table: TempleHook
+the high priest has not performed the dawn rite in three days
+a relic has gone missing and the clergy are pretending otherwise
+someone has been leaving threatening offerings on the altar
+an acolyte whispers that the priest's recent sermons have turned strange
+the crypt below has been sealed, and no one will say by whom
+a pilgrim arrived gravely wounded and will speak only to the priest
+the temple bells rang at midnight, though no one admits to ringing them
+the god's statue is said to have wept; the priest forbids discussion
+
+// Standalone temple name (sets a deity first).
+Table: TF-TempleName
+{!deity==[@Deity]}[@TempleName]

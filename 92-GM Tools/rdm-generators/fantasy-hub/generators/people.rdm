@@ -1,0 +1,350 @@
+// people.rdm
+// =====================================================================
+// Reusable PF2e NPC generator. Rolls a person: name, ancestry,
+// a one-line description, and a personality beat. Designed to be
+// imported (Use:) by the shop files so the same person logic backs
+// every shopkeeper, worker, and customer.
+//
+// Entry tables you can call from other files:
+//   [@Person]        - full one-line NPC: "Name, a <desc> <ancestry>"
+//   [@PersonFull]    - memorable NPC: adds personality + a quirk
+//   [@PersonDeep]    - PersonFull plus a motivation/secret hook
+//   [@PersonName]    - just a name (ancestry-flavoured mix)
+//   [@Ancestry]      - just a PF2e ancestry
+//   [@PersonDesc]    - a one-word physical descriptor
+//   [@Personality]   - a personality trait phrase
+//   [@Quirk]         - a distinctive memorable detail (one sentence)
+//   [@Motivation]    - a hidden driver/secret the GM can build on
+//   [@PersonCard]    - surface NPC inline + quirk/secret hidden in a
+//                      COLLAPSED Obsidian callout (the GM expands it on
+//                      demand). The tidy way to keep depth optional.
+//   [@PersonCardTitled with <heading>] - PersonCard with a custom
+//                      callout heading, e.g. "In the back room".
+//
+// Depth is opt-in: pick the tier per use. A throwaway NPC uses
+// [@Person]; a shopkeeper who should be memorable-but-tidy uses
+// [@PersonCard]; a fully-realised NPC uses [@PersonDeep].
+//
+// PF2e note: ancestries are drawn from the Core Rulebook plus a few
+// popular additions (leshy, orc, etc.). Names are deliberately a
+// broad fantasy mix rather than strictly per-ancestry naming
+// conventions, so any name reads fine with any ancestry. If you want
+// strict per-ancestry name lists later, that's a clean extension.
+
+Title: People
+Formatting: html
+
+// ---------------------------------------------------------------
+// Main entry: a complete person in one line.
+// ---------------------------------------------------------------
+Table: Person
+{!pname==[@PersonName]}{!panc==[@Ancestry]}{$pname}, a [@PersonDesc] {$panc}
+
+// Just a name. If a prior [@Person]/[@PersonFull]/etc. in the same
+// roll already set {pname}, this echoes that same name (so a shop can
+// reuse it in a quote). Called standalone — with no {pname} set — it
+// rolls a fresh name instead of returning blank.
+Table: PersonShort
+[when]{$pname}=[do][@PersonName][else]{$pname}[end]
+
+// ---------------------------------------------------------------
+// A fuller, more memorable NPC in one call. Bundles the one-line
+// person with a personality beat and a distinctive quirk, so any
+// generator can drop in a character that sticks in the memory
+// rather than a generic body. Use [@PersonFull] where you want a
+// named NPC to actually matter; keep [@Person] for incidental
+// mentions.
+//   "Sable Voss, a one-eyed dwarf who is dry-humoured and slow to
+//    smile. They never sit with their back to a door."
+// ---------------------------------------------------------------
+Table: PersonFull
+{!pname==[@PersonName]}{!panc==[@Ancestry]}{$pname}, a [@PersonDesc] {$panc} who is [@Personality]. [@Quirk]
+
+// Even fuller: adds a motivation/secret hook on the end, for an NPC
+// you want to be able to build a thread around.
+//   "...They never sit with their back to a door. Quietly, they're
+//    saving to buy back a family debt."
+Table: PersonDeep
+{!pname==[@PersonName]}{!panc==[@Ancestry]}{$pname}, a [@PersonDesc] {$panc} who is [@Personality]. [@Quirk] [@Motivation]
+
+// ---------------------------------------------------------------
+// Quirk — a distinctive, observable detail that makes an NPC
+// memorable: a habit, a tic, a possession, a small mystery. Written
+// as a standalone sentence so it drops cleanly onto any description.
+// ---------------------------------------------------------------
+Table: Quirk
+They never sit with their back to a door.
+They polish a ring that isn't on their finger.
+Every sentence somehow circles back to their late spouse.
+They count things under their breath when nervous.
+A scarred old dog follows them everywhere and trusts no one else.
+They collect buttons and will show you the best ones, unprompted.
+They speak three languages and mix them mid-sentence.
+They flinch at loud noises and pretend they didn't.
+They keep a tally of grudges and forget none of them.
+They hum an old marching tune without noticing.
+They refuse to shake hands, citing reasons that change each time.
+They wear far too many rings, each with a story they'll tell.
+They never give a straight answer before noon.
+They feed the local cats and know each by name.
+They carry a child's toy and won't explain it.
+They quote scripture they clearly don't believe.
+They're missing two fingers and tell a different story each time.
+They laugh at the wrong moments, then apologise.
+They always know what the weather will do, and they're always right.
+They keep glancing at the door as if expecting someone.
+
+// ---------------------------------------------------------------
+// Motivation — a quiet driver or secret the GM can hang a thread on.
+// Phrased so it reads as a hidden truth about the NPC.
+// ---------------------------------------------------------------
+Table: Motivation
+Quietly, they're saving to buy back a family debt.
+They're hiding from someone who is still looking.
+They owe a dangerous person a favour they can't repay.
+They're searching for a sibling who vanished years ago.
+They're not who they say they are, and never have been.
+They'd give anything to leave this town and never can.
+They're protecting a secret that would ruin a powerful family.
+They believe they're cursed, and they may be right.
+They're an informant for someone, willingly or not.
+They once did something terrible and have been atoning ever since.
+They're in love with someone they absolutely should not be.
+They're certain a reckoning is coming, and they're preparing for it.
+
+// ---------------------------------------------------------------
+// PersonCard — the surface NPC inline, with the memorable depth
+// (quirk + motivation) tucked into a COLLAPSED Obsidian callout that
+// the GM expands only when they want it. Keeps a shop's NPC clean at
+// a glance while keeping the deeper hooks one click away.
+//
+// Renders as:
+//   **Sable Voss**, a one-eyed dwarf who is dry-humoured and slow to
+//   smile.
+//   > [!note]- Behind the counter
+//   > *Quirk:* They never sit with their back to a door.
+//   > *Secret:* They owe a dangerous person a favour they can't repay.
+//
+// The bracket characters are escaped (\[ \]) so the engine emits them
+// literally instead of treating [!note] as a table call. The blank
+// line before the callout (via \n\n) separates it from the inline
+// description so Obsidian renders the callout block correctly.
+// ---------------------------------------------------------------
+Table: PersonCard
+{!pname==[@PersonName]}{!panc==[@Ancestry]}**{$pname}**, a [@PersonDesc] {$panc} who is [@Personality].\n&
+\n&
+> \[!note\]- Behind the counter\n&
+> *Quirk:* [@Quirk]\n&
+> *Secret:* [@Motivation]
+
+// Variant with a caller-supplied callout heading, so a location can
+// label it appropriately ("Behind the bar", "In the back room", etc.).
+// Pass the heading as the parameter: [@PersonCardTitled with In the vestry]
+Table: PersonCardTitled
+{!pname==[@PersonName]}{!panc==[@Ancestry]}**{$pname}**, a [@PersonDesc] {$panc} who is [@Personality].\n&
+\n&
+> \[!note\]- {$1}\n&
+> *Quirk:* [@Quirk]\n&
+> *Secret:* [@Motivation]
+
+
+Table: PersonName
+[@FirstName] [@FamilyName]
+
+Table: FirstName
+Aldric
+Bryn
+Cassia
+Doran
+Elspeth
+Fenwick
+Greta
+Halvard
+Isolde
+Joss
+Kesia
+Loras
+Mirabel
+Nestor
+Odalys
+Perrin
+Quilla
+Rowan
+Sable
+Tarrin
+Ulfric
+Vesna
+Wyll
+Yarrow
+Zephyrine
+Bram
+Dvalin
+Ingra
+Sorcha
+Tamsin
+Anara
+Borin
+Caltrop
+Davos
+Edda
+Faron
+Gwyn
+Hexa
+Ivo
+Jessa
+Lucan
+Maeve
+Oswin
+Petra
+Rhett
+Sefa
+Torin
+Ulla
+Veil
+Wrenna
+Yorick
+Zara
+Kestrel
+
+Table: FamilyName
+Ashdown
+Brackwater
+Coldiron
+Dunmere
+Emberforge
+Fairwind
+Grimstone
+Hollowbrook
+Ironwood
+Kettleblack
+Larkspur
+Marrowick
+Nightingale
+Oakenshield
+Pemberton
+Quickfellow
+Ravenscar
+Stormhold
+Thornbury
+Underhill
+Vexley
+Whitlock
+Yarrowmere
+Blackbriar
+Copperpot
+Greenbottle
+Highmoor
+Saltmarsh
+Thistlewood
+Wrenfield
+Ashby
+Bellweather
+Crookshank
+Dawnmere
+Eastgate
+Fenwick
+Goodbarrow
+Harrowgate
+Iceborn
+Jessup
+Kingsley
+Lowtide
+Mossgrove
+Netherby
+Oxblood
+Pennyworth
+Reedmarsh
+Sparrowhawk
+Tallowmere
+Voss
+Westerly
+Yewbranch
+Deepwell
+
+// ---------------------------------------------------------------
+// PF2e ancestries. Core + popular extras.
+// ---------------------------------------------------------------
+Table: Ancestry
+human
+elf
+dwarf
+gnome
+goblin
+halfling
+half-elf
+half-orc
+orc
+leshy
+catfolk
+kobold
+ratfolk
+tengu
+lizardfolk
+hobgoblin
+
+// ---------------------------------------------------------------
+// One-word-ish physical/demeanour descriptor used before ancestry.
+// ---------------------------------------------------------------
+Table: PersonDesc
+weathered
+stout
+willowy
+scarred
+bright-eyed
+soft-spoken
+barrel-chested
+wiry
+silver-haired
+ink-stained
+sun-browned
+hawk-nosed
+gap-toothed
+broad-shouldered
+nimble-fingered
+heavyset
+freckled
+hollow-cheeked
+ruddy-faced
+clear-voiced
+tattooed
+one-eyed
+limping
+ember-eyed
+moon-pale
+copper-skinned
+braided-bearded
+crook-backed
+long-fingered
+scar-lipped
+storm-grey-eyed
+travel-stained
+immaculately groomed
+perpetually frowning
+ash-smudged
+
+// ---------------------------------------------------------------
+// Personality beat — a short trait phrase. Callable on its own or
+// folded into a quote.
+// ---------------------------------------------------------------
+Table: Personality
+quick to laugh and quicker to haggle
+suspicious of strangers but fair once trust is earned
+endlessly chatty about the weather and the roads
+gruff, efficient, and impatient with browsers
+warm and doting, always offering tea
+sharp-eyed for a thief and proud of it
+distracted, often mid-thought about something else entirely
+unfailingly polite in a way that feels rehearsed
+boastful about the quality of the stock
+nervous, glancing often toward the back room
+dry-humoured and slow to smile
+generous with advice, stingy with discounts
+cheerful in a way that never quite reaches the eyes
+blunt to the point of rudeness, but never dishonest
+forever name-dropping people you've never heard of
+calm and unhurried, as if they have all the time in the world
+prone to long silences that make others fill them
+fiercely loyal to regulars and cold to everyone else
+superstitious, with a charm or ritual for everything
+quietly grieving something they won't name
+delighted by gossip and terrible at keeping it

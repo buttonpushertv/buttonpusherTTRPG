@@ -1,0 +1,132 @@
+// shop-alchemy.rdm
+// =====================================================================
+// A PF2e alchemist's shop: elixirs, bombs, poisons, tools. Reuses
+// people, customers, prices. Entry table: [@AlchemyShop]
+// Prices in COPPER (1 gp = 100 cp). PF2e consumables are level-priced;
+// the values below are typical low-level prices. (~) marks approximations.
+
+Title: Alchemy Shop
+Use: people.rdm
+Use: customers.rdm
+Use: prices.rdm
+Use: stock-count.rdm
+Use: items-alchemy.rdm
+
+// Optional inputs from a caller (e.g. Town Forge via the API's
+// promptValues). Defaults keep the file working standalone.
+//   prompt1 town  /  prompt2 shopType (display)  /  prompt3 shopName
+Prompt: town {} an unnamed town
+Prompt: shopType {} alchemy
+Prompt: shopName {}
+Prompt: size {} town
+Prompt: keeperName {}
+Prompt: keeperRace {}
+Prompt: keeperGender {}
+Prompt: keeperAge {}
+Prompt: keeperDesc {}
+Prompt: custName {}
+Prompt: custRace {}
+Prompt: custDesc {}
+
+Table: TF-AlchemyShop
+Set: town={$prompt1}
+Set: passedName={$prompt3}
+Set: m=[@Markup]
+Set: owner=[when]{$prompt5}=[do][@PersonName][else]{$prompt5}[end]
+Set: oanc=[when]{$prompt6}=[do][@Ancestry][else]{$prompt6}[end]
+Set: odesc=[when]{$prompt9}=[do][@PersonDesc][else]{$prompt9}[end]
+**[@AlchemyTitle]** *(alchemy in {$town})*\n&
+**Proprietor:** {$owner}, a {$odesc} {$oanc} who is [@Personality].\n&
+**Prices:** {$markupReason}.\n&
+**On the shelves:**\n&
+[@AlchemyStock]\n&
+**{$owner} says:** "[@AlchemyQuote]"\n&
+**Also here:** [@Customer]
+
+// Caller-supplied name if given, else roll. Prefixed to avoid collision.
+Table: AlchemyTitle
+[when]{$passedName}=[do][@AlchemyShopName][else]{$passedName}[end]
+
+Table: AlchemyShopName
+The [@AlcAdj] [@AlcNoun]
+The [@AlcAdj] [@AlcNoun]
+[@AlcNoun] & [@AlcNoun]
+[@FamilyName]'s [@AlcNoun]
+[@FamilyName]'s [@AlcNoun]
+The [@AlcNoun] & [@AlcNoun]
+[@AlcNoun] and [@AlcNoun]
+The [@AlcFixed]
+
+Table: AlcAdj
+Bubbling
+Smoking
+Green
+Careful
+Curious
+Quicksilver
+Volatile
+Hidden
+Murky
+Steaming
+Brimming
+Cloudy
+Potent
+Glass
+Amber
+Bittersweet
+Caustic
+Vaporous
+Distilled
+Measured
+
+Table: AlcNoun
+Retort
+Alembic
+Flask
+Vial
+Mortar
+Pestle
+Tincture
+Tonic
+Phial
+Crucible
+Cauldron
+Still
+Elixir
+Draught
+Decoction
+Vapour
+Salt
+Reagent
+Apothecary
+Dispensary
+
+Table: AlcFixed
+Bubbling Retort
+Smoking Alembic
+Green Flask
+Mortar & Pestle
+Careful Measure
+Tincture & Tonic
+Last Antidote
+Vial & Vapour
+
+Table: AlchemyStock
+{!n=={[@StockCount with {$prompt4}]}}[@{$n} AlchemyItemLine]
+
+// PF2e consumable prices (copper), typical low-level entries.
+Table: AlchemyItemLine
+[@AlchemyItem]\n
+
+Table: AlchemyItem
+[@PF2eConsumable with {$prompt4}]
+
+Table: AlchemyQuote
+Read the label twice. There are no second mistakes here.
+That one's for throwing, not drinking. Important difference.
+Shaken, never warmed. Warm it and we both regret it.
+I distil everything myself. No back-alley swill here.
+Healing's dear this season — the herbs came up short.
+Don't mix them in your pack. I've swept up after those who did.
+A bomb's only as good as the arm that throws it.
+Smell it if you like, but I'd advise against tasting.

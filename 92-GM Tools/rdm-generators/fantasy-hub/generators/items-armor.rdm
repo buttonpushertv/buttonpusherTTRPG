@@ -1,0 +1,1381 @@
+// PF2e Armor & Shields (banded)
+// =====================================================================
+// Real PF2e items (Foundry pf2e system data), banded by settlement
+// size on TWO axes: level cap AND rarity. Small settlements stock
+// common items only; towns add uncommon; cities add rare. Non-common
+// items are tagged, e.g. "Frost Brand *(uncommon)*". ORC/OGL content
+// reused with attribution — see ATTRIBUTION.
+//
+// Entry: [@PF2eArmor with <size>]  where <size> is a Town Forge tier:
+//   hamlet | village | small_town | town | large_town | small_city |
+//   city | large_city | metropolis  (thorpe = hamlet alias)
+// A bare [@PF2eArmorAny] rolls from the full list (all levels/rarities).
+
+Title: PF2e Armor & Shields (banded)
+
+Table: PF2eArmor_hamlet
+- Armored Cloak .......... 2 gp
+- Breastplate .......... 8 gp
+- Buckle Armor .......... 4 gp
+- Buckler .......... 1 gp
+- Caster's Targe .......... 2 gp
+- Ceramic Plate .......... 6 gp
+- Chain Mail .......... 6 gp
+- Chain Shirt .......... 5 gp
+- Coral Armor .......... 5 gp
+- Dart Shield .......... 8 gp
+- Explorer's Clothing .......... 1 sp
+- Gauntlet Buckler .......... 5 gp
+- Gi .......... 2 sp
+- Harnessed Shield .......... 5 gp
+- Heavy Rondache .......... 4 gp
+- Hide Armor .......... 2 gp
+- Hide Shield .......... 2 gp
+- Kilted Breastplate .......... 3 gp
+- Klar .......... 3 gp
+- Lamellar Breastplate .......... 7 gp
+- Lattice Armor .......... 6 gp
+- Leaf Weave .......... 4 gp
+- Leather Armor .......... 2 gp
+- Leather Lamellar .......... 3 gp
+- Light Barding .......... 10 gp
+- Meteor Shield .......... 4 gp
+- Niyaháat .......... 5 gp
+- Padded Armor .......... 2 sp
+- Quilted Armor .......... 3 gp
+- Rattan Armor .......... 2 gp
+- Razor Disc .......... 5 gp
+- Salvo Shield .......... 6 gp
+- Sankeit .......... 5 gp
+- Scale Mail .......... 4 gp
+- Scroll Robes .......... 15 sp
+- Steel Shield .......... 2 gp
+- Studded Leather Armor .......... 3 gp
+- Swordstealer Shield .......... 6 gp
+- Tower Shield .......... 10 gp
+- Wooden Breastplate .......... 6 gp
+- Wooden Shield .......... 1 gp
+- Fortress Shield .......... 20 gp
+- Half Plate .......... 18 gp
+- Hardshell Surki Carapace .......... free
+- Splint Mail .......... 13 gp
+- Swarmsuit .......... 20 gp
+- Titan Nagaji Scales .......... free
+- Tough Skin .......... free
+
+Table: PF2eArmor_thorpe
+- Armored Cloak .......... 2 gp
+- Breastplate .......... 8 gp
+- Buckle Armor .......... 4 gp
+- Buckler .......... 1 gp
+- Caster's Targe .......... 2 gp
+- Ceramic Plate .......... 6 gp
+- Chain Mail .......... 6 gp
+- Chain Shirt .......... 5 gp
+- Coral Armor .......... 5 gp
+- Dart Shield .......... 8 gp
+- Explorer's Clothing .......... 1 sp
+- Gauntlet Buckler .......... 5 gp
+- Gi .......... 2 sp
+- Harnessed Shield .......... 5 gp
+- Heavy Rondache .......... 4 gp
+- Hide Armor .......... 2 gp
+- Hide Shield .......... 2 gp
+- Kilted Breastplate .......... 3 gp
+- Klar .......... 3 gp
+- Lamellar Breastplate .......... 7 gp
+- Lattice Armor .......... 6 gp
+- Leaf Weave .......... 4 gp
+- Leather Armor .......... 2 gp
+- Leather Lamellar .......... 3 gp
+- Light Barding .......... 10 gp
+- Meteor Shield .......... 4 gp
+- Niyaháat .......... 5 gp
+- Padded Armor .......... 2 sp
+- Quilted Armor .......... 3 gp
+- Rattan Armor .......... 2 gp
+- Razor Disc .......... 5 gp
+- Salvo Shield .......... 6 gp
+- Sankeit .......... 5 gp
+- Scale Mail .......... 4 gp
+- Scroll Robes .......... 15 sp
+- Steel Shield .......... 2 gp
+- Studded Leather Armor .......... 3 gp
+- Swordstealer Shield .......... 6 gp
+- Tower Shield .......... 10 gp
+- Wooden Breastplate .......... 6 gp
+- Wooden Shield .......... 1 gp
+- Fortress Shield .......... 20 gp
+- Half Plate .......... 18 gp
+- Hardshell Surki Carapace .......... free
+- Splint Mail .......... 13 gp
+- Swarmsuit .......... 20 gp
+- Titan Nagaji Scales .......... free
+- Tough Skin .......... free
+
+Table: PF2eArmor_village
+- Armored Cloak .......... 2 gp
+- Breastplate .......... 8 gp
+- Buckle Armor .......... 4 gp
+- Buckler .......... 1 gp
+- Caster's Targe .......... 2 gp
+- Ceramic Plate .......... 6 gp
+- Chain Mail .......... 6 gp
+- Chain Shirt .......... 5 gp
+- Coral Armor .......... 5 gp
+- Dart Shield .......... 8 gp
+- Explorer's Clothing .......... 1 sp
+- Gauntlet Buckler .......... 5 gp
+- Gi .......... 2 sp
+- Harnessed Shield .......... 5 gp
+- Heavy Rondache .......... 4 gp
+- Hide Armor .......... 2 gp
+- Hide Shield .......... 2 gp
+- Kilted Breastplate .......... 3 gp
+- Klar .......... 3 gp
+- Lamellar Breastplate .......... 7 gp
+- Lattice Armor .......... 6 gp
+- Leaf Weave .......... 4 gp
+- Leather Armor .......... 2 gp
+- Leather Lamellar .......... 3 gp
+- Light Barding .......... 10 gp
+- Meteor Shield .......... 4 gp
+- Niyaháat .......... 5 gp
+- Padded Armor .......... 2 sp
+- Quilted Armor .......... 3 gp
+- Rattan Armor .......... 2 gp
+- Razor Disc .......... 5 gp
+- Salvo Shield .......... 6 gp
+- Sankeit .......... 5 gp
+- Scale Mail .......... 4 gp
+- Scroll Robes .......... 15 sp
+- Steel Shield .......... 2 gp
+- Studded Leather Armor .......... 3 gp
+- Swordstealer Shield .......... 6 gp
+- Tower Shield .......... 10 gp
+- Wooden Breastplate .......... 6 gp
+- Wooden Shield .......... 1 gp
+- Fortress Shield .......... 20 gp
+- Half Plate .......... 18 gp
+- Hardshell Surki Carapace .......... free
+- Splint Mail .......... 13 gp
+- Swarmsuit .......... 20 gp
+- Titan Nagaji Scales .......... free
+- Tough Skin .......... free
+- Bastion Plate .......... 33 gp
+- Fortress Plate .......... 32 gp
+- Full Plate .......... 30 gp
+- Glamorous Buckler .......... 35 gp
+- Gray Maiden Plate .......... 35 gp
+- Heavy Barding (Small or Medium) .......... 25 gp
+- O-Yoroi .......... 35 gp
+
+Table: PF2eArmor_small_town
+- Armored Cloak .......... 2 gp
+- Breastplate .......... 8 gp
+- Buckle Armor .......... 4 gp
+- Buckler .......... 1 gp
+- Caster's Targe .......... 2 gp
+- Ceramic Plate .......... 6 gp
+- Chain Mail .......... 6 gp
+- Chain Shirt .......... 5 gp
+- Coral Armor .......... 5 gp
+- Dart Shield .......... 8 gp
+- Explorer's Clothing .......... 1 sp
+- Gauntlet Buckler .......... 5 gp
+- Gi .......... 2 sp
+- Harnessed Shield .......... 5 gp
+- Heavy Rondache .......... 4 gp
+- Hide Armor .......... 2 gp
+- Hide Shield .......... 2 gp
+- Kilted Breastplate .......... 3 gp
+- Klar .......... 3 gp
+- Lamellar Breastplate .......... 7 gp
+- Lattice Armor .......... 6 gp
+- Leaf Weave .......... 4 gp
+- Leather Armor .......... 2 gp
+- Leather Lamellar .......... 3 gp
+- Light Barding .......... 10 gp
+- Meteor Shield .......... 4 gp
+- Niyaháat .......... 5 gp
+- Padded Armor .......... 2 sp
+- Quilted Armor .......... 3 gp
+- Rattan Armor .......... 2 gp
+- Razor Disc .......... 5 gp
+- Salvo Shield .......... 6 gp
+- Sankeit .......... 5 gp
+- Scale Mail .......... 4 gp
+- Scroll Robes .......... 15 sp
+- Steel Shield .......... 2 gp
+- Studded Leather Armor .......... 3 gp
+- Swordstealer Shield .......... 6 gp
+- Tower Shield .......... 10 gp
+- Wooden Breastplate .......... 6 gp
+- Wooden Shield .......... 1 gp
+- Fortress Shield .......... 20 gp
+- Half Plate .......... 18 gp
+- Hardshell Surki Carapace .......... free
+- Splint Mail .......... 13 gp
+- Swarmsuit .......... 20 gp
+- Titan Nagaji Scales .......... free
+- Tough Skin .......... free
+- Bastion Plate .......... 33 gp
+- Fortress Plate .......... 32 gp
+- Full Plate .......... 30 gp
+- Glamorous Buckler .......... 35 gp
+- Gray Maiden Plate .......... 35 gp
+- Heavy Barding (Small or Medium) .......... 25 gp
+- O-Yoroi .......... 35 gp
+- Heavy Barding (Large) .......... 25 gp
+- Sapling Shield (Minor) .......... 57 gp
+
+Table: PF2eArmor_town
+- Armored Cloak .......... 2 gp
+- Armored Coat *(uncommon)* .......... 20 gp
+- Breastplate .......... 8 gp
+- Buckle Armor .......... 4 gp
+- Buckler .......... 1 gp
+- Caster's Targe .......... 2 gp
+- Ceramic Plate .......... 6 gp
+- Chain Mail .......... 6 gp
+- Chain Shirt .......... 5 gp
+- Coral Armor .......... 5 gp
+- Dart Shield .......... 8 gp
+- Explorer's Clothing .......... 1 sp
+- Gauntlet Buckler .......... 5 gp
+- Gi .......... 2 sp
+- Harnessed Shield .......... 5 gp
+- Heavy Rondache .......... 4 gp
+- Hide Armor .......... 2 gp
+- Hide Shield .......... 2 gp
+- Kilted Breastplate .......... 3 gp
+- Klar .......... 3 gp
+- Lamellar Breastplate .......... 7 gp
+- Lattice Armor .......... 6 gp
+- Leaf Weave .......... 4 gp
+- Leather Armor .......... 2 gp
+- Leather Lamellar .......... 3 gp
+- Light Barding .......... 10 gp
+- Meteor Shield .......... 4 gp
+- Niyaháat .......... 5 gp
+- Padded Armor .......... 2 sp
+- Quilted Armor .......... 3 gp
+- Rattan Armor .......... 2 gp
+- Razor Disc .......... 5 gp
+- Salvo Shield .......... 6 gp
+- Sankeit .......... 5 gp
+- Scale Mail .......... 4 gp
+- Scroll Robes .......... 15 sp
+- Steel Shield .......... 2 gp
+- Studded Leather Armor .......... 3 gp
+- Swordstealer Shield .......... 6 gp
+- Tower Shield .......... 10 gp
+- Wooden Breastplate .......... 6 gp
+- Wooden Shield .......... 1 gp
+- Bakuwa Lizardfolk Bony Plates *(uncommon)* .......... free
+- Fortress Shield .......... 20 gp
+- Half Plate .......... 18 gp
+- Hardshell Surki Carapace .......... free
+- Hellknight Breastplate *(uncommon)* .......... 10 gp
+- Hellknight Half Plate *(uncommon)* .......... 20 gp
+- Mantis Shell *(uncommon)* .......... 10 gp
+- Splint Mail .......... 13 gp
+- Swarmsuit .......... 20 gp
+- Titan Nagaji Scales .......... free
+- Tough Skin .......... free
+- Bastion Plate .......... 33 gp
+- Bivouac Targe *(uncommon)* .......... 35 gp
+- Fortress Plate .......... 32 gp
+- Full Plate .......... 30 gp
+- Glamorous Buckler .......... 35 gp
+- Gray Maiden Plate .......... 35 gp
+- Heavy Barding (Small or Medium) .......... 25 gp
+- Hellknight Plate *(uncommon)* .......... 35 gp
+- Mycoweave Shield (Lesser) *(uncommon)* .......... 40 gp
+- O-Yoroi .......... 35 gp
+- Heavy Barding (Large) .......... 25 gp
+- Sapling Shield (Minor) .......... 57 gp
+- Siege Shield *(uncommon)* .......... 60 gp
+- Fiendsbane Shield *(uncommon)* .......... 70 gp
+- Pillow Shield *(uncommon)* .......... 80 gp
+- Sturdy Shield (Minor) .......... 100 gp
+- Wovenwood Shield (Minor) *(uncommon)* .......... 85 gp
+- Burr Shield .......... 160 gp
+- Crafting Leathers *(uncommon)* .......... 150 gp
+- Exploding Shield .......... 25 gp
+- Helmsman's Recourse .......... 150 gp
+- Living Leaf Weave .......... 160 gp
+- Magnetic Shield .......... 130 gp
+- Mariner's Splint *(uncommon)* .......... 180 gp
+- Ooze Skin .......... 150 gp
+- Parachute Mail .......... 150 gp
+- Reactive Mail .......... 160 gp
+- Testudo Shield *(uncommon)* .......... 150 gp
+- Tiger Shield *(uncommon)* .......... 145 gp
+- Waverider Barding .......... 130 gp
+- Wilderness Weave .......... 160 gp
+
+Table: PF2eArmor_large_town
+- Armored Cloak .......... 2 gp
+- Armored Coat *(uncommon)* .......... 20 gp
+- Breastplate .......... 8 gp
+- Buckle Armor .......... 4 gp
+- Buckler .......... 1 gp
+- Caster's Targe .......... 2 gp
+- Ceramic Plate .......... 6 gp
+- Chain Mail .......... 6 gp
+- Chain Shirt .......... 5 gp
+- Coral Armor .......... 5 gp
+- Dart Shield .......... 8 gp
+- Explorer's Clothing .......... 1 sp
+- Gauntlet Buckler .......... 5 gp
+- Gi .......... 2 sp
+- Harnessed Shield .......... 5 gp
+- Heavy Rondache .......... 4 gp
+- Hide Armor .......... 2 gp
+- Hide Shield .......... 2 gp
+- Kilted Breastplate .......... 3 gp
+- Klar .......... 3 gp
+- Lamellar Breastplate .......... 7 gp
+- Lattice Armor .......... 6 gp
+- Leaf Weave .......... 4 gp
+- Leather Armor .......... 2 gp
+- Leather Lamellar .......... 3 gp
+- Light Barding .......... 10 gp
+- Meteor Shield .......... 4 gp
+- Niyaháat .......... 5 gp
+- Padded Armor .......... 2 sp
+- Quilted Armor .......... 3 gp
+- Rattan Armor .......... 2 gp
+- Razor Disc .......... 5 gp
+- Salvo Shield .......... 6 gp
+- Sankeit .......... 5 gp
+- Scale Mail .......... 4 gp
+- Scroll Robes .......... 15 sp
+- Steel Shield .......... 2 gp
+- Studded Leather Armor .......... 3 gp
+- Swordstealer Shield .......... 6 gp
+- Tower Shield .......... 10 gp
+- Wooden Breastplate .......... 6 gp
+- Wooden Shield .......... 1 gp
+- Bakuwa Lizardfolk Bony Plates *(uncommon)* .......... free
+- Fortress Shield .......... 20 gp
+- Half Plate .......... 18 gp
+- Hardshell Surki Carapace .......... free
+- Hellknight Breastplate *(uncommon)* .......... 10 gp
+- Hellknight Half Plate *(uncommon)* .......... 20 gp
+- Mantis Shell *(uncommon)* .......... 10 gp
+- Splint Mail .......... 13 gp
+- Swarmsuit .......... 20 gp
+- Titan Nagaji Scales .......... free
+- Tough Skin .......... free
+- Bastion Plate .......... 33 gp
+- Bivouac Targe *(uncommon)* .......... 35 gp
+- Fortress Plate .......... 32 gp
+- Full Plate .......... 30 gp
+- Glamorous Buckler .......... 35 gp
+- Gray Maiden Plate .......... 35 gp
+- Heavy Barding (Small or Medium) .......... 25 gp
+- Hellknight Plate *(uncommon)* .......... 35 gp
+- Mycoweave Shield (Lesser) *(uncommon)* .......... 40 gp
+- O-Yoroi .......... 35 gp
+- Heavy Barding (Large) .......... 25 gp
+- Sapling Shield (Minor) .......... 57 gp
+- Siege Shield *(uncommon)* .......... 60 gp
+- Fiendsbane Shield *(uncommon)* .......... 70 gp
+- Pillow Shield *(uncommon)* .......... 80 gp
+- Sturdy Shield (Minor) .......... 100 gp
+- Wovenwood Shield (Minor) *(uncommon)* .......... 85 gp
+- Burr Shield .......... 160 gp
+- Crafting Leathers *(uncommon)* .......... 150 gp
+- Exploding Shield .......... 25 gp
+- Helmsman's Recourse .......... 150 gp
+- Living Leaf Weave .......... 160 gp
+- Magnetic Shield .......... 130 gp
+- Mariner's Splint *(uncommon)* .......... 180 gp
+- Ooze Skin .......... 150 gp
+- Parachute Mail .......... 150 gp
+- Reactive Mail .......... 160 gp
+- Testudo Shield *(uncommon)* .......... 150 gp
+- Tiger Shield *(uncommon)* .......... 145 gp
+- Waverider Barding .......... 130 gp
+- Wilderness Weave .......... 160 gp
+- Anti-Dragon Barding .......... 200 gp
+- Broadleaf Shield .......... 225 gp
+- Clockwork Disguise *(uncommon)* .......... 200 gp
+- Clockwork Diving Suit *(uncommon)* .......... 200 gp
+- Deep Pockets *(uncommon)* .......... 220 gp
+- Devil's Bargain *(uncommon)* .......... 250 gp
+- Ghoul Hide *(uncommon)* .......... 220 gp
+- Imposing Shield *(uncommon)* .......... 245 gp
+- Lion's Pelt (Chain) *(uncommon)* .......... 250 gp
+- Lion's Pelt (Leather) *(uncommon)* .......... 250 gp
+- Lion's Shield .......... 245 gp
+- Sapling Shield (Lesser) .......... 240 gp
+- Sarkorian God-Caller Garb *(uncommon)* .......... 250 gp
+- Spellguard Shield .......... 250 gp
+- Trollhound Vest *(uncommon)* .......... 230 gp
+
+Table: PF2eArmor_small_city
+- Armored Cloak .......... 2 gp
+- Armored Coat *(uncommon)* .......... 20 gp
+- Breastplate .......... 8 gp
+- Buckle Armor .......... 4 gp
+- Buckler .......... 1 gp
+- Caster's Targe .......... 2 gp
+- Ceramic Plate .......... 6 gp
+- Chain Mail .......... 6 gp
+- Chain Shirt .......... 5 gp
+- Coral Armor .......... 5 gp
+- Dart Shield .......... 8 gp
+- Explorer's Clothing .......... 1 sp
+- Gauntlet Buckler .......... 5 gp
+- Gi .......... 2 sp
+- Harnessed Shield .......... 5 gp
+- Heavy Rondache .......... 4 gp
+- Hide Armor .......... 2 gp
+- Hide Shield .......... 2 gp
+- Kilted Breastplate .......... 3 gp
+- Klar .......... 3 gp
+- Lamellar Breastplate .......... 7 gp
+- Lattice Armor .......... 6 gp
+- Leaf Weave .......... 4 gp
+- Leather Armor .......... 2 gp
+- Leather Lamellar .......... 3 gp
+- Light Barding .......... 10 gp
+- Meteor Shield .......... 4 gp
+- Niyaháat .......... 5 gp
+- Padded Armor .......... 2 sp
+- Quilted Armor .......... 3 gp
+- Rattan Armor .......... 2 gp
+- Razor Disc .......... 5 gp
+- Salvo Shield .......... 6 gp
+- Sankeit .......... 5 gp
+- Scale Mail .......... 4 gp
+- Scroll Robes .......... 15 sp
+- Steel Shield .......... 2 gp
+- Studded Leather Armor .......... 3 gp
+- Swordstealer Shield .......... 6 gp
+- Tower Shield .......... 10 gp
+- Wooden Breastplate .......... 6 gp
+- Wooden Shield .......... 1 gp
+- Bakuwa Lizardfolk Bony Plates *(uncommon)* .......... free
+- Fortress Shield .......... 20 gp
+- Half Plate .......... 18 gp
+- Hardshell Surki Carapace .......... free
+- Hellknight Breastplate *(uncommon)* .......... 10 gp
+- Hellknight Half Plate *(uncommon)* .......... 20 gp
+- Mantis Shell *(uncommon)* .......... 10 gp
+- Splint Mail .......... 13 gp
+- Swarmsuit .......... 20 gp
+- Titan Nagaji Scales .......... free
+- Tough Skin .......... free
+- Bastion Plate .......... 33 gp
+- Bivouac Targe *(uncommon)* .......... 35 gp
+- Fortress Plate .......... 32 gp
+- Full Plate .......... 30 gp
+- Glamorous Buckler .......... 35 gp
+- Gray Maiden Plate .......... 35 gp
+- Heavy Barding (Small or Medium) .......... 25 gp
+- Hellknight Plate *(uncommon)* .......... 35 gp
+- Mycoweave Shield (Lesser) *(uncommon)* .......... 40 gp
+- O-Yoroi .......... 35 gp
+- Heavy Barding (Large) .......... 25 gp
+- Sapling Shield (Minor) .......... 57 gp
+- Siege Shield *(uncommon)* .......... 60 gp
+- Fiendsbane Shield *(uncommon)* .......... 70 gp
+- Pillow Shield *(uncommon)* .......... 80 gp
+- Sturdy Shield (Minor) .......... 100 gp
+- Wovenwood Shield (Minor) *(uncommon)* .......... 85 gp
+- Burr Shield .......... 160 gp
+- Crafting Leathers *(uncommon)* .......... 150 gp
+- Exploding Shield .......... 25 gp
+- Helmsman's Recourse .......... 150 gp
+- Living Leaf Weave .......... 160 gp
+- Magnetic Shield .......... 130 gp
+- Mariner's Splint *(uncommon)* .......... 180 gp
+- Ooze Skin .......... 150 gp
+- Parachute Mail .......... 150 gp
+- Reactive Mail .......... 160 gp
+- Testudo Shield *(uncommon)* .......... 150 gp
+- Tiger Shield *(uncommon)* .......... 145 gp
+- Waverider Barding .......... 130 gp
+- Wilderness Weave .......... 160 gp
+- Anti-Dragon Barding .......... 200 gp
+- Broadleaf Shield .......... 225 gp
+- Clockwork Disguise *(uncommon)* .......... 200 gp
+- Clockwork Diving Suit *(uncommon)* .......... 200 gp
+- Deep Pockets *(uncommon)* .......... 220 gp
+- Devil's Bargain *(uncommon)* .......... 250 gp
+- Ghoul Hide *(uncommon)* .......... 220 gp
+- Imposing Shield *(uncommon)* .......... 245 gp
+- Lion's Pelt (Chain) *(uncommon)* .......... 250 gp
+- Lion's Pelt (Leather) *(uncommon)* .......... 250 gp
+- Lion's Shield .......... 245 gp
+- Sapling Shield (Lesser) .......... 240 gp
+- Sarkorian God-Caller Garb *(uncommon)* .......... 250 gp
+- Spellguard Shield .......... 250 gp
+- Trollhound Vest *(uncommon)* .......... 230 gp
+- Ankhrav Carapace *(uncommon)* .......... 350 gp
+- Arachnid Harness .......... 360 gp
+- Blade Byrnie .......... 360 gp
+- Energized Shield (Lesser) *(uncommon)* .......... 350 gp
+- Helmsman's Recourse (Greater) .......... 625 gp
+- Limestone Shield .......... 350 gp
+- Martyr's Shield (Hellbreakers) *(uncommon)* .......... 360 gp
+- Moonlit Chain .......... 360 gp
+- Spined Shield .......... 360 gp
+- Staff-Storing Shield .......... 350 gp
+- Sturdy Shield (Lesser) .......... 360 gp
+- Wolfjaw Armor .......... 355 gp
+- Wovenwood Shield (Lesser) *(uncommon)* .......... 305 gp
+
+Table: PF2eArmor_city
+- Armored Cloak .......... 2 gp
+- Armored Coat *(uncommon)* .......... 20 gp
+- Breastplate .......... 8 gp
+- Buckle Armor .......... 4 gp
+- Buckler .......... 1 gp
+- Caster's Targe .......... 2 gp
+- Ceramic Plate .......... 6 gp
+- Chain Mail .......... 6 gp
+- Chain Shirt .......... 5 gp
+- Coral Armor .......... 5 gp
+- Dart Shield .......... 8 gp
+- Explorer's Clothing .......... 1 sp
+- Gauntlet Buckler .......... 5 gp
+- Gi .......... 2 sp
+- Harnessed Shield .......... 5 gp
+- Heavy Rondache .......... 4 gp
+- Hide Armor .......... 2 gp
+- Hide Shield .......... 2 gp
+- Kilted Breastplate .......... 3 gp
+- Klar .......... 3 gp
+- Lamellar Breastplate .......... 7 gp
+- Lattice Armor .......... 6 gp
+- Leaf Weave .......... 4 gp
+- Leather Armor .......... 2 gp
+- Leather Lamellar .......... 3 gp
+- Light Barding .......... 10 gp
+- Meteor Shield .......... 4 gp
+- Niyaháat .......... 5 gp
+- Padded Armor .......... 2 sp
+- Quilted Armor .......... 3 gp
+- Rattan Armor .......... 2 gp
+- Razor Disc .......... 5 gp
+- Reinforced Chassis *(rare)* .......... free
+- Salvo Shield .......... 6 gp
+- Sankeit .......... 5 gp
+- Scale Mail .......... 4 gp
+- Scroll Robes .......... 15 sp
+- Steel Shield .......... 2 gp
+- Studded Leather Armor .......... 3 gp
+- Swordstealer Shield .......... 6 gp
+- Tower Shield .......... 10 gp
+- Wooden Breastplate .......... 6 gp
+- Wooden Shield .......... 1 gp
+- Bakuwa Lizardfolk Bony Plates *(uncommon)* .......... free
+- Fortress Shield .......... 20 gp
+- Half Plate .......... 18 gp
+- Hardshell Surki Carapace .......... free
+- Hellknight Breastplate *(uncommon)* .......... 10 gp
+- Hellknight Half Plate *(uncommon)* .......... 20 gp
+- Mantis Shell *(uncommon)* .......... 10 gp
+- Rite of Reinforcement Exoskeleton *(rare)* .......... free
+- Splint Mail .......... 13 gp
+- Swarmsuit .......... 20 gp
+- Titan Nagaji Scales .......... free
+- Tough Skin .......... free
+- Bastion Plate .......... 33 gp
+- Bivouac Targe *(uncommon)* .......... 35 gp
+- Fortress Plate .......... 32 gp
+- Full Plate .......... 30 gp
+- Glamorous Buckler .......... 35 gp
+- Gray Maiden Plate .......... 35 gp
+- Heavy Barding (Small or Medium) .......... 25 gp
+- Hellknight Plate *(uncommon)* .......... 35 gp
+- Mycoweave Shield (Lesser) *(uncommon)* .......... 40 gp
+- O-Yoroi .......... 35 gp
+- Heavy Barding (Large) .......... 25 gp
+- Sapling Shield (Minor) .......... 57 gp
+- Siege Shield *(uncommon)* .......... 60 gp
+- Fiendsbane Shield *(uncommon)* .......... 70 gp
+- Pillow Shield *(uncommon)* .......... 80 gp
+- Sturdy Shield (Minor) .......... 100 gp
+- Wovenwood Shield (Minor) *(uncommon)* .......... 85 gp
+- Burr Shield .......... 160 gp
+- Crafting Leathers *(uncommon)* .......... 150 gp
+- Crushing Coils *(rare)* .......... free
+- Exploding Shield .......... 25 gp
+- Helmsman's Recourse .......... 150 gp
+- Living Leaf Weave .......... 160 gp
+- Magnetic Shield .......... 130 gp
+- Mariner's Splint *(uncommon)* .......... 180 gp
+- Ooze Skin .......... 150 gp
+- Parachute Mail .......... 150 gp
+- Reactive Mail .......... 160 gp
+- Testudo Shield *(uncommon)* .......... 150 gp
+- Tiger Shield *(uncommon)* .......... 145 gp
+- Waverider Barding .......... 130 gp
+- Wilderness Weave .......... 160 gp
+- Anti-Dragon Barding .......... 200 gp
+- Broadleaf Shield .......... 225 gp
+- Buoyant Buckle *(rare)* .......... 250 gp
+- Clockwork Disguise *(uncommon)* .......... 200 gp
+- Clockwork Diving Suit *(uncommon)* .......... 200 gp
+- Deep Pockets *(uncommon)* .......... 220 gp
+- Devil's Bargain *(uncommon)* .......... 250 gp
+- Ghoul Hide *(uncommon)* .......... 220 gp
+- Imposing Shield *(uncommon)* .......... 245 gp
+- Lion's Pelt (Chain) *(uncommon)* .......... 250 gp
+- Lion's Pelt (Leather) *(uncommon)* .......... 250 gp
+- Lion's Shield .......... 245 gp
+- Plate of Yled *(rare)* .......... 250 gp
+- Sapling Shield (Lesser) .......... 240 gp
+- Sarkorian God-Caller Garb *(uncommon)* .......... 250 gp
+- Spellguard Shield .......... 250 gp
+- Trollhound Vest *(uncommon)* .......... 230 gp
+- Ankhrav Carapace *(uncommon)* .......... 350 gp
+- Arachnid Harness .......... 360 gp
+- Blade Byrnie .......... 360 gp
+- Energized Shield (Lesser) *(uncommon)* .......... 350 gp
+- Helmsman's Recourse (Greater) .......... 625 gp
+- Limestone Shield .......... 350 gp
+- Martyr's Shield *(rare)* .......... free
+- Martyr's Shield (Hellbreakers) *(uncommon)* .......... 360 gp
+- Moonlit Chain .......... 360 gp
+- Powered Full Plate *(rare)* .......... 360 gp
+- Spined Shield .......... 360 gp
+- Staff-Storing Shield .......... 350 gp
+- Sturdy Shield (Lesser) .......... 360 gp
+- Wolfjaw Armor .......... 355 gp
+- Wovenwood Shield (Lesser) *(uncommon)* .......... 305 gp
+- Balloon Padding *(uncommon)* .......... 480 gp
+- Canopy Bulwark *(rare)* .......... 550 gp
+- Command Cuirass .......... 500 gp
+- Containment Contraption *(uncommon)* .......... 500 gp
+- Deep Sea Plate *(rare)* .......... 500 gp
+- Duelist's Beacon *(uncommon)* .......... 450 gp
+- Hodag Leather *(uncommon)* .......... 500 gp
+- Lifting Leather .......... 450 gp
+- Locust Leather .......... 500 gp
+- Message Mail .......... 430 gp
+- Mycoweave Shield (Greater) *(uncommon)* .......... 40 gp
+- Plate of Yled (Greater) *(rare)* .......... 415 gp
+- Rusting Carapace *(uncommon)* .......... 476 gp
+- Swarmsuit (Impenetrable) .......... 420 gp
+- War Mage's Buckler *(uncommon)* .......... 450 gp
+- Wasp Guard .......... 487 gp
+- Worldscale Shield *(rare)* .......... 500 gp
+- Zetogeki Hide Armor *(uncommon)* .......... 500 gp
+
+Table: PF2eArmor_large_city
+- Armored Cloak .......... 2 gp
+- Armored Coat *(uncommon)* .......... 20 gp
+- Breastplate .......... 8 gp
+- Buckle Armor .......... 4 gp
+- Buckler .......... 1 gp
+- Caster's Targe .......... 2 gp
+- Ceramic Plate .......... 6 gp
+- Chain Mail .......... 6 gp
+- Chain Shirt .......... 5 gp
+- Coral Armor .......... 5 gp
+- Dart Shield .......... 8 gp
+- Explorer's Clothing .......... 1 sp
+- Gauntlet Buckler .......... 5 gp
+- Gi .......... 2 sp
+- Harnessed Shield .......... 5 gp
+- Heavy Rondache .......... 4 gp
+- Hide Armor .......... 2 gp
+- Hide Shield .......... 2 gp
+- Kilted Breastplate .......... 3 gp
+- Klar .......... 3 gp
+- Lamellar Breastplate .......... 7 gp
+- Lattice Armor .......... 6 gp
+- Leaf Weave .......... 4 gp
+- Leather Armor .......... 2 gp
+- Leather Lamellar .......... 3 gp
+- Light Barding .......... 10 gp
+- Meteor Shield .......... 4 gp
+- Niyaháat .......... 5 gp
+- Padded Armor .......... 2 sp
+- Quilted Armor .......... 3 gp
+- Rattan Armor .......... 2 gp
+- Razor Disc .......... 5 gp
+- Reinforced Chassis *(rare)* .......... free
+- Salvo Shield .......... 6 gp
+- Sankeit .......... 5 gp
+- Scale Mail .......... 4 gp
+- Scroll Robes .......... 15 sp
+- Steel Shield .......... 2 gp
+- Studded Leather Armor .......... 3 gp
+- Swordstealer Shield .......... 6 gp
+- Tower Shield .......... 10 gp
+- Wooden Breastplate .......... 6 gp
+- Wooden Shield .......... 1 gp
+- Bakuwa Lizardfolk Bony Plates *(uncommon)* .......... free
+- Fortress Shield .......... 20 gp
+- Half Plate .......... 18 gp
+- Hardshell Surki Carapace .......... free
+- Hellknight Breastplate *(uncommon)* .......... 10 gp
+- Hellknight Half Plate *(uncommon)* .......... 20 gp
+- Mantis Shell *(uncommon)* .......... 10 gp
+- Rite of Reinforcement Exoskeleton *(rare)* .......... free
+- Splint Mail .......... 13 gp
+- Swarmsuit .......... 20 gp
+- Titan Nagaji Scales .......... free
+- Tough Skin .......... free
+- Bastion Plate .......... 33 gp
+- Bivouac Targe *(uncommon)* .......... 35 gp
+- Fortress Plate .......... 32 gp
+- Full Plate .......... 30 gp
+- Glamorous Buckler .......... 35 gp
+- Gray Maiden Plate .......... 35 gp
+- Heavy Barding (Small or Medium) .......... 25 gp
+- Hellknight Plate *(uncommon)* .......... 35 gp
+- Mycoweave Shield (Lesser) *(uncommon)* .......... 40 gp
+- O-Yoroi .......... 35 gp
+- Heavy Barding (Large) .......... 25 gp
+- Sapling Shield (Minor) .......... 57 gp
+- Siege Shield *(uncommon)* .......... 60 gp
+- Fiendsbane Shield *(uncommon)* .......... 70 gp
+- Pillow Shield *(uncommon)* .......... 80 gp
+- Sturdy Shield (Minor) .......... 100 gp
+- Wovenwood Shield (Minor) *(uncommon)* .......... 85 gp
+- Burr Shield .......... 160 gp
+- Crafting Leathers *(uncommon)* .......... 150 gp
+- Crushing Coils *(rare)* .......... free
+- Exploding Shield .......... 25 gp
+- Helmsman's Recourse .......... 150 gp
+- Living Leaf Weave .......... 160 gp
+- Magnetic Shield .......... 130 gp
+- Mariner's Splint *(uncommon)* .......... 180 gp
+- Ooze Skin .......... 150 gp
+- Parachute Mail .......... 150 gp
+- Reactive Mail .......... 160 gp
+- Testudo Shield *(uncommon)* .......... 150 gp
+- Tiger Shield *(uncommon)* .......... 145 gp
+- Waverider Barding .......... 130 gp
+- Wilderness Weave .......... 160 gp
+- Anti-Dragon Barding .......... 200 gp
+- Broadleaf Shield .......... 225 gp
+- Buoyant Buckle *(rare)* .......... 250 gp
+- Clockwork Disguise *(uncommon)* .......... 200 gp
+- Clockwork Diving Suit *(uncommon)* .......... 200 gp
+- Deep Pockets *(uncommon)* .......... 220 gp
+- Devil's Bargain *(uncommon)* .......... 250 gp
+- Ghoul Hide *(uncommon)* .......... 220 gp
+- Imposing Shield *(uncommon)* .......... 245 gp
+- Lion's Pelt (Chain) *(uncommon)* .......... 250 gp
+- Lion's Pelt (Leather) *(uncommon)* .......... 250 gp
+- Lion's Shield .......... 245 gp
+- Plate of Yled *(rare)* .......... 250 gp
+- Sapling Shield (Lesser) .......... 240 gp
+- Sarkorian God-Caller Garb *(uncommon)* .......... 250 gp
+- Spellguard Shield .......... 250 gp
+- Trollhound Vest *(uncommon)* .......... 230 gp
+- Ankhrav Carapace *(uncommon)* .......... 350 gp
+- Arachnid Harness .......... 360 gp
+- Blade Byrnie .......... 360 gp
+- Energized Shield (Lesser) *(uncommon)* .......... 350 gp
+- Helmsman's Recourse (Greater) .......... 625 gp
+- Limestone Shield .......... 350 gp
+- Martyr's Shield *(rare)* .......... free
+- Martyr's Shield (Hellbreakers) *(uncommon)* .......... 360 gp
+- Moonlit Chain .......... 360 gp
+- Powered Full Plate *(rare)* .......... 360 gp
+- Spined Shield .......... 360 gp
+- Staff-Storing Shield .......... 350 gp
+- Sturdy Shield (Lesser) .......... 360 gp
+- Wolfjaw Armor .......... 355 gp
+- Wovenwood Shield (Lesser) *(uncommon)* .......... 305 gp
+- Balloon Padding *(uncommon)* .......... 480 gp
+- Canopy Bulwark *(rare)* .......... 550 gp
+- Command Cuirass .......... 500 gp
+- Containment Contraption *(uncommon)* .......... 500 gp
+- Deep Sea Plate *(rare)* .......... 500 gp
+- Duelist's Beacon *(uncommon)* .......... 450 gp
+- Hodag Leather *(uncommon)* .......... 500 gp
+- Lifting Leather .......... 450 gp
+- Locust Leather .......... 500 gp
+- Message Mail .......... 430 gp
+- Mycoweave Shield (Greater) *(uncommon)* .......... 40 gp
+- Plate of Yled (Greater) *(rare)* .......... 415 gp
+- Rusting Carapace *(uncommon)* .......... 476 gp
+- Swarmsuit (Impenetrable) .......... 420 gp
+- War Mage's Buckler *(uncommon)* .......... 450 gp
+- Wasp Guard .......... 487 gp
+- Worldscale Shield *(rare)* .......... 500 gp
+- Zetogeki Hide Armor *(uncommon)* .......... 500 gp
+- Arachnid Harness (Greater) .......... 700 gp
+- Autoload Leathers .......... 700 gp
+- Blast Suit *(uncommon)* .......... 650 gp
+- Bloodroot Shield *(uncommon)* .......... 600 gp
+- Broadleaf Shield (Greater) .......... 675 gp
+- Cloister Robe (Lesser) .......... 600 gp
+- Dragon Turtle Plate .......... 700 gp
+- Dragonaut's Wingsuit *(uncommon)* .......... 625 gp
+- Dragonslayer's Shield *(uncommon)* .......... 670 gp
+- Force Shield *(uncommon)* .......... 650 gp
+- Highhelm War Shield (Lesser) *(uncommon)* .......... 700 gp
+- Leopard's Armor *(uncommon)* .......... 700 gp
+- Library Robes .......... 700 gp
+- Mitigation Mail *(uncommon)* .......... 700 gp
+- Onslaught Hide .......... 700 gp
+- Sanguine Klar .......... 650 gp
+- Sapling Shield (Moderate) .......... 680 gp
+- Spangled Rider's Suit *(uncommon)* .......... 700 gp
+- Turnabout Shield .......... 600 gp
+- Victory Plate *(uncommon)* .......... 675 gp
+- Warding Escutcheon .......... 625 gp
+- Wisp Chain .......... 685 gp
+- Amaranthine Pavise *(uncommon)* .......... 1000 gp
+- Aurochs Hide Armor *(uncommon)* .......... 1000 gp
+- Barbed Vest *(rare)* .......... free
+- Barding of the Zephyr .......... 900 gp
+- Bone Dreadnought Plate .......... 1000 gp
+- Eagle Wing *(uncommon)* .......... 950 gp
+- Electric Eelskin .......... 950 gp
+- Forge Warden *(uncommon)* .......... 975 gp
+- Hero's Plate *(rare)* .......... 1000 gp
+- Hippopotamus Klar *(uncommon)* .......... 1000 gp
+- Mamlambo Scale *(rare)* .......... 990 gp
+- Numerian Steel Breastplate *(rare)* .......... 900 gp
+- Scarab Cuirass *(uncommon)* .......... 1000 gp
+- Shadow Shroud .......... 1000 gp
+- Shining Shield *(uncommon)* .......... 1000 gp
+- Smoldering Armor *(uncommon)* .......... 975 gp
+- Sturdy Shield (Moderate) .......... 1000 gp
+- Sun Slayer *(uncommon)* .......... 1000 gp
+- Tales in Timber .......... 1000 gp
+- Tideplate .......... 1000 gp
+- Umbral Armor *(uncommon)* .......... 1000 gp
+- Warleader's Bulwark .......... 1000 gp
+- Wovenwood Shield (Moderate) *(uncommon)* .......... 850 gp
+
+Table: PF2eArmor_metropolis
+- Armored Cloak .......... 2 gp
+- Armored Coat *(uncommon)* .......... 20 gp
+- Breastplate .......... 8 gp
+- Buckle Armor .......... 4 gp
+- Buckler .......... 1 gp
+- Caster's Targe .......... 2 gp
+- Ceramic Plate .......... 6 gp
+- Chain Mail .......... 6 gp
+- Chain Shirt .......... 5 gp
+- Coral Armor .......... 5 gp
+- Dart Shield .......... 8 gp
+- Explorer's Clothing .......... 1 sp
+- Gauntlet Buckler .......... 5 gp
+- Gi .......... 2 sp
+- Harnessed Shield .......... 5 gp
+- Heavy Rondache .......... 4 gp
+- Hide Armor .......... 2 gp
+- Hide Shield .......... 2 gp
+- Kilted Breastplate .......... 3 gp
+- Klar .......... 3 gp
+- Lamellar Breastplate .......... 7 gp
+- Lattice Armor .......... 6 gp
+- Leaf Weave .......... 4 gp
+- Leather Armor .......... 2 gp
+- Leather Lamellar .......... 3 gp
+- Light Barding .......... 10 gp
+- Meteor Shield .......... 4 gp
+- Niyaháat .......... 5 gp
+- Padded Armor .......... 2 sp
+- Quilted Armor .......... 3 gp
+- Rattan Armor .......... 2 gp
+- Razor Disc .......... 5 gp
+- Reinforced Chassis *(rare)* .......... free
+- Salvo Shield .......... 6 gp
+- Sankeit .......... 5 gp
+- Scale Mail .......... 4 gp
+- Scroll Robes .......... 15 sp
+- Steel Shield .......... 2 gp
+- Studded Leather Armor .......... 3 gp
+- Swordstealer Shield .......... 6 gp
+- Tower Shield .......... 10 gp
+- Wooden Breastplate .......... 6 gp
+- Wooden Shield .......... 1 gp
+- Bakuwa Lizardfolk Bony Plates *(uncommon)* .......... free
+- Fortress Shield .......... 20 gp
+- Half Plate .......... 18 gp
+- Hardshell Surki Carapace .......... free
+- Hellknight Breastplate *(uncommon)* .......... 10 gp
+- Hellknight Half Plate *(uncommon)* .......... 20 gp
+- Mantis Shell *(uncommon)* .......... 10 gp
+- Rite of Reinforcement Exoskeleton *(rare)* .......... free
+- Splint Mail .......... 13 gp
+- Swarmsuit .......... 20 gp
+- Titan Nagaji Scales .......... free
+- Tough Skin .......... free
+- Bastion Plate .......... 33 gp
+- Bivouac Targe *(uncommon)* .......... 35 gp
+- Fortress Plate .......... 32 gp
+- Full Plate .......... 30 gp
+- Glamorous Buckler .......... 35 gp
+- Gray Maiden Plate .......... 35 gp
+- Heavy Barding (Small or Medium) .......... 25 gp
+- Hellknight Plate *(uncommon)* .......... 35 gp
+- Mycoweave Shield (Lesser) *(uncommon)* .......... 40 gp
+- O-Yoroi .......... 35 gp
+- Heavy Barding (Large) .......... 25 gp
+- Sapling Shield (Minor) .......... 57 gp
+- Siege Shield *(uncommon)* .......... 60 gp
+- Fiendsbane Shield *(uncommon)* .......... 70 gp
+- Pillow Shield *(uncommon)* .......... 80 gp
+- Sturdy Shield (Minor) .......... 100 gp
+- Wovenwood Shield (Minor) *(uncommon)* .......... 85 gp
+- Burr Shield .......... 160 gp
+- Crafting Leathers *(uncommon)* .......... 150 gp
+- Crushing Coils *(rare)* .......... free
+- Exploding Shield .......... 25 gp
+- Helmsman's Recourse .......... 150 gp
+- Living Leaf Weave .......... 160 gp
+- Magnetic Shield .......... 130 gp
+- Mariner's Splint *(uncommon)* .......... 180 gp
+- Ooze Skin .......... 150 gp
+- Parachute Mail .......... 150 gp
+- Reactive Mail .......... 160 gp
+- Testudo Shield *(uncommon)* .......... 150 gp
+- Tiger Shield *(uncommon)* .......... 145 gp
+- Waverider Barding .......... 130 gp
+- Wilderness Weave .......... 160 gp
+- Anti-Dragon Barding .......... 200 gp
+- Broadleaf Shield .......... 225 gp
+- Buoyant Buckle *(rare)* .......... 250 gp
+- Clockwork Disguise *(uncommon)* .......... 200 gp
+- Clockwork Diving Suit *(uncommon)* .......... 200 gp
+- Deep Pockets *(uncommon)* .......... 220 gp
+- Devil's Bargain *(uncommon)* .......... 250 gp
+- Ghoul Hide *(uncommon)* .......... 220 gp
+- Imposing Shield *(uncommon)* .......... 245 gp
+- Lion's Pelt (Chain) *(uncommon)* .......... 250 gp
+- Lion's Pelt (Leather) *(uncommon)* .......... 250 gp
+- Lion's Shield .......... 245 gp
+- Plate of Yled *(rare)* .......... 250 gp
+- Sapling Shield (Lesser) .......... 240 gp
+- Sarkorian God-Caller Garb *(uncommon)* .......... 250 gp
+- Spellguard Shield .......... 250 gp
+- Trollhound Vest *(uncommon)* .......... 230 gp
+- Ankhrav Carapace *(uncommon)* .......... 350 gp
+- Arachnid Harness .......... 360 gp
+- Blade Byrnie .......... 360 gp
+- Energized Shield (Lesser) *(uncommon)* .......... 350 gp
+- Helmsman's Recourse (Greater) .......... 625 gp
+- Limestone Shield .......... 350 gp
+- Martyr's Shield *(rare)* .......... free
+- Martyr's Shield (Hellbreakers) *(uncommon)* .......... 360 gp
+- Moonlit Chain .......... 360 gp
+- Powered Full Plate *(rare)* .......... 360 gp
+- Spined Shield .......... 360 gp
+- Staff-Storing Shield .......... 350 gp
+- Sturdy Shield (Lesser) .......... 360 gp
+- Wolfjaw Armor .......... 355 gp
+- Wovenwood Shield (Lesser) *(uncommon)* .......... 305 gp
+- Balloon Padding *(uncommon)* .......... 480 gp
+- Canopy Bulwark *(rare)* .......... 550 gp
+- Command Cuirass .......... 500 gp
+- Containment Contraption *(uncommon)* .......... 500 gp
+- Deep Sea Plate *(rare)* .......... 500 gp
+- Duelist's Beacon *(uncommon)* .......... 450 gp
+- Hodag Leather *(uncommon)* .......... 500 gp
+- Lifting Leather .......... 450 gp
+- Locust Leather .......... 500 gp
+- Message Mail .......... 430 gp
+- Mycoweave Shield (Greater) *(uncommon)* .......... 40 gp
+- Plate of Yled (Greater) *(rare)* .......... 415 gp
+- Rusting Carapace *(uncommon)* .......... 476 gp
+- Swarmsuit (Impenetrable) .......... 420 gp
+- War Mage's Buckler *(uncommon)* .......... 450 gp
+- Wasp Guard .......... 487 gp
+- Worldscale Shield *(rare)* .......... 500 gp
+- Zetogeki Hide Armor *(uncommon)* .......... 500 gp
+- Arachnid Harness (Greater) .......... 700 gp
+- Autoload Leathers .......... 700 gp
+- Blast Suit *(uncommon)* .......... 650 gp
+- Bloodroot Shield *(uncommon)* .......... 600 gp
+- Broadleaf Shield (Greater) .......... 675 gp
+- Cloister Robe (Lesser) .......... 600 gp
+- Dragon Turtle Plate .......... 700 gp
+- Dragonaut's Wingsuit *(uncommon)* .......... 625 gp
+- Dragonslayer's Shield *(uncommon)* .......... 670 gp
+- Force Shield *(uncommon)* .......... 650 gp
+- Highhelm War Shield (Lesser) *(uncommon)* .......... 700 gp
+- Leopard's Armor *(uncommon)* .......... 700 gp
+- Library Robes .......... 700 gp
+- Mitigation Mail *(uncommon)* .......... 700 gp
+- Onslaught Hide .......... 700 gp
+- Sanguine Klar .......... 650 gp
+- Sapling Shield (Moderate) .......... 680 gp
+- Spangled Rider's Suit *(uncommon)* .......... 700 gp
+- Turnabout Shield .......... 600 gp
+- Victory Plate *(uncommon)* .......... 675 gp
+- Warding Escutcheon .......... 625 gp
+- Wisp Chain .......... 685 gp
+- Amaranthine Pavise *(uncommon)* .......... 1000 gp
+- Aurochs Hide Armor *(uncommon)* .......... 1000 gp
+- Barbed Vest *(rare)* .......... free
+- Barding of the Zephyr .......... 900 gp
+- Bone Dreadnought Plate .......... 1000 gp
+- Eagle Wing *(uncommon)* .......... 950 gp
+- Electric Eelskin .......... 950 gp
+- Forge Warden *(uncommon)* .......... 975 gp
+- Hero's Plate *(rare)* .......... 1000 gp
+- Hippopotamus Klar *(uncommon)* .......... 1000 gp
+- Mamlambo Scale *(rare)* .......... 990 gp
+- Numerian Steel Breastplate *(rare)* .......... 900 gp
+- Scarab Cuirass *(uncommon)* .......... 1000 gp
+- Shadow Shroud .......... 1000 gp
+- Shining Shield *(uncommon)* .......... 1000 gp
+- Smoldering Armor *(uncommon)* .......... 975 gp
+- Sturdy Shield (Moderate) .......... 1000 gp
+- Sun Slayer *(uncommon)* .......... 1000 gp
+- Tales in Timber .......... 1000 gp
+- Tideplate .......... 1000 gp
+- Umbral Armor *(uncommon)* .......... 1000 gp
+- Warleader's Bulwark .......... 1000 gp
+- Wovenwood Shield (Moderate) *(uncommon)* .......... 850 gp
+- Arrow-Catching Shield .......... 1350 gp
+- Clockwork Shield .......... 1300 gp
+- Energized Shield (Moderate) *(uncommon)* .......... 1300 gp
+- Evil-Reflecting Shield *(uncommon)* .......... 1250 gp
+- Floating Shield *(uncommon)* .......... 1250 gp
+- Guardian Shield *(uncommon)* .......... 1200 gp
+- Helmsman's Recourse (Major) .......... 2650 gp
+- Kizidhar's Shield .......... 1250 gp
+- Lodestone Shield .......... 1350 gp
+- Plate of Yled (Major) *(rare)* .......... 1160 gp
+- Reactive Mail (Greater) .......... 1400 gp
+- Staff-Storing Shield (Greater) .......... 1300 gp
+- Anti-Dragon Barding (Greater) .......... 1700 gp
+- Arctic Worm Chitin Shield *(uncommon)* .......... 1800 gp
+- Autumn's Embrace .......... 2000 gp
+- Bastion of the Inheritor *(uncommon)* .......... 1750 gp
+- Cloister Robe (Moderate) .......... 1800 gp
+- Dragon Turtle Armor *(uncommon)* .......... 2000 gp
+- Grisly Brigandine *(rare)* .......... 2000 gp
+- Jawbreaker Shield *(uncommon)* .......... 1650 gp
+- Library Robes (Greater) .......... 2000 gp
+- Lion's Armor .......... 2000 gp
+- Rampart Shield *(uncommon)* .......... 1900 gp
+- Reef Heart .......... 2000 gp
+- Sapling Shield (Greater) .......... 1820 gp
+- Wisp Chain (Greater) .......... 1900 gp
+
+Table: PF2eArmorAny
+- Armored Cloak .......... 2 gp
+- Armored Coat *(uncommon)* .......... 20 gp
+- Breastplate .......... 8 gp
+- Buckle Armor .......... 4 gp
+- Buckler .......... 1 gp
+- Caster's Targe .......... 2 gp
+- Ceramic Plate .......... 6 gp
+- Chain Mail .......... 6 gp
+- Chain Shirt .......... 5 gp
+- Coral Armor .......... 5 gp
+- Dart Shield .......... 8 gp
+- Explorer's Clothing .......... 1 sp
+- Gauntlet Buckler .......... 5 gp
+- Gi .......... 2 sp
+- Harnessed Shield .......... 5 gp
+- Heavy Rondache .......... 4 gp
+- Hide Armor .......... 2 gp
+- Hide Shield .......... 2 gp
+- Kilted Breastplate .......... 3 gp
+- Klar .......... 3 gp
+- Lamellar Breastplate .......... 7 gp
+- Lattice Armor .......... 6 gp
+- Leaf Weave .......... 4 gp
+- Leather Armor .......... 2 gp
+- Leather Lamellar .......... 3 gp
+- Light Barding .......... 10 gp
+- Meteor Shield .......... 4 gp
+- Niyaháat .......... 5 gp
+- Padded Armor .......... 2 sp
+- Quilted Armor .......... 3 gp
+- Rattan Armor .......... 2 gp
+- Razor Disc .......... 5 gp
+- Reinforced Chassis *(rare)* .......... free
+- Salvo Shield .......... 6 gp
+- Sankeit .......... 5 gp
+- Scale Mail .......... 4 gp
+- Scroll Robes .......... 15 sp
+- Steel Shield .......... 2 gp
+- Studded Leather Armor .......... 3 gp
+- Swordstealer Shield .......... 6 gp
+- Tower Shield .......... 10 gp
+- Wooden Breastplate .......... 6 gp
+- Wooden Shield .......... 1 gp
+- Bakuwa Lizardfolk Bony Plates *(uncommon)* .......... free
+- Fortress Shield .......... 20 gp
+- Half Plate .......... 18 gp
+- Hardshell Surki Carapace .......... free
+- Hellknight Breastplate *(uncommon)* .......... 10 gp
+- Hellknight Half Plate *(uncommon)* .......... 20 gp
+- Mantis Shell *(uncommon)* .......... 10 gp
+- Rite of Reinforcement Exoskeleton *(rare)* .......... free
+- Splint Mail .......... 13 gp
+- Swarmsuit .......... 20 gp
+- Titan Nagaji Scales .......... free
+- Tough Skin .......... free
+- Bastion Plate .......... 33 gp
+- Bivouac Targe *(uncommon)* .......... 35 gp
+- Fortress Plate .......... 32 gp
+- Full Plate .......... 30 gp
+- Glamorous Buckler .......... 35 gp
+- Gray Maiden Plate .......... 35 gp
+- Heavy Barding (Small or Medium) .......... 25 gp
+- Hellknight Plate *(uncommon)* .......... 35 gp
+- Mycoweave Shield (Lesser) *(uncommon)* .......... 40 gp
+- O-Yoroi .......... 35 gp
+- Heavy Barding (Large) .......... 25 gp
+- Sapling Shield (Minor) .......... 57 gp
+- Siege Shield *(uncommon)* .......... 60 gp
+- Fiendsbane Shield *(uncommon)* .......... 70 gp
+- Pillow Shield *(uncommon)* .......... 80 gp
+- Sturdy Shield (Minor) .......... 100 gp
+- Wovenwood Shield (Minor) *(uncommon)* .......... 85 gp
+- Burr Shield .......... 160 gp
+- Crafting Leathers *(uncommon)* .......... 150 gp
+- Crushing Coils *(rare)* .......... free
+- Exploding Shield .......... 25 gp
+- Helmsman's Recourse .......... 150 gp
+- Living Leaf Weave .......... 160 gp
+- Magnetic Shield .......... 130 gp
+- Mariner's Splint *(uncommon)* .......... 180 gp
+- Ooze Skin .......... 150 gp
+- Parachute Mail .......... 150 gp
+- Reactive Mail .......... 160 gp
+- Testudo Shield *(uncommon)* .......... 150 gp
+- Tiger Shield *(uncommon)* .......... 145 gp
+- Waverider Barding .......... 130 gp
+- Wilderness Weave .......... 160 gp
+- Anti-Dragon Barding .......... 200 gp
+- Broadleaf Shield .......... 225 gp
+- Buoyant Buckle *(rare)* .......... 250 gp
+- Clockwork Disguise *(uncommon)* .......... 200 gp
+- Clockwork Diving Suit *(uncommon)* .......... 200 gp
+- Deep Pockets *(uncommon)* .......... 220 gp
+- Devil's Bargain *(uncommon)* .......... 250 gp
+- Ghoul Hide *(uncommon)* .......... 220 gp
+- Imposing Shield *(uncommon)* .......... 245 gp
+- Lion's Pelt (Chain) *(uncommon)* .......... 250 gp
+- Lion's Pelt (Leather) *(uncommon)* .......... 250 gp
+- Lion's Shield .......... 245 gp
+- Plate of Yled *(rare)* .......... 250 gp
+- Sapling Shield (Lesser) .......... 240 gp
+- Sarkorian God-Caller Garb *(uncommon)* .......... 250 gp
+- Spellguard Shield .......... 250 gp
+- Trollhound Vest *(uncommon)* .......... 230 gp
+- Ankhrav Carapace *(uncommon)* .......... 350 gp
+- Arachnid Harness .......... 360 gp
+- Blade Byrnie .......... 360 gp
+- Energized Shield (Lesser) *(uncommon)* .......... 350 gp
+- Helmsman's Recourse (Greater) .......... 625 gp
+- Limestone Shield .......... 350 gp
+- Martyr's Shield *(rare)* .......... free
+- Martyr's Shield (Hellbreakers) *(uncommon)* .......... 360 gp
+- Moonlit Chain .......... 360 gp
+- Powered Full Plate *(rare)* .......... 360 gp
+- Spined Shield .......... 360 gp
+- Staff-Storing Shield .......... 350 gp
+- Sturdy Shield (Lesser) .......... 360 gp
+- Wolfjaw Armor .......... 355 gp
+- Wovenwood Shield (Lesser) *(uncommon)* .......... 305 gp
+- Balloon Padding *(uncommon)* .......... 480 gp
+- Canopy Bulwark *(rare)* .......... 550 gp
+- Command Cuirass .......... 500 gp
+- Containment Contraption *(uncommon)* .......... 500 gp
+- Deep Sea Plate *(rare)* .......... 500 gp
+- Duelist's Beacon *(uncommon)* .......... 450 gp
+- Hodag Leather *(uncommon)* .......... 500 gp
+- Lifting Leather .......... 450 gp
+- Locust Leather .......... 500 gp
+- Message Mail .......... 430 gp
+- Mycoweave Shield (Greater) *(uncommon)* .......... 40 gp
+- Plate of Yled (Greater) *(rare)* .......... 415 gp
+- Rusting Carapace *(uncommon)* .......... 476 gp
+- Swarmsuit (Impenetrable) .......... 420 gp
+- War Mage's Buckler *(uncommon)* .......... 450 gp
+- Wasp Guard .......... 487 gp
+- Worldscale Shield *(rare)* .......... 500 gp
+- Zetogeki Hide Armor *(uncommon)* .......... 500 gp
+- Arachnid Harness (Greater) .......... 700 gp
+- Autoload Leathers .......... 700 gp
+- Blast Suit *(uncommon)* .......... 650 gp
+- Bloodroot Shield *(uncommon)* .......... 600 gp
+- Broadleaf Shield (Greater) .......... 675 gp
+- Cloister Robe (Lesser) .......... 600 gp
+- Dragon Turtle Plate .......... 700 gp
+- Dragonaut's Wingsuit *(uncommon)* .......... 625 gp
+- Dragonslayer's Shield *(uncommon)* .......... 670 gp
+- Force Shield *(uncommon)* .......... 650 gp
+- Highhelm War Shield (Lesser) *(uncommon)* .......... 700 gp
+- Leopard's Armor *(uncommon)* .......... 700 gp
+- Library Robes .......... 700 gp
+- Mitigation Mail *(uncommon)* .......... 700 gp
+- Onslaught Hide .......... 700 gp
+- Sanguine Klar .......... 650 gp
+- Sapling Shield (Moderate) .......... 680 gp
+- Spangled Rider's Suit *(uncommon)* .......... 700 gp
+- Turnabout Shield .......... 600 gp
+- Victory Plate *(uncommon)* .......... 675 gp
+- Warding Escutcheon .......... 625 gp
+- Wisp Chain .......... 685 gp
+- Amaranthine Pavise *(uncommon)* .......... 1000 gp
+- Aurochs Hide Armor *(uncommon)* .......... 1000 gp
+- Barbed Vest *(rare)* .......... free
+- Barding of the Zephyr .......... 900 gp
+- Bone Dreadnought Plate .......... 1000 gp
+- Eagle Wing *(uncommon)* .......... 950 gp
+- Electric Eelskin .......... 950 gp
+- Forge Warden *(uncommon)* .......... 975 gp
+- Hero's Plate *(rare)* .......... 1000 gp
+- Hippopotamus Klar *(uncommon)* .......... 1000 gp
+- Mamlambo Scale *(rare)* .......... 990 gp
+- Numerian Steel Breastplate *(rare)* .......... 900 gp
+- Scarab Cuirass *(uncommon)* .......... 1000 gp
+- Shadow Shroud .......... 1000 gp
+- Shining Shield *(uncommon)* .......... 1000 gp
+- Smoldering Armor *(uncommon)* .......... 975 gp
+- Sturdy Shield (Moderate) .......... 1000 gp
+- Sun Slayer *(uncommon)* .......... 1000 gp
+- Tales in Timber .......... 1000 gp
+- Tideplate .......... 1000 gp
+- Umbral Armor *(uncommon)* .......... 1000 gp
+- Warleader's Bulwark .......... 1000 gp
+- Wovenwood Shield (Moderate) *(uncommon)* .......... 850 gp
+- Arrow-Catching Shield .......... 1350 gp
+- Clockwork Shield .......... 1300 gp
+- Energized Shield (Moderate) *(uncommon)* .......... 1300 gp
+- Evil-Reflecting Shield *(uncommon)* .......... 1250 gp
+- Floating Shield *(uncommon)* .......... 1250 gp
+- Guardian Shield *(uncommon)* .......... 1200 gp
+- Helmsman's Recourse (Major) .......... 2650 gp
+- Kizidhar's Shield .......... 1250 gp
+- Lodestone Shield .......... 1350 gp
+- Plate of Yled (Major) *(rare)* .......... 1160 gp
+- Reactive Mail (Greater) .......... 1400 gp
+- Staff-Storing Shield (Greater) .......... 1300 gp
+- Anti-Dragon Barding (Greater) .......... 1700 gp
+- Arctic Worm Chitin Shield *(uncommon)* .......... 1800 gp
+- Autumn's Embrace .......... 2000 gp
+- Bastion of the Inheritor *(uncommon)* .......... 1750 gp
+- Cloister Robe (Moderate) .......... 1800 gp
+- Dragon Turtle Armor *(uncommon)* .......... 2000 gp
+- Grisly Brigandine *(rare)* .......... 2000 gp
+- Jawbreaker Shield *(uncommon)* .......... 1650 gp
+- Library Robes (Greater) .......... 2000 gp
+- Lion's Armor .......... 2000 gp
+- Rampart Shield *(uncommon)* .......... 1900 gp
+- Reef Heart .......... 2000 gp
+- Sapling Shield (Greater) .......... 1820 gp
+- Wisp Chain (Greater) .......... 1900 gp
+- Bismuth Armor *(uncommon)* .......... 2800 gp
+- Blade Byrnie (Greater) .......... 3000 gp
+- Broadleaf Shield (Major) .......... 2750 gp
+- Dragon Shield *(uncommon)* .......... 3000 gp
+- Elven Chain (Standard-Grade) *(uncommon)* .......... 740 gp
+- Energizing Lattice .......... 3000 gp
+- Faerie Queen's Bower *(rare)* .......... free
+- Forgotten Shell *(rare)* .......... 2500 gp
+- Harmonic Hauberk *(uncommon)* .......... 2500 gp
+- Hollow Robes *(rare)* .......... 3000 gp
+- Holy Chain .......... 2500 gp
+- Invisible Chain Shirt .......... 2750 gp
+- Mail of Luck .......... 2600 gp
+- Mantis Plate *(rare)* .......... 2800 gp
+- Medusa's Scream .......... 3000 gp
+- Mitigation Mail (Greater) *(uncommon)* .......... 3000 gp
+- Noxious Jerkin *(rare)* .......... 2800 gp
+- Psychic Brigandine *(uncommon)* .......... 3000 gp
+- Sturdy Shield (Greater) .......... 3000 gp
+- Suit of Armoire .......... free
+- Tales in Timber (Greater) .......... 2800 gp
+- Testudo Shield (Greater) *(uncommon)* .......... 2800 gp
+- Unholy Plate .......... 2500 gp
+- Vanguard's Shield *(uncommon)* .......... 3000 gp
+- Wovenwood Shield (Greater) *(uncommon)* .......... 2550 gp
+- Alkenstar Phalanx *(rare)* .......... 4500 gp
+- Frost Furs *(uncommon)* .......... 4500 gp
+- Glorious Plate *(rare)* .......... 4500 gp
+- Highhelm Stronghold Plate *(uncommon)* .......... 3750 gp
+- Highhelm War Shield (Moderate) *(uncommon)* .......... 4000 gp
+- Life-Saver Mail .......... 4000 gp
+- Medic's Shield *(uncommon)* .......... 4000 gp
+- Medusa Armor *(rare)* .......... free
+- Plate of Yled (True) *(rare)* .......... 3600 gp
+- Sanguine Klar (Greater) .......... 3700 gp
+- Shared-Pain Sankeit *(rare)* .......... 5 gp
+- Assassin's Skin *(rare)* .......... 6500 gp
+- Cloister Robe (Greater) .......... 6000 gp
+- Energized Shield (Greater) *(uncommon)* .......... 6000 gp
+- Fungal Armor *(rare)* .......... 7200 gp
+- Library Robes (Major) .......... 6000 gp
+- Plate Armor of the Deep *(uncommon)* .......... 6500 gp
+- Reef Heart (Greater) .......... 6500 gp
+- Reforging Shield *(rare)* .......... 6000 gp
+- Robe of the Archmagi *(uncommon)* .......... 6500 gp
+- Sapling Shield (Major) .......... 5860 gp
+- Silkspinner's Shield *(uncommon)* .......... 6000 gp
+- Staff-Storing Shield (Major) .......... 5500 gp
+- Thunder Mail .......... 6500 gp
+- Troll Hide .......... 6000 gp
+- Victory Plate (Greater) *(uncommon)* .......... 5500 gp
+- Wisp Chain (Major) .......... 6000 gp
+- Armor of the Holy Warrior *(rare)* .......... 9000 gp
+- Black Hole Armor .......... 8500 gp
+- Dragonplate *(uncommon)* .......... 10000 gp
+- Floating Shield (Greater) *(uncommon)* .......... 9000 gp
+- Medusa's Scream (Greater) .......... 9000 gp
+- Mycoweave Shield (Major) *(uncommon)* .......... 40 gp
+- Nethysian Bulwark *(uncommon)* .......... 8000 gp
+- Sturdy Shield (Major) .......... 10000 gp
+- Vernai Shell *(uncommon)* .......... 8000 gp
+- Wovenwood Shield (Major) *(uncommon)* .......... 8500 gp
+- Broadleaf Shield (True) .......... 13750 gp
+- Cursebreak Bulwark *(uncommon)* .......... 14500 gp
+- Impenetrable Scale *(uncommon)* .......... 12800 gp
+- Jerkin of Liberation *(uncommon)* .......... 14000 gp
+- Mitigation Mail (Major) *(uncommon)* .......... 14000 gp
+- Prismatic Plate *(uncommon)* .......... 14000 gp
+- Reactive Mail (Major) .......... 14000 gp
+- Clockwork Shield (Greater) .......... 22000 gp
+- Hero's Plate (Greater) *(rare)* .......... 22500 gp
+- Indestructible Shield *(rare)* .......... 24000 gp
+- Linnorm's Sankeit *(uncommon)* .......... 22750 gp
+- Reflecting Shield *(uncommon)* .......... 18000 gp
+- Sapling Shield (True) .......... 20220 gp
+- Tales in Timber (Major) .......... 22000 gp
+- Warleader's Bulwark (Greater) .......... 22000 gp
+- Blade Byrnie (Major) .......... 35000 gp
+- Cloister Robe (Major) .......... 32000 gp
+- Energized Shield (Major) *(uncommon)* .......... 35000 gp
+- Juggernaut Plate *(rare)* .......... 35000 gp
+- Kraken's Guard *(uncommon)* .......... 40000 gp
+- Library Robes (True) .......... 36000 gp
+- Lion's Armor (Greater) .......... 30500 gp
+- Ouroboros Buckles *(rare)* .......... 40000 gp
+- Robe of the Archmagi (Greater) *(uncommon)* .......... 32000 gp
+- Starfall Shield *(uncommon)* .......... 23000 gp
+- Sturdy Shield (Supreme) .......... 40000 gp
+- Wisp Chain (True) .......... 35000 gp
+- Wovenwood Shield (True) *(uncommon)* .......... 34000 gp
+- Breastplate of the Mountain .......... 70000 gp
+- Elven Chain (High-Grade) *(uncommon)* .......... 16800 gp
+- Highhelm War Shield (Greater) *(uncommon)* .......... 55000 gp
+- Immortal Bastion .......... 70000 gp
+- Incendiary Plate .......... 70000 gp
+- Life-Saver Mail (Greater) .......... 52500 gp
+- Rebounding Breastplate .......... 70000 gp
+- Shield of the Unified Legion *(uncommon)* .......... 70000 gp
+- Staff-Storing Shield (True) .......... 55000 gp
+- Warding Escutcheon (Greater) .......... 55000 gp
+- Scale of Igroon *(rare)* .......... free
+
+Table: PF2eArmorSize
+[when]{$sz}=hamlet[do]hamlet[end][when]{$sz}=thorpe[do]thorpe[end][when]{$sz}=village[do]village[end][when]{$sz}=small_town[do]small_town[end][when]{$sz}=town[do]town[end][when]{$sz}=large_town[do]large_town[end][when]{$sz}=small_city[do]small_city[end][when]{$sz}=city[do]city[end][when]{$sz}=large_city[do]large_city[end][when]{$sz}=metropolis[do]metropolis[end]
+
+Table: PF2eArmor
+{!sz=={$1}}{!nsz==[@PF2eArmorSize]}[when]{$nsz}=hamlet[do][@PF2eArmor_hamlet][end][when]{$nsz}=thorpe[do][@PF2eArmor_thorpe][end][when]{$nsz}=village[do][@PF2eArmor_village][end][when]{$nsz}=small_town[do][@PF2eArmor_small_town][end][when]{$nsz}=town[do][@PF2eArmor_town][end][when]{$nsz}=large_town[do][@PF2eArmor_large_town][end][when]{$nsz}=small_city[do][@PF2eArmor_small_city][end][when]{$nsz}=city[do][@PF2eArmor_city][end][when]{$nsz}=large_city[do][@PF2eArmor_large_city][end][when]{$nsz}=metropolis[do][@PF2eArmor_metropolis][end][when]{$nsz}=[do][@PF2eArmor_town][end]

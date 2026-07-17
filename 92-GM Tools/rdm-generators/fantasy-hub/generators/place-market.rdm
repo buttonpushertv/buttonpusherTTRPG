@@ -1,0 +1,391 @@
+// place-market.rdm
+// =====================================================================
+// A PF2e open-air market / bazaar. Unlike the shops (one proprietor,
+// one inventory), a market is a COLLECTION of stalls. This rolls a
+// market square: an overall character, then several distinct stalls —
+// each with its own keeper, wares, and a line of flavour — plus the
+// life of the square and a hook.
+//
+// Reuses people.rdm (stall-keepers, a shopper) and prices.rdm. Each
+// stall is rendered COMPACTLY (one line of wares, not a full shop
+// block) so a 5-stall market stays readable.
+//
+// Entry table: [@Market]
+//
+// Inputs (optional, via API promptValues):
+//   prompt1 town  /  prompt2 shopType (display)  /  prompt3 shopName
+//
+// Prices in COPPER (1 gp = 100 cp); everyday-goods prices are mostly
+// approximations (markets sell mundane sundries PF2e doesn't tabulate
+// precisely), marked (~). Verify if exact prices matter.
+
+Title: Market
+Use: people.rdm
+Use: prices.rdm
+Use: place-counts.rdm
+
+Prompt: town {} an unnamed town
+Prompt: shopType {} market
+Prompt: shopName {}
+Prompt: size {} town
+
+Table: TF-Market
+Set: town={$prompt1}
+Set: passedName={$prompt3}
+Set: m=[@Markup]
+**[@MarketTitle]** *(market in {$town})*\n&
+**[@MarketCharacter]**\n&
+**Stalls today:**\n&
+[@StallList]\n&
+**The square:** [@MarketLife]\n&
+**A shopper:** [@MarketShopper]\n&
+**Worth noting:** [@MarketHook]
+
+Table: MarketTitle
+[when]{$passedName}=[do][@MarketName][else]{$passedName}[end]
+
+Table: MarketName
+The [@MarketNameWord] Market
+[@MarketNameWord] Square
+The [@MarketNameWord] Bazaar
+
+Table: MarketNameWord
+Market
+Old
+Merchant's
+Cornmeal
+Fishbone
+Highgate
+Riverside
+Copper
+Lantern
+Saltgate
+
+Table: MarketCharacter
+A bustling weekly market drawing folk from the surrounding farms
+A small daily market of a dozen regular stalls
+A sprawling, chaotic bazaar where you can find almost anything
+A tired market past its prime, half the stalls empty
+A festival market, livelier and pricier than usual
+A morning market that will be packed up by noon
+
+// Roll 3-5 distinct stalls. Each StallEntry picks a stall TYPE, then
+// renders that type's keeper + wares compactly. We don't dedupe types
+// (two food stalls is realistic), but the wares within each are rolled
+// fresh so even repeats differ.
+Table: StallList
+{!n=={[@MarketStallCount with {$prompt4}]}}[@{$n} StallEntry]
+
+Table: StallEntry
+- [@StallByTier with {$prompt4}]\n&
+
+// Stall selection by settlement size. Composition SHIFTS with size, not
+// just count: a hamlet market is staples — produce, food, livestock,
+// herbs — while a city market keeps those but adds cloth, trinkets, and
+// genuinely exotic stalls (spices, foreign textiles, curiosities) that a
+// small settlement's trade routes would never bring in. Pools are
+// cumulative: each larger tier includes everything smaller tiers offer.
+//
+// Implementation mirrors the item-banding dispatchers: capture the size
+// param, normalise it (echo known / empty for unknown), then a FLAT
+// [when] chain on the normalised value picks the tier's pool. Unknown or
+// blank size falls back to the 'town' tier.
+Table: StallByTier
+{!msz=={$1}}{!mtier==[@MarketTier]}[when]{$mtier}=small[do][@StallSmall][end][when]{$mtier}=mid[do][@StallMid][end][when]{$mtier}=large[do][@StallLarge][end][when]{$mtier}=[do][@StallMid][end]
+
+// Collapse the nine size tiers into three market "composition bands".
+Table: MarketTier
+{!t=={$1}}[when]{$t}=hamlet[do]small[end][when]{$t}=thorpe[do]small[end][when]{$t}=village[do]small[end][when]{$t}=small_town[do]small[end][when]{$t}=town[do]mid[end][when]{$t}=large_town[do]mid[end][when]{$t}=small_city[do]mid[end][when]{$t}=city[do]large[end][when]{$t}=large_city[do]large[end][when]{$t}=metropolis[do]large[end]
+
+// SMALL (hamlet–small_town): staples only. What a local farming
+// community actually trades — food, produce, livestock, herbs, and the
+// most basic everyday goods. No imported luxuries.
+Table: StallSmall
+[@ProduceStall]
+[@ProduceStall]
+[@ProduceStall]
+[@FoodStall]
+[@FoodStall]
+[@LivestockStall]
+[@LivestockStall]
+[@HerbStall]
+[@GoodsStall]
+
+// MID (town–small_city): the staples, plus settled crafts and small
+// luxuries now that there's a wider customer base — cloth and trinkets
+// appear, and oddities begin to show (rarely).
+Table: StallMid
+[@ProduceStall]
+[@ProduceStall]
+[@FoodStall]
+[@FoodStall]
+[@LivestockStall]
+[@HerbStall]
+[@GoodsStall]
+[@GoodsStall]
+[@ClothStall]
+[@ClothStall]
+[@TrinketStall]
+[@OddityStall]
+
+// LARGE (city–metropolis): a true crossroads market. Everything above,
+// weighted toward the goods that distinguish a city — cloth, trinkets,
+// and exotic stalls (spice traders, foreign textiles, curiosity-sellers)
+// that only a place on real trade routes could sustain. Staples are
+// still present (a city still eats) but no longer dominate.
+Table: StallLarge
+[@ProduceStall]
+[@FoodStall]
+[@FoodStall]
+[@HerbStall]
+[@GoodsStall]
+[@ClothStall]
+[@ClothStall]
+[@TrinketStall]
+[@TrinketStall]
+[@OddityStall]
+[@OddityStall]
+[@SpiceStall]
+[@SpiceStall]
+[@ExoticClothStall]
+[@CuriosityStall]
+
+// Backward-compatible alias: anything still calling [@Stall] gets the
+// mid-tier pool (the old default range).
+Table: Stall
+[@StallMid]
+
+// --- Produce: fruit, veg, grain ---
+Table: ProduceStall
+**[@FamilyName]'s produce:** [@ProduceWare] at [@PricedAs with [@CheapCopper]] the [@ProduceUnit] — [@StallFlavour]
+
+Table: ProduceWare
+crisp autumn apples
+muddy turnips and parsnips
+fat orange pumpkins
+fresh greens and herbs
+sacks of barley and oats
+honey still in the comb
+strings of dried mushrooms
+the season's first cherries
+
+Table: ProduceUnit
+basket
+sack
+bundle
+dozen
+pound
+
+// --- Prepared food: eat-now market fare ---
+Table: FoodStall
+**[@FamilyName]'s hot food:** [@FoodWare] for [@PricedAs with [@CheapCopper]] — [@StallFlavour]
+
+Table: FoodWare
+skewers of spiced grilled meat
+hand pies, meat or apple
+fried river fish in paper
+sweet honeyed pastries
+bowls of thick bean stew
+roasted nuts by the scoop
+flatbread hot off the stone
+
+// --- Cloth & clothing ---
+Table: ClothStall
+**[@FamilyName]'s cloth:** [@ClothWare] at [@PricedAs with [@MidCopper]] — [@StallFlavour]
+
+Table: ClothWare
+bolts of undyed wool
+brightly dyed linen
+second-hand cloaks and coats
+sturdy work gloves and aprons
+embroidered ribbon and trim
+felted hats against the weather
+
+// --- General goods: pots, tools, rope ---
+Table: GoodsStall
+**[@FamilyName]'s sundries:** [@GoodsWare] for [@PricedAs with [@MidCopper]] — [@StallFlavour]
+
+Table: GoodsWare
+clay pots and crockery
+coils of hempen rope
+iron nails and small tools
+tallow candles by the bundle
+wooden bowls and spoons
+oil lamps and flint
+
+// --- Herbs & remedies (folk, not alchemy) ---
+Table: HerbStall
+**[@FamilyName]'s remedies:** [@HerbWare] at [@PricedAs with [@CheapCopper]] — [@StallFlavour]
+
+Table: HerbWare
+bundles of dried medicinal herbs
+fragrant incense and oils
+charms "guaranteed" against ill luck
+teas for sleep, nerves, and aches
+salves in little clay pots
+sachets of cooking spices
+
+// --- Livestock & small animals ---
+Table: LivestockStall
+**[@FamilyName]'s livestock:** [@LivestockWare] for [@PricedAs with [@LivestockCopper]] each — [@StallFlavour]
+
+Table: LivestockWare
+clucking hens and a proud rooster
+a pen of muddy piglets
+goats with knowing eyes
+ducks and geese
+caged songbirds
+a litter of working pups
+
+// --- Trinkets: cheap jewellery, curios ---
+Table: TrinketStall
+**[@FamilyName]'s trinkets:** [@TrinketWare] from [@PricedAs with [@MidCopper]] — [@StallFlavour]
+
+Table: TrinketWare
+polished river-stone beads
+cheap tin rings and brooches
+carved wooden animals
+painted clay whistles
+ribbons, buttons, and bric-a-brac
+"lucky" coins from far-off lands
+
+// --- Oddity: the hook-bearing rare stall ---
+Table: OddityStall
+**[@FamilyName]'s curiosities:** [@OddityWare] — [@OddityFlavour]
+
+Table: OddityWare
+a table of "genuine relics" of dubious origin
+maps to places that may or may not exist
+old books and scrolls in unfamiliar scripts
+taxidermied creatures, some unsettlingly wrong
+foreign spices and goods from distant lands
+a single locked chest the seller won't open
+
+Table: OddityFlavour
+the seller's prices change depending on how interested you look
+they claim each piece has a story, and tell it whether you ask or not
+they watch the crowd more than they watch their wares
+everything's cheap, which is itself suspicious
+they only deal in trade, not coin
+they pack up the moment a town guard wanders near
+
+// --- Exotic stalls: city-tier only (see StallLarge). These are the
+// goods that only reach a settlement on real trade routes. ---
+
+// Spice trader — the classic mark of a market plugged into long-distance
+// trade. Priced higher than staples.
+Table: SpiceStall
+**[@FamilyName]'s spices:** [@SpiceWare] from [@PricedAs with [@HighCopper]] — [@ExoticFlavour]
+
+Table: SpiceWare
+pepper, cinnamon, and clove by the measured spoonful
+saffron threads weighed against tiny brass weights
+dried chillies strung in fierce red garlands
+fragrant resins and incense in waxed paper
+peppercorns "from the far east, on my honour"
+a locked cabinet of the truly costly spices
+
+// Foreign textiles — silks and dyed cloth from elsewhere, distinct from
+// the everyday ClothStall.
+Table: ExoticClothStall
+**[@FamilyName]'s fine cloth:** [@ExoticClothWare] from [@PricedAs with [@HighCopper]] — [@ExoticFlavour]
+
+Table: ExoticClothWare
+bolts of shimmering imported silk
+cloth dyed in colours the local weavers can't make
+patterned weaves in unfamiliar foreign styles
+fur and felt from far northern traders
+embroidered hangings depicting distant cities
+lace so fine it's sold by the hand-span
+
+// Curiosity-seller — the upmarket cousin of the oddity stall; genuine
+// (or genuine-seeming) wonders rather than dubious junk.
+Table: CuriosityStall
+**[@FamilyName]'s curiosities:** [@CuriosityWare] from [@PricedAs with [@HighCopper]] — [@ExoticFlavour]
+
+Table: CuriosityWare
+delicate clockwork toys that actually work
+glass beads and lenses that bend the light
+instruments of brass and polished horn
+carved ivory and lacquered boxes
+caged songbirds in bright foreign plumage
+a perfumer's tray of tiny stoppered vials
+
+// Flavour shared by the exotic stalls — emphasises distance and rarity.
+Table: ExoticFlavour
+the goods are real, and the prices say so
+a small crowd has gathered just to look
+the trader speaks with an accent no one here can place
+each piece comes with a tale of where it travelled from
+they deal politely but won't haggle far
+half the town has never seen wares like these
+
+// Higher price band for exotic / imported goods.
+Table: HighCopper
+80
+120
+180
+250
+400
+
+// Generic stall flavour, shared by the mundane stalls.
+Table: StallFlavour
+the keeper haggles cheerfully and never quite means their first price
+business is brisk and the line is growing
+the keeper is half-asleep behind the stall
+samples are free and pressed on every passerby
+a hand-painted sign promises "best in town"
+the keeper undercuts the stall beside them, loudly
+
+// Price helpers (copper) for market goods. (~) throughout — everyday
+// market prices, adjust to taste.
+Table: CheapCopper
+2
+3
+5
+8
+10
+
+Table: MidCopper
+15
+25
+40
+60
+100
+
+Table: LivestockCopper
+50
+100
+200
+300
+
+Table: MarketLife
+a town crier competes with the stall-keepers for attention
+children weave through the crowd, one of them lifting purses
+a minstrel plays for thrown coins near the well
+a heated argument over a price draws a small ring of onlookers
+guards make a slow circuit, eyeing the oddity stalls
+a farmer's cart has overturned, spilling cabbages everywhere
+
+Table: MarketShopper
+{!sh==[@PersonName]}{!sanc==[@Ancestry]}{$sh}, a [@PersonDesc] {$sanc}, [@ShopperDoing]
+
+Table: ShopperDoing
+filling a basket with the week's provisions methodically
+haggling at three stalls at once and enjoying it
+clearly looking for one specific thing and not finding it
+trailed by servants carrying their many purchases
+pocketing a sample when they think no one's looking
+asking unusual questions at the oddity stall
+
+Table: MarketHook
+one stall sells goods bearing a noble house's mark — and shouldn't
+a vendor is quietly passing sealed notes with certain customers
+the same beggar has watched the square's east gate all morning
+prices on a staple have suddenly doubled and no one will say why
+a stall that was here yesterday is gone, its spot pointedly avoided
+a child keeps trying to sell a item far too fine for their rags
+
+// Standalone name roll (collision-proof, for note titles etc.).
+Table: TF-MarketName
+[@MarketName]

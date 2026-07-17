@@ -1,0 +1,144 @@
+// place-undertaker.rdm
+// =====================================================================
+// An undertaker, mortuary, or graveyard — the death trades. Quietly
+// one of the most hook-rich locations in any settlement: bodies pass
+// through, grief runs high, and not everything that's buried stays
+// that way. Handled with the matter-of-fact dignity the trade itself
+// shows; the horror is in the hooks, not in dwelling on the dead.
+//
+// Entry table: [@TF-Undertaker]
+//
+// Inputs (optional, via API promptValues):
+//   prompt1 town  /  prompt2 shopType (display)  /  prompt3 shopName
+//
+// Reuses people.rdm + prices.rdm. Funeral service prices in COPPER
+// (1 gp = 100 cp), suggestions marked (~).
+
+Title: Undertaker
+Use: people.rdm
+Use: prices.rdm
+
+Prompt: town {} an unnamed town
+Prompt: shopType {} undertaker
+Prompt: shopName {}
+Prompt: keeperName {}
+Prompt: keeperRace {}
+Prompt: keeperGender {}
+Prompt: keeperAge {}
+Prompt: keeperDesc {}
+
+Table: TF-Undertaker
+Set: town={$prompt1}
+Set: passedName={$prompt3}
+Set: m=[@Markup]
+Set: keeper=[when]{$keeperName}=[do][@PersonName][else]{$keeperName}[end]
+Set: kanc=[when]{$keeperRace}=[do][@Ancestry][else]{$keeperRace}[end]
+Set: keeperdsc=[when]{$keeperDesc}=[do][@PersonDesc][else]{$keeperDesc}[end]
+**[@UndertakerTitle]** *(undertaker in {$town})*\n&
+**[@UndertakerKind], [@UndertakerMood]**\n&
+**The undertaker:** {$keeper}, a {$keeperdsc} {$kanc} who is [@UndertakerManner].\n&
+**Services** ({$markupReason}):\n&
+[@FuneralServices]\n&
+**The grounds:** [@Grounds]\n&
+**Presently in their care:** [@InTheirCare]\n&
+**{$keeper} says:** "[@UndertakerQuote]"\n&
+**Something unquiet:** [@UndertakerHook]
+
+Table: UndertakerTitle
+[when]{$passedName}=[do][@UndertakerName][else]{$passedName}[end]
+
+Table: UndertakerName
+[@FamilyName] & Sons, Undertakers
+The [@UndertakerNameWord] Rest
+[@UndertakerNameWord] Mortuary
+The [@UndertakerNameWord] Yard
+
+Table: UndertakerNameWord
+Quiet
+Last
+Eternal
+Willow
+Stillwater
+Gravestone
+Final
+Ashfield
+
+Table: UndertakerKind
+A respectable undertaker's with a chapel of rest
+A grim little mortuary attached to the town graveyard
+A family business spanning generations of the same trade
+The temple's burial service, run by lay brothers
+A gravedigger's cottage at the edge of the cemetery
+A grand funerary house serving the town's wealthy dead
+
+Table: UndertakerMood
+calm and orderly, everything in its solemn place
+busy — there's been more work than usual lately
+hushed, a service just concluded
+shabby and underfunded, doing its best
+unsettlingly cheerful, the keeper at peace with the work
+tense, with a dispute over a recent burial unresolved
+
+Table: UndertakerManner
+gentle, practiced, and genuinely kind to the grieving
+brisk and businesslike, treating death as simple trade
+quietly mournful, as if carrying every loss personally
+darkly humorous, the gallows wit of long familiarity
+formal and dignified to the point of coldness
+warm, talkative, and far too comfortable with corpses
+
+Table: FuneralServices
+- A simple burial ............. (~) [@PricedAs with 100]\n&
+- A dignified funeral & plot .. (~) [@PricedAs with 500]\n&
+- Preparation of the body ..... (~) [@PricedAs with 50]\n&
+- A fine coffin, made to order  (~) [@PricedAs with 300]\n&
+- [@SpecialFuneralService]
+
+Table: SpecialFuneralService
+Cremation, where custom allows ............ (~) [@PricedAs with 150]
+Tending and upkeep of a grave (per year) .. (~) [@PricedAs with 50]
+A pauper's burial, quietly subsidised ..... freely given
+Discreet handling of an awkward death ..... (~) [@PricedAs with 800]
+Exhumation, with the proper permissions ... (~) [@PricedAs with 400]
+
+Table: Grounds
+a tidy churchyard with neat rows and trimmed yews
+an old, crowded cemetery running out of room
+a walled graveyard with a locked night-gate
+sprawling grounds with a grand mausoleum at the heart
+a humble plot, half-reclaimed by grass and bramble
+catacombs beneath, where the older dead are shelved
+
+Table: InTheirCare
+a respected elder of the town, lying in state before the funeral
+a stranger found dead with no name and no one to claim them
+several victims of the same recent misfortune, awaiting answers
+a body the watch asked them to hold and ask no questions about
+a child's small coffin that has the whole house subdued
+an empty casket awaiting an occupant everyone knows is coming
+nothing at present — a rare and welcome quiet
+
+Table: UndertakerQuote
+Everyone comes to me eventually. No need to hurry it.
+We treat the dead as we'd wish to be treated. With care, and discretion.
+Grief I can ease. Coin I still must ask for. Forgive me.
+The dead keep no secrets from me. The living should remember that.
+A good death is a tidy one. I do what I can for the rest.
+Ask what you came to ask. I've buried stranger questions than yours.
+Quiet, please. Some here have earned their rest.
+
+Table: UndertakerHook
+a body has gone missing from the mortuary overnight
+the undertaker has noticed the same strange mark on three recent corpses
+a freshly dug grave was found already empty this morning
+the dead in one quarter of the yard will not stay settled, the keeper says
+someone has been paying the undertaker to bury caskets unopened and unasked
+a will read at a recent funeral has set the heirs at each other's throats
+the undertaker recognised a "stranger's" corpse as someone supposedly alive
+grave-robbers have been at work, and the keeper knows more than they admit
+a mourner returns each night to a grave that bears no name
+the most recent burial was done in unseemly haste, and the keeper was paid to forget
+
+// Standalone name roll (collision-proof, for note titles etc.).
+Table: TF-UndertakerName
+[@UndertakerName]

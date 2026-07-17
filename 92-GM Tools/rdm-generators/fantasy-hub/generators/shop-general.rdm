@@ -1,0 +1,155 @@
+// shop-general.rdm
+// =====================================================================
+// A PF2e general goods store: adventuring sundries, basic gear,
+// consumables. Reuses people.rdm (owner) and customers.rdm
+// (browser), and prices.rdm (coin math + markup).
+//
+// Entry table:
+//   [@GeneralShop]  - a full shop block: name, owner, markup note,
+//                     inventory with prices, a line of dialogue, and
+//                     a current customer.
+//
+// PF2e prices are in COPPER internally (1 gp = 100 cp). Prices below
+// are from the Core Rulebook gear tables where I'm confident; a few
+// are reasonable approximations. VERIFY against your sources if exact
+// prices matter at your table — flagged inline with (~).
+
+Title: General Shop
+Use: people.rdm
+Use: customers.rdm
+Use: prices.rdm
+Use: stock-count.rdm
+Use: items-general.rdm
+
+// Optional inputs from a caller (e.g. Town Forge via the API's
+// promptValues). All have defaults so the file still works standalone
+// in a codeblock. Read positionally as {$prompt1..3}; copied into
+// named vars in the entry table for readability.
+//   prompt1 town      - the town this shop sits in
+//   prompt2 shopType  - caller's type word (display only; unused here)
+//   prompt3 shopName  - a name to use instead of rolling one ("" = roll)
+Prompt: town {} an unnamed town
+Prompt: shopType {} general store
+Prompt: shopName {}
+Prompt: size {} town
+Prompt: keeperName {}
+Prompt: keeperRace {}
+Prompt: keeperGender {}
+Prompt: keeperAge {}
+Prompt: keeperDesc {}
+Prompt: custName {}
+Prompt: custRace {}
+Prompt: custDesc {}
+
+Table: TF-GeneralShop
+Set: town={$prompt1}
+Set: passedName={$prompt3}
+Set: m=[@Markup]
+Set: owner=[when]{$prompt5}=[do][@PersonName][else]{$prompt5}[end]
+Set: oanc=[when]{$prompt6}=[do][@Ancestry][else]{$prompt6}[end]
+Set: odesc=[when]{$prompt9}=[do][@PersonDesc][else]{$prompt9}[end]
+**[@GeneralTitle]** *(general goods in {$town})*\n&
+**Proprietor:** {$owner}, a {$odesc} {$oanc} who is [@Personality].\n&
+**Prices:** {$markupReason}.\n&
+**Stock:**\n&
+[@GeneralStock]\n&
+**{$owner} says:** "[@GeneralQuote]"\n&
+**Also here:** [@Customer]
+
+// Use the caller-supplied name if one was passed, else roll one.
+// {$passedName} is the prompt3 value; empty string means "none given".
+// Name is prefixed (GeneralTitle) to avoid collision across shop files.
+Table: GeneralTitle
+[when]{$passedName}=[do][@GeneralShopName][else]{$passedName}[end]
+
+// Shop names — general store flavour.
+// Composed shop names: several patterns drawing on themed word pools,
+// yielding hundreds of coherent "general goods" names. A few evocative
+// fixed names are kept in the mix too.
+Table: GeneralShopName
+The [@GenAdj] [@GenNoun]
+The [@GenAdj] [@GenNoun]
+[@GenNoun] & [@GenNoun]
+[@FamilyName]'s [@GenNoun]
+[@FamilyName]'s [@GenNoun]
+The [@GenNoun] & [@GenNoun]
+[@GenNoun] and [@GenNoun]
+The [@GenFixed]
+
+Table: GenAdj
+Wandering
+Laden
+Ready
+Full
+Humble
+Honest
+Crossroads
+Roadside
+Weary
+Trusty
+Sundry
+Wayfarer's
+Thrifty
+Brimming
+Old
+Well-Stocked
+Frugal
+Dusty
+Homely
+Far-Travelled
+
+Table: GenNoun
+Pack
+Satchel
+Larder
+Pantry
+Cart
+Wagon
+Mule
+Hearth
+Pedlar
+Sundries
+Provisions
+Knapsack
+Barrel
+Crate
+Trading Post
+General Store
+Emporium
+Bazaar
+Stores
+Outfitter
+
+Table: GenFixed
+Tinker's Rest
+Laden Mule
+Wandering Pack
+Crossroads Provisioner
+Everything Under One Roof
+Odds & Ends
+Hearth & Road Supplies
+Travelled Pedlar
+
+// Build a stock list of 6-8 items. The rep count goes INSIDE the
+// brackets: [@{count} Table]. We roll the count once into {n},
+// then ask for that many ItemLine rolls.
+Table: GeneralStock
+{!n=={[@StockCount with {$prompt4}]}}[@{$n} GeneralItemLine]
+
+Table: GeneralItemLine
+[@GeneralItem]\n
+
+// Each item: set a base copper price, then name + priced display.
+// PF2e Core gear prices (copper). (~) = approximate, verify.
+Table: GeneralItem
+[@PF2eGear with {$prompt4}]
+
+Table: GeneralQuote
+Everything an adventurer needs and nothing they don't.
+Mind the step on your way in, and the prices on your way out.
+If I don't have it, you didn't need it.
+Fresh rations in this morning — won't last the week.
+You break it browsing, you've bought it.
+Rope, torches, rations — that's the holy trinity, friend.
+Cheaper by the dozen, if you're stocking up.
+I'll not haggle, but I'll throw in a candle for a smile.

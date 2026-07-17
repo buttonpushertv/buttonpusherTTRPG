@@ -1,0 +1,160 @@
+// place-manor.rdm
+// =====================================================================
+// A noble's (or wealthy family's) manor house — a household and its
+// intrigues. Smaller and more domestic than a castle: no garrison or
+// siege-works, but plenty of social machinery — the family, the
+// staff, the standing, and the quiet dramas of a great house.
+//
+// Entry table: [@TF-Manor]
+//
+// Inputs (optional, via API promptValues):
+//   prompt1 town  /  prompt2 shopType (display)  /  prompt3 shopName
+//
+// Reuses people.rdm. No prices.
+
+Title: Manor
+Use: people.rdm
+
+Prompt: town {} an unnamed town
+Prompt: shopType {} manor
+Prompt: shopName {}
+Prompt: keeperName {}
+Prompt: keeperRace {}
+Prompt: keeperGender {}
+Prompt: keeperAge {}
+Prompt: keeperDesc {}
+
+Table: TF-Manor
+Set: town={$prompt1}
+Set: passedName={$prompt3}
+Set: noble=[when]{$keeperName}=[do][@PersonName][else]{$keeperName}[end]
+Set: nanc=[when]{$keeperRace}=[do][@Ancestry][else]{$keeperRace}[end]
+Set: nobledsc=[when]{$keeperDesc}=[do][@PersonDesc][else]{$keeperDesc}[end]
+Set: house=[@FamilyName]
+**[@ManorTitle]** *(manor in {$town})*\n&
+**[@ManorKind], [@HouseStanding]**\n&
+**Head of the house:** [@NobleTitle] {$noble} of House {$house}, a {$nobledsc} {$nanc} who is [@NobleManner].\n&
+**The household:** [@ManorHousehold]\n&
+**Also in residence:** [@FamilyMember]\n&
+**The talk of the house:** [@HouseTalk]\n&
+**{$noble} says:** "[@NobleQuote]"\n&
+**Behind closed doors:** [@ManorHook]
+
+Table: ManorTitle
+[when]{$passedName}=[do][@ManorName][else]{$passedName}[end]
+
+Table: ManorName
+{$house} House
+{$house} Manor
+The [@ManorNameWord] House
+[@ManorNameWord] Hall
+
+Table: ManorNameWord
+Ash
+Rose
+Grey
+Elm
+Willow
+Hart
+Laurel
+Crane
+
+Table: ManorKind
+A grand townhouse at the best address in town
+A handsome country manor amid its own gardens and tenant farms
+An old family seat, dignified but visibly fraying at the edges
+A newly built mansion flaunting freshly minted wealth
+A discreet, comfortable house that hides its true wealth well
+A sprawling manor far too large for the family that rattles around it
+
+Table: HouseStanding
+an old and respected house with deep roots in the region
+a rising house whose wealth has outpaced its reputation
+a house in quiet decline, trading on a name that still opens doors
+the most powerful family in town, and unsubtle about it
+a house disgraced a generation ago and clawing its way back
+a house whose fortune rests on a single fragile arrangement
+
+Table: NobleTitle
+Lord
+Lady
+Baron
+Baroness
+Sir
+Dame
+the Honourable
+Master
+Mistress
+
+Table: NobleManner
+gracious and shrewd, missing nothing behind the courtesy
+haughty and exacting, with little patience for inferiors
+charming, generous, and quietly drowning in debt
+warm and genuinely decent, a rarity among their peers
+cold, calculating, and always three moves ahead
+nervous and overwhelmed, lately thrust into a role they didn't want
+jovial in company and ruthless in private
+
+Table: ManorHousehold
+{!n=={6+2d6}}some {$n} staff under [@PersonName], [@StaffStyle]
+
+Table: StaffStyle
+a steward who has served the house for decades and knows every secret
+a new steward still earning the staff's trust
+a household quietly loyal beyond mere wages
+servants who gossip freely the moment the family's backs are turned
+a skeleton staff stretched thin to keep up appearances
+staff divided in loyalty between rival members of the family
+
+Table: FamilyMember
+{!fm==[@PersonName]}{!fanc==[@Ancestry]}{$fm}, a [@PersonDesc] {$fanc} — [@FamilyRole], [@FamilyTrouble]
+
+Table: FamilyRole
+the heir, groomed for a position they may not want
+a younger sibling resentful of being overlooked
+the matriarch (or patriarch), officially retired and actually in charge
+a cousin staying "temporarily" for far too long
+a spouse who married in and is still treated as an outsider
+a ward or hostage of another house, watched and courted
+the family disappointment, kept quietly out of sight
+
+Table: FamilyTrouble
+deep in a romance the family would never approve
+gambling away money the house cannot spare
+secretly negotiating with a rival house
+hiding a scandal that could ruin them all
+the only one who sees the danger the family is ignoring
+plotting, with patience, to take control of the house
+
+Table: HouseTalk
+an advantageous marriage is being arranged, willing or not
+a grand feast or ball is days away and the house is in uproar
+an inheritance dispute simmers beneath every polite dinner
+the family's finances are far worse than anyone admits aloud
+a long-absent relative has written to announce their return
+a servant was dismissed suddenly, and no one will say why
+
+Table: NobleQuote
+You'll forgive the formality. A house like ours is always watched.
+State your business plainly; I've little time for those who don't.
+We reward loyalty handsomely. We remember the other kind, too.
+Whatever you've heard about this family, the truth is more interesting.
+I am the soul of hospitality — until I have reason not to be.
+Discretion is the only currency that never loses its value here.
+Everyone wants something from a house like this. What's your price?
+
+Table: ManorHook
+the head of the house is quietly hiring outsiders for a delicate matter
+a family heirloom has been stolen, and they suspect one of their own
+the noble is being blackmailed over a secret that would ruin the house
+two branches of the family are at war over the succession
+a guest in the house is not who they claim to be
+the house's wealth comes from a source that must never come to light
+someone in the household has been poisoning the noble, slowly
+the family is sheltering a fugitive of high birth
+a marriage alliance is collapsing and threatening to take allies with it
+the noble has made a bargain with a dangerous party and can't pay the price
+
+// Standalone manor name (sets the house surname first).
+Table: TF-ManorName
+{!house==[@FamilyName]}[@ManorName]

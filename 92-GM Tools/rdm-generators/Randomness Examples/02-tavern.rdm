@@ -1,0 +1,43 @@
+// 02-tavern.rdm
+// =================================================================
+// Tables can call other tables. This is the most important pattern
+// in the language — small tables compose into rich output.
+//
+// The [@TableName] syntax rolls another table and inserts the result.
+// You can chain them, mix with literal text, and nest as deep as
+// you like.
+//
+// Try it:  [@TavernName]  in a codeblock.
+// =================================================================
+
+Table: TavernName
+The [@Adjective] [@Noun]
+
+// Notice how the main table above contains literal text ("The ")
+// plus two sub-table calls. The output will be e.g.
+//   "The Crooked Goblin"
+//   "The Silver Drake"
+
+Table: Adjective
+Crooked
+Silver
+Sleeping
+Drunken
+Roaring
+Wandering
+Golden
+Black
+Lonely
+Merry
+
+Table: Noun
+Goblin
+Drake
+Lion
+Stag
+Knight
+Boar
+Mermaid
+Anchor
+Crown
+Crow

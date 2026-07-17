@@ -1,0 +1,413 @@
+// place-guild.rdm
+// =====================================================================
+// A guild, organised by CATEGORY (craft, religious, military, criminal,
+// arcane, civic). Each category spans a moral SLANT — good, murky, or
+// dark — so a military order might be a noble knightly company OR a
+// brutal mercenary outfit, a religious guild devout OR fanatical, a
+// merchant guild fair OR a predatory cartel. The slant can be rolled
+// at random or biased by the caller.
+//
+// Content line: guilds can be genuinely villainous (assassins, rackets,
+// fanatics) — that's the interesting part — but kept within ordinary
+// fantasy-RPG bounds. Nothing here sexualises, targets real-world
+// groups, or depicts harm beyond standard adventure-game fare.
+//
+// === Entry tables ===
+//   [@TF-Guild]          - random category, random slant
+//   [@TF-GuildCraft]     - craft / trade guild
+//   [@TF-GuildReligious] - religious order
+//   [@TF-GuildMilitary]  - military order / company
+//   [@TF-GuildCriminal]  - criminal syndicate
+//   [@TF-GuildArcane]    - arcane / scholarly guild
+//   [@TF-GuildCivic]     - civic / professional guild
+//
+// === Inputs (optional, via API promptValues) ===
+//   prompt1 town    - the town
+//   prompt2 shopType- caller's type word (display only)
+//   prompt3 shopName- a name to use instead of rolling one ("" = roll)
+//   prompt4 slant   - "good" | "murky" | "dark" | "any" (default any)
+//
+// Reuses people.rdm + prices.rdm. Dues/fees/cuts in COPPER
+// (1 gp = 100 cp), flavourful suggestions marked (~).
+//
+// DESIGN: category is set first (sets {cat} + a category label and a
+// trade). slant resolves to a tier (good/murky/dark) via ResolveTier,
+// biased by prompt4. The standing, the master's bent, the services'
+// tone, and the quote are then chosen by tier so the guild reads
+// coherently. The hook pool is shared and always a little murky.
+
+Title: Guild
+Use: people.rdm
+Use: prices.rdm
+Use: place-counts.rdm
+
+Prompt: town {} an unnamed town
+Prompt: shopType {} guild
+Prompt: shopName {}
+Prompt: slant {} any
+Prompt: size {} town
+Prompt: keeperName {}
+Prompt: keeperRace {}
+Prompt: keeperGender {}
+Prompt: keeperAge {}
+Prompt: keeperDesc {}
+
+// === Entry points ===
+
+Table: TF-Guild
+{!cat==[@RandomCategory]}[@GuildBody]
+
+Table: RandomCategory
+craft
+religious
+military
+criminal
+arcane
+civic
+
+Table: TF-GuildCraft
+{!cat=='craft'}[@GuildBody]
+
+Table: TF-GuildReligious
+{!cat=='religious'}[@GuildBody]
+
+Table: TF-GuildMilitary
+{!cat=='military'}[@GuildBody]
+
+Table: TF-GuildCriminal
+{!cat=='criminal'}[@GuildBody]
+
+Table: TF-GuildArcane
+{!cat=='arcane'}[@GuildBody]
+
+Table: TF-GuildCivic
+{!cat=='civic'}[@GuildBody]
+
+// === Shared body ===
+// Resolves tier from slant, sets town/name/trade, renders the block.
+Table: GuildBody
+Set: town={$prompt1}
+Set: passedName={$prompt3}
+Set: slant={$prompt4}
+Set: tier=[@ResolveTier]
+Set: gm=[when]{$keeperName}=[do][@PersonName][else]{$keeperName}[end]
+Set: ganc=[when]{$keeperRace}=[do][@Ancestry][else]{$keeperRace}[end]
+Set: gmdsc=[when]{$keeperDesc}=[do][@PersonDesc][else]{$keeperDesc}[end]
+Set: trade=[@CategoryTrade]
+Set: catlabel=[@CategoryLabel]
+**[@GuildTitle]** *({$catlabel} guild in {$town})*\n&
+**[@Standing]**\n&
+**[@MasterLine]:** {$gm}, a {$gmdsc} {$ganc} who is [@Personality].\n&
+**Membership:** [@Membership]\n&
+**What they offer:**\n&
+[@Services]\n&
+**To outsiders:** [@Outsiders]\n&
+**{$gm} says:** "[@GuildQuote]"\n&
+**Beneath the surface:** [@GuildHook]
+
+// === Tier resolution (slant bias) ===
+Table: ResolveTier
+[when]{$slant}=good[do]good[end][when]{$slant}=murky[do]murky[end][when]{$slant}=dark[do]dark[end][when]{$slant}=any[do][@RandomTier][end]
+
+// Random tier, weighted toward the middle: good and dark are the
+// extremes, murky the common reality.
+Table: RandomTier
+good
+murky
+murky
+dark
+
+// === Category label + trade (set together via {cat}) ===
+// CategoryLabel just echoes a friendly word for the parenthetical.
+Table: CategoryLabel
+[when]{$cat}=craft[do]craft[end][when]{$cat}=religious[do]religious[end][when]{$cat}=military[do]military[end][when]{$cat}=criminal[do]criminal[end][when]{$cat}=arcane[do]arcane[end][when]{$cat}=civic[do]civic[end]
+
+// Trade dispatches on {cat} to the right pool.
+Table: CategoryTrade
+[when]{$cat}=craft[do][@CraftTrade][end][when]{$cat}=religious[do][@ReligiousTrade][end][when]{$cat}=military[do][@MilitaryTrade][end][when]{$cat}=criminal[do][@CriminalTrade][end][when]{$cat}=arcane[do][@ArcaneTrade][end][when]{$cat}=civic[do][@CivicTrade][end]
+
+Table: CraftTrade
+Smiths
+Masons
+Weavers
+Carpenters
+Goldsmiths
+Brewers
+Glassblowers
+Stonemasons
+Tanners
+Potters
+
+Table: ReligiousTrade
+the Dawn
+the Eternal Flame
+the Silent Vigil
+the Open Hand
+the Last Rites
+the Sacred Grove
+the Iron Faith
+the Twelve
+
+Table: MilitaryTrade
+the Iron Shields
+the Grey Wardens
+the Free Companies
+the Broken Lance
+the Vigilant
+the Red Banners
+the Old Guard
+the Wall
+
+Table: CriminalTrade
+Thieves
+Smugglers
+Fences
+Cutpurses
+Fixers
+Racketeers
+Forgers
+Burglars
+
+Table: ArcaneTrade
+Mages
+the Arcane Orders
+the Lantern-Keepers
+Scholars
+the Veiled Eye
+Diviners
+the Inkwrights
+Enchanters
+
+Table: CivicTrade
+Physicians
+Scribes
+Explorers
+Cartographers
+Heralds
+Apothecaries
+Engineers
+the Open Road
+
+// === Names — built from the trade, tier-neutral ===
+Table: GuildTitle
+[when]{$passedName}=[do][@GuildName][else]{$passedName}[end]
+
+Table: GuildName
+[when]{$cat}=criminal[do][@CriminalGuildNameForm][end][when not]{$cat}=criminal[do][@FormalGuildName][end]
+
+// Formal guilds wear their trade openly.
+Table: FormalGuildName
+The Guild of {$trade}
+The {$trade} Guild
+The Order of {$trade}
+The Company of {$trade}
+
+// Criminal guilds don't advertise. A cant / street name, with the
+// occasional ironic "respectable" front.
+Table: CriminalGuildNameForm
+[@CrimStreetName]
+[@CrimStreetName]
+The [@CrimFrontWord] {$trade}
+
+Table: CrimStreetName
+the Shadowed Hand
+the Coin-Clippers
+the Black Ledger
+the Whispering Court
+the Velvet Knife
+the Cellar Men
+the Tidewater Crew
+the Ashen Brotherhood
+the Quiet Room
+the Crooked Mile
+the Broken Coin
+the Night Market
+
+Table: CrimFrontWord
+Friendly
+Charitable
+Benevolent
+Honest
+Quiet
+Worshipful
+
+// === Standing — dispatched by tier ===
+Table: Standing
+[when]{$tier}=good[do][@StandingGood][end][when]{$tier}=murky[do][@StandingMurky][end][when]{$tier}=dark[do][@StandingDark][end]
+
+Table: StandingGood
+A respected guild that genuinely serves the town and its trade
+A principled order known for fairness and good works
+A well-run guild that has earned its standing honestly
+A guild whose members are proud, skilled, and decent folk
+
+Table: StandingMurky
+A respectable guild with a few open secrets it would rather you forget
+A guild whose ideals and practices have quietly drifted apart
+A powerful guild that bends rules it pretends to uphold
+A guild caught between honest members and ambitious ones
+
+Table: StandingDark
+A guild rotten at the top, whatever its members believe
+A feared organisation that rules its sphere through intimidation
+A guild that has abandoned its founding purpose for profit and power
+A predatory outfit wearing the trappings of legitimacy
+
+// === Master line label (varies by category + tier) ===
+Table: MasterLine
+[when]{$cat}=criminal[do]Boss[end][when not]{$cat}=criminal[do][@MasterTitle][end]
+
+Table: MasterTitle
+Guildmaster
+Master of the Order
+Warden
+High Artisan
+Grand Master
+Guild Elder
+
+// === Membership (by category) ===
+Table: Membership
+{!n=={[@GuildMemberCount with {$prompt5}]}}[@MembershipLine]
+
+Table: MembershipLine
+[when]{$cat}=criminal[do]around {$n} in the crew, [@MemberTraitDark][end][when not]{$cat}=criminal[do]some {$n} members, [@MemberTrait][end]
+
+Table: MemberTrait
+disciplined, skilled, and proud of the guild's name
+divided between an old guard and ambitious younger members
+loyal and well-trained, if a little insular
+stretched thin by more demand than they can meet
+a tight community that fiercely protects its own
+
+Table: MemberTraitDark
+hardened operators bound by a strict code
+a rough mix of cutthroats and desperate hangers-on
+mostly eyes and ears, with a few enforcers
+loyal to the boss through fear more than love
+
+// === Services — dispatched by tier (good/murky vs dark) ===
+Table: Services
+[when]{$tier}=dark[do][@ServicesDark][end][when not]{$tier}=dark[do][@ServicesLegit][end]
+
+Table: ServicesLegit
+- Membership dues (per year) ..... (~) [@PricedAs with 1000]\n&
+- Commissioned work & expertise .. at fair guild rates\n&
+- Training and advancement ....... by merit and arrangement\n&
+- [@ExtraServiceLegit]
+
+Table: ExtraServiceLegit
+Arbitration of disputes in their field ..... (~) [@PricedAs with 500]
+Vouching for a member to clients ........... a guild privilege
+Access to the guild's contacts and stores .. members only
+Charitable relief for members in need ...... freely given
+
+Table: ServicesDark
+- "Membership" dues, strongly encouraged .. (~) [@PricedAs with 800]\n&
+- Protection, "for your safety" ........... (~) [@PricedAs with 500]\n&
+- Discreet work, no questions asked ....... price by arrangement\n&
+- [@ExtraServiceDark]
+
+Table: ExtraServiceDark
+Information — they hear everything ......... (~) [@PricedAs with 300]
+Looking the other way ...................... a favour owed
+Forged papers, seals, and credentials ...... (~) [@PricedAs with 1000]
+Making a rival's life difficult ............ don't ask the price
+
+// === Outsider stance — by tier ===
+Table: Outsiders
+[when]{$tier}=good[do]welcoming to honest custom and fair dealing[end][when]{$tier}=murky[do]correct and courteous, though you sense calculation behind it[end][when]{$tier}=dark[do]watchful and quietly menacing toward anyone nosing about[end]
+
+// === Quotes — by tier ===
+Table: GuildQuote
+[when]{$tier}=good[do][@QuoteGood][end][when]{$tier}=murky[do][@QuoteMurky][end][when]{$tier}=dark[do][@QuoteDark][end]
+
+Table: QuoteGood
+Our name is our bond, and the guild's name is worth keeping.
+We look after our own, and we deal fairly with the rest.
+Standards exist for a reason. We hold to ours.
+Join us in good faith and you'll never want for work.
+
+Table: QuoteMurky
+The rules are the rules. How they're applied is... a conversation.
+Everyone benefits, so long as everyone understands the arrangement.
+We're respectable. Respectability has its price, and its uses.
+Ask no awkward questions and you'll find us very accommodating.
+
+Table: QuoteDark
+Nothing happens in our sphere that we do not permit.
+Pay your respects on time and we'll never have a problem.
+We keep a kind of order. Be glad it's us and not worse.
+Everyone owes someone. The art is in owing us.
+
+// === Shared hook pool — always a little murky ===
+Table: GuildHook
+the guild is quietly buying up or crushing every rival in town
+a ledger has gone missing that would ruin someone powerful if read
+the guildmaster is being blackmailed and hiding it from the membership
+two factions inside the guild are one incident from open war
+the guild's respectable face hides a very different operation beneath
+the guild secretly funds the town's poor — or launders coin through them
+a member died and the guild closed ranks before the watch arrived
+the guild is in debt to a dangerous party the dues can't cover
+an outsider was promised membership in exchange for a "small favour"
+the guild holds a secret that gives it leverage over the town council
+the guildmaster's chosen heir is unfit, and members are choosing sides
+something the guild buried years ago has just resurfaced
+
+// Standalone guild name (rolls a random category's trade first).
+Table: TF-GuildName
+{!cat==[@RandomCategory]}{!trade==[@CategoryTrade]}[@GuildName]
+
+// Per-category standalone names, for naming notes. Each sets its
+// category + a trade, then builds the right name form (criminal gets
+// a street-name; the rest a formal guild name).
+Table: TF-GuildNameCraft
+{!cat=='craft'}{!trade==[@CraftTrade]}[@GuildName]
+
+Table: TF-GuildNameReligious
+{!cat=='religious'}{!trade==[@ReligiousTrade]}[@GuildName]
+
+Table: TF-GuildNameMilitary
+{!cat=='military'}{!trade==[@MilitaryTrade]}[@GuildName]
+
+Table: TF-GuildNameCriminal
+{!cat=='criminal'}{!trade==[@CriminalTrade]}[@GuildName]
+
+Table: TF-GuildNameArcane
+{!cat=='arcane'}{!trade==[@ArcaneTrade]}[@GuildName]
+
+Table: TF-GuildNameCivic
+{!cat=='civic'}{!trade==[@CivicTrade]}[@GuildName]
+
+// Friendly alias: a thieves'-guild-style name (criminal cant name).
+Table: TF-ThievesGuildName
+{!cat=='criminal'}{!trade==[@CriminalTrade]}[@GuildName]
+
+// === Category + name picker for the Town Forge naming hook ===
+// Mirrors TF-ShopPick. Rolls ONE category, sets its trade, builds a
+// name appropriate to that category (criminal gets a cant/street-name;
+// others a formal guild name), and emits machine-parsable data:
+// "category|name". The hook splits on "|" for { subtype, name }.
+// Correlated by construction: the name is built from the chosen
+// category's trade. The body template then rolls TF-GuildByType with
+// the same category (and an optional slant) for a coherent guild.
+//
+// Example outputs:
+//   criminal|the Velvet Knife
+//   craft|The Guild of Smiths
+//   religious|The Order of the Dawn
+Table: TF-GuildPick
+{!cat==[@RandomCategory]}{!trade==[@CategoryTrade]}{$cat}|[@GuildName]
+
+// === Type-locked guild for the body roll ===
+// Rolls a guild of the category named by the shopType prompt (prompt2),
+// so a note that already knows it's a "criminal" guild gets a criminal
+// body — name, category, and content all coherent. Slant (prompt4) is
+// honoured as normal. Unknown/blank categories fall back to a random
+// guild, so the note is never empty.
+Table: TF-GuildByType
+{!gcat==[@ValidatedCategory]}[when]{$gcat}=craft[do][@TF-GuildCraft][end][when]{$gcat}=religious[do][@TF-GuildReligious][end][when]{$gcat}=military[do][@TF-GuildMilitary][end][when]{$gcat}=criminal[do][@TF-GuildCriminal][end][when]{$gcat}=arcane[do][@TF-GuildArcane][end][when]{$gcat}=civic[do][@TF-GuildCivic][end][when]{$gcat}=[do][@TF-Guild][end]
+
+// Echoes prompt2 if it is a known category, else empty (-> fallback).
+Table: ValidatedCategory
+[when]{$prompt2}=craft[do]craft[end][when]{$prompt2}=religious[do]religious[end][when]{$prompt2}=military[do]military[end][when]{$prompt2}=criminal[do]criminal[end][when]{$prompt2}=arcane[do]arcane[end][when]{$prompt2}=civic[do]civic[end]

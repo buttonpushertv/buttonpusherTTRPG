@@ -1,0 +1,4617 @@
+// PF2e Weapons (banded)
+// =====================================================================
+// Real PF2e items (Foundry pf2e system data), banded by settlement
+// size on TWO axes: level cap AND rarity. Small settlements stock
+// common items only; towns add uncommon; cities add rare. Non-common
+// items are tagged, e.g. "Frost Brand *(uncommon)*". ORC/OGL content
+// reused with attribution — see ATTRIBUTION.
+//
+// Entry: [@PF2eWeapon with <size>]  where <size> is a Town Forge tier:
+//   hamlet | village | small_town | town | large_town | small_city |
+//   city | large_city | metropolis  (thorpe = hamlet alias)
+// A bare [@PF2eWeaponAny] rolls from the full list (all levels/rarities).
+
+Title: PF2e Weapons (banded)
+
+Table: PF2eWeapon_hamlet
+- Adze .......... 1 gp
+- Arbalest .......... 8 gp
+- Atlatl .......... 2 sp
+- Bastard Sword .......... 4 gp
+- Battle Axe .......... 1 gp
+- Battle Saddle .......... 6 gp
+- Bayonet .......... 2 sp
+- Bec de Corbin .......... 4 gp
+- Blowgun .......... 1 sp
+- Bo Staff .......... 2 sp
+- Bola .......... 5 sp
+- Broadspear .......... 2 gp
+- Chakram .......... 5 sp
+- Club .......... free
+- Corset Knife .......... 3 sp
+- Crossbow .......... 3 gp
+- Cruuk .......... 4 sp
+- Dagger .......... 2 sp
+- Dancer's Spear .......... 3 gp
+- Dart .......... 1 cp
+- Earthbreaker .......... 4 gp
+- Exquisite Sword Cane Sheath .......... free
+- Falcata .......... 3 gp
+- Falchion .......... 3 gp
+- Fauchard .......... 14 sp
+- Flail .......... 8 sp
+- Flyssa .......... 1 gp
+- Forked Bipod .......... 3 sp
+- Frying Pan .......... 1 sp
+- Gada .......... 1 gp
+- Gaff .......... 1 gp
+- Gakgung .......... 2 gp
+- Gauntlet .......... 2 sp
+- Gauntlet Bow .......... 9 gp
+- Glaive .......... 1 gp
+- Greataxe .......... 2 gp
+- Greatclub .......... 1 gp
+- Greatpick .......... 1 gp
+- Greatsword .......... 2 gp
+- Griffon Cane .......... 1 gp
+- Guisarme .......... 2 gp
+- Halberd .......... 2 gp
+- Hand Adze .......... 5 sp
+- Hand Crossbow .......... 3 gp
+- Harpoon .......... 1 gp
+- Hatchet .......... 4 sp
+- Heavy Crossbow .......... 4 gp
+- Javelin .......... 1 sp
+- Knuckle Duster .......... 3 sp
+- Kris .......... 7 sp
+- Lance .......... 1 gp
+- Light Hammer .......... 3 sp
+- Light Mace .......... 4 sp
+- Light Pick .......... 4 sp
+- Liuyedao .......... 3 gp
+- Long Hammer .......... 5 gp
+- Longbow .......... 6 gp
+- Longspear .......... 5 sp
+- Longsword .......... 1 gp
+- Mace .......... 1 gp
+- Machete .......... 7 sp
+- Main-Gauche .......... 5 sp
+- Maul .......... 3 gp
+- Meteor Hammer .......... 3 gp
+- Monkey's Fist .......... 1 sp
+- Morningstar .......... 1 gp
+- Nodachi .......... 6 gp
+- Panabas .......... 1 gp
+- Pick .......... 7 sp
+- Probing Cane .......... 5 sp
+- Ranseur .......... 2 gp
+- Rapier .......... 2 gp
+- Reinforced Stock .......... 2 sp
+- Reinforced Wheels .......... 5 sp
+- Rotary Bow .......... 8 gp
+- Sap .......... 1 sp
+- Scimitar .......... 1 gp
+- Scizore .......... 9 sp
+- Scourge .......... 1 sp
+- Scythe .......... 2 gp
+- Shield Boss .......... 5 sp
+- Shield Bow .......... 5 gp
+- Shield Spikes .......... 5 sp
+- Shortbow .......... 3 gp
+- Shortsword .......... 9 sp
+- Sickle .......... 2 sp
+- Sling .......... free
+- Spear .......... 1 sp
+- Spiked Gauntlet .......... 3 sp
+- Staff .......... free
+- Starknife .......... 2 gp
+- Sword Cane .......... 5 gp
+- Talwar .......... 2 gp
+- Throwing Knife .......... 3 sp
+- Trident .......... 1 gp
+- War Flail .......... 2 gp
+- War Razor .......... 3 sp
+- Warhammer .......... 1 gp
+- Wheel Blades .......... 5 sp
+- Wheel Spikes .......... 5 sp
+- Whip .......... 1 sp
+- Acid Flask (Lesser) .......... 3 gp
+- Alchemical Gauntlet .......... 10 gp
+- Alchemist's Fire (Lesser) .......... 3 gp
+- Blasting Stone (Lesser) .......... 3 gp
+- Blight Bomb (Lesser) .......... 3 gp
+- Bottled Lightning (Lesser) .......... 3 gp
+- Composite Longbow .......... 20 gp
+- Composite Shortbow .......... 14 gp
+- Dread Ampoule (Lesser) .......... 3 gp
+- Frost Vial (Lesser) .......... 3 gp
+- Ghost Charge (Lesser) .......... 3 gp
+- Glue Bomb (Lesser) .......... 3 gp
+- Holy Water .......... 3 gp
+- Necrotic Bomb (Lesser) .......... 3 gp
+- Phalanx Piercer .......... 10 gp
+- Skunk Bomb (Lesser) .......... 4 gp
+- Sticky Algae Bomb (Lesser) .......... 4 gp
+- Sukgung .......... 7 gp
+- Unholy Water .......... 3 gp
+- Versatile Vial .......... free
+
+Table: PF2eWeapon_thorpe
+- Adze .......... 1 gp
+- Arbalest .......... 8 gp
+- Atlatl .......... 2 sp
+- Bastard Sword .......... 4 gp
+- Battle Axe .......... 1 gp
+- Battle Saddle .......... 6 gp
+- Bayonet .......... 2 sp
+- Bec de Corbin .......... 4 gp
+- Blowgun .......... 1 sp
+- Bo Staff .......... 2 sp
+- Bola .......... 5 sp
+- Broadspear .......... 2 gp
+- Chakram .......... 5 sp
+- Club .......... free
+- Corset Knife .......... 3 sp
+- Crossbow .......... 3 gp
+- Cruuk .......... 4 sp
+- Dagger .......... 2 sp
+- Dancer's Spear .......... 3 gp
+- Dart .......... 1 cp
+- Earthbreaker .......... 4 gp
+- Exquisite Sword Cane Sheath .......... free
+- Falcata .......... 3 gp
+- Falchion .......... 3 gp
+- Fauchard .......... 14 sp
+- Flail .......... 8 sp
+- Flyssa .......... 1 gp
+- Forked Bipod .......... 3 sp
+- Frying Pan .......... 1 sp
+- Gada .......... 1 gp
+- Gaff .......... 1 gp
+- Gakgung .......... 2 gp
+- Gauntlet .......... 2 sp
+- Gauntlet Bow .......... 9 gp
+- Glaive .......... 1 gp
+- Greataxe .......... 2 gp
+- Greatclub .......... 1 gp
+- Greatpick .......... 1 gp
+- Greatsword .......... 2 gp
+- Griffon Cane .......... 1 gp
+- Guisarme .......... 2 gp
+- Halberd .......... 2 gp
+- Hand Adze .......... 5 sp
+- Hand Crossbow .......... 3 gp
+- Harpoon .......... 1 gp
+- Hatchet .......... 4 sp
+- Heavy Crossbow .......... 4 gp
+- Javelin .......... 1 sp
+- Knuckle Duster .......... 3 sp
+- Kris .......... 7 sp
+- Lance .......... 1 gp
+- Light Hammer .......... 3 sp
+- Light Mace .......... 4 sp
+- Light Pick .......... 4 sp
+- Liuyedao .......... 3 gp
+- Long Hammer .......... 5 gp
+- Longbow .......... 6 gp
+- Longspear .......... 5 sp
+- Longsword .......... 1 gp
+- Mace .......... 1 gp
+- Machete .......... 7 sp
+- Main-Gauche .......... 5 sp
+- Maul .......... 3 gp
+- Meteor Hammer .......... 3 gp
+- Monkey's Fist .......... 1 sp
+- Morningstar .......... 1 gp
+- Nodachi .......... 6 gp
+- Panabas .......... 1 gp
+- Pick .......... 7 sp
+- Probing Cane .......... 5 sp
+- Ranseur .......... 2 gp
+- Rapier .......... 2 gp
+- Reinforced Stock .......... 2 sp
+- Reinforced Wheels .......... 5 sp
+- Rotary Bow .......... 8 gp
+- Sap .......... 1 sp
+- Scimitar .......... 1 gp
+- Scizore .......... 9 sp
+- Scourge .......... 1 sp
+- Scythe .......... 2 gp
+- Shield Boss .......... 5 sp
+- Shield Bow .......... 5 gp
+- Shield Spikes .......... 5 sp
+- Shortbow .......... 3 gp
+- Shortsword .......... 9 sp
+- Sickle .......... 2 sp
+- Sling .......... free
+- Spear .......... 1 sp
+- Spiked Gauntlet .......... 3 sp
+- Staff .......... free
+- Starknife .......... 2 gp
+- Sword Cane .......... 5 gp
+- Talwar .......... 2 gp
+- Throwing Knife .......... 3 sp
+- Trident .......... 1 gp
+- War Flail .......... 2 gp
+- War Razor .......... 3 sp
+- Warhammer .......... 1 gp
+- Wheel Blades .......... 5 sp
+- Wheel Spikes .......... 5 sp
+- Whip .......... 1 sp
+- Acid Flask (Lesser) .......... 3 gp
+- Alchemical Gauntlet .......... 10 gp
+- Alchemist's Fire (Lesser) .......... 3 gp
+- Blasting Stone (Lesser) .......... 3 gp
+- Blight Bomb (Lesser) .......... 3 gp
+- Bottled Lightning (Lesser) .......... 3 gp
+- Composite Longbow .......... 20 gp
+- Composite Shortbow .......... 14 gp
+- Dread Ampoule (Lesser) .......... 3 gp
+- Frost Vial (Lesser) .......... 3 gp
+- Ghost Charge (Lesser) .......... 3 gp
+- Glue Bomb (Lesser) .......... 3 gp
+- Holy Water .......... 3 gp
+- Necrotic Bomb (Lesser) .......... 3 gp
+- Phalanx Piercer .......... 10 gp
+- Skunk Bomb (Lesser) .......... 4 gp
+- Sticky Algae Bomb (Lesser) .......... 4 gp
+- Sukgung .......... 7 gp
+- Unholy Water .......... 3 gp
+- Versatile Vial .......... free
+
+Table: PF2eWeapon_village
+- Adze .......... 1 gp
+- Arbalest .......... 8 gp
+- Atlatl .......... 2 sp
+- Bastard Sword .......... 4 gp
+- Battle Axe .......... 1 gp
+- Battle Saddle .......... 6 gp
+- Bayonet .......... 2 sp
+- Bec de Corbin .......... 4 gp
+- Blowgun .......... 1 sp
+- Bo Staff .......... 2 sp
+- Bola .......... 5 sp
+- Broadspear .......... 2 gp
+- Chakram .......... 5 sp
+- Club .......... free
+- Corset Knife .......... 3 sp
+- Crossbow .......... 3 gp
+- Cruuk .......... 4 sp
+- Dagger .......... 2 sp
+- Dancer's Spear .......... 3 gp
+- Dart .......... 1 cp
+- Earthbreaker .......... 4 gp
+- Exquisite Sword Cane Sheath .......... free
+- Falcata .......... 3 gp
+- Falchion .......... 3 gp
+- Fauchard .......... 14 sp
+- Flail .......... 8 sp
+- Flyssa .......... 1 gp
+- Forked Bipod .......... 3 sp
+- Frying Pan .......... 1 sp
+- Gada .......... 1 gp
+- Gaff .......... 1 gp
+- Gakgung .......... 2 gp
+- Gauntlet .......... 2 sp
+- Gauntlet Bow .......... 9 gp
+- Glaive .......... 1 gp
+- Greataxe .......... 2 gp
+- Greatclub .......... 1 gp
+- Greatpick .......... 1 gp
+- Greatsword .......... 2 gp
+- Griffon Cane .......... 1 gp
+- Guisarme .......... 2 gp
+- Halberd .......... 2 gp
+- Hand Adze .......... 5 sp
+- Hand Crossbow .......... 3 gp
+- Harpoon .......... 1 gp
+- Hatchet .......... 4 sp
+- Heavy Crossbow .......... 4 gp
+- Javelin .......... 1 sp
+- Knuckle Duster .......... 3 sp
+- Kris .......... 7 sp
+- Lance .......... 1 gp
+- Light Hammer .......... 3 sp
+- Light Mace .......... 4 sp
+- Light Pick .......... 4 sp
+- Liuyedao .......... 3 gp
+- Long Hammer .......... 5 gp
+- Longbow .......... 6 gp
+- Longspear .......... 5 sp
+- Longsword .......... 1 gp
+- Mace .......... 1 gp
+- Machete .......... 7 sp
+- Main-Gauche .......... 5 sp
+- Maul .......... 3 gp
+- Meteor Hammer .......... 3 gp
+- Monkey's Fist .......... 1 sp
+- Morningstar .......... 1 gp
+- Nodachi .......... 6 gp
+- Panabas .......... 1 gp
+- Pick .......... 7 sp
+- Probing Cane .......... 5 sp
+- Ranseur .......... 2 gp
+- Rapier .......... 2 gp
+- Reinforced Stock .......... 2 sp
+- Reinforced Wheels .......... 5 sp
+- Rotary Bow .......... 8 gp
+- Sap .......... 1 sp
+- Scimitar .......... 1 gp
+- Scizore .......... 9 sp
+- Scourge .......... 1 sp
+- Scythe .......... 2 gp
+- Shield Boss .......... 5 sp
+- Shield Bow .......... 5 gp
+- Shield Spikes .......... 5 sp
+- Shortbow .......... 3 gp
+- Shortsword .......... 9 sp
+- Sickle .......... 2 sp
+- Sling .......... free
+- Spear .......... 1 sp
+- Spiked Gauntlet .......... 3 sp
+- Staff .......... free
+- Starknife .......... 2 gp
+- Sword Cane .......... 5 gp
+- Talwar .......... 2 gp
+- Throwing Knife .......... 3 sp
+- Trident .......... 1 gp
+- War Flail .......... 2 gp
+- War Razor .......... 3 sp
+- Warhammer .......... 1 gp
+- Wheel Blades .......... 5 sp
+- Wheel Spikes .......... 5 sp
+- Whip .......... 1 sp
+- Acid Flask (Lesser) .......... 3 gp
+- Alchemical Gauntlet .......... 10 gp
+- Alchemist's Fire (Lesser) .......... 3 gp
+- Blasting Stone (Lesser) .......... 3 gp
+- Blight Bomb (Lesser) .......... 3 gp
+- Bottled Lightning (Lesser) .......... 3 gp
+- Composite Longbow .......... 20 gp
+- Composite Shortbow .......... 14 gp
+- Dread Ampoule (Lesser) .......... 3 gp
+- Frost Vial (Lesser) .......... 3 gp
+- Ghost Charge (Lesser) .......... 3 gp
+- Glue Bomb (Lesser) .......... 3 gp
+- Holy Water .......... 3 gp
+- Necrotic Bomb (Lesser) .......... 3 gp
+- Phalanx Piercer .......... 10 gp
+- Skunk Bomb (Lesser) .......... 4 gp
+- Sticky Algae Bomb (Lesser) .......... 4 gp
+- Sukgung .......... 7 gp
+- Unholy Water .......... 3 gp
+- Versatile Vial .......... free
+- Bottled Sunlight (Lesser) .......... 7 gp
+- Handwraps of Mighty Blows .......... 35 gp
+
+Table: PF2eWeapon_small_town
+- Adze .......... 1 gp
+- Arbalest .......... 8 gp
+- Atlatl .......... 2 sp
+- Bastard Sword .......... 4 gp
+- Battle Axe .......... 1 gp
+- Battle Saddle .......... 6 gp
+- Bayonet .......... 2 sp
+- Bec de Corbin .......... 4 gp
+- Blowgun .......... 1 sp
+- Bo Staff .......... 2 sp
+- Bola .......... 5 sp
+- Broadspear .......... 2 gp
+- Chakram .......... 5 sp
+- Club .......... free
+- Corset Knife .......... 3 sp
+- Crossbow .......... 3 gp
+- Cruuk .......... 4 sp
+- Dagger .......... 2 sp
+- Dancer's Spear .......... 3 gp
+- Dart .......... 1 cp
+- Earthbreaker .......... 4 gp
+- Exquisite Sword Cane Sheath .......... free
+- Falcata .......... 3 gp
+- Falchion .......... 3 gp
+- Fauchard .......... 14 sp
+- Flail .......... 8 sp
+- Flyssa .......... 1 gp
+- Forked Bipod .......... 3 sp
+- Frying Pan .......... 1 sp
+- Gada .......... 1 gp
+- Gaff .......... 1 gp
+- Gakgung .......... 2 gp
+- Gauntlet .......... 2 sp
+- Gauntlet Bow .......... 9 gp
+- Glaive .......... 1 gp
+- Greataxe .......... 2 gp
+- Greatclub .......... 1 gp
+- Greatpick .......... 1 gp
+- Greatsword .......... 2 gp
+- Griffon Cane .......... 1 gp
+- Guisarme .......... 2 gp
+- Halberd .......... 2 gp
+- Hand Adze .......... 5 sp
+- Hand Crossbow .......... 3 gp
+- Harpoon .......... 1 gp
+- Hatchet .......... 4 sp
+- Heavy Crossbow .......... 4 gp
+- Javelin .......... 1 sp
+- Knuckle Duster .......... 3 sp
+- Kris .......... 7 sp
+- Lance .......... 1 gp
+- Light Hammer .......... 3 sp
+- Light Mace .......... 4 sp
+- Light Pick .......... 4 sp
+- Liuyedao .......... 3 gp
+- Long Hammer .......... 5 gp
+- Longbow .......... 6 gp
+- Longspear .......... 5 sp
+- Longsword .......... 1 gp
+- Mace .......... 1 gp
+- Machete .......... 7 sp
+- Main-Gauche .......... 5 sp
+- Maul .......... 3 gp
+- Meteor Hammer .......... 3 gp
+- Monkey's Fist .......... 1 sp
+- Morningstar .......... 1 gp
+- Nodachi .......... 6 gp
+- Panabas .......... 1 gp
+- Pick .......... 7 sp
+- Probing Cane .......... 5 sp
+- Ranseur .......... 2 gp
+- Rapier .......... 2 gp
+- Reinforced Stock .......... 2 sp
+- Reinforced Wheels .......... 5 sp
+- Rotary Bow .......... 8 gp
+- Sap .......... 1 sp
+- Scimitar .......... 1 gp
+- Scizore .......... 9 sp
+- Scourge .......... 1 sp
+- Scythe .......... 2 gp
+- Shield Boss .......... 5 sp
+- Shield Bow .......... 5 gp
+- Shield Spikes .......... 5 sp
+- Shortbow .......... 3 gp
+- Shortsword .......... 9 sp
+- Sickle .......... 2 sp
+- Sling .......... free
+- Spear .......... 1 sp
+- Spiked Gauntlet .......... 3 sp
+- Staff .......... free
+- Starknife .......... 2 gp
+- Sword Cane .......... 5 gp
+- Talwar .......... 2 gp
+- Throwing Knife .......... 3 sp
+- Trident .......... 1 gp
+- War Flail .......... 2 gp
+- War Razor .......... 3 sp
+- Warhammer .......... 1 gp
+- Wheel Blades .......... 5 sp
+- Wheel Spikes .......... 5 sp
+- Whip .......... 1 sp
+- Acid Flask (Lesser) .......... 3 gp
+- Alchemical Gauntlet .......... 10 gp
+- Alchemist's Fire (Lesser) .......... 3 gp
+- Blasting Stone (Lesser) .......... 3 gp
+- Blight Bomb (Lesser) .......... 3 gp
+- Bottled Lightning (Lesser) .......... 3 gp
+- Composite Longbow .......... 20 gp
+- Composite Shortbow .......... 14 gp
+- Dread Ampoule (Lesser) .......... 3 gp
+- Frost Vial (Lesser) .......... 3 gp
+- Ghost Charge (Lesser) .......... 3 gp
+- Glue Bomb (Lesser) .......... 3 gp
+- Holy Water .......... 3 gp
+- Necrotic Bomb (Lesser) .......... 3 gp
+- Phalanx Piercer .......... 10 gp
+- Skunk Bomb (Lesser) .......... 4 gp
+- Sticky Algae Bomb (Lesser) .......... 4 gp
+- Sukgung .......... 7 gp
+- Unholy Water .......... 3 gp
+- Versatile Vial .......... free
+- Bottled Sunlight (Lesser) .......... 7 gp
+- Handwraps of Mighty Blows .......... 35 gp
+- Acid Flask (Moderate) .......... 10 gp
+- Alchemist's Fire (Moderate) .......... 10 gp
+- Blasting Stone (Moderate) .......... 10 gp
+- Blight Bomb (Moderate) .......... 10 gp
+- Bottled Lightning (Moderate) .......... 10 gp
+- Dread Ampoule (Moderate) .......... 10 gp
+- Fighter's Fork .......... 50 gp
+- Frost Vial (Moderate) .......... 10 gp
+- Ghast Stiletto .......... 60 gp
+- Ghost Charge (Moderate) .......... 10 gp
+- Ghoul Stiletto .......... 60 gp
+- Glacier Hammer .......... 60 gp
+- Glue Bomb (Moderate) .......... 10 gp
+- Hunter's Bow .......... 60 gp
+- Necrotic Bomb (Moderate) .......... 10 gp
+- Retribution Axe .......... 60 gp
+- Skunk Bomb (Moderate) .......... 12 gp
+- Smoking Sword .......... 60 gp
+- Sparkblade .......... 70 gp
+- Staff of Air .......... 60 gp
+- Staff of Earth .......... 60 gp
+- Staff of Fire .......... 60 gp
+- Staff of Water .......... 60 gp
+- Sticky Algae Bomb (Moderate) .......... 12 gp
+- Storm Hammer .......... 60 gp
+
+Table: PF2eWeapon_town
+- Adze .......... 1 gp
+- Air Repeater *(uncommon)* .......... 4 gp
+- Aklys *(uncommon)* .......... 5 gp
+- Alchemical Crossbow *(uncommon)* .......... 25 gp
+- Arbalest .......... 8 gp
+- Arquebus *(uncommon)* .......... 8 gp
+- Asp Coil *(uncommon)* .......... 10 gp
+- Atlatl .......... 2 sp
+- Bastard Sword .......... 4 gp
+- Battle Axe .......... 1 gp
+- Battle Lute *(uncommon)* .......... 7 gp
+- Battle Saddle .......... 6 gp
+- Bayonet .......... 2 sp
+- Bec de Corbin .......... 4 gp
+- Black Powder Knuckle Dusters *(uncommon)* .......... 8 gp
+- Bladed Diabolo *(uncommon)* .......... 2 gp
+- Bladed Gauntlet *(uncommon)* .......... 5 gp
+- Bladed Hoop *(uncommon)* .......... 25 sp
+- Bladed Scarf *(uncommon)* .......... 3 gp
+- Bladesweeper *(uncommon)* .......... 4 gp
+- Blowgun .......... 1 sp
+- Blunderbuss *(uncommon)* .......... 6 gp
+- Bo Staff .......... 2 sp
+- Boarding Axe *(uncommon)* .......... 1 gp
+- Bola .......... 5 sp
+- Boomerang *(uncommon)* .......... 2 sp
+- Bow Staff *(uncommon)* .......... 8 gp
+- Breaching Pike *(uncommon)* .......... 8 gp
+- Broadspear .......... 2 gp
+- Butchering Axe *(uncommon)* .......... 8 gp
+- Butterfly Sword *(uncommon)* .......... 2 gp
+- Buugeng *(uncommon)* .......... 4 gp
+- Cane Pistol *(uncommon)* .......... 8 gp
+- Capturing Spetum *(uncommon)* .......... 9 gp
+- Chain Sword *(uncommon)* .......... 6 gp
+- Chakram .......... 5 sp
+- Chakri *(uncommon)* .......... 2 sp
+- Chakri (Lost Omens) *(uncommon)* .......... 2 cp
+- Clan Dagger *(uncommon)* .......... 2 gp
+- Clan Pistol *(uncommon)* .......... 5 gp
+- Claw Blade *(uncommon)* .......... 2 gp
+- Club .......... free
+- Coat Pistol *(uncommon)* .......... 5 gp
+- Combat Fishing Pole *(uncommon)* .......... 4 sp
+- Combat Lure *(uncommon)* .......... 2 gp
+- Corset Knife .......... 3 sp
+- Crescent Cross *(uncommon)* .......... 4 gp
+- Crossbow .......... 3 gp
+- Cruuk .......... 4 sp
+- Dagger .......... 2 sp
+- Dagger Pistol *(uncommon)* .......... 8 gp
+- Daikyu *(uncommon)* .......... 8 gp
+- Dancer's Spear .......... 3 gp
+- Dandpatta *(uncommon)* .......... 8 sp
+- Dart .......... 1 cp
+- Dart Umbrella *(uncommon)* .......... 1 gp
+- Dawnsilver Tree *(uncommon)* .......... 7 gp
+- Dogslicer *(uncommon)* .......... 1 sp
+- Donchak *(uncommon)* .......... 4 gp
+- Double-Barreled Pistol *(uncommon)* .......... 6 gp
+- Dragon Mouth Pistol *(uncommon)* .......... 7 gp
+- Dueling Spear *(uncommon)* .......... 2 gp
+- Dwarven Dorn-Dergar *(uncommon)* .......... 8 gp
+- Dwarven War Axe *(uncommon)* .......... 3 gp
+- Earthbreaker .......... 4 gp
+- Elven Branched Spear *(uncommon)* .......... 3 gp
+- Elven Curve Blade *(uncommon)* .......... 4 gp
+- Exquisite Sword Cane Sheath .......... free
+- Falcata .......... 3 gp
+- Falchion .......... 3 gp
+- Fangwire *(uncommon)* .......... 4 gp
+- Fauchard .......... 14 sp
+- Feng Huo Lun *(uncommon)* .......... 2 gp
+- Fighting Fan *(uncommon)* .......... 11 sp
+- Fighting Oar *(uncommon)* .......... 5 sp
+- Fighting Stick *(uncommon)* .......... 5 sp
+- Filcher's Fork *(uncommon)* .......... 1 gp
+- Fire Lance *(uncommon)* .......... 3 gp
+- Fire Poi *(uncommon)* .......... 5 gp
+- Flail .......... 8 sp
+- Flingflenser *(uncommon)* .......... 5 gp
+- Flintlock Musket *(uncommon)* .......... 5 gp
+- Flintlock Pistol *(uncommon)* .......... 4 gp
+- Flyssa .......... 1 gp
+- Forked Bipod .......... 3 sp
+- Frying Pan .......... 1 sp
+- Gada .......... 1 gp
+- Gaff .......... 1 gp
+- Gakgung .......... 2 gp
+- Gauntlet .......... 2 sp
+- Gauntlet Bow .......... 9 gp
+- Gill Hook *(uncommon)* .......... 2 gp
+- Gladius *(uncommon)* .......... 1 gp
+- Glaive .......... 1 gp
+- Gnome Flickmace *(uncommon)* .......... 3 gp
+- Gnome Hooked Hammer *(uncommon)* .......... 2 gp
+- Greataxe .......... 2 gp
+- Greatclub .......... 1 gp
+- Greatpick .......... 1 gp
+- Greatsword .......... 2 gp
+- Griffon Cane .......... 1 gp
+- Guisarme .......... 2 gp
+- Halberd .......... 2 gp
+- Halfling Sling Staff *(uncommon)* .......... 5 gp
+- Hand Adze .......... 5 sp
+- Hand Cannon *(uncommon)* .......... 3 gp
+- Hand Crossbow .......... 3 gp
+- Harmona Gun *(uncommon)* .......... 8 gp
+- Harpoon .......... 1 gp
+- Hatchet .......... 4 sp
+- Heavy Crossbow .......... 4 gp
+- Hongali Hornbow *(uncommon)* .......... 11 gp
+- Hook Sword *(uncommon)* .......... 3 gp
+- Horsechopper *(uncommon)* .......... 9 sp
+- Injection Spear *(uncommon)* .......... 3 gp
+- Javelin .......... 1 sp
+- Jiu Huan Dao *(uncommon)* .......... 9 sp
+- Juggling Club *(uncommon)* .......... 1 sp
+- Kalis *(uncommon)* .......... 3 gp
+- Kama *(uncommon)* .......... 1 gp
+- Karambit *(uncommon)* .......... 2 gp
+- Katana *(uncommon)* .......... 2 gp
+- Katar *(uncommon)* .......... 3 sp
+- Kestros *(uncommon)* .......... 2 gp
+- Khakkhara *(uncommon)* .......... 2 gp
+- Khopesh *(uncommon)* .......... 2 gp
+- Knuckle Duster .......... 3 sp
+- Kris .......... 7 sp
+- Kukri *(uncommon)* .......... 6 sp
+- Kusarigama *(uncommon)* .......... 2 gp
+- Lance .......... 1 gp
+- Lancer *(uncommon)* .......... 8 gp
+- Leiomano *(uncommon)* .......... 2 gp
+- Light Hammer .......... 3 sp
+- Light Mace .......... 4 sp
+- Light Pick .......... 4 sp
+- Lion Scythe *(uncommon)* .......... 1 gp
+- Liuyedao .......... 3 gp
+- Long Air Repeater *(uncommon)* .......... 6 gp
+- Long Hammer .......... 5 gp
+- Longbow .......... 6 gp
+- Longspear .......... 5 sp
+- Longsword .......... 1 gp
+- Mace .......... 1 gp
+- Mace Multipistol *(uncommon)* .......... 13 gp
+- Machete .......... 7 sp
+- Macuahuitl *(uncommon)* .......... 3 gp
+- Main-Gauche .......... 5 sp
+- Mambele *(uncommon)* .......... 6 sp
+- Maul .......... 3 gp
+- Maul-spade *(uncommon)* .......... 6 gp
+- Meteor Hammer .......... 3 gp
+- Mikazuki *(uncommon)* .......... 8 gp
+- Monkey's Fist .......... 1 sp
+- Morningstar .......... 1 gp
+- Naginata *(uncommon)* .......... 3 gp
+- Nightstick *(uncommon)* .......... 1 gp
+- Nodachi .......... 6 gp
+- Nunchaku *(uncommon)* .......... 2 sp
+- Ogre Hook *(uncommon)* .......... 1 gp
+- Orc Knuckle Dagger *(uncommon)* .......... 7 sp
+- Orc Necksplitter *(uncommon)* .......... 2 gp
+- Orc Skewermaul *(uncommon)* .......... 2 gp
+- Palstave *(uncommon)* .......... 4 sp
+- Panabas .......... 1 gp
+- Pantograph Gauntlet *(uncommon)* .......... 2 gp
+- Pepperbox *(uncommon)* .......... 9 gp
+- Pick .......... 7 sp
+- Piercing Wind *(uncommon)* .......... 15 gp
+- Piranha Kiss *(uncommon)* .......... 4 sp
+- Poi *(uncommon)* .......... 2 sp
+- Probing Cane .......... 5 sp
+- Ranseur .......... 2 gp
+- Rapier .......... 2 gp
+- Rapier Pistol *(uncommon)* .......... 10 gp
+- Reinforced Stock .......... 2 sp
+- Reinforced Wheels .......... 5 sp
+- Rhoka Sword *(uncommon)* .......... 4 gp
+- Rope Dart *(uncommon)* .......... 1 gp
+- Rotary Bow .......... 8 gp
+- Sai *(uncommon)* .......... 6 sp
+- Sansetsukon *(uncommon)* .......... 2 gp
+- Sap .......... 1 sp
+- Sawtooth Saber *(uncommon)* .......... 5 gp
+- Scimitar .......... 1 gp
+- Scizore .......... 9 sp
+- Scorpion Whip *(uncommon)* .......... 5 sp
+- Scourge .......... 1 sp
+- Scythe .......... 2 gp
+- Shauth Blade *(uncommon)* .......... 2 gp
+- Shauth Lash *(uncommon)* .......... 8 gp
+- Shears *(uncommon)* .......... 5 sp
+- Shield Boss .......... 5 sp
+- Shield Bow .......... 5 gp
+- Shield Pistol *(uncommon)* .......... 6 gp
+- Shield Spikes .......... 5 sp
+- Shortbow .......... 3 gp
+- Shortsword .......... 9 sp
+- Shuan Ji *(uncommon)* .......... 3 gp
+- Shuriken *(uncommon)* .......... 1 cp
+- Sickle .......... 2 sp
+- Sickle-saber *(uncommon)* .......... 5 gp
+- Sling .......... free
+- Spear .......... 1 sp
+- Spiked Chain *(uncommon)* .......... 3 gp
+- Spiked Gauntlet .......... 3 sp
+- Spiral Rapier *(uncommon)* .......... 5 gp
+- Spirit Thresher *(uncommon)* .......... 2 gp
+- Spraysling *(uncommon)* .......... 1 gp
+- Staff .......... free
+- Starknife .......... 2 gp
+- Sun Sling *(uncommon)* .......... 3 gp
+- Sword Cane .......... 5 gp
+- Talwar .......... 2 gp
+- Tamchal Chakram *(uncommon)* .......... 5 gp
+- Taw Launcher *(uncommon)* .......... 10 gp
+- Tekko-Kagi *(uncommon)* .......... 2 sp
+- Temple Sword *(uncommon)* .......... 2 gp
+- Tengu Gale Blade *(uncommon)* .......... 4 gp
+- Tetsubo *(uncommon)* .......... 3 gp
+- Thorn Whip *(uncommon)* .......... 6 sp
+- Three-Section Naginata *(uncommon)* .......... 12 gp
+- Throwing Knife .......... 3 sp
+- Throwing Knife (Extinction Curse) *(uncommon)* .......... 3 sp
+- Thunder Sling *(uncommon)* .......... 5 gp
+- Thundermace *(uncommon)* .......... 2 sp
+- Tonfa *(uncommon)* .......... 1 sp
+- Tri-bladed Katar *(uncommon)* .......... 1 sp
+- Tricky Pick *(uncommon)* .......... 10 gp
+- Trident .......... 1 gp
+- Triggerbrand *(uncommon)* .......... 10 gp
+- Umbrella Injector *(uncommon)* .......... 4 gp
+- Urumi *(uncommon)* .......... 2 gp
+- Visap *(uncommon)* .......... 2 gp
+- Wakizashi *(uncommon)* .......... 1 gp
+- War Flail .......... 2 gp
+- War Gavel *(uncommon)* .......... 2 sp
+- War Javelin *(uncommon)* .......... 1 gp
+- War Lance *(uncommon)* .......... 4 gp
+- War Razor .......... 3 sp
+- Warhammer .......... 1 gp
+- Wheel Blades .......... 5 sp
+- Wheel Spikes .......... 5 sp
+- Whip .......... 1 sp
+- Whip Claw *(uncommon)* .......... 5 gp
+- Whipstaff *(uncommon)* .......... 3 gp
+- Wish Blade *(uncommon)* .......... 5 gp
+- Wish Knife *(uncommon)* .......... 2 gp
+- Wrecker *(uncommon)* .......... 8 gp
+- Wrist Launcher *(uncommon)* .......... 3 gp
+- Zhuazhi Bang *(uncommon)* .......... 1 gp
+- Zulfikar *(uncommon)* .......... 4 gp
+- Acid Flask (Lesser) .......... 3 gp
+- Alchemical Gauntlet .......... 10 gp
+- Alchemist's Fire (Lesser) .......... 3 gp
+- Aldori Dueling Sword *(uncommon)* .......... 2 gp
+- Atrophy Bomb (Lesser) *(uncommon)* .......... 4 gp
+- Axe Musket *(uncommon)* .......... 10 gp
+- Backpack Ballista *(uncommon)* .......... 18 gp
+- Backpack Catapult *(uncommon)* .......... 20 gp
+- Barricade Buster *(uncommon)* .......... 9 gp
+- Big Boom Gun *(uncommon)* .......... 10 gp
+- Bioluminescence Bomb *(uncommon)* .......... 3 gp
+- Blasting Stone (Lesser) .......... 3 gp
+- Blight Bomb (Lesser) .......... 3 gp
+- Blood Bomb (Lesser) *(uncommon)* .......... 4 gp
+- Boarding Pike *(uncommon)* .......... 8 sp
+- Bottled Lightning (Lesser) .......... 3 gp
+- Combat Grapnel *(uncommon)* .......... 9 sp
+- Composite Longbow .......... 20 gp
+- Composite Shortbow .......... 14 gp
+- Double-Barreled Musket *(uncommon)* .......... 11 gp
+- Dragon's Crest *(uncommon)* .......... 10 gp
+- Dread Ampoule (Lesser) .......... 3 gp
+- Dueling Pistol *(uncommon)* .......... 12 gp
+- Durian Bomb (Lesser) *(uncommon)* .......... 4 gp
+- Dwarven Daisy (Lesser) *(uncommon)* .......... 6 gp
+- Dwarven Scattergun *(uncommon)* .......... 10 gp
+- Explosive Dogslicer *(uncommon)* .......... 10 gp
+- Flying Talon *(uncommon)* .......... 6 gp
+- Frost Vial (Lesser) .......... 3 gp
+- Ghost Charge (Lesser) .......... 3 gp
+- Glue Bomb (Lesser) .......... 3 gp
+- Gnome Amalgam Musket *(uncommon)* .......... 10 gp
+- Goo Grenade (Lesser) *(uncommon)* .......... 3 gp
+- Gun Sword *(uncommon)* .......... 13 gp
+- Hammer Gun *(uncommon)* .......... 13 gp
+- Holy Water .......... 3 gp
+- Jezail *(uncommon)* .......... 11 gp
+- Junk Bomb (Lesser) *(uncommon)* .......... 4 gp
+- Mud Bomb (Lesser) *(uncommon)* .......... 3 gp
+- Necrotic Bomb (Lesser) .......... 3 gp
+- Pernicious Spore Bomb (Lesser) *(uncommon)* .......... 3 gp
+- Peshpine Grenade (Lesser) *(uncommon)* .......... 3 gp
+- Phalanx Piercer .......... 10 gp
+- Polytool *(uncommon)* .......... 10 gp
+- Pressure Bomb (Lesser) *(uncommon)* .......... 4 gp
+- Repeating Crossbow *(uncommon)* .......... 15 gp
+- Repeating Hand Crossbow *(uncommon)* .......... 10 gp
+- Repeating Heavy Crossbow *(uncommon)* .......... 20 gp
+- Scrollstaff *(uncommon)* .......... 12 gp
+- Skunk Bomb (Lesser) .......... 4 gp
+- Slide Pistol *(uncommon)* .......... 16 gp
+- Spoon Gun *(uncommon)* .......... 10 gp
+- Star Grenade (Lesser) *(uncommon)* .......... 3 gp
+- Steelscour (Lesser) *(uncommon)* .......... 3 gp
+- Sticky Algae Bomb (Lesser) .......... 4 gp
+- Stiletto Pen *(uncommon)* .......... 8 gp
+- Sukgung .......... 7 gp
+- Sulfur Bomb (Lesser) *(uncommon)* .......... 4 gp
+- Switchscythe *(uncommon)* .......... 12 gp
+- Tallow Bomb (Lesser) *(uncommon)* .......... 3 gp
+- Tenderizer Grenade (Lesser) *(uncommon)* .......... 4 gp
+- Three-peaked Tree *(uncommon)* .......... 12 gp
+- Twigjack Sack (Lesser) *(uncommon)* .......... 3 gp
+- Unholy Water .......... 3 gp
+- Versatile Vial .......... free
+- Vexing Vapor (Lesser) *(uncommon)* .......... 4 gp
+- Water Bomb (Lesser) *(uncommon)* .......... 3 gp
+- Bottled Sunlight (Lesser) .......... 7 gp
+- Defoliation Bomb (Lesser) *(uncommon)* .......... 7 gp
+- Handwraps of Mighty Blows .......... 35 gp
+- Inflammation Flask (Lesser) *(uncommon)* .......... 5 gp
+- Nail Bomb (Lesser) *(uncommon)* .......... 8 gp
+- Spider Satchel (Lesser) *(uncommon)* .......... 6 gp
+- Acid Flask (Moderate) .......... 10 gp
+- Alchemist's Fire (Moderate) .......... 10 gp
+- Atrophy Bomb (Moderate) *(uncommon)* .......... 11 gp
+- Blasting Stone (Moderate) .......... 10 gp
+- Blight Bomb (Moderate) .......... 10 gp
+- Blood Bomb (Moderate) *(uncommon)* .......... 11 gp
+- Bottled Lightning (Moderate) .......... 10 gp
+- Crimson Thorn *(uncommon)* .......... 60 gp
+- Dread Ampoule (Moderate) .......... 10 gp
+- Durian Bomb (Moderate) *(uncommon)* .......... 12 gp
+- Dwarven Daisy (Moderate) *(uncommon)* .......... 18 gp
+- Fighter's Fork .......... 50 gp
+- Frost Vial (Moderate) .......... 10 gp
+- Ghast Stiletto .......... 60 gp
+- Ghost Charge (Moderate) .......... 10 gp
+- Ghoul Stiletto .......... 60 gp
+- Glacier Hammer .......... 60 gp
+- Glue Bomb (Moderate) .......... 10 gp
+- Goo Grenade (Moderate) *(uncommon)* .......... 10 gp
+- Hunter's Bow .......... 60 gp
+- Junk Bomb (Moderate) *(uncommon)* .......... 12 gp
+- Magnetic Bola *(uncommon)* .......... 60 gp
+- Mud Bomb (Moderate) *(uncommon)* .......... 10 gp
+- Necrotic Bomb (Moderate) .......... 10 gp
+- Pernicious Spore Bomb (Moderate) *(uncommon)* .......... 10 gp
+- Peshpine Grenade (Moderate) *(uncommon)* .......... 10 gp
+- Pressure Bomb (Moderate) *(uncommon)* .......... 12 gp
+- Retribution Axe .......... 60 gp
+- Silverscrap Bomb (Lesser) *(uncommon)* .......... 11 gp
+- Skunk Bomb (Moderate) .......... 12 gp
+- Smoking Sword .......... 60 gp
+- Sparkblade .......... 70 gp
+- Staff of Air .......... 60 gp
+- Staff of Earth .......... 60 gp
+- Staff of Fire .......... 60 gp
+- Staff of Water .......... 60 gp
+- Star Grenade (Moderate) *(uncommon)* .......... 10 gp
+- Steelscour (Moderate) *(uncommon)* .......... 9 gp
+- Sticky Algae Bomb (Moderate) .......... 12 gp
+- Storm Hammer .......... 60 gp
+- Sulfur Bomb (Moderate) *(uncommon)* .......... 12 gp
+- Tallow Bomb (Moderate) *(uncommon)* .......... 10 gp
+- Tenderizer Grenade (Moderate) *(uncommon)* .......... 12 gp
+- Twigjack Sack (Moderate) *(uncommon)* .......... 10 gp
+- Vexing Vapor (Moderate) *(uncommon)* .......... 12 gp
+- Water Bomb (Moderate) *(uncommon)* .......... 10 gp
+- Wordreaper *(uncommon)* .......... 55 gp
+- Aether Marbles (Lesser) *(uncommon)* .......... 19 gp
+- Animal Staff .......... 90 gp
+- Ankhrav Duster *(uncommon)* .......... 90 gp
+- Atmospheric Staff (Lesser) *(uncommon)* .......... 95 gp
+- Blast Lance *(uncommon)* .......... 100 gp
+- Bottled Sunlight (Moderate) .......... 20 gp
+- Composer Staff .......... 80 gp
+- Crystal Shards (Moderate) .......... 16 gp
+- Defoliation Bomb (Moderate) *(uncommon)* .......... 18 gp
+- Drake Rifle (Acid) *(uncommon)* .......... 100 gp
+- Drake Rifle (Cold) *(uncommon)* .......... 100 gp
+- Drake Rifle (Electricity) *(uncommon)* .......... 100 gp
+- Drake Rifle (Fire) *(uncommon)* .......... 100 gp
+- Drake Rifle (Poison) *(uncommon)* .......... 100 gp
+- Exquisite Sword Cane .......... 90 gp
+- Fulmination Fang *(uncommon)* .......... 115 gp
+- Inflammation Flask (Moderate) *(uncommon)* .......... 15 gp
+- Mentalist's Staff .......... 90 gp
+- Nail Bomb (Moderate) *(uncommon)* .......... 16 gp
+- Poisoner's Staff *(uncommon)* .......... 90 gp
+- Spider Satchel (Moderate) *(uncommon)* .......... 16 gp
+- Spore Shephard's Staff *(uncommon)* .......... 100 gp
+- Spore Shephard's Staff (Major) *(uncommon)* .......... 100 gp
+- Staff of Healing .......... 90 gp
+- Alicorn Lance *(uncommon)* .......... 150 gp
+- Amphisbaena Handwraps *(uncommon)* .......... 150 gp
+- Auspicious Scepter .......... 150 gp
+- Blood-Drinker Blade *(uncommon)* .......... 160 gp
+- Caterwaul Sling .......... 155 gp
+- Chainbreaker *(uncommon)* .......... 150 gp
+- Cinderclaw Gauntlet *(uncommon)* .......... 150 gp
+- Dagger of Eternal Sleep *(uncommon)* .......... 25 gp
+- Dazzling Shortbow *(uncommon)* .......... 160 gp
+- Dog-Bone Knife *(uncommon)* .......... 150 gp
+- Hydrocannon *(uncommon)* .......... 150 gp
+- Infiltrator's Accessory .......... 150 gp
+- Metronomic Hammer *(uncommon)* .......... 160 gp
+- Poisonous Dagger .......... 150 gp
+- Restorative Handwraps .......... 150 gp
+- Scizore of the Crab .......... 150 gp
+- Serpent Dagger .......... 150 gp
+- Silver Orb (Lesser) *(uncommon)* .......... 30 gp
+- Solar Shellflower *(uncommon)* .......... 160 gp
+- Thundercrasher *(uncommon)* .......... 155 gp
+- Tiger Fork *(uncommon)* .......... 275 gp
+- Trollhound Pick .......... 140 gp
+- Worldringer *(uncommon)* .......... 160 gp
+
+Table: PF2eWeapon_large_town
+- Adze .......... 1 gp
+- Air Repeater *(uncommon)* .......... 4 gp
+- Aklys *(uncommon)* .......... 5 gp
+- Alchemical Crossbow *(uncommon)* .......... 25 gp
+- Arbalest .......... 8 gp
+- Arquebus *(uncommon)* .......... 8 gp
+- Asp Coil *(uncommon)* .......... 10 gp
+- Atlatl .......... 2 sp
+- Bastard Sword .......... 4 gp
+- Battle Axe .......... 1 gp
+- Battle Lute *(uncommon)* .......... 7 gp
+- Battle Saddle .......... 6 gp
+- Bayonet .......... 2 sp
+- Bec de Corbin .......... 4 gp
+- Black Powder Knuckle Dusters *(uncommon)* .......... 8 gp
+- Bladed Diabolo *(uncommon)* .......... 2 gp
+- Bladed Gauntlet *(uncommon)* .......... 5 gp
+- Bladed Hoop *(uncommon)* .......... 25 sp
+- Bladed Scarf *(uncommon)* .......... 3 gp
+- Bladesweeper *(uncommon)* .......... 4 gp
+- Blowgun .......... 1 sp
+- Blunderbuss *(uncommon)* .......... 6 gp
+- Bo Staff .......... 2 sp
+- Boarding Axe *(uncommon)* .......... 1 gp
+- Bola .......... 5 sp
+- Boomerang *(uncommon)* .......... 2 sp
+- Bow Staff *(uncommon)* .......... 8 gp
+- Breaching Pike *(uncommon)* .......... 8 gp
+- Broadspear .......... 2 gp
+- Butchering Axe *(uncommon)* .......... 8 gp
+- Butterfly Sword *(uncommon)* .......... 2 gp
+- Buugeng *(uncommon)* .......... 4 gp
+- Cane Pistol *(uncommon)* .......... 8 gp
+- Capturing Spetum *(uncommon)* .......... 9 gp
+- Chain Sword *(uncommon)* .......... 6 gp
+- Chakram .......... 5 sp
+- Chakri *(uncommon)* .......... 2 sp
+- Chakri (Lost Omens) *(uncommon)* .......... 2 cp
+- Clan Dagger *(uncommon)* .......... 2 gp
+- Clan Pistol *(uncommon)* .......... 5 gp
+- Claw Blade *(uncommon)* .......... 2 gp
+- Club .......... free
+- Coat Pistol *(uncommon)* .......... 5 gp
+- Combat Fishing Pole *(uncommon)* .......... 4 sp
+- Combat Lure *(uncommon)* .......... 2 gp
+- Corset Knife .......... 3 sp
+- Crescent Cross *(uncommon)* .......... 4 gp
+- Crossbow .......... 3 gp
+- Cruuk .......... 4 sp
+- Dagger .......... 2 sp
+- Dagger Pistol *(uncommon)* .......... 8 gp
+- Daikyu *(uncommon)* .......... 8 gp
+- Dancer's Spear .......... 3 gp
+- Dandpatta *(uncommon)* .......... 8 sp
+- Dart .......... 1 cp
+- Dart Umbrella *(uncommon)* .......... 1 gp
+- Dawnsilver Tree *(uncommon)* .......... 7 gp
+- Dogslicer *(uncommon)* .......... 1 sp
+- Donchak *(uncommon)* .......... 4 gp
+- Double-Barreled Pistol *(uncommon)* .......... 6 gp
+- Dragon Mouth Pistol *(uncommon)* .......... 7 gp
+- Dueling Spear *(uncommon)* .......... 2 gp
+- Dwarven Dorn-Dergar *(uncommon)* .......... 8 gp
+- Dwarven War Axe *(uncommon)* .......... 3 gp
+- Earthbreaker .......... 4 gp
+- Elven Branched Spear *(uncommon)* .......... 3 gp
+- Elven Curve Blade *(uncommon)* .......... 4 gp
+- Exquisite Sword Cane Sheath .......... free
+- Falcata .......... 3 gp
+- Falchion .......... 3 gp
+- Fangwire *(uncommon)* .......... 4 gp
+- Fauchard .......... 14 sp
+- Feng Huo Lun *(uncommon)* .......... 2 gp
+- Fighting Fan *(uncommon)* .......... 11 sp
+- Fighting Oar *(uncommon)* .......... 5 sp
+- Fighting Stick *(uncommon)* .......... 5 sp
+- Filcher's Fork *(uncommon)* .......... 1 gp
+- Fire Lance *(uncommon)* .......... 3 gp
+- Fire Poi *(uncommon)* .......... 5 gp
+- Flail .......... 8 sp
+- Flingflenser *(uncommon)* .......... 5 gp
+- Flintlock Musket *(uncommon)* .......... 5 gp
+- Flintlock Pistol *(uncommon)* .......... 4 gp
+- Flyssa .......... 1 gp
+- Forked Bipod .......... 3 sp
+- Frying Pan .......... 1 sp
+- Gada .......... 1 gp
+- Gaff .......... 1 gp
+- Gakgung .......... 2 gp
+- Gauntlet .......... 2 sp
+- Gauntlet Bow .......... 9 gp
+- Gill Hook *(uncommon)* .......... 2 gp
+- Gladius *(uncommon)* .......... 1 gp
+- Glaive .......... 1 gp
+- Gnome Flickmace *(uncommon)* .......... 3 gp
+- Gnome Hooked Hammer *(uncommon)* .......... 2 gp
+- Greataxe .......... 2 gp
+- Greatclub .......... 1 gp
+- Greatpick .......... 1 gp
+- Greatsword .......... 2 gp
+- Griffon Cane .......... 1 gp
+- Guisarme .......... 2 gp
+- Halberd .......... 2 gp
+- Halfling Sling Staff *(uncommon)* .......... 5 gp
+- Hand Adze .......... 5 sp
+- Hand Cannon *(uncommon)* .......... 3 gp
+- Hand Crossbow .......... 3 gp
+- Harmona Gun *(uncommon)* .......... 8 gp
+- Harpoon .......... 1 gp
+- Hatchet .......... 4 sp
+- Heavy Crossbow .......... 4 gp
+- Hongali Hornbow *(uncommon)* .......... 11 gp
+- Hook Sword *(uncommon)* .......... 3 gp
+- Horsechopper *(uncommon)* .......... 9 sp
+- Injection Spear *(uncommon)* .......... 3 gp
+- Javelin .......... 1 sp
+- Jiu Huan Dao *(uncommon)* .......... 9 sp
+- Juggling Club *(uncommon)* .......... 1 sp
+- Kalis *(uncommon)* .......... 3 gp
+- Kama *(uncommon)* .......... 1 gp
+- Karambit *(uncommon)* .......... 2 gp
+- Katana *(uncommon)* .......... 2 gp
+- Katar *(uncommon)* .......... 3 sp
+- Kestros *(uncommon)* .......... 2 gp
+- Khakkhara *(uncommon)* .......... 2 gp
+- Khopesh *(uncommon)* .......... 2 gp
+- Knuckle Duster .......... 3 sp
+- Kris .......... 7 sp
+- Kukri *(uncommon)* .......... 6 sp
+- Kusarigama *(uncommon)* .......... 2 gp
+- Lance .......... 1 gp
+- Lancer *(uncommon)* .......... 8 gp
+- Leiomano *(uncommon)* .......... 2 gp
+- Light Hammer .......... 3 sp
+- Light Mace .......... 4 sp
+- Light Pick .......... 4 sp
+- Lion Scythe *(uncommon)* .......... 1 gp
+- Liuyedao .......... 3 gp
+- Long Air Repeater *(uncommon)* .......... 6 gp
+- Long Hammer .......... 5 gp
+- Longbow .......... 6 gp
+- Longspear .......... 5 sp
+- Longsword .......... 1 gp
+- Mace .......... 1 gp
+- Mace Multipistol *(uncommon)* .......... 13 gp
+- Machete .......... 7 sp
+- Macuahuitl *(uncommon)* .......... 3 gp
+- Main-Gauche .......... 5 sp
+- Mambele *(uncommon)* .......... 6 sp
+- Maul .......... 3 gp
+- Maul-spade *(uncommon)* .......... 6 gp
+- Meteor Hammer .......... 3 gp
+- Mikazuki *(uncommon)* .......... 8 gp
+- Monkey's Fist .......... 1 sp
+- Morningstar .......... 1 gp
+- Naginata *(uncommon)* .......... 3 gp
+- Nightstick *(uncommon)* .......... 1 gp
+- Nodachi .......... 6 gp
+- Nunchaku *(uncommon)* .......... 2 sp
+- Ogre Hook *(uncommon)* .......... 1 gp
+- Orc Knuckle Dagger *(uncommon)* .......... 7 sp
+- Orc Necksplitter *(uncommon)* .......... 2 gp
+- Orc Skewermaul *(uncommon)* .......... 2 gp
+- Palstave *(uncommon)* .......... 4 sp
+- Panabas .......... 1 gp
+- Pantograph Gauntlet *(uncommon)* .......... 2 gp
+- Pepperbox *(uncommon)* .......... 9 gp
+- Pick .......... 7 sp
+- Piercing Wind *(uncommon)* .......... 15 gp
+- Piranha Kiss *(uncommon)* .......... 4 sp
+- Poi *(uncommon)* .......... 2 sp
+- Probing Cane .......... 5 sp
+- Ranseur .......... 2 gp
+- Rapier .......... 2 gp
+- Rapier Pistol *(uncommon)* .......... 10 gp
+- Reinforced Stock .......... 2 sp
+- Reinforced Wheels .......... 5 sp
+- Rhoka Sword *(uncommon)* .......... 4 gp
+- Rope Dart *(uncommon)* .......... 1 gp
+- Rotary Bow .......... 8 gp
+- Sai *(uncommon)* .......... 6 sp
+- Sansetsukon *(uncommon)* .......... 2 gp
+- Sap .......... 1 sp
+- Sawtooth Saber *(uncommon)* .......... 5 gp
+- Scimitar .......... 1 gp
+- Scizore .......... 9 sp
+- Scorpion Whip *(uncommon)* .......... 5 sp
+- Scourge .......... 1 sp
+- Scythe .......... 2 gp
+- Shauth Blade *(uncommon)* .......... 2 gp
+- Shauth Lash *(uncommon)* .......... 8 gp
+- Shears *(uncommon)* .......... 5 sp
+- Shield Boss .......... 5 sp
+- Shield Bow .......... 5 gp
+- Shield Pistol *(uncommon)* .......... 6 gp
+- Shield Spikes .......... 5 sp
+- Shortbow .......... 3 gp
+- Shortsword .......... 9 sp
+- Shuan Ji *(uncommon)* .......... 3 gp
+- Shuriken *(uncommon)* .......... 1 cp
+- Sickle .......... 2 sp
+- Sickle-saber *(uncommon)* .......... 5 gp
+- Sling .......... free
+- Spear .......... 1 sp
+- Spiked Chain *(uncommon)* .......... 3 gp
+- Spiked Gauntlet .......... 3 sp
+- Spiral Rapier *(uncommon)* .......... 5 gp
+- Spirit Thresher *(uncommon)* .......... 2 gp
+- Spraysling *(uncommon)* .......... 1 gp
+- Staff .......... free
+- Starknife .......... 2 gp
+- Sun Sling *(uncommon)* .......... 3 gp
+- Sword Cane .......... 5 gp
+- Talwar .......... 2 gp
+- Tamchal Chakram *(uncommon)* .......... 5 gp
+- Taw Launcher *(uncommon)* .......... 10 gp
+- Tekko-Kagi *(uncommon)* .......... 2 sp
+- Temple Sword *(uncommon)* .......... 2 gp
+- Tengu Gale Blade *(uncommon)* .......... 4 gp
+- Tetsubo *(uncommon)* .......... 3 gp
+- Thorn Whip *(uncommon)* .......... 6 sp
+- Three-Section Naginata *(uncommon)* .......... 12 gp
+- Throwing Knife .......... 3 sp
+- Throwing Knife (Extinction Curse) *(uncommon)* .......... 3 sp
+- Thunder Sling *(uncommon)* .......... 5 gp
+- Thundermace *(uncommon)* .......... 2 sp
+- Tonfa *(uncommon)* .......... 1 sp
+- Tri-bladed Katar *(uncommon)* .......... 1 sp
+- Tricky Pick *(uncommon)* .......... 10 gp
+- Trident .......... 1 gp
+- Triggerbrand *(uncommon)* .......... 10 gp
+- Umbrella Injector *(uncommon)* .......... 4 gp
+- Urumi *(uncommon)* .......... 2 gp
+- Visap *(uncommon)* .......... 2 gp
+- Wakizashi *(uncommon)* .......... 1 gp
+- War Flail .......... 2 gp
+- War Gavel *(uncommon)* .......... 2 sp
+- War Javelin *(uncommon)* .......... 1 gp
+- War Lance *(uncommon)* .......... 4 gp
+- War Razor .......... 3 sp
+- Warhammer .......... 1 gp
+- Wheel Blades .......... 5 sp
+- Wheel Spikes .......... 5 sp
+- Whip .......... 1 sp
+- Whip Claw *(uncommon)* .......... 5 gp
+- Whipstaff *(uncommon)* .......... 3 gp
+- Wish Blade *(uncommon)* .......... 5 gp
+- Wish Knife *(uncommon)* .......... 2 gp
+- Wrecker *(uncommon)* .......... 8 gp
+- Wrist Launcher *(uncommon)* .......... 3 gp
+- Zhuazhi Bang *(uncommon)* .......... 1 gp
+- Zulfikar *(uncommon)* .......... 4 gp
+- Acid Flask (Lesser) .......... 3 gp
+- Alchemical Gauntlet .......... 10 gp
+- Alchemist's Fire (Lesser) .......... 3 gp
+- Aldori Dueling Sword *(uncommon)* .......... 2 gp
+- Atrophy Bomb (Lesser) *(uncommon)* .......... 4 gp
+- Axe Musket *(uncommon)* .......... 10 gp
+- Backpack Ballista *(uncommon)* .......... 18 gp
+- Backpack Catapult *(uncommon)* .......... 20 gp
+- Barricade Buster *(uncommon)* .......... 9 gp
+- Big Boom Gun *(uncommon)* .......... 10 gp
+- Bioluminescence Bomb *(uncommon)* .......... 3 gp
+- Blasting Stone (Lesser) .......... 3 gp
+- Blight Bomb (Lesser) .......... 3 gp
+- Blood Bomb (Lesser) *(uncommon)* .......... 4 gp
+- Boarding Pike *(uncommon)* .......... 8 sp
+- Bottled Lightning (Lesser) .......... 3 gp
+- Combat Grapnel *(uncommon)* .......... 9 sp
+- Composite Longbow .......... 20 gp
+- Composite Shortbow .......... 14 gp
+- Double-Barreled Musket *(uncommon)* .......... 11 gp
+- Dragon's Crest *(uncommon)* .......... 10 gp
+- Dread Ampoule (Lesser) .......... 3 gp
+- Dueling Pistol *(uncommon)* .......... 12 gp
+- Durian Bomb (Lesser) *(uncommon)* .......... 4 gp
+- Dwarven Daisy (Lesser) *(uncommon)* .......... 6 gp
+- Dwarven Scattergun *(uncommon)* .......... 10 gp
+- Explosive Dogslicer *(uncommon)* .......... 10 gp
+- Flying Talon *(uncommon)* .......... 6 gp
+- Frost Vial (Lesser) .......... 3 gp
+- Ghost Charge (Lesser) .......... 3 gp
+- Glue Bomb (Lesser) .......... 3 gp
+- Gnome Amalgam Musket *(uncommon)* .......... 10 gp
+- Goo Grenade (Lesser) *(uncommon)* .......... 3 gp
+- Gun Sword *(uncommon)* .......... 13 gp
+- Hammer Gun *(uncommon)* .......... 13 gp
+- Holy Water .......... 3 gp
+- Jezail *(uncommon)* .......... 11 gp
+- Junk Bomb (Lesser) *(uncommon)* .......... 4 gp
+- Mud Bomb (Lesser) *(uncommon)* .......... 3 gp
+- Necrotic Bomb (Lesser) .......... 3 gp
+- Pernicious Spore Bomb (Lesser) *(uncommon)* .......... 3 gp
+- Peshpine Grenade (Lesser) *(uncommon)* .......... 3 gp
+- Phalanx Piercer .......... 10 gp
+- Polytool *(uncommon)* .......... 10 gp
+- Pressure Bomb (Lesser) *(uncommon)* .......... 4 gp
+- Repeating Crossbow *(uncommon)* .......... 15 gp
+- Repeating Hand Crossbow *(uncommon)* .......... 10 gp
+- Repeating Heavy Crossbow *(uncommon)* .......... 20 gp
+- Scrollstaff *(uncommon)* .......... 12 gp
+- Skunk Bomb (Lesser) .......... 4 gp
+- Slide Pistol *(uncommon)* .......... 16 gp
+- Spoon Gun *(uncommon)* .......... 10 gp
+- Star Grenade (Lesser) *(uncommon)* .......... 3 gp
+- Steelscour (Lesser) *(uncommon)* .......... 3 gp
+- Sticky Algae Bomb (Lesser) .......... 4 gp
+- Stiletto Pen *(uncommon)* .......... 8 gp
+- Sukgung .......... 7 gp
+- Sulfur Bomb (Lesser) *(uncommon)* .......... 4 gp
+- Switchscythe *(uncommon)* .......... 12 gp
+- Tallow Bomb (Lesser) *(uncommon)* .......... 3 gp
+- Tenderizer Grenade (Lesser) *(uncommon)* .......... 4 gp
+- Three-peaked Tree *(uncommon)* .......... 12 gp
+- Twigjack Sack (Lesser) *(uncommon)* .......... 3 gp
+- Unholy Water .......... 3 gp
+- Versatile Vial .......... free
+- Vexing Vapor (Lesser) *(uncommon)* .......... 4 gp
+- Water Bomb (Lesser) *(uncommon)* .......... 3 gp
+- Bottled Sunlight (Lesser) .......... 7 gp
+- Defoliation Bomb (Lesser) *(uncommon)* .......... 7 gp
+- Handwraps of Mighty Blows .......... 35 gp
+- Inflammation Flask (Lesser) *(uncommon)* .......... 5 gp
+- Nail Bomb (Lesser) *(uncommon)* .......... 8 gp
+- Spider Satchel (Lesser) *(uncommon)* .......... 6 gp
+- Acid Flask (Moderate) .......... 10 gp
+- Alchemist's Fire (Moderate) .......... 10 gp
+- Atrophy Bomb (Moderate) *(uncommon)* .......... 11 gp
+- Blasting Stone (Moderate) .......... 10 gp
+- Blight Bomb (Moderate) .......... 10 gp
+- Blood Bomb (Moderate) *(uncommon)* .......... 11 gp
+- Bottled Lightning (Moderate) .......... 10 gp
+- Crimson Thorn *(uncommon)* .......... 60 gp
+- Dread Ampoule (Moderate) .......... 10 gp
+- Durian Bomb (Moderate) *(uncommon)* .......... 12 gp
+- Dwarven Daisy (Moderate) *(uncommon)* .......... 18 gp
+- Fighter's Fork .......... 50 gp
+- Frost Vial (Moderate) .......... 10 gp
+- Ghast Stiletto .......... 60 gp
+- Ghost Charge (Moderate) .......... 10 gp
+- Ghoul Stiletto .......... 60 gp
+- Glacier Hammer .......... 60 gp
+- Glue Bomb (Moderate) .......... 10 gp
+- Goo Grenade (Moderate) *(uncommon)* .......... 10 gp
+- Hunter's Bow .......... 60 gp
+- Junk Bomb (Moderate) *(uncommon)* .......... 12 gp
+- Magnetic Bola *(uncommon)* .......... 60 gp
+- Mud Bomb (Moderate) *(uncommon)* .......... 10 gp
+- Necrotic Bomb (Moderate) .......... 10 gp
+- Pernicious Spore Bomb (Moderate) *(uncommon)* .......... 10 gp
+- Peshpine Grenade (Moderate) *(uncommon)* .......... 10 gp
+- Pressure Bomb (Moderate) *(uncommon)* .......... 12 gp
+- Retribution Axe .......... 60 gp
+- Silverscrap Bomb (Lesser) *(uncommon)* .......... 11 gp
+- Skunk Bomb (Moderate) .......... 12 gp
+- Smoking Sword .......... 60 gp
+- Sparkblade .......... 70 gp
+- Staff of Air .......... 60 gp
+- Staff of Earth .......... 60 gp
+- Staff of Fire .......... 60 gp
+- Staff of Water .......... 60 gp
+- Star Grenade (Moderate) *(uncommon)* .......... 10 gp
+- Steelscour (Moderate) *(uncommon)* .......... 9 gp
+- Sticky Algae Bomb (Moderate) .......... 12 gp
+- Storm Hammer .......... 60 gp
+- Sulfur Bomb (Moderate) *(uncommon)* .......... 12 gp
+- Tallow Bomb (Moderate) *(uncommon)* .......... 10 gp
+- Tenderizer Grenade (Moderate) *(uncommon)* .......... 12 gp
+- Twigjack Sack (Moderate) *(uncommon)* .......... 10 gp
+- Vexing Vapor (Moderate) *(uncommon)* .......... 12 gp
+- Water Bomb (Moderate) *(uncommon)* .......... 10 gp
+- Wordreaper *(uncommon)* .......... 55 gp
+- Aether Marbles (Lesser) *(uncommon)* .......... 19 gp
+- Animal Staff .......... 90 gp
+- Ankhrav Duster *(uncommon)* .......... 90 gp
+- Atmospheric Staff (Lesser) *(uncommon)* .......... 95 gp
+- Blast Lance *(uncommon)* .......... 100 gp
+- Bottled Sunlight (Moderate) .......... 20 gp
+- Composer Staff .......... 80 gp
+- Crystal Shards (Moderate) .......... 16 gp
+- Defoliation Bomb (Moderate) *(uncommon)* .......... 18 gp
+- Drake Rifle (Acid) *(uncommon)* .......... 100 gp
+- Drake Rifle (Cold) *(uncommon)* .......... 100 gp
+- Drake Rifle (Electricity) *(uncommon)* .......... 100 gp
+- Drake Rifle (Fire) *(uncommon)* .......... 100 gp
+- Drake Rifle (Poison) *(uncommon)* .......... 100 gp
+- Exquisite Sword Cane .......... 90 gp
+- Fulmination Fang *(uncommon)* .......... 115 gp
+- Inflammation Flask (Moderate) *(uncommon)* .......... 15 gp
+- Mentalist's Staff .......... 90 gp
+- Nail Bomb (Moderate) *(uncommon)* .......... 16 gp
+- Poisoner's Staff *(uncommon)* .......... 90 gp
+- Spider Satchel (Moderate) *(uncommon)* .......... 16 gp
+- Spore Shephard's Staff *(uncommon)* .......... 100 gp
+- Spore Shephard's Staff (Major) *(uncommon)* .......... 100 gp
+- Staff of Healing .......... 90 gp
+- Alicorn Lance *(uncommon)* .......... 150 gp
+- Amphisbaena Handwraps *(uncommon)* .......... 150 gp
+- Auspicious Scepter .......... 150 gp
+- Blood-Drinker Blade *(uncommon)* .......... 160 gp
+- Caterwaul Sling .......... 155 gp
+- Chainbreaker *(uncommon)* .......... 150 gp
+- Cinderclaw Gauntlet *(uncommon)* .......... 150 gp
+- Dagger of Eternal Sleep *(uncommon)* .......... 25 gp
+- Dazzling Shortbow *(uncommon)* .......... 160 gp
+- Dog-Bone Knife *(uncommon)* .......... 150 gp
+- Hydrocannon *(uncommon)* .......... 150 gp
+- Infiltrator's Accessory .......... 150 gp
+- Metronomic Hammer *(uncommon)* .......... 160 gp
+- Poisonous Dagger .......... 150 gp
+- Restorative Handwraps .......... 150 gp
+- Scizore of the Crab .......... 150 gp
+- Serpent Dagger .......... 150 gp
+- Silver Orb (Lesser) *(uncommon)* .......... 30 gp
+- Solar Shellflower *(uncommon)* .......... 160 gp
+- Thundercrasher *(uncommon)* .......... 155 gp
+- Tiger Fork *(uncommon)* .......... 275 gp
+- Trollhound Pick .......... 140 gp
+- Worldringer *(uncommon)* .......... 160 gp
+- Accursed Staff .......... 250 gp
+- Acrobat's Staff *(uncommon)* .......... 235 gp
+- Bloodletting Kukri *(uncommon)* .......... 240 gp
+- Cavalry Commander's Lance *(uncommon)* .......... 225 gp
+- Chain of Command *(uncommon)* .......... 240 gp
+- Chatterer of Follies *(uncommon)* .......... 200 gp
+- Conflagration Club .......... 250 gp
+- Dragonscale Bo Staff .......... 240 gp
+- Dragonscale Staff .......... 240 gp
+- Faultline Hammer *(uncommon)* .......... 250 gp
+- Flashblade .......... 230 gp
+- Fluid Form Staff .......... 230 gp
+- Gluttonous Spear *(uncommon)* .......... 250 gp
+- Guardian Staff .......... 250 gp
+- Horselord's Longbow *(uncommon)* .......... 250 gp
+- Lady's Knife *(uncommon)* .......... 200 gp
+- Librarian Staff .......... 225 gp
+- Lyrakien Staff .......... 255 gp
+- Nightmare's Lament *(uncommon)* .......... 230 gp
+- Obsidian Edge *(uncommon)* .......... 250 gp
+- Radiant Victory *(uncommon)* .......... 240 gp
+- Ringmaster's Staff *(uncommon)* .......... 230 gp
+- Spider Gun *(uncommon)* .......... 250 gp
+- Spike Launcher *(uncommon)* .......... 250 gp
+- Staff of Control .......... 230 gp
+- Staff of Elemental Power .......... 230 gp
+- Staff of Final Rest *(uncommon)* .......... 240 gp
+- Staff of Impossible Visions *(uncommon)* .......... 230 gp
+- Staff of Metal .......... 250 gp
+- Staff of Phantasms .......... 230 gp
+- Staff of Protection .......... 230 gp
+- Staff of Providence .......... 230 gp
+- Staff of Summoning .......... 230 gp
+- Staff of the Dead .......... 230 gp
+- Staff of the Desert Winds .......... 230 gp
+- Staff of the Dreamlands *(uncommon)* .......... 250 gp
+- Staff of the Tempest .......... 230 gp
+- Staff of the Unblinking Eye *(uncommon)* .......... 230 gp
+- Twining Staff .......... 250 gp
+- Ulfen Shieldbreaker *(uncommon)* .......... 250 gp
+- Verdant Staff .......... 225 gp
+- Windlass Bola *(uncommon)* .......... 200 gp
+
+Table: PF2eWeapon_small_city
+- Adze .......... 1 gp
+- Air Repeater *(uncommon)* .......... 4 gp
+- Aklys *(uncommon)* .......... 5 gp
+- Alchemical Crossbow *(uncommon)* .......... 25 gp
+- Arbalest .......... 8 gp
+- Arquebus *(uncommon)* .......... 8 gp
+- Asp Coil *(uncommon)* .......... 10 gp
+- Atlatl .......... 2 sp
+- Bastard Sword .......... 4 gp
+- Battle Axe .......... 1 gp
+- Battle Lute *(uncommon)* .......... 7 gp
+- Battle Saddle .......... 6 gp
+- Bayonet .......... 2 sp
+- Bec de Corbin .......... 4 gp
+- Black Powder Knuckle Dusters *(uncommon)* .......... 8 gp
+- Bladed Diabolo *(uncommon)* .......... 2 gp
+- Bladed Gauntlet *(uncommon)* .......... 5 gp
+- Bladed Hoop *(uncommon)* .......... 25 sp
+- Bladed Scarf *(uncommon)* .......... 3 gp
+- Bladesweeper *(uncommon)* .......... 4 gp
+- Blowgun .......... 1 sp
+- Blunderbuss *(uncommon)* .......... 6 gp
+- Bo Staff .......... 2 sp
+- Boarding Axe *(uncommon)* .......... 1 gp
+- Bola .......... 5 sp
+- Boomerang *(uncommon)* .......... 2 sp
+- Bow Staff *(uncommon)* .......... 8 gp
+- Breaching Pike *(uncommon)* .......... 8 gp
+- Broadspear .......... 2 gp
+- Butchering Axe *(uncommon)* .......... 8 gp
+- Butterfly Sword *(uncommon)* .......... 2 gp
+- Buugeng *(uncommon)* .......... 4 gp
+- Cane Pistol *(uncommon)* .......... 8 gp
+- Capturing Spetum *(uncommon)* .......... 9 gp
+- Chain Sword *(uncommon)* .......... 6 gp
+- Chakram .......... 5 sp
+- Chakri *(uncommon)* .......... 2 sp
+- Chakri (Lost Omens) *(uncommon)* .......... 2 cp
+- Clan Dagger *(uncommon)* .......... 2 gp
+- Clan Pistol *(uncommon)* .......... 5 gp
+- Claw Blade *(uncommon)* .......... 2 gp
+- Club .......... free
+- Coat Pistol *(uncommon)* .......... 5 gp
+- Combat Fishing Pole *(uncommon)* .......... 4 sp
+- Combat Lure *(uncommon)* .......... 2 gp
+- Corset Knife .......... 3 sp
+- Crescent Cross *(uncommon)* .......... 4 gp
+- Crossbow .......... 3 gp
+- Cruuk .......... 4 sp
+- Dagger .......... 2 sp
+- Dagger Pistol *(uncommon)* .......... 8 gp
+- Daikyu *(uncommon)* .......... 8 gp
+- Dancer's Spear .......... 3 gp
+- Dandpatta *(uncommon)* .......... 8 sp
+- Dart .......... 1 cp
+- Dart Umbrella *(uncommon)* .......... 1 gp
+- Dawnsilver Tree *(uncommon)* .......... 7 gp
+- Dogslicer *(uncommon)* .......... 1 sp
+- Donchak *(uncommon)* .......... 4 gp
+- Double-Barreled Pistol *(uncommon)* .......... 6 gp
+- Dragon Mouth Pistol *(uncommon)* .......... 7 gp
+- Dueling Spear *(uncommon)* .......... 2 gp
+- Dwarven Dorn-Dergar *(uncommon)* .......... 8 gp
+- Dwarven War Axe *(uncommon)* .......... 3 gp
+- Earthbreaker .......... 4 gp
+- Elven Branched Spear *(uncommon)* .......... 3 gp
+- Elven Curve Blade *(uncommon)* .......... 4 gp
+- Exquisite Sword Cane Sheath .......... free
+- Falcata .......... 3 gp
+- Falchion .......... 3 gp
+- Fangwire *(uncommon)* .......... 4 gp
+- Fauchard .......... 14 sp
+- Feng Huo Lun *(uncommon)* .......... 2 gp
+- Fighting Fan *(uncommon)* .......... 11 sp
+- Fighting Oar *(uncommon)* .......... 5 sp
+- Fighting Stick *(uncommon)* .......... 5 sp
+- Filcher's Fork *(uncommon)* .......... 1 gp
+- Fire Lance *(uncommon)* .......... 3 gp
+- Fire Poi *(uncommon)* .......... 5 gp
+- Flail .......... 8 sp
+- Flingflenser *(uncommon)* .......... 5 gp
+- Flintlock Musket *(uncommon)* .......... 5 gp
+- Flintlock Pistol *(uncommon)* .......... 4 gp
+- Flyssa .......... 1 gp
+- Forked Bipod .......... 3 sp
+- Frying Pan .......... 1 sp
+- Gada .......... 1 gp
+- Gaff .......... 1 gp
+- Gakgung .......... 2 gp
+- Gauntlet .......... 2 sp
+- Gauntlet Bow .......... 9 gp
+- Gill Hook *(uncommon)* .......... 2 gp
+- Gladius *(uncommon)* .......... 1 gp
+- Glaive .......... 1 gp
+- Gnome Flickmace *(uncommon)* .......... 3 gp
+- Gnome Hooked Hammer *(uncommon)* .......... 2 gp
+- Greataxe .......... 2 gp
+- Greatclub .......... 1 gp
+- Greatpick .......... 1 gp
+- Greatsword .......... 2 gp
+- Griffon Cane .......... 1 gp
+- Guisarme .......... 2 gp
+- Halberd .......... 2 gp
+- Halfling Sling Staff *(uncommon)* .......... 5 gp
+- Hand Adze .......... 5 sp
+- Hand Cannon *(uncommon)* .......... 3 gp
+- Hand Crossbow .......... 3 gp
+- Harmona Gun *(uncommon)* .......... 8 gp
+- Harpoon .......... 1 gp
+- Hatchet .......... 4 sp
+- Heavy Crossbow .......... 4 gp
+- Hongali Hornbow *(uncommon)* .......... 11 gp
+- Hook Sword *(uncommon)* .......... 3 gp
+- Horsechopper *(uncommon)* .......... 9 sp
+- Injection Spear *(uncommon)* .......... 3 gp
+- Javelin .......... 1 sp
+- Jiu Huan Dao *(uncommon)* .......... 9 sp
+- Juggling Club *(uncommon)* .......... 1 sp
+- Kalis *(uncommon)* .......... 3 gp
+- Kama *(uncommon)* .......... 1 gp
+- Karambit *(uncommon)* .......... 2 gp
+- Katana *(uncommon)* .......... 2 gp
+- Katar *(uncommon)* .......... 3 sp
+- Kestros *(uncommon)* .......... 2 gp
+- Khakkhara *(uncommon)* .......... 2 gp
+- Khopesh *(uncommon)* .......... 2 gp
+- Knuckle Duster .......... 3 sp
+- Kris .......... 7 sp
+- Kukri *(uncommon)* .......... 6 sp
+- Kusarigama *(uncommon)* .......... 2 gp
+- Lance .......... 1 gp
+- Lancer *(uncommon)* .......... 8 gp
+- Leiomano *(uncommon)* .......... 2 gp
+- Light Hammer .......... 3 sp
+- Light Mace .......... 4 sp
+- Light Pick .......... 4 sp
+- Lion Scythe *(uncommon)* .......... 1 gp
+- Liuyedao .......... 3 gp
+- Long Air Repeater *(uncommon)* .......... 6 gp
+- Long Hammer .......... 5 gp
+- Longbow .......... 6 gp
+- Longspear .......... 5 sp
+- Longsword .......... 1 gp
+- Mace .......... 1 gp
+- Mace Multipistol *(uncommon)* .......... 13 gp
+- Machete .......... 7 sp
+- Macuahuitl *(uncommon)* .......... 3 gp
+- Main-Gauche .......... 5 sp
+- Mambele *(uncommon)* .......... 6 sp
+- Maul .......... 3 gp
+- Maul-spade *(uncommon)* .......... 6 gp
+- Meteor Hammer .......... 3 gp
+- Mikazuki *(uncommon)* .......... 8 gp
+- Monkey's Fist .......... 1 sp
+- Morningstar .......... 1 gp
+- Naginata *(uncommon)* .......... 3 gp
+- Nightstick *(uncommon)* .......... 1 gp
+- Nodachi .......... 6 gp
+- Nunchaku *(uncommon)* .......... 2 sp
+- Ogre Hook *(uncommon)* .......... 1 gp
+- Orc Knuckle Dagger *(uncommon)* .......... 7 sp
+- Orc Necksplitter *(uncommon)* .......... 2 gp
+- Orc Skewermaul *(uncommon)* .......... 2 gp
+- Palstave *(uncommon)* .......... 4 sp
+- Panabas .......... 1 gp
+- Pantograph Gauntlet *(uncommon)* .......... 2 gp
+- Pepperbox *(uncommon)* .......... 9 gp
+- Pick .......... 7 sp
+- Piercing Wind *(uncommon)* .......... 15 gp
+- Piranha Kiss *(uncommon)* .......... 4 sp
+- Poi *(uncommon)* .......... 2 sp
+- Probing Cane .......... 5 sp
+- Ranseur .......... 2 gp
+- Rapier .......... 2 gp
+- Rapier Pistol *(uncommon)* .......... 10 gp
+- Reinforced Stock .......... 2 sp
+- Reinforced Wheels .......... 5 sp
+- Rhoka Sword *(uncommon)* .......... 4 gp
+- Rope Dart *(uncommon)* .......... 1 gp
+- Rotary Bow .......... 8 gp
+- Sai *(uncommon)* .......... 6 sp
+- Sansetsukon *(uncommon)* .......... 2 gp
+- Sap .......... 1 sp
+- Sawtooth Saber *(uncommon)* .......... 5 gp
+- Scimitar .......... 1 gp
+- Scizore .......... 9 sp
+- Scorpion Whip *(uncommon)* .......... 5 sp
+- Scourge .......... 1 sp
+- Scythe .......... 2 gp
+- Shauth Blade *(uncommon)* .......... 2 gp
+- Shauth Lash *(uncommon)* .......... 8 gp
+- Shears *(uncommon)* .......... 5 sp
+- Shield Boss .......... 5 sp
+- Shield Bow .......... 5 gp
+- Shield Pistol *(uncommon)* .......... 6 gp
+- Shield Spikes .......... 5 sp
+- Shortbow .......... 3 gp
+- Shortsword .......... 9 sp
+- Shuan Ji *(uncommon)* .......... 3 gp
+- Shuriken *(uncommon)* .......... 1 cp
+- Sickle .......... 2 sp
+- Sickle-saber *(uncommon)* .......... 5 gp
+- Sling .......... free
+- Spear .......... 1 sp
+- Spiked Chain *(uncommon)* .......... 3 gp
+- Spiked Gauntlet .......... 3 sp
+- Spiral Rapier *(uncommon)* .......... 5 gp
+- Spirit Thresher *(uncommon)* .......... 2 gp
+- Spraysling *(uncommon)* .......... 1 gp
+- Staff .......... free
+- Starknife .......... 2 gp
+- Sun Sling *(uncommon)* .......... 3 gp
+- Sword Cane .......... 5 gp
+- Talwar .......... 2 gp
+- Tamchal Chakram *(uncommon)* .......... 5 gp
+- Taw Launcher *(uncommon)* .......... 10 gp
+- Tekko-Kagi *(uncommon)* .......... 2 sp
+- Temple Sword *(uncommon)* .......... 2 gp
+- Tengu Gale Blade *(uncommon)* .......... 4 gp
+- Tetsubo *(uncommon)* .......... 3 gp
+- Thorn Whip *(uncommon)* .......... 6 sp
+- Three-Section Naginata *(uncommon)* .......... 12 gp
+- Throwing Knife .......... 3 sp
+- Throwing Knife (Extinction Curse) *(uncommon)* .......... 3 sp
+- Thunder Sling *(uncommon)* .......... 5 gp
+- Thundermace *(uncommon)* .......... 2 sp
+- Tonfa *(uncommon)* .......... 1 sp
+- Tri-bladed Katar *(uncommon)* .......... 1 sp
+- Tricky Pick *(uncommon)* .......... 10 gp
+- Trident .......... 1 gp
+- Triggerbrand *(uncommon)* .......... 10 gp
+- Umbrella Injector *(uncommon)* .......... 4 gp
+- Urumi *(uncommon)* .......... 2 gp
+- Visap *(uncommon)* .......... 2 gp
+- Wakizashi *(uncommon)* .......... 1 gp
+- War Flail .......... 2 gp
+- War Gavel *(uncommon)* .......... 2 sp
+- War Javelin *(uncommon)* .......... 1 gp
+- War Lance *(uncommon)* .......... 4 gp
+- War Razor .......... 3 sp
+- Warhammer .......... 1 gp
+- Wheel Blades .......... 5 sp
+- Wheel Spikes .......... 5 sp
+- Whip .......... 1 sp
+- Whip Claw *(uncommon)* .......... 5 gp
+- Whipstaff *(uncommon)* .......... 3 gp
+- Wish Blade *(uncommon)* .......... 5 gp
+- Wish Knife *(uncommon)* .......... 2 gp
+- Wrecker *(uncommon)* .......... 8 gp
+- Wrist Launcher *(uncommon)* .......... 3 gp
+- Zhuazhi Bang *(uncommon)* .......... 1 gp
+- Zulfikar *(uncommon)* .......... 4 gp
+- Acid Flask (Lesser) .......... 3 gp
+- Alchemical Gauntlet .......... 10 gp
+- Alchemist's Fire (Lesser) .......... 3 gp
+- Aldori Dueling Sword *(uncommon)* .......... 2 gp
+- Atrophy Bomb (Lesser) *(uncommon)* .......... 4 gp
+- Axe Musket *(uncommon)* .......... 10 gp
+- Backpack Ballista *(uncommon)* .......... 18 gp
+- Backpack Catapult *(uncommon)* .......... 20 gp
+- Barricade Buster *(uncommon)* .......... 9 gp
+- Big Boom Gun *(uncommon)* .......... 10 gp
+- Bioluminescence Bomb *(uncommon)* .......... 3 gp
+- Blasting Stone (Lesser) .......... 3 gp
+- Blight Bomb (Lesser) .......... 3 gp
+- Blood Bomb (Lesser) *(uncommon)* .......... 4 gp
+- Boarding Pike *(uncommon)* .......... 8 sp
+- Bottled Lightning (Lesser) .......... 3 gp
+- Combat Grapnel *(uncommon)* .......... 9 sp
+- Composite Longbow .......... 20 gp
+- Composite Shortbow .......... 14 gp
+- Double-Barreled Musket *(uncommon)* .......... 11 gp
+- Dragon's Crest *(uncommon)* .......... 10 gp
+- Dread Ampoule (Lesser) .......... 3 gp
+- Dueling Pistol *(uncommon)* .......... 12 gp
+- Durian Bomb (Lesser) *(uncommon)* .......... 4 gp
+- Dwarven Daisy (Lesser) *(uncommon)* .......... 6 gp
+- Dwarven Scattergun *(uncommon)* .......... 10 gp
+- Explosive Dogslicer *(uncommon)* .......... 10 gp
+- Flying Talon *(uncommon)* .......... 6 gp
+- Frost Vial (Lesser) .......... 3 gp
+- Ghost Charge (Lesser) .......... 3 gp
+- Glue Bomb (Lesser) .......... 3 gp
+- Gnome Amalgam Musket *(uncommon)* .......... 10 gp
+- Goo Grenade (Lesser) *(uncommon)* .......... 3 gp
+- Gun Sword *(uncommon)* .......... 13 gp
+- Hammer Gun *(uncommon)* .......... 13 gp
+- Holy Water .......... 3 gp
+- Jezail *(uncommon)* .......... 11 gp
+- Junk Bomb (Lesser) *(uncommon)* .......... 4 gp
+- Mud Bomb (Lesser) *(uncommon)* .......... 3 gp
+- Necrotic Bomb (Lesser) .......... 3 gp
+- Pernicious Spore Bomb (Lesser) *(uncommon)* .......... 3 gp
+- Peshpine Grenade (Lesser) *(uncommon)* .......... 3 gp
+- Phalanx Piercer .......... 10 gp
+- Polytool *(uncommon)* .......... 10 gp
+- Pressure Bomb (Lesser) *(uncommon)* .......... 4 gp
+- Repeating Crossbow *(uncommon)* .......... 15 gp
+- Repeating Hand Crossbow *(uncommon)* .......... 10 gp
+- Repeating Heavy Crossbow *(uncommon)* .......... 20 gp
+- Scrollstaff *(uncommon)* .......... 12 gp
+- Skunk Bomb (Lesser) .......... 4 gp
+- Slide Pistol *(uncommon)* .......... 16 gp
+- Spoon Gun *(uncommon)* .......... 10 gp
+- Star Grenade (Lesser) *(uncommon)* .......... 3 gp
+- Steelscour (Lesser) *(uncommon)* .......... 3 gp
+- Sticky Algae Bomb (Lesser) .......... 4 gp
+- Stiletto Pen *(uncommon)* .......... 8 gp
+- Sukgung .......... 7 gp
+- Sulfur Bomb (Lesser) *(uncommon)* .......... 4 gp
+- Switchscythe *(uncommon)* .......... 12 gp
+- Tallow Bomb (Lesser) *(uncommon)* .......... 3 gp
+- Tenderizer Grenade (Lesser) *(uncommon)* .......... 4 gp
+- Three-peaked Tree *(uncommon)* .......... 12 gp
+- Twigjack Sack (Lesser) *(uncommon)* .......... 3 gp
+- Unholy Water .......... 3 gp
+- Versatile Vial .......... free
+- Vexing Vapor (Lesser) *(uncommon)* .......... 4 gp
+- Water Bomb (Lesser) *(uncommon)* .......... 3 gp
+- Bottled Sunlight (Lesser) .......... 7 gp
+- Defoliation Bomb (Lesser) *(uncommon)* .......... 7 gp
+- Handwraps of Mighty Blows .......... 35 gp
+- Inflammation Flask (Lesser) *(uncommon)* .......... 5 gp
+- Nail Bomb (Lesser) *(uncommon)* .......... 8 gp
+- Spider Satchel (Lesser) *(uncommon)* .......... 6 gp
+- Acid Flask (Moderate) .......... 10 gp
+- Alchemist's Fire (Moderate) .......... 10 gp
+- Atrophy Bomb (Moderate) *(uncommon)* .......... 11 gp
+- Blasting Stone (Moderate) .......... 10 gp
+- Blight Bomb (Moderate) .......... 10 gp
+- Blood Bomb (Moderate) *(uncommon)* .......... 11 gp
+- Bottled Lightning (Moderate) .......... 10 gp
+- Crimson Thorn *(uncommon)* .......... 60 gp
+- Dread Ampoule (Moderate) .......... 10 gp
+- Durian Bomb (Moderate) *(uncommon)* .......... 12 gp
+- Dwarven Daisy (Moderate) *(uncommon)* .......... 18 gp
+- Fighter's Fork .......... 50 gp
+- Frost Vial (Moderate) .......... 10 gp
+- Ghast Stiletto .......... 60 gp
+- Ghost Charge (Moderate) .......... 10 gp
+- Ghoul Stiletto .......... 60 gp
+- Glacier Hammer .......... 60 gp
+- Glue Bomb (Moderate) .......... 10 gp
+- Goo Grenade (Moderate) *(uncommon)* .......... 10 gp
+- Hunter's Bow .......... 60 gp
+- Junk Bomb (Moderate) *(uncommon)* .......... 12 gp
+- Magnetic Bola *(uncommon)* .......... 60 gp
+- Mud Bomb (Moderate) *(uncommon)* .......... 10 gp
+- Necrotic Bomb (Moderate) .......... 10 gp
+- Pernicious Spore Bomb (Moderate) *(uncommon)* .......... 10 gp
+- Peshpine Grenade (Moderate) *(uncommon)* .......... 10 gp
+- Pressure Bomb (Moderate) *(uncommon)* .......... 12 gp
+- Retribution Axe .......... 60 gp
+- Silverscrap Bomb (Lesser) *(uncommon)* .......... 11 gp
+- Skunk Bomb (Moderate) .......... 12 gp
+- Smoking Sword .......... 60 gp
+- Sparkblade .......... 70 gp
+- Staff of Air .......... 60 gp
+- Staff of Earth .......... 60 gp
+- Staff of Fire .......... 60 gp
+- Staff of Water .......... 60 gp
+- Star Grenade (Moderate) *(uncommon)* .......... 10 gp
+- Steelscour (Moderate) *(uncommon)* .......... 9 gp
+- Sticky Algae Bomb (Moderate) .......... 12 gp
+- Storm Hammer .......... 60 gp
+- Sulfur Bomb (Moderate) *(uncommon)* .......... 12 gp
+- Tallow Bomb (Moderate) *(uncommon)* .......... 10 gp
+- Tenderizer Grenade (Moderate) *(uncommon)* .......... 12 gp
+- Twigjack Sack (Moderate) *(uncommon)* .......... 10 gp
+- Vexing Vapor (Moderate) *(uncommon)* .......... 12 gp
+- Water Bomb (Moderate) *(uncommon)* .......... 10 gp
+- Wordreaper *(uncommon)* .......... 55 gp
+- Aether Marbles (Lesser) *(uncommon)* .......... 19 gp
+- Animal Staff .......... 90 gp
+- Ankhrav Duster *(uncommon)* .......... 90 gp
+- Atmospheric Staff (Lesser) *(uncommon)* .......... 95 gp
+- Blast Lance *(uncommon)* .......... 100 gp
+- Bottled Sunlight (Moderate) .......... 20 gp
+- Composer Staff .......... 80 gp
+- Crystal Shards (Moderate) .......... 16 gp
+- Defoliation Bomb (Moderate) *(uncommon)* .......... 18 gp
+- Drake Rifle (Acid) *(uncommon)* .......... 100 gp
+- Drake Rifle (Cold) *(uncommon)* .......... 100 gp
+- Drake Rifle (Electricity) *(uncommon)* .......... 100 gp
+- Drake Rifle (Fire) *(uncommon)* .......... 100 gp
+- Drake Rifle (Poison) *(uncommon)* .......... 100 gp
+- Exquisite Sword Cane .......... 90 gp
+- Fulmination Fang *(uncommon)* .......... 115 gp
+- Inflammation Flask (Moderate) *(uncommon)* .......... 15 gp
+- Mentalist's Staff .......... 90 gp
+- Nail Bomb (Moderate) *(uncommon)* .......... 16 gp
+- Poisoner's Staff *(uncommon)* .......... 90 gp
+- Spider Satchel (Moderate) *(uncommon)* .......... 16 gp
+- Spore Shephard's Staff *(uncommon)* .......... 100 gp
+- Spore Shephard's Staff (Major) *(uncommon)* .......... 100 gp
+- Staff of Healing .......... 90 gp
+- Alicorn Lance *(uncommon)* .......... 150 gp
+- Amphisbaena Handwraps *(uncommon)* .......... 150 gp
+- Auspicious Scepter .......... 150 gp
+- Blood-Drinker Blade *(uncommon)* .......... 160 gp
+- Caterwaul Sling .......... 155 gp
+- Chainbreaker *(uncommon)* .......... 150 gp
+- Cinderclaw Gauntlet *(uncommon)* .......... 150 gp
+- Dagger of Eternal Sleep *(uncommon)* .......... 25 gp
+- Dazzling Shortbow *(uncommon)* .......... 160 gp
+- Dog-Bone Knife *(uncommon)* .......... 150 gp
+- Hydrocannon *(uncommon)* .......... 150 gp
+- Infiltrator's Accessory .......... 150 gp
+- Metronomic Hammer *(uncommon)* .......... 160 gp
+- Poisonous Dagger .......... 150 gp
+- Restorative Handwraps .......... 150 gp
+- Scizore of the Crab .......... 150 gp
+- Serpent Dagger .......... 150 gp
+- Silver Orb (Lesser) *(uncommon)* .......... 30 gp
+- Solar Shellflower *(uncommon)* .......... 160 gp
+- Thundercrasher *(uncommon)* .......... 155 gp
+- Tiger Fork *(uncommon)* .......... 275 gp
+- Trollhound Pick .......... 140 gp
+- Worldringer *(uncommon)* .......... 160 gp
+- Accursed Staff .......... 250 gp
+- Acrobat's Staff *(uncommon)* .......... 235 gp
+- Bloodletting Kukri *(uncommon)* .......... 240 gp
+- Cavalry Commander's Lance *(uncommon)* .......... 225 gp
+- Chain of Command *(uncommon)* .......... 240 gp
+- Chatterer of Follies *(uncommon)* .......... 200 gp
+- Conflagration Club .......... 250 gp
+- Dragonscale Bo Staff .......... 240 gp
+- Dragonscale Staff .......... 240 gp
+- Faultline Hammer *(uncommon)* .......... 250 gp
+- Flashblade .......... 230 gp
+- Fluid Form Staff .......... 230 gp
+- Gluttonous Spear *(uncommon)* .......... 250 gp
+- Guardian Staff .......... 250 gp
+- Horselord's Longbow *(uncommon)* .......... 250 gp
+- Lady's Knife *(uncommon)* .......... 200 gp
+- Librarian Staff .......... 225 gp
+- Lyrakien Staff .......... 255 gp
+- Nightmare's Lament *(uncommon)* .......... 230 gp
+- Obsidian Edge *(uncommon)* .......... 250 gp
+- Radiant Victory *(uncommon)* .......... 240 gp
+- Ringmaster's Staff *(uncommon)* .......... 230 gp
+- Spider Gun *(uncommon)* .......... 250 gp
+- Spike Launcher *(uncommon)* .......... 250 gp
+- Staff of Control .......... 230 gp
+- Staff of Elemental Power .......... 230 gp
+- Staff of Final Rest *(uncommon)* .......... 240 gp
+- Staff of Impossible Visions *(uncommon)* .......... 230 gp
+- Staff of Metal .......... 250 gp
+- Staff of Phantasms .......... 230 gp
+- Staff of Protection .......... 230 gp
+- Staff of Providence .......... 230 gp
+- Staff of Summoning .......... 230 gp
+- Staff of the Dead .......... 230 gp
+- Staff of the Desert Winds .......... 230 gp
+- Staff of the Dreamlands *(uncommon)* .......... 250 gp
+- Staff of the Tempest .......... 230 gp
+- Staff of the Unblinking Eye *(uncommon)* .......... 230 gp
+- Twining Staff .......... 250 gp
+- Ulfen Shieldbreaker *(uncommon)* .......... 250 gp
+- Verdant Staff .......... 225 gp
+- Windlass Bola *(uncommon)* .......... 200 gp
+- Alghollthu Lash *(uncommon)* .......... 350 gp
+- Alghollthu Whip *(uncommon)* .......... 350 gp
+- Beast Staff .......... 340 gp
+- Bloodgorger Scythe *(uncommon)* .......... 340 gp
+- Fulminating Spear *(uncommon)* .......... 360 gp
+- Guiding Star .......... 325 gp
+- Kinetic Club *(uncommon)* .......... 325 gp
+- Lady's Spiral *(uncommon)* .......... 360 gp
+- Liar's Gun *(uncommon)* .......... 360 gp
+- Slime Whip *(uncommon)* .......... 360 gp
+- Spellguard Blade .......... 320 gp
+- Spellstriker Staff .......... 360 gp
+- Splithead Bow *(uncommon)* .......... 360 gp
+- Spy Staff *(uncommon)* .......... 340 gp
+- Staff of Nature's Cunning .......... 250 gp
+- Tentacle Cannon *(uncommon)* .......... 360 gp
+- Undead Scourge *(uncommon)* .......... 350 gp
+- Venom Lash *(uncommon)* .......... 350 gp
+- Zombie Staff .......... 330 gp
+
+Table: PF2eWeapon_city
+- Adze .......... 1 gp
+- Air Repeater *(uncommon)* .......... 4 gp
+- Aklys *(uncommon)* .......... 5 gp
+- Alchemical Crossbow *(uncommon)* .......... 25 gp
+- Arbalest .......... 8 gp
+- Arquebus *(uncommon)* .......... 8 gp
+- Asp Coil *(uncommon)* .......... 10 gp
+- Atlatl .......... 2 sp
+- Bastard Sword .......... 4 gp
+- Battle Axe .......... 1 gp
+- Battle Lute *(uncommon)* .......... 7 gp
+- Battle Saddle .......... 6 gp
+- Bayonet .......... 2 sp
+- Bec de Corbin .......... 4 gp
+- Black Powder Knuckle Dusters *(uncommon)* .......... 8 gp
+- Bladed Diabolo *(uncommon)* .......... 2 gp
+- Bladed Gauntlet *(uncommon)* .......... 5 gp
+- Bladed Hoop *(uncommon)* .......... 25 sp
+- Bladed Scarf *(uncommon)* .......... 3 gp
+- Bladesweeper *(uncommon)* .......... 4 gp
+- Blowgun .......... 1 sp
+- Blunderbuss *(uncommon)* .......... 6 gp
+- Bo Staff .......... 2 sp
+- Boarding Axe *(uncommon)* .......... 1 gp
+- Bola .......... 5 sp
+- Boomerang *(uncommon)* .......... 2 sp
+- Bow Staff *(uncommon)* .......... 8 gp
+- Breaching Pike *(uncommon)* .......... 8 gp
+- Broadspear .......... 2 gp
+- Butchering Axe *(uncommon)* .......... 8 gp
+- Butterfly Sword *(uncommon)* .......... 2 gp
+- Buugeng *(uncommon)* .......... 4 gp
+- Cane Pistol *(uncommon)* .......... 8 gp
+- Capturing Spetum *(uncommon)* .......... 9 gp
+- Chain Sword *(uncommon)* .......... 6 gp
+- Chakram .......... 5 sp
+- Chakri *(uncommon)* .......... 2 sp
+- Chakri (Lost Omens) *(uncommon)* .......... 2 cp
+- Clan Dagger *(uncommon)* .......... 2 gp
+- Clan Pistol *(uncommon)* .......... 5 gp
+- Claw Blade *(uncommon)* .......... 2 gp
+- Club .......... free
+- Coat Pistol *(uncommon)* .......... 5 gp
+- Combat Fishing Pole *(uncommon)* .......... 4 sp
+- Combat Lure *(uncommon)* .......... 2 gp
+- Corset Knife .......... 3 sp
+- Crescent Cross *(uncommon)* .......... 4 gp
+- Crossbow .......... 3 gp
+- Cruuk .......... 4 sp
+- Dagger .......... 2 sp
+- Dagger Pistol *(uncommon)* .......... 8 gp
+- Daikyu *(uncommon)* .......... 8 gp
+- Dancer's Spear .......... 3 gp
+- Dandpatta *(uncommon)* .......... 8 sp
+- Dart .......... 1 cp
+- Dart Umbrella *(uncommon)* .......... 1 gp
+- Dawnsilver Tree *(uncommon)* .......... 7 gp
+- Dogslicer *(uncommon)* .......... 1 sp
+- Donchak *(uncommon)* .......... 4 gp
+- Double-Barreled Pistol *(uncommon)* .......... 6 gp
+- Dragon Mouth Pistol *(uncommon)* .......... 7 gp
+- Dueling Spear *(uncommon)* .......... 2 gp
+- Dwarven Dorn-Dergar *(uncommon)* .......... 8 gp
+- Dwarven War Axe *(uncommon)* .......... 3 gp
+- Earthbreaker .......... 4 gp
+- Elven Branched Spear *(uncommon)* .......... 3 gp
+- Elven Curve Blade *(uncommon)* .......... 4 gp
+- Exquisite Sword Cane Sheath .......... free
+- Falcata .......... 3 gp
+- Falchion .......... 3 gp
+- Fangwire *(uncommon)* .......... 4 gp
+- Fauchard .......... 14 sp
+- Feng Huo Lun *(uncommon)* .......... 2 gp
+- Fighting Fan *(uncommon)* .......... 11 sp
+- Fighting Oar *(uncommon)* .......... 5 sp
+- Fighting Stick *(uncommon)* .......... 5 sp
+- Filcher's Fork *(uncommon)* .......... 1 gp
+- Fire Lance *(uncommon)* .......... 3 gp
+- Fire Poi *(uncommon)* .......... 5 gp
+- Flail .......... 8 sp
+- Flingflenser *(uncommon)* .......... 5 gp
+- Flintlock Musket *(uncommon)* .......... 5 gp
+- Flintlock Pistol *(uncommon)* .......... 4 gp
+- Flyssa .......... 1 gp
+- Forked Bipod .......... 3 sp
+- Frying Pan .......... 1 sp
+- Gada .......... 1 gp
+- Gaff .......... 1 gp
+- Gakgung .......... 2 gp
+- Gauntlet .......... 2 sp
+- Gauntlet Bow .......... 9 gp
+- Gill Hook *(uncommon)* .......... 2 gp
+- Gladius *(uncommon)* .......... 1 gp
+- Glaive .......... 1 gp
+- Gnome Flickmace *(uncommon)* .......... 3 gp
+- Gnome Hooked Hammer *(uncommon)* .......... 2 gp
+- Greataxe .......... 2 gp
+- Greatclub .......... 1 gp
+- Greatpick .......... 1 gp
+- Greatsword .......... 2 gp
+- Griffon Cane .......... 1 gp
+- Guisarme .......... 2 gp
+- Halberd .......... 2 gp
+- Halfling Sling Staff *(uncommon)* .......... 5 gp
+- Hand Adze .......... 5 sp
+- Hand Cannon *(uncommon)* .......... 3 gp
+- Hand Crossbow .......... 3 gp
+- Harmona Gun *(uncommon)* .......... 8 gp
+- Harpoon .......... 1 gp
+- Hatchet .......... 4 sp
+- Heavy Crossbow .......... 4 gp
+- Hongali Hornbow *(uncommon)* .......... 11 gp
+- Hook Sword *(uncommon)* .......... 3 gp
+- Horsechopper *(uncommon)* .......... 9 sp
+- Injection Spear *(uncommon)* .......... 3 gp
+- Javelin .......... 1 sp
+- Jiu Huan Dao *(uncommon)* .......... 9 sp
+- Juggling Club *(uncommon)* .......... 1 sp
+- Kalis *(uncommon)* .......... 3 gp
+- Kama *(uncommon)* .......... 1 gp
+- Karambit *(uncommon)* .......... 2 gp
+- Katana *(uncommon)* .......... 2 gp
+- Katar *(uncommon)* .......... 3 sp
+- Kestros *(uncommon)* .......... 2 gp
+- Khakkhara *(uncommon)* .......... 2 gp
+- Khopesh *(uncommon)* .......... 2 gp
+- Knuckle Duster .......... 3 sp
+- Kris .......... 7 sp
+- Kukri *(uncommon)* .......... 6 sp
+- Kusarigama *(uncommon)* .......... 2 gp
+- Lance .......... 1 gp
+- Lancer *(uncommon)* .......... 8 gp
+- Leiomano *(uncommon)* .......... 2 gp
+- Light Hammer .......... 3 sp
+- Light Mace .......... 4 sp
+- Light Pick .......... 4 sp
+- Lion Scythe *(uncommon)* .......... 1 gp
+- Liuyedao .......... 3 gp
+- Long Air Repeater *(uncommon)* .......... 6 gp
+- Long Hammer .......... 5 gp
+- Longbow .......... 6 gp
+- Longspear .......... 5 sp
+- Longsword .......... 1 gp
+- Mace .......... 1 gp
+- Mace Multipistol *(uncommon)* .......... 13 gp
+- Machete .......... 7 sp
+- Macuahuitl *(uncommon)* .......... 3 gp
+- Main-Gauche .......... 5 sp
+- Mambele *(uncommon)* .......... 6 sp
+- Maul .......... 3 gp
+- Maul-spade *(uncommon)* .......... 6 gp
+- Meteor Hammer .......... 3 gp
+- Mikazuki *(uncommon)* .......... 8 gp
+- Monkey's Fist .......... 1 sp
+- Morningstar .......... 1 gp
+- Naginata *(uncommon)* .......... 3 gp
+- Nightstick *(uncommon)* .......... 1 gp
+- Nodachi .......... 6 gp
+- Nunchaku *(uncommon)* .......... 2 sp
+- Ogre Hook *(uncommon)* .......... 1 gp
+- Orc Knuckle Dagger *(uncommon)* .......... 7 sp
+- Orc Necksplitter *(uncommon)* .......... 2 gp
+- Orc Skewermaul *(uncommon)* .......... 2 gp
+- Palstave *(uncommon)* .......... 4 sp
+- Panabas .......... 1 gp
+- Pantograph Gauntlet *(uncommon)* .......... 2 gp
+- Pepperbox *(uncommon)* .......... 9 gp
+- Pick .......... 7 sp
+- Piercing Wind *(uncommon)* .......... 15 gp
+- Piranha Kiss *(uncommon)* .......... 4 sp
+- Poi *(uncommon)* .......... 2 sp
+- Probing Cane .......... 5 sp
+- Ranseur .......... 2 gp
+- Rapier .......... 2 gp
+- Rapier Pistol *(uncommon)* .......... 10 gp
+- Reinforced Stock .......... 2 sp
+- Reinforced Wheels .......... 5 sp
+- Rhoka Sword *(uncommon)* .......... 4 gp
+- Rope Dart *(uncommon)* .......... 1 gp
+- Rotary Bow .......... 8 gp
+- Sai *(uncommon)* .......... 6 sp
+- Sansetsukon *(uncommon)* .......... 2 gp
+- Sap .......... 1 sp
+- Sawtooth Saber *(uncommon)* .......... 5 gp
+- Scimitar .......... 1 gp
+- Scizore .......... 9 sp
+- Scorpion Whip *(uncommon)* .......... 5 sp
+- Scourge .......... 1 sp
+- Scythe .......... 2 gp
+- Shauth Blade *(uncommon)* .......... 2 gp
+- Shauth Lash *(uncommon)* .......... 8 gp
+- Shears *(uncommon)* .......... 5 sp
+- Shield Boss .......... 5 sp
+- Shield Bow .......... 5 gp
+- Shield Pistol *(uncommon)* .......... 6 gp
+- Shield Spikes .......... 5 sp
+- Shortbow .......... 3 gp
+- Shortsword .......... 9 sp
+- Shuan Ji *(uncommon)* .......... 3 gp
+- Shuriken *(uncommon)* .......... 1 cp
+- Sickle .......... 2 sp
+- Sickle-saber *(uncommon)* .......... 5 gp
+- Sling .......... free
+- Spear .......... 1 sp
+- Spiked Chain *(uncommon)* .......... 3 gp
+- Spiked Gauntlet .......... 3 sp
+- Spiral Rapier *(uncommon)* .......... 5 gp
+- Spirit Thresher *(uncommon)* .......... 2 gp
+- Spraysling *(uncommon)* .......... 1 gp
+- Staff .......... free
+- Starknife .......... 2 gp
+- Sun Sling *(uncommon)* .......... 3 gp
+- Sword Cane .......... 5 gp
+- Talwar .......... 2 gp
+- Tamchal Chakram *(uncommon)* .......... 5 gp
+- Taw Launcher *(uncommon)* .......... 10 gp
+- Tekko-Kagi *(uncommon)* .......... 2 sp
+- Temple Sword *(uncommon)* .......... 2 gp
+- Tengu Gale Blade *(uncommon)* .......... 4 gp
+- Tetsubo *(uncommon)* .......... 3 gp
+- Thorn Whip *(uncommon)* .......... 6 sp
+- Three-Section Naginata *(uncommon)* .......... 12 gp
+- Throwing Knife .......... 3 sp
+- Throwing Knife (Extinction Curse) *(uncommon)* .......... 3 sp
+- Thunder Sling *(uncommon)* .......... 5 gp
+- Thundermace *(uncommon)* .......... 2 sp
+- Tonfa *(uncommon)* .......... 1 sp
+- Tri-bladed Katar *(uncommon)* .......... 1 sp
+- Tricky Pick *(uncommon)* .......... 10 gp
+- Trident .......... 1 gp
+- Triggerbrand *(uncommon)* .......... 10 gp
+- Umbrella Injector *(uncommon)* .......... 4 gp
+- Urumi *(uncommon)* .......... 2 gp
+- Visap *(uncommon)* .......... 2 gp
+- Wakizashi *(uncommon)* .......... 1 gp
+- War Flail .......... 2 gp
+- War Gavel *(uncommon)* .......... 2 sp
+- War Javelin *(uncommon)* .......... 1 gp
+- War Lance *(uncommon)* .......... 4 gp
+- War Razor .......... 3 sp
+- Warhammer .......... 1 gp
+- Wheel Blades .......... 5 sp
+- Wheel Spikes .......... 5 sp
+- Whip .......... 1 sp
+- Whip Claw *(uncommon)* .......... 5 gp
+- Whipstaff *(uncommon)* .......... 3 gp
+- Wish Blade *(uncommon)* .......... 5 gp
+- Wish Knife *(uncommon)* .......... 2 gp
+- Wrecker *(uncommon)* .......... 8 gp
+- Wrist Launcher *(uncommon)* .......... 3 gp
+- Zhuazhi Bang *(uncommon)* .......... 1 gp
+- Zulfikar *(uncommon)* .......... 4 gp
+- Acid Flask (Lesser) .......... 3 gp
+- Alchemical Gauntlet .......... 10 gp
+- Alchemist's Fire (Lesser) .......... 3 gp
+- Aldori Dueling Sword *(uncommon)* .......... 2 gp
+- Atrophy Bomb (Lesser) *(uncommon)* .......... 4 gp
+- Axe Musket *(uncommon)* .......... 10 gp
+- Backpack Ballista *(uncommon)* .......... 18 gp
+- Backpack Catapult *(uncommon)* .......... 20 gp
+- Barricade Buster *(uncommon)* .......... 9 gp
+- Big Boom Gun *(uncommon)* .......... 10 gp
+- Bioluminescence Bomb *(uncommon)* .......... 3 gp
+- Blasting Stone (Lesser) .......... 3 gp
+- Blight Bomb (Lesser) .......... 3 gp
+- Blood Bomb (Lesser) *(uncommon)* .......... 4 gp
+- Boarding Pike *(uncommon)* .......... 8 sp
+- Bottled Lightning (Lesser) .......... 3 gp
+- Combat Grapnel *(uncommon)* .......... 9 sp
+- Composite Longbow .......... 20 gp
+- Composite Shortbow .......... 14 gp
+- Double-Barreled Musket *(uncommon)* .......... 11 gp
+- Dragon's Crest *(uncommon)* .......... 10 gp
+- Dread Ampoule (Lesser) .......... 3 gp
+- Dueling Pistol *(uncommon)* .......... 12 gp
+- Durian Bomb (Lesser) *(uncommon)* .......... 4 gp
+- Dwarven Daisy (Lesser) *(uncommon)* .......... 6 gp
+- Dwarven Scattergun *(uncommon)* .......... 10 gp
+- Explosive Dogslicer *(uncommon)* .......... 10 gp
+- Flying Talon *(uncommon)* .......... 6 gp
+- Frost Vial (Lesser) .......... 3 gp
+- Ghost Charge (Lesser) .......... 3 gp
+- Glue Bomb (Lesser) .......... 3 gp
+- Gnome Amalgam Musket *(uncommon)* .......... 10 gp
+- Goo Grenade (Lesser) *(uncommon)* .......... 3 gp
+- Granny's Hedge Trimmer *(rare)* .......... free
+- Gun Sword *(uncommon)* .......... 13 gp
+- Hammer Gun *(uncommon)* .......... 13 gp
+- Holy Water .......... 3 gp
+- Jezail *(uncommon)* .......... 11 gp
+- Junk Bomb (Lesser) *(uncommon)* .......... 4 gp
+- Mud Bomb (Lesser) *(uncommon)* .......... 3 gp
+- Necrotic Bomb (Lesser) .......... 3 gp
+- Pernicious Spore Bomb (Lesser) *(uncommon)* .......... 3 gp
+- Peshpine Grenade (Lesser) *(uncommon)* .......... 3 gp
+- Phalanx Piercer .......... 10 gp
+- Polytool *(uncommon)* .......... 10 gp
+- Pressure Bomb (Lesser) *(uncommon)* .......... 4 gp
+- Redpitch Bomb (Lesser) *(rare)* .......... 3 gp
+- Repeating Crossbow *(uncommon)* .......... 15 gp
+- Repeating Hand Crossbow *(uncommon)* .......... 10 gp
+- Repeating Heavy Crossbow *(uncommon)* .......... 20 gp
+- Scrollstaff *(uncommon)* .......... 12 gp
+- Shobhad Longrifle *(rare)* .......... 20 gp
+- Skunk Bomb (Lesser) .......... 4 gp
+- Slide Pistol *(uncommon)* .......... 16 gp
+- Spoon Gun *(uncommon)* .......... 10 gp
+- Star Grenade (Lesser) *(uncommon)* .......... 3 gp
+- Steelscour (Lesser) *(uncommon)* .......... 3 gp
+- Sticky Algae Bomb (Lesser) .......... 4 gp
+- Stiletto Pen *(uncommon)* .......... 8 gp
+- Sukgung .......... 7 gp
+- Sulfur Bomb (Lesser) *(uncommon)* .......... 4 gp
+- Switchscythe *(uncommon)* .......... 12 gp
+- Tallow Bomb (Lesser) *(uncommon)* .......... 3 gp
+- Tenderizer Grenade (Lesser) *(uncommon)* .......... 4 gp
+- Three-peaked Tree *(uncommon)* .......... 12 gp
+- Twigjack Sack (Lesser) *(uncommon)* .......... 3 gp
+- Unholy Water .......... 3 gp
+- Versatile Vial .......... free
+- Vexing Vapor (Lesser) *(uncommon)* .......... 4 gp
+- Water Bomb (Lesser) *(uncommon)* .......... 3 gp
+- Bottled Sunlight (Lesser) .......... 7 gp
+- Defoliation Bomb (Lesser) *(uncommon)* .......... 7 gp
+- Handwraps of Mighty Blows .......... 35 gp
+- Inflammation Flask (Lesser) *(uncommon)* .......... 5 gp
+- Nail Bomb (Lesser) *(uncommon)* .......... 8 gp
+- Spider Satchel (Lesser) *(uncommon)* .......... 6 gp
+- Acid Flask (Moderate) .......... 10 gp
+- Alchemist's Fire (Moderate) .......... 10 gp
+- Atrophy Bomb (Moderate) *(uncommon)* .......... 11 gp
+- Blasting Stone (Moderate) .......... 10 gp
+- Blight Bomb (Moderate) .......... 10 gp
+- Blood Bomb (Moderate) *(uncommon)* .......... 11 gp
+- Boastful Hunter *(rare)* .......... free
+- Bottled Lightning (Moderate) .......... 10 gp
+- Crimson Thorn *(uncommon)* .......... 60 gp
+- Dread Ampoule (Moderate) .......... 10 gp
+- Durian Bomb (Moderate) *(uncommon)* .......... 12 gp
+- Dwarven Daisy (Moderate) *(uncommon)* .......... 18 gp
+- Fighter's Fork .......... 50 gp
+- Frost Vial (Moderate) .......... 10 gp
+- Ghast Stiletto .......... 60 gp
+- Ghost Charge (Moderate) .......... 10 gp
+- Ghoul Stiletto .......... 60 gp
+- Glacier Hammer .......... 60 gp
+- Glue Bomb (Moderate) .......... 10 gp
+- Goo Grenade (Moderate) *(uncommon)* .......... 10 gp
+- Hunter's Bow .......... 60 gp
+- Junk Bomb (Moderate) *(uncommon)* .......... 12 gp
+- Little Love *(rare)* .......... 60 gp
+- Magnetic Bola *(uncommon)* .......... 60 gp
+- Mud Bomb (Moderate) *(uncommon)* .......... 10 gp
+- Necrotic Bomb (Moderate) .......... 10 gp
+- Pernicious Spore Bomb (Moderate) *(uncommon)* .......... 10 gp
+- Peshpine Grenade (Moderate) *(uncommon)* .......... 10 gp
+- Pressure Bomb (Moderate) *(uncommon)* .......... 12 gp
+- Redpitch Bomb (Moderate) *(rare)* .......... 10 gp
+- Retribution Axe .......... 60 gp
+- Silverscrap Bomb (Lesser) *(uncommon)* .......... 11 gp
+- Silversoul Bomb *(rare)* .......... 10 gp
+- Skunk Bomb (Moderate) .......... 12 gp
+- Smoking Sword .......... 60 gp
+- Sparkblade .......... 70 gp
+- Staff of Air .......... 60 gp
+- Staff of Earth .......... 60 gp
+- Staff of Fire .......... 60 gp
+- Staff of Water .......... 60 gp
+- Star Grenade (Moderate) *(uncommon)* .......... 10 gp
+- Steelscour (Moderate) *(uncommon)* .......... 9 gp
+- Sticky Algae Bomb (Moderate) .......... 12 gp
+- Storm Hammer .......... 60 gp
+- Sulfur Bomb (Moderate) *(uncommon)* .......... 12 gp
+- Tallow Bomb (Moderate) *(uncommon)* .......... 10 gp
+- Tenderizer Grenade (Moderate) *(uncommon)* .......... 12 gp
+- Twigjack Sack (Moderate) *(uncommon)* .......... 10 gp
+- Vexing Vapor (Moderate) *(uncommon)* .......... 12 gp
+- Water Bomb (Moderate) *(uncommon)* .......... 10 gp
+- Wordreaper *(uncommon)* .......... 55 gp
+- Aether Marbles (Lesser) *(uncommon)* .......... 19 gp
+- Animal Staff .......... 90 gp
+- Ankhrav Duster *(uncommon)* .......... 90 gp
+- Atmospheric Staff (Lesser) *(uncommon)* .......... 95 gp
+- Blast Lance *(uncommon)* .......... 100 gp
+- Bottled Sunlight (Moderate) .......... 20 gp
+- Composer Staff .......... 80 gp
+- Crystal Shards (Moderate) .......... 16 gp
+- Defoliation Bomb (Moderate) *(uncommon)* .......... 18 gp
+- Drake Rifle (Acid) *(uncommon)* .......... 100 gp
+- Drake Rifle (Cold) *(uncommon)* .......... 100 gp
+- Drake Rifle (Electricity) *(uncommon)* .......... 100 gp
+- Drake Rifle (Fire) *(uncommon)* .......... 100 gp
+- Drake Rifle (Poison) *(uncommon)* .......... 100 gp
+- Dreamcrusher *(rare)* .......... 80 gp
+- Exquisite Sword Cane .......... 90 gp
+- Fulmination Fang *(uncommon)* .......... 115 gp
+- Inflammation Flask (Moderate) *(uncommon)* .......... 15 gp
+- Mentalist's Staff .......... 90 gp
+- Musket Staff of Force *(rare)* .......... 100 gp
+- Musket Staff of Void *(rare)* .......... 100 gp
+- Nail Bomb (Moderate) *(uncommon)* .......... 16 gp
+- Pistol Wand *(rare)* .......... 100 gp
+- Poisoner's Staff *(uncommon)* .......... 90 gp
+- Spider Satchel (Moderate) *(uncommon)* .......... 16 gp
+- Spore Shephard's Staff *(uncommon)* .......... 100 gp
+- Spore Shephard's Staff (Major) *(uncommon)* .......... 100 gp
+- Staff of Healing .......... 90 gp
+- Alicorn Lance *(uncommon)* .......... 150 gp
+- Amphisbaena Handwraps *(uncommon)* .......... 150 gp
+- Auspicious Scepter .......... 150 gp
+- Blood-Drinker Blade *(uncommon)* .......... 160 gp
+- Caterwaul Sling .......... 155 gp
+- Chainbreaker *(uncommon)* .......... 150 gp
+- Cinderclaw Gauntlet *(uncommon)* .......... 150 gp
+- Dagger of Eternal Sleep *(uncommon)* .......... 25 gp
+- Dazzling Shortbow *(uncommon)* .......... 160 gp
+- Dog-Bone Knife *(uncommon)* .......... 150 gp
+- Grasp of Droskar *(rare)* .......... 155 gp
+- Heartripper Blade *(rare)* .......... 160 gp
+- Hydrocannon *(uncommon)* .......... 150 gp
+- Infiltrator's Accessory .......... 150 gp
+- Metronomic Hammer *(uncommon)* .......... 160 gp
+- Poisonous Dagger .......... 150 gp
+- Protector's Final Gift *(rare)* .......... 150 gp
+- Restorative Handwraps .......... 150 gp
+- Scizore of the Crab .......... 150 gp
+- Serpent Dagger .......... 150 gp
+- Shard of Self-Destruction *(rare)* .......... free
+- Silver Orb (Lesser) *(uncommon)* .......... 30 gp
+- Singing Sword *(rare)* .......... free
+- Solar Shellflower *(uncommon)* .......... 160 gp
+- Thundercrasher *(uncommon)* .......... 155 gp
+- Tiger Fork *(uncommon)* .......... 275 gp
+- Trollhound Pick .......... 140 gp
+- Worldringer *(uncommon)* .......... 160 gp
+- Accursed Staff .......... 250 gp
+- Acrobat's Staff *(uncommon)* .......... 235 gp
+- Arboreal's Revenge *(rare)* .......... free
+- Bloodletting Kukri *(uncommon)* .......... 240 gp
+- Cavalry Commander's Lance *(uncommon)* .......... 225 gp
+- Chain of Command *(uncommon)* .......... 240 gp
+- Chatterer of Follies *(uncommon)* .......... 200 gp
+- Conflagration Club .......... 250 gp
+- Dragonscale Bo Staff .......... 240 gp
+- Dragonscale Staff .......... 240 gp
+- Faultline Hammer *(uncommon)* .......... 250 gp
+- Flashblade .......... 230 gp
+- Fluid Form Staff .......... 230 gp
+- Gluttonous Spear *(uncommon)* .......... 250 gp
+- Guardian Staff .......... 250 gp
+- Horselord's Longbow *(uncommon)* .......... 250 gp
+- Hydra Head Club *(rare)* .......... 225 gp
+- Lady's Knife *(uncommon)* .......... 200 gp
+- Librarian Staff .......... 225 gp
+- Lyrakien Staff .......... 255 gp
+- Nightmare's Lament *(uncommon)* .......... 230 gp
+- Obsidian Edge *(uncommon)* .......... 250 gp
+- Radiant Victory *(uncommon)* .......... 240 gp
+- Ringmaster's Staff *(uncommon)* .......... 230 gp
+- Soul Chain *(rare)* .......... free
+- Spider Gun *(uncommon)* .......... 250 gp
+- Spike Launcher *(uncommon)* .......... 250 gp
+- Staff of Control .......... 230 gp
+- Staff of Elemental Power .......... 230 gp
+- Staff of Final Rest *(uncommon)* .......... 240 gp
+- Staff of Impossible Visions *(uncommon)* .......... 230 gp
+- Staff of Metal .......... 250 gp
+- Staff of Phantasms .......... 230 gp
+- Staff of Protection .......... 230 gp
+- Staff of Providence .......... 230 gp
+- Staff of Summoning .......... 230 gp
+- Staff of the Dead .......... 230 gp
+- Staff of the Desert Winds .......... 230 gp
+- Staff of the Dreamlands *(uncommon)* .......... 250 gp
+- Staff of the Tempest .......... 230 gp
+- Staff of the Unblinking Eye *(uncommon)* .......... 230 gp
+- Twining Staff .......... 250 gp
+- Ulfen Shieldbreaker *(uncommon)* .......... 250 gp
+- Verdant Staff .......... 225 gp
+- Windlass Bola *(uncommon)* .......... 200 gp
+- Alghollthu Lash *(uncommon)* .......... 350 gp
+- Alghollthu Whip *(uncommon)* .......... 350 gp
+- Beast Staff .......... 340 gp
+- Bellicose Dagger *(rare)* .......... free
+- Bloodgorger Scythe *(uncommon)* .......... 340 gp
+- Branch of the Great Sugi *(rare)* .......... 360 gp
+- Fulminating Spear *(uncommon)* .......... 360 gp
+- Guiding Star .......... 325 gp
+- Kinetic Club *(uncommon)* .......... 325 gp
+- Lady's Spiral *(uncommon)* .......... 360 gp
+- Liar's Gun *(uncommon)* .......... 360 gp
+- Slime Whip *(uncommon)* .......... 360 gp
+- Spellguard Blade .......... 320 gp
+- Spellstriker Staff .......... 360 gp
+- Spirit Fan *(rare)* .......... 360 gp
+- Splithead Bow *(uncommon)* .......... 360 gp
+- Spy Staff *(uncommon)* .......... 340 gp
+- Staff of Nature's Cunning .......... 250 gp
+- Tentacle Cannon *(uncommon)* .......... 360 gp
+- Undead Scourge *(uncommon)* .......... 350 gp
+- Venom Lash *(uncommon)* .......... 350 gp
+- Zombie Staff .......... 330 gp
+- Animal Staff (Greater) .......... 460 gp
+- Atmospheric Staff *(uncommon)* .......... 480 gp
+- Blast Lance (Greater) *(uncommon)* .......... 500 gp
+- Boreal Staff .......... 500 gp
+- Breath Blaster *(uncommon)* .......... 500 gp
+- Calamity *(uncommon)* .......... 500 gp
+- Clockwork Macuahuitl *(rare)* .......... 550 gp
+- Composer Staff (Greater) .......... 480 gp
+- Constricting Meteor *(uncommon)* .......... 450 gp
+- Deathseeker .......... 500 gp
+- Doomsweeper *(uncommon)* .......... 475 gp
+- Flaying Knife *(uncommon)* .......... 480 gp
+- Gray Prince *(rare)* .......... 500 gp
+- Hundred-Moth Caress .......... 475 gp
+- Mageslayer *(uncommon)* .......... 500 gp
+- Mentalist's Staff (Greater) .......... 450 gp
+- Mindlance *(uncommon)* .......... 500 gp
+- Poisoner's Staff (Greater) *(uncommon)* .......... 450 gp
+- Returning Starknife *(uncommon)* .......... 430 gp
+- Spiritsight Crossbow *(uncommon)* .......... 450 gp
+- Spore Shephard's Staff (Greater) *(uncommon)* .......... 475 gp
+- Staff of Air (Greater) .......... 450 gp
+- Staff of Earth (Greater) .......... 450 gp
+- Staff of Fire (Greater) .......... 450 gp
+- Staff of Healing (Greater) .......... 470 gp
+- Staff of Illumination .......... 425 gp
+- Staff of Water (Greater) .......... 450 gp
+- Sunken Pistol *(rare)* .......... free
+- Vampire-Fang Morningstar .......... 500 gp
+- Vine Whip .......... 500 gp
+
+Table: PF2eWeapon_large_city
+- Adze .......... 1 gp
+- Air Repeater *(uncommon)* .......... 4 gp
+- Aklys *(uncommon)* .......... 5 gp
+- Alchemical Crossbow *(uncommon)* .......... 25 gp
+- Arbalest .......... 8 gp
+- Arquebus *(uncommon)* .......... 8 gp
+- Asp Coil *(uncommon)* .......... 10 gp
+- Atlatl .......... 2 sp
+- Bastard Sword .......... 4 gp
+- Battle Axe .......... 1 gp
+- Battle Lute *(uncommon)* .......... 7 gp
+- Battle Saddle .......... 6 gp
+- Bayonet .......... 2 sp
+- Bec de Corbin .......... 4 gp
+- Black Powder Knuckle Dusters *(uncommon)* .......... 8 gp
+- Bladed Diabolo *(uncommon)* .......... 2 gp
+- Bladed Gauntlet *(uncommon)* .......... 5 gp
+- Bladed Hoop *(uncommon)* .......... 25 sp
+- Bladed Scarf *(uncommon)* .......... 3 gp
+- Bladesweeper *(uncommon)* .......... 4 gp
+- Blowgun .......... 1 sp
+- Blunderbuss *(uncommon)* .......... 6 gp
+- Bo Staff .......... 2 sp
+- Boarding Axe *(uncommon)* .......... 1 gp
+- Bola .......... 5 sp
+- Boomerang *(uncommon)* .......... 2 sp
+- Bow Staff *(uncommon)* .......... 8 gp
+- Breaching Pike *(uncommon)* .......... 8 gp
+- Broadspear .......... 2 gp
+- Butchering Axe *(uncommon)* .......... 8 gp
+- Butterfly Sword *(uncommon)* .......... 2 gp
+- Buugeng *(uncommon)* .......... 4 gp
+- Cane Pistol *(uncommon)* .......... 8 gp
+- Capturing Spetum *(uncommon)* .......... 9 gp
+- Chain Sword *(uncommon)* .......... 6 gp
+- Chakram .......... 5 sp
+- Chakri *(uncommon)* .......... 2 sp
+- Chakri (Lost Omens) *(uncommon)* .......... 2 cp
+- Clan Dagger *(uncommon)* .......... 2 gp
+- Clan Pistol *(uncommon)* .......... 5 gp
+- Claw Blade *(uncommon)* .......... 2 gp
+- Club .......... free
+- Coat Pistol *(uncommon)* .......... 5 gp
+- Combat Fishing Pole *(uncommon)* .......... 4 sp
+- Combat Lure *(uncommon)* .......... 2 gp
+- Corset Knife .......... 3 sp
+- Crescent Cross *(uncommon)* .......... 4 gp
+- Crossbow .......... 3 gp
+- Cruuk .......... 4 sp
+- Dagger .......... 2 sp
+- Dagger Pistol *(uncommon)* .......... 8 gp
+- Daikyu *(uncommon)* .......... 8 gp
+- Dancer's Spear .......... 3 gp
+- Dandpatta *(uncommon)* .......... 8 sp
+- Dart .......... 1 cp
+- Dart Umbrella *(uncommon)* .......... 1 gp
+- Dawnsilver Tree *(uncommon)* .......... 7 gp
+- Dogslicer *(uncommon)* .......... 1 sp
+- Donchak *(uncommon)* .......... 4 gp
+- Double-Barreled Pistol *(uncommon)* .......... 6 gp
+- Dragon Mouth Pistol *(uncommon)* .......... 7 gp
+- Dueling Spear *(uncommon)* .......... 2 gp
+- Dwarven Dorn-Dergar *(uncommon)* .......... 8 gp
+- Dwarven War Axe *(uncommon)* .......... 3 gp
+- Earthbreaker .......... 4 gp
+- Elven Branched Spear *(uncommon)* .......... 3 gp
+- Elven Curve Blade *(uncommon)* .......... 4 gp
+- Exquisite Sword Cane Sheath .......... free
+- Falcata .......... 3 gp
+- Falchion .......... 3 gp
+- Fangwire *(uncommon)* .......... 4 gp
+- Fauchard .......... 14 sp
+- Feng Huo Lun *(uncommon)* .......... 2 gp
+- Fighting Fan *(uncommon)* .......... 11 sp
+- Fighting Oar *(uncommon)* .......... 5 sp
+- Fighting Stick *(uncommon)* .......... 5 sp
+- Filcher's Fork *(uncommon)* .......... 1 gp
+- Fire Lance *(uncommon)* .......... 3 gp
+- Fire Poi *(uncommon)* .......... 5 gp
+- Flail .......... 8 sp
+- Flingflenser *(uncommon)* .......... 5 gp
+- Flintlock Musket *(uncommon)* .......... 5 gp
+- Flintlock Pistol *(uncommon)* .......... 4 gp
+- Flyssa .......... 1 gp
+- Forked Bipod .......... 3 sp
+- Frying Pan .......... 1 sp
+- Gada .......... 1 gp
+- Gaff .......... 1 gp
+- Gakgung .......... 2 gp
+- Gauntlet .......... 2 sp
+- Gauntlet Bow .......... 9 gp
+- Gill Hook *(uncommon)* .......... 2 gp
+- Gladius *(uncommon)* .......... 1 gp
+- Glaive .......... 1 gp
+- Gnome Flickmace *(uncommon)* .......... 3 gp
+- Gnome Hooked Hammer *(uncommon)* .......... 2 gp
+- Greataxe .......... 2 gp
+- Greatclub .......... 1 gp
+- Greatpick .......... 1 gp
+- Greatsword .......... 2 gp
+- Griffon Cane .......... 1 gp
+- Guisarme .......... 2 gp
+- Halberd .......... 2 gp
+- Halfling Sling Staff *(uncommon)* .......... 5 gp
+- Hand Adze .......... 5 sp
+- Hand Cannon *(uncommon)* .......... 3 gp
+- Hand Crossbow .......... 3 gp
+- Harmona Gun *(uncommon)* .......... 8 gp
+- Harpoon .......... 1 gp
+- Hatchet .......... 4 sp
+- Heavy Crossbow .......... 4 gp
+- Hongali Hornbow *(uncommon)* .......... 11 gp
+- Hook Sword *(uncommon)* .......... 3 gp
+- Horsechopper *(uncommon)* .......... 9 sp
+- Injection Spear *(uncommon)* .......... 3 gp
+- Javelin .......... 1 sp
+- Jiu Huan Dao *(uncommon)* .......... 9 sp
+- Juggling Club *(uncommon)* .......... 1 sp
+- Kalis *(uncommon)* .......... 3 gp
+- Kama *(uncommon)* .......... 1 gp
+- Karambit *(uncommon)* .......... 2 gp
+- Katana *(uncommon)* .......... 2 gp
+- Katar *(uncommon)* .......... 3 sp
+- Kestros *(uncommon)* .......... 2 gp
+- Khakkhara *(uncommon)* .......... 2 gp
+- Khopesh *(uncommon)* .......... 2 gp
+- Knuckle Duster .......... 3 sp
+- Kris .......... 7 sp
+- Kukri *(uncommon)* .......... 6 sp
+- Kusarigama *(uncommon)* .......... 2 gp
+- Lance .......... 1 gp
+- Lancer *(uncommon)* .......... 8 gp
+- Leiomano *(uncommon)* .......... 2 gp
+- Light Hammer .......... 3 sp
+- Light Mace .......... 4 sp
+- Light Pick .......... 4 sp
+- Lion Scythe *(uncommon)* .......... 1 gp
+- Liuyedao .......... 3 gp
+- Long Air Repeater *(uncommon)* .......... 6 gp
+- Long Hammer .......... 5 gp
+- Longbow .......... 6 gp
+- Longspear .......... 5 sp
+- Longsword .......... 1 gp
+- Mace .......... 1 gp
+- Mace Multipistol *(uncommon)* .......... 13 gp
+- Machete .......... 7 sp
+- Macuahuitl *(uncommon)* .......... 3 gp
+- Main-Gauche .......... 5 sp
+- Mambele *(uncommon)* .......... 6 sp
+- Maul .......... 3 gp
+- Maul-spade *(uncommon)* .......... 6 gp
+- Meteor Hammer .......... 3 gp
+- Mikazuki *(uncommon)* .......... 8 gp
+- Monkey's Fist .......... 1 sp
+- Morningstar .......... 1 gp
+- Naginata *(uncommon)* .......... 3 gp
+- Nightstick *(uncommon)* .......... 1 gp
+- Nodachi .......... 6 gp
+- Nunchaku *(uncommon)* .......... 2 sp
+- Ogre Hook *(uncommon)* .......... 1 gp
+- Orc Knuckle Dagger *(uncommon)* .......... 7 sp
+- Orc Necksplitter *(uncommon)* .......... 2 gp
+- Orc Skewermaul *(uncommon)* .......... 2 gp
+- Palstave *(uncommon)* .......... 4 sp
+- Panabas .......... 1 gp
+- Pantograph Gauntlet *(uncommon)* .......... 2 gp
+- Pepperbox *(uncommon)* .......... 9 gp
+- Pick .......... 7 sp
+- Piercing Wind *(uncommon)* .......... 15 gp
+- Piranha Kiss *(uncommon)* .......... 4 sp
+- Poi *(uncommon)* .......... 2 sp
+- Probing Cane .......... 5 sp
+- Ranseur .......... 2 gp
+- Rapier .......... 2 gp
+- Rapier Pistol *(uncommon)* .......... 10 gp
+- Reinforced Stock .......... 2 sp
+- Reinforced Wheels .......... 5 sp
+- Rhoka Sword *(uncommon)* .......... 4 gp
+- Rope Dart *(uncommon)* .......... 1 gp
+- Rotary Bow .......... 8 gp
+- Sai *(uncommon)* .......... 6 sp
+- Sansetsukon *(uncommon)* .......... 2 gp
+- Sap .......... 1 sp
+- Sawtooth Saber *(uncommon)* .......... 5 gp
+- Scimitar .......... 1 gp
+- Scizore .......... 9 sp
+- Scorpion Whip *(uncommon)* .......... 5 sp
+- Scourge .......... 1 sp
+- Scythe .......... 2 gp
+- Shauth Blade *(uncommon)* .......... 2 gp
+- Shauth Lash *(uncommon)* .......... 8 gp
+- Shears *(uncommon)* .......... 5 sp
+- Shield Boss .......... 5 sp
+- Shield Bow .......... 5 gp
+- Shield Pistol *(uncommon)* .......... 6 gp
+- Shield Spikes .......... 5 sp
+- Shortbow .......... 3 gp
+- Shortsword .......... 9 sp
+- Shuan Ji *(uncommon)* .......... 3 gp
+- Shuriken *(uncommon)* .......... 1 cp
+- Sickle .......... 2 sp
+- Sickle-saber *(uncommon)* .......... 5 gp
+- Sling .......... free
+- Spear .......... 1 sp
+- Spiked Chain *(uncommon)* .......... 3 gp
+- Spiked Gauntlet .......... 3 sp
+- Spiral Rapier *(uncommon)* .......... 5 gp
+- Spirit Thresher *(uncommon)* .......... 2 gp
+- Spraysling *(uncommon)* .......... 1 gp
+- Staff .......... free
+- Starknife .......... 2 gp
+- Sun Sling *(uncommon)* .......... 3 gp
+- Sword Cane .......... 5 gp
+- Talwar .......... 2 gp
+- Tamchal Chakram *(uncommon)* .......... 5 gp
+- Taw Launcher *(uncommon)* .......... 10 gp
+- Tekko-Kagi *(uncommon)* .......... 2 sp
+- Temple Sword *(uncommon)* .......... 2 gp
+- Tengu Gale Blade *(uncommon)* .......... 4 gp
+- Tetsubo *(uncommon)* .......... 3 gp
+- Thorn Whip *(uncommon)* .......... 6 sp
+- Three-Section Naginata *(uncommon)* .......... 12 gp
+- Throwing Knife .......... 3 sp
+- Throwing Knife (Extinction Curse) *(uncommon)* .......... 3 sp
+- Thunder Sling *(uncommon)* .......... 5 gp
+- Thundermace *(uncommon)* .......... 2 sp
+- Tonfa *(uncommon)* .......... 1 sp
+- Tri-bladed Katar *(uncommon)* .......... 1 sp
+- Tricky Pick *(uncommon)* .......... 10 gp
+- Trident .......... 1 gp
+- Triggerbrand *(uncommon)* .......... 10 gp
+- Umbrella Injector *(uncommon)* .......... 4 gp
+- Urumi *(uncommon)* .......... 2 gp
+- Visap *(uncommon)* .......... 2 gp
+- Wakizashi *(uncommon)* .......... 1 gp
+- War Flail .......... 2 gp
+- War Gavel *(uncommon)* .......... 2 sp
+- War Javelin *(uncommon)* .......... 1 gp
+- War Lance *(uncommon)* .......... 4 gp
+- War Razor .......... 3 sp
+- Warhammer .......... 1 gp
+- Wheel Blades .......... 5 sp
+- Wheel Spikes .......... 5 sp
+- Whip .......... 1 sp
+- Whip Claw *(uncommon)* .......... 5 gp
+- Whipstaff *(uncommon)* .......... 3 gp
+- Wish Blade *(uncommon)* .......... 5 gp
+- Wish Knife *(uncommon)* .......... 2 gp
+- Wrecker *(uncommon)* .......... 8 gp
+- Wrist Launcher *(uncommon)* .......... 3 gp
+- Zhuazhi Bang *(uncommon)* .......... 1 gp
+- Zulfikar *(uncommon)* .......... 4 gp
+- Acid Flask (Lesser) .......... 3 gp
+- Alchemical Gauntlet .......... 10 gp
+- Alchemist's Fire (Lesser) .......... 3 gp
+- Aldori Dueling Sword *(uncommon)* .......... 2 gp
+- Atrophy Bomb (Lesser) *(uncommon)* .......... 4 gp
+- Axe Musket *(uncommon)* .......... 10 gp
+- Backpack Ballista *(uncommon)* .......... 18 gp
+- Backpack Catapult *(uncommon)* .......... 20 gp
+- Barricade Buster *(uncommon)* .......... 9 gp
+- Big Boom Gun *(uncommon)* .......... 10 gp
+- Bioluminescence Bomb *(uncommon)* .......... 3 gp
+- Blasting Stone (Lesser) .......... 3 gp
+- Blight Bomb (Lesser) .......... 3 gp
+- Blood Bomb (Lesser) *(uncommon)* .......... 4 gp
+- Boarding Pike *(uncommon)* .......... 8 sp
+- Bottled Lightning (Lesser) .......... 3 gp
+- Combat Grapnel *(uncommon)* .......... 9 sp
+- Composite Longbow .......... 20 gp
+- Composite Shortbow .......... 14 gp
+- Double-Barreled Musket *(uncommon)* .......... 11 gp
+- Dragon's Crest *(uncommon)* .......... 10 gp
+- Dread Ampoule (Lesser) .......... 3 gp
+- Dueling Pistol *(uncommon)* .......... 12 gp
+- Durian Bomb (Lesser) *(uncommon)* .......... 4 gp
+- Dwarven Daisy (Lesser) *(uncommon)* .......... 6 gp
+- Dwarven Scattergun *(uncommon)* .......... 10 gp
+- Explosive Dogslicer *(uncommon)* .......... 10 gp
+- Flying Talon *(uncommon)* .......... 6 gp
+- Frost Vial (Lesser) .......... 3 gp
+- Ghost Charge (Lesser) .......... 3 gp
+- Glue Bomb (Lesser) .......... 3 gp
+- Gnome Amalgam Musket *(uncommon)* .......... 10 gp
+- Goo Grenade (Lesser) *(uncommon)* .......... 3 gp
+- Granny's Hedge Trimmer *(rare)* .......... free
+- Gun Sword *(uncommon)* .......... 13 gp
+- Hammer Gun *(uncommon)* .......... 13 gp
+- Holy Water .......... 3 gp
+- Jezail *(uncommon)* .......... 11 gp
+- Junk Bomb (Lesser) *(uncommon)* .......... 4 gp
+- Mud Bomb (Lesser) *(uncommon)* .......... 3 gp
+- Necrotic Bomb (Lesser) .......... 3 gp
+- Pernicious Spore Bomb (Lesser) *(uncommon)* .......... 3 gp
+- Peshpine Grenade (Lesser) *(uncommon)* .......... 3 gp
+- Phalanx Piercer .......... 10 gp
+- Polytool *(uncommon)* .......... 10 gp
+- Pressure Bomb (Lesser) *(uncommon)* .......... 4 gp
+- Redpitch Bomb (Lesser) *(rare)* .......... 3 gp
+- Repeating Crossbow *(uncommon)* .......... 15 gp
+- Repeating Hand Crossbow *(uncommon)* .......... 10 gp
+- Repeating Heavy Crossbow *(uncommon)* .......... 20 gp
+- Scrollstaff *(uncommon)* .......... 12 gp
+- Shobhad Longrifle *(rare)* .......... 20 gp
+- Skunk Bomb (Lesser) .......... 4 gp
+- Slide Pistol *(uncommon)* .......... 16 gp
+- Spoon Gun *(uncommon)* .......... 10 gp
+- Star Grenade (Lesser) *(uncommon)* .......... 3 gp
+- Steelscour (Lesser) *(uncommon)* .......... 3 gp
+- Sticky Algae Bomb (Lesser) .......... 4 gp
+- Stiletto Pen *(uncommon)* .......... 8 gp
+- Sukgung .......... 7 gp
+- Sulfur Bomb (Lesser) *(uncommon)* .......... 4 gp
+- Switchscythe *(uncommon)* .......... 12 gp
+- Tallow Bomb (Lesser) *(uncommon)* .......... 3 gp
+- Tenderizer Grenade (Lesser) *(uncommon)* .......... 4 gp
+- Three-peaked Tree *(uncommon)* .......... 12 gp
+- Twigjack Sack (Lesser) *(uncommon)* .......... 3 gp
+- Unholy Water .......... 3 gp
+- Versatile Vial .......... free
+- Vexing Vapor (Lesser) *(uncommon)* .......... 4 gp
+- Water Bomb (Lesser) *(uncommon)* .......... 3 gp
+- Bottled Sunlight (Lesser) .......... 7 gp
+- Defoliation Bomb (Lesser) *(uncommon)* .......... 7 gp
+- Handwraps of Mighty Blows .......... 35 gp
+- Inflammation Flask (Lesser) *(uncommon)* .......... 5 gp
+- Nail Bomb (Lesser) *(uncommon)* .......... 8 gp
+- Spider Satchel (Lesser) *(uncommon)* .......... 6 gp
+- Acid Flask (Moderate) .......... 10 gp
+- Alchemist's Fire (Moderate) .......... 10 gp
+- Atrophy Bomb (Moderate) *(uncommon)* .......... 11 gp
+- Blasting Stone (Moderate) .......... 10 gp
+- Blight Bomb (Moderate) .......... 10 gp
+- Blood Bomb (Moderate) *(uncommon)* .......... 11 gp
+- Boastful Hunter *(rare)* .......... free
+- Bottled Lightning (Moderate) .......... 10 gp
+- Crimson Thorn *(uncommon)* .......... 60 gp
+- Dread Ampoule (Moderate) .......... 10 gp
+- Durian Bomb (Moderate) *(uncommon)* .......... 12 gp
+- Dwarven Daisy (Moderate) *(uncommon)* .......... 18 gp
+- Fighter's Fork .......... 50 gp
+- Frost Vial (Moderate) .......... 10 gp
+- Ghast Stiletto .......... 60 gp
+- Ghost Charge (Moderate) .......... 10 gp
+- Ghoul Stiletto .......... 60 gp
+- Glacier Hammer .......... 60 gp
+- Glue Bomb (Moderate) .......... 10 gp
+- Goo Grenade (Moderate) *(uncommon)* .......... 10 gp
+- Hunter's Bow .......... 60 gp
+- Junk Bomb (Moderate) *(uncommon)* .......... 12 gp
+- Little Love *(rare)* .......... 60 gp
+- Magnetic Bola *(uncommon)* .......... 60 gp
+- Mud Bomb (Moderate) *(uncommon)* .......... 10 gp
+- Necrotic Bomb (Moderate) .......... 10 gp
+- Pernicious Spore Bomb (Moderate) *(uncommon)* .......... 10 gp
+- Peshpine Grenade (Moderate) *(uncommon)* .......... 10 gp
+- Pressure Bomb (Moderate) *(uncommon)* .......... 12 gp
+- Redpitch Bomb (Moderate) *(rare)* .......... 10 gp
+- Retribution Axe .......... 60 gp
+- Silverscrap Bomb (Lesser) *(uncommon)* .......... 11 gp
+- Silversoul Bomb *(rare)* .......... 10 gp
+- Skunk Bomb (Moderate) .......... 12 gp
+- Smoking Sword .......... 60 gp
+- Sparkblade .......... 70 gp
+- Staff of Air .......... 60 gp
+- Staff of Earth .......... 60 gp
+- Staff of Fire .......... 60 gp
+- Staff of Water .......... 60 gp
+- Star Grenade (Moderate) *(uncommon)* .......... 10 gp
+- Steelscour (Moderate) *(uncommon)* .......... 9 gp
+- Sticky Algae Bomb (Moderate) .......... 12 gp
+- Storm Hammer .......... 60 gp
+- Sulfur Bomb (Moderate) *(uncommon)* .......... 12 gp
+- Tallow Bomb (Moderate) *(uncommon)* .......... 10 gp
+- Tenderizer Grenade (Moderate) *(uncommon)* .......... 12 gp
+- Twigjack Sack (Moderate) *(uncommon)* .......... 10 gp
+- Vexing Vapor (Moderate) *(uncommon)* .......... 12 gp
+- Water Bomb (Moderate) *(uncommon)* .......... 10 gp
+- Wordreaper *(uncommon)* .......... 55 gp
+- Aether Marbles (Lesser) *(uncommon)* .......... 19 gp
+- Animal Staff .......... 90 gp
+- Ankhrav Duster *(uncommon)* .......... 90 gp
+- Atmospheric Staff (Lesser) *(uncommon)* .......... 95 gp
+- Blast Lance *(uncommon)* .......... 100 gp
+- Bottled Sunlight (Moderate) .......... 20 gp
+- Composer Staff .......... 80 gp
+- Crystal Shards (Moderate) .......... 16 gp
+- Defoliation Bomb (Moderate) *(uncommon)* .......... 18 gp
+- Drake Rifle (Acid) *(uncommon)* .......... 100 gp
+- Drake Rifle (Cold) *(uncommon)* .......... 100 gp
+- Drake Rifle (Electricity) *(uncommon)* .......... 100 gp
+- Drake Rifle (Fire) *(uncommon)* .......... 100 gp
+- Drake Rifle (Poison) *(uncommon)* .......... 100 gp
+- Dreamcrusher *(rare)* .......... 80 gp
+- Exquisite Sword Cane .......... 90 gp
+- Fulmination Fang *(uncommon)* .......... 115 gp
+- Inflammation Flask (Moderate) *(uncommon)* .......... 15 gp
+- Mentalist's Staff .......... 90 gp
+- Musket Staff of Force *(rare)* .......... 100 gp
+- Musket Staff of Void *(rare)* .......... 100 gp
+- Nail Bomb (Moderate) *(uncommon)* .......... 16 gp
+- Pistol Wand *(rare)* .......... 100 gp
+- Poisoner's Staff *(uncommon)* .......... 90 gp
+- Spider Satchel (Moderate) *(uncommon)* .......... 16 gp
+- Spore Shephard's Staff *(uncommon)* .......... 100 gp
+- Spore Shephard's Staff (Major) *(uncommon)* .......... 100 gp
+- Staff of Healing .......... 90 gp
+- Alicorn Lance *(uncommon)* .......... 150 gp
+- Amphisbaena Handwraps *(uncommon)* .......... 150 gp
+- Auspicious Scepter .......... 150 gp
+- Blood-Drinker Blade *(uncommon)* .......... 160 gp
+- Caterwaul Sling .......... 155 gp
+- Chainbreaker *(uncommon)* .......... 150 gp
+- Cinderclaw Gauntlet *(uncommon)* .......... 150 gp
+- Dagger of Eternal Sleep *(uncommon)* .......... 25 gp
+- Dazzling Shortbow *(uncommon)* .......... 160 gp
+- Dog-Bone Knife *(uncommon)* .......... 150 gp
+- Grasp of Droskar *(rare)* .......... 155 gp
+- Heartripper Blade *(rare)* .......... 160 gp
+- Hydrocannon *(uncommon)* .......... 150 gp
+- Infiltrator's Accessory .......... 150 gp
+- Metronomic Hammer *(uncommon)* .......... 160 gp
+- Poisonous Dagger .......... 150 gp
+- Protector's Final Gift *(rare)* .......... 150 gp
+- Restorative Handwraps .......... 150 gp
+- Scizore of the Crab .......... 150 gp
+- Serpent Dagger .......... 150 gp
+- Shard of Self-Destruction *(rare)* .......... free
+- Silver Orb (Lesser) *(uncommon)* .......... 30 gp
+- Singing Sword *(rare)* .......... free
+- Solar Shellflower *(uncommon)* .......... 160 gp
+- Thundercrasher *(uncommon)* .......... 155 gp
+- Tiger Fork *(uncommon)* .......... 275 gp
+- Trollhound Pick .......... 140 gp
+- Worldringer *(uncommon)* .......... 160 gp
+- Accursed Staff .......... 250 gp
+- Acrobat's Staff *(uncommon)* .......... 235 gp
+- Arboreal's Revenge *(rare)* .......... free
+- Bloodletting Kukri *(uncommon)* .......... 240 gp
+- Cavalry Commander's Lance *(uncommon)* .......... 225 gp
+- Chain of Command *(uncommon)* .......... 240 gp
+- Chatterer of Follies *(uncommon)* .......... 200 gp
+- Conflagration Club .......... 250 gp
+- Dragonscale Bo Staff .......... 240 gp
+- Dragonscale Staff .......... 240 gp
+- Faultline Hammer *(uncommon)* .......... 250 gp
+- Flashblade .......... 230 gp
+- Fluid Form Staff .......... 230 gp
+- Gluttonous Spear *(uncommon)* .......... 250 gp
+- Guardian Staff .......... 250 gp
+- Horselord's Longbow *(uncommon)* .......... 250 gp
+- Hydra Head Club *(rare)* .......... 225 gp
+- Lady's Knife *(uncommon)* .......... 200 gp
+- Librarian Staff .......... 225 gp
+- Lyrakien Staff .......... 255 gp
+- Nightmare's Lament *(uncommon)* .......... 230 gp
+- Obsidian Edge *(uncommon)* .......... 250 gp
+- Radiant Victory *(uncommon)* .......... 240 gp
+- Ringmaster's Staff *(uncommon)* .......... 230 gp
+- Soul Chain *(rare)* .......... free
+- Spider Gun *(uncommon)* .......... 250 gp
+- Spike Launcher *(uncommon)* .......... 250 gp
+- Staff of Control .......... 230 gp
+- Staff of Elemental Power .......... 230 gp
+- Staff of Final Rest *(uncommon)* .......... 240 gp
+- Staff of Impossible Visions *(uncommon)* .......... 230 gp
+- Staff of Metal .......... 250 gp
+- Staff of Phantasms .......... 230 gp
+- Staff of Protection .......... 230 gp
+- Staff of Providence .......... 230 gp
+- Staff of Summoning .......... 230 gp
+- Staff of the Dead .......... 230 gp
+- Staff of the Desert Winds .......... 230 gp
+- Staff of the Dreamlands *(uncommon)* .......... 250 gp
+- Staff of the Tempest .......... 230 gp
+- Staff of the Unblinking Eye *(uncommon)* .......... 230 gp
+- Twining Staff .......... 250 gp
+- Ulfen Shieldbreaker *(uncommon)* .......... 250 gp
+- Verdant Staff .......... 225 gp
+- Windlass Bola *(uncommon)* .......... 200 gp
+- Alghollthu Lash *(uncommon)* .......... 350 gp
+- Alghollthu Whip *(uncommon)* .......... 350 gp
+- Beast Staff .......... 340 gp
+- Bellicose Dagger *(rare)* .......... free
+- Bloodgorger Scythe *(uncommon)* .......... 340 gp
+- Branch of the Great Sugi *(rare)* .......... 360 gp
+- Fulminating Spear *(uncommon)* .......... 360 gp
+- Guiding Star .......... 325 gp
+- Kinetic Club *(uncommon)* .......... 325 gp
+- Lady's Spiral *(uncommon)* .......... 360 gp
+- Liar's Gun *(uncommon)* .......... 360 gp
+- Slime Whip *(uncommon)* .......... 360 gp
+- Spellguard Blade .......... 320 gp
+- Spellstriker Staff .......... 360 gp
+- Spirit Fan *(rare)* .......... 360 gp
+- Splithead Bow *(uncommon)* .......... 360 gp
+- Spy Staff *(uncommon)* .......... 340 gp
+- Staff of Nature's Cunning .......... 250 gp
+- Tentacle Cannon *(uncommon)* .......... 360 gp
+- Undead Scourge *(uncommon)* .......... 350 gp
+- Venom Lash *(uncommon)* .......... 350 gp
+- Zombie Staff .......... 330 gp
+- Animal Staff (Greater) .......... 460 gp
+- Atmospheric Staff *(uncommon)* .......... 480 gp
+- Blast Lance (Greater) *(uncommon)* .......... 500 gp
+- Boreal Staff .......... 500 gp
+- Breath Blaster *(uncommon)* .......... 500 gp
+- Calamity *(uncommon)* .......... 500 gp
+- Clockwork Macuahuitl *(rare)* .......... 550 gp
+- Composer Staff (Greater) .......... 480 gp
+- Constricting Meteor *(uncommon)* .......... 450 gp
+- Deathseeker .......... 500 gp
+- Doomsweeper *(uncommon)* .......... 475 gp
+- Flaying Knife *(uncommon)* .......... 480 gp
+- Gray Prince *(rare)* .......... 500 gp
+- Hundred-Moth Caress .......... 475 gp
+- Mageslayer *(uncommon)* .......... 500 gp
+- Mentalist's Staff (Greater) .......... 450 gp
+- Mindlance *(uncommon)* .......... 500 gp
+- Poisoner's Staff (Greater) *(uncommon)* .......... 450 gp
+- Returning Starknife *(uncommon)* .......... 430 gp
+- Spiritsight Crossbow *(uncommon)* .......... 450 gp
+- Spore Shephard's Staff (Greater) *(uncommon)* .......... 475 gp
+- Staff of Air (Greater) .......... 450 gp
+- Staff of Earth (Greater) .......... 450 gp
+- Staff of Fire (Greater) .......... 450 gp
+- Staff of Healing (Greater) .......... 470 gp
+- Staff of Illumination .......... 425 gp
+- Staff of Water (Greater) .......... 450 gp
+- Sunken Pistol *(rare)* .......... free
+- Vampire-Fang Morningstar .......... 500 gp
+- Vine Whip .......... 500 gp
+- Blood-Drinker Blade (Greater) *(uncommon)* .......... 700 gp
+- Bloodknuckles .......... 600 gp
+- Chaplain's Cudgel .......... 650 gp
+- Chimera Flail *(uncommon)* .......... 700 gp
+- Clear Cutter's Axe *(rare)* .......... 600 gp
+- Crimson Brand *(uncommon)* .......... 700 gp
+- Erraticannon *(rare)* .......... 700 gp
+- Gloom Blade .......... 700 gp
+- Grisly Scythe *(rare)* .......... 650 gp
+- Growth Gun *(uncommon)* .......... 700 gp
+- Nexian Sealing Blade *(rare)* .......... 750 gp
+- Obsidian Edge (Greater) *(uncommon)* .......... 700 gp
+- Preordained Spear *(rare)* .......... 700 gp
+- Reaper's Crescent *(uncommon)* .......... 575 gp
+- Screech Shooter *(uncommon)* .......... 700 gp
+- Shadefield Knife *(rare)* .......... 650 gp
+- Skeletal Claw *(uncommon)* .......... 1250 gp
+- Sonic Tuning Mace .......... 700 gp
+- Spellender *(uncommon)* .......... 600 gp
+- Spider Gun (Greater) *(uncommon)* .......... 1400 gp
+- Vine of Roses *(uncommon)* .......... 600 gp
+- Whip of Compliance *(uncommon)* .......... 3000 gp
+- Accursed Staff (Greater) .......... 900 gp
+- Batsbreath Cane .......... 950 gp
+- Fluid Form Staff (Greater) .......... 900 gp
+- Giant Squid Lash *(uncommon)* .......... 750 gp
+- Grounding Spike *(uncommon)* .......... 950 gp
+- Guardian Staff (Greater) .......... 900 gp
+- Howler Pistol *(rare)* .......... 1100 gp
+- Immolation Clan Pistol *(rare)* .......... free
+- Lion's Call *(uncommon)* .......... 900 gp
+- Lyrakien Staff (Greater) .......... 920 gp
+- North Wind's Night Verse *(uncommon)* .......... 900 gp
+- Pact-Bound Pistol *(rare)* .......... free
+- Polarizing Mace *(uncommon)* .......... 950 gp
+- Revenant Blade *(rare)* .......... 900 gp
+- Rustbringer .......... 900 gp
+- South Wind's Scorch Song *(uncommon)* .......... 900 gp
+- Staff of Control (Greater) .......... 900 gp
+- Staff of Elemental Power (Greater) .......... 900 gp
+- Staff of Final Rest (Greater) *(uncommon)* .......... 900 gp
+- Staff of Metal (Greater) .......... 900 gp
+- Staff of Nature's Vengeance .......... 900 gp
+- Staff of Phantasms (Greater) .......... 900 gp
+- Staff of Protection (Greater) .......... 900 gp
+- Staff of Providence (Greater) .......... 900 gp
+- Staff of Summoning (Greater) .......... 900 gp
+- Staff of the Dead (Greater) .......... 900 gp
+- Staff of the Tempest (Greater) .......... 900 gp
+- Staff of the Unblinking Eye (Greater) *(uncommon)* .......... 900 gp
+
+Table: PF2eWeapon_metropolis
+- Adze .......... 1 gp
+- Air Repeater *(uncommon)* .......... 4 gp
+- Aklys *(uncommon)* .......... 5 gp
+- Alchemical Crossbow *(uncommon)* .......... 25 gp
+- Arbalest .......... 8 gp
+- Arquebus *(uncommon)* .......... 8 gp
+- Asp Coil *(uncommon)* .......... 10 gp
+- Atlatl .......... 2 sp
+- Bastard Sword .......... 4 gp
+- Battle Axe .......... 1 gp
+- Battle Lute *(uncommon)* .......... 7 gp
+- Battle Saddle .......... 6 gp
+- Bayonet .......... 2 sp
+- Bec de Corbin .......... 4 gp
+- Black Powder Knuckle Dusters *(uncommon)* .......... 8 gp
+- Bladed Diabolo *(uncommon)* .......... 2 gp
+- Bladed Gauntlet *(uncommon)* .......... 5 gp
+- Bladed Hoop *(uncommon)* .......... 25 sp
+- Bladed Scarf *(uncommon)* .......... 3 gp
+- Bladesweeper *(uncommon)* .......... 4 gp
+- Blowgun .......... 1 sp
+- Blunderbuss *(uncommon)* .......... 6 gp
+- Bo Staff .......... 2 sp
+- Boarding Axe *(uncommon)* .......... 1 gp
+- Bola .......... 5 sp
+- Boomerang *(uncommon)* .......... 2 sp
+- Bow Staff *(uncommon)* .......... 8 gp
+- Breaching Pike *(uncommon)* .......... 8 gp
+- Broadspear .......... 2 gp
+- Butchering Axe *(uncommon)* .......... 8 gp
+- Butterfly Sword *(uncommon)* .......... 2 gp
+- Buugeng *(uncommon)* .......... 4 gp
+- Cane Pistol *(uncommon)* .......... 8 gp
+- Capturing Spetum *(uncommon)* .......... 9 gp
+- Chain Sword *(uncommon)* .......... 6 gp
+- Chakram .......... 5 sp
+- Chakri *(uncommon)* .......... 2 sp
+- Chakri (Lost Omens) *(uncommon)* .......... 2 cp
+- Clan Dagger *(uncommon)* .......... 2 gp
+- Clan Pistol *(uncommon)* .......... 5 gp
+- Claw Blade *(uncommon)* .......... 2 gp
+- Club .......... free
+- Coat Pistol *(uncommon)* .......... 5 gp
+- Combat Fishing Pole *(uncommon)* .......... 4 sp
+- Combat Lure *(uncommon)* .......... 2 gp
+- Corset Knife .......... 3 sp
+- Crescent Cross *(uncommon)* .......... 4 gp
+- Crossbow .......... 3 gp
+- Cruuk .......... 4 sp
+- Dagger .......... 2 sp
+- Dagger Pistol *(uncommon)* .......... 8 gp
+- Daikyu *(uncommon)* .......... 8 gp
+- Dancer's Spear .......... 3 gp
+- Dandpatta *(uncommon)* .......... 8 sp
+- Dart .......... 1 cp
+- Dart Umbrella *(uncommon)* .......... 1 gp
+- Dawnsilver Tree *(uncommon)* .......... 7 gp
+- Dogslicer *(uncommon)* .......... 1 sp
+- Donchak *(uncommon)* .......... 4 gp
+- Double-Barreled Pistol *(uncommon)* .......... 6 gp
+- Dragon Mouth Pistol *(uncommon)* .......... 7 gp
+- Dueling Spear *(uncommon)* .......... 2 gp
+- Dwarven Dorn-Dergar *(uncommon)* .......... 8 gp
+- Dwarven War Axe *(uncommon)* .......... 3 gp
+- Earthbreaker .......... 4 gp
+- Elven Branched Spear *(uncommon)* .......... 3 gp
+- Elven Curve Blade *(uncommon)* .......... 4 gp
+- Exquisite Sword Cane Sheath .......... free
+- Falcata .......... 3 gp
+- Falchion .......... 3 gp
+- Fangwire *(uncommon)* .......... 4 gp
+- Fauchard .......... 14 sp
+- Feng Huo Lun *(uncommon)* .......... 2 gp
+- Fighting Fan *(uncommon)* .......... 11 sp
+- Fighting Oar *(uncommon)* .......... 5 sp
+- Fighting Stick *(uncommon)* .......... 5 sp
+- Filcher's Fork *(uncommon)* .......... 1 gp
+- Fire Lance *(uncommon)* .......... 3 gp
+- Fire Poi *(uncommon)* .......... 5 gp
+- Flail .......... 8 sp
+- Flingflenser *(uncommon)* .......... 5 gp
+- Flintlock Musket *(uncommon)* .......... 5 gp
+- Flintlock Pistol *(uncommon)* .......... 4 gp
+- Flyssa .......... 1 gp
+- Forked Bipod .......... 3 sp
+- Frying Pan .......... 1 sp
+- Gada .......... 1 gp
+- Gaff .......... 1 gp
+- Gakgung .......... 2 gp
+- Gauntlet .......... 2 sp
+- Gauntlet Bow .......... 9 gp
+- Gill Hook *(uncommon)* .......... 2 gp
+- Gladius *(uncommon)* .......... 1 gp
+- Glaive .......... 1 gp
+- Gnome Flickmace *(uncommon)* .......... 3 gp
+- Gnome Hooked Hammer *(uncommon)* .......... 2 gp
+- Greataxe .......... 2 gp
+- Greatclub .......... 1 gp
+- Greatpick .......... 1 gp
+- Greatsword .......... 2 gp
+- Griffon Cane .......... 1 gp
+- Guisarme .......... 2 gp
+- Halberd .......... 2 gp
+- Halfling Sling Staff *(uncommon)* .......... 5 gp
+- Hand Adze .......... 5 sp
+- Hand Cannon *(uncommon)* .......... 3 gp
+- Hand Crossbow .......... 3 gp
+- Harmona Gun *(uncommon)* .......... 8 gp
+- Harpoon .......... 1 gp
+- Hatchet .......... 4 sp
+- Heavy Crossbow .......... 4 gp
+- Hongali Hornbow *(uncommon)* .......... 11 gp
+- Hook Sword *(uncommon)* .......... 3 gp
+- Horsechopper *(uncommon)* .......... 9 sp
+- Injection Spear *(uncommon)* .......... 3 gp
+- Javelin .......... 1 sp
+- Jiu Huan Dao *(uncommon)* .......... 9 sp
+- Juggling Club *(uncommon)* .......... 1 sp
+- Kalis *(uncommon)* .......... 3 gp
+- Kama *(uncommon)* .......... 1 gp
+- Karambit *(uncommon)* .......... 2 gp
+- Katana *(uncommon)* .......... 2 gp
+- Katar *(uncommon)* .......... 3 sp
+- Kestros *(uncommon)* .......... 2 gp
+- Khakkhara *(uncommon)* .......... 2 gp
+- Khopesh *(uncommon)* .......... 2 gp
+- Knuckle Duster .......... 3 sp
+- Kris .......... 7 sp
+- Kukri *(uncommon)* .......... 6 sp
+- Kusarigama *(uncommon)* .......... 2 gp
+- Lance .......... 1 gp
+- Lancer *(uncommon)* .......... 8 gp
+- Leiomano *(uncommon)* .......... 2 gp
+- Light Hammer .......... 3 sp
+- Light Mace .......... 4 sp
+- Light Pick .......... 4 sp
+- Lion Scythe *(uncommon)* .......... 1 gp
+- Liuyedao .......... 3 gp
+- Long Air Repeater *(uncommon)* .......... 6 gp
+- Long Hammer .......... 5 gp
+- Longbow .......... 6 gp
+- Longspear .......... 5 sp
+- Longsword .......... 1 gp
+- Mace .......... 1 gp
+- Mace Multipistol *(uncommon)* .......... 13 gp
+- Machete .......... 7 sp
+- Macuahuitl *(uncommon)* .......... 3 gp
+- Main-Gauche .......... 5 sp
+- Mambele *(uncommon)* .......... 6 sp
+- Maul .......... 3 gp
+- Maul-spade *(uncommon)* .......... 6 gp
+- Meteor Hammer .......... 3 gp
+- Mikazuki *(uncommon)* .......... 8 gp
+- Monkey's Fist .......... 1 sp
+- Morningstar .......... 1 gp
+- Naginata *(uncommon)* .......... 3 gp
+- Nightstick *(uncommon)* .......... 1 gp
+- Nodachi .......... 6 gp
+- Nunchaku *(uncommon)* .......... 2 sp
+- Ogre Hook *(uncommon)* .......... 1 gp
+- Orc Knuckle Dagger *(uncommon)* .......... 7 sp
+- Orc Necksplitter *(uncommon)* .......... 2 gp
+- Orc Skewermaul *(uncommon)* .......... 2 gp
+- Palstave *(uncommon)* .......... 4 sp
+- Panabas .......... 1 gp
+- Pantograph Gauntlet *(uncommon)* .......... 2 gp
+- Pepperbox *(uncommon)* .......... 9 gp
+- Pick .......... 7 sp
+- Piercing Wind *(uncommon)* .......... 15 gp
+- Piranha Kiss *(uncommon)* .......... 4 sp
+- Poi *(uncommon)* .......... 2 sp
+- Probing Cane .......... 5 sp
+- Ranseur .......... 2 gp
+- Rapier .......... 2 gp
+- Rapier Pistol *(uncommon)* .......... 10 gp
+- Reinforced Stock .......... 2 sp
+- Reinforced Wheels .......... 5 sp
+- Rhoka Sword *(uncommon)* .......... 4 gp
+- Rope Dart *(uncommon)* .......... 1 gp
+- Rotary Bow .......... 8 gp
+- Sai *(uncommon)* .......... 6 sp
+- Sansetsukon *(uncommon)* .......... 2 gp
+- Sap .......... 1 sp
+- Sawtooth Saber *(uncommon)* .......... 5 gp
+- Scimitar .......... 1 gp
+- Scizore .......... 9 sp
+- Scorpion Whip *(uncommon)* .......... 5 sp
+- Scourge .......... 1 sp
+- Scythe .......... 2 gp
+- Shauth Blade *(uncommon)* .......... 2 gp
+- Shauth Lash *(uncommon)* .......... 8 gp
+- Shears *(uncommon)* .......... 5 sp
+- Shield Boss .......... 5 sp
+- Shield Bow .......... 5 gp
+- Shield Pistol *(uncommon)* .......... 6 gp
+- Shield Spikes .......... 5 sp
+- Shortbow .......... 3 gp
+- Shortsword .......... 9 sp
+- Shuan Ji *(uncommon)* .......... 3 gp
+- Shuriken *(uncommon)* .......... 1 cp
+- Sickle .......... 2 sp
+- Sickle-saber *(uncommon)* .......... 5 gp
+- Sling .......... free
+- Spear .......... 1 sp
+- Spiked Chain *(uncommon)* .......... 3 gp
+- Spiked Gauntlet .......... 3 sp
+- Spiral Rapier *(uncommon)* .......... 5 gp
+- Spirit Thresher *(uncommon)* .......... 2 gp
+- Spraysling *(uncommon)* .......... 1 gp
+- Staff .......... free
+- Starknife .......... 2 gp
+- Sun Sling *(uncommon)* .......... 3 gp
+- Sword Cane .......... 5 gp
+- Talwar .......... 2 gp
+- Tamchal Chakram *(uncommon)* .......... 5 gp
+- Taw Launcher *(uncommon)* .......... 10 gp
+- Tekko-Kagi *(uncommon)* .......... 2 sp
+- Temple Sword *(uncommon)* .......... 2 gp
+- Tengu Gale Blade *(uncommon)* .......... 4 gp
+- Tetsubo *(uncommon)* .......... 3 gp
+- Thorn Whip *(uncommon)* .......... 6 sp
+- Three-Section Naginata *(uncommon)* .......... 12 gp
+- Throwing Knife .......... 3 sp
+- Throwing Knife (Extinction Curse) *(uncommon)* .......... 3 sp
+- Thunder Sling *(uncommon)* .......... 5 gp
+- Thundermace *(uncommon)* .......... 2 sp
+- Tonfa *(uncommon)* .......... 1 sp
+- Tri-bladed Katar *(uncommon)* .......... 1 sp
+- Tricky Pick *(uncommon)* .......... 10 gp
+- Trident .......... 1 gp
+- Triggerbrand *(uncommon)* .......... 10 gp
+- Umbrella Injector *(uncommon)* .......... 4 gp
+- Urumi *(uncommon)* .......... 2 gp
+- Visap *(uncommon)* .......... 2 gp
+- Wakizashi *(uncommon)* .......... 1 gp
+- War Flail .......... 2 gp
+- War Gavel *(uncommon)* .......... 2 sp
+- War Javelin *(uncommon)* .......... 1 gp
+- War Lance *(uncommon)* .......... 4 gp
+- War Razor .......... 3 sp
+- Warhammer .......... 1 gp
+- Wheel Blades .......... 5 sp
+- Wheel Spikes .......... 5 sp
+- Whip .......... 1 sp
+- Whip Claw *(uncommon)* .......... 5 gp
+- Whipstaff *(uncommon)* .......... 3 gp
+- Wish Blade *(uncommon)* .......... 5 gp
+- Wish Knife *(uncommon)* .......... 2 gp
+- Wrecker *(uncommon)* .......... 8 gp
+- Wrist Launcher *(uncommon)* .......... 3 gp
+- Zhuazhi Bang *(uncommon)* .......... 1 gp
+- Zulfikar *(uncommon)* .......... 4 gp
+- Acid Flask (Lesser) .......... 3 gp
+- Alchemical Gauntlet .......... 10 gp
+- Alchemist's Fire (Lesser) .......... 3 gp
+- Aldori Dueling Sword *(uncommon)* .......... 2 gp
+- Atrophy Bomb (Lesser) *(uncommon)* .......... 4 gp
+- Axe Musket *(uncommon)* .......... 10 gp
+- Backpack Ballista *(uncommon)* .......... 18 gp
+- Backpack Catapult *(uncommon)* .......... 20 gp
+- Barricade Buster *(uncommon)* .......... 9 gp
+- Big Boom Gun *(uncommon)* .......... 10 gp
+- Bioluminescence Bomb *(uncommon)* .......... 3 gp
+- Blasting Stone (Lesser) .......... 3 gp
+- Blight Bomb (Lesser) .......... 3 gp
+- Blood Bomb (Lesser) *(uncommon)* .......... 4 gp
+- Boarding Pike *(uncommon)* .......... 8 sp
+- Bottled Lightning (Lesser) .......... 3 gp
+- Combat Grapnel *(uncommon)* .......... 9 sp
+- Composite Longbow .......... 20 gp
+- Composite Shortbow .......... 14 gp
+- Double-Barreled Musket *(uncommon)* .......... 11 gp
+- Dragon's Crest *(uncommon)* .......... 10 gp
+- Dread Ampoule (Lesser) .......... 3 gp
+- Dueling Pistol *(uncommon)* .......... 12 gp
+- Durian Bomb (Lesser) *(uncommon)* .......... 4 gp
+- Dwarven Daisy (Lesser) *(uncommon)* .......... 6 gp
+- Dwarven Scattergun *(uncommon)* .......... 10 gp
+- Explosive Dogslicer *(uncommon)* .......... 10 gp
+- Flying Talon *(uncommon)* .......... 6 gp
+- Frost Vial (Lesser) .......... 3 gp
+- Ghost Charge (Lesser) .......... 3 gp
+- Glue Bomb (Lesser) .......... 3 gp
+- Gnome Amalgam Musket *(uncommon)* .......... 10 gp
+- Goo Grenade (Lesser) *(uncommon)* .......... 3 gp
+- Granny's Hedge Trimmer *(rare)* .......... free
+- Gun Sword *(uncommon)* .......... 13 gp
+- Hammer Gun *(uncommon)* .......... 13 gp
+- Holy Water .......... 3 gp
+- Jezail *(uncommon)* .......... 11 gp
+- Junk Bomb (Lesser) *(uncommon)* .......... 4 gp
+- Mud Bomb (Lesser) *(uncommon)* .......... 3 gp
+- Necrotic Bomb (Lesser) .......... 3 gp
+- Pernicious Spore Bomb (Lesser) *(uncommon)* .......... 3 gp
+- Peshpine Grenade (Lesser) *(uncommon)* .......... 3 gp
+- Phalanx Piercer .......... 10 gp
+- Polytool *(uncommon)* .......... 10 gp
+- Pressure Bomb (Lesser) *(uncommon)* .......... 4 gp
+- Redpitch Bomb (Lesser) *(rare)* .......... 3 gp
+- Repeating Crossbow *(uncommon)* .......... 15 gp
+- Repeating Hand Crossbow *(uncommon)* .......... 10 gp
+- Repeating Heavy Crossbow *(uncommon)* .......... 20 gp
+- Scrollstaff *(uncommon)* .......... 12 gp
+- Shobhad Longrifle *(rare)* .......... 20 gp
+- Skunk Bomb (Lesser) .......... 4 gp
+- Slide Pistol *(uncommon)* .......... 16 gp
+- Spoon Gun *(uncommon)* .......... 10 gp
+- Star Grenade (Lesser) *(uncommon)* .......... 3 gp
+- Steelscour (Lesser) *(uncommon)* .......... 3 gp
+- Sticky Algae Bomb (Lesser) .......... 4 gp
+- Stiletto Pen *(uncommon)* .......... 8 gp
+- Sukgung .......... 7 gp
+- Sulfur Bomb (Lesser) *(uncommon)* .......... 4 gp
+- Switchscythe *(uncommon)* .......... 12 gp
+- Tallow Bomb (Lesser) *(uncommon)* .......... 3 gp
+- Tenderizer Grenade (Lesser) *(uncommon)* .......... 4 gp
+- Three-peaked Tree *(uncommon)* .......... 12 gp
+- Twigjack Sack (Lesser) *(uncommon)* .......... 3 gp
+- Unholy Water .......... 3 gp
+- Versatile Vial .......... free
+- Vexing Vapor (Lesser) *(uncommon)* .......... 4 gp
+- Water Bomb (Lesser) *(uncommon)* .......... 3 gp
+- Bottled Sunlight (Lesser) .......... 7 gp
+- Defoliation Bomb (Lesser) *(uncommon)* .......... 7 gp
+- Handwraps of Mighty Blows .......... 35 gp
+- Inflammation Flask (Lesser) *(uncommon)* .......... 5 gp
+- Nail Bomb (Lesser) *(uncommon)* .......... 8 gp
+- Spider Satchel (Lesser) *(uncommon)* .......... 6 gp
+- Acid Flask (Moderate) .......... 10 gp
+- Alchemist's Fire (Moderate) .......... 10 gp
+- Atrophy Bomb (Moderate) *(uncommon)* .......... 11 gp
+- Blasting Stone (Moderate) .......... 10 gp
+- Blight Bomb (Moderate) .......... 10 gp
+- Blood Bomb (Moderate) *(uncommon)* .......... 11 gp
+- Boastful Hunter *(rare)* .......... free
+- Bottled Lightning (Moderate) .......... 10 gp
+- Crimson Thorn *(uncommon)* .......... 60 gp
+- Dread Ampoule (Moderate) .......... 10 gp
+- Durian Bomb (Moderate) *(uncommon)* .......... 12 gp
+- Dwarven Daisy (Moderate) *(uncommon)* .......... 18 gp
+- Fighter's Fork .......... 50 gp
+- Frost Vial (Moderate) .......... 10 gp
+- Ghast Stiletto .......... 60 gp
+- Ghost Charge (Moderate) .......... 10 gp
+- Ghoul Stiletto .......... 60 gp
+- Glacier Hammer .......... 60 gp
+- Glue Bomb (Moderate) .......... 10 gp
+- Goo Grenade (Moderate) *(uncommon)* .......... 10 gp
+- Hunter's Bow .......... 60 gp
+- Junk Bomb (Moderate) *(uncommon)* .......... 12 gp
+- Little Love *(rare)* .......... 60 gp
+- Magnetic Bola *(uncommon)* .......... 60 gp
+- Mud Bomb (Moderate) *(uncommon)* .......... 10 gp
+- Necrotic Bomb (Moderate) .......... 10 gp
+- Pernicious Spore Bomb (Moderate) *(uncommon)* .......... 10 gp
+- Peshpine Grenade (Moderate) *(uncommon)* .......... 10 gp
+- Pressure Bomb (Moderate) *(uncommon)* .......... 12 gp
+- Redpitch Bomb (Moderate) *(rare)* .......... 10 gp
+- Retribution Axe .......... 60 gp
+- Silverscrap Bomb (Lesser) *(uncommon)* .......... 11 gp
+- Silversoul Bomb *(rare)* .......... 10 gp
+- Skunk Bomb (Moderate) .......... 12 gp
+- Smoking Sword .......... 60 gp
+- Sparkblade .......... 70 gp
+- Staff of Air .......... 60 gp
+- Staff of Earth .......... 60 gp
+- Staff of Fire .......... 60 gp
+- Staff of Water .......... 60 gp
+- Star Grenade (Moderate) *(uncommon)* .......... 10 gp
+- Steelscour (Moderate) *(uncommon)* .......... 9 gp
+- Sticky Algae Bomb (Moderate) .......... 12 gp
+- Storm Hammer .......... 60 gp
+- Sulfur Bomb (Moderate) *(uncommon)* .......... 12 gp
+- Tallow Bomb (Moderate) *(uncommon)* .......... 10 gp
+- Tenderizer Grenade (Moderate) *(uncommon)* .......... 12 gp
+- Twigjack Sack (Moderate) *(uncommon)* .......... 10 gp
+- Vexing Vapor (Moderate) *(uncommon)* .......... 12 gp
+- Water Bomb (Moderate) *(uncommon)* .......... 10 gp
+- Wordreaper *(uncommon)* .......... 55 gp
+- Aether Marbles (Lesser) *(uncommon)* .......... 19 gp
+- Animal Staff .......... 90 gp
+- Ankhrav Duster *(uncommon)* .......... 90 gp
+- Atmospheric Staff (Lesser) *(uncommon)* .......... 95 gp
+- Blast Lance *(uncommon)* .......... 100 gp
+- Bottled Sunlight (Moderate) .......... 20 gp
+- Composer Staff .......... 80 gp
+- Crystal Shards (Moderate) .......... 16 gp
+- Defoliation Bomb (Moderate) *(uncommon)* .......... 18 gp
+- Drake Rifle (Acid) *(uncommon)* .......... 100 gp
+- Drake Rifle (Cold) *(uncommon)* .......... 100 gp
+- Drake Rifle (Electricity) *(uncommon)* .......... 100 gp
+- Drake Rifle (Fire) *(uncommon)* .......... 100 gp
+- Drake Rifle (Poison) *(uncommon)* .......... 100 gp
+- Dreamcrusher *(rare)* .......... 80 gp
+- Exquisite Sword Cane .......... 90 gp
+- Fulmination Fang *(uncommon)* .......... 115 gp
+- Inflammation Flask (Moderate) *(uncommon)* .......... 15 gp
+- Mentalist's Staff .......... 90 gp
+- Musket Staff of Force *(rare)* .......... 100 gp
+- Musket Staff of Void *(rare)* .......... 100 gp
+- Nail Bomb (Moderate) *(uncommon)* .......... 16 gp
+- Pistol Wand *(rare)* .......... 100 gp
+- Poisoner's Staff *(uncommon)* .......... 90 gp
+- Spider Satchel (Moderate) *(uncommon)* .......... 16 gp
+- Spore Shephard's Staff *(uncommon)* .......... 100 gp
+- Spore Shephard's Staff (Major) *(uncommon)* .......... 100 gp
+- Staff of Healing .......... 90 gp
+- Alicorn Lance *(uncommon)* .......... 150 gp
+- Amphisbaena Handwraps *(uncommon)* .......... 150 gp
+- Auspicious Scepter .......... 150 gp
+- Blood-Drinker Blade *(uncommon)* .......... 160 gp
+- Caterwaul Sling .......... 155 gp
+- Chainbreaker *(uncommon)* .......... 150 gp
+- Cinderclaw Gauntlet *(uncommon)* .......... 150 gp
+- Dagger of Eternal Sleep *(uncommon)* .......... 25 gp
+- Dazzling Shortbow *(uncommon)* .......... 160 gp
+- Dog-Bone Knife *(uncommon)* .......... 150 gp
+- Grasp of Droskar *(rare)* .......... 155 gp
+- Heartripper Blade *(rare)* .......... 160 gp
+- Hydrocannon *(uncommon)* .......... 150 gp
+- Infiltrator's Accessory .......... 150 gp
+- Metronomic Hammer *(uncommon)* .......... 160 gp
+- Poisonous Dagger .......... 150 gp
+- Protector's Final Gift *(rare)* .......... 150 gp
+- Restorative Handwraps .......... 150 gp
+- Scizore of the Crab .......... 150 gp
+- Serpent Dagger .......... 150 gp
+- Shard of Self-Destruction *(rare)* .......... free
+- Silver Orb (Lesser) *(uncommon)* .......... 30 gp
+- Singing Sword *(rare)* .......... free
+- Solar Shellflower *(uncommon)* .......... 160 gp
+- Thundercrasher *(uncommon)* .......... 155 gp
+- Tiger Fork *(uncommon)* .......... 275 gp
+- Trollhound Pick .......... 140 gp
+- Worldringer *(uncommon)* .......... 160 gp
+- Accursed Staff .......... 250 gp
+- Acrobat's Staff *(uncommon)* .......... 235 gp
+- Arboreal's Revenge *(rare)* .......... free
+- Bloodletting Kukri *(uncommon)* .......... 240 gp
+- Cavalry Commander's Lance *(uncommon)* .......... 225 gp
+- Chain of Command *(uncommon)* .......... 240 gp
+- Chatterer of Follies *(uncommon)* .......... 200 gp
+- Conflagration Club .......... 250 gp
+- Dragonscale Bo Staff .......... 240 gp
+- Dragonscale Staff .......... 240 gp
+- Faultline Hammer *(uncommon)* .......... 250 gp
+- Flashblade .......... 230 gp
+- Fluid Form Staff .......... 230 gp
+- Gluttonous Spear *(uncommon)* .......... 250 gp
+- Guardian Staff .......... 250 gp
+- Horselord's Longbow *(uncommon)* .......... 250 gp
+- Hydra Head Club *(rare)* .......... 225 gp
+- Lady's Knife *(uncommon)* .......... 200 gp
+- Librarian Staff .......... 225 gp
+- Lyrakien Staff .......... 255 gp
+- Nightmare's Lament *(uncommon)* .......... 230 gp
+- Obsidian Edge *(uncommon)* .......... 250 gp
+- Radiant Victory *(uncommon)* .......... 240 gp
+- Ringmaster's Staff *(uncommon)* .......... 230 gp
+- Soul Chain *(rare)* .......... free
+- Spider Gun *(uncommon)* .......... 250 gp
+- Spike Launcher *(uncommon)* .......... 250 gp
+- Staff of Control .......... 230 gp
+- Staff of Elemental Power .......... 230 gp
+- Staff of Final Rest *(uncommon)* .......... 240 gp
+- Staff of Impossible Visions *(uncommon)* .......... 230 gp
+- Staff of Metal .......... 250 gp
+- Staff of Phantasms .......... 230 gp
+- Staff of Protection .......... 230 gp
+- Staff of Providence .......... 230 gp
+- Staff of Summoning .......... 230 gp
+- Staff of the Dead .......... 230 gp
+- Staff of the Desert Winds .......... 230 gp
+- Staff of the Dreamlands *(uncommon)* .......... 250 gp
+- Staff of the Tempest .......... 230 gp
+- Staff of the Unblinking Eye *(uncommon)* .......... 230 gp
+- Twining Staff .......... 250 gp
+- Ulfen Shieldbreaker *(uncommon)* .......... 250 gp
+- Verdant Staff .......... 225 gp
+- Windlass Bola *(uncommon)* .......... 200 gp
+- Alghollthu Lash *(uncommon)* .......... 350 gp
+- Alghollthu Whip *(uncommon)* .......... 350 gp
+- Beast Staff .......... 340 gp
+- Bellicose Dagger *(rare)* .......... free
+- Bloodgorger Scythe *(uncommon)* .......... 340 gp
+- Branch of the Great Sugi *(rare)* .......... 360 gp
+- Fulminating Spear *(uncommon)* .......... 360 gp
+- Guiding Star .......... 325 gp
+- Kinetic Club *(uncommon)* .......... 325 gp
+- Lady's Spiral *(uncommon)* .......... 360 gp
+- Liar's Gun *(uncommon)* .......... 360 gp
+- Slime Whip *(uncommon)* .......... 360 gp
+- Spellguard Blade .......... 320 gp
+- Spellstriker Staff .......... 360 gp
+- Spirit Fan *(rare)* .......... 360 gp
+- Splithead Bow *(uncommon)* .......... 360 gp
+- Spy Staff *(uncommon)* .......... 340 gp
+- Staff of Nature's Cunning .......... 250 gp
+- Tentacle Cannon *(uncommon)* .......... 360 gp
+- Undead Scourge *(uncommon)* .......... 350 gp
+- Venom Lash *(uncommon)* .......... 350 gp
+- Zombie Staff .......... 330 gp
+- Animal Staff (Greater) .......... 460 gp
+- Atmospheric Staff *(uncommon)* .......... 480 gp
+- Blast Lance (Greater) *(uncommon)* .......... 500 gp
+- Boreal Staff .......... 500 gp
+- Breath Blaster *(uncommon)* .......... 500 gp
+- Calamity *(uncommon)* .......... 500 gp
+- Clockwork Macuahuitl *(rare)* .......... 550 gp
+- Composer Staff (Greater) .......... 480 gp
+- Constricting Meteor *(uncommon)* .......... 450 gp
+- Deathseeker .......... 500 gp
+- Doomsweeper *(uncommon)* .......... 475 gp
+- Flaying Knife *(uncommon)* .......... 480 gp
+- Gray Prince *(rare)* .......... 500 gp
+- Hundred-Moth Caress .......... 475 gp
+- Mageslayer *(uncommon)* .......... 500 gp
+- Mentalist's Staff (Greater) .......... 450 gp
+- Mindlance *(uncommon)* .......... 500 gp
+- Poisoner's Staff (Greater) *(uncommon)* .......... 450 gp
+- Returning Starknife *(uncommon)* .......... 430 gp
+- Spiritsight Crossbow *(uncommon)* .......... 450 gp
+- Spore Shephard's Staff (Greater) *(uncommon)* .......... 475 gp
+- Staff of Air (Greater) .......... 450 gp
+- Staff of Earth (Greater) .......... 450 gp
+- Staff of Fire (Greater) .......... 450 gp
+- Staff of Healing (Greater) .......... 470 gp
+- Staff of Illumination .......... 425 gp
+- Staff of Water (Greater) .......... 450 gp
+- Sunken Pistol *(rare)* .......... free
+- Vampire-Fang Morningstar .......... 500 gp
+- Vine Whip .......... 500 gp
+- Blood-Drinker Blade (Greater) *(uncommon)* .......... 700 gp
+- Bloodknuckles .......... 600 gp
+- Chaplain's Cudgel .......... 650 gp
+- Chimera Flail *(uncommon)* .......... 700 gp
+- Clear Cutter's Axe *(rare)* .......... 600 gp
+- Crimson Brand *(uncommon)* .......... 700 gp
+- Erraticannon *(rare)* .......... 700 gp
+- Gloom Blade .......... 700 gp
+- Grisly Scythe *(rare)* .......... 650 gp
+- Growth Gun *(uncommon)* .......... 700 gp
+- Nexian Sealing Blade *(rare)* .......... 750 gp
+- Obsidian Edge (Greater) *(uncommon)* .......... 700 gp
+- Preordained Spear *(rare)* .......... 700 gp
+- Reaper's Crescent *(uncommon)* .......... 575 gp
+- Screech Shooter *(uncommon)* .......... 700 gp
+- Shadefield Knife *(rare)* .......... 650 gp
+- Skeletal Claw *(uncommon)* .......... 1250 gp
+- Sonic Tuning Mace .......... 700 gp
+- Spellender *(uncommon)* .......... 600 gp
+- Spider Gun (Greater) *(uncommon)* .......... 1400 gp
+- Vine of Roses *(uncommon)* .......... 600 gp
+- Whip of Compliance *(uncommon)* .......... 3000 gp
+- Accursed Staff (Greater) .......... 900 gp
+- Batsbreath Cane .......... 950 gp
+- Fluid Form Staff (Greater) .......... 900 gp
+- Giant Squid Lash *(uncommon)* .......... 750 gp
+- Grounding Spike *(uncommon)* .......... 950 gp
+- Guardian Staff (Greater) .......... 900 gp
+- Howler Pistol *(rare)* .......... 1100 gp
+- Immolation Clan Pistol *(rare)* .......... free
+- Lion's Call *(uncommon)* .......... 900 gp
+- Lyrakien Staff (Greater) .......... 920 gp
+- North Wind's Night Verse *(uncommon)* .......... 900 gp
+- Pact-Bound Pistol *(rare)* .......... free
+- Polarizing Mace *(uncommon)* .......... 950 gp
+- Revenant Blade *(rare)* .......... 900 gp
+- Rustbringer .......... 900 gp
+- South Wind's Scorch Song *(uncommon)* .......... 900 gp
+- Staff of Control (Greater) .......... 900 gp
+- Staff of Elemental Power (Greater) .......... 900 gp
+- Staff of Final Rest (Greater) *(uncommon)* .......... 900 gp
+- Staff of Metal (Greater) .......... 900 gp
+- Staff of Nature's Vengeance .......... 900 gp
+- Staff of Phantasms (Greater) .......... 900 gp
+- Staff of Protection (Greater) .......... 900 gp
+- Staff of Providence (Greater) .......... 900 gp
+- Staff of Summoning (Greater) .......... 900 gp
+- Staff of the Dead (Greater) .......... 900 gp
+- Staff of the Tempest (Greater) .......... 900 gp
+- Staff of the Unblinking Eye (Greater) *(uncommon)* .......... 900 gp
+- Acid Flask (Greater) .......... 250 gp
+- Alchemist's Fire (Greater) .......... 250 gp
+- Atrophy Bomb (Greater) *(uncommon)* .......... 255 gp
+- Beast Staff (Greater) .......... 1400 gp
+- Blasting Stone (Greater) .......... 250 gp
+- Blight Bomb (Greater) .......... 250 gp
+- Blood Bomb (Greater) *(uncommon)* .......... 275 gp
+- Bottled Lightning (Greater) .......... 250 gp
+- Buzzsaw Axe .......... 1400 gp
+- Carver-cutter .......... 1400 gp
+- Dezullon Fountain *(uncommon)* .......... 1300 gp
+- Dragon's Tongue *(uncommon)* .......... 1350 gp
+- Dread Ampoule (Greater) .......... 300 gp
+- Durian Bomb (Greater) *(uncommon)* .......... 275 gp
+- Frost Vial (Greater) .......... 250 gp
+- Ghost Charge (Greater) .......... 250 gp
+- Gloaming Arc *(uncommon)* .......... 1250 gp
+- Gloaming Shard .......... 1400 gp
+- Glue Bomb (Greater) .......... 250 gp
+- Goo Grenade (Greater) *(uncommon)* .......... 250 gp
+- Hunter's Anthem .......... 1300 gp
+- Junk Bomb (Greater) *(uncommon)* .......... 275 gp
+- Lance of Sun's Radiance *(rare)* .......... 1450 gp
+- Lionfish Spear .......... 3000 gp
+- Lumber Lord's Axe *(uncommon)* .......... 900 gp
+- Mud Bomb (Greater) *(uncommon)* .......... 250 gp
+- Necrotic Bomb (Greater) .......... 250 gp
+- Nightmare Cudgel *(uncommon)* .......... 1000 gp
+- Oathbow .......... 1300 gp
+- Pernicious Spore Bomb (Greater) *(uncommon)* .......... 250 gp
+- Peshpine Grenade (Greater) *(uncommon)* .......... 250 gp
+- Pressure Bomb (Greater) *(uncommon)* .......... 275 gp
+- Rat-Catcher Trident *(uncommon)* .......... 1200 gp
+- Redpitch Bomb (Greater) *(rare)* .......... 250 gp
+- Rime Foil *(uncommon)* .......... 1400 gp
+- Scalding Gauntlets .......... 1300 gp
+- Sensei's Parasol *(rare)* .......... 1400 gp
+- Shattered Plan *(uncommon)* .......... 1400 gp
+- Silverscrap Bomb (Moderate) *(uncommon)* .......... 255 gp
+- Silversoul Bomb (Greater) *(rare)* .......... 250 gp
+- Skunk Bomb (Greater) .......... 240 gp
+- Spellstriker Staff (Greater) .......... 1400 gp
+- Spore Sap *(uncommon)* .......... 1250 gp
+- Spy Staff (Greater) *(uncommon)* .......... 1175 gp
+- Staff of Nature's Cunning (Greater) .......... 1400 gp
+- Star Grenade (Greater) *(uncommon)* .......... 250 gp
+- Steelscour (Greater) *(uncommon)* .......... 215 gp
+- Sticky Algae Bomb (Greater) .......... 280 gp
+- Stoneraiser Javelin *(uncommon)* .......... 1200 gp
+- Sulfur Bomb (Greater) *(uncommon)* .......... 275 gp
+- Tallow Bomb (Greater) *(uncommon)* .......... 250 gp
+- Tenderizer Grenade (Greater) *(uncommon)* .......... 275 gp
+- Tiger's Claw *(rare)* .......... 1400 gp
+- Twigjack Sack (Greater) *(uncommon)* .......... 250 gp
+- Vexing Vapor (Greater) *(uncommon)* .......... 300 gp
+- Water Bomb (Greater) *(uncommon)* .......... 250 gp
+- Whip-Tongue Sling *(uncommon)* .......... 1250 gp
+- Zombie Staff (Greater) .......... 1200 gp
+- Aether Marbles (Moderate) *(uncommon)* .......... 360 gp
+- Animal Staff (Major) .......... 1900 gp
+- Arboreal Staff *(rare)* .......... free
+- Atmospheric Staff (Greater) *(uncommon)* .......... 1900 gp
+- Blink Blade *(uncommon)* .......... 1750 gp
+- Boreal Staff (Greater) .......... 2750 gp
+- Bottled Sunlight (Greater) .......... 360 gp
+- Boulder Seed .......... 360 gp
+- Chainbreaker (Greater) *(uncommon)* .......... 1750 gp
+- Composer Staff (Major) .......... 1800 gp
+- Crystal Shards (Greater) .......... 350 gp
+- Defoliation Bomb (Greater) *(uncommon)* .......... 350 gp
+- Dragonfire Halfbow *(uncommon)* .......... 1800 gp
+- Flashblade (Greater) .......... 1900 gp
+- Four-Tiger Blade *(rare)* .......... 2000 gp
+- Four-Ways Dogslicer *(uncommon)* .......... 1700 gp
+- Gambler's Staff *(uncommon)* .......... 2000 gp
+- Gravedigger's Call .......... 1700 gp
+- Inflammation Flask (Greater) *(uncommon)* .......... 340 gp
+- Librarian Staff (Greater) .......... 1750 gp
+- Lodestone Bomb .......... 400 gp
+- Mentalist's Staff (Major) .......... 1800 gp
+- Nail Bomb (Greater) *(uncommon)* .......... 350 gp
+- Obsidian Edge (Major) *(uncommon)* .......... 1800 gp
+- Pirate Staff .......... 2000 gp
+- Purgatory Emissary's Staff *(rare)* .......... 1820 gp
+- Ringmaster's Staff (Greater) *(uncommon)* .......... 1800 gp
+- Scarlet Queen *(rare)* .......... 2000 gp
+- Shatterstone .......... 380 gp
+- Shuln Fang Katar *(rare)* .......... 2100 gp
+- Silver Orb (Powder) *(uncommon)* .......... 400 gp
+- Snowcaster's Staff *(rare)* .......... 1800 gp
+- Socialite Staff .......... 1900 gp
+- Spellsap Grenade *(rare)* .......... 360 gp
+- Spider Satchel (Greater) *(uncommon)* .......... 350 gp
+- Staff of Air (Major) .......... 1800 gp
+- Staff of Arcane Might *(rare)* .......... 1900 gp
+- Staff of Earth (Major) .......... 1800 gp
+- Staff of Fire (Major) .......... 1800 gp
+- Staff of Healing (Major) .......... 1800 gp
+- Staff of Impossible Visions (Greater) *(uncommon)* .......... 1800 gp
+- Staff of Water (Major) .......... 1800 gp
+- Staff of the Black Desert *(uncommon)* .......... 1850 gp
+- Staff of the Desert Winds (Greater) .......... 1750 gp
+- Staff of the Dreamlands (Greater) *(uncommon)* .......... 2000 gp
+- Storm Herald *(uncommon)* .......... 2000 gp
+- Talonstrike Blade *(uncommon)* .......... 2000 gp
+- Thundering Fury Dadao *(rare)* .......... 2000 gp
+- Tidal Fishhook *(rare)* .......... 1700 gp
+- Trueshape Bomb .......... 375 gp
+- Verdant Staff (Greater) .......... 1750 gp
+
+Table: PF2eWeaponAny
+- Adze .......... 1 gp
+- Air Repeater *(uncommon)* .......... 4 gp
+- Aklys *(uncommon)* .......... 5 gp
+- Alchemical Crossbow *(uncommon)* .......... 25 gp
+- Arbalest .......... 8 gp
+- Arquebus *(uncommon)* .......... 8 gp
+- Asp Coil *(uncommon)* .......... 10 gp
+- Atlatl .......... 2 sp
+- Bastard Sword .......... 4 gp
+- Battle Axe .......... 1 gp
+- Battle Lute *(uncommon)* .......... 7 gp
+- Battle Saddle .......... 6 gp
+- Bayonet .......... 2 sp
+- Bec de Corbin .......... 4 gp
+- Black Powder Knuckle Dusters *(uncommon)* .......... 8 gp
+- Bladed Diabolo *(uncommon)* .......... 2 gp
+- Bladed Gauntlet *(uncommon)* .......... 5 gp
+- Bladed Hoop *(uncommon)* .......... 25 sp
+- Bladed Scarf *(uncommon)* .......... 3 gp
+- Bladesweeper *(uncommon)* .......... 4 gp
+- Blowgun .......... 1 sp
+- Blunderbuss *(uncommon)* .......... 6 gp
+- Bo Staff .......... 2 sp
+- Boarding Axe *(uncommon)* .......... 1 gp
+- Bola .......... 5 sp
+- Boomerang *(uncommon)* .......... 2 sp
+- Bow Staff *(uncommon)* .......... 8 gp
+- Breaching Pike *(uncommon)* .......... 8 gp
+- Broadspear .......... 2 gp
+- Butchering Axe *(uncommon)* .......... 8 gp
+- Butterfly Sword *(uncommon)* .......... 2 gp
+- Buugeng *(uncommon)* .......... 4 gp
+- Cane Pistol *(uncommon)* .......... 8 gp
+- Capturing Spetum *(uncommon)* .......... 9 gp
+- Chain Sword *(uncommon)* .......... 6 gp
+- Chakram .......... 5 sp
+- Chakri *(uncommon)* .......... 2 sp
+- Chakri (Lost Omens) *(uncommon)* .......... 2 cp
+- Clan Dagger *(uncommon)* .......... 2 gp
+- Clan Pistol *(uncommon)* .......... 5 gp
+- Claw Blade *(uncommon)* .......... 2 gp
+- Club .......... free
+- Coat Pistol *(uncommon)* .......... 5 gp
+- Combat Fishing Pole *(uncommon)* .......... 4 sp
+- Combat Lure *(uncommon)* .......... 2 gp
+- Corset Knife .......... 3 sp
+- Crescent Cross *(uncommon)* .......... 4 gp
+- Crossbow .......... 3 gp
+- Cruuk .......... 4 sp
+- Dagger .......... 2 sp
+- Dagger Pistol *(uncommon)* .......... 8 gp
+- Daikyu *(uncommon)* .......... 8 gp
+- Dancer's Spear .......... 3 gp
+- Dandpatta *(uncommon)* .......... 8 sp
+- Dart .......... 1 cp
+- Dart Umbrella *(uncommon)* .......... 1 gp
+- Dawnsilver Tree *(uncommon)* .......... 7 gp
+- Dogslicer *(uncommon)* .......... 1 sp
+- Donchak *(uncommon)* .......... 4 gp
+- Double-Barreled Pistol *(uncommon)* .......... 6 gp
+- Dragon Mouth Pistol *(uncommon)* .......... 7 gp
+- Dueling Spear *(uncommon)* .......... 2 gp
+- Dwarven Dorn-Dergar *(uncommon)* .......... 8 gp
+- Dwarven War Axe *(uncommon)* .......... 3 gp
+- Earthbreaker .......... 4 gp
+- Elven Branched Spear *(uncommon)* .......... 3 gp
+- Elven Curve Blade *(uncommon)* .......... 4 gp
+- Exquisite Sword Cane Sheath .......... free
+- Falcata .......... 3 gp
+- Falchion .......... 3 gp
+- Fangwire *(uncommon)* .......... 4 gp
+- Fauchard .......... 14 sp
+- Feng Huo Lun *(uncommon)* .......... 2 gp
+- Fighting Fan *(uncommon)* .......... 11 sp
+- Fighting Oar *(uncommon)* .......... 5 sp
+- Fighting Stick *(uncommon)* .......... 5 sp
+- Filcher's Fork *(uncommon)* .......... 1 gp
+- Fire Lance *(uncommon)* .......... 3 gp
+- Fire Poi *(uncommon)* .......... 5 gp
+- Flail .......... 8 sp
+- Flingflenser *(uncommon)* .......... 5 gp
+- Flintlock Musket *(uncommon)* .......... 5 gp
+- Flintlock Pistol *(uncommon)* .......... 4 gp
+- Flyssa .......... 1 gp
+- Forked Bipod .......... 3 sp
+- Frying Pan .......... 1 sp
+- Gada .......... 1 gp
+- Gaff .......... 1 gp
+- Gakgung .......... 2 gp
+- Gauntlet .......... 2 sp
+- Gauntlet Bow .......... 9 gp
+- Gill Hook *(uncommon)* .......... 2 gp
+- Gladius *(uncommon)* .......... 1 gp
+- Glaive .......... 1 gp
+- Gnome Flickmace *(uncommon)* .......... 3 gp
+- Gnome Hooked Hammer *(uncommon)* .......... 2 gp
+- Greataxe .......... 2 gp
+- Greatclub .......... 1 gp
+- Greatpick .......... 1 gp
+- Greatsword .......... 2 gp
+- Griffon Cane .......... 1 gp
+- Guisarme .......... 2 gp
+- Halberd .......... 2 gp
+- Halfling Sling Staff *(uncommon)* .......... 5 gp
+- Hand Adze .......... 5 sp
+- Hand Cannon *(uncommon)* .......... 3 gp
+- Hand Crossbow .......... 3 gp
+- Harmona Gun *(uncommon)* .......... 8 gp
+- Harpoon .......... 1 gp
+- Hatchet .......... 4 sp
+- Heavy Crossbow .......... 4 gp
+- Hongali Hornbow *(uncommon)* .......... 11 gp
+- Hook Sword *(uncommon)* .......... 3 gp
+- Horsechopper *(uncommon)* .......... 9 sp
+- Injection Spear *(uncommon)* .......... 3 gp
+- Javelin .......... 1 sp
+- Jiu Huan Dao *(uncommon)* .......... 9 sp
+- Juggling Club *(uncommon)* .......... 1 sp
+- Kalis *(uncommon)* .......... 3 gp
+- Kama *(uncommon)* .......... 1 gp
+- Karambit *(uncommon)* .......... 2 gp
+- Katana *(uncommon)* .......... 2 gp
+- Katar *(uncommon)* .......... 3 sp
+- Kestros *(uncommon)* .......... 2 gp
+- Khakkhara *(uncommon)* .......... 2 gp
+- Khopesh *(uncommon)* .......... 2 gp
+- Knuckle Duster .......... 3 sp
+- Kris .......... 7 sp
+- Kukri *(uncommon)* .......... 6 sp
+- Kusarigama *(uncommon)* .......... 2 gp
+- Lance .......... 1 gp
+- Lancer *(uncommon)* .......... 8 gp
+- Leiomano *(uncommon)* .......... 2 gp
+- Light Hammer .......... 3 sp
+- Light Mace .......... 4 sp
+- Light Pick .......... 4 sp
+- Lion Scythe *(uncommon)* .......... 1 gp
+- Liuyedao .......... 3 gp
+- Long Air Repeater *(uncommon)* .......... 6 gp
+- Long Hammer .......... 5 gp
+- Longbow .......... 6 gp
+- Longspear .......... 5 sp
+- Longsword .......... 1 gp
+- Mace .......... 1 gp
+- Mace Multipistol *(uncommon)* .......... 13 gp
+- Machete .......... 7 sp
+- Macuahuitl *(uncommon)* .......... 3 gp
+- Main-Gauche .......... 5 sp
+- Mambele *(uncommon)* .......... 6 sp
+- Maul .......... 3 gp
+- Maul-spade *(uncommon)* .......... 6 gp
+- Meteor Hammer .......... 3 gp
+- Mikazuki *(uncommon)* .......... 8 gp
+- Monkey's Fist .......... 1 sp
+- Morningstar .......... 1 gp
+- Naginata *(uncommon)* .......... 3 gp
+- Nightstick *(uncommon)* .......... 1 gp
+- Nodachi .......... 6 gp
+- Nunchaku *(uncommon)* .......... 2 sp
+- Ogre Hook *(uncommon)* .......... 1 gp
+- Orc Knuckle Dagger *(uncommon)* .......... 7 sp
+- Orc Necksplitter *(uncommon)* .......... 2 gp
+- Orc Skewermaul *(uncommon)* .......... 2 gp
+- Palstave *(uncommon)* .......... 4 sp
+- Panabas .......... 1 gp
+- Pantograph Gauntlet *(uncommon)* .......... 2 gp
+- Pepperbox *(uncommon)* .......... 9 gp
+- Pick .......... 7 sp
+- Piercing Wind *(uncommon)* .......... 15 gp
+- Piranha Kiss *(uncommon)* .......... 4 sp
+- Poi *(uncommon)* .......... 2 sp
+- Probing Cane .......... 5 sp
+- Ranseur .......... 2 gp
+- Rapier .......... 2 gp
+- Rapier Pistol *(uncommon)* .......... 10 gp
+- Reinforced Stock .......... 2 sp
+- Reinforced Wheels .......... 5 sp
+- Rhoka Sword *(uncommon)* .......... 4 gp
+- Rope Dart *(uncommon)* .......... 1 gp
+- Rotary Bow .......... 8 gp
+- Sai *(uncommon)* .......... 6 sp
+- Sansetsukon *(uncommon)* .......... 2 gp
+- Sap .......... 1 sp
+- Sawtooth Saber *(uncommon)* .......... 5 gp
+- Scimitar .......... 1 gp
+- Scizore .......... 9 sp
+- Scorpion Whip *(uncommon)* .......... 5 sp
+- Scourge .......... 1 sp
+- Scythe .......... 2 gp
+- Shauth Blade *(uncommon)* .......... 2 gp
+- Shauth Lash *(uncommon)* .......... 8 gp
+- Shears *(uncommon)* .......... 5 sp
+- Shield Boss .......... 5 sp
+- Shield Bow .......... 5 gp
+- Shield Pistol *(uncommon)* .......... 6 gp
+- Shield Spikes .......... 5 sp
+- Shortbow .......... 3 gp
+- Shortsword .......... 9 sp
+- Shuan Ji *(uncommon)* .......... 3 gp
+- Shuriken *(uncommon)* .......... 1 cp
+- Sickle .......... 2 sp
+- Sickle-saber *(uncommon)* .......... 5 gp
+- Sling .......... free
+- Spear .......... 1 sp
+- Spiked Chain *(uncommon)* .......... 3 gp
+- Spiked Gauntlet .......... 3 sp
+- Spiral Rapier *(uncommon)* .......... 5 gp
+- Spirit Thresher *(uncommon)* .......... 2 gp
+- Spraysling *(uncommon)* .......... 1 gp
+- Staff .......... free
+- Starknife .......... 2 gp
+- Sun Sling *(uncommon)* .......... 3 gp
+- Sword Cane .......... 5 gp
+- Talwar .......... 2 gp
+- Tamchal Chakram *(uncommon)* .......... 5 gp
+- Taw Launcher *(uncommon)* .......... 10 gp
+- Tekko-Kagi *(uncommon)* .......... 2 sp
+- Temple Sword *(uncommon)* .......... 2 gp
+- Tengu Gale Blade *(uncommon)* .......... 4 gp
+- Tetsubo *(uncommon)* .......... 3 gp
+- Thorn Whip *(uncommon)* .......... 6 sp
+- Three-Section Naginata *(uncommon)* .......... 12 gp
+- Throwing Knife .......... 3 sp
+- Throwing Knife (Extinction Curse) *(uncommon)* .......... 3 sp
+- Thunder Sling *(uncommon)* .......... 5 gp
+- Thundermace *(uncommon)* .......... 2 sp
+- Tonfa *(uncommon)* .......... 1 sp
+- Tri-bladed Katar *(uncommon)* .......... 1 sp
+- Tricky Pick *(uncommon)* .......... 10 gp
+- Trident .......... 1 gp
+- Triggerbrand *(uncommon)* .......... 10 gp
+- Umbrella Injector *(uncommon)* .......... 4 gp
+- Urumi *(uncommon)* .......... 2 gp
+- Visap *(uncommon)* .......... 2 gp
+- Wakizashi *(uncommon)* .......... 1 gp
+- War Flail .......... 2 gp
+- War Gavel *(uncommon)* .......... 2 sp
+- War Javelin *(uncommon)* .......... 1 gp
+- War Lance *(uncommon)* .......... 4 gp
+- War Razor .......... 3 sp
+- Warhammer .......... 1 gp
+- Wheel Blades .......... 5 sp
+- Wheel Spikes .......... 5 sp
+- Whip .......... 1 sp
+- Whip Claw *(uncommon)* .......... 5 gp
+- Whipstaff *(uncommon)* .......... 3 gp
+- Wish Blade *(uncommon)* .......... 5 gp
+- Wish Knife *(uncommon)* .......... 2 gp
+- Wrecker *(uncommon)* .......... 8 gp
+- Wrist Launcher *(uncommon)* .......... 3 gp
+- Zhuazhi Bang *(uncommon)* .......... 1 gp
+- Zulfikar *(uncommon)* .......... 4 gp
+- Acid Flask (Lesser) .......... 3 gp
+- Alchemical Gauntlet .......... 10 gp
+- Alchemist's Fire (Lesser) .......... 3 gp
+- Aldori Dueling Sword *(uncommon)* .......... 2 gp
+- Atrophy Bomb (Lesser) *(uncommon)* .......... 4 gp
+- Axe Musket *(uncommon)* .......... 10 gp
+- Backpack Ballista *(uncommon)* .......... 18 gp
+- Backpack Catapult *(uncommon)* .......... 20 gp
+- Barricade Buster *(uncommon)* .......... 9 gp
+- Big Boom Gun *(uncommon)* .......... 10 gp
+- Bioluminescence Bomb *(uncommon)* .......... 3 gp
+- Blasting Stone (Lesser) .......... 3 gp
+- Blight Bomb (Lesser) .......... 3 gp
+- Blood Bomb (Lesser) *(uncommon)* .......... 4 gp
+- Boarding Pike *(uncommon)* .......... 8 sp
+- Bottled Lightning (Lesser) .......... 3 gp
+- Combat Grapnel *(uncommon)* .......... 9 sp
+- Composite Longbow .......... 20 gp
+- Composite Shortbow .......... 14 gp
+- Double-Barreled Musket *(uncommon)* .......... 11 gp
+- Dragon's Crest *(uncommon)* .......... 10 gp
+- Dread Ampoule (Lesser) .......... 3 gp
+- Dueling Pistol *(uncommon)* .......... 12 gp
+- Durian Bomb (Lesser) *(uncommon)* .......... 4 gp
+- Dwarven Daisy (Lesser) *(uncommon)* .......... 6 gp
+- Dwarven Scattergun *(uncommon)* .......... 10 gp
+- Explosive Dogslicer *(uncommon)* .......... 10 gp
+- Flying Talon *(uncommon)* .......... 6 gp
+- Frost Vial (Lesser) .......... 3 gp
+- Ghost Charge (Lesser) .......... 3 gp
+- Glue Bomb (Lesser) .......... 3 gp
+- Gnome Amalgam Musket *(uncommon)* .......... 10 gp
+- Goo Grenade (Lesser) *(uncommon)* .......... 3 gp
+- Granny's Hedge Trimmer *(rare)* .......... free
+- Gun Sword *(uncommon)* .......... 13 gp
+- Hammer Gun *(uncommon)* .......... 13 gp
+- Holy Water .......... 3 gp
+- Jezail *(uncommon)* .......... 11 gp
+- Junk Bomb (Lesser) *(uncommon)* .......... 4 gp
+- Mud Bomb (Lesser) *(uncommon)* .......... 3 gp
+- Necrotic Bomb (Lesser) .......... 3 gp
+- Pernicious Spore Bomb (Lesser) *(uncommon)* .......... 3 gp
+- Peshpine Grenade (Lesser) *(uncommon)* .......... 3 gp
+- Phalanx Piercer .......... 10 gp
+- Polytool *(uncommon)* .......... 10 gp
+- Pressure Bomb (Lesser) *(uncommon)* .......... 4 gp
+- Redpitch Bomb (Lesser) *(rare)* .......... 3 gp
+- Repeating Crossbow *(uncommon)* .......... 15 gp
+- Repeating Hand Crossbow *(uncommon)* .......... 10 gp
+- Repeating Heavy Crossbow *(uncommon)* .......... 20 gp
+- Scrollstaff *(uncommon)* .......... 12 gp
+- Shobhad Longrifle *(rare)* .......... 20 gp
+- Skunk Bomb (Lesser) .......... 4 gp
+- Slide Pistol *(uncommon)* .......... 16 gp
+- Spoon Gun *(uncommon)* .......... 10 gp
+- Star Grenade (Lesser) *(uncommon)* .......... 3 gp
+- Steelscour (Lesser) *(uncommon)* .......... 3 gp
+- Sticky Algae Bomb (Lesser) .......... 4 gp
+- Stiletto Pen *(uncommon)* .......... 8 gp
+- Sukgung .......... 7 gp
+- Sulfur Bomb (Lesser) *(uncommon)* .......... 4 gp
+- Switchscythe *(uncommon)* .......... 12 gp
+- Tallow Bomb (Lesser) *(uncommon)* .......... 3 gp
+- Tenderizer Grenade (Lesser) *(uncommon)* .......... 4 gp
+- Three-peaked Tree *(uncommon)* .......... 12 gp
+- Twigjack Sack (Lesser) *(uncommon)* .......... 3 gp
+- Unholy Water .......... 3 gp
+- Versatile Vial .......... free
+- Vexing Vapor (Lesser) *(uncommon)* .......... 4 gp
+- Water Bomb (Lesser) *(uncommon)* .......... 3 gp
+- Bottled Sunlight (Lesser) .......... 7 gp
+- Defoliation Bomb (Lesser) *(uncommon)* .......... 7 gp
+- Handwraps of Mighty Blows .......... 35 gp
+- Inflammation Flask (Lesser) *(uncommon)* .......... 5 gp
+- Nail Bomb (Lesser) *(uncommon)* .......... 8 gp
+- Spider Satchel (Lesser) *(uncommon)* .......... 6 gp
+- Acid Flask (Moderate) .......... 10 gp
+- Alchemist's Fire (Moderate) .......... 10 gp
+- Atrophy Bomb (Moderate) *(uncommon)* .......... 11 gp
+- Blasting Stone (Moderate) .......... 10 gp
+- Blight Bomb (Moderate) .......... 10 gp
+- Blood Bomb (Moderate) *(uncommon)* .......... 11 gp
+- Boastful Hunter *(rare)* .......... free
+- Bottled Lightning (Moderate) .......... 10 gp
+- Crimson Thorn *(uncommon)* .......... 60 gp
+- Dread Ampoule (Moderate) .......... 10 gp
+- Durian Bomb (Moderate) *(uncommon)* .......... 12 gp
+- Dwarven Daisy (Moderate) *(uncommon)* .......... 18 gp
+- Fighter's Fork .......... 50 gp
+- Frost Vial (Moderate) .......... 10 gp
+- Ghast Stiletto .......... 60 gp
+- Ghost Charge (Moderate) .......... 10 gp
+- Ghoul Stiletto .......... 60 gp
+- Glacier Hammer .......... 60 gp
+- Glue Bomb (Moderate) .......... 10 gp
+- Goo Grenade (Moderate) *(uncommon)* .......... 10 gp
+- Hunter's Bow .......... 60 gp
+- Junk Bomb (Moderate) *(uncommon)* .......... 12 gp
+- Little Love *(rare)* .......... 60 gp
+- Magnetic Bola *(uncommon)* .......... 60 gp
+- Mud Bomb (Moderate) *(uncommon)* .......... 10 gp
+- Necrotic Bomb (Moderate) .......... 10 gp
+- Pernicious Spore Bomb (Moderate) *(uncommon)* .......... 10 gp
+- Peshpine Grenade (Moderate) *(uncommon)* .......... 10 gp
+- Pressure Bomb (Moderate) *(uncommon)* .......... 12 gp
+- Redpitch Bomb (Moderate) *(rare)* .......... 10 gp
+- Retribution Axe .......... 60 gp
+- Silverscrap Bomb (Lesser) *(uncommon)* .......... 11 gp
+- Silversoul Bomb *(rare)* .......... 10 gp
+- Skunk Bomb (Moderate) .......... 12 gp
+- Smoking Sword .......... 60 gp
+- Sparkblade .......... 70 gp
+- Staff of Air .......... 60 gp
+- Staff of Earth .......... 60 gp
+- Staff of Fire .......... 60 gp
+- Staff of Water .......... 60 gp
+- Star Grenade (Moderate) *(uncommon)* .......... 10 gp
+- Steelscour (Moderate) *(uncommon)* .......... 9 gp
+- Sticky Algae Bomb (Moderate) .......... 12 gp
+- Storm Hammer .......... 60 gp
+- Sulfur Bomb (Moderate) *(uncommon)* .......... 12 gp
+- Tallow Bomb (Moderate) *(uncommon)* .......... 10 gp
+- Tenderizer Grenade (Moderate) *(uncommon)* .......... 12 gp
+- Twigjack Sack (Moderate) *(uncommon)* .......... 10 gp
+- Vexing Vapor (Moderate) *(uncommon)* .......... 12 gp
+- Water Bomb (Moderate) *(uncommon)* .......... 10 gp
+- Wordreaper *(uncommon)* .......... 55 gp
+- Aether Marbles (Lesser) *(uncommon)* .......... 19 gp
+- Animal Staff .......... 90 gp
+- Ankhrav Duster *(uncommon)* .......... 90 gp
+- Atmospheric Staff (Lesser) *(uncommon)* .......... 95 gp
+- Blast Lance *(uncommon)* .......... 100 gp
+- Bottled Sunlight (Moderate) .......... 20 gp
+- Composer Staff .......... 80 gp
+- Crystal Shards (Moderate) .......... 16 gp
+- Defoliation Bomb (Moderate) *(uncommon)* .......... 18 gp
+- Drake Rifle (Acid) *(uncommon)* .......... 100 gp
+- Drake Rifle (Cold) *(uncommon)* .......... 100 gp
+- Drake Rifle (Electricity) *(uncommon)* .......... 100 gp
+- Drake Rifle (Fire) *(uncommon)* .......... 100 gp
+- Drake Rifle (Poison) *(uncommon)* .......... 100 gp
+- Dreamcrusher *(rare)* .......... 80 gp
+- Exquisite Sword Cane .......... 90 gp
+- Fulmination Fang *(uncommon)* .......... 115 gp
+- Inflammation Flask (Moderate) *(uncommon)* .......... 15 gp
+- Mentalist's Staff .......... 90 gp
+- Musket Staff of Force *(rare)* .......... 100 gp
+- Musket Staff of Void *(rare)* .......... 100 gp
+- Nail Bomb (Moderate) *(uncommon)* .......... 16 gp
+- Pistol Wand *(rare)* .......... 100 gp
+- Poisoner's Staff *(uncommon)* .......... 90 gp
+- Spider Satchel (Moderate) *(uncommon)* .......... 16 gp
+- Spore Shephard's Staff *(uncommon)* .......... 100 gp
+- Spore Shephard's Staff (Major) *(uncommon)* .......... 100 gp
+- Staff of Healing .......... 90 gp
+- Alicorn Lance *(uncommon)* .......... 150 gp
+- Amphisbaena Handwraps *(uncommon)* .......... 150 gp
+- Auspicious Scepter .......... 150 gp
+- Blood-Drinker Blade *(uncommon)* .......... 160 gp
+- Caterwaul Sling .......... 155 gp
+- Chainbreaker *(uncommon)* .......... 150 gp
+- Cinderclaw Gauntlet *(uncommon)* .......... 150 gp
+- Dagger of Eternal Sleep *(uncommon)* .......... 25 gp
+- Dazzling Shortbow *(uncommon)* .......... 160 gp
+- Dog-Bone Knife *(uncommon)* .......... 150 gp
+- Grasp of Droskar *(rare)* .......... 155 gp
+- Heartripper Blade *(rare)* .......... 160 gp
+- Hydrocannon *(uncommon)* .......... 150 gp
+- Infiltrator's Accessory .......... 150 gp
+- Metronomic Hammer *(uncommon)* .......... 160 gp
+- Poisonous Dagger .......... 150 gp
+- Protector's Final Gift *(rare)* .......... 150 gp
+- Restorative Handwraps .......... 150 gp
+- Scizore of the Crab .......... 150 gp
+- Serpent Dagger .......... 150 gp
+- Shard of Self-Destruction *(rare)* .......... free
+- Silver Orb (Lesser) *(uncommon)* .......... 30 gp
+- Singing Sword *(rare)* .......... free
+- Solar Shellflower *(uncommon)* .......... 160 gp
+- Thundercrasher *(uncommon)* .......... 155 gp
+- Tiger Fork *(uncommon)* .......... 275 gp
+- Trollhound Pick .......... 140 gp
+- Worldringer *(uncommon)* .......... 160 gp
+- Accursed Staff .......... 250 gp
+- Acrobat's Staff *(uncommon)* .......... 235 gp
+- Arboreal's Revenge *(rare)* .......... free
+- Bloodletting Kukri *(uncommon)* .......... 240 gp
+- Cavalry Commander's Lance *(uncommon)* .......... 225 gp
+- Chain of Command *(uncommon)* .......... 240 gp
+- Chatterer of Follies *(uncommon)* .......... 200 gp
+- Conflagration Club .......... 250 gp
+- Dragonscale Bo Staff .......... 240 gp
+- Dragonscale Staff .......... 240 gp
+- Faultline Hammer *(uncommon)* .......... 250 gp
+- Flashblade .......... 230 gp
+- Fluid Form Staff .......... 230 gp
+- Gluttonous Spear *(uncommon)* .......... 250 gp
+- Guardian Staff .......... 250 gp
+- Horselord's Longbow *(uncommon)* .......... 250 gp
+- Hydra Head Club *(rare)* .......... 225 gp
+- Lady's Knife *(uncommon)* .......... 200 gp
+- Librarian Staff .......... 225 gp
+- Lyrakien Staff .......... 255 gp
+- Nightmare's Lament *(uncommon)* .......... 230 gp
+- Obsidian Edge *(uncommon)* .......... 250 gp
+- Radiant Victory *(uncommon)* .......... 240 gp
+- Ringmaster's Staff *(uncommon)* .......... 230 gp
+- Soul Chain *(rare)* .......... free
+- Spider Gun *(uncommon)* .......... 250 gp
+- Spike Launcher *(uncommon)* .......... 250 gp
+- Staff of Control .......... 230 gp
+- Staff of Elemental Power .......... 230 gp
+- Staff of Final Rest *(uncommon)* .......... 240 gp
+- Staff of Impossible Visions *(uncommon)* .......... 230 gp
+- Staff of Metal .......... 250 gp
+- Staff of Phantasms .......... 230 gp
+- Staff of Protection .......... 230 gp
+- Staff of Providence .......... 230 gp
+- Staff of Summoning .......... 230 gp
+- Staff of the Dead .......... 230 gp
+- Staff of the Desert Winds .......... 230 gp
+- Staff of the Dreamlands *(uncommon)* .......... 250 gp
+- Staff of the Tempest .......... 230 gp
+- Staff of the Unblinking Eye *(uncommon)* .......... 230 gp
+- Twining Staff .......... 250 gp
+- Ulfen Shieldbreaker *(uncommon)* .......... 250 gp
+- Verdant Staff .......... 225 gp
+- Windlass Bola *(uncommon)* .......... 200 gp
+- Alghollthu Lash *(uncommon)* .......... 350 gp
+- Alghollthu Whip *(uncommon)* .......... 350 gp
+- Beast Staff .......... 340 gp
+- Bellicose Dagger *(rare)* .......... free
+- Bloodgorger Scythe *(uncommon)* .......... 340 gp
+- Branch of the Great Sugi *(rare)* .......... 360 gp
+- Fulminating Spear *(uncommon)* .......... 360 gp
+- Guiding Star .......... 325 gp
+- Kinetic Club *(uncommon)* .......... 325 gp
+- Lady's Spiral *(uncommon)* .......... 360 gp
+- Liar's Gun *(uncommon)* .......... 360 gp
+- Slime Whip *(uncommon)* .......... 360 gp
+- Spellguard Blade .......... 320 gp
+- Spellstriker Staff .......... 360 gp
+- Spirit Fan *(rare)* .......... 360 gp
+- Splithead Bow *(uncommon)* .......... 360 gp
+- Spy Staff *(uncommon)* .......... 340 gp
+- Staff of Nature's Cunning .......... 250 gp
+- Tentacle Cannon *(uncommon)* .......... 360 gp
+- Undead Scourge *(uncommon)* .......... 350 gp
+- Venom Lash *(uncommon)* .......... 350 gp
+- Zombie Staff .......... 330 gp
+- Animal Staff (Greater) .......... 460 gp
+- Atmospheric Staff *(uncommon)* .......... 480 gp
+- Blast Lance (Greater) *(uncommon)* .......... 500 gp
+- Boreal Staff .......... 500 gp
+- Breath Blaster *(uncommon)* .......... 500 gp
+- Calamity *(uncommon)* .......... 500 gp
+- Clockwork Macuahuitl *(rare)* .......... 550 gp
+- Composer Staff (Greater) .......... 480 gp
+- Constricting Meteor *(uncommon)* .......... 450 gp
+- Deathseeker .......... 500 gp
+- Doomsweeper *(uncommon)* .......... 475 gp
+- Flaying Knife *(uncommon)* .......... 480 gp
+- Gray Prince *(rare)* .......... 500 gp
+- Hundred-Moth Caress .......... 475 gp
+- Mageslayer *(uncommon)* .......... 500 gp
+- Mentalist's Staff (Greater) .......... 450 gp
+- Mindlance *(uncommon)* .......... 500 gp
+- Poisoner's Staff (Greater) *(uncommon)* .......... 450 gp
+- Returning Starknife *(uncommon)* .......... 430 gp
+- Spiritsight Crossbow *(uncommon)* .......... 450 gp
+- Spore Shephard's Staff (Greater) *(uncommon)* .......... 475 gp
+- Staff of Air (Greater) .......... 450 gp
+- Staff of Earth (Greater) .......... 450 gp
+- Staff of Fire (Greater) .......... 450 gp
+- Staff of Healing (Greater) .......... 470 gp
+- Staff of Illumination .......... 425 gp
+- Staff of Water (Greater) .......... 450 gp
+- Sunken Pistol *(rare)* .......... free
+- Vampire-Fang Morningstar .......... 500 gp
+- Vine Whip .......... 500 gp
+- Blood-Drinker Blade (Greater) *(uncommon)* .......... 700 gp
+- Bloodknuckles .......... 600 gp
+- Chaplain's Cudgel .......... 650 gp
+- Chimera Flail *(uncommon)* .......... 700 gp
+- Clear Cutter's Axe *(rare)* .......... 600 gp
+- Crimson Brand *(uncommon)* .......... 700 gp
+- Erraticannon *(rare)* .......... 700 gp
+- Gloom Blade .......... 700 gp
+- Grisly Scythe *(rare)* .......... 650 gp
+- Growth Gun *(uncommon)* .......... 700 gp
+- Nexian Sealing Blade *(rare)* .......... 750 gp
+- Obsidian Edge (Greater) *(uncommon)* .......... 700 gp
+- Preordained Spear *(rare)* .......... 700 gp
+- Reaper's Crescent *(uncommon)* .......... 575 gp
+- Screech Shooter *(uncommon)* .......... 700 gp
+- Shadefield Knife *(rare)* .......... 650 gp
+- Skeletal Claw *(uncommon)* .......... 1250 gp
+- Sonic Tuning Mace .......... 700 gp
+- Spellender *(uncommon)* .......... 600 gp
+- Spider Gun (Greater) *(uncommon)* .......... 1400 gp
+- Vine of Roses *(uncommon)* .......... 600 gp
+- Whip of Compliance *(uncommon)* .......... 3000 gp
+- Accursed Staff (Greater) .......... 900 gp
+- Batsbreath Cane .......... 950 gp
+- Fluid Form Staff (Greater) .......... 900 gp
+- Giant Squid Lash *(uncommon)* .......... 750 gp
+- Grounding Spike *(uncommon)* .......... 950 gp
+- Guardian Staff (Greater) .......... 900 gp
+- Howler Pistol *(rare)* .......... 1100 gp
+- Immolation Clan Pistol *(rare)* .......... free
+- Lion's Call *(uncommon)* .......... 900 gp
+- Lyrakien Staff (Greater) .......... 920 gp
+- North Wind's Night Verse *(uncommon)* .......... 900 gp
+- Pact-Bound Pistol *(rare)* .......... free
+- Polarizing Mace *(uncommon)* .......... 950 gp
+- Revenant Blade *(rare)* .......... 900 gp
+- Rustbringer .......... 900 gp
+- South Wind's Scorch Song *(uncommon)* .......... 900 gp
+- Staff of Control (Greater) .......... 900 gp
+- Staff of Elemental Power (Greater) .......... 900 gp
+- Staff of Final Rest (Greater) *(uncommon)* .......... 900 gp
+- Staff of Metal (Greater) .......... 900 gp
+- Staff of Nature's Vengeance .......... 900 gp
+- Staff of Phantasms (Greater) .......... 900 gp
+- Staff of Protection (Greater) .......... 900 gp
+- Staff of Providence (Greater) .......... 900 gp
+- Staff of Summoning (Greater) .......... 900 gp
+- Staff of the Dead (Greater) .......... 900 gp
+- Staff of the Tempest (Greater) .......... 900 gp
+- Staff of the Unblinking Eye (Greater) *(uncommon)* .......... 900 gp
+- Acid Flask (Greater) .......... 250 gp
+- Alchemist's Fire (Greater) .......... 250 gp
+- Atrophy Bomb (Greater) *(uncommon)* .......... 255 gp
+- Beast Staff (Greater) .......... 1400 gp
+- Blasting Stone (Greater) .......... 250 gp
+- Blight Bomb (Greater) .......... 250 gp
+- Blood Bomb (Greater) *(uncommon)* .......... 275 gp
+- Bottled Lightning (Greater) .......... 250 gp
+- Buzzsaw Axe .......... 1400 gp
+- Carver-cutter .......... 1400 gp
+- Dezullon Fountain *(uncommon)* .......... 1300 gp
+- Dragon's Tongue *(uncommon)* .......... 1350 gp
+- Dread Ampoule (Greater) .......... 300 gp
+- Durian Bomb (Greater) *(uncommon)* .......... 275 gp
+- Frost Vial (Greater) .......... 250 gp
+- Ghost Charge (Greater) .......... 250 gp
+- Gloaming Arc *(uncommon)* .......... 1250 gp
+- Gloaming Shard .......... 1400 gp
+- Glue Bomb (Greater) .......... 250 gp
+- Goo Grenade (Greater) *(uncommon)* .......... 250 gp
+- Hunter's Anthem .......... 1300 gp
+- Junk Bomb (Greater) *(uncommon)* .......... 275 gp
+- Lance of Sun's Radiance *(rare)* .......... 1450 gp
+- Lionfish Spear .......... 3000 gp
+- Lumber Lord's Axe *(uncommon)* .......... 900 gp
+- Mud Bomb (Greater) *(uncommon)* .......... 250 gp
+- Necrotic Bomb (Greater) .......... 250 gp
+- Nightmare Cudgel *(uncommon)* .......... 1000 gp
+- Oathbow .......... 1300 gp
+- Pernicious Spore Bomb (Greater) *(uncommon)* .......... 250 gp
+- Peshpine Grenade (Greater) *(uncommon)* .......... 250 gp
+- Pressure Bomb (Greater) *(uncommon)* .......... 275 gp
+- Rat-Catcher Trident *(uncommon)* .......... 1200 gp
+- Redpitch Bomb (Greater) *(rare)* .......... 250 gp
+- Rime Foil *(uncommon)* .......... 1400 gp
+- Scalding Gauntlets .......... 1300 gp
+- Sensei's Parasol *(rare)* .......... 1400 gp
+- Shattered Plan *(uncommon)* .......... 1400 gp
+- Silverscrap Bomb (Moderate) *(uncommon)* .......... 255 gp
+- Silversoul Bomb (Greater) *(rare)* .......... 250 gp
+- Skunk Bomb (Greater) .......... 240 gp
+- Spellstriker Staff (Greater) .......... 1400 gp
+- Spore Sap *(uncommon)* .......... 1250 gp
+- Spy Staff (Greater) *(uncommon)* .......... 1175 gp
+- Staff of Nature's Cunning (Greater) .......... 1400 gp
+- Star Grenade (Greater) *(uncommon)* .......... 250 gp
+- Steelscour (Greater) *(uncommon)* .......... 215 gp
+- Sticky Algae Bomb (Greater) .......... 280 gp
+- Stoneraiser Javelin *(uncommon)* .......... 1200 gp
+- Sulfur Bomb (Greater) *(uncommon)* .......... 275 gp
+- Tallow Bomb (Greater) *(uncommon)* .......... 250 gp
+- Tenderizer Grenade (Greater) *(uncommon)* .......... 275 gp
+- Tiger's Claw *(rare)* .......... 1400 gp
+- Twigjack Sack (Greater) *(uncommon)* .......... 250 gp
+- Vexing Vapor (Greater) *(uncommon)* .......... 300 gp
+- Water Bomb (Greater) *(uncommon)* .......... 250 gp
+- Whip-Tongue Sling *(uncommon)* .......... 1250 gp
+- Zombie Staff (Greater) .......... 1200 gp
+- Aether Marbles (Moderate) *(uncommon)* .......... 360 gp
+- Animal Staff (Major) .......... 1900 gp
+- Arboreal Staff *(rare)* .......... free
+- Atmospheric Staff (Greater) *(uncommon)* .......... 1900 gp
+- Blink Blade *(uncommon)* .......... 1750 gp
+- Boreal Staff (Greater) .......... 2750 gp
+- Bottled Sunlight (Greater) .......... 360 gp
+- Boulder Seed .......... 360 gp
+- Chainbreaker (Greater) *(uncommon)* .......... 1750 gp
+- Composer Staff (Major) .......... 1800 gp
+- Crystal Shards (Greater) .......... 350 gp
+- Defoliation Bomb (Greater) *(uncommon)* .......... 350 gp
+- Dragonfire Halfbow *(uncommon)* .......... 1800 gp
+- Flashblade (Greater) .......... 1900 gp
+- Four-Tiger Blade *(rare)* .......... 2000 gp
+- Four-Ways Dogslicer *(uncommon)* .......... 1700 gp
+- Gambler's Staff *(uncommon)* .......... 2000 gp
+- Gravedigger's Call .......... 1700 gp
+- Inflammation Flask (Greater) *(uncommon)* .......... 340 gp
+- Librarian Staff (Greater) .......... 1750 gp
+- Lodestone Bomb .......... 400 gp
+- Mentalist's Staff (Major) .......... 1800 gp
+- Nail Bomb (Greater) *(uncommon)* .......... 350 gp
+- Obsidian Edge (Major) *(uncommon)* .......... 1800 gp
+- Pirate Staff .......... 2000 gp
+- Purgatory Emissary's Staff *(rare)* .......... 1820 gp
+- Ringmaster's Staff (Greater) *(uncommon)* .......... 1800 gp
+- Scarlet Queen *(rare)* .......... 2000 gp
+- Shatterstone .......... 380 gp
+- Shuln Fang Katar *(rare)* .......... 2100 gp
+- Silver Orb (Powder) *(uncommon)* .......... 400 gp
+- Snowcaster's Staff *(rare)* .......... 1800 gp
+- Socialite Staff .......... 1900 gp
+- Spellsap Grenade *(rare)* .......... 360 gp
+- Spider Satchel (Greater) *(uncommon)* .......... 350 gp
+- Staff of Air (Major) .......... 1800 gp
+- Staff of Arcane Might *(rare)* .......... 1900 gp
+- Staff of Earth (Major) .......... 1800 gp
+- Staff of Fire (Major) .......... 1800 gp
+- Staff of Healing (Major) .......... 1800 gp
+- Staff of Impossible Visions (Greater) *(uncommon)* .......... 1800 gp
+- Staff of Water (Major) .......... 1800 gp
+- Staff of the Black Desert *(uncommon)* .......... 1850 gp
+- Staff of the Desert Winds (Greater) .......... 1750 gp
+- Staff of the Dreamlands (Greater) *(uncommon)* .......... 2000 gp
+- Storm Herald *(uncommon)* .......... 2000 gp
+- Talonstrike Blade *(uncommon)* .......... 2000 gp
+- Thundering Fury Dadao *(rare)* .......... 2000 gp
+- Tidal Fishhook *(rare)* .......... 1700 gp
+- Trueshape Bomb .......... 375 gp
+- Verdant Staff (Greater) .......... 1750 gp
+- Anchor Spear *(uncommon)* .......... 2800 gp
+- Ankylostar *(uncommon)* .......... 2800 gp
+- Belkzen Deadsmasher *(uncommon)* .......... 2800 gp
+- Blade of Four Energies .......... 3000 gp
+- Boughshatter *(uncommon)* .......... 2875 gp
+- Carver-cutter (Greater) .......... 3000 gp
+- Catoblepas Maul *(uncommon)* .......... 2800 gp
+- Dragon's Tongue (Greater) *(uncommon)* .......... 2750 gp
+- Dragontooth Club *(uncommon)* .......... 3000 gp
+- Dragontooth Leiomano .......... 3000 gp
+- Duchy Defender *(rare)* .......... free
+- Dwarven Thrower .......... 2750 gp
+- Jian of Life's Duality *(uncommon)* .......... 3000 gp
+- Knight Captain's Lance *(uncommon)* .......... 3000 gp
+- Pistol of Wonder *(rare)* .......... 3000 gp
+- Piston Gauntlets *(uncommon)* .......... 2800 gp
+- Scalding Gauntlets (Greater) .......... 3000 gp
+- Screaming Pinion *(rare)* .......... 3000 gp
+- Screech Shooter (Greater) *(uncommon)* .......... 3000 gp
+- Searing Blade .......... 2800 gp
+- Sonic Tuning Mace (Greater) .......... 3000 gp
+- Spark Dancer *(uncommon)* .......... 2900 gp
+- Splintering Spear .......... 2700 gp
+- Tentacle Cannon (Greater) *(uncommon)* .......... 2000 gp
+- Tidal Crossbow *(rare)* .......... 2800 gp
+- Vampiric Scythe *(uncommon)* .......... 3000 gp
+- Accursed Staff (Major) .......... 4000 gp
+- Blessed Reformer *(uncommon)* .......... 4500 gp
+- Breath Blaster (Greater) *(uncommon)* .......... 4500 gp
+- Brilliant Rapier *(uncommon)* .......... 4500 gp
+- Chalice of Justice *(uncommon)* .......... 4500 gp
+- Deepdread Claw *(rare)* .......... 4000 gp
+- Deflecting Branch *(uncommon)* .......... 4500 gp
+- Dragonprism Staff .......... 4500 gp
+- Fluid Form Staff (Major) .......... 4000 gp
+- General's Word *(uncommon)* .......... 4500 gp
+- Glaive of the Artist *(uncommon)* .......... 4000 gp
+- Guardian Staff (Major) .......... 4000 gp
+- Hardened Harrow Deck *(rare)* .......... 4350 gp
+- Heavenly Rolling Flames *(uncommon)* .......... 4500 gp
+- Lionfish Spear (Greater) .......... 4000 gp
+- Nexian Sealing Blade (Greater) *(rare)* .......... 4000 gp
+- Ouroboros Flail .......... 4400 gp
+- Poisoner's Staff (Major) *(uncommon)* .......... 4000 gp
+- Singing Shortbow .......... 4500 gp
+- Skyrider Sword *(uncommon)* .......... 4500 gp
+- Songbird's Brush *(rare)* .......... 6000 gp
+- Staff of Control (Major) *(uncommon)* .......... 4000 gp
+- Staff of Elemental Power (Major) .......... 4000 gp
+- Staff of Metal (Major) .......... 4000 gp
+- Staff of Nature's Vengeance (Greater) .......... 4000 gp
+- Staff of Phantasms (Major) .......... 4000 gp
+- Staff of Protection (Major) .......... 4000 gp
+- Staff of Providence (Major) .......... 4100 gp
+- Staff of Summoning (Major) .......... 4000 gp
+- Staff of the Dead (Major) .......... 4000 gp
+- Staff of the Tempest (Major) .......... 4000 gp
+- Staff of the Unblinking Eye (Major) *(uncommon)* .......... 4000 gp
+- Stargazer *(uncommon)* .......... 6500 gp
+- Storm Flash .......... 4000 gp
+- Talonstrike Blade (Greater) *(uncommon)* .......... 4500 gp
+- Twisting Gale *(uncommon)* .......... 4200 gp
+- Worldringer (Greater) *(uncommon)* .......... 4200 gp
+- Alicorn Trigger *(rare)* .......... 6500 gp
+- Animate Dreamer *(rare)* .......... free
+- Beast Staff (Major) .......... 6250 gp
+- Black King *(rare)* .......... 6250 gp
+- Black Scorpion Stingmace *(uncommon)* .......... 6250 gp
+- Blade of the Rabbit Prince *(rare)* .......... 6250 gp
+- Blightburn Bomb *(uncommon)* .......... 1200 gp
+- Bloody Fang *(rare)* .......... 6250 gp
+- Buzzsaw Axe (Greater) .......... 6250 gp
+- Carver-cutter (Major) *(uncommon)* .......... 5500 gp
+- Crimson Bluff *(rare)* .......... 6500 gp
+- Godsbreath Bow *(rare)* .......... 6500 gp
+- Golden Blade of Mzali *(rare)* .......... 6500 gp
+- Jistkan Colossus Crusher *(rare)* .......... 6250 gp
+- Mindrender Baton *(rare)* .......... 6500 gp
+- Petrification Cannon *(uncommon)* .......... 6500 gp
+- Radiant Lance *(uncommon)* .......... 5750 gp
+- Reaper's Toll *(uncommon)* .......... 6500 gp
+- Righteous Fury *(uncommon)* .......... 6000 gp
+- Rod of Razors *(rare)* .......... 1300 gp
+- Scalding Gauntlets (Major) .......... 6250 gp
+- Spider Gun (Major) *(uncommon)* .......... 6500 gp
+- Spy Staff (Major) *(uncommon)* .......... 5300 gp
+- Staff of Nature's Cunning (Major) .......... 6500 gp
+- Thorn Brush *(rare)* .......... 6500 gp
+- Zombie Staff (Major) .......... 5600 gp
+- Atmospheric Staff (Major) *(uncommon)* .......... 8900 gp
+- Frost Brand .......... 10000 gp
+- Hell's Judgment *(uncommon)* .......... 10000 gp
+- Icicle .......... 10000 gp
+- Kithrender *(rare)* .......... 10000 gp
+- Last Hope *(uncommon)* .......... 10000 gp
+- Lyrakien Staff (Major) .......... 8600 gp
+- Spellstriker Staff (Major) .......... 8500 gp
+- Staff of Arcane Might (Greater) *(rare)* .......... 10000 gp
+- Staff of Final Rest (Major) *(uncommon)* .......... 9000 gp
+- Staff of Healing (True) .......... 9200 gp
+- Staff of Impossible Visions (Major) *(uncommon)* .......... 10000 gp
+- Staff of Power *(rare)* .......... 10000 gp
+- Staff of the Black Desert (Greater) *(uncommon)* .......... 9500 gp
+- Staff of the Desert Winds (Major) .......... 10000 gp
+- Acid Flask (Major) .......... 2500 gp
+- Alchemist's Fire (Major) .......... 2500 gp
+- Atrophy Bomb (Major) *(uncommon)* .......... 2550 gp
+- Blasting Stone (Major) .......... 2500 gp
+- Blight Bomb (Major) .......... 2500 gp
+- Blood Bomb (Major) *(uncommon)* .......... 2750 gp
+- Boreal Staff (Major) .......... 13500 gp
+- Bottled Lightning (Major) .......... 2500 gp
+- Celestial Peachwood Sword *(rare)* .......... 15000 gp
+- Celestial Staff *(uncommon)* .......... 14000 gp
+- Chronomancer Staff *(rare)* .......... 15000 gp
+- Dread Ampoule (Major) .......... 3000 gp
+- Durian Bomb (Major) *(uncommon)* .......... 2750 gp
+- Flashblade (Major) .......... 14700 gp
+- Frost Vial (Major) .......... 2500 gp
+- Gearblade *(rare)* .......... 13000 gp
+- Ghost Charge (Major) .......... 2500 gp
+- Glue Bomb (Major) .......... 2500 gp
+- Goo Grenade (Major) *(uncommon)* .......... 2500 gp
+- Hell Staff *(uncommon)* .......... 13000 gp
+- Junk Bomb (Major) *(uncommon)* .......... 2750 gp
+- Leydroth Spellbreaker *(rare)* .......... 15000 gp
+- Luck Blade *(rare)* .......... 15000 gp
+- Mud Bomb (Major) *(uncommon)* .......... 2500 gp
+- Necrotic Bomb (Major) .......... 2500 gp
+- Ouroboros Flail (Greater) .......... 15000 gp
+- Pernicious Spore Bomb (Major) *(uncommon)* .......... 2500 gp
+- Peshpine Grenade (Major) *(uncommon)* .......... 2500 gp
+- Pressure Bomb (Major) *(uncommon)* .......... 2750 gp
+- Redpitch Bomb (Major) *(rare)* .......... 2500 gp
+- Rustbringer (Greater) .......... 13500 gp
+- Screech Shooter (Major) *(uncommon)* .......... 15000 gp
+- Searing Blade (Greater) .......... 13800 gp
+- Silverscrap Bomb (Greater) *(uncommon)* .......... 2550 gp
+- Silversoul Bomb (Major) *(rare)* .......... 2500 gp
+- Sinew-Song *(rare)* .......... 15000 gp
+- Skunk Bomb (Major) .......... 2400 gp
+- Splintering Spear (Greater) .......... 15000 gp
+- Star Grenade (Major) *(uncommon)* .......... 2500 gp
+- Steelscour (Major) *(uncommon)* .......... 2100 gp
+- Sticky Algae Bomb (Major) .......... 2800 gp
+- Sulfur Bomb (Major) *(uncommon)* .......... 2750 gp
+- Tallow Bomb (Major) *(uncommon)* .......... 2500 gp
+- Tenderizer Grenade (Major) *(uncommon)* .......... 2750 gp
+- Tentacle Cannon (Major) *(uncommon)* .......... 15000 gp
+- Twigjack Sack (Major) *(uncommon)* .......... 2500 gp
+- Vexing Vapor (Major) *(uncommon)* .......... 3000 gp
+- Water Bomb (Major) *(uncommon)* .......... 2500 gp
+- Zealot Staff .......... 13000 gp
+- Aether Marbles (Greater) *(uncommon)* .......... 3400 gp
+- Belkzen Deadsmasher (Greater) *(uncommon)* .......... 22000 gp
+- Blade of Four Energies (Greater) .......... 20000 gp
+- Bottled Sunlight (Major) .......... 4500 gp
+- Boulder Seed (Greater) .......... 3600 gp
+- Breath Blaster (Major) *(uncommon)* .......... 24000 gp
+- Caress of the Great Serpent *(uncommon)* .......... 24000 gp
+- Carver-cutter (True) *(uncommon)* .......... 24000 gp
+- Crystal Shards (Major) .......... 4000 gp
+- Defoliation Bomb (Major) *(uncommon)* .......... 3600 gp
+- Final Rest .......... 24000 gp
+- Inflammation Flask (Major) *(uncommon)* .......... 3750 gp
+- Jistkan War Crossbow *(rare)* .......... 22000 gp
+- Lodestone Bomb (Greater) .......... 4500 gp
+- Nail Bomb (Major) *(uncommon)* .......... 4000 gp
+- Obsidian Edge (True) *(uncommon)* .......... 22000 gp
+- Scalding Gauntlets (True) .......... 20000 gp
+- Shadow's Heart *(rare)* .......... 23000 gp
+- Shatterstone (Greater) .......... 3800 gp
+- Silver Orb (Greater) *(uncommon)* .......... 5000 gp
+- Singing Shortbow (Greater) .......... 22500 gp
+- Spellsap Grenade (Greater) *(rare)* .......... 4500 gp
+- Spider Satchel (Major) *(uncommon)* .......... 4000 gp
+- Staff of Nature's Vengeance (Major) .......... 24000 gp
+- Staff of the Dreamlands (Major) *(uncommon)* .......... 24000 gp
+- Storm Flash (Greater) .......... 21000 gp
+- Torag's Silver Anvil *(uncommon)* .......... 24000 gp
+- Trueshape Bomb (Greater) .......... 3750 gp
+- Luck Blade (Wishing) *(rare)* .......... 30000 gp
+- Mattock of the Titans *(uncommon)* .......... 36000 gp
+- Sky-Piercing Bow *(rare)* .......... 40000 gp
+- Skyrider Sword (Greater) *(uncommon)* .......... 32000 gp
+- Apotheosis Knife *(rare)* .......... 60000 gp
+- Blightburn Bomb (Greater) *(uncommon)* .......... 12000 gp
+- Buzzsaw Axe (Major) .......... 65000 gp
+- Dragon Handwraps .......... 80000 gp
+- Dragon's Tongue (Major) *(uncommon)* .......... 55000 gp
+- Dragonprism Staff (Greater) .......... 68000 gp
+- Orb Shard *(rare)* .......... free
+- Ouroboros Flail (Major) .......... 65000 gp
+- Phoenix Fighting Fan *(rare)* .......... free
+- Sky Hammer *(rare)* .......... 70000 gp
+- Splintering Spear (Major) .......... 60000 gp
+- Staff of Arcane Might (Major) *(rare)* .......... 90000 gp
+- Staff of Impossible Visions (True) *(uncommon)* .......... 70000 gp
+- Staff of Providence (True) .......... 64000 gp
+- Staff of Sieges *(uncommon)* .......... 65000 gp
+- Staff of the Desert Winds (True) .......... 70000 gp
+- Staff of the Magi *(rare)* .......... 90000 gp
+- Timeflaying Blade *(rare)* .......... 68000 gp
+- Viper Rapier .......... 70000 gp
+- Whispering Staff .......... 70000 gp
+- Blade of Fallen Stars *(uncommon)* .......... 46500 gp
+
+Table: PF2eWeaponSize
+[when]{$sz}=hamlet[do]hamlet[end][when]{$sz}=thorpe[do]thorpe[end][when]{$sz}=village[do]village[end][when]{$sz}=small_town[do]small_town[end][when]{$sz}=town[do]town[end][when]{$sz}=large_town[do]large_town[end][when]{$sz}=small_city[do]small_city[end][when]{$sz}=city[do]city[end][when]{$sz}=large_city[do]large_city[end][when]{$sz}=metropolis[do]metropolis[end]
+
+Table: PF2eWeapon
+{!sz=={$1}}{!nsz==[@PF2eWeaponSize]}[when]{$nsz}=hamlet[do][@PF2eWeapon_hamlet][end][when]{$nsz}=thorpe[do][@PF2eWeapon_thorpe][end][when]{$nsz}=village[do][@PF2eWeapon_village][end][when]{$nsz}=small_town[do][@PF2eWeapon_small_town][end][when]{$nsz}=town[do][@PF2eWeapon_town][end][when]{$nsz}=large_town[do][@PF2eWeapon_large_town][end][when]{$nsz}=small_city[do][@PF2eWeapon_small_city][end][when]{$nsz}=city[do][@PF2eWeapon_city][end][when]{$nsz}=large_city[do][@PF2eWeapon_large_city][end][when]{$nsz}=metropolis[do][@PF2eWeapon_metropolis][end][when]{$nsz}=[do][@PF2eWeapon_town][end]

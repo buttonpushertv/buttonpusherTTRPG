@@ -1,0 +1,41 @@
+// 03-monster.rdm
+// =================================================================
+// Variables, prompts, dice, and inline tables.
+//
+// This file picks a monster, gives it a name, and describes its
+// disposition. It demonstrates four new things:
+//
+//   1. Prompt: — adds an input control to the codeblock UI
+//   2. {1d6}    — rolls dice and inserts the number
+//   3. [|a|b|c] — inline table, picks one option randomly
+//   4. Set:     — assigns a variable, then references it elsewhere
+//
+// Try it:  [@MonsterEncounter]  — note the dropdown that appears.
+// =================================================================
+
+// Prompt: declares an input that appears in the UI. The user picks
+// one of the options; their choice is available as {$Prompt1}.
+// Syntax: Prompt: <label> {<option>|<option>|…} <default>
+Prompt: Difficulty {Easy|Medium|Hard} Medium
+
+Table: MonsterEncounter
+// Pick a name and store it in {$name}. We use Set: (not [@name=…])
+// because Set: is quiet — it doesn't insert the rolled name here.
+// We'll insert it ourselves below using {$name}.
+Set: name=[@MonsterName]
+You encounter a [|small|medium|large|massive] {$name}. & 
+It looks [|hungry|wounded|curious|hostile|indifferent] and is carrying {1d6} gold pieces. & 
+Difficulty: {$Prompt1}.
+
+// The & at the end of a line joins it with the next line. Use this
+// to break long item text into readable chunks.
+
+Table: MonsterName
+goblin
+orc
+kobold
+bugbear
+ogre
+troll
+hobgoblin
+gnoll

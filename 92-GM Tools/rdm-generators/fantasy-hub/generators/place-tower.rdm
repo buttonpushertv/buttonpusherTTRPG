@@ -1,0 +1,167 @@
+// place-tower.rdm
+// =====================================================================
+// A wizard's tower — the home and workshop of a lone arcane
+// practitioner. Distinct from the arcane GUILD: this is one mage (and
+// maybe an apprentice, servants, or a familiar), their obsession, and
+// the strangeness that collects around someone who bends reality for
+// a living. Leans weird.
+//
+// Entry table: [@TF-Tower]
+//
+// Inputs (optional, via API promptValues):
+//   prompt1 town  /  prompt2 shopType (display)  /  prompt3 shopName
+//
+// Reuses people.rdm. No prices (a wizard is not a shop — though they
+// may bargain). PF2e flavour: the magical tradition is one of the
+// four (arcane/divine/occult/primal) where it fits.
+
+Title: Tower
+Use: people.rdm
+
+Prompt: town {} an unnamed town
+Prompt: shopType {} tower
+Prompt: shopName {}
+Prompt: keeperName {}
+Prompt: keeperRace {}
+Prompt: keeperGender {}
+Prompt: keeperAge {}
+Prompt: keeperDesc {}
+
+Table: TF-Tower
+Set: town={$prompt1}
+Set: passedName={$prompt3}
+Set: mage=[when]{$keeperName}=[do][@PersonName][else]{$keeperName}[end]
+Set: manc=[when]{$keeperRace}=[do][@Ancestry][else]{$keeperRace}[end]
+Set: magedsc=[when]{$keeperDesc}=[do][@PersonDesc][else]{$keeperDesc}[end]
+Set: mtitle=[@MageTitle]
+**[@TowerTitle]** *(tower near {$town})*\n&
+**[@TowerCharacter]**\n&
+**Resident:** {$mtitle} {$mage}, a {$magedsc} {$manc} who is [@MageDisposition].\n&
+**Tradition & study:** [@MageStudy]\n&
+**The household:** [@TowerHousehold]\n&
+**Signs of the work:** [@TowerSign]; [@TowerSign]\n&
+**{$mage} says:** "[@MageQuote]"\n&
+**Something is off:** [@TowerHook]
+
+Table: TowerTitle
+[when]{$passedName}=[do][@TowerName][else]{$passedName}[end]
+
+Table: TowerName
+The [@TowerNameAdj] Tower
+[@FamilyName]'s Tower
+The Tower of [@TowerNameWord]
+[@TowerNameWord] Spire
+
+Table: TowerNameAdj
+Crooked
+Leaning
+Black
+Silent
+High
+Whispering
+Glass
+Iron
+
+Table: TowerNameWord
+Whispers
+Echoes
+the Owl
+Seven Winds
+the Pale Star
+Cinders
+the Open Eye
+Tides
+
+Table: TowerCharacter
+A tall stone tower that hums faintly to anyone who listens
+A crooked spire that looks one storm from falling, yet never does
+A modest tower-house, more cluttered workshop than wizard's lair
+A grand tower of polished black stone, deliberately imposing
+A half-ruined tower the mage is slowly, obsessively restoring
+A tower that is larger inside than its outside allows
+A tower wreathed in a perpetual, unnatural quiet
+
+Table: MageTitle
+the wizard
+the witch
+the sorcerer
+Magister
+the hermit-mage
+Archivist
+the so-called "doctor"
+the recluse
+
+Table: MageDisposition
+brilliant, distracted, and bad with people
+gracious and curious, delighted by visitors (a rare thing)
+guarded and territorial, treating every caller as a thief
+eccentric to the point of seeming mad — or genuinely so
+weary, powerful, and long past wanting to be bothered
+ambitious and probing, weighing what use you might be
+kindly but absent, forgetting you're there mid-sentence
+paranoid, certain that rivals are always one step behind
+
+Table: MageStudy
+arcane theory — the deep structure of spells themselves
+divination, and the futures that won't stay still
+the binding and study of summoned things
+transmutation, with the half-finished results lying around
+necromancy, kept discreet for obvious reasons
+elemental forces, with the scorch-marks to prove it
+the recovery of some lost or forbidden lore
+enchantment, and the ethics they've stopped worrying about
+primal magic and the wild things that answer it
+
+Table: TowerHousehold
+[@HouseholdPick]
+
+Table: HouseholdPick
+a single nervous apprentice who clearly knows too many secrets
+a pair of bickering apprentices competing for the master's favour
+no living help at all — only things the mage made to serve
+a stoic servant who has seen everything and reacts to nothing
+a familiar (a [@FamiliarKind]) that watches visitors more sharply than the mage
+a household of oddities the mage refers to as "the staff"
+
+Table: FamiliarKind
+black cat with too-knowing eyes
+raven that mutters half-words
+toad the size of a dog
+small drake curled by the hearth
+owl that is never asleep when you check
+serpent draped around the mage's shoulders
+
+Table: TowerSign
+shelves buckling under books that occasionally turn their own pages
+a workbench of half-finished apparatus, one piece gently glowing
+chalk diagrams on the floor the mage steps around without looking
+a window that shows weather different from outside
+caged or jarred specimens you try not to look at too closely
+a door on an upper floor that the mage warns you never to open
+the faint smell of ozone and something sweeter underneath
+a familiar coming and going on errands of its own
+
+Table: MageQuote
+State your business briefly. The work does not pause for visitors.
+You've come for something. They always have. What is it?
+Touch nothing. I mean this more sincerely than you can know.
+Knowledge has a price, and I set it. We may yet do business.
+You're braver than most, knocking here. Or more foolish.
+I don't do love potions, curses, or weather. Anything else, perhaps.
+Time is the one thing I can't make more of. Don't waste mine.
+
+Table: TowerHook
+an experiment has escaped containment and the mage needs it back, quietly
+the mage seeks rare components and will pay — or trade favours — for them
+something the mage summoned will not leave, and won't say what it wants
+a rival mage is closing in, and the resident is preparing to flee or fight
+the apprentice wants out, and will tell tales to anyone who'll help
+the mage has foreseen something and is desperate to prevent (or cause) it
+a sealed room upstairs is the source of a sound that's getting louder
+the mage died (or vanished) recently and the tower is still "running"
+neighbours blame the tower for failed crops, sick livestock, and bad dreams
+the mage needs someone expendable for a task too dangerous to do alone
+
+// Standalone name roll (collision-proof, for note titles etc.).
+Table: TF-TowerName
+[@TowerName]

@@ -1,0 +1,135 @@
+// shop-magic.rdm
+// =====================================================================
+// A PF2e magic shop: scrolls, wands, talismans, minor wondrous items.
+// Reuses people, customers, prices. Entry table: [@MagicShop]
+// Prices in COPPER (1 gp = 100 cp). Magic items are level-priced in
+// PF2e; values below are typical low-level entries. (~) marks
+// approximations — magic-item prices vary a lot by level, so VERIFY.
+
+Title: Magic Shop
+Use: people.rdm
+Use: customers.rdm
+Use: prices.rdm
+Use: stock-count.rdm
+Use: items-magic.rdm
+
+// Optional inputs from a caller (e.g. Town Forge via the API's
+// promptValues). Defaults keep the file working standalone.
+//   prompt1 town  /  prompt2 shopType (display)  /  prompt3 shopName
+Prompt: town {} an unnamed town
+Prompt: shopType {} magic
+Prompt: shopName {}
+Prompt: size {} town
+Prompt: keeperName {}
+Prompt: keeperRace {}
+Prompt: keeperGender {}
+Prompt: keeperAge {}
+Prompt: keeperDesc {}
+Prompt: custName {}
+Prompt: custRace {}
+Prompt: custDesc {}
+
+Table: TF-MagicShop
+Set: town={$prompt1}
+Set: passedName={$prompt3}
+Set: m=[@Markup]
+Set: owner=[when]{$prompt5}=[do][@PersonName][else]{$prompt5}[end]
+Set: oanc=[when]{$prompt6}=[do][@Ancestry][else]{$prompt6}[end]
+Set: odesc=[when]{$prompt9}=[do][@PersonDesc][else]{$prompt9}[end]
+**[@MagicTitle]** *(magic in {$town})*\n&
+**Proprietor:** {$owner}, a {$odesc} {$oanc} who is [@Personality].\n&
+**Prices:** {$markupReason}.\n&
+**Under glass:**\n&
+[@MagicStock]\n&
+**{$owner} says:** "[@MagicQuote]"\n&
+**Also here:** [@Customer]
+
+// Caller-supplied name if given, else roll. Prefixed to avoid collision.
+Table: MagicTitle
+[when]{$passedName}=[do][@MagicShopName][else]{$passedName}[end]
+
+Table: MagicShopName
+The [@MagAdj] [@MagNoun]
+The [@MagAdj] [@MagNoun]
+[@MagNoun] & [@MagNoun]
+[@FamilyName]'s [@MagNoun]
+[@FamilyName]'s [@MagNoun]
+The [@MagNoun] & [@MagNoun]
+[@MagNoun] and [@MagNoun]
+The [@MagFixed]
+
+Table: MagAdj
+Arcane
+Whispering
+Quiet
+Third
+Veiled
+Hidden
+Gilded
+Eldritch
+Curious
+Glimmering
+Runed
+Secret
+Star-Touched
+Moonlit
+Silent
+Enchanted
+Mystic
+Fabled
+Sable
+Twilight
+
+Table: MagNoun
+Curio
+Sigil
+Scroll
+Glyph
+Glamour
+Eye
+Rune
+Focus
+Filigree
+Cabinet
+Shelf
+Charm
+Talisman
+Wand
+Orb
+Grimoire
+Reliquary
+Phylactery
+Oddment
+Arcanum
+
+Table: MagFixed
+Arcane Curio
+Whispering Shelf
+Third Eye
+Quiet Word
+Glyph & Glamour
+Sigil & Scroll
+Runebound Rarities
+Filigree & Focus
+
+Table: MagicStock
+{!n=={[@StockCountScarce with {$prompt4}]}}[@{$n} MagicItemLine]
+
+// PF2e magic item prices (copper), typical low-level entries.
+// Magic-item pricing is level-dependent; treat these as starting
+// points and adjust to your table's level. (~) throughout.
+Table: MagicItemLine
+[@MagicItem]\n
+
+Table: MagicItem
+[@PF2eMagic with {$prompt4}]
+
+Table: MagicQuote
+Don't touch the ones that hum. Those choose their own buyers.
+Identified and authenticated — I deal in no curses, knowingly.
+Magic's an investment. So is not dying.
+That scroll's single-use. Read it wrong and it's no-use.
+Wands run dry. Ask me how many charges before you pay.
+Everything's genuine. The fakes are two streets over.
+I sense you've a talent. The shelf at the back is for talents.
+Browse with your eyes, friend. Some of this browses back.
